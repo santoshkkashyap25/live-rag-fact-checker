@@ -24,19 +24,21 @@ class LLMService:
     
     def __init__(self):
         load_dotenv()
-        if "GROQ_API_KEY" not in os.environ:
-            raise ValueError(
-                "Groq API key not found. "
-                "Set GROQ_API_KEY in environment or .env file."
-            )
-        
-        logger.info("Initializing Groq LLM client...")
-        self.client = Groq(
-            api_key=os.environ.get("GROQ_API_KEY")
-        )
+        self.client = None
         self.prompt = self._create_enhanced_prompt()
+        logger.info("LLM service initialized (client will be lazy-loaded on request)")
 
-        logger.info("LLM service initialized")
+    def _initialize_client(self):
+        if self.client is None:
+            if "GROQ_API_KEY" not in os.environ:
+                raise ValueError(
+                    "Groq API key not found. "
+                    "Set GROQ_API_KEY in environment or .env file."
+                )
+            logger.info("Initializing Groq LLM client...")
+            self.client = Groq(
+                api_key=os.environ.get("GROQ_API_KEY")
+            )
     
     def _create_enhanced_prompt(self) -> str:
         """Create enhanced prompt with few-shot examples"""
@@ -145,6 +147,7 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
         # Use LLM for nuanced verification
         evidence_str = "\n".join([f"{i+1}. {e}" for i, e in enumerate(evidence)])
         try:
+            self._initialize_client()
             # Prepare messages
             user_message = self.prompt.format(claim=claim, evidence=evidence_str)
             messages = [{"role": "user", "content": user_message}]

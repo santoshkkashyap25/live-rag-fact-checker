@@ -16,3 +16,5 @@ langchain_community
 plotly
 rank_bm25
 groq
+fastapi
+uvicorn

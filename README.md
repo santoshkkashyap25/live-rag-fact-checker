@@ -1,119 +1,115 @@
-# LLM-Powered Fact Checker
+# FactGuard AI: Decoupled Fact-Checking System
 
-> A fact-checking system using Retrieval-Augmented Generation (RAG) to verify claims against a trusted knowledge base.
-
-[Visit the App] : https://factschecker.streamlit.app/
----
-
-## Screenshots
-
-<table>
-  <tr>
-    <td><img src="screenshots/true.jpg" alt="True Fact" width="400"/><br/><sub><b>True Fact</b></sub></td>
-    <td><img src="screenshots/false.jpg" alt="False Claim" width="400"/><br/><sub><b>False Claim</b></sub></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/unverifiable.jpg" alt="Unverifiable Claim" width="400"/><br/><sub><b>Unverifiable Claim</b></sub></td>
-    <td><img src="screenshots/verdict.jpg" alt="Verdict Distribution" width="400"/><br/><sub><b>Verdict Distribution</b></sub></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/cache.jpg" alt="Caching" width="400"/><br/><sub><b>Caching</b></sub></td>
-    <!-- <td><img src="screenshots/extra.jpg" alt="Extra" width="400"/><br/><sub><b>Extra</b></sub></td> -->
-  </tr>
-</table>
-
+> A fact-checking system using Retrieval-Augmented Generation (RAG) to verify claims against a trusted knowledge base, split into a FastAPI backend and a Next.js frontend.
 
 ---
 
-Fact-checking system that takes in a news headline or social media post, extracts key claims, verifies them against a vector database of trusted facts, and classifies the result as:
+## System Architecture
 
-*  **True**
-*  **False**
-*  **Unverifiable**
+```
+                       [ Next.js Frontend ]
+                        (Port 3000 / UI)
+                               │
+                       HTTP POST /api/verify
+                       HTTP GET /api/analytics
+                               ▼
+                       [ FastAPI Backend ]
+                        (Port 8000 / API)
+                               │
+                  ┌────────────┴────────────┐
+                  ▼                         ▼
+         [ Claim Extractor ]       [ Hybrid Search DB ]
+           (SpaCy parsing)          (FAISS + BM25)
+                  │                         │
+                  └────────────┬────────────┘
+                               ▼
+                    [ CrossEncoder Reranker ]
+                               │
+                               ▼
+                   [ LLM Verification Chain ]
+                     (Groq / Llama-3 / RAG)
+                               │
+                               ▼
+               [ Verdict + Reasoning + Evidence ]
+```
 
 ---
 
 ## Features
 
-- **Intelligent Claim Extraction**: Uses SpaCy dependency parsing to extract verifiable claims from complex text
-- **Semantic Search**: FAISS vector database with sentence transformers for fast similarity search
-- **LLM Verification**: mistralai/Mistral-7B-Instruct-v0.2 for nuanced fact verification with evidence attribution
-- **Performance Optimized**: Query caching, lazy loading, and efficient embeddings
-- **Production Ready**: Comprehensive testing, logging, metrics, and error handling
-- **Auto Wake-up**: Handles Streamlit Cloud sleep/wake cycles gracefully
+- **Decoupled Architecture**: Fast Python API backend running FastAPI and a highly responsive React frontend in Next.js.
+- **Intelligent Claim Extraction**: Uses SpaCy dependency parsing to isolate verifiable claims from complex statements.
+- **Hybrid Semantic Search**: Integrates FAISS (vector similarity search with Sentence Transformers) and BM25 (lexical search) for robust evidence retrieval.
+- **Re-ranked Evidence**: Utilizes a Cross-Encoder re-ranker model to prioritize retrieved facts.
+- **LLM Verification**: Nuanced validation using HuggingFace / Groq LLMs with transparent reasoning and cited sources.
+- **Analytics Dashboard**: Real-time performance telemetry featuring latency trendlines, verdict distributions, and cache hit metrics.
+- **Optimized Caching**: LRU query cache with TTL expiration.
 
-## Architecture
-
-```
-User Input
-    ↓
-Claim Extractor (SpaCy)
-    ↓
-Vector Search (FAISS + Sentence Transformers)
-    ↓
-Evidence Retrieval (Top-K with threshold)
-    ↓
-LLM Verification (Mixtral + LangChain)
-    ↓
-Verdict + Reasoning + Evidence
-```
+---
 
 ## Tech Stack
 
-- **NLP**: SpaCy, Sentence Transformers
-- **Vector DB**: FAISS (IndexFlatL2 + IndexIDMap)
-- **LLM**: HuggingFace (mistralai/Mistral-7B-Instruct-v0.2)
-- **Framework**: LangChain, Streamlit
-- **Testing**: Pytest with 95%+ coverage
+### Backend
+- **Framework**: FastAPI
+- **Web Server**: Uvicorn
+- **NLP / Embedding**: SpaCy, Sentence Transformers (`all-MiniLM-L6-v2`)
+- **Vector Index**: FAISS (IndexFlatL2 + IndexIDMap)
+- **BM25 Search**: Rank-BM25
+- **LLM Service**: Groq (`llama-3.1-8b-instant`) / LangChain
+
+### Frontend
+- **Framework**: Next.js (App Router, TypeScript)
+- **Styling**: Vanilla CSS Modules (Glassmorphism & Dark Mode)
+- **Icons**: Lucide React
+- **Visualization**: Recharts
+
 ---
 
-## Quick Start
+## Setup & Quick Start
 
-### 1. Installation
+### 1. Prerequisites
+- Python 3.9+
+- Node.js 18+
 
+### 2. Backend Setup
+Navigate to the `backend/` directory:
 ```bash
-# Clone repository
-git clone https://github.com/santoshkkashyap25/llm-fact-checker.git
-cd llm-fact-checker
+cd backend
 
-# Create virtual environment
+# Create and activate virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
+# Install requirements
 pip install -r requirements.txt
 ```
 
-### 2. Configuration
-
-Create a `.env` file:
-
+Create a `.env` file inside the `backend/` folder:
 ```env
-HUGGINGFACEHUB_API_TOKEN=your_token_here
+GROQ_API_KEY=your_groq_api_key_here
 ENABLE_SCRAPING=false
 ```
 
-Get your HuggingFace token: https://huggingface.co/settings/tokens
-
-### 3. Execution
-
-Build the FAISS vector DB:
-
+Build the FAISS vector database from facts source CSV:
 ```bash
 python build_database.py
 ```
 
-Run the Streamlit App:
-
+Start the FastAPI application:
 ```bash
-streamlit run app.py
+uvicorn main:app --host 127.0.0.1 --port 8000
 ```
----
 
- ## Other Works
+### 3. Frontend Setup
+Open a new terminal session and navigate to the `frontend/` directory:
+```bash
+cd frontend
 
-[Visit the App] : https://transnlp.streamlit.app/
+# Install UI dependencies
+npm install
 
+# Run the development server
+npm run dev
+```
 
-
-
+Open [http://localhost:3000](http://localhost:3000) in your browser to access the application.
