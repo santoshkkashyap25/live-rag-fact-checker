@@ -15,9 +15,6 @@ load_dotenv()
 # --- Paths ---
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
-FACTS_CSV_PATH = DATA_DIR / "trusted_facts.csv"
-VECTOR_INDEX_PATH = DATA_DIR / "faiss_index.bin"
-BM25_INDEX_PATH = DATA_DIR / "bm25_index.pkl"
 METRICS_PATH = BASE_DIR / "metrics.jsonl"
 CACHE_PATH = DATA_DIR / "query_cache.json"
 
@@ -44,14 +41,5 @@ APP_TITLE = "LLM-Powered Fact Checker"
 APP_VERSION = "2.0.0"
 MAX_INPUT_LENGTH = 1000
 HOST = os.getenv("HOST", "127.0.0.1")
-PORT = int(os.getenv("PORT", "8001"))
+PORT = int(os.getenv("PORT", "8000"))
 
-# --- Data Scraping Settings ---
-PIB_RSS_URL = "https://www.pib.gov.in/RssMain.aspx?ModId=6&Lang=1&reg=3"
-FACTLY_RSS_URL = "https://factly.in/feed/"
-WEBQOOF_RSS_URL = "https://www.thequint.com/news/webqoof/rss"
-NEWSCHECKER_RSS_URL = "https://newschecker.in/feed/"
-
-SCRAPE_ENABLED = os.getenv("ENABLE_SCRAPING", "false").lower() == "true"
-SCRAPE_INTERVAL_HOURS = 24
-SCRAPE_LIMIT_PER_SOURCE = 50

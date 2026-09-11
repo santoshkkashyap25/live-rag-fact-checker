@@ -1,6 +1,6 @@
-# FactGuard AI: Decoupled Fact-Checking System
+# FactGuard AI: Real-Time Web Intelligence & Fact Verification
 
-> A fact-checking system using Retrieval-Augmented Generation (RAG) to verify claims against a trusted knowledge base, split into a FastAPI backend and a Next.js frontend.
+> A high-performance, real-time fact-checking system that verifies arbitrary claims against live web sources (DuckDuckGo + Wikipedia), re-ranks evidence with cross-encoders, and validates statements using LLM reasoning (Groq / Llama-3).
 
 ---
 
@@ -18,8 +18,8 @@
                                │
                   ┌────────────┴────────────┐
                   ▼                         ▼
-         [ Claim Extractor ]       [ Hybrid Search DB ]
-           (SpaCy parsing)          (FAISS + BM25)
+         [ Claim Extractor ]      [ Web Intelligence ]
+           (SpaCy parsing)         (DuckDuckGo + Wiki)
                   │                         │
                   └────────────┬────────────┘
                                ▼
@@ -30,32 +30,31 @@
                      (Groq / Llama-3 / RAG)
                                │
                                ▼
-               [ Verdict + Reasoning + Evidence ]
+               [ Verdict + Reasoning + Citations ]
 ```
 
 ---
 
 ## Features
 
-- **Decoupled Architecture**: Fast Python API backend running FastAPI and a highly responsive React frontend in Next.js.
-- **Intelligent Claim Extraction**: Uses SpaCy dependency parsing to isolate verifiable claims from complex statements.
-- **Hybrid Semantic Search**: Integrates FAISS (vector similarity search with Sentence Transformers) and BM25 (lexical search) for robust evidence retrieval.
-- **Re-ranked Evidence**: Utilizes a Cross-Encoder re-ranker model to prioritize retrieved facts.
-- **LLM Verification**: Nuanced validation using HuggingFace / Groq LLMs with transparent reasoning and cited sources.
-- **Analytics Dashboard**: Real-time performance telemetry featuring latency trendlines, verdict distributions, and cache hit metrics.
-- **Optimized Caching**: LRU query cache with TTL expiration.
+- **Real-Time Web Intelligence**: Fetches authentic context, debunking reports, and encyclopedic evidence directly from DuckDuckGo and Wikipedia on the fly.
+- **Direct Source Citations**: Each retrieved piece of evidence includes article title, snippet, source publisher pill, and a direct clickable URL.
+- **Intelligent Claim Extraction**: Uses SpaCy dependency parsing to isolate atomic verifiable claims from complex statements.
+- **Neural Re-ranking**: Scores retrieved web context with a Cross-Encoder model (`ms-marco-MiniLM-L6-v2`) to prioritize relevant facts.
+- **LLM Reasoning**: Nuanced validation with transparent rationale and confidence scoring via Groq (`llama-3.1-8b-instant`).
+- **Analytics & Telemetry**: Real-time performance dashboard featuring latency trendlines, verdict distributions, and cache metrics.
+- **Persistent LRU Cache**: Instant sub-second responses for previously analyzed claims.
 
 ---
 
 ## Tech Stack
 
 ### Backend
-- **Framework**: FastAPI
-- **Web Server**: Uvicorn
-- **NLP / Embedding**: SpaCy, Sentence Transformers (`all-MiniLM-L6-v2`)
-- **Vector Index**: FAISS (IndexFlatL2 + IndexIDMap)
-- **BM25 Search**: Rank-BM25
-- **LLM Service**: Groq (`llama-3.1-8b-instant`) / LangChain
+- **Framework**: FastAPI (Uvicorn)
+- **NLP**: SpaCy (`en_core_web_md`)
+- **Neural Re-ranker**: Sentence Transformers (`cross-encoder/ms-marco-MiniLM-L6-v2`)
+- **Web Intelligence**: DuckDuckGo + Wikipedia REST API
+- **LLM**: Groq API (`llama-3.1-8b-instant`)
 
 ### Frontend
 - **Framework**: Next.js (App Router, TypeScript)
@@ -65,43 +64,35 @@
 
 ---
 
-## Setup & Quick Start
+## Quick Start
 
-### 1. Prerequisites
-- Python 3.9+
-- Node.js 18+
+### 1. Backend Setup
 
-### 2. Backend Setup
-Navigate to the `backend/` directory:
 ```bash
-cd backend
-
-# Create and activate virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# From project root, activate python environment
+python -m venv .venv
+.\.venv\Scripts\activate  # Linux/macOS: source .venv/bin/activate
 
 # Install requirements
-pip install -r requirements.txt
-```
+pip install -r backend/requirements.txt
 
-Create a `.env` file inside the `backend/` folder:
+# Start FastAPI application
+python backend/main.py
+```
+> Server runs on `http://127.0.0.1:8000`.
+
+#### Optional: Configure Groq API Key
+Add your Groq API key in `backend/.env` for automated AI verdicts:
 ```env
 GROQ_API_KEY=your_groq_api_key_here
-ENABLE_SCRAPING=false
+PORT=8000
 ```
 
-Build the FAISS vector database from facts source CSV:
-```bash
-python build_database.py
-```
+---
 
-Start the FastAPI application:
-```bash
-uvicorn main:app --host 127.0.0.1 --port 8000
-```
+### 2. Frontend Setup
 
-### 3. Frontend Setup
-Open a new terminal session and navigate to the `frontend/` directory:
+Open a new terminal:
 ```bash
 cd frontend
 
@@ -112,4 +103,13 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to access the application.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+### 3. CLI Verification Tool
+
+You can also fact-check claims directly from the command line:
+```bash
+python backend/cli.py "The Great Wall of China is visible from the Moon."
+```
