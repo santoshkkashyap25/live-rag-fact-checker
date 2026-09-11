@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import styles from "./page.module.css";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8001";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 interface PerformanceDetails {
   extraction_time: string;
@@ -158,10 +158,10 @@ export default function VerifyPage() {
     <div className={styles.container}>
       {/* Header */}
       <header className={styles.header}>
-        <div className={styles.logoArea}>
+        <Link href="/" className={styles.logoArea}>
           <Sparkles className={styles.logoIcon} />
           <span className={styles.logoText}>FactGuard AI</span>
-        </div>
+        </Link>
         <nav className={styles.nav}>
           <Link href="/" className={`${styles.navLink} ${styles.activeLink}`}>
             Verify Claim
@@ -425,7 +425,7 @@ export default function VerifyPage() {
 
       {/* Footer */}
       <footer className={styles.footer}>
-        <p>© 2026 FactGuard AI. Powered by Real-Time Web Search (DuckDuckGo + Wikipedia) & Groq / Llama-3 LLM.</p>
+        <p>© 2026 FactGuard AI.</p>
       </footer>
     </div>
   );

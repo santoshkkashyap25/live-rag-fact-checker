@@ -174,10 +174,10 @@ export default function AnalyticsPage() {
     <div className={styles.container}>
       {/* Header */}
       <header className={styles.header}>
-        <div className={styles.logoArea}>
+        <Link href="/" className={styles.logoArea}>
           <Sparkles className={styles.logoIcon} />
           <span className={styles.logoText}>FactGuard AI</span>
-        </div>
+        </Link>
         <nav className={styles.nav}>
           <Link href="/" className={styles.navLink}>
             Verify Claim
@@ -197,9 +197,9 @@ export default function AnalyticsPage() {
               Monitor real-time pipeline performance, accuracy ratios, database state, and cache efficiency.
             </p>
           </div>
-          <button onClick={fetchStats} className={styles.refreshBtn} title="Refresh Statistics">
-            <RefreshCw size={16} />
-            <span>Refresh</span>
+          <button onClick={fetchStats} className={styles.refreshBtn} title="Refresh Statistics" disabled={loading}>
+            <RefreshCw size={16} className={loading ? styles.spinIcon : ""} />
+            <span>{loading ? "Refreshing..." : "Refresh"}</span>
           </button>
         </div>
 
@@ -410,25 +410,15 @@ export default function AnalyticsPage() {
                     <Trash2 size={20} className={styles.systemIcon} style={{ color: "#ec4899" }} />
                     <h3>Query Cache Manager</h3>
                   </div>
-                  <div className={styles.systemInfoGrid}>
-                    <div className={styles.infoRow}>
-                      <span>Cached Records</span>
-                      <strong>{cache?.size} / {cache?.max_size}</strong>
-                    </div>
-                    <div className={styles.infoRow}>
-                      <span>Cache TTL Duration</span>
-                      <strong>{cache ? cache.ttl_seconds / 3600 : 0} hour(s)</strong>
-                    </div>
-                  </div>
 
-                  <div className={styles.cacheControlActions}>
+                  <div className={styles.cacheControlActions} style={{ marginTop: "1rem" }}>
                     <button
                       onClick={handleClearCache}
-                      disabled={clearingCache || cache?.size === 0}
+                      disabled={clearingCache}
                       className={styles.clearCacheBtn}
                     >
                       <Trash2 size={16} />
-                      <span>{clearingCache ? "Clearing..." : "Clear Cache Memory"}</span>
+                      <span>{clearingCache ? "Clearing..." : "Clear Cache"}</span>
                     </button>
                     {successMsg && <span className={styles.successText}>{successMsg}</span>}
                   </div>
@@ -442,7 +432,7 @@ export default function AnalyticsPage() {
 
       {/* Footer */}
       <footer className={styles.footer}>
-        <p>© 2026 FactGuard AI. Powered by Real-Time Web Search (DuckDuckGo + Wikipedia) & Groq / Llama-3 LLM.</p>
+        <p>© 2026 FactGuard AI.</p>
       </footer>
     </div>
   );
