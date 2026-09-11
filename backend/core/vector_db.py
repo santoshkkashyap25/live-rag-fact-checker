@@ -50,7 +50,7 @@ class VectorDB:
             self.index = faiss.read_index(str(self.index_path))
             
             # Load facts and metadata
-            df = pd.read_csv(FACTS_CSV_PATH)
+            df = pd.read_csv(FACTS_CSV_PATH, encoding="utf-8")
             self.facts = df["statement"].tolist()
             self.metadata = df.to_dict('records') if len(df.columns) > 1 else None
             

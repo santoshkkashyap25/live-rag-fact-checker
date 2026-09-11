@@ -1,16 +1,15 @@
 import os
 import logging
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from config import APP_TITLE, APP_VERSION
+from config import APP_TITLE, APP_VERSION, HOST, PORT
 from pipeline import run_fact_checking_pipeline
 from core.metrics import metrics_collector
 from core.cache import query_cache
-from core.vector_db import vector_db
 
 # --- Logging Configuration ---
 logging.basicConfig(
@@ -24,16 +23,7 @@ logger = logging.getLogger(__name__)
 # --- Lifespan Handler ---
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Load database on startup
-    logger.info("Starting up: Loading vector database...")
-    try:
-        vector_db.load()
-        logger.info("Vector database loaded successfully during startup")
-    except FileNotFoundError:
-        logger.error("Database files not found on startup. Please build database first.")
-    except Exception as e:
-        logger.exception(f"Unexpected error loading database on startup: {e}")
-    
+    logger.info("Starting up: Real-Time Web Intelligence Fact Checker online")
     yield
     
     # Save cache on shutdown
@@ -79,6 +69,8 @@ class VerifyResponse(BaseModel):
     reasoning: str
     evidence: List[str]
     evidence_scores: List[str]
+    evidence_sources: Optional[List[str]] = Field(default_factory=list)
+    evidence_urls: Optional[List[str]] = Field(default_factory=list)
     performance: VerifyResponsePerformance
 
 class ErrorResponse(BaseModel):
@@ -91,7 +83,8 @@ async def root():
     return {
         "app": APP_TITLE,
         "version": APP_VERSION,
-        "status": "online"
+        "status": "online",
+        "mode": "real_time_web_search"
     }
 
 @app.post(
@@ -104,7 +97,7 @@ async def root():
 )
 async def verify_statement(request: VerifyRequest):
     """
-    Verify a statement against the trusted fact database.
+    Verify a statement using real-time internet search and LLM validation.
     """
     if not request.text.strip():
         raise HTTPException(
@@ -132,16 +125,21 @@ async def verify_statement(request: VerifyRequest):
 @app.get("/api/analytics")
 async def get_analytics():
     """
-    Retrieve performance statistics, verdict distributions, database size, and cache metrics.
+    Retrieve performance statistics, verdict distributions, and real-time search telemetry.
     """
     try:
         # Re-load metrics from disk to ensure sync
-        metrics_collector.metrics = []
         metrics_collector.load_from_disk()
         
         stats = metrics_collector.get_summary()
         cache_stats = query_cache.get_stats()
-        db_stats = vector_db.get_stats()
+        db_stats = {
+            "status": "loaded",
+            "total_facts": "Live Web Index",
+            "embedding_dim": 384,
+            "index_type": "Real-Time Web Crawler (DuckDuckGo + Wikipedia)",
+            "has_metadata": True
+        }
         
         # Format metrics history for charting
         history = []
@@ -189,10 +187,15 @@ async def get_examples():
     """
     return {
         "examples": [
-            "India met 241 GW peak power demand on 9th June 2025 with zero shortage.",
-            "The Ayushman Bharat Pradhan Mantri Jan Arogya Yojana provides health insurance coverage of up to ₹5 lakh per family per year.",
-            "IREDA was granted Navratna status by the Government of India.",
             "India has 28 states and 8 union territories.",
+            "The Great Wall of China is visible from the Moon.",
+            "Bananas are naturally radioactive due to potassium-40.",
+            "Lightning never strikes the same place twice.",
             "The Digital India initiative was launched in 2015."
         ]
     }
+
+if __name__ == "__main__":
+    import uvicorn
+    print(f"Starting {APP_TITLE} on http://{HOST}:{PORT}")
+    uvicorn.run("main:app", host=HOST, port=PORT, reload=False)

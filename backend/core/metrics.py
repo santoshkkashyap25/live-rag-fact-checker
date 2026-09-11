@@ -35,18 +35,22 @@ class MetricsCollector:
         # Write to disk (append mode)
         try:
             METRICS_PATH.parent.mkdir(parents=True, exist_ok=True)
-            with open(METRICS_PATH, 'a') as f:
+            with open(METRICS_PATH, 'a', encoding='utf-8') as f:
                 f.write(json.dumps(asdict(metric)) + '\n')
         except Exception as e:
             logger.error(f"Failed to write metric: {e}")
     
     def load_from_disk(self):
         """Load metrics from disk"""
+        self.metrics = []
         try:
             if METRICS_PATH.exists():
-                with open(METRICS_PATH, 'r') as f:
+                with open(METRICS_PATH, 'r', encoding='utf-8') as f:
                     for line in f:
-                        data = json.loads(line.strip())
+                        line_str = line.strip()
+                        if not line_str:
+                            continue
+                        data = json.loads(line_str)
                         self.metrics.append(PipelineMetrics(**data))
                 logger.info(f"Loaded {len(self.metrics)} metrics from disk")
         except Exception as e:

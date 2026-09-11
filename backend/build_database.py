@@ -31,7 +31,7 @@ def main():
                 print("[!] No data found and scraping is disabled.")
                 return 
             
-            facts_df = pd.read_csv(FACTS_CSV_PATH)
+            facts_df = pd.read_csv(FACTS_CSV_PATH, encoding="utf-8")
             print(f"[OK] Loaded {len(facts_df)} total facts")
         
         # Step 2: Validate data

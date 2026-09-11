@@ -114,7 +114,7 @@ class DataScraper:
         """Merge new facts with existing ones, deduplicating by statement and URL"""
         if FACTS_CSV_PATH.exists():
             try:
-                existing_df = pd.read_csv(FACTS_CSV_PATH)
+                existing_df = pd.read_csv(FACTS_CSV_PATH, encoding="utf-8")
                 logger.info(f"Loaded {len(existing_df)} existing facts from storage")
                 
                 # Combine and deduplicate
@@ -137,7 +137,7 @@ class DataScraper:
             df_to_save = new_df
         
         # Save to CSV
-        df_to_save.to_csv(FACTS_CSV_PATH, index=False)
+        df_to_save.to_csv(FACTS_CSV_PATH, index=False, encoding="utf-8")
         logger.info(f"Successfully saved {len(df_to_save)} facts to {FACTS_CSV_PATH}")
         return df_to_save
 

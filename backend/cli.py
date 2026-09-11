@@ -1,56 +1,91 @@
-# test_llm_service.py
-from pydantic import BaseModel, Field
-from langchain.prompts import PromptTemplate
-from langchain.output_parsers import PydanticOutputParser
-from langchain.chains import LLMChain
-from langchain_community.chat_models import HuggingFaceEndpoint
-import os
+"""
+FactGuard AI - Command Line Interface
+Usage:
+    python cli.py "India has 28 states and 8 union territories."
+    python cli.py --help
+"""
 
-class Verdict(BaseModel):
-    verdict: str = Field(description="Must be exactly: 'True', 'False', or 'Unverifiable'")
-    confidence: float = Field(description="Confidence score between 0.0 and 1.0")
-    reasoning: str = Field(description="Detailed explanation with evidence citations")
+import sys
+import argparse
+from pathlib import Path
 
-# --- Setup Hugging Face LLM ---
-LLM_REPO_ID = "mistralai/Mistral-7B-Instruct-v0.2"  # or Zephyr
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = ""
+# Add backend directory to sys.path
+BASE_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(BASE_DIR))
 
-llm = HuggingFaceEndpoint(
-    repo_id=LLM_REPO_ID,
-    temperature=0.2,
-    max_new_tokens=150,
-    timeout=120
-)
+from pipeline import run_fact_checking_pipeline
+from core.vector_db import vector_db
 
-# --- Setup prompt and parser ---
-parser = PydanticOutputParser(pydantic_object=Verdict)
+def main():
+    parser = argparse.ArgumentParser(
+        description="FactGuard AI: CLI Fact-Checking Tool",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python cli.py "India has 28 states and 8 union territories."
+  python cli.py "The Digital India initiative was launched in 2015."
+        """
+    )
+    parser.add_argument(
+        "statement",
+        type=str,
+        nargs="?",
+        help="The claim or statement to verify"
+    )
+    parser.add_argument(
+        "--no-cache",
+        action="store_true",
+        help="Bypass the query cache and re-verify"
+    )
 
-template = """You are a precise fact-checking AI. Analyze claims against evidence strictly.
+    args = parser.parse_args()
 
-Claim: "{claim}"
+    statement = args.statement
+    if not statement:
+        statement = input("\nEnter claim or statement to verify: ").strip()
 
-Evidence:
-{evidence}
+    if not statement:
+        print("[ERROR] Statement cannot be empty.")
+        sys.exit(1)
 
-{format_instructions}
+    print("=" * 70)
+    print(f"FactGuard AI - Fact Verification")
+    print("=" * 70)
+    print(f"Claim: {statement}\n")
 
-Response (JSON only):"""
+    try:
+        result = run_fact_checking_pipeline(statement, use_cache=not args.no_cache)
+        
+        verdict = result.get("verdict", "Unverifiable")
+        confidence = result.get("confidence", "0.00")
+        reasoning = result.get("reasoning", "")
+        evidence = result.get("evidence", [])
+        perf = result.get("performance", {})
+        
+        print("-" * 70)
+        print(f"VERDICT:    {verdict}")
+        print(f"CONFIDENCE: {float(confidence) * 100:.1f}%")
+        print(f"CLAIM:      {result.get('extracted_claim')}")
+        print(f"REASONING:  {reasoning}")
+        print("-" * 70)
+        
+        if evidence:
+            print(f"RETRIEVED EVIDENCE ({len(evidence)} items):")
+            scores = result.get("evidence_scores", [])
+            for i, ev in enumerate(evidence):
+                score_str = f" [score: {scores[i]}]" if i < len(scores) else ""
+                print(f"  [{i+1}]{score_str} {ev}")
+        
+        print("-" * 70)
+        print(f"TIMING: Extraction: {perf.get('extraction_time', 'N/A')}, "
+              f"Retrieval: {perf.get('retrieval_time', 'N/A')}, "
+              f"LLM: {perf.get('llm_time', 'N/A')}, "
+              f"Total: {perf.get('total_time', 'N/A')}")
+        print("=" * 70)
 
-prompt = PromptTemplate(
-    template=template,
-    input_variables=["claim", "evidence"],
-    partial_variables={"format_instructions": parser.get_format_instructions()}
-)
+    except Exception as e:
+        print(f"\n[ERROR] Verification failed: {e}")
+        sys.exit(1)
 
-# --- Create LLMChain ---
-chain = LLMChain(llm=llm, prompt=prompt, output_parser=parser)
-
-# --- Example claim and evidence ---
-claim = "The Eiffel Tower is in Berlin"
-evidence = ["The Eiffel Tower is located in Paris, France"]
-
-# --- Run chain ---
-result = chain.run({"claim": claim, "evidence": "\n".join(evidence)})
-
-# --- Print result ---
-print(result)
+if __name__ == "__main__":
+    main()

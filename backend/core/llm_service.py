@@ -134,14 +134,16 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
                 confidence=0.95,
                 reasoning=f"The claim directly matches verified evidence: '{matches[0][:200]}...'"
             )
-            query_cache.set(cache_key, result.dict())
+            result_data = result.model_dump() if hasattr(result, "model_dump") else result.dict()
+            query_cache.set(cache_key, result_data)
             return result
         
         # Check for clear contradictions
         contradiction_result = self._check_contradiction(claim, evidence)
         if contradiction_result:
             logger.info("Clear contradiction detected")
-            query_cache.set(cache_key, contradiction_result.dict())
+            contra_data = contradiction_result.model_dump() if hasattr(contradiction_result, "model_dump") else contradiction_result.dict()
+            query_cache.set(cache_key, contra_data)
             return contradiction_result
         
         # Use LLM for nuanced verification
@@ -171,7 +173,8 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
             logger.info(f"LLM verdict: {result.verdict} (confidence: {result.confidence:.2f})")
             
             # Cache result
-            query_cache.set(cache_key, result.dict())
+            result_data = result.model_dump() if hasattr(result, "model_dump") else result.dict()
+            query_cache.set(cache_key, result_data)
             
             return result
 
@@ -179,7 +182,7 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
         except Exception as e:
             logger.error(f"LLM service error: {e}")
             
-            # Fallback to rule-based verification
+            # User-friendly message when LLM is unavailable
             return self._fallback_verification(claim, evidence, str(e))
     
     def _check_contradiction(self, claim: str, evidence: List[str]) -> Optional[Verdict]:
@@ -209,48 +212,24 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
         return None
     
     def _fallback_verification(self, claim: str, evidence: List[str], error_msg: str) -> Verdict:
-        """Fallback rule-based verification when LLM fails"""
-        logger.info("Using fallback rule-based verification")
+        """Fallback response when LLM model is unavailable"""
+        logger.info(f"LLM verification unavailable: {error_msg}")
         
-        norm_claim = self._normalize_text(claim)
-        
-        # Calculate similarity scores manually
-        max_similarity = 0.0
-        best_evidence = ""
-        
-        for item in evidence:
-            norm_item = self._normalize_text(item)
-            
-            # Simple word overlap similarity
-            claim_words = set(norm_claim.split())
-            item_words = set(norm_item.split())
-            
-            if len(claim_words) > 0:
-                overlap = len(claim_words & item_words)
-                similarity = overlap / len(claim_words)
-                
-                if similarity > max_similarity:
-                    max_similarity = similarity
-                    best_evidence = item
-        
-        # Make decision based on similarity
-        if max_similarity > 0.7:
-            verdict = "True"
-            confidence = max_similarity
-            reasoning = f"High similarity ({max_similarity:.2%}) with evidence: '{best_evidence[:150]}...'"
-        elif max_similarity > 0.3:
-            verdict = "Unverifiable"
-            confidence = 0.5
-            reasoning = f"Partial match ({max_similarity:.2%}) with evidence. Cannot confirm or deny with certainty."
+        if "Groq API key not found" in error_msg:
+            reasoning = (
+                "LLM verification model is currently unavailable because GROQ_API_KEY is not configured. "
+                "Please configure your GROQ_API_KEY in the environment or backend/.env file to enable automated LLM verification."
+            )
         else:
-            verdict = "Unverifiable"
-            confidence = 0.3
-            reasoning = f"Low similarity ({max_similarity:.2%}) with available evidence. Claim cannot be verified."
+            reasoning = (
+                f"LLM verification model is currently unavailable ({error_msg}). "
+                "Please check your API key and connection."
+            )
         
         return Verdict(
-            verdict=verdict,
-            confidence=confidence,
-            reasoning=f"{reasoning} (Note: LLM unavailable, using rule-based verification)"
+            verdict="Unverifiable",
+            confidence=0.0,
+            reasoning=reasoning
         )
 
 llm_service = LLMService()

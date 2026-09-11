@@ -60,17 +60,19 @@ class QueryCache:
             'claim': claim[:100]  # Store truncated claim for debugging
         }
         logger.info(f"Cached result for key: {key[:8]}...")
+        self.save_to_disk()
     
     def clear(self):
         """Clear all cache"""
         self.cache.clear()
+        self.save_to_disk()
         logger.info("Cache cleared")
     
     def save_to_disk(self):
         """Persist cache to disk"""
         try:
             CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
-            with open(CACHE_PATH, 'w') as f:
+            with open(CACHE_PATH, 'w', encoding='utf-8') as f:
                 json.dump(self.cache, f, indent=2)
             logger.info(f"Cache saved to {CACHE_PATH}")
         except Exception as e:
@@ -80,7 +82,7 @@ class QueryCache:
         """Load cache from disk"""
         try:
             if CACHE_PATH.exists():
-                with open(CACHE_PATH, 'r') as f:
+                with open(CACHE_PATH, 'r', encoding='utf-8') as f:
                     self.cache = json.load(f)
                 logger.info(f"Cache loaded from {CACHE_PATH} ({len(self.cache)} entries)")
         except Exception as e:

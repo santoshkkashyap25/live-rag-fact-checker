@@ -7,7 +7,7 @@ import {
   BarChart2,
   Clock,
   CheckCircle2,
-  Database,
+  Globe,
   Trash2,
   RefreshCw,
   TrendingUp,
@@ -374,37 +374,33 @@ export default function AnalyticsPage() {
               {/* Database & Cache Admins */}
               <section className={styles.systemSection}>
                 
-                {/* Database Info Card */}
+                {/* Real-Time Web Intelligence Info Card */}
                 <div className={styles.systemCard}>
                   <div className={styles.systemHeader}>
-                    <Database size={20} className={styles.systemIcon} />
-                    <h3>Knowledge Base Database</h3>
+                    <Globe size={20} className={styles.systemIcon} style={{ color: "#3b82f6" }} />
+                    <h3>Web Intelligence Engine</h3>
                   </div>
                   <div className={styles.systemInfoGrid}>
                     <div className={styles.infoRow}>
                       <span>Status</span>
-                      <strong className={styles.statusOnline}>{db?.status === "loaded" ? "Online / Loaded" : "Offline"}</strong>
+                      <strong className={styles.statusOnline}>Online / Active</strong>
                     </div>
-                    {db?.status === "loaded" && (
-                      <>
-                        <div className={styles.infoRow}>
-                          <span>Indexed Facts</span>
-                          <strong>{db.total_facts} records</strong>
-                        </div>
-                        <div className={styles.infoRow}>
-                          <span>Embedding Dimensions</span>
-                          <strong>{db.embedding_dim} dimensions</strong>
-                        </div>
-                        <div className={styles.infoRow}>
-                          <span>Vector Index Type</span>
-                          <strong>{db.index_type}</strong>
-                        </div>
-                        <div className={styles.infoRow}>
-                          <span>Metadata Attributes</span>
-                          <strong>{db.has_metadata ? "Enabled" : "Disabled"}</strong>
-                        </div>
-                      </>
-                    )}
+                    <div className={styles.infoRow}>
+                      <span>Search Providers</span>
+                      <strong>DuckDuckGo & Wikipedia</strong>
+                    </div>
+                    <div className={styles.infoRow}>
+                      <span>Coverage</span>
+                      <strong>Live Internet (Real-Time)</strong>
+                    </div>
+                    <div className={styles.infoRow}>
+                      <span>Re-ranker</span>
+                      <strong>Cross-Encoder (MS-Marco)</strong>
+                    </div>
+                    <div className={styles.infoRow}>
+                      <span>Citations & URLs</span>
+                      <strong>Enabled</strong>
+                    </div>
                   </div>
                 </div>
 
@@ -446,7 +442,7 @@ export default function AnalyticsPage() {
 
       {/* Footer */}
       <footer className={styles.footer}>
-        <p>© 2026 FactGuard AI. Powered by RAG with FAISS, BM25 & Mistral LLM.</p>
+        <p>© 2026 FactGuard AI. Powered by Real-Time Web Search (DuckDuckGo + Wikipedia) & Groq / Llama-3 LLM.</p>
       </footer>
     </div>
   );

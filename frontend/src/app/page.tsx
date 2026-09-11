@@ -10,16 +10,16 @@ import {
   Trash2, 
   Clock, 
   Cpu, 
-  Database, 
+  Globe, 
   ChevronDown, 
   ChevronUp, 
   Sparkles,
-  TrendingUp,
-  RefreshCw
+  RefreshCw,
+  ExternalLink
 } from "lucide-react";
 import styles from "./page.module.css";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8001";
 
 interface PerformanceDetails {
   extraction_time: string;
@@ -36,6 +36,8 @@ interface VerifyResponse {
   reasoning: string;
   evidence: string[];
   evidence_scores: string[];
+  evidence_sources?: string[];
+  evidence_urls?: string[];
   performance: PerformanceDetails;
 }
 
@@ -62,10 +64,10 @@ export default function VerifyPage() {
       } catch (err) {
         // Fallback examples
         setExamples([
-          "India met 241 GW peak power demand on 9th June 2025 with zero shortage.",
-          "The Ayushman Bharat PM-JAY provides health insurance of up to ₹5 lakh per family per year.",
-          "IREDA was granted Navratna status by the Government of India.",
           "India has 28 states and 8 union territories.",
+          "The Great Wall of China is visible from the Moon.",
+          "Bananas are naturally radioactive due to potassium-40.",
+          "Lightning never strikes the same place twice.",
           "The Digital India initiative was launched in 2015."
         ]);
       }
@@ -173,9 +175,9 @@ export default function VerifyPage() {
       {/* Main Content */}
       <main className={styles.main}>
         <div className={styles.heroSection}>
-          <h1 className={styles.title}>LLM-Powered Fact Verification</h1>
+          <h1 className={styles.title}>Real-Time Web Intelligence & Fact Verification</h1>
           <p className={styles.subtitle}>
-            Enter news headlines or statements to verify their factual accuracy against our trusted knowledge base.
+            Enter any news headline, viral claim, or factual statement to verify its accuracy against real-time internet intelligence (DuckDuckGo + Wikipedia).
           </p>
         </div>
 
@@ -204,7 +206,7 @@ export default function VerifyPage() {
               <textarea
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
-                placeholder="Enter a statement or news headline to verify..."
+                placeholder="Enter any claim or statement to verify against live internet evidence..."
                 maxLength={1000}
                 className={styles.textarea}
                 rows={4}
@@ -244,7 +246,7 @@ export default function VerifyPage() {
             <div className={styles.loaderSpinner}>
               <RefreshCw className={styles.spinIcon} />
             </div>
-            <h3 className={styles.loadingTitle}>Processing Fact-Check</h3>
+            <h3 className={styles.loadingTitle}>Processing Live Fact-Check</h3>
             <div className={styles.stepsTimeline}>
               <div className={`${styles.step} ${loadingStep >= 0 ? styles.stepActive : ""}`}>
                 <div className={styles.stepDot}>1</div>
@@ -252,11 +254,11 @@ export default function VerifyPage() {
               </div>
               <div className={`${styles.step} ${loadingStep >= 1 ? styles.stepActive : ""}`}>
                 <div className={styles.stepDot}>2</div>
-                <div className={styles.stepLabel}>Searching knowledge base</div>
+                <div className={styles.stepLabel}>Searching the web in real-time</div>
               </div>
               <div className={`${styles.step} ${loadingStep >= 2 ? styles.stepActive : ""}`}>
                 <div className={styles.stepDot}>3</div>
-                <div className={styles.stepLabel}>Generating verdict & reasoning</div>
+                <div className={styles.stepLabel}>Evaluating verdict & reasoning</div>
               </div>
             </div>
           </section>
@@ -283,7 +285,7 @@ export default function VerifyPage() {
                 <div className={styles.verdictHeader}>
                   {getVerdictIcon(result.verdict)}
                   <div>
-                    <span className={styles.verdictLabel}>Verdict Verdict</span>
+                    <span className={styles.verdictLabel}>Verdict</span>
                     <h2 className={styles.verdictTitle}>{result.verdict}</h2>
                   </div>
                 </div>
@@ -327,16 +329,16 @@ export default function VerifyPage() {
                   <h4 className={styles.performanceTitle}>Pipeline Breakdown</h4>
                   <div className={styles.perfGrid}>
                     <div className={styles.perfItem}>
-                      <Database size={16} className={styles.perfIcon} />
+                      <Search size={16} className={styles.perfIcon} />
                       <div>
-                        <span>Extraction</span>
+                        <span>Claim Parsing</span>
                         <strong>{result.performance.extraction_time}</strong>
                       </div>
                     </div>
                     <div className={styles.perfItem}>
-                      <Clock size={16} className={styles.perfIcon} />
+                      <Globe size={16} className={styles.perfIcon} />
                       <div>
-                        <span>Retrieval</span>
+                        <span>Live Search</span>
                         <strong>{result.performance.retrieval_time}</strong>
                       </div>
                     </div>
@@ -355,15 +357,17 @@ export default function VerifyPage() {
 
             {/* Evidence List Card */}
             <div className={`${styles.resultCard} ${styles.evidenceCard}`}>
-              <h3 className={styles.sectionTitle}>Retrieved Evidence</h3>
+              <h3 className={styles.sectionTitle}>Live Web Evidence</h3>
               <p className={styles.evidenceSubtitle}>
-                Key facts extracted from our database using hybrid search (FAISS + BM25) and prioritized via re-ranking.
+                Key evidence retrieved dynamically from DuckDuckGo & Wikipedia and prioritized via Cross-Encoder re-ranking.
               </p>
 
               <div className={styles.evidenceList}>
                 {result.evidence.map((ev, index) => {
                   const isExpanded = expandedEvidence === index;
                   const score = parseFloat(result.evidence_scores[index] || "0");
+                  const source = result.evidence_sources?.[index] || "Web";
+                  const url = result.evidence_urls?.[index];
                   
                   return (
                     <div 
@@ -377,6 +381,9 @@ export default function VerifyPage() {
                       >
                         <div className={styles.evidenceTitleArea}>
                           <span className={styles.evidenceIndex}>#{index + 1}</span>
+                          <span className={styles.sourceBadge}>
+                            <Globe size={11} /> {source}
+                          </span>
                           <span className={styles.evidencePreview}>
                             {ev.length > 80 ? `${ev.substring(0, 80)}...` : ev}
                           </span>
@@ -392,6 +399,18 @@ export default function VerifyPage() {
                       {isExpanded && (
                         <div className={styles.evidenceBody}>
                           <p className={styles.evidenceFullText}>{ev}</p>
+                          {url && (
+                            <a
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={styles.evidenceSourceLink}
+                            >
+                              <Globe size={13} />
+                              <span>Read Source Article</span>
+                              <ExternalLink size={12} />
+                            </a>
+                          )}
                         </div>
                       )}
                     </div>
@@ -406,7 +425,7 @@ export default function VerifyPage() {
 
       {/* Footer */}
       <footer className={styles.footer}>
-        <p>© 2026 FactGuard AI. Powered by RAG with FAISS, BM25 & Mistral LLM.</p>
+        <p>© 2026 FactGuard AI. Powered by Real-Time Web Search (DuckDuckGo + Wikipedia) & Groq / Llama-3 LLM.</p>
       </footer>
     </div>
   );
