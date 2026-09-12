@@ -154,6 +154,15 @@ export default function VerifyPage() {
     }
   };
 
+  const formatRelevance = (score: number) => {
+    if (score >= 0 && score <= 1) {
+      return `${Math.round(score * 100)}%`;
+    }
+    // Cross-encoder logit conversion via sigmoid
+    const sigmoid = 1 / (1 + Math.exp(-score));
+    return `${Math.min(100, Math.max(1, Math.round(sigmoid * 100)))}%`;
+  };
+
   return (
     <div className={styles.container}>
       {/* Header */}
@@ -390,7 +399,7 @@ export default function VerifyPage() {
                         </div>
                         <div className={styles.evidenceHeaderRight}>
                           <span className={styles.evidenceScore}>
-                            Relevance: {Math.round(score * 100)}%
+                            Relevance: {formatRelevance(score)}
                           </span>
                           {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                         </div>

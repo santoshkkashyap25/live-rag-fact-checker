@@ -15,7 +15,10 @@ class ReRanker:
     def _initialize_model(self):
         if self.model is None:
             logger.info(f"Loading CrossEncoder model: {CROSS_ENCODER_MODEL}")
-            self.model = CrossEncoder(CROSS_ENCODER_MODEL, max_length=512)
+            try:
+                self.model = CrossEncoder(CROSS_ENCODER_MODEL, max_length=512, local_files_only=True)
+            except Exception:
+                self.model = CrossEncoder(CROSS_ENCODER_MODEL, max_length=512)
             logger.info("CrossEncoder loaded successfully.")
             
     def rerank(self, query: str, documents: List[str], top_k: int) -> List[Tuple[str, float]]:

@@ -29,16 +29,17 @@ class LLMService:
         logger.info("LLM service initialized (client will be lazy-loaded on request)")
 
     def _initialize_client(self):
-        if self.client is None:
-            if "GROQ_API_KEY" not in os.environ:
-                raise ValueError(
-                    "Groq API key not found. "
-                    "Set GROQ_API_KEY in environment or .env file."
-                )
-            logger.info("Initializing Groq LLM client...")
-            self.client = Groq(
-                api_key=os.environ.get("GROQ_API_KEY")
+        load_dotenv(override=True)
+        api_key = os.environ.get("GROQ_API_KEY", "").strip()
+        if not api_key:
+            raise ValueError(
+                "Groq API key not found. "
+                "Set GROQ_API_KEY in backend/.env to enable automated LLM verification."
             )
+        if self.client is None or getattr(self, "_last_api_key", None) != api_key:
+            logger.info("Initializing Groq LLM client...")
+            self.client = Groq(api_key=api_key)
+            self._last_api_key = api_key
     
     def _create_enhanced_prompt(self) -> str:
         """Create enhanced prompt with few-shot examples"""
@@ -83,37 +84,8 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
         )
 
     
-    def _normalize_text(self, text: str) -> str:
-        """Normalize text for comparison"""
-        text = text.lower()
-        # Remove currency symbols and commas
-        text = re.sub(r'rs\.|₹|,', '', text)
-        # Standardize number formats
-        text = re.sub(r'(\d+)\s*(crore|cr|crores|billion|million)', r'\1 \2', text)
-        text = re.sub(r'(\d+)\s*lakh', r'\1 lakh', text)
-        # Remove punctuation
-        text = re.sub(r'[^\w\s]', ' ', text)
-        # Normalize common entities
-        text = re.sub(r'\bireda\b', 'india renewable energy development agency', text)
-        # Remove extra spaces
-        text = ' '.join(text.split())
-        return text
-    
-    def _check_exact_match(self, claim: str, evidence: List[str]) -> Tuple[bool, List[str]]:
-        """Check for normalized exact matches"""
-        norm_claim = self._normalize_text(claim)
-        matches = []
-        
-        for item in evidence:
-            norm_item = self._normalize_text(item)
-            # Check if normalized claim is substring of evidence
-            if norm_claim in norm_item:
-                matches.append(item)
-        
-        return (len(matches) > 0, matches)
-    
     def get_verdict(self, claim: str, evidence: List[str]) -> Verdict:
-        """Get fact-checking verdict with caching and robust error handling"""
+        """Get fact-checking verdict using LLM with caching and robust error handling"""
         
         # Check cache first
         cache_key = f"{claim}|{str(sorted(evidence))}"
@@ -122,45 +94,37 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
             logger.info("Returning cached verdict")
             return Verdict(**cached_result)
         
-        logger.info(f"Processing claim: {claim[:100]}...")
+        logger.info(f"Processing claim with LLM: {claim[:100]}...")
         
-        # Quick exact match check
-        has_match, matches = self._check_exact_match(claim, evidence)
-        
-        if has_match:
-            logger.info(f"Exact match found in {len(matches)} evidence items")
-            result = Verdict(
-                verdict="True",
-                confidence=0.95,
-                reasoning=f"The claim directly matches verified evidence: '{matches[0][:200]}...'"
-            )
-            result_data = result.model_dump() if hasattr(result, "model_dump") else result.dict()
-            query_cache.set(cache_key, result_data)
-            return result
-        
-        # Check for clear contradictions
-        contradiction_result = self._check_contradiction(claim, evidence)
-        if contradiction_result:
-            logger.info("Clear contradiction detected")
-            contra_data = contradiction_result.model_dump() if hasattr(contradiction_result, "model_dump") else contradiction_result.dict()
-            query_cache.set(cache_key, contra_data)
-            return contradiction_result
-        
-        # Use LLM for nuanced verification
+        # Use LLM for accurate, context-aware verification
         evidence_str = "\n".join([f"{i+1}. {e}" for i, e in enumerate(evidence)])
+        candidate_models = list(dict.fromkeys([GROQ_MODEL, "groq/compound-mini", "openai/gpt-oss-20b", "llama-3.1-8b-instant"]))
+        
+        last_error = None
         try:
             self._initialize_client()
-            # Prepare messages
             user_message = self.prompt.format(claim=claim, evidence=evidence_str)
             messages = [{"role": "user", "content": user_message}]
             
-            response = self.client.chat.completions.create(
-                model=GROQ_MODEL,
-                messages=messages,
-                max_tokens=512,
-                temperature=0.2,
-                response_format={"type": "json_object"}
-            )
+            response = None
+            for model_name in candidate_models:
+                try:
+                    logger.info(f"Querying Groq with model: {model_name}...")
+                    response = self.client.chat.completions.create(
+                        model=model_name,
+                        messages=messages,
+                        max_tokens=512,
+                        temperature=0.2,
+                        response_format={"type": "json_object"}
+                    )
+                    if response:
+                        break
+                except Exception as model_err:
+                    logger.warning(f"Groq model '{model_name}' failed: {model_err}")
+                    last_error = model_err
+            
+            if not response:
+                raise last_error or RuntimeError("No Groq models available.")
             
             # Parse JSON output
             content = response.choices[0].message.content
@@ -177,53 +141,25 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
             query_cache.set(cache_key, result_data)
             
             return result
-
-            
         except Exception as e:
             logger.error(f"LLM service error: {e}")
-            
-            # User-friendly message when LLM is unavailable
             return self._fallback_verification(claim, evidence, str(e))
     
-    def _check_contradiction(self, claim: str, evidence: List[str]) -> Optional[Verdict]:
-        """Check for obvious contradictions (e.g., different countries/entities)"""
-        norm_claim = self._normalize_text(claim)
-        
-        # Extract key entities from claim (simple approach)
-        claim_entities = set(re.findall(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b', claim))
-        
-        for item in evidence:
-            norm_item = self._normalize_text(item)
-            item_entities = set(re.findall(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b', item))
-            
-            # Check if claim mentions one country but evidence mentions another
-            countries = ['india', 'china', 'usa', 'england', 'france', 'germany', 'japan']
-            claim_countries = [c for c in countries if c in norm_claim]
-            item_countries = [c for c in countries if c in norm_item]
-            
-            if claim_countries and item_countries:
-                if claim_countries[0] != item_countries[0]:
-                    return Verdict(
-                        verdict="False",
-                        confidence=0.90,
-                        reasoning=f"The claim refers to {claim_countries[0].title()} but the evidence discusses {item_countries[0].title()}. This is a clear contradiction."
-                    )
-        
-        return None
     
     def _fallback_verification(self, claim: str, evidence: List[str], error_msg: str) -> Verdict:
         """Fallback response when LLM model is unavailable"""
         logger.info(f"LLM verification unavailable: {error_msg}")
         
-        if "Groq API key not found" in error_msg:
+        has_key = bool(os.environ.get("GROQ_API_KEY", "").strip())
+        if not has_key or "Groq API key not found" in error_msg:
             reasoning = (
-                "LLM verification model is currently unavailable because GROQ_API_KEY is not configured. "
-                "Please configure your GROQ_API_KEY in the environment or backend/.env file to enable automated LLM verification."
+                "LLM verification model is currently unavailable because GROQ_API_KEY is not configured in backend/.env. "
+                "Add your free Groq API key (from https://console.groq.com) to backend/.env as GROQ_API_KEY=gsk_... to enable automatic AI verdicts."
             )
         else:
             reasoning = (
                 f"LLM verification model is currently unavailable ({error_msg}). "
-                "Please check your API key and connection."
+                "Please verify your GROQ_API_KEY in backend/.env and check your internet connection."
             )
         
         return Verdict(

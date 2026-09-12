@@ -14,7 +14,6 @@ BASE_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE_DIR))
 
 from pipeline import run_fact_checking_pipeline
-from core.vector_db import vector_db
 
 def main():
     parser = argparse.ArgumentParser(

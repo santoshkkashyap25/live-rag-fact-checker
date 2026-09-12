@@ -22,7 +22,7 @@ CACHE_PATH = DATA_DIR / "query_cache.json"
 CROSS_ENCODER_MODEL = 'cross-encoder/ms-marco-MiniLM-L6-v2' # For re-ranking evidence
 
 # LLM Generation Model
-GROQ_MODEL = "llama-3.1-8b-instant"  # Super fast Llama 3 on Groq
+GROQ_MODEL = os.getenv("GROQ_MODEL", "groq/compound-mini")  # High-speed LLM on Groq
 SPACY_MODEL = "en_core_web_md"
 
 # --- Web Search & Evidence Parameters ---
