@@ -6,10 +6,13 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.141+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Next.js](https://img.shields.io/badge/Next.js-16.2+-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://factguard-frontend-qo5v.onrender.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 **An open-source, real-time fact-checking system that verifies arbitrary claims against live web intelligence (DuckDuckGo + Wikipedia), re-ranks evidence with BM25Okapi relevance scoring, and generates verifiable verdicts using LLM reasoning.**
+
+🌐 **[Live Demo: factguard-frontend-qo5v.onrender.com](https://factguard-frontend-qo5v.onrender.com/)**
 
 [Features](#-key-features) • [Quick Start](#-quick-start) • [CLI Tool](#-cli-fact-checker) • [Scope & Limitations](#️-system-scope--honest-limitations) • [Contributing](#-contributing) • [License](#-license)
 
@@ -42,7 +45,11 @@ Information moves faster than human verification pipelines can keep up. Most aut
 
 ## 🚀 Quick Start
 
-### Option A: Docker Compose (Recommended)
+### 🌐 Live Cloud Demo
+Test the live application directly in your browser without local installation:  
+👉 **[https://factguard-frontend-qo5v.onrender.com/](https://factguard-frontend-qo5v.onrender.com/)**
+
+### Option A: Docker Compose (Local)
 
 The easiest way to run the entire stack locally with all dependencies pre-configured:
 
