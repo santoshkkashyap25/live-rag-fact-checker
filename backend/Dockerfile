@@ -20,16 +20,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Install PyTorch CPU-only first for 3x smaller image and reliable fast downloads
-RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
-
 # Install Python requirements
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Pre-download and cache NLP models during build to ensure instant container boot
+# Pre-download and cache SpaCy linguistic model
 RUN python -c "import spacy; spacy.load('en_core_web_sm')"
-RUN python -c "from sentence_transformers import CrossEncoder; CrossEncoder('cross-encoder/ms-marco-MiniLM-L6-v2', max_length=512)"
 
 # Copy application source code
 COPY . .

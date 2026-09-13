@@ -18,8 +18,8 @@ DATA_DIR = BASE_DIR / "data"
 METRICS_PATH = BASE_DIR / "metrics.jsonl"
 CACHE_PATH = DATA_DIR / "query_cache.json"
 
-# --- Models ---
-CROSS_ENCODER_MODEL = 'cross-encoder/ms-marco-MiniLM-L6-v2' # For re-ranking evidence
+USE_CROSS_ENCODER = os.getenv("USE_CROSS_ENCODER", "false").lower() == "true"
+CROSS_ENCODER_MODEL = 'cross-encoder/ms-marco-MiniLM-L6-v2' # Optional heavy re-ranker
 
 # LLM Generation Model
 GROQ_MODEL = os.getenv("GROQ_MODEL", "groq/compound-mini")  # High-speed LLM on Groq
