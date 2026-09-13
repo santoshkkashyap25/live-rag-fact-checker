@@ -1,0 +1,42 @@
+services:
+  # -------------------------------------------------------------
+  # Backend API Service (FastAPI + SpaCy + Web Search + Groq)
+  # -------------------------------------------------------------
+  - type: web
+    name: factguard-backend
+    runtime: docker
+    dockerfilePath: backend/Dockerfile
+    dockerContext: backend
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: groq/compound-mini
+
+  # -------------------------------------------------------------
+  # Frontend UI Service (Next.js Standalone React Application)
+  # -------------------------------------------------------------
+  - type: web
+    name: factguard-frontend
+    runtime: docker
+    dockerfilePath: frontend/Dockerfile
+    dockerContext: frontend
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: BACKEND_URL
+        fromService:
+          type: web
+          name: factguard-backend
+          property: host
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          type: web
+          name: factguard-backend
+          property: host

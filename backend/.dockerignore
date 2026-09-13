@@ -1,0 +1,13 @@
+.venv
+venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.local
+metrics.jsonl
+app.log
+data/query_cache.json
+.git
+.gitignore

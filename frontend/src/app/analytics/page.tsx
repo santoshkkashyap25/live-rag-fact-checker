@@ -8,7 +8,6 @@ import {
   Clock,
   CheckCircle2,
   Globe,
-  Trash2,
   RefreshCw,
   TrendingUp,
   Award,
@@ -30,7 +29,7 @@ import {
 } from "recharts";
 import styles from "./page.module.css";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = "";
 
 interface VerdictDistribution {
   True: number;
@@ -75,8 +74,6 @@ export default function AnalyticsPage() {
   const [stats, setStats] = useState<AnalyticsStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [clearingCache, setClearingCache] = useState(false);
-  const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
   const fetchStats = async () => {
     setLoading(true);
@@ -98,27 +95,6 @@ export default function AnalyticsPage() {
   useEffect(() => {
     fetchStats();
   }, []);
-
-  const handleClearCache = async () => {
-    if (!confirm("Are you sure you want to clear the entire query cache?")) return;
-    setClearingCache(true);
-    setSuccessMsg(null);
-    try {
-      const res = await fetch(`${API_BASE}/api/cache/clear`, {
-        method: "POST",
-      });
-      if (!res.ok) throw new Error("Failed to clear cache");
-      
-      setSuccessMsg("Cache cleared successfully!");
-      setTimeout(() => setSuccessMsg(null), 3000);
-      // Refresh statistics
-      await fetchStats();
-    } catch (err: any) {
-      alert(err.message || "Error clearing cache.");
-    } finally {
-      setClearingCache(false);
-    }
-  };
 
   if (loading && !stats) {
     return (
@@ -194,7 +170,7 @@ export default function AnalyticsPage() {
           <div>
             <h1 className={styles.title}>System Analytics</h1>
             <p className={styles.subtitle}>
-              Monitor real-time pipeline performance, accuracy ratios, database state, and cache efficiency.
+              Monitor real-time pipeline performance, accuracy ratios, and live web intelligence state.
             </p>
           </div>
           <button onClick={fetchStats} className={styles.refreshBtn} title="Refresh Statistics" disabled={loading}>
@@ -259,19 +235,6 @@ export default function AnalyticsPage() {
                       {summary ? Math.round(summary.avg_confidence * 100) : 0}%
                     </h2>
                     <span className={styles.statSub}>System verification assurance</span>
-                  </div>
-                </div>
-
-                <div className={styles.statCard}>
-                  <div className={styles.statIconArea} style={{ backgroundColor: "rgba(245, 158, 11, 0.1)" }}>
-                    <CheckCircle2 className={styles.statIcon} style={{ color: "#f59e0b" }} />
-                  </div>
-                  <div className={styles.statInfo}>
-                    <span className={styles.statLabel}>Cache Hit Rate</span>
-                    <h2 className={styles.statValue}>
-                      {summary ? (summary.cache_hit_rate * 100).toFixed(1) : 0}%
-                    </h2>
-                    <span className={styles.statSub}>Fast query responses</span>
                   </div>
                 </div>
 
@@ -401,26 +364,6 @@ export default function AnalyticsPage() {
                       <span>Citations & URLs</span>
                       <strong>Enabled</strong>
                     </div>
-                  </div>
-                </div>
-
-                {/* Cache Control Card */}
-                <div className={styles.systemCard}>
-                  <div className={styles.systemHeader}>
-                    <Trash2 size={20} className={styles.systemIcon} style={{ color: "#ec4899" }} />
-                    <h3>Query Cache Manager</h3>
-                  </div>
-
-                  <div className={styles.cacheControlActions} style={{ marginTop: "1rem" }}>
-                    <button
-                      onClick={handleClearCache}
-                      disabled={clearingCache}
-                      className={styles.clearCacheBtn}
-                    >
-                      <Trash2 size={16} />
-                      <span>{clearingCache ? "Clearing..." : "Clear Cache"}</span>
-                    </button>
-                    {successMsg && <span className={styles.successText}>{successMsg}</span>}
                   </div>
                 </div>
 

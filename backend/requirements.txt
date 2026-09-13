@@ -10,3 +10,4 @@ groq
 beautifulsoup4
 requests
 pandas
+litellm>=1.40.0

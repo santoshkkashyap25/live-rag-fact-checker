@@ -1,0 +1,33 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: factguard-backend:latest
+    container_name: factguard-backend
+    ports:
+      - "127.0.0.1:${BACKEND_PORT:-8000}:8000"
+    env_file:
+      - ./backend/.env
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+    image: factguard-frontend:latest
+    container_name: factguard-frontend
+    ports:
+      - "127.0.0.1:${FRONTEND_PORT:-3000}:3000"
+    environment:
+      - PORT=3000
+      - BACKEND_URL=http://backend:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+

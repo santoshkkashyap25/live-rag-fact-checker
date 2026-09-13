@@ -331,17 +331,13 @@
   font-weight: 500;
 }
 
-/* Database & Cache Panel */
+/* System Intelligence Panel */
 .systemSection {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-@media (max-width: 750px) {
-  .systemSection {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: 1fr;
+  max-width: 650px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .systemCard {

@@ -18,13 +18,15 @@ class QueryCache:
         self.ttl_seconds = CACHE_TTL_SECONDS
         self.load_from_disk()
     
-    def get_cache_key(self, claim: str) -> str:
-        """Generate cache key from claim"""
-        return hashlib.md5(claim.lower().strip().encode()).hexdigest()
+    def get_cache_key(self, claim: str, user_id: str = "default") -> str:
+        """Generate cache key from claim and user_id"""
+        clean_user = (user_id or "default").strip()
+        clean_claim = claim.lower().strip()
+        return hashlib.md5(f"{clean_user}:{clean_claim}".encode()).hexdigest()
     
-    def get(self, claim: str) -> Optional[Dict[str, Any]]:
-        """Retrieve cached result if exists and not expired"""
-        key = self.get_cache_key(claim)
+    def get(self, claim: str, user_id: str = "default") -> Optional[Dict[str, Any]]:
+        """Retrieve cached result if exists and not expired for the given user"""
+        key = self.get_cache_key(claim, user_id)
         
         if key not in self.cache:
             return None
@@ -34,16 +36,16 @@ class QueryCache:
         
         # Check if expired
         if datetime.now() - cached_time > timedelta(seconds=self.ttl_seconds):
-            logger.info(f"Cache expired for key: {key[:8]}...")
+            logger.info(f"Cache expired for user '{user_id}' key: {key[:8]}...")
             del self.cache[key]
             return None
         
-        logger.info(f"Cache hit for key: {key[:8]}...")
+        logger.info(f"Cache hit for user '{user_id}' key: {key[:8]}...")
         return cached_item['result']
     
-    def set(self, claim: str, result: Dict[str, Any]):
-        """Cache result with timestamp"""
-        key = self.get_cache_key(claim)
+    def set(self, claim: str, result: Dict[str, Any], user_id: str = "default"):
+        """Cache result with timestamp and user attribution"""
+        key = self.get_cache_key(claim, user_id)
         
         # Evict oldest if at capacity
         if len(self.cache) >= self.max_size:
@@ -57,16 +59,27 @@ class QueryCache:
         self.cache[key] = {
             'result': result,
             'timestamp': datetime.now().isoformat(),
-            'claim': claim[:100]  # Store truncated claim for debugging
+            'claim': claim[:100],  # Store truncated claim for debugging
+            'user_id': user_id or "default"
         }
-        logger.info(f"Cached result for key: {key[:8]}...")
+        logger.info(f"Cached result for user '{user_id}' key: {key[:8]}...")
         self.save_to_disk()
     
-    def clear(self):
-        """Clear all cache"""
-        self.cache.clear()
+    def clear(self, user_id: Optional[str] = None):
+        """Clear cache for a specific user, or all cache if user_id is None"""
+        if user_id:
+            clean_user = user_id.strip()
+            keys_to_delete = [
+                k for k, v in self.cache.items()
+                if v.get('user_id') == clean_user or k == self.get_cache_key(v.get('claim', ''), clean_user)
+            ]
+            for k in keys_to_delete:
+                del self.cache[k]
+            logger.info(f"Cache cleared for user '{clean_user}' ({len(keys_to_delete)} entries removed)")
+        else:
+            self.cache.clear()
+            logger.info("All cache entries cleared")
         self.save_to_disk()
-        logger.info("Cache cleared")
     
     def save_to_disk(self):
         """Persist cache to disk"""

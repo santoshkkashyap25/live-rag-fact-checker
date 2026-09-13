@@ -1,7 +1,7 @@
 # pipeline.py
 import logging
 import time
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 from core.claim_extractor import claim_extractor
 from core.web_search import web_search
 from core.llm_service import llm_service
@@ -13,19 +13,30 @@ from config import TOP_K_RETRIEVE, TOP_K_RERANK_RESULTS, CACHE_ENABLED
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-def run_fact_checking_pipeline(raw_text: str, use_cache: bool = True) -> Dict[str, Any]:
+def run_fact_checking_pipeline(
+    raw_text: str, 
+    user_id: str = "default_user", 
+    use_cache: bool = True,
+    llm_provider: Optional[str] = None,
+    llm_api_key: Optional[str] = None,
+    llm_model: Optional[str] = None
+) -> Dict[str, Any]:
     """
-    Enhanced Real-Time Fact-Checking Pipeline with Web Search (DuckDuckGo + Wikipedia).
+    Enhanced Real-Time Fact-Checking Pipeline with Web Search and Multi-Provider LLM Verification.
     
     Args:
         raw_text: Input text to fact-check
+        user_id: Unique client user identifier for isolated per-user caching
         use_cache: Whether to use cached results
+        llm_provider: Optional user LLM provider ('groq', 'openai', 'gemini', 'claude')
+        llm_api_key: Optional user API key
+        llm_model: Optional user chosen model
     
     Returns:
-        Dictionary with verification results, real-time citations, and timing metadata
+        Dictionary with verification results, real-time citations, timing metadata, engine used, and is_cache_hit flag
     """
     logger.info("=" * 60)
-    logger.info("Fact-Checking Pipeline started (Real-Time Web Search)")
+    logger.info(f"Fact-Checking Pipeline started (User: {user_id})")
     logger.info(f"Input: {raw_text[:100]}...")
     
     start_time = time.time()
@@ -40,12 +51,13 @@ def run_fact_checking_pipeline(raw_text: str, use_cache: bool = True) -> Dict[st
         
         # Check cache if enabled
         if use_cache and CACHE_ENABLED:
-            cached = query_cache.get(claim)
+            cached = query_cache.get(claim, user_id=user_id)
             if cached:
                 total_time = time.time() - start_time
-                logger.info(f"Cache hit for claim '{claim}'. Returning cached result in {total_time:.3f}s")
+                logger.info(f"Cache hit for user '{user_id}' claim '{claim}'. Returning cached result in {total_time:.3f}s")
                 cached_copy = dict(cached)
                 cached_copy["input_text"] = raw_text
+                cached_copy["is_cache_hit"] = True
                 cached_copy["performance"] = dict(cached.get("performance", {}))
                 cached_copy["performance"]["total_time"] = f"{total_time:.2f}s"
                 
@@ -122,10 +134,16 @@ def run_fact_checking_pipeline(raw_text: str, use_cache: bool = True) -> Dict[st
         
         # Stage 3: LLM Verification
         llm_start = time.time()
-        verdict_obj = llm_service.get_verdict(claim, evidence_items)
+        verdict_obj = llm_service.get_verdict(
+            claim=claim, 
+            evidence=evidence_items,
+            provider=llm_provider,
+            api_key=llm_api_key,
+            model=llm_model
+        )
         llm_time = time.time() - llm_start
         
-        logger.info(f"[3/3] Verdict generated in {llm_time:.2f}s")
+        logger.info(f"[3/3] Verdict generated in {llm_time:.2f}s [{verdict_obj.provider_used}/{verdict_obj.model_used}]")
         logger.info(f"  Verdict: {verdict_obj.verdict}")
         logger.info(f"  Confidence: {verdict_obj.confidence:.2f}")
         
@@ -158,6 +176,11 @@ def run_fact_checking_pipeline(raw_text: str, use_cache: bool = True) -> Dict[st
             "evidence_scores": [f"{score:.3f}" for score in evidence_scores],
             "evidence_sources": evidence_sources,
             "evidence_urls": evidence_urls,
+            "engine": {
+                "provider": verdict_obj.provider_used or "groq",
+                "model": verdict_obj.model_used or "default"
+            },
+            "is_cache_hit": False,
             "performance": {
                 "extraction_time": f"{extraction_time:.2f}s",
                 "retrieval_time": f"{retrieval_time:.2f}s",
@@ -166,9 +189,9 @@ def run_fact_checking_pipeline(raw_text: str, use_cache: bool = True) -> Dict[st
             }
         }
         
-        # Cache response for future queries
+        # Cache response for future queries (per user)
         if CACHE_ENABLED:
-            query_cache.set(claim, response)
+            query_cache.set(claim, response, user_id=user_id)
 
         logger.info(f"Pipeline completed in {total_time:.2f}s")
         logger.info("=" * 60)

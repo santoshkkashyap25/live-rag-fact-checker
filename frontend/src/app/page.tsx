@@ -15,11 +15,19 @@ import {
   ChevronUp, 
   Sparkles,
   RefreshCw,
-  ExternalLink
+  ExternalLink,
+  Database,
+  Zap,
+  Settings,
+  Layers,
+  ShieldCheck,
+  Terminal,
+  Activity
 } from "lucide-react";
+import LLMSettingsModal, { LLMConfig } from "./components/LLMSettingsModal";
 import styles from "./page.module.css";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = "";
 
 interface PerformanceDetails {
   extraction_time: string;
@@ -38,8 +46,20 @@ interface VerifyResponse {
   evidence_scores: string[];
   evidence_sources?: string[];
   evidence_urls?: string[];
+  engine?: {
+    provider: string;
+    model: string;
+  };
+  is_cache_hit?: boolean;
   performance: PerformanceDetails;
 }
+
+const DEFAULT_LLM_CONFIG: LLMConfig = {
+  provider: "groq",
+  apiKey: "",
+  model: "groq/compound-mini",
+  isCustomKey: false
+};
 
 export default function VerifyPage() {
   const [inputText, setInputText] = useState("");
@@ -49,20 +69,102 @@ export default function VerifyPage() {
   const [result, setResult] = useState<VerifyResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [expandedEvidence, setExpandedEvidence] = useState<number | null>(null);
+  const [clearingCache, setClearingCache] = useState(false);
+  const [cacheSuccessMsg, setCacheSuccessMsg] = useState<string | null>(null);
+  const [userId, setUserId] = useState<string>("");
+  const [isCacheHit, setIsCacheHit] = useState(false);
+  const [llmConfig, setLlmConfig] = useState<LLMConfig>(DEFAULT_LLM_CONFIG);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [tickIndex, setTickIndex] = useState(0);
+  const [isWarmingUp, setIsWarmingUp] = useState(false);
+  const [countdown, setCountdown] = useState(0);
 
-  // Fetch examples on mount
+  const pipelineTicks = [
+    "Parsing linguistic dependencies and isolating claim propositions...",
+    "Querying DuckDuckGo live index and Wikipedia encyclopedia...",
+    "Running Cross-Encoder (ms-marco-MiniLM-L6-v2) neural re-ranking...",
+    `Prompting ${llmConfig.provider.toUpperCase()} (${llmConfig.model}) for strict verification...`,
+    "Synthesizing factual verdict, confidence score, and citations..."
+  ];
+
+  // Rotate dynamic telemetry ticker smoothly during verification
   useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (loading) {
+      setTickIndex(0);
+      timer = setInterval(() => {
+        setTickIndex((prev) => (prev + 1) % pipelineTicks.length);
+      }, 1100);
+    }
+    return () => clearInterval(timer);
+  }, [loading, pipelineTicks.length]);
+
+  // Auto-retry countdown for initial backend warming up
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (countdown > 0) {
+      timer = setTimeout(() => {
+        setCountdown((prev) => prev - 1);
+      }, 1000);
+    } else if (countdown === 0 && isWarmingUp && !loading && inputText.trim()) {
+      setIsWarmingUp(false);
+      handleVerify();
+    }
+    return () => clearTimeout(timer);
+  }, [countdown, isWarmingUp, loading, inputText]);
+
+  // Initialize unique client user identifier and saved LLM config
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      let storedId = localStorage.getItem("factguard_user_id");
+      if (!storedId) {
+        storedId = "usr_" + Math.random().toString(36).substring(2, 9) + Date.now().toString(36);
+        localStorage.setItem("factguard_user_id", storedId);
+      }
+      setUserId(storedId);
+
+      try {
+        const savedLlm = localStorage.getItem("factguard_llm_config");
+        if (savedLlm) {
+          const parsed = JSON.parse(savedLlm);
+          // Migrate obsolete default model name
+          if (!parsed.isCustomKey && parsed.provider === "groq" && (parsed.model === "llama-3.3-70b-versatile" || !parsed.model)) {
+            parsed.model = "groq/compound-mini";
+            localStorage.setItem("factguard_llm_config", JSON.stringify(parsed));
+          }
+          setLlmConfig(parsed);
+        }
+      } catch (err) {
+        console.error("Failed to load saved LLM config", err);
+      }
+    }
+  }, []);
+
+  const handleSaveConfig = (newConfig: LLMConfig) => {
+    setLlmConfig(newConfig);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("factguard_llm_config", JSON.stringify(newConfig));
+    }
+  };
+
+  // Fetch examples on mount with subtle retry if backend is still booting
+  useEffect(() => {
+    let cancelled = false;
+    let attempts = 0;
+
     async function fetchExamples() {
       try {
         const res = await fetch(`${API_BASE}/api/examples`);
         if (res.ok) {
           const data = await res.json();
-          setExamples(data.examples);
-        } else {
-          throw new Error("Failed to load");
+          if (!cancelled) setExamples(data.examples);
+          return;
         }
       } catch (err) {
-        // Fallback examples
+        // Backend might still be starting
+      }
+
+      if (!cancelled) {
         setExamples([
           "India has 28 states and 8 union territories.",
           "The Great Wall of China is visible from the Moon.",
@@ -70,9 +172,18 @@ export default function VerifyPage() {
           "Lightning never strikes the same place twice.",
           "The Digital India initiative was launched in 2015."
         ]);
+
+        if (attempts < 5) {
+          attempts++;
+          setTimeout(fetchExamples, 2500);
+        }
       }
     }
+
     fetchExamples();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Simulate loading steps during verify
@@ -91,29 +202,58 @@ export default function VerifyPage() {
     return () => clearInterval(interval);
   }, [loading]);
 
-  const handleVerify = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleVerify = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
     if (!inputText.trim()) return;
 
     setLoading(true);
     setResult(null);
     setError(null);
+    setIsWarmingUp(false);
     setExpandedEvidence(null);
+    setIsCacheHit(false);
 
     try {
       const res = await fetch(`${API_BASE}/api/verify`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: inputText }),
+        headers: { 
+          "Content-Type": "application/json",
+          "X-User-ID": userId || "default_user",
+          "X-LLM-Provider": llmConfig.provider,
+          "X-LLM-API-Key": llmConfig.apiKey || "",
+          "X-LLM-Model": llmConfig.model || "",
+        },
+        body: JSON.stringify({ 
+          text: inputText, 
+          user_id: userId || "default_user",
+          llm_provider: llmConfig.provider,
+          llm_api_key: llmConfig.apiKey || undefined,
+          llm_model: llmConfig.model || undefined
+        }),
       });
 
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
-        throw new Error(errData.detail || "Verification failed. Please try again.");
+        const detailMsg = errData.detail || "Verification failed. Please try again.";
+        const isWarm = 
+          res.status === 503 || 
+          res.status === 502 ||
+          errData.code === "BACKEND_WARMING_UP" ||
+          detailMsg.includes("initializing") || 
+          detailMsg.includes("warming up") || 
+          detailMsg.includes("fetch failed") ||
+          detailMsg.includes("Proxy error");
+
+        if (isWarm) {
+          setIsWarmingUp(true);
+          setCountdown(4);
+        }
+        throw new Error(detailMsg);
       }
 
       const data: VerifyResponse = await res.json();
       setResult(data);
+      setIsCacheHit(!!data.is_cache_hit);
     } catch (err: any) {
       setError(err.message || "An unexpected error occurred.");
     } finally {
@@ -126,6 +266,31 @@ export default function VerifyPage() {
     setResult(null);
     setError(null);
     setExpandedEvidence(null);
+    setIsCacheHit(false);
+  };
+
+  const handleClearCache = async () => {
+    if (!confirm("Are you sure you want to clear your query cache?")) return;
+    setClearingCache(true);
+    setCacheSuccessMsg(null);
+    try {
+      const res = await fetch(`${API_BASE}/api/cache/clear`, {
+        method: "POST",
+        headers: {
+          "X-User-ID": userId || "default_user",
+        },
+      });
+      if (!res.ok) throw new Error("Failed to clear query cache");
+      
+      // Reset cache hit signal immediately on cache clear
+      setIsCacheHit(false);
+      setCacheSuccessMsg("Your cache cleared!");
+      setTimeout(() => setCacheSuccessMsg(null), 3000);
+    } catch (err: any) {
+      alert(err.message || "Error clearing query cache.");
+    } finally {
+      setClearingCache(false);
+    }
   };
 
   const handleExampleClick = (ex: string) => {
@@ -178,6 +343,18 @@ export default function VerifyPage() {
           <Link href="/analytics" className={styles.navLink}>
             Analytics
           </Link>
+          <button
+            type="button"
+            onClick={() => setIsSettingsOpen(true)}
+            className={styles.settingsNavBtn}
+            title="Configure LLM Provider & Custom API Keys"
+          >
+            <Settings size={15} />
+            <span>LLM Settings</span>
+            <span className={`${styles.providerPill} ${llmConfig.isCustomKey ? styles.providerPillCustom : ""}`}>
+              {llmConfig.provider.toUpperCase()} {llmConfig.isCustomKey ? "(BYOK)" : "(Default)"}
+            </span>
+          </button>
         </nav>
       </header>
 
@@ -188,6 +365,27 @@ export default function VerifyPage() {
           <p className={styles.subtitle}>
             Enter any news headline, viral claim, or factual statement to verify its accuracy against real-time internet intelligence (DuckDuckGo + Wikipedia).
           </p>
+        </div>
+
+        {/* Active Engine Bar */}
+        <div className={styles.engineBar}>
+          <div className={styles.engineInfo}>
+            <Cpu size={15} className={styles.engineIcon} />
+            <span className={styles.engineLabel}>Verification Engine:</span>
+            <strong className={styles.engineName}>
+              {llmConfig.provider.toUpperCase()} • {llmConfig.model}
+            </strong>
+            <span className={`${styles.engineBadge} ${llmConfig.isCustomKey ? styles.engineBadgeCustom : ""}`}>
+              {llmConfig.isCustomKey ? "Custom API Key Active" : "Server Default"}
+            </span>
+          </div>
+          <button 
+            type="button" 
+            onClick={() => setIsSettingsOpen(true)}
+            className={styles.engineChangeBtn}
+          >
+            Switch Provider / Add Key →
+          </button>
         </div>
 
         {/* Input Area Card */}
@@ -226,25 +424,61 @@ export default function VerifyPage() {
               </span>
             </div>
 
-            <div className={styles.actionButtons}>
-              <button
-                type="submit"
-                disabled={loading || !inputText.trim()}
-                className={`${styles.btn} ${styles.btnPrimary}`}
-              >
-                <Search size={18} />
-                <span>Verify Statement</span>
-              </button>
-              
-              <button
-                type="button"
-                onClick={handleClear}
-                disabled={loading || !inputText}
-                className={`${styles.btn} ${styles.btnSecondary}`}
-              >
-                <Trash2 size={18} />
-                <span>Clear</span>
-              </button>
+            <div className={styles.actionRow}>
+              <div className={styles.actionButtons}>
+                <button
+                  type="submit"
+                  disabled={loading || !inputText.trim()}
+                  className={`${styles.btn} ${styles.btnPrimary}`}
+                >
+                  <Search size={18} />
+                  <span>Verify Statement</span>
+                </button>
+                
+                <button
+                  type="button"
+                  onClick={handleClear}
+                  disabled={loading || !inputText}
+                  className={`${styles.btn} ${styles.btnSecondary}`}
+                >
+                  <Trash2 size={18} />
+                  <span>Clear</span>
+                </button>
+              </div>
+
+              {/* Query Cache Manager & Live Signal */}
+              <div className={`${styles.cacheManager} ${isCacheHit ? styles.cacheManagerHit : ""}`}>
+                <span className={styles.cacheManagerLabel}>
+                  <Database size={14} style={{ color: "#ec4899" }} />
+                  Query Cache
+                </span>
+
+                {/* Live Cache Status Signal */}
+                <div 
+                  className={`${styles.cacheSignal} ${isCacheHit ? styles.cacheSignalHit : styles.cacheSignalIdle}`}
+                  title={isCacheHit ? "Cache Hit Active: Instant response served from memory" : "Cache Standby: Ready for queries"}
+                >
+                  <span className={`${styles.signalDot} ${isCacheHit ? styles.signalDotHit : ""}`} />
+                  <span>{isCacheHit ? "Cache Hit Active" : "Cache Standby"}</span>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={handleClearCache}
+                  disabled={clearingCache || loading}
+                  className={styles.clearCacheBtn}
+                  title="Clear cached verification results to force fresh live web search"
+                >
+                  <Trash2 size={14} />
+                  <span>{clearingCache ? "Clearing..." : "Clear Cache"}</span>
+                </button>
+                {cacheSuccessMsg && (
+                  <span className={styles.cacheSuccessMsg}>
+                    <CheckCircle2 size={13} />
+                    {cacheSuccessMsg}
+                  </span>
+                )}
+              </div>
             </div>
           </form>
         </section>
@@ -252,29 +486,134 @@ export default function VerifyPage() {
         {/* Loading State Animation */}
         {loading && (
           <section className={styles.loadingCard}>
-            <div className={styles.loaderSpinner}>
-              <RefreshCw className={styles.spinIcon} />
+            <div className={styles.loadingAura} />
+
+            {/* Futuristic Orbital Gyroscope / Radar Spinner */}
+            <div className={styles.orbitalWrapper}>
+              <div className={styles.orbitalRingOuter} />
+              <div className={styles.orbitalRingInner} />
+              <div className={styles.orbitalPulseGlow} />
+              <div className={styles.orbitalCore}>
+                {loadingStep === 0 && <Layers className={`${styles.orbitalIcon} ${styles.iconStep0}`} />}
+                {loadingStep === 1 && <Globe className={`${styles.orbitalIcon} ${styles.iconStep1}`} />}
+                {loadingStep >= 2 && <ShieldCheck className={`${styles.orbitalIcon} ${styles.iconStep2}`} />}
+              </div>
             </div>
-            <h3 className={styles.loadingTitle}>Processing Live Fact-Check</h3>
+
+            <div className={styles.loadingHeaderArea}>
+              <h3 className={styles.loadingTitle}>Processing Live Fact-Check</h3>
+              <p className={styles.loadingSubtitle}>
+                Verifying claim against real-time web intelligence and neural re-ranking
+              </p>
+            </div>
+
+            {/* Stepper with Connected Dynamic Flow Line */}
             <div className={styles.stepsTimeline}>
-              <div className={`${styles.step} ${loadingStep >= 0 ? styles.stepActive : ""}`}>
-                <div className={styles.stepDot}>1</div>
-                <div className={styles.stepLabel}>Extracting verifiable claim</div>
+              <div className={styles.timelineTrack}>
+                <div 
+                  className={styles.timelineProgress} 
+                  style={{ width: loadingStep === 0 ? "20%" : loadingStep === 1 ? "60%" : "100%" }}
+                />
               </div>
-              <div className={`${styles.step} ${loadingStep >= 1 ? styles.stepActive : ""}`}>
-                <div className={styles.stepDot}>2</div>
-                <div className={styles.stepLabel}>Searching the web in real-time</div>
+
+              <div className={`${styles.step} ${loadingStep === 0 ? styles.stepCurrent : loadingStep > 0 ? styles.stepDone : ""}`}>
+                <div className={styles.stepNode}>
+                  {loadingStep > 0 ? (
+                    <CheckCircle2 size={16} className={styles.stepCheckIcon} />
+                  ) : (
+                    <span>1</span>
+                  )}
+                  {loadingStep === 0 && <div className={styles.stepSonar} />}
+                </div>
+                <div className={styles.stepContent}>
+                  <span className={styles.stepTitle}>Claim Parsing</span>
+                  <span className={styles.stepDesc}>NLP proposition isolation</span>
+                </div>
               </div>
-              <div className={`${styles.step} ${loadingStep >= 2 ? styles.stepActive : ""}`}>
-                <div className={styles.stepDot}>3</div>
-                <div className={styles.stepLabel}>Evaluating verdict & reasoning</div>
+
+              <div className={`${styles.step} ${loadingStep === 1 ? styles.stepCurrent : loadingStep > 1 ? styles.stepDone : ""}`}>
+                <div className={styles.stepNode}>
+                  {loadingStep > 1 ? (
+                    <CheckCircle2 size={16} className={styles.stepCheckIcon} />
+                  ) : (
+                    <span>2</span>
+                  )}
+                  {loadingStep === 1 && <div className={styles.stepSonar} />}
+                </div>
+                <div className={styles.stepContent}>
+                  <span className={styles.stepTitle}>Live Web Search</span>
+                  <span className={styles.stepDesc}>DuckDuckGo & Wikipedia</span>
+                </div>
+              </div>
+
+              <div className={`${styles.step} ${loadingStep >= 2 ? styles.stepCurrent : ""}`}>
+                <div className={styles.stepNode}>
+                  <span>3</span>
+                  {loadingStep >= 2 && <div className={styles.stepSonar} />}
+                </div>
+                <div className={styles.stepContent}>
+                  <span className={styles.stepTitle}>LLM Verification</span>
+                  <span className={styles.stepDesc}>{llmConfig.provider.toUpperCase()} Reasoning</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Rolling Telemetry & Equalizer Soundwave Bar */}
+            <div className={styles.telemetryBar}>
+              <div className={styles.telemetryPulse}>
+                <span className={styles.liveDot} />
+                <span className={styles.telemetryTag}>PIPELINE ACTIVE</span>
+              </div>
+
+              <div className={styles.equalizerWave}>
+                <span className={styles.eqBar} />
+                <span className={styles.eqBar} />
+                <span className={styles.eqBar} />
+                <span className={styles.eqBar} />
+                <span className={styles.eqBar} />
+              </div>
+
+              <div className={styles.rollingLogArea}>
+                <Terminal size={13} className={styles.terminalIcon} />
+                <span key={tickIndex} className={styles.rollingLogText}>
+                  {pipelineTicks[tickIndex % pipelineTicks.length]}
+                </span>
               </div>
             </div>
           </section>
         )}
 
-        {/* Error State */}
-        {error && (
+        {/* Error / Warming Up State */}
+        {error && isWarmingUp ? (
+          <section className={styles.warmupCard}>
+            <div className={styles.warmupIconWrapper}>
+              <Activity className={styles.warmupIcon} />
+            </div>
+            <div className={styles.warmupContent}>
+              <h4>Backend Engine Initializing</h4>
+              <p>
+                The Python AI backend is currently warming up (loading Cross-Encoder and SpaCy NLP models). Initial cold-start takes ~3–5 seconds after launching Docker containers.
+              </p>
+              <div className={styles.warmupActions}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsWarmingUp(false);
+                    setCountdown(0);
+                    handleVerify();
+                  }}
+                  className={styles.warmupRetryBtn}
+                  disabled={loading}
+                >
+                  <RefreshCw size={14} className={loading ? styles.spinIcon : ""} />
+                  <span>
+                    {countdown > 0 ? `Auto-retrying in ${countdown}s...` : "Retry Verification Now"}
+                  </span>
+                </button>
+              </div>
+            </div>
+          </section>
+        ) : error ? (
           <section className={styles.errorCard}>
             <AlertCircle className={styles.errorIcon} />
             <div className={styles.errorContent}>
@@ -282,7 +621,7 @@ export default function VerifyPage() {
               <p>{error}</p>
             </div>
           </section>
-        )}
+        ) : null}
 
         {/* Results Visualizer */}
         {result && (
@@ -291,6 +630,13 @@ export default function VerifyPage() {
               
               {/* Left Column: Verdict Card */}
               <div className={`${styles.resultCard} ${getVerdictClass(result.verdict)}`}>
+                {isCacheHit && (
+                  <div className={styles.cacheHitBanner}>
+                    <Zap size={14} className={styles.zapIcon} />
+                    <span>CACHE HIT • Instant Response</span>
+                  </div>
+                )}
+
                 <div className={styles.verdictHeader}>
                   {getVerdictIcon(result.verdict)}
                   <div>
@@ -314,7 +660,10 @@ export default function VerifyPage() {
                   </div>
 
                   <div className={styles.metricItem}>
-                    <span className={styles.metricLabel}>Total Latency</span>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                      <span className={styles.metricLabel}>Total Latency</span>
+                      {isCacheHit && <span className={styles.cachePill}>Cached</span>}
+                    </div>
                     <span className={styles.metricValue}>
                       {result.performance.total_time}
                     </span>
@@ -325,6 +674,13 @@ export default function VerifyPage() {
                   <span className={styles.claimBoxLabel}>Extracted Claim:</span>
                   <p className={styles.claimBoxText}>"{result.extracted_claim}"</p>
                 </div>
+
+                {result.engine && (
+                  <div className={styles.engineVerdictTag}>
+                    <Cpu size={13} />
+                    <span>Verified via {result.engine.provider.toUpperCase()} ({result.engine.model})</span>
+                  </div>
+                )}
               </div>
 
               {/* Right Column: Reasoning & Timeline */}
@@ -436,6 +792,14 @@ export default function VerifyPage() {
       <footer className={styles.footer}>
         <p>© 2026 FactGuard AI.</p>
       </footer>
+
+      {/* LLM Settings Modal */}
+      <LLMSettingsModal
+        isOpen={isSettingsOpen}
+        onClose={() => setIsSettingsOpen(false)}
+        currentConfig={llmConfig}
+        onSave={handleSaveConfig}
+      />
     </div>
   );
 }
