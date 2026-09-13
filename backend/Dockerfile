@@ -7,6 +7,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     HF_HUB_DISABLE_XET=1 \
     HF_HUB_ENABLE_HF_TRANSFER=0 \
     HF_HUB_DISABLE_SYMLINKS_WARNING=1 \
+    OMP_NUM_THREADS=1 \
+    MKL_NUM_THREADS=1 \
+    OPENBLAS_NUM_THREADS=1 \
     PORT=8000 \
     HOST=0.0.0.0
 
@@ -25,7 +28,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Pre-download and cache NLP models during build to ensure instant container boot
-RUN python -c "import spacy; spacy.load('en_core_web_md')"
+RUN python -c "import spacy; spacy.load('en_core_web_sm')"
 RUN python -c "from sentence_transformers import CrossEncoder; CrossEncoder('cross-encoder/ms-marco-MiniLM-L6-v2', max_length=512)"
 
 # Copy application source code

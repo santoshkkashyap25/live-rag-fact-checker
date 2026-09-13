@@ -14,16 +14,21 @@ class ClaimExtractor:
     """Enhanced claim extraction with multiple strategies"""
     
     def __init__(self):
-        logger.info(f"Loading SpaCy model '{SPACY_MODEL}'...")
-        try:
-            self.nlp = spacy.load(SPACY_MODEL)
-        except OSError:
-            logger.warning(f"Model '{SPACY_MODEL}' not found. Downloading...")
-            subprocess.check_call([
-                sys.executable, "-m", "spacy", "download", SPACY_MODEL
-            ])
-            self.nlp = spacy.load(SPACY_MODEL)
-        logger.info("SpaCy model loaded successfully.")
+        self.nlp = None
+
+    def _get_nlp(self):
+        if self.nlp is None:
+            logger.info(f"Loading SpaCy model '{SPACY_MODEL}' (lightweight mode)...")
+            try:
+                self.nlp = spacy.load(SPACY_MODEL, disable=["ner", "lemmatizer", "textcat"])
+            except OSError:
+                logger.warning(f"Model '{SPACY_MODEL}' not found. Downloading...")
+                subprocess.check_call([
+                    sys.executable, "-m", "spacy", "download", SPACY_MODEL
+                ])
+                self.nlp = spacy.load(SPACY_MODEL, disable=["ner", "lemmatizer", "textcat"])
+            logger.info("SpaCy model loaded successfully.")
+        return self.nlp
     
     def extract(self, text: str) -> str:
         """Extract main claim from text using multiple strategies"""
@@ -36,7 +41,8 @@ class ClaimExtractor:
             return cleaned
         
         # Strategy 2: Extract from complex sentence
-        doc = self.nlp(cleaned)
+        nlp = self._get_nlp()
+        doc = nlp(cleaned)
         
         # Try dependency parsing
         claim = self._extract_via_dependency_parsing(doc)

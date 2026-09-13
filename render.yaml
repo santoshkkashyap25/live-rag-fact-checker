@@ -16,6 +16,10 @@ services:
         sync: false
       - key: GROQ_MODEL
         value: groq/compound-mini
+      - key: SPACY_MODEL
+        value: en_core_web_sm
+      - key: OMP_NUM_THREADS
+        value: "1"
 
   # -------------------------------------------------------------
   # Frontend UI Service (Next.js Standalone React Application)

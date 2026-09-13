@@ -23,7 +23,7 @@ CROSS_ENCODER_MODEL = 'cross-encoder/ms-marco-MiniLM-L6-v2' # For re-ranking evi
 
 # LLM Generation Model
 GROQ_MODEL = os.getenv("GROQ_MODEL", "groq/compound-mini")  # High-speed LLM on Groq
-SPACY_MODEL = "en_core_web_md"
+SPACY_MODEL = os.getenv("SPACY_MODEL", "en_core_web_sm")
 
 # --- Web Search & Evidence Parameters ---
 WEB_SEARCH_ENABLED = True
