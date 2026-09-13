@@ -358,7 +358,7 @@ export default function AnalyticsPage() {
                     </div>
                     <div className={styles.infoRow}>
                       <span>Re-ranker</span>
-                      <strong>Cross-Encoder (MS-Marco)</strong>
+                      <strong>BM25Okapi + Phrase Match</strong>
                     </div>
                     <div className={styles.infoRow}>
                       <span>Citations & URLs</span>

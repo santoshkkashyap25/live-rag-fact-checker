@@ -82,7 +82,7 @@ export default function VerifyPage() {
   const pipelineTicks = [
     "Parsing linguistic dependencies and isolating claim propositions...",
     "Querying DuckDuckGo live index and Wikipedia encyclopedia...",
-    "Running Cross-Encoder (ms-marco-MiniLM-L6-v2) neural re-ranking...",
+    "Re-ranking evidence passages via BM25Okapi & phrase relevance...",
     `Prompting ${llmConfig.provider.toUpperCase()} (${llmConfig.model}) for strict verification...`,
     "Synthesizing factual verdict, confidence score, and citations..."
   ];
@@ -592,7 +592,7 @@ export default function VerifyPage() {
             <div className={styles.warmupContent}>
               <h4>Backend Engine Initializing</h4>
               <p>
-                The Python AI backend is currently warming up (loading Cross-Encoder and SpaCy NLP models). Initial cold-start takes ~3–5 seconds after launching Docker containers.
+                The Python AI backend is currently warming up (loading linguistic and search indexes). Initial cold-start takes ~1–3 seconds after launching containers.
               </p>
               <div className={styles.warmupActions}>
                 <button
@@ -724,7 +724,7 @@ export default function VerifyPage() {
             <div className={`${styles.resultCard} ${styles.evidenceCard}`}>
               <h3 className={styles.sectionTitle}>Live Web Evidence</h3>
               <p className={styles.evidenceSubtitle}>
-                Key evidence retrieved dynamically from DuckDuckGo & Wikipedia and prioritized via Cross-Encoder re-ranking.
+                Key evidence retrieved dynamically from DuckDuckGo & Wikipedia and prioritized via BM25Okapi relevance re-ranking.
               </p>
 
               <div className={styles.evidenceList}>

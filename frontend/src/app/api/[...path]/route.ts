@@ -138,7 +138,7 @@ async function handleProxy(
       {
         code: "BACKEND_WARMING_UP",
         detail:
-          "FactGuard backend engine is initializing (loading Cross-Encoder and SpaCy NLP models). Please wait a moment for initial container startup.",
+          "FactGuard backend engine is initializing. Please wait a moment for container startup.",
         raw_error: errorMsg,
       },
       { status: 503 }

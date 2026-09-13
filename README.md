@@ -9,7 +9,7 @@
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-**An open-source, real-time fact-checking system that verifies arbitrary claims against live web intelligence (DuckDuckGo + Wikipedia), re-ranks evidence with Cross-Encoders, and generates verifiable verdicts using LLM reasoning.**
+**An open-source, real-time fact-checking system that verifies arbitrary claims against live web intelligence (DuckDuckGo + Wikipedia), re-ranks evidence with BM25Okapi relevance scoring, and generates verifiable verdicts using LLM reasoning.**
 
 [Features](#-key-features) • [Quick Start](#-quick-start) • [CLI Tool](#-cli-fact-checker) • [Scope & Limitations](#️-system-scope--honest-limitations) • [Contributing](#-contributing) • [License](#-license)
 
@@ -21,7 +21,7 @@
 
 Information moves faster than human verification pipelines can keep up. Most automated fact-checking systems rely on **static databases** or pre-scraped knowledge graphs that quickly become obsolete. 
 
-**FactGuard AI** explores a **live Retrieval-Augmented Generation (RAG)** approach: when presented with a claim, the system dynamically queries the open web (Wikipedia + DuckDuckGo), neural re-ranks the most contextually relevant snippets using a transformer-based Cross-Encoder, and prompts an LLM with strict few-shot verification guidelines to synthesize an objective verdict with transparent source citations.
+**FactGuard AI** explores a **live Retrieval-Augmented Generation (RAG)** approach: when presented with a claim, the system dynamically queries the open web (Wikipedia + DuckDuckGo), re-ranks the most contextually relevant snippets using high-speed BM25Okapi with phrase matching, and prompts an LLM with strict few-shot verification guidelines to synthesize an objective verdict with transparent source citations.
 
 ---
 
@@ -31,7 +31,7 @@ Information moves faster than human verification pipelines can keep up. Most aut
 - **🔑 Bring Your Own Key (BYOK) Engine**: Plug in custom API keys for **Groq**, **Google Gemini**, **OpenAI**, or **Anthropic Claude** directly from the UI, or fallback seamlessly to the system's default key.
 - **🔒 Zero-Storage Client Privacy**: Custom keys are stored only in the browser's `localStorage` (`factguard_llm_config`) and transmitted via headers per-request—never stored on server disk or database.
 - **🔗 Direct Source Citations**: Every piece of evidence includes publisher badges (`Wikipedia`, `DuckDuckGo`) and direct clickable external links (`Read Source Article ↗`).
-- **🧠 Cross-Encoder Re-Ranking**: Uses `cross-encoder/ms-marco-MiniLM-L6-v2` to score semantic relevance against the extracted claim.
+- **⚡ High-Precision BM25Okapi Re-Ranking**: Algorithmic relevance scoring with bi-gram phrase matching to prioritize the top context passages with sub-millisecond latency and zero memory overhead.
 - **🤖 Multi-Provider LLM Reasoning**: Fast verification reasoning powered by native Groq execution or `litellm` (OpenAI, Gemini, Claude) with structured JSON output validation.
 - **⚡ In-Memory & Disk LRU Cache**: Instant (`0.00s`) responses for recurring claims with per-user isolation and auto-disk persistence.
 - **📊 Real-Time Analytics Dashboard**: Live system monitoring featuring response time trendlines, verdict distributions, and confidence histograms.
