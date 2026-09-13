@@ -38,9 +38,9 @@ services:
         fromService:
           type: web
           name: factguard-backend
-          property: host
+          envVarKey: RENDER_EXTERNAL_HOSTNAME
       - key: NEXT_PUBLIC_API_URL
         fromService:
           type: web
           name: factguard-backend
-          property: host
+          envVarKey: RENDER_EXTERNAL_HOSTNAME

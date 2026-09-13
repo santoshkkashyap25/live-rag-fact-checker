@@ -16,16 +16,58 @@ export async function POST(
   return handleProxy(request, params);
 }
 
+function getTargetBaseUrl(request: NextRequest): string {
+  let raw = (
+    process.env.BACKEND_URL ||
+    process.env.NEXT_PUBLIC_API_URL ||
+    ""
+  ).trim();
+
+  const reqHost =
+    request.headers.get("x-forwarded-host") ||
+    request.headers.get("host") ||
+    "";
+
+  // When running on Render Free Tier, internal hostnames (e.g. 'factguard-backend')
+  // cannot communicate over private DNS without a paid plan.
+  // Dynamically resolve the corresponding backend public URL if needed.
+  if (
+    reqHost.includes("onrender.com") &&
+    (!raw || raw === "factguard-backend" || raw === "backend" || !raw.startsWith("http"))
+  ) {
+    if (raw.includes("onrender.com")) {
+      return `https://${raw.replace(/^https?:\/\//, "")}`.replace(/\/$/, "");
+    }
+    const backendHost = reqHost.replace(/frontend/g, "backend");
+    return `https://${backendHost}`;
+  }
+
+  if (!raw) {
+    raw = "http://127.0.0.1:8000";
+  }
+
+  // Ensure valid scheme
+  if (!raw.startsWith("http://") && !raw.startsWith("https://")) {
+    if (raw.includes("onrender.com")) {
+      raw = `https://${raw}`;
+    } else if (raw.includes("localhost") || raw.includes("127.0.0.1")) {
+      raw = `http://${raw}`;
+    } else {
+      raw = raw.includes(":") ? `http://${raw}` : `http://${raw}:8000`;
+    }
+  }
+
+  return raw.replace(/\/$/, "");
+}
+
 async function handleProxy(
   request: NextRequest,
   resolvedParams: { path: string[] }
 ) {
-  const backendBase =
-    process.env.BACKEND_URL ||
-    process.env.NEXT_PUBLIC_API_URL ||
-    "http://127.0.0.1:8000";
+  const backendBase = getTargetBaseUrl(request);
   const path = resolvedParams.path ? resolvedParams.path.join("/") : "";
-  const targetUrl = `${backendBase.replace(/\/$/, "")}/api/${path}${request.nextUrl.search}`;
+  const targetUrl = `${backendBase}/api/${path}${request.nextUrl.search}`;
+  console.log(`[Next.js API Proxy] ${request.method} -> ${targetUrl}`);
 
   try {
     const contentType = request.headers.get("content-type") || "application/json";
