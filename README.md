@@ -1,6 +1,6 @@
-# FactGuard AI: Real-Time Web Intelligence & Fact Verification
-
 <div align="center">
+
+# FactGuard AI: Real-Time Web Intelligence & Fact Verification
 
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.141+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
