@@ -99,7 +99,7 @@ class ErrorResponse(BaseModel):
 
 # --- Endpoints ---
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 async def root():
     return {
         "app": APP_TITLE,
@@ -108,7 +108,7 @@ async def root():
         "mode": "real_time_web_search"
     }
 
-@app.get("/api/health")
+@app.api_route("/api/health", methods=["GET", "HEAD"])
 async def health_check():
     return {
         "status": "healthy",
