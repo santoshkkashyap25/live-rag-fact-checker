@@ -1,0 +1,29 @@
+name: Keep Render Services Warm
+
+on:
+  schedule:
+    # Runs every 12 minutes to prevent Render free-tier from spinning down after 15m
+    - cron: '*/12 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    name: Ping Render Endpoints
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping FactGuard Backend
+        run: |
+          echo "Pinging FactGuard Backend..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://factguard-backend-qo5v.onrender.com/)
+          echo "Backend Response Status: $HTTP_STATUS"
+          if [ "$HTTP_STATUS" -ne 200 ]; then
+            echo "Backend returned status $HTTP_STATUS, retrying after 5s..."
+            sleep 5
+            curl -s -f https://factguard-backend-qo5v.onrender.com/ || true
+          fi
+
+      - name: Ping FactGuard Frontend
+        run: |
+          echo "Pinging FactGuard Frontend..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://factguard-frontend-qo5v.onrender.com/)
+          echo "Frontend Response Status: $HTTP_STATUS"

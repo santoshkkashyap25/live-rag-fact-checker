@@ -108,6 +108,14 @@ async def root():
         "mode": "real_time_web_search"
     }
 
+@app.get("/api/health")
+async def health_check():
+    return {
+        "status": "healthy",
+        "app": APP_TITLE,
+        "version": APP_VERSION
+    }
+
 @app.post("/api/llm/test", response_model=LLMTestResponse)
 async def test_llm_connection(req: LLMTestRequest):
     """
