@@ -5,16 +5,20 @@
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.141+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Next.js](https://img.shields.io/badge/Next.js-16.2+-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![PyPI](https://img.shields.io/badge/PyPI-factguard-blue?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/factguard/)
+[![Ollama](https://img.shields.io/badge/Ollama-100%25%20Offline-black?style=for-the-badge&logo=ollama&logoColor=white)](https://ollama.com)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://factguard-1gge.onrender.com/)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 **An open-source, real-time fact-checking system that verifies arbitrary claims against live web intelligence (DuckDuckGo + Wikipedia), re-ranks evidence with BM25Okapi relevance scoring, and generates verifiable verdicts using LLM reasoning.**
 
 🌐 **[Live Demo: factguard-1gge.onrender.com](https://factguard-1gge.onrender.com/)**
 
-[Features](#-key-features) • [Quick Start](#-quick-start) • [CLI Tool](#-cli-fact-checker) • [Scope & Limitations](#️-system-scope--honest-limitations) • [Contributing](#-contributing) • [License](#-license)
+<p align="center">
+  <img src="./assets/demo.gif" alt="FactGuard AI Real-Time Fact Verification Demo" width="880" style="border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,0.4);" />
+</p>
+
+[Features](#-key-features) • [Quick Start](#-quick-start) • [CLI Tool](#-cli-fact-checker) • [Python SDK](#-option-d-python-sdk-factguard) • [Chrome Extension](#-option-e-chrome-browser-extension) • [Scope & Limitations](#️-system-scope--honest-limitations)
 
 </div>
 
