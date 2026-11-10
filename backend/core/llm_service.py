@@ -41,6 +41,7 @@ class LLMService:
         "openai": "gpt-4o-mini",
         "gemini": "gemini/gemini-1.5-flash",
         "claude": "anthropic/claude-3-5-haiku-20241022",
+        "ollama": "ollama/llama3.2",
     }
     
     def __init__(self):
@@ -101,6 +102,8 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
             return f"anthropic/{m}"
         elif provider == "openai":
             return m
+        elif provider == "ollama" and not m.startswith("ollama/"):
+            return f"ollama/{m}"
         return m
 
     def _extract_json(self, text: str) -> Dict[str, Any]:
@@ -151,17 +154,21 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
                     return False, f"Model '{m}' not found or restricted for your key."
                 return False, f"Groq error: {err_str[:120]}"
 
-        # 2. LiteLLM testing for OpenAI, Gemini, Claude
+        # 2. LiteLLM testing for OpenAI, Gemini, Claude, Ollama
         litellm_model = self._normalize_model(clean_provider, model)
         try:
             if litellm is None:
                 return False, "LiteLLM multi-provider engine is initializing."
             
+            # Ollama needs specific base_url
+            api_base = "http://localhost:11434" if clean_provider == "ollama" else None
+            
             logger.info(f"Testing connection for '{clean_provider}' using model '{litellm_model}'...")
             litellm.completion(
                 model=litellm_model,
                 messages=[{"role": "user", "content": "Ping test: reply with 'OK' in one word."}],
-                api_key=clean_key,
+                api_key=clean_key if clean_provider != "ollama" else "dummy",
+                api_base=api_base,
                 max_tokens=10,
                 temperature=0.1
             )
@@ -249,7 +256,20 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
                 if not content:
                     raise last_err or RuntimeError("No Groq models available.")
 
-            # --- Branch 2: OpenAI, Gemini, Claude (via LiteLLM) ---
+            # --- Branch 2: Ollama ---
+            elif effective_provider == "ollama":
+                logger.info(f"Querying Ollama with model: {effective_model}...")
+                res = litellm.completion(
+                    model=effective_model,
+                    messages=messages,
+                    api_base="http://localhost:11434",
+                    api_key="dummy",
+                    max_tokens=512,
+                    temperature=0.2
+                )
+                content = res.choices[0].message.content
+
+            # --- Branch 3: OpenAI, Gemini, Claude (via LiteLLM) ---
             else:
                 if litellm is None:
                     raise RuntimeError("LiteLLM library is not installed.")

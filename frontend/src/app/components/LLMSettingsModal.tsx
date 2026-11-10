@@ -51,6 +51,18 @@ const PROVIDERS: ProviderMeta[] = [
     ]
   },
   {
+    id: "ollama",
+    name: "Ollama (Local)",
+    desc: "Run models locally on your machine",
+    keyUrl: "https://ollama.com",
+    keyPlaceholder: "Not required for local",
+    defaultModel: "ollama/llama3.2",
+    models: [
+      { id: "ollama/llama3.2", label: "Llama 3.2 (3B)" },
+      { id: "ollama/qwen2.5", label: "Qwen 2.5 (7B)" },
+    ]
+  },
+  {
     id: "openai",
     name: "OpenAI",
     desc: "GPT-4o & GPT-4o-mini reasoning",
@@ -241,44 +253,46 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
             </div>
           </div>
 
-          {/* API Key Input */}
-          <div className={styles.fieldGroup}>
-            <div className={styles.fieldHeader}>
-              <label className={styles.sectionLabel} style={{ marginBottom: 0 }}>
-                {activeProviderMeta.name} API Key
-              </label>
-              <a
-                href={activeProviderMeta.keyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.keyLink}
-              >
-                <span>Get key on {activeProviderMeta.name}</span>
-                <ExternalLink size={12} />
-              </a>
-            </div>
+          {/* API Key Input (Only for cloud providers) */}
+          {provider !== "ollama" && (
+            <div className={styles.fieldGroup}>
+              <div className={styles.fieldHeader}>
+                <label className={styles.sectionLabel} style={{ marginBottom: 0 }}>
+                  {activeProviderMeta.name} API Key
+                </label>
+                <a
+                  href={activeProviderMeta.keyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.keyLink}
+                >
+                  <span>Get key on {activeProviderMeta.name}</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
 
-            <div className={styles.inputWrapper}>
-              <input
-                type={showKey ? "text" : "password"}
-                value={apiKey}
-                onChange={(e) => {
-                  setApiKey(e.target.value);
-                  setTestResult(null);
-                }}
-                placeholder={activeProviderMeta.keyPlaceholder}
-                className={styles.textInput}
-              />
-              <button
-                type="button"
-                onClick={() => setShowKey(!showKey)}
-                className={styles.inputIconBtn}
-                title={showKey ? "Hide key" : "Show key"}
-              >
-                {showKey ? <EyeOff size={16} /> : <Eye size={16} />}
-              </button>
+              <div className={styles.inputWrapper}>
+                <input
+                  type={showKey ? "text" : "password"}
+                  value={apiKey}
+                  onChange={(e) => {
+                    setApiKey(e.target.value);
+                    setTestResult(null);
+                  }}
+                  placeholder={activeProviderMeta.keyPlaceholder}
+                  className={styles.textInput}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowKey(!showKey)}
+                  className={styles.inputIconBtn}
+                  title={showKey ? "Hide key" : "Show key"}
+                >
+                  {showKey ? <EyeOff size={16} /> : <Eye size={16} />}
+                </button>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Model Selection */}
           <div className={styles.fieldGroup}>
