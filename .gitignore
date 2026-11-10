@@ -114,3 +114,11 @@ desktop.ini
 *.swp
 *.swo
 *~
+
+# --------------------------------------------------------------------
+# 9. Private Planning, Local Notes & Uncommitted Roadmaps
+# --------------------------------------------------------------------
+UPCOMING_MOATS.md
+ROADMAP_MOATS.md
+*.local.md
+*.private.md
