@@ -30,16 +30,18 @@ Information moves faster than human verification pipelines can keep up. Most aut
 
 ## ✨ Key Features
 
-- **🌐 Live Internet Intelligence**: Queries DuckDuckGo and Wikipedia on the fly. No stale static databases.
+- **🌐 Live Internet Intelligence**: Queries DuckDuckGo and Wikipedia concurrently on the fly. No stale static databases.
+- **⚡ Real-Time SSE Event Streaming**: Live progress transitions (`Claim Parsing` $\rightarrow$ `Live Search` $\rightarrow$ `BM25 Re-Ranking` $\rightarrow$ `LLM Verification`) streamed directly over Server-Sent Events with transparent telemetry.
+- **🦙 100% Local Offline AI (Ollama)**: Full support for local models (`llama3.2`, `qwen2.5`, `mistral`) running on `http://localhost:11434` with zero cloud keys and zero data leakage.
 - **🔑 Bring Your Own Key (BYOK) Engine**: Plug in custom API keys for **Groq**, **Google Gemini**, **OpenAI**, or **Anthropic Claude** directly from the UI, or fallback seamlessly to the system's default key.
 - **🔒 Zero-Storage Client Privacy**: Custom keys are stored only in the browser's `localStorage` (`factguard_llm_config`) and transmitted via headers per-request—never stored on server disk or database.
 - **🔗 Direct Source Citations**: Every piece of evidence includes publisher badges (`Wikipedia`, `DuckDuckGo`) and direct clickable external links (`Read Source Article ↗`).
 - **⚡ High-Precision BM25Okapi Re-Ranking**: Algorithmic relevance scoring with bi-gram phrase matching to prioritize the top context passages with sub-millisecond latency and zero memory overhead.
-- **🤖 Multi-Provider LLM Reasoning**: Fast verification reasoning powered by native Groq execution or `litellm` (OpenAI, Gemini, Claude) with structured JSON output validation.
+- **🤖 Multi-Provider LLM Reasoning**: Fast verification reasoning powered by native Groq execution or `litellm` (OpenAI, Gemini, Claude, Ollama) with structured JSON output validation.
 - **⚡ In-Memory & Disk LRU Cache**: Instant (`0.00s`) responses for recurring claims with per-user isolation and auto-disk persistence.
 - **📊 Real-Time Analytics Dashboard**: Live system monitoring featuring response time trendlines, verdict distributions, and confidence histograms.
 - **💻 CLI Tooling**: Standalone command-line interface (`backend/cli.py`) for headless terminal verification and scripting.
-- **🐳 Production Ready**: Fully Dockerized with multi-stage builds and pre-baked model weights for zero-delay container startup.
+- **🐳 Production Ready**: Fully Dockerized single-service multi-stage container with zero runtime Node.js overhead.
 
 ---
 
@@ -55,8 +57,8 @@ The easiest way to run the entire stack locally with all dependencies pre-config
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/llm-fact-checker.git
-cd llm-fact-checker
+git clone https://github.com/santoshkkashyap25/live-rag-fact-checker.git
+cd live-rag-fact-checker
 
 # 2. Configure your Groq API key in backend/.env
 cp backend/.env.example backend/.env
