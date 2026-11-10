@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Ping FactGuard Unified Service
         run: |
-          TARGET_URL="${{ vars.FACTGUARD_URL || 'https://factguard-backend-qo5v.onrender.com' }}"
+          TARGET_URL="${{ vars.FACTGUARD_URL || 'https://factguard-1gge.onrender.com' }}"
           echo "Pinging FactGuard Service at $TARGET_URL/health ..."
           HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$TARGET_URL/health")
           echo "Response Status: $HTTP_STATUS"
