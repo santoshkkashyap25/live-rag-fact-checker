@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  backend-tests:
+    name: Backend Test Suite & SDK Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install System Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install wheel build twine
+
+      - name: Install Backend Dependencies
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -r backend/requirements.txt
+          pip install -e .
+
+      - name: Run Core Test Suite
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
+        run: |
+          python backend/test_suite.py
+
+      - name: Run SDK Integration Tests
+        run: |
+          python tests/test_sdk.py
+
+      - name: Build & Validate Python Package
+        run: |
+          python -m build
+          twine check dist/*
+
+  frontend-build:
+    name: Frontend Static Export Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install Frontend Dependencies
+        working-directory: frontend
+        run: npm ci || npm install
+
+      - name: Build Next.js Static Export
+        working-directory: frontend
+        run: npm run build

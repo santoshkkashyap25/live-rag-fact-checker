@@ -3,6 +3,7 @@
 # FactGuard AI: Real-Time Web Intelligence & Fact Verification
 
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![CI](https://github.com/santoshkkashyap25/live-rag-fact-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/santoshkkashyap25/live-rag-fact-checker/actions/workflows/ci.yml)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.141+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Next.js](https://img.shields.io/badge/Next.js-16.2+-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![PyPI](https://img.shields.io/badge/PyPI-factguard-blue?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/factguard/)
