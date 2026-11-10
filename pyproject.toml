@@ -38,6 +38,7 @@ dependencies = [
     "requests>=2.28.0",
     "pydantic>=2.0.0"
 ]
+requires-python = ">=3.9"
 
 [project.urls]
 Homepage = "https://factguard-1gge.onrender.com"

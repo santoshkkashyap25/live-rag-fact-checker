@@ -56,3 +56,9 @@ tmp/
 frontend/out/
 backend/static/
 
+# Packaging & Distribution
+dist/
+build/
+*.egg-info/
+*.zip
+
