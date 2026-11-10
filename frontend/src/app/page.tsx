@@ -22,9 +22,11 @@ import {
   Layers,
   ShieldCheck,
   Terminal,
-  Activity
+  Activity,
+  Share2
 } from "lucide-react";
 import LLMSettingsModal, { LLMConfig } from "./components/LLMSettingsModal";
+import ShareModal from "./components/ShareModal";
 import styles from "./page.module.css";
 
 const API_BASE = "";
@@ -79,6 +81,9 @@ export default function VerifyPage() {
   const [isWarmingUp, setIsWarmingUp] = useState(false);
   const [countdown, setCountdown] = useState(0);
   const [liveStatusMessage, setLiveStatusMessage] = useState<string>("");
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
+  const [currentShareUrl, setCurrentShareUrl] = useState("");
+  const [sharingLoading, setSharingLoading] = useState(false);
 
   const pipelineTicks = [
     "Parsing linguistic dependencies and isolating claim propositions...",
@@ -145,6 +150,60 @@ export default function VerifyPage() {
     setLlmConfig(newConfig);
     if (typeof window !== "undefined") {
       localStorage.setItem("factguard_llm_config", JSON.stringify(newConfig));
+    }
+  };
+
+  // Hydrate shared verdict if ?v={id} is present in the URL
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const shareId = params.get("v");
+    if (shareId) {
+      fetch(`${API_BASE}/api/share/${shareId}`)
+        .then((res) => (res.ok ? res.json() : null))
+        .then((data) => {
+          if (data) {
+            setResult({
+              input_text: data.input_text || data.extracted_claim,
+              extracted_claim: data.extracted_claim,
+              verdict: data.verdict,
+              confidence: String(data.confidence),
+              reasoning: data.reasoning,
+              evidence: data.evidence || [],
+              evidence_scores: data.evidence_scores || [],
+              evidence_sources: data.evidence_sources || [],
+              evidence_urls: data.evidence_urls || [],
+              performance: data.performance || { extraction_time: "0s", retrieval_time: "0s", llm_time: "0s", total_time: "0s" },
+              is_cache_hit: false
+            });
+            setInputText(data.input_text || data.extracted_claim);
+          }
+        })
+        .catch((err) => console.error("Could not load shared verdict", err));
+    }
+  }, []);
+
+  const handleShareVerdict = async () => {
+    if (!result) return;
+    setSharingLoading(true);
+    try {
+      const res = await fetch(`${API_BASE}/api/share`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ result })
+      });
+      const data = await res.json();
+      if (data.id) {
+        const origin = window.location.origin;
+        setCurrentShareUrl(`${origin}/v/${data.id}`);
+        setIsShareModalOpen(true);
+      }
+    } catch (e) {
+      console.error("Failed to share verdict", e);
+      setCurrentShareUrl(window.location.href);
+      setIsShareModalOpen(true);
+    } finally {
+      setSharingLoading(false);
     }
   };
 
@@ -692,11 +751,36 @@ export default function VerifyPage() {
                 )}
 
                 <div className={styles.verdictHeader}>
-                  {getVerdictIcon(result.verdict)}
-                  <div>
-                    <span className={styles.verdictLabel}>Verdict</span>
-                    <h2 className={styles.verdictTitle}>{result.verdict}</h2>
+                  <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                    {getVerdictIcon(result.verdict)}
+                    <div>
+                      <span className={styles.verdictLabel}>Verdict</span>
+                      <h2 className={styles.verdictTitle}>{result.verdict}</h2>
+                    </div>
                   </div>
+                  <button
+                    type="button"
+                    onClick={handleShareVerdict}
+                    disabled={sharingLoading}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      background: "rgba(56, 189, 248, 0.12)",
+                      border: "1px solid rgba(56, 189, 248, 0.3)",
+                      borderRadius: "8px",
+                      color: "#38bdf8",
+                      fontSize: "0.85rem",
+                      fontWeight: 600,
+                      padding: "8px 14px",
+                      cursor: "pointer",
+                      transition: "all 0.2s"
+                    }}
+                    title="Share this fact-checked verdict or get embed badge"
+                  >
+                    <Share2 size={15} />
+                    <span>{sharingLoading ? "Creating Link..." : "Share Verdict"}</span>
+                  </button>
                 </div>
 
                 <div className={styles.metricsRow}>
@@ -854,6 +938,18 @@ export default function VerifyPage() {
         currentConfig={llmConfig}
         onSave={handleSaveConfig}
       />
+
+      {/* Share Verdict Modal */}
+      {result && (
+        <ShareModal
+          isOpen={isShareModalOpen}
+          onClose={() => setIsShareModalOpen(false)}
+          shareUrl={currentShareUrl}
+          claim={result.extracted_claim || result.input_text}
+          verdict={result.verdict}
+          confidence={result.confidence}
+        />
+      )}
     </div>
   );
 }

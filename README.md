@@ -32,7 +32,10 @@ Information moves faster than human verification pipelines can keep up. Most aut
 
 - **🌐 Live Internet Intelligence**: Queries DuckDuckGo and Wikipedia concurrently on the fly. No stale static databases.
 - **⚡ Real-Time SSE Event Streaming**: Live progress transitions (`Claim Parsing` $\rightarrow$ `Live Search` $\rightarrow$ `BM25 Re-Ranking` $\rightarrow$ `LLM Verification`) streamed directly over Server-Sent Events with transparent telemetry.
-- **🦙 100% Local Offline AI (Ollama)**: Full support for local models (`llama3.2`, `qwen2.5`, `mistral`) running on `http://localhost:11434` with zero cloud keys and zero data leakage.
+- **🦙 100% Local Offline AI (Ollama)**: Full support for local models (`gemma4:e2b`, `llama3.2`, `qwen2.5`, `mistral`) running on `http://localhost:11434` or custom endpoints with zero cloud keys.
+- **🔗 Shareable Verdict Permalinks**: One-click social sharing to Twitter/X, Reddit, LinkedIn, and Markdown badges with dynamic server-rendered OpenGraph cards (`/v/:id`).
+- **🧩 Chrome Extension Companion**: Highlight any text on the web $\rightarrow$ right-click *"Verify with FactGuard"* $\rightarrow$ instant popup verdict and live citations.
+- **📦 Python SDK (`factguard`)**: Modular 3-line Python package (`from factguard import FactGuard`) for integrating fact-checking into RAG pipelines and LangChain agents.
 - **🔑 Bring Your Own Key (BYOK) Engine**: Plug in custom API keys for **Groq**, **Google Gemini**, **OpenAI**, or **Anthropic Claude** directly from the UI, or fallback seamlessly to the system's default key.
 - **🔒 Zero-Storage Client Privacy**: Custom keys are stored only in the browser's `localStorage` (`factguard_llm_config`) and transmitted via headers per-request—never stored on server disk or database.
 - **🔗 Direct Source Citations**: Every piece of evidence includes publisher badges (`Wikipedia`, `DuckDuckGo`) and direct clickable external links (`Read Source Article ↗`).
@@ -140,25 +143,33 @@ You can verify statements directly in your command line without starting the web
 python backend/cli.py "Bananas are naturally radioactive due to potassium-40."
 ```
 
-**Example Output:**
-```text
-======================================================================
-FactGuard AI - Fact Verification
-======================================================================
-Claim: Bananas are naturally radioactive due to potassium-40.
-----------------------------------------------------------------------
-VERDICT:    True
-CONFIDENCE: 99.0%
-REASONING:  All evidence sources explicitly state that bananas naturally 
-            contain radioactive potassium-40 isotopes, confirming the claim.
-----------------------------------------------------------------------
-RETRIEVED EVIDENCE (3 items):
-  [1] [score: 10.12] [Wikipedia] Potassium-40 in natural foods
-      URL: https://en.wikipedia.org/wiki/Potassium-40
-  [2] [score: 9.84]  [DuckDuckGo] Are bananas radioactive? - EPA Science
-      URL: https://www.epa.gov/radtown/natural-radioactivity-food
-======================================================================
+---
+
+### Option D: Python SDK (`factguard`)
+
+Use FactGuard directly in your Python code, LangChain agents, or automated evaluation pipelines:
+
+```python
+from factguard import FactGuard
+
+fg = FactGuard()  # Connects to live cloud or local server
+result = fg.verify("The Digital India initiative was launched in 2015.")
+
+print(result.verdict)       # True
+print(result.confidence)    # 0.95
+print(result.reasoning)     # Detailed rationale with citations
 ```
+
+---
+
+### Option E: Chrome Browser Extension
+
+Verify claims anywhere on the web by highlighting text:
+
+1. Open `chrome://extensions` (or `brave://extensions` / `edge://extensions`).
+2. Toggle **Developer mode** $\rightarrow$ Click **"Load unpacked"**.
+3. Select the `extension/` directory from this repository.
+4. Highlight any text on Twitter, Reddit, or news sites $\rightarrow$ right-click **"Verify with FactGuard"**!
 
 ---
 

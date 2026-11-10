@@ -142,6 +142,45 @@ class TestAPIEndpoints(unittest.TestCase):
         self.assertIn("text/event-stream", res.headers.get("content-type", ""))
         self.assertIn("data: ", res.text)
 
+    def test_share_endpoints(self):
+        payload = {
+            "result": {
+                "input_text": "Bananas contain potassium.",
+                "extracted_claim": "Bananas contain potassium",
+                "verdict": "True",
+                "confidence": 0.95,
+                "reasoning": "Scientific evidence confirms potassium in bananas.",
+                "evidence": ["Bananas are rich in potassium."],
+                "evidence_sources": ["Wikipedia"],
+                "evidence_urls": ["https://en.wikipedia.org/wiki/Banana"]
+            }
+        }
+        # POST /api/share
+        res = self.client.post("/api/share", json=payload)
+        self.assertEqual(res.status_code, 200)
+        data = res.json()
+        self.assertIn("id", data)
+        self.assertIn("url", data)
+        share_id = data["id"]
+
+        # GET /api/share/{share_id}
+        get_res = self.client.get(f"/api/share/{share_id}")
+        self.assertEqual(get_res.status_code, 200)
+        self.assertEqual(get_res.json()["verdict"], "True")
+
+        # GET /v/{share_id} (Server-Rendered HTML)
+        html_res = self.client.get(f"/v/{share_id}")
+        self.assertEqual(html_res.status_code, 200)
+        self.assertIn("text/html", html_res.headers.get("content-type", ""))
+        self.assertIn("og:title", html_res.text)
+        self.assertIn("FactGuard", html_res.text)
+
+        # GET /api/og/{share_id}.svg (Dynamic SVG Card)
+        svg_res = self.client.get(f"/api/og/{share_id}.svg")
+        self.assertEqual(svg_res.status_code, 200)
+        self.assertIn("image/svg+xml", svg_res.headers.get("content-type", ""))
+        self.assertIn("<svg", svg_res.text)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

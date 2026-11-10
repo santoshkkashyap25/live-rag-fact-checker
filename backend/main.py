@@ -6,7 +6,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, status, Header
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, HTMLResponse, Response
 from pydantic import BaseModel, Field
 
 from config import APP_TITLE, APP_VERSION, HOST, PORT
@@ -14,6 +14,8 @@ from pipeline import run_fact_checking_pipeline, stream_fact_checking_pipeline
 from core.metrics import metrics_collector
 from core.cache import query_cache
 from core.llm_service import llm_service
+from core.share_store import share_store
+from core.og_renderer import render_og_svg, render_shared_page_html
 
 # --- Logging Configuration ---
 logging.basicConfig(
@@ -99,6 +101,14 @@ class LLMTestResponse(BaseModel):
 
 class ErrorResponse(BaseModel):
     detail: str
+
+class ShareRequest(BaseModel):
+    result: Dict[str, Any]
+
+class ShareResponse(BaseModel):
+    id: str
+    url: str
+    full_url: str
 
 # --- Endpoints ---
 
@@ -312,6 +322,73 @@ async def get_examples():
             "The Digital India initiative was launched in 2015."
         ]
     }
+
+# --- Social Sharing & OpenGraph Endpoints ---
+
+@app.post("/api/share", response_model=ShareResponse)
+async def create_shareable_verdict(req: ShareRequest):
+    """
+    Store a fact-checking verdict and generate a shareable short URL.
+    """
+    if not req.result:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, 
+            detail="Result payload required"
+        )
+    short_id = share_store.save_verdict(req.result)
+    return {
+        "id": short_id,
+        "url": f"/v/{short_id}",
+        "full_url": f"https://factguard-1gge.onrender.com/v/{short_id}"
+    }
+
+@app.get("/api/share/{share_id}")
+async def get_shared_verdict(share_id: str):
+    """
+    Retrieve stored verdict data for client-side hydration.
+    """
+    item = share_store.get_verdict(share_id)
+    if not item:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, 
+            detail="Shared verdict not found"
+        )
+    return item
+
+@app.get("/api/og/{share_id}.svg")
+async def get_og_card_svg(share_id: str):
+    """
+    Dynamic SVG OpenGraph image banner for social preview unfurling.
+    """
+    clean_id = share_id.replace(".svg", "").strip()
+    item = share_store.get_verdict(clean_id)
+    if not item:
+        item = {
+            "verdict": "FactGuard",
+            "extracted_claim": "Real-Time AI Fact Checker",
+            "confidence": 1.0,
+            "evidence": []
+        }
+    svg_content = render_og_svg(item)
+    return Response(
+        content=svg_content, 
+        media_type="image/svg+xml",
+        headers={"Cache-Control": "public, max-age=86400"}
+    )
+
+@app.get("/v/{share_id}", response_class=HTMLResponse)
+async def view_shared_verdict(share_id: str):
+    """
+    Server-rendered public landing page with OpenGraph & Twitter Card tags.
+    """
+    item = share_store.get_verdict(share_id)
+    if not item:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, 
+            detail="Shared verdict not found or expired"
+        )
+    html_content = render_shared_page_html(item, share_id)
+    return HTMLResponse(content=html_content)
 
 # --- Static File Serving (Unified Next.js Frontend) ---
 static_dir = os.path.join(os.path.dirname(__file__), "static")

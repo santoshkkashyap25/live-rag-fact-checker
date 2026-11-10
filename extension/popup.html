@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FactGuard AI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <svg class="shield-icon" viewBox="0 0 56 64" fill="none">
+          <path d="M28 4L6 14V30C6 44 15 56 28 60C41 56 50 44 50 30V14L28 4Z" fill="#38bdf8"/>
+          <path d="M22 30L26 34L34 24" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text">FactGuard<span class="dot-ai">.AI</span></span>
+      </div>
+      <div class="server-badge" id="serverStatus" title="Target Server">
+        <span class="status-dot"></span>
+        <span id="serverLabel">Cloud</span>
+      </div>
+    </header>
+
+    <!-- Claim Input Area -->
+    <div class="input-section">
+      <label for="claimInput" class="input-label">Statement to Fact-Check</label>
+      <textarea id="claimInput" placeholder="Highlight any text on the web or type a statement here..." rows="3"></textarea>
+      
+      <div class="action-row">
+        <select id="serverSelect" class="server-dropdown" title="Verification API Server">
+          <option value="https://factguard-1gge.onrender.com">Render Cloud (Live)</option>
+          <option value="http://localhost:8000">Localhost (Port 8000)</option>
+        </select>
+        <button id="verifyBtn" class="verify-btn">
+          <span id="btnText">Verify Claim</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="loading-state hidden">
+      <div class="spinner"></div>
+      <p id="loadingMsg">Querying live web &amp; re-ranking evidence...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="errorState" class="error-state hidden">
+      <p id="errorMsg">Verification failed. Check server connection.</p>
+    </div>
+
+    <!-- Results Card -->
+    <div id="resultCard" class="result-card hidden">
+      <div class="verdict-banner" id="verdictBanner">
+        <span id="verdictBadge" class="verdict-badge">TRUE</span>
+        <div class="conf-area">
+          <span class="conf-label">Confidence</span>
+          <span id="confValue" class="conf-val">95%</span>
+        </div>
+      </div>
+
+      <div class="reasoning-area">
+        <div class="section-title">AI Analysis</div>
+        <p id="reasoningText" class="reasoning-text"></p>
+      </div>
+
+      <div class="citations-area" id="citationsArea">
+        <div class="section-title">Top Web Evidence (<span id="evidenceCount">0</span>)</div>
+        <div id="evidenceList" class="evidence-list"></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="https://factguard-1gge.onrender.com" target="_blank" class="footer-link">Open Full App</a>
+      <span class="footer-sep">&bull;</span>
+      <a href="https://github.com/santoshkkashyap25/live-rag-fact-checker" target="_blank" class="footer-link gh-link">&#9733; Star on GitHub</a>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
