@@ -70,3 +70,4 @@ cd ..
 4. Our GitHub Actions CI will automatically run the backend test suite, SDK tests, and frontend build.
 
 Thank you for helping make automated AI fact-checking transparent and open-source! ⭐
+
