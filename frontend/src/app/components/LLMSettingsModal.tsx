@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import styles from "./LLMSettingsModal.module.css";
 
-export type LLMProviderType = "groq" | "openai" | "gemini" | "claude";
+export type LLMProviderType = "groq" | "openai" | "gemini" | "claude" | "ollama";
 
 export interface LLMConfig {
   provider: LLMProviderType;
