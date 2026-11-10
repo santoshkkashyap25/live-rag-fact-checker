@@ -16,59 +16,105 @@ class WebSearchEngine:
     """
 
     def __init__(self):
+        self.session = requests.Session()
         self.headers = {
             "User-Agent": (
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/120.0.0.0 Safari/537.36"
+                "Chrome/124.0.0.0 Safari/537.36"
             ),
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
             "Accept-Language": "en-US,en;q=0.9",
+            "Referer": "https://html.duckduckgo.com/",
+            "Sec-Fetch-Dest": "document",
+            "Sec-Fetch-Mode": "navigate",
+            "Sec-Fetch-Site": "same-origin",
+            "Sec-Fetch-User": "?1",
+            "Upgrade-Insecure-Requests": "1"
         }
+        self.session.headers.update(self.headers)
 
     def search_duckduckgo(self, query: str, max_results: int = 6) -> List[Dict[str, str]]:
         """
-        Search DuckDuckGo HTML endpoint for live web results.
+        Search DuckDuckGo HTML endpoint with automatic fallback to DuckDuckGo Lite.
         Returns a list of dicts with title, snippet, and url.
         """
         results = []
+        
+        # 1. Primary: DuckDuckGo HTML GET
         try:
-            url = "https://html.duckduckgo.com/html/"
-            data = {"q": query}
-            response = requests.post(url, data=data, headers=self.headers, timeout=10)
+            url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(query)}"
+            response = self.session.get(url, timeout=8)
             
-            if response.status_code != 200:
-                logger.warning(f"DuckDuckGo returned status {response.status_code}")
-                return results
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.text, "html.parser")
+                for r in soup.select(".result"):
+                    title_elem = r.select_one(".result__title")
+                    snippet_elem = r.select_one(".result__snippet")
+                    url_elem = r.select_one(".result__url")
+                    link_elem = r.select_one("a.result__url") or r.select_one(".result__title a")
 
-            soup = BeautifulSoup(response.text, "html.parser")
-            for r in soup.select(".result"):
-                title_elem = r.select_one(".result__title")
-                snippet_elem = r.select_one(".result__snippet")
-                url_elem = r.select_one(".result__url")
-                link_elem = r.select_one("a.result__url") or r.select_one(".result__title a")
-
-                if title_elem and snippet_elem:
-                    title = title_elem.get_text(strip=True)
-                    snippet = snippet_elem.get_text(strip=True)
-                    
-                    # Extract direct destination URL
-                    href = ""
-                    if link_elem and link_elem.get("href"):
-                        raw_href = link_elem["href"]
-                        # DuckDuckGo wraps links in /l/?uddg=...
-                        if "uddg=" in raw_href:
-                            try:
-                                parsed = urllib.parse.parse_qs(urllib.parse.urlparse(raw_href).query)
-                                href = parsed.get("uddg", [""])[0]
-                            except Exception:
+                    if title_elem and snippet_elem:
+                        title = title_elem.get_text(strip=True)
+                        snippet = snippet_elem.get_text(strip=True)
+                        
+                        # Extract direct destination URL
+                        href = ""
+                        if link_elem and link_elem.get("href"):
+                            raw_href = link_elem["href"]
+                            if "uddg=" in raw_href:
+                                try:
+                                    parsed = urllib.parse.parse_qs(urllib.parse.urlparse(raw_href).query)
+                                    href = parsed.get("uddg", [""])[0]
+                                except Exception:
+                                    href = raw_href
+                            else:
                                 href = raw_href
-                        else:
-                            href = raw_href
-                    
-                    if not href and url_elem:
-                        raw_url = url_elem.get_text(strip=True)
-                        href = f"https://{raw_url}" if not raw_url.startswith("http") else raw_url
+                        
+                        if not href and url_elem:
+                            raw_url = url_elem.get_text(strip=True)
+                            href = f"https://{raw_url}" if not raw_url.startswith("http") else raw_url
 
+                        if snippet and len(snippet) > 20:
+                            results.append({
+                                "title": title,
+                                "snippet": snippet,
+                                "url": href,
+                                "source": "DuckDuckGo"
+                            })
+
+                    if len(results) >= max_results:
+                        break
+
+            if results:
+                logger.info(f"DuckDuckGo HTML search retrieved {len(results)} results for '{query}'")
+                return results
+            else:
+                logger.warning(f"DuckDuckGo HTML returned 0 results or status {response.status_code}, attempting Lite fallback...")
+        except Exception as e:
+            logger.warning(f"DuckDuckGo HTML search attempt failed: {e}, falling back to Lite...")
+
+        # 2. Resilient Fallback: DuckDuckGo Lite POST
+        try:
+            lite_url = "https://lite.duckduckgo.com/lite/"
+            lite_resp = self.session.post(lite_url, data={"q": query}, timeout=8)
+            if lite_resp.status_code == 200:
+                soup = BeautifulSoup(lite_resp.text, "html.parser")
+                titles = soup.select("a.result-link")
+                snippets = soup.select("td.result-snippet")
+                
+                for title_elem, snip_elem in zip(titles, snippets):
+                    title = title_elem.get_text(strip=True)
+                    href = title_elem.get("href", "")
+                    # Extract target URL if wrapped
+                    if "uddg=" in href:
+                        try:
+                            parsed = urllib.parse.parse_qs(urllib.parse.urlparse(href).query)
+                            href = parsed.get("uddg", [""])[0]
+                        except Exception:
+                            pass
+
+                    snippet = snip_elem.get_text(strip=True)
                     if snippet and len(snippet) > 20:
                         results.append({
                             "title": title,
@@ -76,13 +122,12 @@ class WebSearchEngine:
                             "url": href,
                             "source": "DuckDuckGo"
                         })
-
-                if len(results) >= max_results:
-                    break
-
-            logger.info(f"DuckDuckGo search retrieved {len(results)} results for '{query}'")
+                    if len(results) >= max_results:
+                        break
+                
+                logger.info(f"DuckDuckGo Lite search retrieved {len(results)} results for '{query}'")
         except Exception as e:
-            logger.error(f"DuckDuckGo search error: {e}")
+            logger.error(f"DuckDuckGo Lite fallback error: {e}")
 
         return results
 
@@ -142,6 +187,13 @@ class WebSearchEngine:
                         extract = page_data.get("extract", "").strip()
                         article_url = f"https://en.wikipedia.org/wiki/{urllib.parse.quote(title.replace(' ', '_'))}"
                         if title and extract and len(extract) > 20 and title not in seen_titles:
+                            # Verify that at least one core keyword appears in title or extract to avoid noisy matches
+                            core_terms = [t.lower() for t in re.findall(r'\b[a-zA-Z0-9]{3,}\b', kw) if len(t) > 2]
+                            text_check = f"{title} {extract}".lower()
+                            if core_terms and not any(term in text_check for term in core_terms):
+                                logger.debug(f"Skipping noisy Wikipedia result '{title}' (no core keyword overlap)")
+                                continue
+
                             seen_titles.add(title)
                             results.append({
                                 "title": f"{title} (Wikipedia)",
