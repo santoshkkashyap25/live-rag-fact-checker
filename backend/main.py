@@ -6,10 +6,11 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, status, Header
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
 from config import APP_TITLE, APP_VERSION, HOST, PORT
-from pipeline import run_fact_checking_pipeline
+from pipeline import run_fact_checking_pipeline, stream_fact_checking_pipeline
 from core.metrics import metrics_collector
 from core.cache import query_cache
 from core.llm_service import llm_service
@@ -121,6 +122,46 @@ async def test_llm_connection(req: LLMTestRequest):
         model=req.model
     )
     return {"success": success, "message": message}
+
+@app.post("/api/verify/stream")
+async def verify_statement_stream(
+    request: VerifyRequest,
+    x_user_id: Optional[str] = Header(default=None, alias="X-User-ID"),
+    x_llm_provider: Optional[str] = Header(default=None, alias="X-LLM-Provider"),
+    x_llm_api_key: Optional[str] = Header(default=None, alias="X-LLM-API-Key"),
+    x_llm_model: Optional[str] = Header(default=None, alias="X-LLM-Model"),
+):
+    """
+    Verify a statement with real-time Server-Sent Events (SSE) progress streaming.
+    """
+    if not request.text.strip():
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, 
+            detail="Statement cannot be empty"
+        )
+    
+    user_id = x_user_id or request.user_id or "default_user"
+    provider = x_llm_provider or request.llm_provider
+    api_key = x_llm_api_key or request.llm_api_key
+    model = x_llm_model or request.llm_model
+    
+    logger.info(f"API Stream Request - Verify (user: {user_id}, provider: {provider or 'system'}): {request.text[:100]}...")
+    
+    return StreamingResponse(
+        stream_fact_checking_pipeline(
+            raw_text=request.text,
+            user_id=user_id,
+            llm_provider=provider,
+            llm_api_key=api_key,
+            llm_model=model
+        ),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no"
+        }
+    )
 
 @app.post(
     "/api/verify", 

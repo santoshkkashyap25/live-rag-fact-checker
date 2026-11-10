@@ -78,6 +78,7 @@ export default function VerifyPage() {
   const [tickIndex, setTickIndex] = useState(0);
   const [isWarmingUp, setIsWarmingUp] = useState(false);
   const [countdown, setCountdown] = useState(0);
+  const [liveStatusMessage, setLiveStatusMessage] = useState<string>("");
 
   const pipelineTicks = [
     "Parsing linguistic dependencies and isolating claim propositions...",
@@ -186,20 +187,12 @@ export default function VerifyPage() {
     };
   }, []);
 
-  // Simulate loading steps during verify
+  // Reset loading step when loading concludes
   useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (loading) {
-      interval = setInterval(() => {
-        setLoadingStep((prev) => {
-          if (prev < 2) return prev + 1;
-          return prev;
-        });
-      }, 1000);
-    } else {
+    if (!loading) {
       setLoadingStep(0);
+      setLiveStatusMessage("");
     }
-    return () => clearInterval(interval);
   }, [loading]);
 
   const handleVerify = async (e?: React.FormEvent) => {
@@ -207,6 +200,8 @@ export default function VerifyPage() {
     if (!inputText.trim()) return;
 
     setLoading(true);
+    setLoadingStep(0);
+    setLiveStatusMessage("Initializing fact-checking engine...");
     setResult(null);
     setError(null);
     setIsWarmingUp(false);
@@ -214,7 +209,7 @@ export default function VerifyPage() {
     setIsCacheHit(false);
 
     try {
-      const res = await fetch(`${API_BASE}/api/verify`, {
+      const res = await fetch(`${API_BASE}/api/verify/stream`, {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -251,11 +246,70 @@ export default function VerifyPage() {
         throw new Error(detailMsg);
       }
 
-      const data: VerifyResponse = await res.json();
-      setResult(data);
-      setIsCacheHit(!!data.is_cache_hit);
-    } catch (err: any) {
-      setError(err.message || "An unexpected error occurred.");
+      const contentType = res.headers.get("content-type") || "";
+      if (contentType.includes("text/event-stream") && res.body) {
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = "";
+        let receivedResult = false;
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          buffer += decoder.decode(value, { stream: true });
+          const blocks = buffer.split("\n\n");
+          buffer = blocks.pop() || "";
+
+          for (const block of blocks) {
+            const trimmed = block.trim();
+            if (trimmed.startsWith("data: ")) {
+              try {
+                const event = JSON.parse(trimmed.replace(/^data:\s*/, ""));
+                if (event.type === "status") {
+                  const stepNum = event.step || 1;
+                  if (stepNum === 1) setLoadingStep(0);
+                  else if (stepNum === 2 || stepNum === 3) setLoadingStep(1);
+                  else if (stepNum >= 4) setLoadingStep(2);
+
+                  if (event.message) {
+                    setLiveStatusMessage(event.message);
+                  }
+                } else if (event.type === "complete" && event.result) {
+                  setResult(event.result);
+                  setIsCacheHit(!!event.result.is_cache_hit);
+                  receivedResult = true;
+                } else if (event.type === "error") {
+                  throw new Error(event.message || "Pipeline error");
+                }
+              } catch (parseErr: unknown) {
+                if (parseErr instanceof Error && parseErr.message.startsWith("Verification")) {
+                  throw parseErr;
+                }
+              }
+            }
+          }
+        }
+
+        if (!receivedResult && buffer.trim().startsWith("data: ")) {
+          try {
+            const event = JSON.parse(buffer.trim().replace(/^data:\s*/, ""));
+            if (event.type === "complete" && event.result) {
+              setResult(event.result);
+              setIsCacheHit(!!event.result.is_cache_hit);
+            }
+          } catch {
+            // Buffer parsing error ignore
+          }
+        }
+      } else {
+        const data: VerifyResponse = await res.json();
+        setResult(data);
+        setIsCacheHit(!!data.is_cache_hit);
+      }
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "An unexpected error occurred.";
+      setError(msg);
     } finally {
       setLoading(false);
     }
@@ -503,7 +557,7 @@ export default function VerifyPage() {
             <div className={styles.loadingHeaderArea}>
               <h3 className={styles.loadingTitle}>Processing Live Fact-Check</h3>
               <p className={styles.loadingSubtitle}>
-                Verifying claim against real-time web intelligence and neural re-ranking
+                {liveStatusMessage || "Verifying claim against real-time web intelligence and neural re-ranking"}
               </p>
             </div>
 

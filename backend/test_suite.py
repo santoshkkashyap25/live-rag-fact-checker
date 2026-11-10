@@ -132,6 +132,16 @@ class TestAPIEndpoints(unittest.TestCase):
         self.assertIn("evidence", data)
         self.assertTrue(len(data["evidence"]) > 0)
 
+    def test_verify_stream_endpoint(self):
+        payload = {
+            "text": "The Digital India initiative was launched in 2015.",
+            "user_id": "test_suite_user_stream"
+        }
+        res = self.client.post("/api/verify/stream", json=payload)
+        self.assertEqual(res.status_code, 200)
+        self.assertIn("text/event-stream", res.headers.get("content-type", ""))
+        self.assertIn("data: ", res.text)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
