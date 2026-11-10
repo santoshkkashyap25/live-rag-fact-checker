@@ -153,14 +153,19 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
                     return False, f"Model '{m}' not found or restricted for your key."
                 return False, f"Groq error: {err_str[:120]}"
 
-        # 2. Native Ollama testing (Direct localhost REST API, zero-key)
+        # 2. Native Ollama testing (Direct REST API with custom or default host)
         if clean_provider == "ollama":
             import requests
+            ollama_url = (clean_key or "").strip() or "http://127.0.0.1:11434"
+            if not ollama_url.startswith("http://") and not ollama_url.startswith("https://"):
+                ollama_url = f"http://{ollama_url}"
+            ollama_url = ollama_url.rstrip("/")
+
             ollama_model = (model or self.DEFAULT_MODELS["ollama"]).replace("ollama/", "").strip()
             try:
-                tags_res = requests.get("http://127.0.0.1:11434/api/tags", timeout=5)
+                tags_res = requests.get(f"{ollama_url}/api/tags", timeout=5)
                 if tags_res.status_code != 200:
-                    return False, f"Ollama service returned HTTP {tags_res.status_code}."
+                    return False, f"Ollama service at {ollama_url} returned HTTP {tags_res.status_code}."
                 
                 models_info = tags_res.json().get("models", [])
                 installed_names = [m.get("name", "") for m in models_info]
@@ -170,9 +175,9 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
                 if not match and installed_names:
                     ollama_model = installed_names[0]
                 
-                logger.info(f"Testing Ollama connection with model '{ollama_model}'...")
+                logger.info(f"Testing Ollama connection at '{ollama_url}' with model '{ollama_model}'...")
                 chat_res = requests.post(
-                    "http://127.0.0.1:11434/api/chat",
+                    f"{ollama_url}/api/chat",
                     json={
                         "model": ollama_model,
                         "messages": [{"role": "user", "content": "Ping test. Reply with 'OK'."}],
@@ -181,13 +186,13 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
                     timeout=30
                 )
                 if chat_res.status_code == 200:
-                    return True, f"Ollama connection verified! (Model: {ollama_model})"
+                    return True, f"Ollama connected at {ollama_url}! (Model: {ollama_model})"
                 else:
                     return False, f"Ollama error ({chat_res.status_code}): {chat_res.text[:120]}"
             except requests.exceptions.ConnectionError:
-                return False, "Cannot connect to Ollama at http://127.0.0.1:11434. Ensure 'ollama serve' is running."
+                return False, f"Cannot connect to Ollama at {ollama_url}. Make sure Ollama is running and accessible."
             except requests.exceptions.Timeout:
-                return False, "Ollama timed out while warming up the model. Please retry in a moment."
+                return False, f"Ollama at {ollama_url} timed out while warming up. Please retry in a moment."
             except Exception as oe:
                 return False, f"Ollama error: {str(oe)[:120]}"
 
@@ -289,14 +294,19 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
                 if not content:
                     raise last_err or RuntimeError("No Groq models available.")
 
-            # --- Branch 2: Ollama (Direct native REST API with format=json) ---
+            # --- Branch 2: Ollama (Direct native REST API with configurable host) ---
             elif effective_provider == "ollama":
                 import requests
+                ollama_url = (custom_key or "").strip() or "http://127.0.0.1:11434"
+                if not ollama_url.startswith("http://") and not ollama_url.startswith("https://"):
+                    ollama_url = f"http://{ollama_url}"
+                ollama_url = ollama_url.rstrip("/")
+
                 clean_model = effective_model.replace("ollama/", "").strip()
-                logger.info(f"Querying Ollama natively with model: {clean_model}...")
+                logger.info(f"Querying Ollama at {ollama_url} natively with model: {clean_model}...")
                 
                 ollama_res = requests.post(
-                    "http://127.0.0.1:11434/api/chat",
+                    f"{ollama_url}/api/chat",
                     json={
                         "model": clean_model,
                         "messages": messages,

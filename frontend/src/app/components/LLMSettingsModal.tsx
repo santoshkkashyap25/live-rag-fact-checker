@@ -52,10 +52,10 @@ const PROVIDERS: ProviderMeta[] = [
   },
   {
     id: "ollama",
-    name: "Ollama (Local)",
-    desc: "Run 100% locally on your machine (Zero API key needed)",
+    name: "Ollama (Local / Remote)",
+    desc: "Run 100% locally or on any custom Ollama host",
     keyUrl: "https://ollama.com",
-    keyPlaceholder: "Not required for local",
+    keyPlaceholder: "http://localhost:11434 (leave empty for default)",
     defaultModel: "gemma4:e2b",
     models: [
       { id: "gemma4:e2b", label: "Gemma 4 (E2B • Local Installed)" },
@@ -255,7 +255,7 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
             </div>
           </div>
 
-          {/* API Key Input (Only for cloud providers) */}
+          {/* API Key / Ollama URL Input */}
           {provider !== "ollama" ? (
             <div className={styles.fieldGroup}>
               <div className={styles.fieldHeader}>
@@ -295,22 +295,53 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
               </div>
             </div>
           ) : (
-            <div style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              padding: "10px 14px",
-              background: "rgba(34, 197, 94, 0.08)",
-              border: "1px solid rgba(34, 197, 94, 0.25)",
-              borderRadius: "8px",
-              fontSize: "0.85rem",
-              color: "#94a3b8",
-              marginBottom: "16px"
-            }}>
-              <CheckCircle2 size={16} color="#22c55e" style={{ flexShrink: 0 }} />
-              <span>
-                <strong style={{ color: "#f8fafc" }}>Zero-key local mode:</strong> Connects directly to Ollama at <code style={{ color: "#22c55e" }}>http://localhost:11434</code>. No cloud data or API key needed.
-              </span>
+            <div className={styles.fieldGroup}>
+              <div className={styles.fieldHeader}>
+                <label className={styles.sectionLabel} style={{ marginBottom: 0 }}>
+                  Ollama Server Endpoint
+                </label>
+                <span style={{ fontSize: "0.75rem", color: "#94a3b8" }}>
+                  Default: <code style={{ color: "#22c55e" }}>http://localhost:11434</code>
+                </span>
+              </div>
+
+              <div className={styles.inputWrapper}>
+                <input
+                  type="text"
+                  value={apiKey}
+                  onChange={(e) => {
+                    setApiKey(e.target.value);
+                    setTestResult(null);
+                  }}
+                  placeholder="http://localhost:11434 (leave empty for default)"
+                  className={styles.textInput}
+                />
+              </div>
+
+              <div style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "6px",
+                marginTop: "10px",
+                padding: "10px 14px",
+                background: "rgba(34, 197, 94, 0.08)",
+                border: "1px solid rgba(34, 197, 94, 0.25)",
+                borderRadius: "8px",
+                fontSize: "0.82rem",
+                color: "#94a3b8",
+              }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <CheckCircle2 size={16} color="#22c55e" style={{ flexShrink: 0 }} />
+                  <span style={{ color: "#f8fafc", fontWeight: 600 }}>
+                    Universal Host Compatibility:
+                  </span>
+                </div>
+                <span style={{ lineHeight: 1.45 }}>
+                  • <strong>Local / Docker:</strong> Leave empty to use <code>http://localhost:11434</code> (standard on Windows, Mac, Linux).<br />
+                  • <strong>Custom Port / LAN:</strong> e.g. <code>http://localhost:11435</code> or <code>http://192.168.1.50:11434</code>.<br />
+                  • <strong>Hosted Demo (Render):</strong> Expose local Ollama via <code>ngrok http 11434</code> and paste the URL here.
+                </span>
+              </div>
             </div>
           )}
 

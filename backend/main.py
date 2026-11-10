@@ -124,19 +124,23 @@ async def test_llm_connection(req: LLMTestRequest):
     return {"success": success, "message": message}
 
 @app.get("/api/llm/ollama/models")
-async def get_ollama_models():
+async def get_ollama_models(url: Optional[str] = None):
     """
-    Query local Ollama instance for installed models.
+    Query local or remote Ollama instance for installed models.
     """
     import requests
+    target_url = (url or "").strip() or "http://127.0.0.1:11434"
+    if not target_url.startswith("http://") and not target_url.startswith("https://"):
+        target_url = f"http://{target_url}"
+    target_url = target_url.rstrip("/")
     try:
-        res = await asyncio.to_thread(requests.get, "http://127.0.0.1:11434/api/tags", timeout=3)
+        res = await asyncio.to_thread(requests.get, f"{target_url}/api/tags", timeout=4)
         if res.status_code == 200:
             models = [m.get("name") for m in res.json().get("models", [])]
-            return {"status": "online", "models": models}
-        return {"status": "error", "models": []}
+            return {"status": "online", "url": target_url, "models": models}
+        return {"status": "error", "url": target_url, "models": []}
     except Exception:
-        return {"status": "offline", "models": []}
+        return {"status": "offline", "url": target_url, "models": []}
 
 @app.post("/api/verify/stream")
 async def verify_statement_stream(
