@@ -30,6 +30,9 @@ class Verdict(BaseModel):
     verdict: str = Field(description="Must be exactly: 'True', 'False', or 'Unverifiable'")
     confidence: float = Field(description="Confidence score between 0.0 and 1.0")
     reasoning: str = Field(description="Detailed explanation with evidence citations")
+    consensus_score: Optional[float] = Field(default=1.0, description="Consensus agreement score among sources (0.0 to 1.0)")
+    disputed: Optional[bool] = Field(default=False, description="Whether sources disagree or present conflicting claims")
+    numerical_variance: Optional[str] = Field(default=None, description="Note on numerical tolerances or variance across sources if applicable")
     provider_used: Optional[str] = "groq"
     model_used: Optional[str] = GROQ_MODEL
 
@@ -37,7 +40,7 @@ class LLMService:
     """Multi-provider LLM service supporting Groq, OpenAI, Google Gemini, and Anthropic Claude"""
     
     DEFAULT_MODELS = {
-        "groq": GROQ_MODEL or "groq/compound-mini",
+        "groq": GROQ_MODEL or "openai/gpt-oss-120b",
         "openai": "gpt-4o-mini",
         "gemini": "gemini/gemini-1.5-flash",
         "claude": "anthropic/claude-3-5-haiku-20241022",
@@ -51,41 +54,36 @@ class LLMService:
         logger.info("LLM service initialized with multi-provider BYOK support")
 
     def _create_enhanced_prompt(self) -> str:
-        """Create enhanced prompt with few-shot examples"""
-        template = """You are a precise fact-checking AI. Analyze claims against evidence strictly.
+        """Create enhanced prompt with few-shot examples and consensus/contradiction rules (Moat B)"""
+        template = """You are FactGuard AI, a world-class factual verification system.
+Evaluate the given claim against the retrieved evidence with scientific rigor.
 
-RULES:
-1. 'True' - Evidence explicitly confirms ALL key facts in the claim
-2. 'False' - Evidence explicitly contradicts ANY key fact in the claim  
-3. 'Unverifiable' - Evidence is insufficient or ambiguous
+CORE VERDICT RULES:
+1. 'True': The core factual assertion is confirmed by authoritative evidence.
+   - Minor reporting or numerical variance within normal tolerances (e.g. 400 vs 450 mg, or minor historical dates) does NOT invalidate the claim if the underlying fact is confirmed.
+2. 'False': The evidence explicitly refutes, disproves, or debunks the claim, OR the claim is a known common misconception/myth, OR the claim is derived from a satirical source.
+3. 'Unverifiable': The evidence provides zero relevant information to determine truth or falsehood.
 
-EXAMPLES:
+CONTRADICTION & CONSENSUS RULES:
+- If evidence sources explicitly disagree on the core assertion, set "disputed": true and adjust "consensus_score" (e.g. 0.50).
+- If sources agree on the core fact but have minor numerical variance, note it in "numerical_variance" and set "disputed": false.
+- Satire check: If evidence is tagged with '⚠️ SATIRE SOURCE', treat claims based on it as False or Parody.
 
-Claim: "India has 28 states"
-Evidence: "India consists of 28 states and 8 union territories"
-Verdict: True (exact match)
+Return valid JSON with these fields:
+{{
+  "verdict": "True" | "False" | "Unverifiable",
+  "confidence": 0.0 to 1.0,
+  "reasoning": "Clear 1-3 sentence factual justification citing specific sources",
+  "consensus_score": 0.0 to 1.0,
+  "disputed": false,
+  "numerical_variance": null
+}}
 
-Claim: "The Eiffel Tower is in Berlin"
-Evidence: "The Eiffel Tower is located in Paris, France"
-Verdict: False (contradicts location)
+CLAIM: "{claim}"
 
-Claim: "Apple will launch new product tomorrow"
-Evidence: "Apple announced an event next week"
-Verdict: Unverifiable (timing doesn't match exactly)
-
-NOW ANALYZE:
-
-Claim: "{claim}"
-
-Evidence:
+EVIDENCE:
 {evidence}
-
-Apply normalization:
-- Ignore case, punctuation, number formats
-- "2005 crore" = "₹2,005 cr" = "Rs. 2005 crores"
-- "IREDA" = "India Renewable Energy Development Agency"
-
-Return a JSON with these fields: verdict, confidence, reasoning. The output MUST ONLY be the valid JSON string."""
+"""
         return template
 
     def _normalize_model(self, provider: str, model: Optional[str]) -> str:
@@ -268,9 +266,11 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
                 candidates = list(dict.fromkeys([
                     effective_model,
                     GROQ_MODEL,
-                    "groq/compound-mini",
+                    "openai/gpt-oss-120b",
                     "openai/gpt-oss-20b",
-                    "qwen/qwen3.6-27b",
+                    "qwen/qwen3.8-27b",
+                    "llama-3.3-70b-versatile",
+                    "llama-3.1-8b-instant"
                 ]))
                 
                 last_err = None
@@ -280,7 +280,7 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
                         res = client.chat.completions.create(
                             model=cand,
                             messages=messages,
-                            max_tokens=512,
+                            max_tokens=1536,
                             temperature=0.2,
                             response_format={"type": "json_object"}
                         )
@@ -380,12 +380,27 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
             confidence = max(0.0, min(1.0, confidence))
             
             reasoning = result_dict.get("reasoning", "Evidence evaluated against claim.")
+            raw_consensus = result_dict.get("consensus_score", 1.0)
+            try:
+                consensus_score = float(raw_consensus)
+            except (ValueError, TypeError):
+                consensus_score = 1.0
+            consensus_score = max(0.0, min(1.0, consensus_score))
+            
+            disputed = bool(result_dict.get("disputed", False))
+            numerical_variance = result_dict.get("numerical_variance")
+            if numerical_variance and not isinstance(numerical_variance, str):
+                numerical_variance = str(numerical_variance)
+
             clean_display_model = effective_model
             
             result = Verdict(
                 verdict=verdict,
                 confidence=confidence,
                 reasoning=reasoning,
+                consensus_score=consensus_score,
+                disputed=disputed,
+                numerical_variance=numerical_variance,
                 provider_used=effective_provider,
                 model_used=clean_display_model
             )

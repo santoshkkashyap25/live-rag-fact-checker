@@ -58,12 +58,9 @@ async def stream_fact_checking_pipeline(
         retrieval_start = time.time()
         web_results = await asyncio.to_thread(web_search.search, query=claim, max_results=TOP_K_RETRIEVE)
         
-        # Reranking
-        yield emit({"type": "status", "step": 3, "phase": "reranking", "message": "Re-ranking retrieved passages using BM25Okapi relevance scoring...", "retrieved_count": len(web_results)})
-        candidate_docs = [f"{item['title']}: {item['snippet']}" for item in web_results]
-        doc_meta_map = {f"{item['title']}: {item['snippet']}": item for item in web_results}
-        
-        reranked_results = await asyncio.to_thread(re_ranker.rerank, query=claim, documents=candidate_docs, top_k=TOP_K_RERANK_RESULTS)
+        # Reranking with Domain Trust Matrix (Moat A)
+        yield emit({"type": "status", "step": 3, "phase": "reranking", "message": "Re-ranking retrieved passages with BM25Okapi + Domain Trust Matrix...", "retrieved_count": len(web_results)})
+        reranked_items = await asyncio.to_thread(re_ranker.rerank_items, query=claim, items=web_results, top_k=TOP_K_RERANK_RESULTS)
         retrieval_time = time.time() - retrieval_start
         
         # Prepare LLM Input
@@ -72,12 +69,20 @@ async def stream_fact_checking_pipeline(
         evidence_sources = []
         evidence_urls = []
         
-        for text, score in reranked_results:
-            meta = doc_meta_map.get(text, {})
-            evidence_items.append(f"[{meta.get('title', 'Web')}] {meta.get('snippet', text)}")
-            evidence_scores.append(float(score))
-            evidence_sources.append(meta.get('source', 'Web'))
-            evidence_urls.append(meta.get('url', ''))
+        for item, weighted_score in reranked_items:
+            title = item.get('title', 'Web')
+            snippet = item.get('snippet', '')
+            trust = item.get('domain_trust', {})
+            badge = trust.get('badge', item.get('source', 'Web'))
+            
+            if trust.get('is_satire'):
+                evidence_items.append(f"[{title} | ⚠️ SATIRE SOURCE] {snippet}")
+            else:
+                evidence_items.append(f"[{title} | {badge}] {snippet}")
+
+            evidence_scores.append(float(weighted_score))
+            evidence_sources.append(badge)
+            evidence_urls.append(item.get('url', ''))
 
         # 3. LLM Verdict
         provider_label = (llm_provider or "Groq").upper()
@@ -106,6 +111,9 @@ async def stream_fact_checking_pipeline(
             "evidence_scores": [f"{s:.3f}" for s in evidence_scores],
             "evidence_sources": evidence_sources,
             "evidence_urls": evidence_urls,
+            "consensus_score": getattr(result, "consensus_score", 1.0),
+            "disputed": getattr(result, "disputed", False),
+            "numerical_variance": getattr(result, "numerical_variance", None),
             "engine": {"provider": result.provider_used or (llm_provider or "groq"), "model": result.model_used or (llm_model or "default")},
             "performance": {
                 "extraction_time": f"{extraction_time:.2f}s",
@@ -209,23 +217,15 @@ def run_fact_checking_pipeline(
             max_results=TOP_K_RETRIEVE
         )
         
-        # Map documents for re-ranking
-        candidate_docs = []
-        doc_meta_map = {}
-        for item in web_results:
-            text = f"{item['title']}: {item['snippet']}"
-            candidate_docs.append(text)
-            doc_meta_map[text] = item
-        
-        # 2b. CrossEncoder Re-ranking
-        if candidate_docs:
-            reranked_results = re_ranker.rerank(
+        # 2b. Domain Trust Re-ranking (Moat A)
+        if web_results:
+            reranked_items = re_ranker.rerank_items(
                 query=claim,
-                documents=candidate_docs,
+                items=web_results,
                 top_k=TOP_K_RERANK_RESULTS
             )
         else:
-            reranked_results = []
+            reranked_items = []
             
         retrieval_time = time.time() - retrieval_start
         
@@ -235,18 +235,21 @@ def run_fact_checking_pipeline(
         evidence_sources = []
         evidence_urls = []
         
-        for text, score in reranked_results:
-            meta = doc_meta_map.get(text, {})
-            title = meta.get("title", "")
-            snippet = meta.get("snippet", text)
-            url = meta.get("url", "")
-            source = meta.get("source", "Web")
+        for item, weighted_score in reranked_items:
+            title = item.get("title", "Web")
+            snippet = item.get("snippet", "")
+            url = item.get("url", "")
+            trust = item.get("domain_trust", {})
+            badge = trust.get("badge", item.get("source", "Web"))
             
-            # Format clean evidence item
-            formatted_text = f"[{title}] {snippet}" if title else snippet
+            if trust.get("is_satire"):
+                formatted_text = f"[{title} | ⚠️ SATIRE SOURCE] {snippet}"
+            else:
+                formatted_text = f"[{title} | {badge}] {snippet}"
+
             evidence_items.append(formatted_text)
-            evidence_scores.append(float(score))
-            evidence_sources.append(source)
+            evidence_scores.append(float(weighted_score))
+            evidence_sources.append(badge)
             evidence_urls.append(url)
         
         logger.info(
@@ -299,6 +302,9 @@ def run_fact_checking_pipeline(
             "evidence_scores": [f"{score:.3f}" for score in evidence_scores],
             "evidence_sources": evidence_sources,
             "evidence_urls": evidence_urls,
+            "consensus_score": getattr(verdict_obj, "consensus_score", 1.0),
+            "disputed": getattr(verdict_obj, "disputed", False),
+            "numerical_variance": getattr(verdict_obj, "numerical_variance", None),
             "engine": {
                 "provider": verdict_obj.provider_used or "groq",
                 "model": verdict_obj.model_used or "default"

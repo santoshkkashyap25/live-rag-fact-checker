@@ -16,6 +16,7 @@ from core.claim_extractor import claim_extractor
 from core.cache import QueryCache
 from core.re_ranker import re_ranker
 from core.web_search import web_search
+from core.domain_trust import get_domain_trust, extract_domain
 
 
 class TestClaimExtractor(unittest.TestCase):
@@ -70,6 +71,55 @@ class TestReRanker(unittest.TestCase):
         top_doc, top_score = results[0]
         self.assertIn("Guido van Rossum", top_doc)
         self.assertTrue(top_score > 0)
+
+
+class TestDomainTrustMatrix(unittest.TestCase):
+    """Moat A: Domain Credibility & Authority Unit Tests"""
+
+    def test_extract_domain(self):
+        self.assertEqual(extract_domain("https://www.nature.com/articles/d41586"), "nature.com")
+        self.assertEqual(extract_domain("http://en.wikipedia.org/wiki/Python"), "en.wikipedia.org")
+        self.assertEqual(extract_domain("reddit.com/r/technology"), "reddit.com")
+
+    def test_authoritative_tier(self):
+        res = get_domain_trust("https://www.nature.com/articles/s41586")
+        self.assertGreaterEqual(res["multiplier"], 1.5)
+        self.assertFalse(res["is_satire"])
+        self.assertIn("Tier 1", res["tier"])
+
+        wiki_res = get_domain_trust("https://en.wikipedia.org/wiki/Science")
+        self.assertGreaterEqual(wiki_res["multiplier"], 1.4)
+
+        gov_res = get_domain_trust("https://cdc.gov/flu")
+        self.assertGreaterEqual(gov_res["multiplier"], 1.5)
+
+    def test_ugc_tier(self):
+        res = get_domain_trust("https://medium.com/@user/my-claim")
+        self.assertLessEqual(res["multiplier"], 0.4)
+        self.assertIn("Tier 4", res["tier"])
+
+    def test_satire_detection(self):
+        res = get_domain_trust("https://theonion.com/scientists-discover-bananas-shoot-lasers")
+        self.assertTrue(res["is_satire"])
+        self.assertLessEqual(res["multiplier"], 0.1)
+        self.assertIn("Satire", res["tier"])
+
+    def test_domain_weighted_reranking(self):
+        query = "bananas potassium radiation"
+        items = [
+            {"title": "Joke Post", "snippet": "Bananas cause laser radiation", "url": "https://theonion.com/joke", "source": "Web"},
+            {"title": "Peer Study", "snippet": "Bananas contain naturally occurring potassium-40 radioactive isotope", "url": "https://nature.com/article", "source": "Web"},
+            {"title": "Blog Post", "snippet": "Bananas are rich in potassium and healthy nutrients", "url": "https://medium.com/post", "source": "Web"}
+        ]
+        reranked = re_ranker.rerank_items(query, items, top_k=3)
+        self.assertEqual(len(reranked), 3)
+        top_item, top_score = reranked[0]
+        # Nature study must be top-ranked due to 1.6x multiplier
+        self.assertIn("nature.com", top_item["url"])
+        self.assertGreater(top_score, 0)
+        # The Onion must be lowest-ranked due to 0.05x multiplier
+        last_item, last_score = reranked[-1]
+        self.assertTrue(last_item["domain_trust"]["is_satire"])
 
 
 class TestAPIEndpoints(unittest.TestCase):

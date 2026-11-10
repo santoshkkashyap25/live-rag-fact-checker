@@ -95,7 +95,7 @@ class QueryCache:
         """Load cache from disk"""
         try:
             if CACHE_PATH.exists():
-                with open(CACHE_PATH, 'r', encoding='utf-8') as f:
+                with open(CACHE_PATH, 'r', encoding='utf-8-sig') as f:
                     self.cache = json.load(f)
                 logger.info(f"Cache loaded from {CACHE_PATH} ({len(self.cache)} entries)")
         except Exception as e:

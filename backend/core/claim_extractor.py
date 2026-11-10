@@ -76,16 +76,19 @@ class ClaimExtractor:
         return text.strip()
     
     def _is_atomic_claim(self, text: str) -> bool:
-        """Check if text is already a simple, atomic claim"""
-        # Short, no conjunctions, no questions
-        word_count = len(text.split())
-        has_conjunctions = any(conj in text.lower() for conj in [' and ', ' but ', ' or ', ' however '])
-        is_question = text.strip().endswith('?')
-        
-        return (5 <= word_count <= 15 and 
-                not has_conjunctions and 
-                not is_question and
-                text.strip())
+        """Check if text is already a single, complete factual claim statement"""
+        cleaned = text.strip()
+        if not cleaned or cleaned.endswith('?'):
+            return False
+
+        # Split into distinct sentences
+        sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', cleaned) if s.strip()]
+        if len(sentences) == 1:
+            words = sentences[0].split()
+            # Single complete sentence between 3 and 35 words
+            if 3 <= len(words) <= 35 and not sentences[0].endswith('?'):
+                return True
+        return False
     
     def _extract_via_dependency_parsing(self, doc) -> Optional[str]:
         """Extract claim using dependency parsing"""

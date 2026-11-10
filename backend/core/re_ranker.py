@@ -1,9 +1,10 @@
 import logging
 import math
 import re
-from typing import List, Tuple
+from typing import List, Tuple, Dict, Any, Optional
 
 from config import USE_CROSS_ENCODER, CROSS_ENCODER_MODEL
+from core.domain_trust import get_domain_trust
 
 logger = logging.getLogger(__name__)
 
@@ -133,5 +134,42 @@ class ReRanker:
         top_results = self._rank_bm25(query, documents, top_k)
         logger.info(f"Selected top {len(top_results)} documents after BM25 re-ranking.")
         return top_results
+
+    def rerank_items(self, query: str, items: List[Dict[str, Any]], top_k: int) -> List[Tuple[Dict[str, Any], float]]:
+        """
+        Moat A: Re-ranks structured evidence items using BM25Okapi weighted by Domain Authority.
+        FinalScore(Di) = BM25Score(Q, Di) * DomainTrustMultiplier(Di)
+        """
+        if not items:
+            return []
+
+        doc_texts = [f"{item.get('title', '')}: {item.get('snippet', '')}" for item in items]
+        raw_ranked = self.rerank(query, doc_texts, top_k=len(doc_texts))
+        
+        # Build mapping from text to raw score
+        text_to_score = {text: score for text, score in raw_ranked}
+
+        scored_items = []
+        for item in items:
+            text = f"{item.get('title', '')}: {item.get('snippet', '')}"
+            raw_score = text_to_score.get(text, 0.5)
+            
+            # Domain Trust weighting
+            trust_info = get_domain_trust(item.get("url", ""))
+            multiplier = trust_info.get("multiplier", 1.0)
+            
+            # If satire, heavily penalize so genuine sources take precedence
+            if trust_info.get("is_satire"):
+                multiplier = 0.05
+
+            weighted_score = raw_score * multiplier
+            item_copy = dict(item)
+            item_copy["domain_trust"] = trust_info
+            item_copy["bm25_score"] = raw_score
+            item_copy["weighted_score"] = round(weighted_score, 4)
+            scored_items.append((item_copy, weighted_score))
+
+        scored_items.sort(key=lambda x: x[1], reverse=True)
+        return scored_items[:top_k]
 
 re_ranker = ReRanker()

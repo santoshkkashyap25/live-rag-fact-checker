@@ -1,4 +1,5 @@
 # core/web_search.py
+import re
 import requests
 from bs4 import BeautifulSoup
 import urllib.parse
@@ -85,13 +86,80 @@ class WebSearchEngine:
 
         return results
 
+    @staticmethod
+    def _extract_keywords(text: str) -> str:
+        stop_words = {
+            "a", "an", "the", "in", "on", "at", "to", "for", "of", "and", "or",
+            "is", "are", "was", "were", "it", "this", "that", "these", "those",
+            "be", "been", "being", "have", "has", "had", "do", "does", "did",
+            "by", "with", "from", "as", "about", "into", "through", "during",
+            "due", "presence", "naturally", "specifically", "because", "they",
+            "their", "compared", "average", "unusually", "designated", "official",
+            "originally", "conceived", "created", "become", "becomes", "see", "sees",
+            "seen", "perform", "daily"
+        }
+        words = [w for w in re.findall(r'\b[a-zA-Z0-9\-]+\b', text) if w.lower() not in stop_words]
+        return " ".join(words[:8])
+
     def search_wikipedia(self, query: str, max_results: int = 4) -> List[Dict[str, str]]:
         """
-        Search Wikipedia REST search API for factual / encyclopedic claims.
+        Search Wikipedia REST API for factual extracts and definitions in an optimized generator request.
         """
         results = []
+        seen_titles = set()
+        wiki_headers = {
+            "User-Agent": "FactGuardAI/2.0 (factguard-fact-checker@example.com)"
+        }
+        
+        # Build search terms: prioritize refined keywords to strip filler words
+        search_terms = []
+        kw = self._extract_keywords(query)
+        if kw and kw.lower() != query.lower():
+            search_terms.append(kw)
+        search_terms.append(query)
+
+        url = "https://en.wikipedia.org/w/api.php"
+
+        for term in search_terms:
+            try:
+                params = {
+                    "action": "query",
+                    "generator": "search",
+                    "gsrsearch": term,
+                    "gsrlimit": max_results,
+                    "prop": "extracts",
+                    "exintro": "1",
+                    "explaintext": "1",
+                    "exsentences": "4",
+                    "format": "json",
+                }
+                response = requests.get(url, params=params, headers=wiki_headers, timeout=5)
+                if response.status_code == 200:
+                    data = response.json()
+                    pages = data.get("query", {}).get("pages", {})
+                    for page_id, page_data in pages.items():
+                        title = page_data.get("title", "")
+                        extract = page_data.get("extract", "").strip()
+                        article_url = f"https://en.wikipedia.org/wiki/{urllib.parse.quote(title.replace(' ', '_'))}"
+                        if title and extract and len(extract) > 20 and title not in seen_titles:
+                            seen_titles.add(title)
+                            results.append({
+                                "title": f"{title} (Wikipedia)",
+                                "snippet": extract,
+                                "url": article_url,
+                                "source": "Wikipedia"
+                            })
+                if len(results) >= max_results:
+                    break
+            except Exception as ge:
+                logger.debug(f"Wikipedia generator search issue for '{term}': {ge}")
+
+        if results:
+            logger.info(f"Wikipedia generator search retrieved {len(results)} extracts for '{query}'")
+            return results[:max_results]
+
+        # 2. Fallback: list=search with HTML snippet cleaning
         try:
-            url = "https://en.wikipedia.org/w/api.php"
             params = {
                 "action": "query",
                 "list": "search",
@@ -99,38 +167,28 @@ class WebSearchEngine:
                 "format": "json",
                 "srlimit": max_results,
             }
-            wiki_headers = {
-                "User-Agent": "FactGuardAI/2.0 (factguard-fact-checker@example.com)"
-            }
-            response = requests.get(url, params=params, headers=wiki_headers, timeout=8)
-            
-            if response.status_code != 200:
-                return results
-
-            data = response.json()
-            search_items = data.get("query", {}).get("search", [])
-
-            for item in search_items:
-                title = item.get("title", "")
-                raw_snippet = item.get("snippet", "")
-                # Strip HTML tags like <span class="searchmatch"> while preserving whitespace
-                clean_snippet = BeautifulSoup(raw_snippet, "html.parser").get_text(separator=" ", strip=True)
-                clean_snippet = " ".join(clean_snippet.split())
-                article_url = f"https://en.wikipedia.org/wiki/{urllib.parse.quote(title.replace(' ', '_'))}"
-
-                if clean_snippet:
-                    results.append({
-                        "title": f"{title} (Wikipedia)",
-                        "snippet": clean_snippet,
-                        "url": article_url,
-                        "source": "Wikipedia"
-                    })
-
-            logger.info(f"Wikipedia search retrieved {len(results)} results for '{query}'")
+            response = requests.get(url, params=params, headers=wiki_headers, timeout=4)
+            if response.status_code == 200:
+                data = response.json()
+                for item in data.get("query", {}).get("search", []):
+                    title = item.get("title", "")
+                    raw_snippet = item.get("snippet", "")
+                    clean_snippet = BeautifulSoup(raw_snippet, "html.parser").get_text(separator=" ", strip=True)
+                    clean_snippet = " ".join(clean_snippet.split())
+                    article_url = f"https://en.wikipedia.org/wiki/{urllib.parse.quote(title.replace(' ', '_'))}"
+                    if clean_snippet and title not in seen_titles:
+                        seen_titles.add(title)
+                        results.append({
+                            "title": f"{title} (Wikipedia)",
+                            "snippet": clean_snippet,
+                            "url": article_url,
+                            "source": "Wikipedia"
+                        })
+            logger.info(f"Wikipedia fallback search retrieved {len(results)} results for '{query}'")
         except Exception as e:
             logger.error(f"Wikipedia search error: {e}")
 
-        return results
+        return results[:max_results]
 
     def search_duckduckgo_instant(self, query: str) -> Optional[Dict[str, str]]:
         """
@@ -188,12 +246,12 @@ class WebSearchEngine:
                 logger.debug(f"Instant search error: {e}")
 
             try:
-                wiki_results = future_wiki.result(timeout=6)
+                wiki_results = future_wiki.result(timeout=8)
             except Exception as e:
                 logger.warning(f"Wiki search error: {e}")
 
             try:
-                ddg_results = future_ddg.result(timeout=6)
+                ddg_results = future_ddg.result(timeout=8)
             except Exception as e:
                 logger.warning(f"DuckDuckGo search error: {e}")
 
