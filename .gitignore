@@ -1,64 +1,116 @@
-# Byte-compiled / optimized / DLL files
+# ====================================================================
+# FactGuard AI - Comprehensive .gitignore
+# ====================================================================
+
+# --------------------------------------------------------------------
+# 1. Byte-compiled / Optimized Python Artifacts
+# --------------------------------------------------------------------
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+.Python
 
-# Environment files
-.env
-env/
-
-# Logs
-*.log
-
-# Data files
-*.xml
-
-# VSCode settings
-.vscode/
-
-# Python virtual environment folders
+# --------------------------------------------------------------------
+# 2. Virtual Environments
+# --------------------------------------------------------------------
 venv/
 .venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
 
-# OS-specific files
-.DS_Store
-Thumbs.db
-
-# Pytest cache
-.pytest_cache/
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# Ignore built database files if any
-*.db
-
-# Ignore generated index files
-*.idx
-
-# Logs / metrics
-metrics.jsonl
-*.log
-
-# Coverage
-htmlcov/
-coverage.xml
-
-# App Data (Large indices and local sets)
-data/
-tmp/
+# --------------------------------------------------------------------
+# 3. Environment Secrets & Configs
+# --------------------------------------------------------------------
 .env
+.env.*
+*.env
+!.env.example
+!backend/.env.example
+!frontend/.env.example
 
-# Models
-# models/
-
-# Frontend build output & static mounts
-frontend/out/
-backend/static/
-
-# Packaging & Distribution
+# --------------------------------------------------------------------
+# 4. Packaging, Builds & Distribution
+# --------------------------------------------------------------------
 dist/
 build/
 *.egg-info/
+*.egg
+*.whl
+*.tar.gz
 *.zip
+*.tar
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
 
+# --------------------------------------------------------------------
+# 5. Testing, Coverage & Type Checkers
+# --------------------------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+
+# --------------------------------------------------------------------
+# 6. Runtime Data, Metrics & Caches
+# --------------------------------------------------------------------
+data/
+backend/data/
+tmp/
+*.log
+*.log.*
+metrics.jsonl
+*.sqlite
+*.sqlite3
+*.db
+*.idx
+
+# --------------------------------------------------------------------
+# 7. Frontend, Node.js & Next.js Build Outputs
+# --------------------------------------------------------------------
+node_modules/
+frontend/node_modules/
+.next/
+frontend/.next/
+out/
+frontend/out/
+backend/static/
+.pnp
+.pnp.*
+*.tsbuildinfo
+next-env.d.ts
+
+# --------------------------------------------------------------------
+# 8. Operating System & Editor Metadata
+# --------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
