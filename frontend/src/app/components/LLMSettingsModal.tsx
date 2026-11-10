@@ -53,13 +53,15 @@ const PROVIDERS: ProviderMeta[] = [
   {
     id: "ollama",
     name: "Ollama (Local)",
-    desc: "Run models locally on your machine",
+    desc: "Run 100% locally on your machine (Zero API key needed)",
     keyUrl: "https://ollama.com",
     keyPlaceholder: "Not required for local",
-    defaultModel: "ollama/llama3.2",
+    defaultModel: "gemma4:e2b",
     models: [
-      { id: "ollama/llama3.2", label: "Llama 3.2 (3B)" },
-      { id: "ollama/qwen2.5", label: "Qwen 2.5 (7B)" },
+      { id: "gemma4:e2b", label: "Gemma 4 (E2B • Local Installed)" },
+      { id: "llama3.2", label: "Llama 3.2 (3B)" },
+      { id: "qwen2.5", label: "Qwen 2.5 (7B)" },
+      { id: "mistral", label: "Mistral (7B)" },
     ]
   },
   {
@@ -145,7 +147,7 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
   };
 
   const handleTestConnection = async () => {
-    if (!apiKey.trim()) {
+    if (!apiKey.trim() && provider !== "ollama") {
       setTestResult({ success: false, message: "Please enter an API key to test." });
       return;
     }
@@ -181,7 +183,7 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
 
   const handleSave = () => {
     const effectiveModel = isCustomModelChosen ? customModel.trim() : selectedModel;
-    const isCustomKey = apiKey.trim().length > 0;
+    const isCustomKey = apiKey.trim().length > 0 || provider === "ollama";
     
     onSave({
       provider,
@@ -254,7 +256,7 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
           </div>
 
           {/* API Key Input (Only for cloud providers) */}
-          {provider !== "ollama" && (
+          {provider !== "ollama" ? (
             <div className={styles.fieldGroup}>
               <div className={styles.fieldHeader}>
                 <label className={styles.sectionLabel} style={{ marginBottom: 0 }}>
@@ -291,6 +293,24 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
                   {showKey ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
+            </div>
+          ) : (
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "10px 14px",
+              background: "rgba(34, 197, 94, 0.08)",
+              border: "1px solid rgba(34, 197, 94, 0.25)",
+              borderRadius: "8px",
+              fontSize: "0.85rem",
+              color: "#94a3b8",
+              marginBottom: "16px"
+            }}>
+              <CheckCircle2 size={16} color="#22c55e" style={{ flexShrink: 0 }} />
+              <span>
+                <strong style={{ color: "#f8fafc" }}>Zero-key local mode:</strong> Connects directly to Ollama at <code style={{ color: "#22c55e" }}>http://localhost:11434</code>. No cloud data or API key needed.
+              </span>
             </div>
           )}
 

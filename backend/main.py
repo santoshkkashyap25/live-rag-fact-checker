@@ -123,6 +123,21 @@ async def test_llm_connection(req: LLMTestRequest):
     )
     return {"success": success, "message": message}
 
+@app.get("/api/llm/ollama/models")
+async def get_ollama_models():
+    """
+    Query local Ollama instance for installed models.
+    """
+    import requests
+    try:
+        res = await asyncio.to_thread(requests.get, "http://127.0.0.1:11434/api/tags", timeout=3)
+        if res.status_code == 200:
+            models = [m.get("name") for m in res.json().get("models", [])]
+            return {"status": "online", "models": models}
+        return {"status": "error", "models": []}
+    except Exception:
+        return {"status": "offline", "models": []}
+
 @app.post("/api/verify/stream")
 async def verify_statement_stream(
     request: VerifyRequest,

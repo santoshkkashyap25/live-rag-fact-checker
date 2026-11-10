@@ -41,7 +41,7 @@ class LLMService:
         "openai": "gpt-4o-mini",
         "gemini": "gemini/gemini-1.5-flash",
         "claude": "anthropic/claude-3-5-haiku-20241022",
-        "ollama": "ollama/llama3.2",
+        "ollama": "gemma4:e2b",
     }
     
     def __init__(self):
@@ -102,8 +102,8 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
             return f"anthropic/{m}"
         elif provider == "openai":
             return m
-        elif provider == "ollama" and not m.startswith("ollama/"):
-            return f"ollama/{m}"
+        elif provider == "ollama":
+            return m.replace("ollama/", "")
         return m
 
     def _extract_json(self, text: str) -> Dict[str, Any]:
@@ -126,11 +126,10 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
         model: Optional[str] = None
     ) -> Tuple[bool, str]:
         """Test user API key connectivity with a lightweight prompt"""
-        clean_key = (api_key or "").strip()
-        if not clean_key:
-            return False, "API key cannot be empty."
-        
         clean_provider = (provider or "groq").lower().strip()
+        clean_key = (api_key or "").strip()
+        if not clean_key and clean_provider != "ollama":
+            return False, "API key cannot be empty."
         
         # 1. Native Groq testing
         if clean_provider == "groq":
@@ -154,21 +153,55 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
                     return False, f"Model '{m}' not found or restricted for your key."
                 return False, f"Groq error: {err_str[:120]}"
 
-        # 2. LiteLLM testing for OpenAI, Gemini, Claude, Ollama
+        # 2. Native Ollama testing (Direct localhost REST API, zero-key)
+        if clean_provider == "ollama":
+            import requests
+            ollama_model = (model or self.DEFAULT_MODELS["ollama"]).replace("ollama/", "").strip()
+            try:
+                tags_res = requests.get("http://127.0.0.1:11434/api/tags", timeout=5)
+                if tags_res.status_code != 200:
+                    return False, f"Ollama service returned HTTP {tags_res.status_code}."
+                
+                models_info = tags_res.json().get("models", [])
+                installed_names = [m.get("name", "") for m in models_info]
+                
+                # Check for match or fallback
+                match = any(ollama_model == name or name.startswith(ollama_model) for name in installed_names)
+                if not match and installed_names:
+                    ollama_model = installed_names[0]
+                
+                logger.info(f"Testing Ollama connection with model '{ollama_model}'...")
+                chat_res = requests.post(
+                    "http://127.0.0.1:11434/api/chat",
+                    json={
+                        "model": ollama_model,
+                        "messages": [{"role": "user", "content": "Ping test. Reply with 'OK'."}],
+                        "stream": False
+                    },
+                    timeout=30
+                )
+                if chat_res.status_code == 200:
+                    return True, f"Ollama connection verified! (Model: {ollama_model})"
+                else:
+                    return False, f"Ollama error ({chat_res.status_code}): {chat_res.text[:120]}"
+            except requests.exceptions.ConnectionError:
+                return False, "Cannot connect to Ollama at http://127.0.0.1:11434. Ensure 'ollama serve' is running."
+            except requests.exceptions.Timeout:
+                return False, "Ollama timed out while warming up the model. Please retry in a moment."
+            except Exception as oe:
+                return False, f"Ollama error: {str(oe)[:120]}"
+
+        # 3. LiteLLM testing for OpenAI, Gemini, Claude
         litellm_model = self._normalize_model(clean_provider, model)
         try:
             if litellm is None:
                 return False, "LiteLLM multi-provider engine is initializing."
             
-            # Ollama needs specific base_url
-            api_base = "http://localhost:11434" if clean_provider == "ollama" else None
-            
             logger.info(f"Testing connection for '{clean_provider}' using model '{litellm_model}'...")
             litellm.completion(
                 model=litellm_model,
                 messages=[{"role": "user", "content": "Ping test: reply with 'OK' in one word."}],
-                api_key=clean_key if clean_provider != "ollama" else "dummy",
-                api_base=api_base,
+                api_key=clean_key,
                 max_tokens=10,
                 temperature=0.1
             )
@@ -199,7 +232,7 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
         custom_key = (api_key or "").strip()
         has_custom_key = bool(custom_key)
         
-        effective_provider = clean_provider if has_custom_key else "groq"
+        effective_provider = clean_provider if (has_custom_key or clean_provider == "ollama") else "groq"
         effective_model = self._normalize_model(effective_provider, model)
         
         # Check cache
@@ -256,18 +289,31 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
                 if not content:
                     raise last_err or RuntimeError("No Groq models available.")
 
-            # --- Branch 2: Ollama ---
+            # --- Branch 2: Ollama (Direct native REST API with format=json) ---
             elif effective_provider == "ollama":
-                logger.info(f"Querying Ollama with model: {effective_model}...")
-                res = litellm.completion(
-                    model=effective_model,
-                    messages=messages,
-                    api_base="http://localhost:11434",
-                    api_key="dummy",
-                    max_tokens=512,
-                    temperature=0.2
+                import requests
+                clean_model = effective_model.replace("ollama/", "").strip()
+                logger.info(f"Querying Ollama natively with model: {clean_model}...")
+                
+                ollama_res = requests.post(
+                    "http://127.0.0.1:11434/api/chat",
+                    json={
+                        "model": clean_model,
+                        "messages": messages,
+                        "stream": False,
+                        "format": "json",
+                        "options": {"temperature": 0.1}
+                    },
+                    timeout=90
                 )
-                content = res.choices[0].message.content
+                if ollama_res.status_code != 200:
+                    raise RuntimeError(f"Ollama error ({ollama_res.status_code}): {ollama_res.text[:150]}")
+                data = ollama_res.json()
+                content = data.get("message", {}).get("content", "")
+                if not content and data.get("message", {}).get("thinking"):
+                    # If thinking exhausted tokens before content, extract from thinking
+                    content = data.get("message", {}).get("thinking", "")
+                effective_model = clean_model
 
             # --- Branch 3: OpenAI, Gemini, Claude (via LiteLLM) ---
             else:
@@ -293,8 +339,13 @@ Return a JSON with these fields: verdict, confidence, reasoning. The output MUST
             # Parse JSON output
             result_dict = self._extract_json(content)
             
-            verdict = result_dict.get("verdict", "Unverifiable")
-            if verdict not in ["True", "False", "Unverifiable"]:
+            raw_verdict = result_dict.get("verdict", "Unverifiable")
+            if isinstance(raw_verdict, bool):
+                verdict = "True" if raw_verdict else "False"
+            elif isinstance(raw_verdict, str):
+                v_clean = raw_verdict.strip().capitalize()
+                verdict = v_clean if v_clean in ["True", "False", "Unverifiable"] else "Unverifiable"
+            else:
                 verdict = "Unverifiable"
                 
             raw_conf = result_dict.get("confidence", 0.8)
