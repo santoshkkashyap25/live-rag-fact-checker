@@ -27,7 +27,7 @@ import {
 import LLMSettingsModal, { LLMConfig } from "./components/LLMSettingsModal";
 import styles from "./page.module.css";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "";
+const API_BASE = "";
 
 interface PerformanceDetails {
   extraction_time: string;

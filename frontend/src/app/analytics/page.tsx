@@ -7,7 +7,6 @@ import {
   BarChart2,
   Clock,
   CheckCircle2,
-  Globe,
   RefreshCw,
   TrendingUp,
   Award,
@@ -29,7 +28,7 @@ import {
 } from "recharts";
 import styles from "./page.module.css";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "";
+const API_BASE = "";
 
 interface VerdictDistribution {
   True: number;
@@ -329,41 +328,6 @@ export default function AnalyticsPage() {
                         <Bar dataKey="count" fill="#8b5cf6" radius={[4, 4, 0, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
-                  </div>
-                </div>
-
-              </section>
-
-              {/* Database & Cache Admins */}
-              <section className={styles.systemSection}>
-                
-                {/* Real-Time Web Intelligence Info Card */}
-                <div className={styles.systemCard}>
-                  <div className={styles.systemHeader}>
-                    <Globe size={20} className={styles.systemIcon} style={{ color: "#3b82f6" }} />
-                    <h3>Web Intelligence Engine</h3>
-                  </div>
-                  <div className={styles.systemInfoGrid}>
-                    <div className={styles.infoRow}>
-                      <span>Status</span>
-                      <strong className={styles.statusOnline}>Online / Active</strong>
-                    </div>
-                    <div className={styles.infoRow}>
-                      <span>Search Providers</span>
-                      <strong>DuckDuckGo & Wikipedia</strong>
-                    </div>
-                    <div className={styles.infoRow}>
-                      <span>Coverage</span>
-                      <strong>Live Internet (Real-Time)</strong>
-                    </div>
-                    <div className={styles.infoRow}>
-                      <span>Re-ranker</span>
-                      <strong>BM25Okapi + Phrase Match</strong>
-                    </div>
-                    <div className={styles.infoRow}>
-                      <span>Citations & URLs</span>
-                      <strong>Enabled</strong>
-                    </div>
                   </div>
                 </div>
 
