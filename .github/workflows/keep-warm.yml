@@ -1,4 +1,4 @@
-name: Keep Render Services Warm
+name: Keep Render Service Warm
 
 on:
   schedule:
@@ -8,22 +8,17 @@ on:
 
 jobs:
   ping:
-    name: Ping Render Endpoints
+    name: Ping Render Health Endpoint
     runs-on: ubuntu-latest
     steps:
-      - name: Ping FactGuard Backend
+      - name: Ping FactGuard Unified Service
         run: |
-          echo "Pinging FactGuard Backend..."
-          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://factguard-backend-qo5v.onrender.com/)
-          echo "Backend Response Status: $HTTP_STATUS"
+          TARGET_URL="${{ vars.FACTGUARD_URL || 'https://factguard-backend-qo5v.onrender.com' }}"
+          echo "Pinging FactGuard Service at $TARGET_URL/health ..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$TARGET_URL/health")
+          echo "Response Status: $HTTP_STATUS"
           if [ "$HTTP_STATUS" -ne 200 ]; then
-            echo "Backend returned status $HTTP_STATUS, retrying after 5s..."
+            echo "Service returned status $HTTP_STATUS, retrying after 5s..."
             sleep 5
-            curl -s -f https://factguard-backend-qo5v.onrender.com/ || true
+            curl -s -f "$TARGET_URL/health" || true
           fi
-
-      - name: Ping FactGuard Frontend
-        run: |
-          echo "Pinging FactGuard Frontend..."
-          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://factguard-frontend-qo5v.onrender.com/)
-          echo "Frontend Response Status: $HTTP_STATUS"

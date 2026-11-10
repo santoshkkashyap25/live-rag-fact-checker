@@ -1,14 +1,14 @@
 services:
   # -------------------------------------------------------------
-  # Backend API Service (FastAPI + SpaCy + Web Search + Groq)
+  # FactGuard AI Unified Service (FastAPI + Next.js UI)
   # -------------------------------------------------------------
   - type: web
-    name: factguard-backend
+    name: factguard
     runtime: docker
-    dockerfilePath: backend/Dockerfile
-    dockerContext: backend
+    dockerfilePath: Dockerfile
+    dockerContext: .
     plan: free
-    healthCheckPath: /
+    healthCheckPath: /health
     envVars:
       - key: PORT
         value: 8000
@@ -20,27 +20,3 @@ services:
         value: en_core_web_sm
       - key: OMP_NUM_THREADS
         value: "1"
-
-  # -------------------------------------------------------------
-  # Frontend UI Service (Next.js Standalone React Application)
-  # -------------------------------------------------------------
-  - type: web
-    name: factguard-frontend
-    runtime: docker
-    dockerfilePath: frontend/Dockerfile
-    dockerContext: frontend
-    plan: free
-    healthCheckPath: /
-    envVars:
-      - key: PORT
-        value: 3000
-      - key: BACKEND_URL
-        fromService:
-          type: web
-          name: factguard-backend
-          envVarKey: RENDER_EXTERNAL_HOSTNAME
-      - key: NEXT_PUBLIC_API_URL
-        fromService:
-          type: web
-          name: factguard-backend
-          envVarKey: RENDER_EXTERNAL_HOSTNAME

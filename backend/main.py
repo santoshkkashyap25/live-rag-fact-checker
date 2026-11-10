@@ -4,6 +4,7 @@ from typing import List, Dict, Any, Optional
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, status, Header
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from config import APP_TITLE, APP_VERSION, HOST, PORT
@@ -99,15 +100,7 @@ class ErrorResponse(BaseModel):
 
 # --- Endpoints ---
 
-@app.api_route("/", methods=["GET", "HEAD"])
-async def root():
-    return {
-        "app": APP_TITLE,
-        "version": APP_VERSION,
-        "status": "online",
-        "mode": "real_time_web_search"
-    }
-
+@app.api_route("/health", methods=["GET", "HEAD"])
 @app.api_route("/api/health", methods=["GET", "HEAD"])
 async def health_check():
     return {
@@ -257,6 +250,20 @@ async def get_examples():
             "The Digital India initiative was launched in 2015."
         ]
     }
+
+# --- Static File Serving (Unified Next.js Frontend) ---
+static_dir = os.path.join(os.path.dirname(__file__), "static")
+if os.path.exists(static_dir):
+    app.mount("/", StaticFiles(directory=static_dir, html=True), name="static")
+else:
+    @app.api_route("/", methods=["GET", "HEAD"])
+    async def root():
+        return {
+            "app": APP_TITLE,
+            "version": APP_VERSION,
+            "status": "online",
+            "mode": "api_only"
+        }
 
 if __name__ == "__main__":
     import uvicorn

@@ -9,3 +9,4 @@ groq
 beautifulsoup4
 requests
 litellm>=1.40.0
+aiofiles>=23.2.0

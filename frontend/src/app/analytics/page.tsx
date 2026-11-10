@@ -29,7 +29,7 @@ import {
 } from "recharts";
 import styles from "./page.module.css";
 
-const API_BASE = "";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "";
 
 interface VerdictDistribution {
   True: number;

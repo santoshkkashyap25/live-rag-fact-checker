@@ -51,3 +51,8 @@ tmp/
 
 # Models
 # models/
+
+# Frontend build output & static mounts
+frontend/out/
+backend/static/
+

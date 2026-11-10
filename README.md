@@ -66,9 +66,9 @@ cp backend/.env.example backend/.env
 docker compose up -d --build
 ```
 
-- **Frontend Application**: [http://localhost:3000](http://localhost:3000)
-- **Backend API**: [http://localhost:8000](http://localhost:8000)
+- **Full-Stack Application**: [http://localhost:8000](http://localhost:8000)
 - **Interactive Swagger Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
+- **Health Check Endpoint**: [http://localhost:8000/health](http://localhost:8000/health)
 
 To view container logs or stop services:
 ```bash
