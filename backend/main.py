@@ -1,4 +1,5 @@
 import os
+import asyncio
 import logging
 from typing import List, Dict, Any, Optional
 from contextlib import asynccontextmanager
@@ -152,7 +153,8 @@ async def verify_statement(
     
     logger.info(f"API Request - Verify (user: {user_id}, provider: {provider or 'system'}): {request.text[:100]}...")
     try:
-        result = run_fact_checking_pipeline(
+        result = await asyncio.to_thread(
+            run_fact_checking_pipeline,
             request.text, 
             user_id=user_id,
             llm_provider=provider,

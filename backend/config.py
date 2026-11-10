@@ -22,7 +22,7 @@ USE_CROSS_ENCODER = os.getenv("USE_CROSS_ENCODER", "false").lower() == "true"
 CROSS_ENCODER_MODEL = 'cross-encoder/ms-marco-MiniLM-L6-v2' # Optional heavy re-ranker
 
 # LLM Generation Model
-GROQ_MODEL = os.getenv("GROQ_MODEL", "groq/compound-mini")  # High-speed LLM on Groq
+GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")  # High-speed LLM on Groq
 SPACY_MODEL = os.getenv("SPACY_MODEL", "en_core_web_sm")
 
 # --- Web Search & Evidence Parameters ---

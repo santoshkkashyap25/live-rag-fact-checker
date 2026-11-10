@@ -15,7 +15,7 @@ services:
       - key: GROQ_API_KEY
         sync: false
       - key: GROQ_MODEL
-        value: groq/compound-mini
+        value: openai/gpt-oss-20b
       - key: SPACY_MODEL
         value: en_core_web_sm
       - key: OMP_NUM_THREADS

@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import urllib.parse
 import logging
 from typing import List, Dict, Any, Optional
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 logger = logging.getLogger(__name__)
 
@@ -165,29 +166,51 @@ class WebSearchEngine:
 
     def search(self, query: str, max_results: int = 10) -> List[Dict[str, str]]:
         """
-        Aggregate results from DuckDuckGo Instant Answer, DuckDuckGo Web, and Wikipedia.
+        Aggregate results from DuckDuckGo Instant Answer, DuckDuckGo Web, and Wikipedia in parallel.
         Deduplicates results and returns structured evidence items.
         """
         all_results = []
         seen_texts = set()
 
+        # Run web searches concurrently to minimize latency (2-3s instead of 25s)
+        instant = None
+        wiki_results = []
+        ddg_results = []
+
+        with ThreadPoolExecutor(max_workers=3) as executor:
+            future_instant = executor.submit(self.search_duckduckgo_instant, query)
+            future_wiki = executor.submit(self.search_wikipedia, query, 4)
+            future_ddg = executor.submit(self.search_duckduckgo, query, 6)
+
+            try:
+                instant = future_instant.result(timeout=5)
+            except Exception as e:
+                logger.debug(f"Instant search error: {e}")
+
+            try:
+                wiki_results = future_wiki.result(timeout=6)
+            except Exception as e:
+                logger.warning(f"Wiki search error: {e}")
+
+            try:
+                ddg_results = future_ddg.result(timeout=6)
+            except Exception as e:
+                logger.warning(f"DuckDuckGo search error: {e}")
+
         # 1. Instant Answer summary (if available)
-        instant = self.search_duckduckgo_instant(query)
-        if instant:
+        if instant and instant.get("snippet"):
             all_results.append(instant)
             seen_texts.add(instant["snippet"][:60].lower())
 
         # 2. Wikipedia Search
-        wiki_results = self.search_wikipedia(query, max_results=4)
-        for w in wiki_results:
+        for w in (wiki_results or []):
             key = w["snippet"][:60].lower()
             if key not in seen_texts:
                 seen_texts.add(key)
                 all_results.append(w)
 
         # 3. DuckDuckGo Web Search
-        ddg_results = self.search_duckduckgo(query, max_results=6)
-        for d in ddg_results:
+        for d in (ddg_results or []):
             key = d["snippet"][:60].lower()
             if key not in seen_texts:
                 seen_texts.add(key)
