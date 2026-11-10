@@ -39,3 +39,4 @@ body:
       description: What did you expect to happen instead?
     validations:
       required: false
+

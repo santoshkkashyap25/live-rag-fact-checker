@@ -146,3 +146,45 @@ class FactGuard:
             raise RuntimeError(f"Failed to create share link: {res.text}")
         data = res.json()
         return data.get("full_url") or f"{self.api_url}{data.get('url')}"
+
+    def as_langchain_tool(self, name: str = "factguard_verifier"):
+        """
+        Export FactGuard as a LangChain Tool for autonomous agents.
+
+        Usage:
+            from factguard import FactGuard
+            fg = FactGuard()
+            tool = fg.as_langchain_tool()
+            agent = initialize_agent([tool], llm, ...)
+        """
+        try:
+            from langchain.tools import Tool
+            return Tool(
+                name=name,
+                func=lambda query: self.verify(query).reasoning,
+                description="Verifies claims against live web intelligence (DuckDuckGo + Wikipedia). Pass a single factual statement to verify."
+            )
+        except ImportError:
+            raise ImportError("LangChain is not installed. Install via `pip install langchain` to use as_langchain_tool().")
+
+    def as_llamaindex_tool(self, name: str = "factguard_verifier"):
+        """
+        Export FactGuard as a LlamaIndex FunctionTool for ReAct / Agent workflows.
+
+        Usage:
+            from factguard import FactGuard
+            fg = FactGuard()
+            tool = fg.as_llamaindex_tool()
+        """
+        try:
+            from llama_index.core.tools import FunctionTool
+            def verify_claim(statement: str) -> str:
+                res = self.verify(statement)
+                return f"Verdict: {res.verdict} (Confidence: {res.confidence:.2f})\nReasoning: {res.reasoning}"
+            return FunctionTool.from_defaults(
+                fn=verify_claim,
+                name=name,
+                description="Verifies factual statements against live web intelligence."
+            )
+        except ImportError:
+            raise ImportError("LlamaIndex is not installed. Install via `pip install llama-index` to use as_llamaindex_tool().")

@@ -8,5 +8,6 @@ numpy==1.26.4
 groq>=0.13.0
 beautifulsoup4
 requests
+httpx>=0.24.0
 litellm>=1.40.0
 aiofiles>=23.2.0
