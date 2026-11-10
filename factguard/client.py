@@ -41,13 +41,19 @@ class FactGuard:
         self.model = model
         self.timeout = timeout
 
-    def verify(self, statement: str, user_id: str = "python_sdk_user") -> FactCheckResult:
+    def verify(
+        self,
+        statement: str,
+        user_id: str = "python_sdk_user",
+        use_cache: bool = True
+    ) -> FactCheckResult:
         """
         Verify a statement against live web evidence and neural re-ranking.
 
         Args:
             statement: Claim or text to verify.
             user_id: Optional client ID for per-user query caching.
+            use_cache: Whether to use cached results (default: True).
 
         Returns:
             FactCheckResult with verdict, confidence, reasoning, and citations.
@@ -58,7 +64,8 @@ class FactGuard:
         url = f"{self.api_url}/api/verify"
         payload: Dict[str, Any] = {
             "text": statement.strip(),
-            "user_id": user_id
+            "user_id": user_id,
+            "use_cache": use_cache
         }
         if self.provider:
             payload["llm_provider"] = self.provider
@@ -95,7 +102,12 @@ class FactGuard:
         except requests.exceptions.RequestException as e:
             raise RuntimeError(f"Failed to connect to FactGuard at {self.api_url}: {e}")
 
-    def stream(self, statement: str, user_id: str = "python_sdk_stream") -> Generator[Dict[str, Any], None, None]:
+    def stream(
+        self,
+        statement: str,
+        user_id: str = "python_sdk_stream",
+        use_cache: bool = True
+    ) -> Generator[Dict[str, Any], None, None]:
         """
         Stream real-time verification phases ('extracting', 'searching', 'reranking', 'reasoning', 'complete').
 
@@ -108,7 +120,8 @@ class FactGuard:
         url = f"{self.api_url}/api/verify/stream"
         payload: Dict[str, Any] = {
             "text": statement.strip(),
-            "user_id": user_id
+            "user_id": user_id,
+            "use_cache": use_cache
         }
         if self.provider:
             payload["llm_provider"] = self.provider

@@ -27,8 +27,8 @@ SPACY_MODEL = os.getenv("SPACY_MODEL", "en_core_web_sm")
 
 # --- Web Search & Evidence Parameters ---
 WEB_SEARCH_ENABLED = True
-TOP_K_RETRIEVE = 10     # Max search results to fetch from DuckDuckGo + Wikipedia
-TOP_K_RERANK_RESULTS = 3 # Top evidence items after re-ranking sent to LLM
+TOP_K_RETRIEVE = 16     # Max search results to fetch from DuckDuckGo + Wikipedia
+TOP_K_RERANK_RESULTS = 4 # Top evidence items after re-ranking sent to LLM
 CONFIDENCE_THRESHOLD = 0.50
 
 # --- Cache Settings ---

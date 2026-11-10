@@ -274,7 +274,7 @@ class WebSearchEngine:
             logger.debug(f"DuckDuckGo Instant Answer error: {e}")
         return None
 
-    def search(self, query: str, max_results: int = 10) -> List[Dict[str, str]]:
+    def search(self, query: str, max_results: int = 16) -> List[Dict[str, str]]:
         """
         Aggregate results from DuckDuckGo Instant Answer, DuckDuckGo Web, and Wikipedia in parallel.
         Deduplicates results and returns structured evidence items.
@@ -282,15 +282,24 @@ class WebSearchEngine:
         all_results = []
         seen_texts = set()
 
+        # Check for compound conjunctions (e.g. "X, and Y") to retrieve targeted secondary clause evidence
+        compound_query = None
+        clause_splits = re.split(r',\s*(?:and|but)\s+|;\s*', query)
+        if len(clause_splits) > 1 and len(clause_splits[1].split()) >= 3:
+            first_subject = clause_splits[0].strip().split()[0]
+            compound_query = f"{first_subject} {clause_splits[1].strip()}".strip()
+
         # Run web searches concurrently to minimize latency (2-3s instead of 25s)
         instant = None
         wiki_results = []
         ddg_results = []
+        ddg_sub_results = []
 
-        with ThreadPoolExecutor(max_workers=3) as executor:
+        with ThreadPoolExecutor(max_workers=4) as executor:
             future_instant = executor.submit(self.search_duckduckgo_instant, query)
             future_wiki = executor.submit(self.search_wikipedia, query, 4)
             future_ddg = executor.submit(self.search_duckduckgo, query, 6)
+            future_sub = executor.submit(self.search_duckduckgo, compound_query, 4) if compound_query else None
 
             try:
                 instant = future_instant.result(timeout=5)
@@ -307,24 +316,37 @@ class WebSearchEngine:
             except Exception as e:
                 logger.warning(f"DuckDuckGo search error: {e}")
 
+            if future_sub:
+                try:
+                    ddg_sub_results = future_sub.result(timeout=8)
+                except Exception as e:
+                    logger.debug(f"Sub-query search error: {e}")
+
         # 1. Instant Answer summary (if available)
         if instant and instant.get("snippet"):
             all_results.append(instant)
             seen_texts.add(instant["snippet"][:60].lower())
 
-        # 2. Wikipedia Search
-        for w in (wiki_results or []):
-            key = w["snippet"][:60].lower()
-            if key not in seen_texts:
-                seen_texts.add(key)
-                all_results.append(w)
-
-        # 3. DuckDuckGo Web Search
+        # 2. DuckDuckGo Web Search
         for d in (ddg_results or []):
             key = d["snippet"][:60].lower()
             if key not in seen_texts:
                 seen_texts.add(key)
                 all_results.append(d)
+
+        # 3. DuckDuckGo Compound Sub-Query Search
+        for sub in (ddg_sub_results or []):
+            key = sub["snippet"][:60].lower()
+            if key not in seen_texts:
+                seen_texts.add(key)
+                all_results.append(sub)
+
+        # 4. Wikipedia Search
+        for w in (wiki_results or []):
+            key = w["snippet"][:60].lower()
+            if key not in seen_texts:
+                seen_texts.add(key)
+                all_results.append(w)
 
         logger.info(f"Total live search results aggregated: {len(all_results)} for '{query}'")
         return all_results[:max_results]

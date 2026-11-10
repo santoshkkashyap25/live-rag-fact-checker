@@ -62,6 +62,7 @@ app.add_middleware(
 class VerifyRequest(BaseModel):
     text: str = Field(..., max_length=1000, description="The statement to verify")
     user_id: Optional[str] = Field(default="default_user", description="Unique client user identifier")
+    use_cache: Optional[bool] = Field(default=True, description="Whether to check and return cached verification results")
     llm_provider: Optional[str] = Field(default=None, description="Chosen LLM provider (groq, openai, gemini, claude)")
     llm_api_key: Optional[str] = Field(default=None, description="User BYOK API key")
     llm_model: Optional[str] = Field(default=None, description="User chosen model")
@@ -180,6 +181,7 @@ async def verify_statement_stream(
         stream_fact_checking_pipeline(
             raw_text=request.text,
             user_id=user_id,
+            use_cache=request.use_cache,
             llm_provider=provider,
             llm_api_key=api_key,
             llm_model=model
@@ -227,6 +229,7 @@ async def verify_statement(
             run_fact_checking_pipeline,
             request.text, 
             user_id=user_id,
+            use_cache=request.use_cache,
             llm_provider=provider,
             llm_api_key=api_key,
             llm_model=model
