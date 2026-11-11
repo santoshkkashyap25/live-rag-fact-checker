@@ -125,21 +125,68 @@ interface Props {
 
 export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSave }: Props) {
   const [provider, setProvider] = useState<LLMProviderType>(currentConfig.provider);
-  const [apiKey, setApiKey] = useState(currentConfig.apiKey);
+  const [providerKeys, setProviderKeys] = useState<Record<LLMProviderType, string>>({
+    groq: "",
+    ollama: "",
+    openai: "",
+    gemini: "",
+    claude: ""
+  });
   const [selectedModel, setSelectedModel] = useState(currentConfig.model);
   const [customModel, setCustomModel] = useState("");
   const [showKey, setShowKey] = useState(false);
   const [testing, setTesting] = useState(false);
   const [testResult, setTestResult] = useState<{ success: boolean; message: string } | null>(null);
 
-  // Sync state when modal opens
+  // Sync state when modal opens with per-provider key isolation
   useEffect(() => {
     if (isOpen) {
       setProvider(currentConfig.provider);
-      setApiKey(currentConfig.apiKey);
       setSelectedModel(currentConfig.model);
       setShowKey(false);
       setTestResult(null);
+
+      let loadedKeys: Record<LLMProviderType, string> = {
+        groq: "",
+        ollama: "",
+        openai: "",
+        gemini: "",
+        claude: ""
+      };
+
+      if (typeof window !== "undefined") {
+        try {
+          const stored = localStorage.getItem("factguard_provider_keys");
+          if (stored) {
+            loadedKeys = { ...loadedKeys, ...JSON.parse(stored) };
+          }
+        } catch (e) {}
+      }
+
+      // Sync active configuration into provider keys with strict leakage guards
+      const currentVal = (currentConfig.apiKey || "").trim();
+      if (currentConfig.provider === "ollama") {
+        // Critical Privacy Guard: If currentVal is an API key (e.g. gsk_*, sk-*), DO NOT put in ollama!
+        if (currentVal.startsWith("gsk_")) {
+          loadedKeys.groq = currentVal;
+          loadedKeys.ollama = "";
+        } else if (currentVal.startsWith("sk-ant")) {
+          loadedKeys.claude = currentVal;
+          loadedKeys.ollama = "";
+        } else if (currentVal.startsWith("sk-") || currentVal.startsWith("sk-proj-")) {
+          loadedKeys.openai = currentVal;
+          loadedKeys.ollama = "";
+        } else if (currentVal.startsWith("AIzaSy")) {
+          loadedKeys.gemini = currentVal;
+          loadedKeys.ollama = "";
+        } else {
+          loadedKeys.ollama = currentVal;
+        }
+      } else {
+        loadedKeys[currentConfig.provider] = currentVal;
+      }
+
+      setProviderKeys(loadedKeys);
     }
   }, [isOpen, currentConfig]);
 
@@ -147,6 +194,7 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
 
   const activeProviderMeta = PROVIDERS.find((p) => p.id === provider) || PROVIDERS[0];
   const isCustomModelChosen = selectedModel === "custom";
+  const currentKey = providerKeys[provider] || "";
 
   const handleProviderSelect = (newProvider: LLMProviderType) => {
     setProvider(newProvider);
@@ -154,12 +202,22 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
     if (meta) {
       setSelectedModel(meta.defaultModel);
     }
+    setShowKey(false);
+    setTestResult(null);
+  };
+
+  const handleKeyChange = (val: string) => {
+    setProviderKeys((prev) => ({
+      ...prev,
+      [provider]: val
+    }));
     setTestResult(null);
   };
 
   const handleTestConnection = async () => {
-    if (!apiKey.trim() && provider !== "ollama") {
-      setTestResult({ success: false, message: "Please enter an API key to test." });
+    const keyToTest = (providerKeys[provider] || "").trim();
+    if (!keyToTest && provider !== "ollama") {
+      setTestResult({ success: false, message: `Please enter an API key for ${activeProviderMeta.name} to test.` });
       return;
     }
 
@@ -174,7 +232,7 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           provider,
-          api_key: apiKey.trim(),
+          api_key: keyToTest,
           model: effectiveModel || undefined
         })
       });
@@ -194,11 +252,18 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
 
   const handleSave = () => {
     const effectiveModel = isCustomModelChosen ? customModel.trim() : selectedModel;
-    const isCustomKey = apiKey.trim().length > 0 || provider === "ollama";
+    const keyToSave = (providerKeys[provider] || "").trim();
+    const isCustomKey = keyToSave.length > 0 || provider === "ollama";
     
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.setItem("factguard_provider_keys", JSON.stringify(providerKeys));
+      } catch (e) {}
+    }
+
     onSave({
       provider,
-      apiKey: apiKey.trim(),
+      apiKey: keyToSave,
       model: effectiveModel || activeProviderMeta.defaultModel,
       isCustomKey
     });
@@ -207,6 +272,20 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
 
   const handleReset = () => {
     if (confirm("Reset to server default Groq model? Your custom keys will be removed from your browser.")) {
+      const emptyKeys: Record<LLMProviderType, string> = {
+        groq: "",
+        ollama: "",
+        openai: "",
+        gemini: "",
+        claude: ""
+      };
+      setProviderKeys(emptyKeys);
+      if (typeof window !== "undefined") {
+        try {
+          localStorage.removeItem("factguard_provider_keys");
+          localStorage.removeItem("factguard_llm_config");
+        } catch (e) {}
+      }
       const defaultConfig: LLMConfig = {
         provider: "groq",
         apiKey: "",
@@ -287,11 +366,8 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
               <div className={styles.inputWrapper}>
                 <input
                   type={showKey ? "text" : "password"}
-                  value={apiKey}
-                  onChange={(e) => {
-                    setApiKey(e.target.value);
-                    setTestResult(null);
-                  }}
+                  value={providerKeys[provider] || ""}
+                  onChange={(e) => handleKeyChange(e.target.value)}
                   placeholder={activeProviderMeta.keyPlaceholder}
                   className={styles.textInput}
                 />
@@ -319,11 +395,8 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
               <div className={styles.inputWrapper}>
                 <input
                   type="text"
-                  value={apiKey}
-                  onChange={(e) => {
-                    setApiKey(e.target.value);
-                    setTestResult(null);
-                  }}
+                  value={providerKeys.ollama || ""}
+                  onChange={(e) => handleKeyChange(e.target.value)}
                   placeholder="http://localhost:11434 (leave empty for default)"
                   className={styles.textInput}
                 />
@@ -389,7 +462,7 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
             <button
               type="button"
               onClick={handleTestConnection}
-              disabled={testing || !apiKey.trim()}
+              disabled={testing || (provider !== "ollama" && !currentKey.trim())}
               className={styles.testBtn}
             >
               <RefreshCw size={14} className={testing ? styles.spin : ""} />

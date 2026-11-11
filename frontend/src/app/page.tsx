@@ -138,6 +138,21 @@ export default function VerifyPage() {
             parsed.model = "groq/compound-mini";
             localStorage.setItem("factguard_llm_config", JSON.stringify(parsed));
           }
+          // Clean accidental API key leakage into Ollama endpoint
+          if (parsed.provider === "ollama" && (parsed.apiKey?.startsWith("gsk_") || parsed.apiKey?.startsWith("sk-") || parsed.apiKey?.startsWith("AIza"))) {
+            const leakedKey = parsed.apiKey;
+            parsed.apiKey = "";
+            localStorage.setItem("factguard_llm_config", JSON.stringify(parsed));
+            try {
+              const keys = JSON.parse(localStorage.getItem("factguard_provider_keys") || "{}");
+              if (leakedKey.startsWith("gsk_") && !keys.groq) keys.groq = leakedKey;
+              if (leakedKey.startsWith("sk-ant") && !keys.claude) keys.claude = leakedKey;
+              else if (leakedKey.startsWith("sk-") && !keys.openai) keys.openai = leakedKey;
+              if (leakedKey.startsWith("AIza") && !keys.gemini) keys.gemini = leakedKey;
+              keys.ollama = "";
+              localStorage.setItem("factguard_provider_keys", JSON.stringify(keys));
+            } catch (e) {}
+          }
           setLlmConfig(parsed);
         }
       } catch (err) {
