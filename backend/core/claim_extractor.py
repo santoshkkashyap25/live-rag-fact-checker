@@ -10,11 +10,24 @@ from config import SPACY_MODEL
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Homoglyphs table mapping Cyrillic lookalikes to Latin equivalents
+CYRILLIC_TO_LATIN = {
+    'А': 'A', 'а': 'a', 'В': 'B', 'С': 'C', 'с': 'c', 'Е': 'E', 'е': 'e',
+    'Н': 'H', 'і': 'i', 'І': 'I', 'Ј': 'J', 'ј': 'j', 'К': 'K', 'к': 'k',
+    'М': 'M', 'О': 'O', 'о': 'o', 'Р': 'P', 'р': 'p', 'Ѕ': 'S', 'ѕ': 's',
+    'Т': 'T', 'т': 't', 'Х': 'X', 'х': 'x', 'Ү': 'Y', 'ү': 'y', 'һ': 'h',
+    'ԁ': 'd', 'ԛ': 'q', 'ԝ': 'w'
+}
+
 class ClaimExtractor:
     """Enhanced claim extraction with multiple strategies"""
     
     def __init__(self):
         self.nlp = None
+
+    def _normalize_homoglyphs(self, text: str) -> str:
+        """Map Cyrillic/Unicode visual lookalike homoglyphs to ASCII Latin to defeat obfuscation"""
+        return "".join(CYRILLIC_TO_LATIN.get(c, c) for c in text)
 
     def _get_nlp(self):
         if self.nlp is None:
@@ -30,6 +43,86 @@ class ClaimExtractor:
             logger.info("SpaCy model loaded successfully.")
         return self.nlp
     
+    FACTUAL_VERBS = {
+        "be", "is", "are", "was", "were", "been", "locate", "located",
+        "found", "founded", "invent", "invented", "discover", "discovered",
+        "boil", "boils", "freeze", "freezes", "contain", "contains", "consist", "consists",
+        "revolve", "revolves", "orbit", "orbits", "win", "won", "elect", "elected",
+        "stand", "stands", "reach", "reaches", "have", "has", "had"
+    }
+
+    DISCOURSE_MARKERS = [
+        "discussion", "debated", "wondering", "opinion", "what do you think",
+        "hello", "hi guys", "let me know", "some believed", "others discussed",
+        "participants", "debating", "talked about"
+    ]
+
+    PREAMBLE_PATTERNS = [
+        r'^(ultimately\s*,?\s*|furthermore\s*,?\s*|moreover\s*,?\s*|in fact\s*,?\s*|additionally\s*,?\s*)',
+        r'^(it is widely documented that\s*|it is well known that\s*|studies show that\s*|records show that\s*)',
+        r'^(during a recent discussion.*?,?\s*)',
+        r'^(some (say|believe|believed|think|thought) that\s*)',
+    ]
+
+    def _clean_sentence_preamble(self, s: str) -> str:
+        cleaned = s.strip()
+        for p in self.PREAMBLE_PATTERNS:
+            cleaned = re.sub(p, '', cleaned, flags=re.IGNORECASE).strip()
+        if cleaned:
+            cleaned = cleaned[0].upper() + cleaned[1:]
+        return cleaned
+
+    def _score_sentence_salience(self, sent) -> float:
+        score = 0.0
+        text_lower = sent.text.lower()
+        
+        # Skip interrogatives/questions unless unavoidable
+        if sent.text.strip().endswith('?'):
+            score -= 10.0
+
+        # 1. Named Entities / Proper Nouns (+3.0 each)
+        prop_count = sum(1 for t in sent if t.pos_ == "PROPN")
+        score += prop_count * 3.0
+        
+        # 2. Numerals / Data (+2.5 each)
+        num_count = sum(1 for t in sent if t.pos_ == "NUM")
+        score += num_count * 2.5
+        
+        # 3. Factual Verbs & Copulas (+2.0 each)
+        verb_count = sum(1 for t in sent if t.lemma_.lower() in self.FACTUAL_VERBS)
+        score += verb_count * 2.0
+        
+        # 4. Discourse Marker Penalties (-4.0 each)
+        for dm in self.DISCOURSE_MARKERS:
+            if dm in text_lower:
+                score -= 4.0
+                
+        # 5. Length preference (ideal claim: 5 to 35 words)
+        word_count = len(sent.text.split())
+        if 5 <= word_count <= 35:
+            score += 3.0
+        elif word_count > 35:
+            score -= 2.0
+        elif word_count < 4:
+            score -= 5.0
+            
+        return score
+
+    def _extract_via_salience_scoring(self, doc) -> Optional[str]:
+        """Score candidate sentences by factual density and select the primary verifiable assertion"""
+        candidates = []
+        for sent in doc.sents:
+            sc = self._score_sentence_salience(sent)
+            cl = self._clean_sentence_preamble(sent.text)
+            if cl and len(cl.split()) >= 3:
+                candidates.append((sc, cl))
+        
+        if candidates:
+            best_score, best_claim = max(candidates, key=lambda x: x[0])
+            if best_score > 0:
+                return self._clean_claim(best_claim)
+        return None
+
     def extract(self, text: str) -> str:
         """Extract main claim from text using multiple strategies"""
         logger.info(f"Extracting claim from: {text[:100]}...")
@@ -40,17 +133,25 @@ class ClaimExtractor:
             logger.info("Claim is already atomic, returning as-is")
             return cleaned
         
-        # Strategy 2: Extract from complex sentence
+        # Strategy 2: For multi-sentence inputs (paragraphs / news snippets),
+        # use Factual Salience Scoring to isolate the primary factual claim
         nlp = self._get_nlp()
         doc = nlp(cleaned)
         
-        # Try dependency parsing
+        sents = list(doc.sents)
+        if len(sents) > 1:
+            salient_claim = self._extract_via_salience_scoring(doc)
+            if salient_claim:
+                logger.info(f"Extracted via factual salience scoring: {salient_claim}")
+                return salient_claim
+        
+        # Strategy 3: Try dependency parsing
         claim = self._extract_via_dependency_parsing(doc)
         if claim:
             logger.info(f"Extracted via dependency parsing: {claim}")
             return claim
         
-        # Strategy 3: Extract longest declarative sentence
+        # Strategy 4: Extract longest declarative sentence
         claim = self._extract_longest_declarative(doc)
         if claim:
             logger.info(f"Extracted longest declarative: {claim}")
@@ -61,7 +162,10 @@ class ClaimExtractor:
         return cleaned or text.strip()
     
     def _clean_text(self, text: str) -> str:
-        """Remove prompt injection overrides, common fillers, and adversarial meta-instructions"""
+        """Remove prompt injection overrides, homoglyphs, common fillers, and adversarial meta-instructions"""
+        # 0. Neutralize Unicode homoglyph obfuscation
+        text = self._normalize_homoglyphs(text)
+
         # 1. Strip prompt injection prefixes & system override directives
         injection_prefixes = [
             r'^(system override|instruction override|admin override|debug mode|diagnostic mode|prompt injection|developer mode)\s*:?\s*',
@@ -90,6 +194,13 @@ class ClaimExtractor:
         
         if filtered:
             text = ' '.join(filtered)
+
+        # 3. Handle loaded interrogatives (convert "Why did NASA admit X?" -> "NASA admit X")
+        interrogative_match = re.match(r'^(why did|how did|when did|why does|how does|why is|how is)\s+(.*)', text, re.IGNORECASE)
+        if interrogative_match:
+            candidate = interrogative_match.group(2).rstrip('?. ')
+            if len(candidate.split()) >= 3:
+                text = candidate
         
         return text.strip()
     
