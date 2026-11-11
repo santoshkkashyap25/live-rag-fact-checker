@@ -98,15 +98,16 @@ const PROVIDERS: ProviderMeta[] = [
   {
     id: "claude",
     name: "Anthropic Claude",
-    desc: "Claude 3.7 Sonnet, 3.5 Sonnet & Haiku",
+    desc: "Claude 5.5 Sonnet, Opus & Claude 3.7 hybrid reasoning",
     keyUrl: "https://console.anthropic.com/settings/keys",
     keyPlaceholder: "sk-ant-api03-...",
-    defaultModel: "claude-3-7-sonnet-20250219",
+    defaultModel: "claude-sonnet-5.5",
     models: [
+      { id: "claude-sonnet-5.5", label: "Claude Sonnet 5.5 (Flagship Speed & Frontier Intelligence)" },
+      { id: "claude-opus-5.5", label: "Claude Opus 5.5 (Frontier Deep Reasoning & Logic)" },
+      { id: "claude-haiku-5.5", label: "Claude Haiku 5.5 (Ultra-Fast & Precision Verification)" },
       { id: "claude-3-7-sonnet-20250219", label: "Claude 3.7 Sonnet (Hybrid Reasoning & Extended Thinking)" },
-      { id: "claude-3-5-sonnet-20241022", label: "Claude 3.5 Sonnet v2 (State of the Art)" },
-      { id: "claude-3-5-haiku-20241022", label: "Claude 3.5 Haiku (Ultra-Fast & Precise)" },
-      { id: "claude-3-opus-20240229", label: "Claude 3 Opus (Complex Writing & Nuance)" },
+      { id: "claude-3-5-sonnet-20241022", label: "Claude 3.5 Sonnet v2 (Proven Production Baseline)" },
     ]
   }
 ];

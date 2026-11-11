@@ -43,7 +43,7 @@ class LLMService:
         "groq": GROQ_MODEL or "openai/gpt-oss-120b",
         "openai": "gpt-4o-mini",
         "gemini": "gemini/gemini-2.0-flash",
-        "claude": "anthropic/claude-3-7-sonnet-20250219",
+        "claude": "anthropic/claude-sonnet-5.5",
         "ollama": "gemma4:e2b",
     }
     
