@@ -50,10 +50,9 @@ class ReRanker:
         """Extract alphanumeric word tokens in lowercase."""
         return [w for w in re.findall(r'\b\w+\b', text.lower()) if len(w) > 1 and w not in self._stop_words]
 
-    def _rank_bm25(self, query: str, documents: List[str], top_k: int) -> List[Tuple[str, float]]:
+    def _compute_bm25_scores(self, query: str, documents: List[str]) -> List[float]:
         """
-        Industry-standard BM25Okapi ranking algorithm with bi-gram / exact phrase boost.
-        Ultra-fast (0.1ms), 0 MB memory footprint, perfect for cloud free tiers.
+        Compute BM25Okapi relevance scores for documents in exact order without sorting.
         """
         q_tokens = self._tokenize(query)
         if not q_tokens:
@@ -62,7 +61,7 @@ class ReRanker:
         doc_tokens_list = [self._tokenize(d) for d in documents]
         N = len(documents)
         if N == 0 or not q_tokens:
-            return [(d, 0.5) for d in documents[:top_k]]
+            return [0.5] * N
         
         avgdl = sum(len(d) for d in doc_tokens_list) / max(N, 1)
         if avgdl == 0:
@@ -101,10 +100,18 @@ class ReRanker:
                     if pair in doc_lower:
                         score += 1.0
                         
-            scores.append((documents[i], float(score)))
-            
-        scores.sort(key=lambda x: x[1], reverse=True)
-        return scores[:top_k]
+            scores.append(float(score))
+        return scores
+
+    def _rank_bm25(self, query: str, documents: List[str], top_k: int) -> List[Tuple[str, float]]:
+        """
+        Industry-standard BM25Okapi ranking algorithm with bi-gram / exact phrase boost.
+        Ultra-fast (0.1ms), 0 MB memory footprint, perfect for cloud free tiers.
+        """
+        scores = self._compute_bm25_scores(query, documents)
+        paired = list(zip(documents, scores))
+        paired.sort(key=lambda x: x[1], reverse=True)
+        return paired[:top_k]
 
     def rerank(self, query: str, documents: List[str], top_k: int) -> List[Tuple[str, float]]:
         """
@@ -139,20 +146,17 @@ class ReRanker:
         """
         Moat A: Re-ranks structured evidence items using BM25Okapi weighted by Domain Authority.
         FinalScore(Di) = BM25Score(Q, Di) * DomainTrustMultiplier(Di)
+        Maintains 1:1 positional indexing to prevent duplicate text collision bugs.
         """
         if not items:
             return []
 
         doc_texts = [f"{item.get('title', '')}: {item.get('snippet', '')}" for item in items]
-        raw_ranked = self.rerank(query, doc_texts, top_k=len(doc_texts))
-        
-        # Build mapping from text to raw score
-        text_to_score = {text: score for text, score in raw_ranked}
+        raw_scores = self._compute_bm25_scores(query, doc_texts)
 
         scored_items = []
-        for item in items:
-            text = f"{item.get('title', '')}: {item.get('snippet', '')}"
-            raw_score = text_to_score.get(text, 0.5)
+        for i, item in enumerate(items):
+            raw_score = raw_scores[i] if i < len(raw_scores) else 0.5
             
             # Domain Trust weighting
             trust_info = get_domain_trust(item.get("url", ""))

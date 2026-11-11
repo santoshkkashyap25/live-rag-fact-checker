@@ -19,7 +19,7 @@ from core.llm_service import llm_service
 from core.share_store import share_store
 from core.og_renderer import render_og_svg, render_shared_page_html
 from core.visitor_tracker import visitor_tracker
-from core.security import sanitize_secrets, clean_api_key
+from core.security import sanitize_secrets, clean_api_key, is_probable_api_key
 
 # --- Logging Configuration ---
 logging.basicConfig(
@@ -191,21 +191,28 @@ async def test_llm_connection(req: LLMTestRequest):
 @app.get("/api/llm/ollama/models")
 async def get_ollama_models(url: Optional[str] = None):
     """
-    Query local or remote Ollama instance for installed models.
+    Query local or remote Ollama instance for installed models with URL sanitization.
     """
     import requests
-    target_url = (url or "").strip() or "http://127.0.0.1:11434"
+    raw_url = (url or "").strip()
+    if is_probable_api_key(raw_url):
+        target_url = "http://127.0.0.1:11434"
+    else:
+        target_url = raw_url or "http://127.0.0.1:11434"
+
     if not target_url.startswith("http://") and not target_url.startswith("https://"):
         target_url = f"http://{target_url}"
     target_url = target_url.rstrip("/")
+    clean_display_url = sanitize_secrets(target_url)
+
     try:
         res = await asyncio.to_thread(requests.get, f"{target_url}/api/tags", timeout=4)
         if res.status_code == 200:
             models = [m.get("name") for m in res.json().get("models", [])]
-            return {"status": "online", "url": target_url, "models": models}
-        return {"status": "error", "url": target_url, "models": []}
+            return {"status": "online", "url": clean_display_url, "models": models}
+        return {"status": "error", "url": clean_display_url, "models": []}
     except Exception:
-        return {"status": "offline", "url": target_url, "models": []}
+        return {"status": "offline", "url": clean_display_url, "models": []}
 
 @app.post("/api/telemetry/visit")
 async def record_visit(http_req: Request, payload: Optional[VisitTelemetryRequest] = None):
@@ -395,16 +402,17 @@ async def get_analytics():
 @app.post("/api/cache/clear")
 async def clear_cache(
     user_id: Optional[str] = None,
+    all_users: bool = False,
     x_user_id: Optional[str] = Header(default=None, alias="X-User-ID")
 ):
     """
-    Clear cached query results for the current user, or all users if unspecified.
+    Clear cached query results for the current user, or all users if explicitly requested.
     """
     try:
-        target_user = x_user_id or user_id
+        target_user = None if all_users else (x_user_id or user_id or "default_user")
         query_cache.clear(user_id=target_user)
         query_cache.save_to_disk()
-        msg = f"Cache cleared for user '{target_user}'" if target_user else "All cache cleared successfully"
+        msg = "All cache cleared successfully" if target_user is None else f"Cache cleared for user '{target_user}'"
         return {"status": "success", "message": msg, "user_id": target_user}
     except Exception as e:
         logger.exception("Failed to clear cache")
@@ -431,7 +439,7 @@ async def get_examples():
 # --- Social Sharing & OpenGraph Endpoints ---
 
 @app.post("/api/share", response_model=ShareResponse)
-async def create_shareable_verdict(req: ShareRequest):
+async def create_shareable_verdict(http_req: Request, req: ShareRequest):
     """
     Store a fact-checking verdict and generate a shareable short URL.
     """
@@ -441,10 +449,13 @@ async def create_shareable_verdict(req: ShareRequest):
             detail="Result payload required"
         )
     short_id = share_store.save_verdict(req.result)
+    host = http_req.headers.get("x-forwarded-host") or http_req.headers.get("host") or ""
+    proto = http_req.headers.get("x-forwarded-proto") or (http_req.url.scheme if http_req.url else "https")
+    base_url = f"{proto}://{host}" if host else "https://factguard-1gge.onrender.com"
     return {
         "id": short_id,
         "url": f"/v/{short_id}",
-        "full_url": f"https://factguard-1gge.onrender.com/v/{short_id}"
+        "full_url": f"{base_url}/v/{short_id}"
     }
 
 @app.get("/api/share/{share_id}")
@@ -496,7 +507,10 @@ async def view_shared_verdict(http_req: Request, share_id: str):
             status_code=status.HTTP_404_NOT_FOUND, 
             detail="Shared verdict not found or expired"
         )
-    html_content = render_shared_page_html(item, share_id)
+    host = http_req.headers.get("x-forwarded-host") or http_req.headers.get("host") or ""
+    proto = http_req.headers.get("x-forwarded-proto") or (http_req.url.scheme if http_req.url else "https")
+    base_url = f"{proto}://{host}" if host else "https://factguard-1gge.onrender.com"
+    html_content = render_shared_page_html(item, share_id, app_url=base_url)
     return HTMLResponse(content=html_content)
 
 # --- Static File Serving (Unified Next.js Frontend) ---

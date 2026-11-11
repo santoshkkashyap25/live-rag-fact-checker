@@ -139,7 +139,7 @@ class VisitorTracker:
             
             conversion_rate = 0.0
             if self.total_pageviews > 0:
-                conversion_rate = round((self.total_verifications / self.total_pageviews) * 100, 1)
+                conversion_rate = min(100.0, round((self.total_verifications / self.total_pageviews) * 100, 1))
 
             # Sort daily visitor trend (last 7 days)
             recent_days = sorted(self.daily_unique.keys())[-7:]
@@ -165,8 +165,9 @@ class VisitorTracker:
             }
 
     def save_to_disk(self):
-        """Persist visitor metrics atomically to disk."""
+        """Persist visitor metrics atomically to disk with PID/thread-safe temp files."""
         with self._lock:
+            temp_file = None
             try:
                 self.metrics_path.parent.mkdir(parents=True, exist_ok=True)
                 payload = {
@@ -177,12 +178,17 @@ class VisitorTracker:
                     "referrers": self.referrers,
                     "recent_activity": self.recent_activity
                 }
-                temp_file = self.metrics_path.with_suffix(".tmp")
+                temp_file = self.metrics_path.with_suffix(f".tmp_{os.getpid()}_{threading.get_ident()}_{time.time_ns()}")
                 with open(temp_file, "w", encoding="utf-8") as f:
                     json.dump(payload, f, indent=2)
                 temp_file.replace(self.metrics_path)
             except Exception as e:
                 logger.error(f"Failed to save visitor metrics: {e}")
+                if temp_file and temp_file.exists():
+                    try:
+                        temp_file.unlink()
+                    except Exception:
+                        pass
 
     def load_from_disk(self):
         """Load visitor metrics from disk."""

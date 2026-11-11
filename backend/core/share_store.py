@@ -35,14 +35,22 @@ class ShareStore:
             self.store = {}
 
     def save_to_disk(self):
-        """Persist stored verdicts to JSON file"""
+        """Persist stored verdicts atomically to JSON file"""
+        temp_file = None
         try:
             self.store_path.parent.mkdir(parents=True, exist_ok=True)
-            with open(self.store_path, "w", encoding="utf-8") as f:
+            temp_file = self.store_path.with_suffix(f".tmp_{time.time_ns()}")
+            with open(temp_file, "w", encoding="utf-8") as f:
                 json.dump(self.store, f, indent=2, ensure_ascii=False)
+            temp_file.replace(self.store_path)
             logger.info(f"Saved {len(self.store)} shared verdicts to {self.store_path}")
         except Exception as e:
             logger.error(f"Failed to persist shared verdicts to {self.store_path}: {e}")
+            if temp_file and temp_file.exists():
+                try:
+                    temp_file.unlink()
+                except Exception:
+                    pass
 
     def generate_short_id(self, claim: str, verdict: str) -> str:
         """Generate a clean, collision-resistant 6-character hex ID"""

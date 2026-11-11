@@ -290,9 +290,12 @@ class WebSearchEngine:
         # Check for compound conjunctions (e.g. "X, and Y") to retrieve targeted secondary clause evidence
         compound_query = None
         clause_splits = re.split(r',\s*(?:and|but)\s+|;\s*', query)
-        if len(clause_splits) > 1 and len(clause_splits[1].split()) >= 3:
-            first_subject = clause_splits[0].strip().split()[0]
-            compound_query = f"{first_subject} {clause_splits[1].strip()}".strip()
+        if len(clause_splits) > 1:
+            first_words = clause_splits[0].strip().split()
+            second_words = clause_splits[1].strip().split()
+            if first_words and len(second_words) >= 3:
+                first_subject = first_words[0]
+                compound_query = f"{first_subject} {clause_splits[1].strip()}".strip()
 
         # Run web searches concurrently to minimize latency (2-3s instead of 25s)
         instant = None
@@ -330,26 +333,29 @@ class WebSearchEngine:
         # 1. Instant Answer summary (if available)
         if instant and instant.get("snippet"):
             all_results.append(instant)
-            seen_texts.add(instant["snippet"][:60].lower())
+            seen_texts.add((instant.get("snippet") or "")[:60].lower())
 
         # 2. DuckDuckGo Web Search
         for d in (ddg_results or []):
-            key = d["snippet"][:60].lower()
-            if key not in seen_texts:
+            snippet = d.get("snippet") or ""
+            key = snippet[:60].lower()
+            if key and key not in seen_texts:
                 seen_texts.add(key)
                 all_results.append(d)
 
         # 3. DuckDuckGo Compound Sub-Query Search
         for sub in (ddg_sub_results or []):
-            key = sub["snippet"][:60].lower()
-            if key not in seen_texts:
+            snippet = sub.get("snippet") or ""
+            key = snippet[:60].lower()
+            if key and key not in seen_texts:
                 seen_texts.add(key)
                 all_results.append(sub)
 
         # 4. Wikipedia Search
         for w in (wiki_results or []):
-            key = w["snippet"][:60].lower()
-            if key not in seen_texts:
+            snippet = w.get("snippet") or ""
+            key = snippet[:60].lower()
+            if key and key not in seen_texts:
                 seen_texts.add(key)
                 all_results.append(w)
 

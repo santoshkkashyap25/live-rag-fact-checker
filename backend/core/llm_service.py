@@ -118,17 +118,82 @@ EVIDENCE:
         return m
 
     def _extract_json(self, text: str) -> Dict[str, Any]:
-        """Safely extract JSON from model output across different providers"""
-        text = text.strip()
-        fence_match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.DOTALL)
+        """Safely extract JSON from model output across different providers with balanced-brace parsing & heuristics"""
+        if not text:
+            return {"verdict": "Unverifiable", "confidence": 0.0, "reasoning": "Empty response from LLM."}
+            
+        clean_text = text.strip()
+
+        # 1. Direct JSON parse
+        try:
+            return json.loads(clean_text)
+        except Exception:
+            pass
+
+        # 2. Markdown fenced block extraction
+        fence_match = re.search(r"```(?:json)?\s*(\{[\s\S]*?\})\s*```", clean_text)
         if fence_match:
-            return json.loads(fence_match.group(1))
-        
-        brace_match = re.search(r"(\{.*\})", text, re.DOTALL)
-        if brace_match:
-            return json.loads(brace_match.group(1))
-        
-        return json.loads(text)
+            candidate = fence_match.group(1).strip()
+            # Clean trailing commas (e.g. {"a": 1,})
+            cleaned_candidate = re.sub(r',\s*([\]}])', r'\1', candidate)
+            try:
+                return json.loads(cleaned_candidate)
+            except Exception:
+                pass
+
+        # 3. Balanced curly-brace extractor (handles conversational preamble / postscript)
+        start_idx = clean_text.find('{')
+        if start_idx != -1:
+            brace_count = 0
+            in_string = False
+            escape = False
+            for i in range(start_idx, len(clean_text)):
+                char = clean_text[i]
+                if escape:
+                    escape = False
+                    continue
+                if char == '\\':
+                    escape = True
+                    continue
+                if char == '"':
+                    in_string = not in_string
+                    continue
+                if not in_string:
+                    if char == '{':
+                        brace_count += 1
+                    elif char == '}':
+                        brace_count -= 1
+                        if brace_count == 0:
+                            candidate = clean_text[start_idx:i+1].strip()
+                            cleaned_candidate = re.sub(r',\s*([\]}])', r'\1', candidate)
+                            try:
+                                return json.loads(cleaned_candidate)
+                            except Exception:
+                                break
+
+        # 4. Heuristic plaintext extraction fallback (for small/local models that ignore JSON mode)
+        v_match = re.search(r'(?:verdict|conclusion)\s*[:=]\s*"?\s*(True|False|Unverifiable)\b', clean_text, re.IGNORECASE)
+        c_match = re.search(r'(?:confidence|score)\s*[:=]\s*([0-9\.]+)%?', clean_text, re.IGNORECASE)
+        r_match = re.search(r'(?:reasoning|explanation|justification)\s*[:=]\s*"?([^\r\n]+)', clean_text, re.IGNORECASE)
+
+        if v_match:
+            v_str = v_match.group(1).capitalize()
+            conf_val = 0.85
+            if c_match:
+                try:
+                    raw_val = float(c_match.group(1))
+                    conf_val = raw_val / 100.0 if raw_val > 1.0 else raw_val
+                except ValueError:
+                    conf_val = 0.85
+            reasoning_str = r_match.group(1).strip().strip('"') if r_match else clean_text[:200]
+            return {
+                "verdict": v_str if v_str in ["True", "False", "Unverifiable"] else "Unverifiable",
+                "confidence": conf_val,
+                "reasoning": reasoning_str
+            }
+
+        # Last resort fallback parse
+        return json.loads(clean_text)
 
     def test_connection(
         self, 
@@ -205,6 +270,8 @@ EVIDENCE:
                 else:
                     return False, f"Ollama error ({chat_res.status_code}): {sanitize_secrets(chat_res.text[:120])}"
             except requests.exceptions.ConnectionError:
+                if "127.0.0.1" in ollama_url or "localhost" in ollama_url:
+                    return False, f"Cannot connect to local Ollama at {ollama_url}. If testing on hosted Render/Cloud, expose your local Ollama via 'ngrok http 11434' and paste the ngrok URL."
                 return False, f"Cannot connect to Ollama at {ollama_url}. Make sure Ollama is running and accessible."
             except requests.exceptions.Timeout:
                 return False, f"Ollama at {ollama_url} timed out while warming up. Please retry in a moment."

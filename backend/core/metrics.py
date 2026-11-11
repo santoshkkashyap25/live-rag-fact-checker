@@ -41,17 +41,23 @@ class MetricsCollector:
             logger.error(f"Failed to write metric: {e}")
     
     def load_from_disk(self):
-        """Load metrics from disk"""
+        """Load metrics from disk with per-line fault-tolerance"""
         self.metrics = []
         try:
             if METRICS_PATH.exists():
+                valid_fields = PipelineMetrics.__dataclass_fields__
                 with open(METRICS_PATH, 'r', encoding='utf-8') as f:
                     for line in f:
                         line_str = line.strip()
                         if not line_str:
                             continue
-                        data = json.loads(line_str)
-                        self.metrics.append(PipelineMetrics(**data))
+                        try:
+                            data = json.loads(line_str)
+                            filtered = {k: data[k] for k in valid_fields if k in data}
+                            if len(filtered) == len(valid_fields):
+                                self.metrics.append(PipelineMetrics(**filtered))
+                        except Exception:
+                            continue
                 logger.info(f"Loaded {len(self.metrics)} metrics from disk")
         except Exception as e:
             logger.error(f"Failed to load metrics: {e}")

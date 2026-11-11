@@ -306,7 +306,15 @@ export default function VerifyPage() {
 
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
-        const detailMsg = errData.detail || "Verification failed. Please try again.";
+        let detailMsg = "Verification failed. Please try again.";
+        if (typeof errData.detail === "string") {
+          detailMsg = errData.detail;
+        } else if (Array.isArray(errData.detail) && errData.detail.length > 0) {
+          detailMsg = errData.detail.map((e: any) => e.msg || e.message || JSON.stringify(e)).join("; ");
+        } else if (errData.message) {
+          detailMsg = errData.message;
+        }
+
         const isWarm = 
           res.status === 503 || 
           res.status === 502 ||
@@ -341,28 +349,29 @@ export default function VerifyPage() {
           for (const block of blocks) {
             const trimmed = block.trim();
             if (trimmed.startsWith("data: ")) {
+              let event: any = null;
               try {
-                const event = JSON.parse(trimmed.replace(/^data:\s*/, ""));
-                if (event.type === "status") {
-                  const stepNum = event.step || 1;
-                  if (stepNum === 1) setLoadingStep(0);
-                  else if (stepNum === 2 || stepNum === 3) setLoadingStep(1);
-                  else if (stepNum >= 4) setLoadingStep(2);
+                event = JSON.parse(trimmed.replace(/^data:\s*/, ""));
+              } catch {
+                // Incomplete SSE chunk, continue buffering
+                continue;
+              }
 
-                  if (event.message) {
-                    setLiveStatusMessage(event.message);
-                  }
-                } else if (event.type === "complete" && event.result) {
-                  setResult(event.result);
-                  setIsCacheHit(!!event.result.is_cache_hit);
-                  receivedResult = true;
-                } else if (event.type === "error") {
-                  throw new Error(event.message || "Pipeline error");
+              if (event.type === "status") {
+                const stepNum = event.step || 1;
+                if (stepNum === 1) setLoadingStep(0);
+                else if (stepNum === 2 || stepNum === 3) setLoadingStep(1);
+                else if (stepNum >= 4) setLoadingStep(2);
+
+                if (event.message) {
+                  setLiveStatusMessage(event.message);
                 }
-              } catch (parseErr: unknown) {
-                if (parseErr instanceof Error && parseErr.message.startsWith("Verification")) {
-                  throw parseErr;
-                }
+              } else if (event.type === "complete" && event.result) {
+                setResult(event.result);
+                setIsCacheHit(!!event.result.is_cache_hit);
+                receivedResult = true;
+              } else if (event.type === "error") {
+                throw new Error(event.message || "Pipeline error occurred during verification.");
               }
             }
           }
@@ -374,9 +383,11 @@ export default function VerifyPage() {
             if (event.type === "complete" && event.result) {
               setResult(event.result);
               setIsCacheHit(!!event.result.is_cache_hit);
+            } else if (event.type === "error") {
+              throw new Error(event.message || "Pipeline error occurred during verification.");
             }
-          } catch {
-            // Buffer parsing error ignore
+          } catch (e: any) {
+            if (e instanceof Error && e.message.includes("error")) throw e;
           }
         }
       } else {
@@ -451,12 +462,13 @@ export default function VerifyPage() {
   };
 
   const formatRelevance = (score: number) => {
-    if (score >= 0 && score <= 1) {
-      return `${Math.round(score * 100)}%`;
+    if (isNaN(score) || score <= 0) return "50%";
+    if (score >= 0 && score <= 1.0) {
+      return `${Math.max(10, Math.round(score * 100))}%`;
     }
-    // Cross-encoder logit conversion via sigmoid
-    const sigmoid = 1 / (1 + Math.exp(-score));
-    return `${Math.min(100, Math.max(1, Math.round(sigmoid * 100)))}%`;
+    // Smooth monotonic logistic scaling for raw BM25 / re-rank scores
+    const scaled = 1 - Math.exp(-score / 2.5);
+    return `${Math.min(100, Math.max(25, Math.round(scaled * 100)))}%`;
   };
 
   return (
@@ -805,12 +817,12 @@ export default function VerifyPage() {
                   <div className={styles.metricItem}>
                     <span className={styles.metricLabel}>Confidence</span>
                     <span className={styles.metricValue}>
-                      {Math.round(parseFloat(result.confidence) * 100)}%
+                      {Math.round(Math.min(1.0, Math.max(0.0, Number(result.confidence) || 0.0)) * 100)}%
                     </span>
                     <div className={styles.progressBarBg}>
                       <div 
                         className={styles.progressBarFill} 
-                        style={{ width: `${parseFloat(result.confidence) * 100}%` }}
+                        style={{ width: `${Math.round(Math.min(1.0, Math.max(0.0, Number(result.confidence) || 0.0)) * 100)}%` }}
                       />
                     </div>
                   </div>
@@ -889,6 +901,12 @@ export default function VerifyPage() {
                   const score = parseFloat(result.evidence_scores[index] || "0");
                   const source = result.evidence_sources?.[index] || "Web";
                   const url = result.evidence_urls?.[index];
+
+                  // Parse clean title and snippet from [Title | Badge] Snippet format
+                  const match = ev.match(/^\[(.*?)(?:\s*\|\s*.*?)?\]\s*([\s\S]*)$/);
+                  const titleText = match ? match[1].trim() : "";
+                  const snippetText = match ? match[2].trim() : ev;
+                  const displayPreview = titleText ? `${titleText}: ${snippetText}` : snippetText;
                   
                   return (
                     <div 
@@ -906,7 +924,7 @@ export default function VerifyPage() {
                             <Globe size={11} /> {source}
                           </span>
                           <span className={styles.evidencePreview}>
-                            {ev.length > 80 ? `${ev.substring(0, 80)}...` : ev}
+                            {displayPreview.length > 80 ? `${displayPreview.substring(0, 80)}...` : displayPreview}
                           </span>
                         </div>
                         <div className={styles.evidenceHeaderRight}>
@@ -919,7 +937,12 @@ export default function VerifyPage() {
                       
                       {isExpanded && (
                         <div className={styles.evidenceBody}>
-                          <p className={styles.evidenceFullText}>{ev}</p>
+                          {titleText && (
+                            <h5 style={{ margin: "0 0 0.4rem 0", color: "#f8fafc", fontSize: "0.95rem" }}>
+                              {titleText}
+                            </h5>
+                          )}
+                          <p className={styles.evidenceFullText}>{snippetText}</p>
                           {url && (
                             <a
                               href={url}

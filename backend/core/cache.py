@@ -2,6 +2,8 @@
 import json
 import hashlib
 import threading
+import os
+import time
 from datetime import datetime, timedelta
 from typing import Optional, Dict, Any
 from pathlib import Path
@@ -110,18 +112,24 @@ class QueryCache:
             self.save_to_disk()
     
     def save_to_disk(self):
-        """Persist cache to disk atomically with thread-safety"""
+        """Persist cache to disk atomically with PID/thread-safe temp files"""
         with self._lock:
+            temp_file = None
             try:
                 self.cache_path.parent.mkdir(parents=True, exist_ok=True)
                 cache_snapshot = dict(self.cache)
-                temp_file = self.cache_path.with_suffix(".tmp")
+                temp_file = self.cache_path.with_suffix(f".tmp_{os.getpid()}_{threading.get_ident()}_{time.time_ns()}")
                 with open(temp_file, 'w', encoding='utf-8') as f:
                     json.dump(cache_snapshot, f, indent=2)
                 temp_file.replace(self.cache_path)
                 logger.info(f"Cache saved to {self.cache_path}")
             except Exception as e:
                 logger.error(f"Failed to save cache: {e}")
+                if temp_file and temp_file.exists():
+                    try:
+                        temp_file.unlink()
+                    except Exception:
+                        pass
     
     def load_from_disk(self):
         """Load cache from disk"""

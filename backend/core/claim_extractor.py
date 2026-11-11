@@ -4,6 +4,7 @@ import logging
 import subprocess
 import sys
 import re
+import unicodedata
 from typing import List, Optional
 from config import SPACY_MODEL
 
@@ -26,8 +27,10 @@ class ClaimExtractor:
         self.nlp = None
 
     def _normalize_homoglyphs(self, text: str) -> str:
-        """Map Cyrillic/Unicode visual lookalike homoglyphs to ASCII Latin to defeat obfuscation"""
-        return "".join(CYRILLIC_TO_LATIN.get(c, c) for c in text)
+        """Map Cyrillic/Unicode visual lookalike homoglyphs and decomposed glyphs to ASCII Latin"""
+        # First decompose mathematical / full-width lookalikes (e.g. 𝐅 -> F, ａ -> a)
+        decomposed = unicodedata.normalize('NFKD', text)
+        return "".join(CYRILLIC_TO_LATIN.get(c, c) for c in decomposed)
 
     def _get_nlp(self):
         if self.nlp is None:
@@ -237,28 +240,33 @@ class ClaimExtractor:
         return False
     
     def _extract_via_dependency_parsing(self, doc) -> Optional[str]:
-        """Extract claim using dependency parsing"""
+        """Extract claim using dependency parsing (preserves natural order, auxiliaries, and negations)"""
+        valid_deps = {
+            "nsubj", "nsubjpass", "dobj", "attr", "acomp", "prep", "advmod",
+            "dative", "oprd", "agent", "xcomp", "ccomp", "neg", "aux", "auxpass", "prt"
+        }
         for sent in doc.sents:
             for token in sent:
-                # Find root verb
-                if token.dep_ == "ROOT" and token.pos_ == "VERB":
-                    # Get subject
-                    subjects = [
-                        self._get_full_phrase(child)
+                # Find root verb (action verb or copular auxiliary like is/are/was)
+                if token.dep_ == "ROOT" and token.pos_ in ("VERB", "AUX"):
+                    # Check for subject
+                    has_subject = any(child.dep_ in ("nsubj", "nsubjpass") for child in token.children)
+                    
+                    # Check for objects/complements
+                    has_complement = any(
+                        child.dep_ in ("dobj", "attr", "acomp", "prep", "advmod", "dative", "oprd", "agent", "xcomp", "ccomp")
                         for child in token.children
-                        if child.dep_ in ("nsubj", "nsubjpass")
-                    ]
+                    )
                     
-                    # Get objects/complements
-                    objects = []
-                    for child in token.children:
-                        if child.dep_ in ("dobj", "attr", "acomp", "prep"):
-                            objects.append(self._get_full_phrase(child))
-                    
-                    # Reconstruct claim
-                    if subjects and objects:
-                        verb = token.text
-                        claim = f"{subjects[0]} {verb} {' '.join(objects)}"
+                    # Reconstruct claim preserving natural sentence order, negations, and auxiliaries
+                    if has_subject and has_complement:
+                        clause_tokens = [token]
+                        for child in token.children:
+                            if child.dep_ in valid_deps:
+                                clause_tokens.extend(child.subtree)
+                        clause_tokens = [t for t in clause_tokens if t.pos_ != "PUNCT"]
+                        clause_tokens.sort(key=lambda t: t.i)
+                        claim = " ".join(t.text for t in clause_tokens)
                         return self._clean_claim(claim)
         
         return None
@@ -271,7 +279,7 @@ class ClaimExtractor:
             text = sent.text.strip()
             # Skip questions, exclamations, very short sentences
             if (not text.endswith(('?', '!')) and 
-                len(text.split()) >= 5):
+                len(text.split()) >= 3):
                 candidates.append(text)
         
         if candidates:
@@ -288,6 +296,9 @@ class ClaimExtractor:
         """Final cleanup of extracted claim"""
         # Remove extra spaces
         claim = ' '.join(claim.split())
+        # Attach contractions and punctuation cleanly
+        claim = re.sub(r'\s+([,\.!?])', r'\1', claim)
+        claim = re.sub(r"\s+(n't|'s|'re|'ve|'m|'d|'ll)\b", r"\1", claim)
         # Capitalize first letter
         if claim:
             claim = claim[0].upper() + claim[1:]
