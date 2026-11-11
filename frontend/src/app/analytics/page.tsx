@@ -58,7 +58,7 @@ interface VisitorTelemetry {
     type: string;
     source?: string;
     path?: string;
-    claim_snippet?: string;
+    label?: string;
   }>;
 }
 
@@ -365,9 +365,9 @@ export default function AnalyticsPage() {
                             {act.type === "verification" ? "⚡ Check" : "👁️ View"}
                           </div>
                           <div className={styles.feedDetails}>
-                            <div className={styles.feedText} title={act.claim_snippet || act.path}>
+                            <div className={styles.feedText}>
                               {act.type === "verification" 
-                                ? `Fact-check: "${act.claim_snippet || 'Claim verified'}"`
+                                ? (act.label || "Fact-check verification executed")
                                 : `Visited ${act.path || '/'} via ${act.source || 'Direct'}`}
                             </div>
                             <span className={styles.feedTime}>{act.timestamp}</span>

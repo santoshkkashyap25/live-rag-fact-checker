@@ -105,8 +105,8 @@ class VisitorTracker:
 
             self.save_to_disk()
 
-    def log_verification(self, client_ip: str, claim: str = ""):
-        """Record that a fact-checking verification was executed."""
+    def log_verification(self, client_ip: str):
+        """Record that a fact-checking verification was executed (anonymized, zero claim text stored)."""
         today = datetime.now().strftime("%Y-%m-%d")
         ip_hash = self._hash_ip(client_ip)
 
@@ -122,7 +122,7 @@ class VisitorTracker:
                 "timestamp": datetime.now().strftime("%H:%M:%S"),
                 "date": today,
                 "type": "verification",
-                "claim_snippet": claim[:60] + "..." if len(claim) > 60 else claim
+                "label": "Statement fact-check executed"
             }
             self.recent_activity.insert(0, event)
             if len(self.recent_activity) > 50:
@@ -145,6 +145,14 @@ class VisitorTracker:
             recent_days = sorted(self.daily_unique.keys())[-7:]
             trend = {d: len(self.daily_unique[d]) for d in recent_days}
 
+            # Sanitize recent activity: strictly ensure no private claim text is ever exposed
+            sanitized_activity = []
+            for ev in self.recent_activity[:10]:
+                item = {k: v for k, v in ev.items() if k != "claim_snippet"}
+                if item.get("type") == "verification" and "label" not in item:
+                    item["label"] = "Statement fact-check executed"
+                sanitized_activity.append(item)
+
             return {
                 "total_pageviews": self.total_pageviews,
                 "unique_visitors": total_uniques,
@@ -153,7 +161,7 @@ class VisitorTracker:
                 "conversion_rate_pct": conversion_rate,
                 "traffic_sources": dict(self.referrers),
                 "visitor_trend_7d": trend,
-                "recent_activity": self.recent_activity[:10]
+                "recent_activity": sanitized_activity
             }
 
     def save_to_disk(self):
@@ -188,10 +196,19 @@ class VisitorTracker:
                     self.unique_visitors = set(data.get("unique_visitors", []))
                     self.daily_unique = {k: set(v) for k, v in data.get("daily_unique", {}).items()}
                     self.referrers = data.get("referrers", self.referrers)
-                    self.recent_activity = data.get("recent_activity", [])
+                    # Strip any legacy claim_snippets to ensure absolute user privacy
+                    raw_activity = data.get("recent_activity", [])
+                    cleaned_activity = []
+                    for ev in raw_activity:
+                        if "claim_snippet" in ev:
+                            del ev["claim_snippet"]
+                            ev["label"] = "Statement fact-check executed"
+                        cleaned_activity.append(ev)
+                    self.recent_activity = cleaned_activity
                     logger.info(f"Loaded visitor telemetry: {len(self.unique_visitors)} uniques, {self.total_pageviews} views")
             except Exception as e:
                 logger.error(f"Failed to load visitor metrics: {e}")
 
 
 visitor_tracker = VisitorTracker()
+

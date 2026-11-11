@@ -163,8 +163,8 @@ class TestVisitorTracker(unittest.TestCase):
         self.tracker.log_pageview("2.2.2.2", path="/", referrer="https://news.ycombinator.com/")
         self.tracker.log_pageview("3.3.3.3", path="/", referrer="https://linkedin.com/")
 
-        # 1 executes verification
-        self.tracker.log_verification("1.1.1.1", claim="Bananas are radioactive")
+        # 1 executes verification (anonymized)
+        self.tracker.log_verification("1.1.1.1")
 
         summary = self.tracker.get_summary()
         self.assertEqual(summary["total_pageviews"], 4)
@@ -173,6 +173,9 @@ class TestVisitorTracker(unittest.TestCase):
         self.assertEqual(summary["conversion_rate_pct"], 25.0)
         self.assertEqual(summary["traffic_sources"]["Hacker News"], 2)
         self.assertEqual(summary["traffic_sources"]["LinkedIn"], 1)
+        # Ensure claim text is strictly never exposed
+        for ev in summary["recent_activity"]:
+            self.assertNotIn("claim_snippet", ev)
 
     def test_disk_persistence(self):
         self.tracker.log_pageview("4.4.4.4", path="/", referrer="https://github.com")

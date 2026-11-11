@@ -239,8 +239,8 @@ async def verify_statement_stream(
             detail="Public demo rate limit reached (12 requests/min). Please add your free Groq API key in LLM Settings for unlimited verifications."
         )
     
-    # Track verification in visitor telemetry
-    visitor_tracker.log_verification(client_ip, claim=request.text)
+    # Track verification in visitor telemetry (anonymized, zero claim text stored)
+    visitor_tracker.log_verification(client_ip)
     
     logger.info(f"API Stream Request - Verify (user: {user_id}, provider: {provider or 'system'}): {request.text[:100]}...")
     
@@ -301,8 +301,8 @@ async def verify_statement(
             detail="Public demo rate limit reached (12 requests/min). Please add your free Groq API key in LLM Settings for unlimited verifications."
         )
     
-    # Track verification in visitor telemetry
-    visitor_tracker.log_verification(client_ip, claim=request.text)
+    # Track verification in visitor telemetry (anonymized, zero claim text stored)
+    visitor_tracker.log_verification(client_ip)
     
     logger.info(f"API Request - Verify (user: {user_id}, provider: {provider or 'system'}): {request.text[:100]}...")
     try:
