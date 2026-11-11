@@ -32,3 +32,4 @@ export default function TelemetryTracker() {
 
   return null;
 }
+

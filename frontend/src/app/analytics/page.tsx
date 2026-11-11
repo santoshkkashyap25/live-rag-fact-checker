@@ -522,7 +522,7 @@ export default function AnalyticsPage() {
 
       {/* Footer */}
       <footer className={styles.footer}>
-        <p>© 2026 FactGuard AI. Live privacy-preserving telemetry & multi-provider verification.</p>
+        <p>© 2026 FactGuard AI.</p>
       </footer>
     </div>
   );
