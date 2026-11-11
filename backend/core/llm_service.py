@@ -41,10 +41,10 @@ class LLMService:
     
     DEFAULT_MODELS = {
         "groq": GROQ_MODEL or "openai/gpt-oss-120b",
-        "openai": "gpt-4o-mini",
-        "gemini": "gemini/gemini-2.0-flash",
+        "openai": "gpt-6-astra",
+        "gemini": "gemini/gemini-3.8-flash",
         "claude": "anthropic/claude-sonnet-5.5",
-        "ollama": "gemma4:e2b",
+        "ollama": "llama3.3",
     }
     
     def __init__(self):
