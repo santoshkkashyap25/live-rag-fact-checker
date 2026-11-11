@@ -6,7 +6,7 @@ with open(readme_path, encoding="utf-8") as f:
     long_desc = f.read()
 
 setup(
-    name="factguard",
+    name="factguard-ai",
     version="2.0.0",
     packages=find_packages(include=["factguard", "factguard.*"]),
     install_requires=[

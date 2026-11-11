@@ -1,6 +1,6 @@
 # FactGuard Python SDK
 
-[![PyPI Version](https://img.shields.io/badge/pypi-v1.0.0-blue.svg)](https://pypi.org/project/factguard/)
+[![PyPI Version](https://img.shields.io/pypi/v/factguard-ai.svg)](https://pypi.org/project/factguard-ai/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Stars](https://img.shields.io/github/stars/santoshkkashyap25/live-rag-fact-checker?style=social)](https://github.com/santoshkkashyap25/live-rag-fact-checker)
 
@@ -11,7 +11,7 @@
 ## ⚡ Installation
 
 ```bash
-pip install factguard
+pip install factguard-ai
 ```
 
 ---
