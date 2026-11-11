@@ -54,7 +54,8 @@ class ClaimExtractor:
     DISCOURSE_MARKERS = [
         "discussion", "debated", "wondering", "opinion", "what do you think",
         "hello", "hi guys", "let me know", "some believed", "others discussed",
-        "participants", "debating", "talked about"
+        "participants", "debating", "talked about", "do not panic", "dont panic",
+        "breaking news", "breaking", "click here", "urgent"
     ]
 
     PREAMBLE_PATTERNS = [
@@ -162,9 +163,25 @@ class ClaimExtractor:
         return cleaned or text.strip()
     
     def _clean_text(self, text: str) -> str:
-        """Remove prompt injection overrides, homoglyphs, common fillers, and adversarial meta-instructions"""
-        # 0. Neutralize Unicode homoglyph obfuscation
+        """Remove prompt injection overrides, HTML tags, emojis, clickbait, homoglyphs, and fillers"""
+        # -2. Strip raw script & style tags and their contents (XSS defense)
+        text = re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', text, flags=re.DOTALL | re.IGNORECASE)
+
+        # -1. Strip all remaining HTML/XML tags
+        text = re.sub(r'<[^>]+>', ' ', text)
+
+        # 0. Neutralize Unicode homoglyph obfuscation & emojis
         text = self._normalize_homoglyphs(text)
+        # Strip astral plane emojis and common symbol glyphs
+        text = re.sub(r'[\U00010000-\U0010ffff]', '', text)
+        text = re.sub(r'[\u2600-\u27bf]', '', text)
+
+        # Normalize multiple punctuation (e.g. "!!" -> ".")
+        text = re.sub(r'!{2,}', '.', text)
+        text = re.sub(r'\?{2,}', '?', text)
+
+        # Strip clickbait leading alerts (e.g. "BREAKING NEWS:", "ALERT:")
+        text = re.sub(r'^(breaking news\s*:?!*|breaking\s*:?!*|urgent\s*:?!*|alert\s*:?!*)\s*', '', text, flags=re.IGNORECASE)
 
         # 1. Strip prompt injection prefixes & system override directives
         injection_prefixes = [

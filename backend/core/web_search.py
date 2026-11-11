@@ -43,7 +43,7 @@ class WebSearchEngine:
         
         # 1. Primary: DuckDuckGo HTML GET
         try:
-            url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(query)}"
+            url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote_plus(query)}"
             response = self.session.get(url, timeout=8)
             
             if response.status_code == 200:
@@ -143,8 +143,13 @@ class WebSearchEngine:
             "originally", "conceived", "created", "become", "becomes", "see", "sees",
             "seen", "perform", "daily"
         }
-        words = [w for w in re.findall(r'\b[a-zA-Z0-9\-]+\b', text) if w.lower() not in stop_words]
-        return " ".join(words[:8])
+        tokens = [w for w in re.findall(r'[a-zA-Z0-9\+\-]+', text) if w.lower() not in stop_words]
+        # Prevent query collapse if text is dominated by stop words (e.g. famous quotes)
+        if len(tokens) < 3:
+            raw_tokens = re.findall(r'[a-zA-Z0-9\+\-]+', text)
+            if raw_tokens:
+                return " ".join(raw_tokens[:8])
+        return " ".join(tokens[:8])
 
     def search_wikipedia(self, query: str, max_results: int = 4) -> List[Dict[str, str]]:
         """
