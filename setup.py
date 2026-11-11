@@ -7,7 +7,7 @@ with open(readme_path, encoding="utf-8") as f:
 
 setup(
     name="factguard",
-    version="1.0.0",
+    version="2.0.0",
     packages=find_packages(include=["factguard", "factguard.*"]),
     install_requires=[
         "requests>=2.28.0",

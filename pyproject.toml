@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "factguard"
-version = "1.0.0"
+version = "2.0.0"
 description = "Real-time web intelligence and multi-LLM fact-checking Python SDK"
 readme = "factguard/README.md"
 authors = [

@@ -1,9 +1,11 @@
 import os
+import time
 import asyncio
 import logging
-from typing import List, Dict, Any, Optional
+import threading
+from typing import List, Dict, Any, Optional, Tuple
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, HTTPException, status, Header
+from fastapi import FastAPI, HTTPException, status, Header, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import StreamingResponse, HTMLResponse, Response
@@ -111,6 +113,31 @@ class ShareResponse(BaseModel):
     url: str
     full_url: str
 
+# --- Demo Traffic Armor: In-Memory IP Rate Limiter ---
+RATE_LIMIT_MAX_REQUESTS = 12  # Max 12 requests
+RATE_LIMIT_WINDOW_SECONDS = 60  # per 60 seconds per IP
+client_request_history: Dict[str, List[float]] = {}
+client_history_lock = threading.Lock()
+
+def check_ip_rate_limit(client_ip: str, byok: bool = False) -> Tuple[bool, int]:
+    """
+    Check if IP has exceeded demo request budget.
+    BYOK (users providing custom API keys) and local tests are 100% exempt from rate limits.
+    Returns (is_allowed, remaining_requests).
+    """
+    if byok or client_ip in ("127.0.0.1", "testclient", "localhost", "::1"):
+        return True, RATE_LIMIT_MAX_REQUESTS
+    
+    now = time.time()
+    with client_history_lock:
+        history = [t for t in client_request_history.get(client_ip, []) if now - t < RATE_LIMIT_WINDOW_SECONDS]
+        if len(history) >= RATE_LIMIT_MAX_REQUESTS:
+            client_request_history[client_ip] = history
+            return False, 0
+        history.append(now)
+        client_request_history[client_ip] = history
+        return True, RATE_LIMIT_MAX_REQUESTS - len(history)
+
 # --- Endpoints ---
 
 @app.api_route("/health", methods=["GET", "HEAD"])
@@ -155,6 +182,7 @@ async def get_ollama_models(url: Optional[str] = None):
 
 @app.post("/api/verify/stream")
 async def verify_statement_stream(
+    http_req: Request,
     request: VerifyRequest,
     x_user_id: Optional[str] = Header(default=None, alias="X-User-ID"),
     x_llm_provider: Optional[str] = Header(default=None, alias="X-LLM-Provider"),
@@ -174,6 +202,15 @@ async def verify_statement_stream(
     provider = x_llm_provider or request.llm_provider
     api_key = x_llm_api_key or request.llm_api_key
     model = x_llm_model or request.llm_model
+
+    # Check Demo IP Rate Limiting (BYOK custom keys are exempt)
+    client_ip = http_req.headers.get("X-Forwarded-For", http_req.client.host if http_req.client else "unknown").split(",")[0].strip()
+    allowed, remaining = check_ip_rate_limit(client_ip, byok=bool(api_key))
+    if not allowed:
+        raise HTTPException(
+            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+            detail="Public demo rate limit reached (12 requests/min). Please add your free Groq API key in LLM Settings for unlimited verifications."
+        )
     
     logger.info(f"API Stream Request - Verify (user: {user_id}, provider: {provider or 'system'}): {request.text[:100]}...")
     
@@ -199,10 +236,12 @@ async def verify_statement_stream(
     response_model=VerifyResponse, 
     responses={
         400: {"model": ErrorResponse},
+        429: {"model": ErrorResponse},
         500: {"model": ErrorResponse}
     }
 )
 async def verify_statement(
+    http_req: Request,
     request: VerifyRequest,
     x_user_id: Optional[str] = Header(default=None, alias="X-User-ID"),
     x_llm_provider: Optional[str] = Header(default=None, alias="X-LLM-Provider"),
@@ -222,6 +261,15 @@ async def verify_statement(
     provider = x_llm_provider or request.llm_provider
     api_key = x_llm_api_key or request.llm_api_key
     model = x_llm_model or request.llm_model
+
+    # Check Demo IP Rate Limiting (BYOK custom keys are exempt)
+    client_ip = http_req.headers.get("X-Forwarded-For", http_req.client.host if http_req.client else "unknown").split(",")[0].strip()
+    allowed, remaining = check_ip_rate_limit(client_ip, byok=bool(api_key))
+    if not allowed:
+        raise HTTPException(
+            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+            detail="Public demo rate limit reached (12 requests/min). Please add your free Groq API key in LLM Settings for unlimited verifications."
+        )
     
     logger.info(f"API Request - Verify (user: {user_id}, provider: {provider or 'system'}): {request.text[:100]}...")
     try:
