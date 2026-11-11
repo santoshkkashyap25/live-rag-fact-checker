@@ -18,6 +18,7 @@ from core.cache import query_cache
 from core.llm_service import llm_service
 from core.share_store import share_store
 from core.og_renderer import render_og_svg, render_shared_page_html
+from core.visitor_tracker import visitor_tracker
 
 # --- Logging Configuration ---
 logging.basicConfig(
@@ -34,13 +35,14 @@ async def lifespan(app: FastAPI):
     logger.info("Starting up: Real-Time Web Intelligence Fact Checker online")
     yield
     
-    # Save cache on shutdown
-    logger.info("Shutting down: Saving query cache...")
+    # Save cache and visitor metrics on shutdown
+    logger.info("Shutting down: Saving query cache and visitor metrics...")
     try:
         query_cache.save_to_disk()
-        logger.info("Query cache saved successfully")
+        visitor_tracker.save_to_disk()
+        logger.info("Query cache and visitor metrics saved successfully")
     except Exception as e:
-        logger.exception(f"Unexpected error saving cache: {e}")
+        logger.exception(f"Unexpected error saving cache/metrics: {e}")
 
 # --- Initialize App ---
 app = FastAPI(
@@ -113,6 +115,16 @@ class ShareResponse(BaseModel):
     url: str
     full_url: str
 
+class VisitTelemetryRequest(BaseModel):
+    path: Optional[str] = Field(default="/", description="Current URL path visited")
+    referrer: Optional[str] = Field(default=None, description="Document referrer URL")
+
+def _get_client_telemetry(http_req: Request) -> Tuple[str, Optional[str]]:
+    """Extract client IP and referrer safely from request headers."""
+    client_ip = http_req.headers.get("X-Forwarded-For", http_req.client.host if http_req.client else "unknown").split(",")[0].strip()
+    referrer = http_req.headers.get("referer") or http_req.headers.get("referrer")
+    return client_ip, referrer
+
 # --- Demo Traffic Armor: In-Memory IP Rate Limiter ---
 RATE_LIMIT_MAX_REQUESTS = 12  # Max 12 requests
 RATE_LIMIT_WINDOW_SECONDS = 60  # per 60 seconds per IP
@@ -180,6 +192,21 @@ async def get_ollama_models(url: Optional[str] = None):
     except Exception:
         return {"status": "offline", "url": target_url, "models": []}
 
+@app.post("/api/telemetry/visit")
+async def record_visit(http_req: Request, payload: Optional[VisitTelemetryRequest] = None):
+    """
+    Record privacy-preserving pageview telemetry from web or client navigation.
+    """
+    try:
+        client_ip, ref_header = _get_client_telemetry(http_req)
+        path = payload.path if (payload and payload.path) else "/"
+        referrer = (payload.referrer if (payload and payload.referrer) else None) or ref_header
+        visitor_tracker.log_pageview(client_ip, path=path, referrer=referrer)
+        return {"status": "ok"}
+    except Exception as e:
+        logger.error(f"Error logging visit: {e}")
+        return {"status": "error", "detail": str(e)}
+
 @app.post("/api/verify/stream")
 async def verify_statement_stream(
     http_req: Request,
@@ -211,6 +238,9 @@ async def verify_statement_stream(
             status_code=status.HTTP_429_TOO_MANY_REQUESTS,
             detail="Public demo rate limit reached (12 requests/min). Please add your free Groq API key in LLM Settings for unlimited verifications."
         )
+    
+    # Track verification in visitor telemetry
+    visitor_tracker.log_verification(client_ip, claim=request.text)
     
     logger.info(f"API Stream Request - Verify (user: {user_id}, provider: {provider or 'system'}): {request.text[:100]}...")
     
@@ -271,6 +301,9 @@ async def verify_statement(
             detail="Public demo rate limit reached (12 requests/min). Please add your free Groq API key in LLM Settings for unlimited verifications."
         )
     
+    # Track verification in visitor telemetry
+    visitor_tracker.log_verification(client_ip, claim=request.text)
+    
     logger.info(f"API Request - Verify (user: {user_id}, provider: {provider or 'system'}): {request.text[:100]}...")
     try:
         result = await asyncio.to_thread(
@@ -299,13 +332,16 @@ async def verify_statement(
 @app.get("/api/analytics")
 async def get_analytics():
     """
-    Retrieve performance statistics, verdict distributions, and real-time search telemetry.
+    Retrieve performance statistics, verdict distributions, real-time search telemetry,
+    and privacy-preserving visitor analytics.
     """
     try:
-        # Re-load metrics from disk to ensure sync
+        # Re-load metrics and visitor telemetry from disk to ensure sync
         metrics_collector.load_from_disk()
+        visitor_tracker.load_from_disk()
         
         stats = metrics_collector.get_summary()
+        visitor_stats = visitor_tracker.get_summary()
         cache_stats = query_cache.get_stats()
         db_stats = {
             "status": "loaded",
@@ -327,6 +363,7 @@ async def get_analytics():
             
         return {
             "summary": stats,
+            "visitors": visitor_stats,
             "cache": cache_stats,
             "database": db_stats,
             "history": history
@@ -428,10 +465,14 @@ async def get_og_card_svg(share_id: str):
     )
 
 @app.get("/v/{share_id}", response_class=HTMLResponse)
-async def view_shared_verdict(share_id: str):
+async def view_shared_verdict(http_req: Request, share_id: str):
     """
     Server-rendered public landing page with OpenGraph & Twitter Card tags.
     """
+    # Track pageview in visitor telemetry
+    client_ip, referrer = _get_client_telemetry(http_req)
+    visitor_tracker.log_pageview(client_ip, path=f"/v/{share_id}", referrer=referrer)
+
     item = share_store.get_verdict(share_id)
     if not item:
         raise HTTPException(
@@ -447,7 +488,9 @@ if os.path.exists(static_dir):
     app.mount("/", StaticFiles(directory=static_dir, html=True), name="static")
 else:
     @app.api_route("/", methods=["GET", "HEAD"])
-    async def root():
+    async def root(http_req: Request):
+        client_ip, referrer = _get_client_telemetry(http_req)
+        visitor_tracker.log_pageview(client_ip, path="/", referrer=referrer)
         return {
             "app": APP_TITLE,
             "version": APP_VERSION,

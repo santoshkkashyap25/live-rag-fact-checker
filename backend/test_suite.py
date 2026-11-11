@@ -17,6 +17,7 @@ from core.cache import QueryCache
 from core.re_ranker import re_ranker
 from core.web_search import web_search
 from core.domain_trust import get_domain_trust, extract_domain
+from core.visitor_tracker import VisitorTracker, visitor_tracker
 
 
 class TestClaimExtractor(unittest.TestCase):
@@ -122,6 +123,66 @@ class TestDomainTrustMatrix(unittest.TestCase):
         self.assertTrue(last_item["domain_trust"]["is_satire"])
 
 
+class TestVisitorTracker(unittest.TestCase):
+    """Test Privacy-Preserving Visitor & Usage Telemetry"""
+
+    def setUp(self):
+        import tempfile
+        from pathlib import Path
+        self.temp_file = Path(tempfile.gettempdir()) / "test_visitor_metrics.json"
+        if self.temp_file.exists():
+            self.temp_file.unlink()
+        self.tracker = VisitorTracker(metrics_path=self.temp_file)
+
+    def tearDown(self):
+        if self.temp_file.exists():
+            self.temp_file.unlink()
+
+    def test_salted_hash_privacy(self):
+        h1 = self.tracker._hash_ip("192.168.1.100")
+        h2 = self.tracker._hash_ip("192.168.1.100")
+        h3 = self.tracker._hash_ip("10.0.0.1")
+        self.assertEqual(len(h1), 16)
+        self.assertEqual(h1, h2)
+        self.assertNotEqual(h1, h3)
+        self.assertNotIn("192", h1)
+
+    def test_referrer_classification(self):
+        self.assertEqual(self.tracker._classify_referrer("https://news.ycombinator.com/item?id=123"), "Hacker News")
+        self.assertEqual(self.tracker._classify_referrer("https://www.linkedin.com/feed/"), "LinkedIn")
+        self.assertEqual(self.tracker._classify_referrer("https://reddit.com/r/Python/"), "Reddit")
+        self.assertEqual(self.tracker._classify_referrer("https://t.co/xyz123"), "Twitter / X")
+        self.assertEqual(self.tracker._classify_referrer("https://x.com/post/456"), "Twitter / X")
+        self.assertEqual(self.tracker._classify_referrer("https://github.com/santoshkkashyap25"), "GitHub")
+        self.assertEqual(self.tracker._classify_referrer(None), "Direct / Search")
+
+    def test_log_pageview_and_conversion(self):
+        # 2 visitors from HN, 1 from LinkedIn
+        self.tracker.log_pageview("1.1.1.1", path="/", referrer="https://news.ycombinator.com/")
+        self.tracker.log_pageview("1.1.1.1", path="/analytics", referrer=None)  # repeat visit from same IP
+        self.tracker.log_pageview("2.2.2.2", path="/", referrer="https://news.ycombinator.com/")
+        self.tracker.log_pageview("3.3.3.3", path="/", referrer="https://linkedin.com/")
+
+        # 1 executes verification
+        self.tracker.log_verification("1.1.1.1", claim="Bananas are radioactive")
+
+        summary = self.tracker.get_summary()
+        self.assertEqual(summary["total_pageviews"], 4)
+        self.assertEqual(summary["unique_visitors"], 3)
+        self.assertEqual(summary["total_verifications"], 1)
+        self.assertEqual(summary["conversion_rate_pct"], 25.0)
+        self.assertEqual(summary["traffic_sources"]["Hacker News"], 2)
+        self.assertEqual(summary["traffic_sources"]["LinkedIn"], 1)
+
+    def test_disk_persistence(self):
+        self.tracker.log_pageview("4.4.4.4", path="/", referrer="https://github.com")
+        self.tracker.save_to_disk()
+
+        tracker2 = VisitorTracker(metrics_path=self.temp_file)
+        self.assertEqual(tracker2.total_pageviews, 1)
+        self.assertEqual(tracker2.referrers["GitHub"], 1)
+
+
 class TestAPIEndpoints(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -171,8 +232,16 @@ class TestAPIEndpoints(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         data = res.json()
         self.assertIn("summary", data)
+        self.assertIn("visitors", data)
         self.assertIn("cache", data)
         self.assertIn("database", data)
+        self.assertIn("total_pageviews", data["visitors"])
+        self.assertIn("traffic_sources", data["visitors"])
+
+    def test_telemetry_visit_endpoint(self):
+        res = self.client.post("/api/telemetry/visit", json={"path": "/analytics", "referrer": "https://news.ycombinator.com"})
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(res.json(), {"status": "ok"})
 
     def test_verify_pipeline(self):
         payload = {

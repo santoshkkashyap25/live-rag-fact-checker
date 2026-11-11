@@ -10,7 +10,15 @@ import {
   RefreshCw,
   TrendingUp,
   Award,
-  AlertCircle
+  AlertCircle,
+  Users,
+  Eye,
+  Target,
+  Globe,
+  Activity,
+  Radio,
+  Zap,
+  CheckCheck
 } from "lucide-react";
 import {
   ResponsiveContainer,
@@ -36,6 +44,24 @@ interface VerdictDistribution {
   Unverifiable: number;
 }
 
+interface VisitorTelemetry {
+  total_pageviews: number;
+  unique_visitors: number;
+  today_visitors: number;
+  total_verifications: number;
+  conversion_rate_pct: number;
+  traffic_sources: Record<string, number>;
+  visitor_trend_7d: Record<string, number>;
+  recent_activity: Array<{
+    timestamp: string;
+    date: string;
+    type: string;
+    source?: string;
+    path?: string;
+    claim_snippet?: string;
+  }>;
+}
+
 interface AnalyticsStats {
   summary: {
     total_queries: number;
@@ -47,6 +73,7 @@ interface AnalyticsStats {
     avg_evidence_count: number;
     message?: string;
   };
+  visitors?: VisitorTelemetry;
   cache: {
     size: number;
     max_size: number;
@@ -105,6 +132,7 @@ export default function AnalyticsPage() {
   }
 
   const summary = stats?.summary;
+  const visitors = stats?.visitors;
   const db = stats?.database;
   const cache = stats?.cache;
   const history = stats?.history || [];
@@ -145,6 +173,34 @@ export default function AnalyticsPage() {
     return brackets;
   })();
 
+  // Traffic sources formatting
+  const sourceColors: Record<string, string> = {
+    "Hacker News": "#ff6600",
+    "LinkedIn": "#0a66c2",
+    "Reddit": "#ff4500",
+    "Twitter / X": "#38bdf8",
+    "GitHub": "#a855f7",
+    "Direct / Search": "#10b981",
+    "Other": "#64748b"
+  };
+
+  const trafficSources = Object.entries(visitors?.traffic_sources || {
+    "Hacker News": 0,
+    "LinkedIn": 0,
+    "Reddit": 0,
+    "Twitter / X": 0,
+    "GitHub": 0,
+    "Direct / Search": 0
+  }).map(([name, count]) => ({
+    name,
+    count,
+    color: sourceColors[name] || "#3b82f6"
+  }));
+
+  const totalSourceVisits = trafficSources.reduce((acc, curr) => acc + curr.count, 0);
+
+  const hasActivity = (summary && summary.total_queries > 0) || (visitors && visitors.total_pageviews > 0);
+
   return (
     <div className={styles.container}>
       {/* Header */}
@@ -169,7 +225,7 @@ export default function AnalyticsPage() {
           <div>
             <h1 className={styles.title}>System Analytics</h1>
             <p className={styles.subtitle}>
-              Monitor real-time pipeline performance, accuracy ratios, and live web intelligence state.
+              Monitor real-time visitor counts, channel traffic attribution, and live web intelligence pipeline metrics.
             </p>
           </div>
           <button onClick={fetchStats} className={styles.refreshBtn} title="Refresh Statistics" disabled={loading}>
@@ -185,32 +241,149 @@ export default function AnalyticsPage() {
           </div>
         )}
 
-        {summary && summary.total_queries === 0 ? (
+        {!hasActivity ? (
           <div className={styles.emptyCard}>
             <BarChart2 className={styles.emptyIcon} />
-            <h3>No Analytics Data Available</h3>
+            <h3>No Analytics Data Available Yet</h3>
             <p>
               You haven't run any statement verifications yet. Please go to the 
-              <Link href="/"> Verify Claim</Link> page and test some statements to generate performance metrics.
+              <Link href="/"> Verify Claim</Link> page and test some statements to generate telemetry.
             </p>
           </div>
         ) : (
           stats && (
             <>
-              {/* Overview Metrics Cards */}
+              {/* Telemetry Header */}
+              <div className={styles.telemetryHeader}>
+                <div className={styles.sectionBadge}>
+                  <Radio size={14} className={styles.pulseDot} />
+                  <span>Real-Time Visitor Telemetry</span>
+                </div>
+                <span className={styles.telemetryNotice}>
+                  GDPR compliant (salted SHA-256 IP hashing) • Zero ad-blocker dropoff
+                </span>
+              </div>
+
+              {/* Visitor Telemetry Cards */}
               <section className={styles.statsGrid}>
-                
                 <div className={styles.statCard}>
-                  <div className={styles.statIconArea}>
-                    <TrendingUp className={styles.statIcon} />
+                  <div className={styles.statIconArea} style={{ backgroundColor: "rgba(59, 130, 246, 0.1)" }}>
+                    <Users className={styles.statIcon} style={{ color: "#3b82f6" }} />
                   </div>
                   <div className={styles.statInfo}>
-                    <span className={styles.statLabel}>Total Queries</span>
-                    <h2 className={styles.statValue}>{summary?.total_queries}</h2>
-                    <span className={styles.statSub}>Cumulative pipeline executions</span>
+                    <span className={styles.statLabel}>Unique Visitors</span>
+                    <h2 className={styles.statValue}>{visitors?.unique_visitors ?? 0}</h2>
+                    <span className={styles.statSub}>Today: {visitors?.today_visitors ?? 0} active</span>
                   </div>
                 </div>
 
+                <div className={styles.statCard}>
+                  <div className={styles.statIconArea} style={{ backgroundColor: "rgba(139, 92, 246, 0.1)" }}>
+                    <Eye className={styles.statIcon} style={{ color: "#8b5cf6" }} />
+                  </div>
+                  <div className={styles.statInfo}>
+                    <span className={styles.statLabel}>Total Pageviews</span>
+                    <h2 className={styles.statValue}>{visitors?.total_pageviews ?? 0}</h2>
+                    <span className={styles.statSub}>All app & shared verdict hits</span>
+                  </div>
+                </div>
+
+                <div className={styles.statCard}>
+                  <div className={styles.statIconArea} style={{ backgroundColor: "rgba(16, 185, 129, 0.1)" }}>
+                    <Target className={styles.statIcon} style={{ color: "#10b981" }} />
+                  </div>
+                  <div className={styles.statInfo}>
+                    <span className={styles.statLabel}>Conversion Rate</span>
+                    <h2 className={styles.statValue}>{visitors?.conversion_rate_pct ?? 0}%</h2>
+                    <span className={styles.statSub}>Visitors running fact-checks</span>
+                  </div>
+                </div>
+
+                <div className={styles.statCard}>
+                  <div className={styles.statIconArea} style={{ backgroundColor: "rgba(245, 158, 11, 0.1)" }}>
+                    <TrendingUp className={styles.statIcon} style={{ color: "#f59e0b" }} />
+                  </div>
+                  <div className={styles.statInfo}>
+                    <span className={styles.statLabel}>Fact Checks Run</span>
+                    <h2 className={styles.statValue}>{visitors?.total_verifications ?? summary?.total_queries ?? 0}</h2>
+                    <span className={styles.statSub}>Cumulative pipeline executions</span>
+                  </div>
+                </div>
+              </section>
+
+              {/* Traffic Attribution & Recent Activity */}
+              <section className={styles.attributionGrid}>
+                {/* Traffic Sources Breakdown */}
+                <div className={styles.chartCard}>
+                  <div className={styles.cardHeaderFlex}>
+                    <div>
+                      <h3 className={styles.chartTitle}>Traffic Attribution Sources</h3>
+                      <p className={styles.chartSubtitle}>Referral channels from launch and social outreach</p>
+                    </div>
+                    <Globe size={18} className={styles.cardHeaderIcon} />
+                  </div>
+                  <div className={styles.sourcesList}>
+                    {trafficSources.map((source, i) => {
+                      const pct = totalSourceVisits > 0 ? Math.round((source.count / totalSourceVisits) * 100) : 0;
+                      return (
+                        <div key={i} className={styles.sourceItem}>
+                          <div className={styles.sourceInfo}>
+                            <span className={styles.sourceName}>{source.name}</span>
+                            <span className={styles.sourceCount}>{source.count} visits ({pct}%)</span>
+                          </div>
+                          <div className={styles.sourceBarTrack}>
+                            <div 
+                              className={styles.sourceBarFill} 
+                              style={{ 
+                                width: `${Math.max(pct, source.count > 0 ? 4 : 0)}%`,
+                                backgroundColor: source.color 
+                              }} 
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Live Activity Stream */}
+                <div className={styles.chartCard}>
+                  <div className={styles.cardHeaderFlex}>
+                    <div>
+                      <h3 className={styles.chartTitle}>Recent Telemetry Activity</h3>
+                      <p className={styles.chartSubtitle}>Latest 10 real-time user events</p>
+                    </div>
+                    <Activity size={18} className={styles.cardHeaderIcon} />
+                  </div>
+                  <div className={styles.activityFeed}>
+                    {(!visitors?.recent_activity || visitors.recent_activity.length === 0) ? (
+                      <div className={styles.emptyFeed}>No recent activity yet. Interact with the app to see events.</div>
+                    ) : (
+                      visitors.recent_activity.map((act, i) => (
+                        <div key={i} className={styles.feedItem}>
+                          <div className={styles.feedBadge} data-type={act.type}>
+                            {act.type === "verification" ? "⚡ Check" : "👁️ View"}
+                          </div>
+                          <div className={styles.feedDetails}>
+                            <div className={styles.feedText} title={act.claim_snippet || act.path}>
+                              {act.type === "verification" 
+                                ? `Fact-check: "${act.claim_snippet || 'Claim verified'}"`
+                                : `Visited ${act.path || '/'} via ${act.source || 'Direct'}`}
+                            </div>
+                            <span className={styles.feedTime}>{act.timestamp}</span>
+                          </div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </section>
+
+              {/* Performance Section Header */}
+              <h2 className={styles.sectionTitle}>Pipeline Performance & Quality</h2>
+
+              {/* Performance Overview Cards */}
+              <section className={styles.statsGrid}>
                 <div className={styles.statCard}>
                   <div className={styles.statIconArea} style={{ backgroundColor: "rgba(139, 92, 246, 0.1)" }}>
                     <Clock className={styles.statIcon} style={{ color: "#8b5cf6" }} />
@@ -220,7 +393,7 @@ export default function AnalyticsPage() {
                     <h2 className={styles.statValue}>
                       {summary?.avg_total_time?.toFixed(2)}s
                     </h2>
-                    <span className={styles.statSub}>Average processing time</span>
+                    <span className={styles.statSub}>Processing pipeline time</span>
                   </div>
                 </div>
 
@@ -233,19 +406,30 @@ export default function AnalyticsPage() {
                     <h2 className={styles.statValue}>
                       {summary ? Math.round(summary.avg_confidence * 100) : 0}%
                     </h2>
-                    <span className={styles.statSub}>System verification assurance</span>
+                    <span className={styles.statSub}>Verification assurance score</span>
                   </div>
                 </div>
 
+                <div className={styles.statCard}>
+                  <div className={styles.statIconArea} style={{ backgroundColor: "rgba(59, 130, 246, 0.1)" }}>
+                    <Zap className={styles.statIcon} style={{ color: "#3b82f6" }} />
+                  </div>
+                  <div className={styles.statInfo}>
+                    <span className={styles.statLabel}>Cache Hit Ratio</span>
+                    <h2 className={styles.statValue}>
+                      {summary ? Math.round((summary.cache_hit_rate || 0) * 100) : 0}%
+                    </h2>
+                    <span className={styles.statSub}>Sub-millisecond query returns</span>
+                  </div>
+                </div>
               </section>
 
               {/* Charts Grid */}
               <section className={styles.chartsGrid}>
-                
                 {/* Latency History */}
                 <div className={styles.chartCard}>
                   <h3 className={styles.chartTitle}>Response Time Trend</h3>
-                  <p className={styles.chartSubtitle}>Pipeline latency (seconds) for the last 100 queries</p>
+                  <p className={styles.chartSubtitle}>Pipeline latency (seconds) for recent queries</p>
                   <div className={styles.chartContainer}>
                     <ResponsiveContainer width="100%" height={260}>
                       <LineChart data={lineData} margin={{ top: 10, right: 10, left: -25, bottom: 0 }}>
@@ -330,7 +514,6 @@ export default function AnalyticsPage() {
                     </ResponsiveContainer>
                   </div>
                 </div>
-
               </section>
             </>
           )
@@ -339,7 +522,7 @@ export default function AnalyticsPage() {
 
       {/* Footer */}
       <footer className={styles.footer}>
-        <p>© 2026 FactGuard AI.</p>
+        <p>© 2026 FactGuard AI. Live privacy-preserving telemetry & multi-provider verification.</p>
       </footer>
     </div>
   );
