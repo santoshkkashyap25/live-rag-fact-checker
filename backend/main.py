@@ -19,6 +19,7 @@ from core.llm_service import llm_service
 from core.share_store import share_store
 from core.og_renderer import render_og_svg, render_shared_page_html
 from core.visitor_tracker import visitor_tracker
+from core.security import sanitize_secrets, clean_api_key
 
 # --- Logging Configuration ---
 logging.basicConfig(
@@ -120,8 +121,22 @@ class VisitTelemetryRequest(BaseModel):
     referrer: Optional[str] = Field(default=None, description="Document referrer URL")
 
 def _get_client_telemetry(http_req: Request) -> Tuple[str, Optional[str]]:
-    """Extract client IP and referrer safely from request headers."""
-    client_ip = http_req.headers.get("X-Forwarded-For", http_req.client.host if http_req.client else "unknown").split(",")[0].strip()
+    """Extract authentic client IP and referrer safely from request headers against spoofing."""
+    cf_ip = http_req.headers.get("CF-Connecting-IP")
+    true_ip = http_req.headers.get("True-Client-IP")
+    forwarded = http_req.headers.get("X-Forwarded-For")
+    
+    if cf_ip and cf_ip.strip():
+        client_ip = cf_ip.strip()
+    elif true_ip and true_ip.strip():
+        client_ip = true_ip.strip()
+    elif forwarded and forwarded.strip():
+        # Taking rightmost trusted hop added by upstream reverse proxy to prevent client-spoofing
+        parts = [p.strip() for p in forwarded.split(",") if p.strip()]
+        client_ip = parts[-1] if parts else (http_req.client.host if http_req.client else "unknown")
+    else:
+        client_ip = http_req.client.host if http_req.client else "unknown"
+
     referrer = http_req.headers.get("referer") or http_req.headers.get("referrer")
     return client_ip, referrer
 
@@ -227,11 +242,11 @@ async def verify_statement_stream(
     
     user_id = x_user_id or request.user_id or "default_user"
     provider = x_llm_provider or request.llm_provider
-    api_key = x_llm_api_key or request.llm_api_key
+    api_key = clean_api_key(x_llm_api_key or request.llm_api_key)
     model = x_llm_model or request.llm_model
 
     # Check Demo IP Rate Limiting (BYOK custom keys are exempt)
-    client_ip = http_req.headers.get("X-Forwarded-For", http_req.client.host if http_req.client else "unknown").split(",")[0].strip()
+    client_ip, _ = _get_client_telemetry(http_req)
     allowed, remaining = check_ip_rate_limit(client_ip, byok=bool(api_key))
     if not allowed:
         raise HTTPException(
@@ -289,11 +304,11 @@ async def verify_statement(
     
     user_id = x_user_id or request.user_id or "default_user"
     provider = x_llm_provider or request.llm_provider
-    api_key = x_llm_api_key or request.llm_api_key
+    api_key = clean_api_key(x_llm_api_key or request.llm_api_key)
     model = x_llm_model or request.llm_model
 
     # Check Demo IP Rate Limiting (BYOK custom keys are exempt)
-    client_ip = http_req.headers.get("X-Forwarded-For", http_req.client.host if http_req.client else "unknown").split(",")[0].strip()
+    client_ip, _ = _get_client_telemetry(http_req)
     allowed, remaining = check_ip_rate_limit(client_ip, byok=bool(api_key))
     if not allowed:
         raise HTTPException(
@@ -317,16 +332,18 @@ async def verify_statement(
         )
         return result
     except ValueError as e:
-        logger.error(f"Pipeline validation error: {e}")
+        clean_err = sanitize_secrets(str(e), custom_keys=[api_key])
+        logger.error(f"Pipeline validation error: {clean_err}")
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=str(e)
+            detail=clean_err
         )
     except Exception as e:
+        clean_err = sanitize_secrets(str(e), custom_keys=[api_key])
         logger.exception("Unexpected error in API verify")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"An unexpected error occurred: {str(e)}"
+            detail=f"An unexpected error occurred: {clean_err}"
         )
 
 @app.get("/api/analytics")

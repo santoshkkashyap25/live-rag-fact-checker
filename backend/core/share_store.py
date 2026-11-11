@@ -6,6 +6,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional, Dict, Any
 import logging
+import re
+from core.security import sanitize_secrets
 
 logger = logging.getLogger(__name__)
 
@@ -55,9 +57,10 @@ class ShareStore:
         return short_id
 
     def save_verdict(self, result: Dict[str, Any]) -> str:
-        """Store verification result and return short ID"""
-        claim = result.get("extracted_claim") or result.get("input_text") or "Claim"
-        verdict = result.get("verdict", "Unverifiable")
+        """Store verification result with strict field whitelisting and zero credential leakage"""
+        claim = sanitize_secrets(result.get("extracted_claim") or result.get("input_text") or "Claim")[:250]
+        raw_verdict = str(result.get("verdict", "Unverifiable"))[:20]
+        verdict = raw_verdict if raw_verdict in ["True", "False", "Unverifiable"] else "Unverifiable"
 
         # Check if already stored recently with identical claim and verdict
         clean_claim = claim.strip().lower()
@@ -68,27 +71,51 @@ class ShareStore:
 
         short_id = self.generate_short_id(claim, verdict)
         
+        # Whitelist engine & performance fields strictly
+        raw_engine = result.get("engine", {})
+        safe_engine = {
+            "provider": sanitize_secrets(str(raw_engine.get("provider", "groq"))[:30]),
+            "model": sanitize_secrets(str(raw_engine.get("model", "default"))[:60])
+        }
+
+        raw_perf = result.get("performance", {})
+        safe_perf = {
+            "extraction_time": str(raw_perf.get("extraction_time", "0.00s"))[:15],
+            "retrieval_time": str(raw_perf.get("retrieval_time", "0.00s"))[:15],
+            "llm_time": str(raw_perf.get("llm_time", "0.00s"))[:15],
+            "total_time": str(raw_perf.get("total_time", "0.00s"))[:15]
+        }
+
+        safe_evidence = [sanitize_secrets(e)[:1000] for e in result.get("evidence", [])[:10]]
+        safe_scores = [str(s)[:10] for s in result.get("evidence_scores", [])[:10]]
+        safe_sources = [sanitize_secrets(s)[:60] for s in result.get("evidence_sources", [])[:10]]
+        safe_urls = [str(u)[:300] for u in result.get("evidence_urls", [])[:10] if isinstance(u, str) and u.startswith("http")]
+
         self.store[short_id] = {
             "id": short_id,
-            "input_text": result.get("input_text", ""),
+            "input_text": sanitize_secrets(result.get("input_text", ""))[:1000],
             "extracted_claim": claim,
             "verdict": verdict,
             "confidence": result.get("confidence", 0.9),
-            "reasoning": result.get("reasoning", ""),
-            "evidence": result.get("evidence", []),
-            "evidence_scores": result.get("evidence_scores", []),
-            "evidence_sources": result.get("evidence_sources", []),
-            "evidence_urls": result.get("evidence_urls", []),
-            "engine": result.get("engine", {"provider": "groq", "model": "default"}),
-            "performance": result.get("performance", {}),
+            "reasoning": sanitize_secrets(result.get("reasoning", ""))[:2000],
+            "evidence": safe_evidence,
+            "evidence_scores": safe_scores,
+            "evidence_sources": safe_sources,
+            "evidence_urls": safe_urls,
+            "engine": safe_engine,
+            "performance": safe_perf,
             "created_at": datetime.now().isoformat()
         }
         self.save_to_disk()
         return short_id
 
     def get_verdict(self, share_id: str) -> Optional[Dict[str, Any]]:
-        """Retrieve stored verdict by short ID"""
-        clean_id = (share_id or "").strip()
+        """Retrieve stored verdict by validated short ID"""
+        if not share_id:
+            return None
+        clean_id = share_id.strip()
+        if not re.match(r'^[a-zA-Z0-9_\-]{4,16}$', clean_id):
+            return None
         return self.store.get(clean_id)
 
 share_store = ShareStore()

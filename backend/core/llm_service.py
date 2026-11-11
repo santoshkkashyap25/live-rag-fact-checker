@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field, ConfigDict
 from dotenv import load_dotenv
 from config import GROQ_MODEL
 from core.cache import query_cache
+from core.security import sanitize_secrets, clean_api_key, is_probable_api_key
 
 try:
     import litellm
@@ -137,9 +138,13 @@ EVIDENCE:
     ) -> Tuple[bool, str]:
         """Test user API key connectivity with a lightweight prompt"""
         clean_provider = (provider or "groq").lower().strip()
-        clean_key = (api_key or "").strip()
+        clean_key = clean_api_key(api_key)
         if not clean_key and clean_provider != "ollama":
             return False, "API key cannot be empty."
+
+        # Anti-Leak Guard: If user mistakenly pasted an API key in Ollama host field
+        if clean_provider == "ollama" and is_probable_api_key(clean_key):
+            return False, "The Ollama endpoint field contains an API key (gsk_/sk-/AIzaSy). Please provide a valid HTTP URL (or leave empty for default)."
         
         # 1. Native Groq testing
         if clean_provider == "groq":
@@ -155,7 +160,7 @@ EVIDENCE:
                 )
                 return True, f"Connection verified successfully! ({m})"
             except Exception as ge:
-                err_str = str(ge)
+                err_str = sanitize_secrets(str(ge), custom_keys=[clean_key])
                 logger.warning(f"Groq connection test failed: {err_str}")
                 if "401" in err_str or "invalid_api_key" in err_str or "authentication" in err_str.lower():
                     return False, "Invalid API Key for Groq."
@@ -198,13 +203,14 @@ EVIDENCE:
                 if chat_res.status_code == 200:
                     return True, f"Ollama connected at {ollama_url}! (Model: {ollama_model})"
                 else:
-                    return False, f"Ollama error ({chat_res.status_code}): {chat_res.text[:120]}"
+                    return False, f"Ollama error ({chat_res.status_code}): {sanitize_secrets(chat_res.text[:120])}"
             except requests.exceptions.ConnectionError:
                 return False, f"Cannot connect to Ollama at {ollama_url}. Make sure Ollama is running and accessible."
             except requests.exceptions.Timeout:
                 return False, f"Ollama at {ollama_url} timed out while warming up. Please retry in a moment."
             except Exception as oe:
-                return False, f"Ollama error: {str(oe)[:120]}"
+                clean_oe = sanitize_secrets(str(oe), custom_keys=[clean_key])
+                return False, f"Ollama error: {clean_oe[:120]}"
 
         # 3. LiteLLM testing for OpenAI, Gemini, Claude
         litellm_model = self._normalize_model(clean_provider, model)
@@ -222,7 +228,7 @@ EVIDENCE:
             )
             return True, f"Connection verified successfully! ({litellm_model})"
         except Exception as e:
-            err_str = str(e)
+            err_str = sanitize_secrets(str(e), custom_keys=[clean_key])
             logger.warning(f"Connection test failed for {clean_provider}: {err_str}")
             if "401" in err_str or "authentication" in err_str.lower() or "api_key" in err_str.lower():
                 return False, f"Invalid API Key for {clean_provider.capitalize()}."
@@ -244,15 +250,15 @@ EVIDENCE:
         
         # Determine provider and model
         clean_provider = (provider or "groq").lower().strip()
-        custom_key = (api_key or "").strip()
+        custom_key = clean_api_key(api_key)
         has_custom_key = bool(custom_key)
         
         effective_provider = clean_provider if (has_custom_key or clean_provider == "ollama") else "groq"
         effective_model = self._normalize_model(effective_provider, model)
         
-        # Check cache
+        # Check cache (isolated per provider & model)
         cache_key = f"{effective_provider}:{effective_model}:{claim}|{str(sorted(evidence))}"
-        cached_result = query_cache.get(cache_key)
+        cached_result = query_cache.get(cache_key, user_id="default", provider=effective_provider, model=effective_model)
         if cached_result:
             logger.info(f"Returning cached verdict for [{effective_provider}]")
             return Verdict(**cached_result)
@@ -309,7 +315,11 @@ EVIDENCE:
             # --- Branch 2: Ollama (Direct native REST API with configurable host) ---
             elif effective_provider == "ollama":
                 import requests
-                ollama_url = (custom_key or "").strip() or "http://127.0.0.1:11434"
+                raw_url = (custom_key or "").strip()
+                if is_probable_api_key(raw_url):
+                    ollama_url = "http://127.0.0.1:11434"
+                else:
+                    ollama_url = raw_url or "http://127.0.0.1:11434"
                 if not ollama_url.startswith("http://") and not ollama_url.startswith("https://"):
                     ollama_url = f"http://{ollama_url}"
                 ollama_url = ollama_url.rstrip("/")
@@ -419,15 +429,16 @@ EVIDENCE:
             
             logger.info(f"LLM verdict [{result.provider_used}/{result.model_used}]: {result.verdict} ({result.confidence:.2f})")
             
-            # Cache result
+            # Cache result (isolated per provider & model)
             result_data = result.model_dump() if hasattr(result, "model_dump") else result.dict()
-            query_cache.set(cache_key, result_data)
+            query_cache.set(cache_key, result_data, user_id="default", provider=effective_provider, model=effective_model)
             
             return result
             
         except Exception as e:
-            logger.error(f"LLM service error: {e}")
-            return self._fallback_verification(claim, evidence, str(e), effective_provider, effective_model)
+            sanitized_err = sanitize_secrets(str(e), custom_keys=[custom_key])
+            logger.error(f"LLM service error: {sanitized_err}")
+            return self._fallback_verification(claim, evidence, sanitized_err, effective_provider, effective_model)
 
     def _fallback_verification(
         self, 
@@ -437,18 +448,19 @@ EVIDENCE:
         provider: str = "groq",
         model: str = "default"
     ) -> Verdict:
-        """Fallback response when LLM model is unavailable"""
-        logger.info(f"LLM verification unavailable: {error_msg}")
+        """Fallback response when LLM model is unavailable with zero credential leakage"""
+        clean_err = sanitize_secrets(error_msg)
+        logger.info(f"LLM verification unavailable: {clean_err}")
         
         has_sys_key = bool(os.environ.get("GROQ_API_KEY", "").strip())
-        if "API Key" in error_msg or not has_sys_key:
+        if "API Key" in clean_err or not has_sys_key:
             reasoning = (
-                f"LLM verification failed ({error_msg}). "
+                f"LLM verification failed ({clean_err}). "
                 "Please configure a valid API key for your chosen provider in 'LLM Settings' (Groq, OpenAI, Google Gemini, Anthropic Claude)."
             )
         else:
             reasoning = (
-                f"LLM verification unavailable ({error_msg}). "
+                f"LLM verification unavailable ({clean_err}). "
                 "Please check your API key / model in 'LLM Settings' or internet connection."
             )
         

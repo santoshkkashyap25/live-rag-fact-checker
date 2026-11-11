@@ -1,11 +1,14 @@
 # core/og_renderer.py
 import html
 from typing import Dict, Any
+from core.security import sanitize_secrets
 
 def render_og_svg(item: Dict[str, Any]) -> str:
     """Generate dynamic OpenGraph SVG card badge"""
-    verdict = item.get("verdict", "Unverifiable")
-    claim = html.escape((item.get("extracted_claim") or item.get("input_text") or "Verified Claim")[:90])
+    verdict_raw = str(item.get("verdict", "Unverifiable"))
+    verdict = html.escape(verdict_raw if verdict_raw in ["True", "False", "Unverifiable"] else "Unverifiable")
+    raw_claim = sanitize_secrets(item.get("extracted_claim") or item.get("input_text") or "Verified Claim")
+    claim = html.escape(raw_claim[:90])
     confidence_raw = item.get("confidence", 0.9)
     try:
         conf_val = float(confidence_raw)
@@ -124,9 +127,12 @@ def render_og_svg(item: Dict[str, Any]) -> str:
 
 def render_shared_page_html(item: Dict[str, Any], share_id: str, app_url: str = "https://factguard-1gge.onrender.com") -> str:
     """Generate dynamic server-rendered HTML page with OpenGraph & Twitter Card tags"""
-    claim = html.escape(item.get("extracted_claim") or item.get("input_text") or "Verified Claim")
-    verdict = item.get("verdict", "Unverifiable")
-    reasoning = html.escape(item.get("reasoning", "Evidence analyzed against claim."))
+    raw_claim = sanitize_secrets(item.get("extracted_claim") or item.get("input_text") or "Verified Claim")
+    claim = html.escape(raw_claim[:250])
+    raw_verdict = str(item.get("verdict", "Unverifiable"))
+    verdict = html.escape(raw_verdict if raw_verdict in ["True", "False", "Unverifiable"] else "Unverifiable")
+    raw_reasoning = sanitize_secrets(item.get("reasoning", "Evidence analyzed against claim."))
+    reasoning = html.escape(raw_reasoning[:1000])
     confidence_raw = item.get("confidence", 0.9)
     try:
         conf_val = float(confidence_raw)

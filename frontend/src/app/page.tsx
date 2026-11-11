@@ -282,6 +282,9 @@ export default function VerifyPage() {
     setExpandedEvidence(null);
     setIsCacheHit(false);
 
+    const safeKey = (llmConfig.apiKey || "").trim().replace(/[\r\n\t]/g, "");
+    const safeModel = (llmConfig.model || "").trim().replace(/[\r\n\t]/g, "");
+
     try {
       const res = await fetch(`${API_BASE}/api/verify/stream`, {
         method: "POST",
@@ -289,15 +292,15 @@ export default function VerifyPage() {
           "Content-Type": "application/json",
           "X-User-ID": userId || "default_user",
           "X-LLM-Provider": llmConfig.provider,
-          "X-LLM-API-Key": llmConfig.apiKey || "",
-          "X-LLM-Model": llmConfig.model || "",
+          "X-LLM-API-Key": safeKey,
+          "X-LLM-Model": safeModel,
         },
         body: JSON.stringify({ 
           text: inputText, 
           user_id: userId || "default_user",
           llm_provider: llmConfig.provider,
-          llm_api_key: llmConfig.apiKey || undefined,
-          llm_model: llmConfig.model || undefined
+          llm_api_key: safeKey || undefined,
+          llm_model: safeModel || undefined
         }),
       });
 

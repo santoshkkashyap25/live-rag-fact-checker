@@ -11,6 +11,7 @@ from core.llm_service import llm_service
 from core.re_ranker import re_ranker
 from core.metrics import metrics_collector, PipelineMetrics
 from core.cache import query_cache
+from core.security import sanitize_secrets, clean_api_key
 from config import TOP_K_RETRIEVE, TOP_K_RERANK_RESULTS, CACHE_ENABLED
 
 logging.basicConfig(level=logging.INFO)
@@ -42,9 +43,9 @@ async def stream_fact_checking_pipeline(
         claim = await asyncio.to_thread(claim_extractor.extract, raw_text)
         extraction_time = time.time() - extraction_start
         
-        # Cache Check
+        # Cache Check (isolated per provider & model)
         if use_cache and CACHE_ENABLED:
-            cached = query_cache.get(claim, user_id=user_id)
+            cached = query_cache.get(claim, user_id=user_id, provider=llm_provider, model=llm_model)
             if cached:
                 cached_copy = dict(cached)
                 cached_copy["input_text"] = raw_text
@@ -124,8 +125,8 @@ async def stream_fact_checking_pipeline(
             "is_cache_hit": False
         }
 
-        # Save to cache and log metrics
-        query_cache.set(claim, final_result, user_id=user_id)
+        # Save to cache and log metrics (isolated per provider & model)
+        query_cache.set(claim, final_result, user_id=user_id, provider=llm_provider, model=llm_model)
         metrics_collector.log_metric(PipelineMetrics(
             timestamp=time.strftime("%Y-%m-%d %H:%M:%S"),
             claim_extraction_time=extraction_time,
@@ -141,8 +142,9 @@ async def stream_fact_checking_pipeline(
         
         yield emit({"type": "complete", "result": final_result})
     except Exception as e:
+        sanitized_msg = sanitize_secrets(str(e), custom_keys=[llm_api_key])
         logger.exception("Error during streaming pipeline")
-        yield emit({"type": "error", "message": f"Verification error: {str(e)}"})
+        yield emit({"type": "error", "message": f"Verification error: {sanitized_msg}"})
 
 def run_fact_checking_pipeline(
     raw_text: str, 
@@ -180,9 +182,9 @@ def run_fact_checking_pipeline(
         extraction_time = time.time() - extraction_start
         logger.info(f"[1/3] Claim extracted in {extraction_time:.2f}s: {claim}")
         
-        # Check cache if enabled
+        # Check cache if enabled (isolated per provider & model)
         if use_cache and CACHE_ENABLED:
-            cached = query_cache.get(claim, user_id=user_id)
+            cached = query_cache.get(claim, user_id=user_id, provider=llm_provider, model=llm_model)
             if cached:
                 total_time = time.time() - start_time
                 logger.info(f"Cache hit for user '{user_id}' claim '{claim}'. Returning cached result in {total_time:.3f}s")
@@ -318,9 +320,9 @@ def run_fact_checking_pipeline(
             }
         }
         
-        # Cache response for future queries (per user)
+        # Cache response for future queries (per user, provider & model)
         if CACHE_ENABLED:
-            query_cache.set(claim, response, user_id=user_id)
+            query_cache.set(claim, response, user_id=user_id, provider=llm_provider, model=llm_model)
 
         logger.info(f"Pipeline completed in {total_time:.2f}s")
         logger.info("=" * 60)
@@ -328,5 +330,6 @@ def run_fact_checking_pipeline(
         return response
         
     except Exception as e:
-        logger.exception(f"Pipeline failed: {e}")
+        sanitized_err = sanitize_secrets(str(e), custom_keys=[llm_api_key])
+        logger.exception(f"Pipeline failed: {sanitized_err}")
         raise

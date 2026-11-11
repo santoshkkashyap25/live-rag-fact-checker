@@ -21,15 +21,29 @@ class QueryCache:
         self.ttl_seconds = CACHE_TTL_SECONDS
         self.load_from_disk()
     
-    def get_cache_key(self, claim: str, user_id: str = "default") -> str:
-        """Generate cache key from claim and user_id"""
+    def get_cache_key(
+        self, 
+        claim: str, 
+        user_id: str = "default", 
+        provider: Optional[str] = None, 
+        model: Optional[str] = None
+    ) -> str:
+        """Generate cache key from claim, user_id, provider, and model to prevent cross-provider pollution"""
         clean_user = (user_id or "default").strip()
+        clean_prov = (provider or "all").lower().strip()
+        clean_mod = (model or "default").lower().strip()
         clean_claim = claim.lower().strip()
-        return hashlib.md5(f"{clean_user}:{clean_claim}".encode()).hexdigest()
+        return hashlib.md5(f"{clean_user}:{clean_prov}:{clean_mod}:{clean_claim}".encode()).hexdigest()
     
-    def get(self, claim: str, user_id: str = "default") -> Optional[Dict[str, Any]]:
-        """Retrieve cached result if exists and not expired for the given user"""
-        key = self.get_cache_key(claim, user_id)
+    def get(
+        self, 
+        claim: str, 
+        user_id: str = "default", 
+        provider: Optional[str] = None, 
+        model: Optional[str] = None
+    ) -> Optional[Dict[str, Any]]:
+        """Retrieve cached result if exists and not expired for the given user, provider, and model"""
+        key = self.get_cache_key(claim, user_id, provider, model)
         
         with self._lock:
             if key not in self.cache:
@@ -47,9 +61,16 @@ class QueryCache:
             logger.info(f"Cache hit for user '{user_id}' key: {key[:8]}...")
             return cached_item['result']
     
-    def set(self, claim: str, result: Dict[str, Any], user_id: str = "default"):
-        """Cache result with timestamp and user attribution (Thread-safe)"""
-        key = self.get_cache_key(claim, user_id)
+    def set(
+        self, 
+        claim: str, 
+        result: Dict[str, Any], 
+        user_id: str = "default", 
+        provider: Optional[str] = None, 
+        model: Optional[str] = None
+    ):
+        """Cache result with timestamp, provider attribution, and thread-safety"""
+        key = self.get_cache_key(claim, user_id, provider, model)
         
         with self._lock:
             # Evict oldest if at capacity
@@ -64,8 +85,9 @@ class QueryCache:
             self.cache[key] = {
                 'result': result,
                 'timestamp': datetime.now().isoformat(),
-                'claim': claim[:100],  # Store truncated claim for debugging
-                'user_id': user_id or "default"
+                'user_id': user_id or "default",
+                'provider': provider or "groq",
+                'model': model or "default"
             }
             logger.info(f"Cached result for user '{user_id}' key: {key[:8]}...")
             self.save_to_disk()
@@ -77,7 +99,7 @@ class QueryCache:
                 clean_user = user_id.strip()
                 keys_to_delete = [
                     k for k, v in self.cache.items()
-                    if v.get('user_id') == clean_user or k == self.get_cache_key(v.get('claim', ''), clean_user)
+                    if v.get('user_id') == clean_user
                 ]
                 for k in keys_to_delete:
                     del self.cache[k]

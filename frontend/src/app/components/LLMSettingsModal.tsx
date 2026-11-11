@@ -132,6 +132,13 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
     gemini: "",
     claude: ""
   });
+  const [providerModels, setProviderModels] = useState<Record<LLMProviderType, string>>({
+    groq: "groq/compound-mini",
+    ollama: "llama3.3",
+    openai: "gpt-6-astra",
+    gemini: "gemini-3.8-flash",
+    claude: "claude-sonnet-5.5"
+  });
   const [selectedModel, setSelectedModel] = useState(currentConfig.model);
   const [customModel, setCustomModel] = useState("");
   const [showKey, setShowKey] = useState(false);
@@ -142,9 +149,27 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
   useEffect(() => {
     if (isOpen) {
       setProvider(currentConfig.provider);
-      setSelectedModel(currentConfig.model);
       setShowKey(false);
       setTestResult(null);
+
+      // Check whether current model is standard or custom
+      const meta = PROVIDERS.find((p) => p.id === currentConfig.provider) || PROVIDERS[0];
+      const isInStandardList = meta.models.some((m) => m.id === currentConfig.model);
+      if (isInStandardList) {
+        setSelectedModel(currentConfig.model);
+        setCustomModel("");
+      } else if (currentConfig.model) {
+        setSelectedModel("custom");
+        setCustomModel(currentConfig.model);
+      } else {
+        setSelectedModel(meta.defaultModel);
+        setCustomModel("");
+      }
+
+      setProviderModels((prev) => ({
+        ...prev,
+        [currentConfig.provider]: currentConfig.model || meta.defaultModel
+      }));
 
       let loadedKeys: Record<LLMProviderType, string> = {
         groq: "",
@@ -164,7 +189,7 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
       }
 
       // Sync active configuration into provider keys with strict leakage guards
-      const currentVal = (currentConfig.apiKey || "").trim();
+      const currentVal = (currentConfig.apiKey || "").trim().replace(/[\r\n\t]/g, "");
       if (currentConfig.provider === "ollama") {
         // Critical Privacy Guard: If currentVal is an API key (e.g. gsk_*, sk-*), DO NOT put in ollama!
         if (currentVal.startsWith("gsk_")) {
@@ -200,16 +225,78 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
     setProvider(newProvider);
     const meta = PROVIDERS.find((p) => p.id === newProvider);
     if (meta) {
-      setSelectedModel(meta.defaultModel);
+      const remembered = providerModels[newProvider] || meta.defaultModel;
+      const isInList = meta.models.some((m) => m.id === remembered);
+      if (isInList) {
+        setSelectedModel(remembered);
+      } else if (remembered && remembered !== "custom") {
+        setSelectedModel("custom");
+        setCustomModel(remembered);
+      } else {
+        setSelectedModel(meta.defaultModel);
+      }
     }
     setShowKey(false);
     setTestResult(null);
   };
 
-  const handleKeyChange = (val: string) => {
-    setProviderKeys((prev) => ({
+  const handleModelChange = (newModel: string) => {
+    setSelectedModel(newModel);
+    if (newModel !== "custom") {
+      setProviderModels((prev) => ({
+        ...prev,
+        [provider]: newModel
+      }));
+    }
+  };
+
+  const handleCustomModelChange = (val: string) => {
+    setCustomModel(val);
+    setProviderModels((prev) => ({
       ...prev,
       [provider]: val
+    }));
+  };
+
+  const handleKeyChange = (rawVal: string) => {
+    const val = rawVal.replace(/[\r\n\t]/g, "").trim();
+
+    // Real-Time Leak Guard: If user accidentally pastes a cloud API key into Ollama endpoint
+    if (provider === "ollama") {
+      if (val.startsWith("gsk_")) {
+        setProviderKeys((prev) => ({ ...prev, groq: val, ollama: "" }));
+        setTestResult({
+          success: false,
+          message: "⚠️ Groq API key detected! Safely routed to your Groq settings and cleared Ollama endpoint."
+        });
+        return;
+      } else if (val.startsWith("sk-ant")) {
+        setProviderKeys((prev) => ({ ...prev, claude: val, ollama: "" }));
+        setTestResult({
+          success: false,
+          message: "⚠️ Anthropic Claude API key detected! Safely routed to your Claude settings and cleared Ollama endpoint."
+        });
+        return;
+      } else if (val.startsWith("sk-") || val.startsWith("sk-proj-")) {
+        setProviderKeys((prev) => ({ ...prev, openai: val, ollama: "" }));
+        setTestResult({
+          success: false,
+          message: "⚠️ OpenAI API key detected! Safely routed to your OpenAI settings and cleared Ollama endpoint."
+        });
+        return;
+      } else if (val.startsWith("AIzaSy")) {
+        setProviderKeys((prev) => ({ ...prev, gemini: val, ollama: "" }));
+        setTestResult({
+          success: false,
+          message: "⚠️ Google Gemini API key detected! Safely routed to your Gemini settings and cleared Ollama endpoint."
+        });
+        return;
+      }
+    }
+
+    setProviderKeys((prev) => ({
+      ...prev,
+      [provider]: rawVal.replace(/[\r\n\t]/g, "")
     }));
     setTestResult(null);
   };
@@ -434,7 +521,7 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
             <label className={styles.sectionLabel}>Model Selection</label>
             <select
               value={selectedModel}
-              onChange={(e) => setSelectedModel(e.target.value)}
+              onChange={(e) => handleModelChange(e.target.value)}
               className={styles.selectInput}
             >
               {activeProviderMeta.models.map((m) => (
@@ -449,7 +536,7 @@ export default function LLMSettingsModal({ isOpen, onClose, currentConfig, onSav
               <input
                 type="text"
                 value={customModel}
-                onChange={(e) => setCustomModel(e.target.value)}
+                onChange={(e) => handleCustomModelChange(e.target.value)}
                 placeholder="e.g. gpt-4o-2024-08-06 or llama-3.2-3b-preview"
                 className={styles.textInput}
                 style={{ marginTop: "0.5rem" }}
