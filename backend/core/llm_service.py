@@ -42,8 +42,8 @@ class LLMService:
     DEFAULT_MODELS = {
         "groq": GROQ_MODEL or "openai/gpt-oss-120b",
         "openai": "gpt-4o-mini",
-        "gemini": "gemini/gemini-1.5-flash",
-        "claude": "anthropic/claude-3-5-haiku-20241022",
+        "gemini": "gemini/gemini-2.0-flash",
+        "claude": "anthropic/claude-3-7-sonnet-20250219",
         "ollama": "gemma4:e2b",
     }
     

@@ -39,14 +39,15 @@ const PROVIDERS: ProviderMeta[] = [
   {
     id: "groq",
     name: "Groq",
-    desc: "Ultra-fast LPU inference (GPT-OSS, Compound, Llama)",
+    desc: "Ultra-fast LPU inference (Compound, Llama 3.3, GPT-OSS)",
     keyUrl: "https://console.groq.com/keys",
     keyPlaceholder: "gsk_...",
     defaultModel: "groq/compound-mini",
     models: [
       { id: "groq/compound-mini", label: "Compound Mini (High Precision • Server Default)" },
+      { id: "llama-3.3-70b-versatile", label: "Llama 3.3 70B Versatile (Meta Flagship)" },
+      { id: "openai/gpt-oss-120b", label: "GPT-OSS 120B (High Capacity Reasoning)" },
       { id: "openai/gpt-oss-20b", label: "GPT-OSS 20B (Fast Reasoning)" },
-      { id: "openai/gpt-oss-120b", label: "GPT-OSS 120B (High Capacity)" },
       { id: "qwen/qwen3.6-27b", label: "Qwen 3.6 27B" },
     ]
   },
@@ -67,40 +68,45 @@ const PROVIDERS: ProviderMeta[] = [
   {
     id: "openai",
     name: "OpenAI",
-    desc: "GPT-4o & GPT-4o-mini reasoning",
+    desc: "GPT-4o, o3-mini, o1 & GPT-4.5 reasoning",
     keyUrl: "https://platform.openai.com/api-keys",
     keyPlaceholder: "sk-proj-...",
     defaultModel: "gpt-4o-mini",
     models: [
       { id: "gpt-4o-mini", label: "GPT-4o Mini (Fast & Cost-Efficient)" },
-      { id: "gpt-4o", label: "GPT-4o (Flagship Model)" },
-      { id: "gpt-3.5-turbo", label: "GPT-3.5 Turbo" },
+      { id: "gpt-4o", label: "GPT-4o (Multimodal Flagship)" },
+      { id: "o3-mini", label: "o3-mini (High-Speed Reasoning & Logic)" },
+      { id: "o1", label: "o1 (Deep STEM & Theoretical Reasoning)" },
+      { id: "gpt-4.5-preview", label: "GPT-4.5 Preview (Massive World Knowledge Model)" },
     ]
   },
   {
     id: "gemini",
     name: "Google Gemini",
-    desc: "Gemini 1.5 & 2.0 Flash multimodal",
+    desc: "Gemini 2.5 & 2.0 Flash / Pro multimodal",
     keyUrl: "https://aistudio.google.com/app/apikey",
     keyPlaceholder: "AIzaSy...",
-    defaultModel: "gemini-1.5-flash",
+    defaultModel: "gemini-2.0-flash",
     models: [
-      { id: "gemini-1.5-flash", label: "Gemini 1.5 Flash (Fast & Capable)" },
-      { id: "gemini-2.0-flash", label: "Gemini 2.0 Flash (Next-Gen)" },
-      { id: "gemini-1.5-pro", label: "Gemini 1.5 Pro (Deep Analysis)" },
+      { id: "gemini-2.0-flash", label: "Gemini 2.0 Flash (Next-Gen Fast Multimodal)" },
+      { id: "gemini-2.5-flash", label: "Gemini 2.5 Flash (Latest High-Efficiency)" },
+      { id: "gemini-2.5-pro", label: "Gemini 2.5 Pro (Deep Multimodal Reasoning)" },
+      { id: "gemini-1.5-pro", label: "Gemini 1.5 Pro (1M Long-Context)" },
+      { id: "gemini-1.5-flash", label: "Gemini 1.5 Flash (Legacy Speed)" },
     ]
   },
   {
     id: "claude",
     name: "Anthropic Claude",
-    desc: "Claude 3.5 Sonnet & Haiku precision",
+    desc: "Claude 3.7 Sonnet, 3.5 Sonnet & Haiku",
     keyUrl: "https://console.anthropic.com/settings/keys",
     keyPlaceholder: "sk-ant-api03-...",
-    defaultModel: "claude-3-5-haiku-20241022",
+    defaultModel: "claude-3-7-sonnet-20250219",
     models: [
-      { id: "claude-3-5-haiku-20241022", label: "Claude 3.5 Haiku (Fast & Precise)" },
-      { id: "claude-3-5-sonnet-20241022", label: "Claude 3.5 Sonnet (State of the Art)" },
-      { id: "claude-3-haiku-20240307", label: "Claude 3 Haiku" },
+      { id: "claude-3-7-sonnet-20250219", label: "Claude 3.7 Sonnet (Hybrid Reasoning & Extended Thinking)" },
+      { id: "claude-3-5-sonnet-20241022", label: "Claude 3.5 Sonnet v2 (State of the Art)" },
+      { id: "claude-3-5-haiku-20241022", label: "Claude 3.5 Haiku (Ultra-Fast & Precise)" },
+      { id: "claude-3-opus-20240229", label: "Claude 3 Opus (Complex Writing & Nuance)" },
     ]
   }
 ];
