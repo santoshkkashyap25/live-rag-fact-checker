@@ -1,0 +1,146 @@
+[
+  {
+    "id": "DEV-01",
+    "claim": "The speed of light in a vacuum is approximately 300,000 kilometers per second.",
+    "expected": "True",
+    "domain": "Astrophysics",
+    "benchmark": "Standard Physics",
+    "dev_output_v1": "True",
+    "dev_status_v1": "Correct"
+  },
+  {
+    "id": "DEV-02",
+    "claim": "The Great Wall of China is visible from the Moon with the naked eye.",
+    "expected": "False",
+    "domain": "Astrophysics",
+    "benchmark": "TruthfulQA",
+    "dev_output_v1": "False",
+    "dev_status_v1": "Correct"
+  },
+  {
+    "id": "DEV-03",
+    "claim": "Humans only use ten percent of their total brain capacity.",
+    "expected": "False",
+    "domain": "Neuroscience",
+    "benchmark": "TruthfulQA",
+    "dev_output_v1": "False",
+    "dev_status_v1": "Correct"
+  },
+  {
+    "id": "DEV-04",
+    "claim": "The human heart consists of four distinct anatomical chambers.",
+    "expected": "True",
+    "domain": "Human Biology",
+    "benchmark": "FEVER / Med",
+    "dev_output_v1": "True",
+    "dev_status_v1": "Correct"
+  },
+  {
+    "id": "DEV-05",
+    "claim": "Bananas are naturally radioactive due to the presence of potassium-40.",
+    "expected": "True",
+    "domain": "Nuclear Physics",
+    "benchmark": "FEVER / Science",
+    "dev_output_v1": "True",
+    "dev_status_v1": "Correct"
+  },
+  {
+    "id": "DEV-06",
+    "claim": "Liquid water decreases in volume and contracts when freezing into solid ice.",
+    "expected": "False",
+    "domain": "Chemistry",
+    "benchmark": "Physical Science",
+    "dev_output_v1": "Unverifiable",
+    "dev_status_v1": "Failure (LLM evidence phrasing mismatch)"
+  },
+  {
+    "id": "DEV-07",
+    "claim": "Penicillin was discovered by Alexander Fleming in 1928 as an antibiotic.",
+    "expected": "True",
+    "domain": "Medicine",
+    "benchmark": "FEVER / Health",
+    "dev_output_v1": "True",
+    "dev_status_v1": "Correct"
+  },
+  {
+    "id": "DEV-08",
+    "claim": "The MMR childhood vaccine has been scientifically proven to cause autism.",
+    "expected": "False",
+    "domain": "Health Myths",
+    "benchmark": "TruthfulQA / Health",
+    "dev_output_v1": "False",
+    "dev_status_v1": "Correct"
+  },
+  {
+    "id": "DEV-09",
+    "claim": "Bulls become enraged and charge specifically because they see the color red.",
+    "expected": "False",
+    "domain": "Zoology",
+    "benchmark": "TruthfulQA",
+    "dev_output_v1": "Unverifiable",
+    "dev_status_v1": "Failure (Retrieval snippet truncation)"
+  },
+  {
+    "id": "DEV-10",
+    "claim": "Worker honeybees in a hive are sterile females that perform daily foraging.",
+    "expected": "True",
+    "domain": "Entomology",
+    "benchmark": "FEVER / Nature",
+    "dev_output_v1": "True",
+    "dev_status_v1": "Correct"
+  },
+  {
+    "id": "DEV-11",
+    "claim": "The Apollo 11 lunar module successfully landed astronauts on the Moon in July 1969.",
+    "expected": "True",
+    "domain": "History",
+    "benchmark": "FEVER / History",
+    "dev_output_v1": "True",
+    "dev_status_v1": "Correct"
+  },
+  {
+    "id": "DEV-12",
+    "claim": "Napoleon Bonaparte was unusually short compared to average French men of his time.",
+    "expected": "False",
+    "domain": "Historical Myths",
+    "benchmark": "TruthfulQA",
+    "dev_output_v1": "Unverifiable",
+    "dev_status_v1": "Failure (French/English inch unit variance)"
+  },
+  {
+    "id": "DEV-13",
+    "claim": "Canberra is the designated official capital city of Australia.",
+    "expected": "True",
+    "domain": "Geography",
+    "benchmark": "FEVER",
+    "dev_output_v1": "True",
+    "dev_status_v1": "Correct"
+  },
+  {
+    "id": "DEV-14",
+    "claim": "Sydney is the official federal capital city of Australia.",
+    "expected": "False",
+    "domain": "Geography",
+    "benchmark": "FEVER",
+    "dev_output_v1": "False",
+    "dev_status_v1": "Correct"
+  },
+  {
+    "id": "DEV-15",
+    "claim": "The Python programming language was originally conceived and created by Guido van Rossum.",
+    "expected": "True",
+    "domain": "Computer Science",
+    "benchmark": "FEVER / Tech",
+    "dev_output_v1": "True",
+    "dev_status_v1": "Correct"
+  },
+  {
+    "id": "DEV-16",
+    "claim": "The 5G wireless telecommunications network causes viral transmission of COVID-19.",
+    "expected": "False",
+    "domain": "Misinformation",
+    "benchmark": "TruthfulQA / Misinfo",
+    "dev_output_v1": "False",
+    "dev_status_v1": "Correct"
+  }
+]

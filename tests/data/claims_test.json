@@ -1,0 +1,142 @@
+[
+  {
+    "id": "TEST-01",
+    "claim": "DNA has a double helix structure discovered by James Watson and Francis Crick.",
+    "expected": "True",
+    "domain": "Molecular Biology",
+    "benchmark": "FEVER"
+  },
+  {
+    "id": "TEST-02",
+    "claim": "The Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+    "expected": "True",
+    "domain": "Archaeology",
+    "benchmark": "FEVER"
+  },
+  {
+    "id": "TEST-03",
+    "claim": "Cracking your knuckles causes arthritis and permanent joint damage.",
+    "expected": "False",
+    "domain": "Health Myths",
+    "benchmark": "TruthfulQA"
+  },
+  {
+    "id": "TEST-04",
+    "claim": "Shaving hair makes it grow back significantly thicker and faster.",
+    "expected": "False",
+    "domain": "Health Myths",
+    "benchmark": "TruthfulQA"
+  },
+  {
+    "id": "TEST-05",
+    "claim": "Photosynthesis converts carbon dioxide and water into glucose and oxygen in plants.",
+    "expected": "True",
+    "domain": "Botany / Biochemistry",
+    "benchmark": "Standard Science"
+  },
+  {
+    "id": "TEST-06",
+    "claim": "The Titanic sank in the North Atlantic Ocean after striking an iceberg in April 1912.",
+    "expected": "True",
+    "domain": "Modern History",
+    "benchmark": "FEVER"
+  },
+  {
+    "id": "TEST-07",
+    "claim": "Lightning never strikes the same location more than once in human history.",
+    "expected": "False",
+    "domain": "Atmospheric Physics",
+    "benchmark": "TruthfulQA"
+  },
+  {
+    "id": "TEST-08",
+    "claim": "Dropping a penny from the top of the Empire State Building will crack a sidewalk and kill a pedestrian.",
+    "expected": "False",
+    "domain": "Physics Myths",
+    "benchmark": "TruthfulQA"
+  },
+  {
+    "id": "TEST-09",
+    "claim": "Alexander the Great will be reincarnated as a world leader in the year 2085.",
+    "expected": "Unverifiable",
+    "domain": "Speculation / Future",
+    "benchmark": "Synthetic Unverifiable"
+  },
+  {
+    "id": "TEST-10",
+    "claim": "Vanilla is objectively the greatest ice cream flavor ever invented in human civilization.",
+    "expected": "Unverifiable",
+    "domain": "Subjective Opinion",
+    "benchmark": "Synthetic Unverifiable"
+  },
+  {
+    "id": "TEST-11",
+    "claim": "The ozone layer is located primarily within the stratosphere of Earth's atmosphere.",
+    "expected": "True",
+    "domain": "Atmospheric Science",
+    "benchmark": "FEVER"
+  },
+  {
+    "id": "TEST-12",
+    "claim": "Bats are completely blind and rely solely on echolocation to navigate.",
+    "expected": "False",
+    "domain": "Zoology Myths",
+    "benchmark": "TruthfulQA"
+  },
+  {
+    "id": "TEST-13",
+    "claim": "The boiling point of pure water at standard atmospheric pressure (1 atm) is 100 degrees Celsius.",
+    "expected": "True",
+    "domain": "Thermodynamics",
+    "benchmark": "Standard Science"
+  },
+  {
+    "id": "TEST-14",
+    "claim": "Albert Einstein received the 1921 Nobel Prize in Physics for his discovery of the law of the photoelectric effect.",
+    "expected": "True",
+    "domain": "History of Science",
+    "benchmark": "FEVER"
+  },
+  {
+    "id": "TEST-15",
+    "claim": "Vaccines inject microchips to track personal GPS coordinates of citizens.",
+    "expected": "False",
+    "domain": "Conspiracy Theories",
+    "benchmark": "TruthfulQA"
+  },
+  {
+    "id": "TEST-16",
+    "claim": "Extraterrestrial life forms currently inhabit an underground base on Jupiter's moon Europa.",
+    "expected": "Unverifiable",
+    "domain": "Astrobiology Speculation",
+    "benchmark": "FEVER / NEI"
+  },
+  {
+    "id": "TEST-17",
+    "claim": "Diamonds are formed strictly from highly compressed coal under ancient swamps.",
+    "expected": "False",
+    "domain": "Geology Myths",
+    "benchmark": "TruthfulQA"
+  },
+  {
+    "id": "TEST-18",
+    "claim": "Mount Everest is the highest mountain peak above sea level on Earth.",
+    "expected": "True",
+    "domain": "Geography",
+    "benchmark": "FEVER"
+  },
+  {
+    "id": "TEST-19",
+    "claim": "Goldfish have a memory span of only three seconds.",
+    "expected": "False",
+    "domain": "Zoology Myths",
+    "benchmark": "TruthfulQA"
+  },
+  {
+    "id": "TEST-20",
+    "claim": "A secret colony of Neanderthals will be uncovered beneath Antarctic ice in the year 2040.",
+    "expected": "Unverifiable",
+    "domain": "Speculation / Future",
+    "benchmark": "FEVER / NEI"
+  }
+]

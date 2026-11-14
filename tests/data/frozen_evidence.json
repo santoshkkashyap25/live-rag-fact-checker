@@ -1,0 +1,895 @@
+{
+  "DEV-01": [
+    {
+      "title": "Speed of light - Wikipedia",
+      "snippet": "Thespeedoflightisthespeedofelectromagnetic waves.Lighttravels at slowerspeedinside materials like glass or water; its highestspeedisinavacuum.Thespeedoflightinvacuumisauniversal physical constant denoted c (inISO and IEC standards c 0 ${\\displaystyle {c}_{0}}$[4]), exactly equal to 299 792 458 m\u22c5s\u22121.[2] It is exact because, by international agreement, a metre is ...",
+      "url": "https://en.wikipedia.org/wiki/Speed_of_light",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Speed of Light: Exact Value, Formula & How It Was Measured",
+      "snippet": "Thespeedoflightisthespeedat whichlightwaves travel through various materials. In avacuum,thespeedoflightisdefined as exactly 299,792,458 meters persecond.Thespeedoflightisone of the most fundamental constants in physics and represents the fastestspeedat which energy, matter, and information can travel through the universe.",
+      "url": "https://phyfundamentals.org/speed-of-light/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "How fast does light travel? | The speed of light | Space",
+      "snippet": "Lightisa\"universalspeedlimit\" and, according to Einstein's theory of relativity, is the fastestspeedintheuniverse:300,000kilometerspersecond(186,000 miles persecond).",
+      "url": "https://www.space.com/15830-light-speed.html",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "CODATA Value: speed of light in vacuum - physics.nist.gov",
+      "snippet": "speedoflightinvacuumNumerical value 299 792 458 m s-1 Standard uncertainty (exact) Relative standard uncertainty (exact) Concise form 299 792 458 m s -1 Click here for correlation coefficient of this constant with other constants",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?c",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "How Fast Is the Speed of Light, and How Was It First Measured?",
+      "snippet": "Lightcoversapproximately300,000km everysecond.TheMoon is about 384,400 km from Earth \u2014lighttakes about 1.28secondsto reach it. The Sun is 149.6 million km away \u2014lighttakes about 8 minutes 20secondsto reach Earth from the Sun. What Is theSpeedofLightinMiles Per Hour and Miles PerSecond? Converting c to imperial units uses the same approach \u2014 divide by the length of a ...",
+      "url": "https://physicsfundamentals.org/blog/speed-of-light",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Speed of Light: Exact Value, Units, Formula & History",
+      "snippet": "Thespeedoflightinvacuum, c, is exactly 299,792,458 meters persecond, about300,000kilometersor 186,282 miles everysecond.Thevalue has no uncertainty because, since 1983, the meter itself has been defined by it.",
+      "url": "https://physicstribune.com/constants/speed-of-light/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Free-space path loss (Wikipedia)",
+      "snippet": "In telecommunications, the free-space path loss (FSPL) (also known as free-space loss, FSL) is the decrease in signal strength of a signal traveling between two antennas on a line-of-sight path through free space, which occurs because the signal spreads out as it propagates.  The \"Standard Definitions of Terms for Antennas\", IEEE Std 145-1993, defines free-space loss as \"The loss between two isotropic radiators in free space, expressed as a power ratio.\"\nFree-space path loss increases with the square of the distance between the antennas because radio waves spread out following an inverse square law. It decreases with the square of the wavelength of the radio waves, and does not include any power loss in the antennas themselves due to imperfections such as resistance or losses due to interaction with the environment such as atmospheric absorption.\nThe FSPL is rarely used standalone, but rather as a part of the Friis transmission formula, which includes the gain of antennas.",
+      "url": "https://en.wikipedia.org/wiki/Free-space_path_loss",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Gravitational wave (Wikipedia)",
+      "snippet": "Gravitational waves are waves of spacetime curvature produced by the relative motion of gravitating masses and which propagate away at the speed of light. They were first predicted by Albert Einstein as a consequence of his general theory of relativity, appearing as \"ripples in spacetime curvature\".\nHundreds of these gravitational waves have since then been observed, first indirectly using binary-pulsar observations and, since 2015, directly through dedicated observatories.\nGravitational waves transport energy as gravitational radiation, a form of radiant energy similar to electromagnetic radiation.",
+      "url": "https://en.wikipedia.org/wiki/Gravitational_wave",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Pressure measurement (Wikipedia)",
+      "snippet": "Pressure measurement is the measurement of an applied force per unit area by a fluid (liquid or gas) on a surface. Pressure is typically expressed in units of pascals in the International System of Units (SI). Many techniques have been developed for the measurement of pressure and vacuum. Instruments used to measure and display pressure mechanically are called pressure gauges, vacuum gauges or compound gauges (vacuum & pressure).",
+      "url": "https://en.wikipedia.org/wiki/Pressure_measurement",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Interstellar travel (Wikipedia)",
+      "snippet": "Interstellar travel is the hypothetical travel of spacecraft between star systems. Due to the vast distances between the Solar System and nearby stars, interstellar travel is not practicable with current propulsion technologies.\nTo travel between stars within a reasonable amount of time (decades or centuries), an interstellar spacecraft must reach a significant fraction of the speed of light, requiring enormous amounts of energy. Furthermore,\n\nCommunication with such interstellar craft would be subject to years of delay due to the speed of light.",
+      "url": "https://en.wikipedia.org/wiki/Interstellar_travel",
+      "source": "Wikipedia"
+    }
+  ],
+  "DEV-02": [
+    {
+      "title": "Great Wall - NASA",
+      "snippet": "TheGreatWallofChinaand Inner Mongolia are featured in this image photographed by Expedition 10 Commander Leroy Chiao on the International Space Station. Despite myths to the contrary, thewallisn'tvisiblefromthemoon, and is difficult or impossible to see from Earth orbit without the high-powered lenses used for this photo.",
+      "url": "https://www.nasa.gov/image-article/great-wall/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Is the Great Wall of China visible from space with the naked eye?",
+      "snippet": "What the evidence shows TheGreatWallisgenerally notvisibleto the unaided humaneyefromlow Earth orbit, and certainly not from theMoon. Although it is long, it is only a few meters wide and blends in color with the surrounding land. Astronauts, includingChina'sfirst astronaut, have reported being unable to see it without aid.",
+      "url": "https://factguard.org/fact-check/great-wall-of-china-visible-from-space/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Can you see the Great Wall of China from space? - BBC Sky at Night Magazine",
+      "snippet": "So while theGreatWallofChinacan be photographed or observed from space using magnification, it can't be seen with thenakedeye.This was confirmed byChina'sown first astronaut, Yang Liwei, who orbited Earth 14 times in October 2003 during the Chinese space agency's Shenzhou 5 mission.",
+      "url": "https://www.skyatnightmagazine.com/space-science/can-you-see-great-wall-china-from-space",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Is the Great Wall of China Visible from the Moon? - Snopes.com",
+      "snippet": "Theclaim thatChina'sGreatWallistheonly man-made object that can be seen from themoonwiththenakedeyeisone of our more tenaciously incorrect \"facts,\" a bit of erroneous speculation ...",
+      "url": "https://www.snopes.com/fact-check/great-wall-from-moon/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "No, the Great Wall of China is not visible from space",
+      "snippet": "Theclaim that theGreatWallofChinaisvisiblefromspace, or even from theMoon,withthenakedeyeisfalse. At low Earth orbit thewallisabout ten times narrower than the humaneyecan resolve, and its stone blends into the surrounding terrain.",
+      "url": "https://www.halleyspace.com/great-wall-of-china-visible-from-space-myth/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Can You See the Great Wall from the Space or Moon? Visibility from ...",
+      "snippet": "Theorigin of the claim that theGreatWallcan be seen from space The claim that \"theGreatWallistheonly man-made structurevisibletothenakedeyefromthemoon\" first appeared in a letter written by British archaeologist William Stukeley in 1754, 215 years before the first human landing on themoon.",
+      "url": "https://www.travelchinaguide.com/china_great_wall/facts/seen-from-space.htm",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Artificial structures visible from space (Wikipedia)",
+      "snippet": "Artificial structures visible from space without magnification include highways, dams, and cities. \nWhether an object is visible depends significantly on the height above sea level from where it is observed. The K\u00e1rm\u00e1n line, at 100 kilometres (62 mi), is accepted by the World Air Sports Federation, an international standard-setting and record-keeping body for aeronautics and astronautics, as the boundary between the Earth's atmosphere and outer space. However, astronauts typically orbit the Earth at several hundreds of kilometres; the ISS, for example, orbits at about 420 km (260 mi) above the Earth, and the Moon orbits at about 380,000 km (240,000 mi) away.",
+      "url": "https://en.wikipedia.org/wiki/Artificial_structures_visible_from_space",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Far side of the Moon (Wikipedia)",
+      "snippet": "The far side of the Moon, also called the dark side of the Moon, is the hemisphere of the Moon that faces away from Earth; the opposite hemisphere being the near side. Due to tidal locking, the time it takes for the Moon to orbit the Earth once is equal to the time it takes for the Moon to rotate once, thus, the far side of the Moon never fully comes into view from Earth's surface. The far side has sometimes been called the \"dark side of the Moon\", where \"dark\" means \"unseen\" instead of \"unilluminated\". There is  however a common misconception that the dark side of the Moon is so-called because it never receives light, when each location on the Moon experiences two weeks of sunlight while the opposite location experiences night.",
+      "url": "https://en.wikipedia.org/wiki/Far_side_of_the_Moon",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Great Wall of China (Wikipedia)",
+      "snippet": "The Great Wall of China is a series of fortifications in China. They were built across the historical northern borders of ancient Chinese states and Imperial China as protection against various nomadic groups from the Eurasian Steppe. The first walls date to the 7th century BC; these were joined together in the Qin dynasty. Successive dynasties expanded the wall system; the best-known sections were built by the Ming dynasty (1368\u20131644).",
+      "url": "https://en.wikipedia.org/wiki/Great_Wall_of_China",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Moon (Wikipedia)",
+      "snippet": "The Moon is the only natural satellite of Earth. It orbits Earth in an elliptical path, at a distance  that varies over the year, averaging around 378,000 kilometers (235,000 mi). It completes an orbit (lunar month) in relation to Earth and the Sun (synodically) every 29.5 days. The Moon and Earth are bound by gravitational attraction, which is stronger on the sides facing each other.",
+      "url": "https://en.wikipedia.org/wiki/Moon",
+      "source": "Wikipedia"
+    }
+  ],
+  "DEV-03": [
+    {
+      "title": "Eidetic memory (Wikipedia)",
+      "snippet": "Eidetic memory ( eye-DET-ik), also known as photographic memory or total recall, is the alleged ability to recall an image from memory with high precision\u2014at least for a brief period of time\u2014after seeing it only once and without using a mnemonic device. \nAlthough the terms eidetic memory and photographic memory are popularly used interchangeably, they are also distinguished, with eidetic memory referring to the ability to see an object for a few minutes after it is no longer present and photographic memory referring to the ability to recall pages of text or numbers, or similar, in great detail. When the concepts are distinguished, eidetic memory is reported to occur in a small number of children and is generally not found in adults, while true photographic memory has never been demonstrated to exist.\nThe term eidetic comes from the Greek word \u03b5\u1f36\u03b4\u03bf\u03c2 (pronounced [\u00ea\u02d0dos], eidos) \"visible form\".",
+      "url": "https://en.wikipedia.org/wiki/Eidetic_memory",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Human multitasking (Wikipedia)",
+      "snippet": "Human multitasking is a concept that one can split their attention on more than one task or activity at the same time, such as speaking on the phone while driving a car.\nMultitasking can result in time wasted due to human context switching (e.g., determining which step is next in the task just switched to) and becoming prone to errors due to insufficient attention. Some people may be proficient at the tasks in question, able to rapidly shift attention between the tasks, and thus able to perform the tasks well. However, self-perception of being good at multitasking or getting more done while multitasking is frequently inaccurate.",
+      "url": "https://en.wikipedia.org/wiki/Human_multitasking",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Lucy (2014 film) (Wikipedia)",
+      "snippet": "Lucy is a 2014 English-language French science fiction action film written and directed by Luc Besson for his company EuropaCorp, and produced by his wife, Virginie Besson-Silla. It was shot in Taipei, Paris, and New York City. It stars Scarlett Johansson, Morgan Freeman, Choi Min-sik, and Amr Waked. Johansson portrays Lucy, a woman who gains psychokinetic abilities when a nootropic, psychedelic drug is absorbed into her bloodstream.",
+      "url": "https://en.wikipedia.org/wiki/Lucy_%282014_film%29",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Ten-percent-of-the-brain myth (Wikipedia)",
+      "snippet": "The ten-percent-of-the-brain myth states that humans generally use only one-tenth (or some other small fraction) of their brains. It has been misattributed to many famous scientists and historical figures, notably Albert Einstein. By extrapolation, it is suggested that a person may 'harness' or 'unlock' this unused potential and increase their intelligence.\nChanges in grey and white matter following new experiences and learning have been shown, but it has not yet been proven what the changes are.",
+      "url": "https://en.wikipedia.org/wiki/Ten-percent-of-the-brain_myth",
+      "source": "Wikipedia"
+    }
+  ],
+  "DEV-04": [
+    {
+      "title": "Anatomy of the human heart (Wikipedia)",
+      "snippet": "The heart is a muscular organ situated in the mediastinum. It consists of four chambers, four valves, two main arteries (the coronary arteries), and the conduction system. The left and right sides of the heart have different functions: the right side receives de-oxygenated blood through the superior and inferior venae cavae and pumps blood to the lungs through the pulmonary artery, and the left side receives saturated blood from the lungs.",
+      "url": "https://en.wikipedia.org/wiki/Anatomy_of_the_human_heart",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Circulatory system (Wikipedia)",
+      "snippet": "In vertebrates, the circulatory system is a system of organs that includes the heart, blood vessels, and blood which is circulated throughout the body. It includes the cardiovascular system, or vascular system, that consists of the heart and blood vessels (from Greek kardia meaning heart, and Latin vascula meaning vessels). The circulatory system has two divisions, a systemic circulation or circuit, and a pulmonary circulation or circuit. Some sources use the terms cardiovascular system and vascular system interchangeably with circulatory system.",
+      "url": "https://en.wikipedia.org/wiki/Circulatory_system",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Heart (Wikipedia)",
+      "snippet": "The heart is a muscular organ found in humans and other animals. This organ pumps blood through the blood vessels. The heart and blood vessels together make up the circulatory system. The pumped blood carries oxygen and nutrients to the tissue, while carrying metabolic waste such as carbon dioxide to the lungs.",
+      "url": "https://en.wikipedia.org/wiki/Heart",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Heart development (Wikipedia)",
+      "snippet": "Heart development, also known as cardiogenesis, refers to the prenatal development of the heart. This begins with the formation of two endocardial tubes which merge to form the tubular heart, also called the primitive heart tube. The heart is the first functional organ in vertebrate embryos.\nThe tubular heart quickly differentiates into the truncus arteriosus, bulbus cordis, primitive ventricle, primitive atrium, and the sinus venosus.",
+      "url": "https://en.wikipedia.org/wiki/Heart_development",
+      "source": "Wikipedia"
+    }
+  ],
+  "DEV-05": [
+    {
+      "title": "Is it true that bananas are radioactive? - McGill University",
+      "snippet": "Somepotassiumis always taken in via the diet, and some is always excreted, meaning that there is no buildup ofradioactivepotassium. So, whilebananasareindeedradioactive,thedose of radioactivity they deliver does not pose a risk.",
+      "url": "https://www.mcgill.ca/oss/article/you-asked/it-true-banana-radioactive",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Are Bananas Radioactive? | Potassium, Radiation, Radionuclide, & Facts ...",
+      "snippet": "It is also worth noting thatbananasarefar from unique. Potatoes, beans, spinach, Brazil nuts, and many other foodsnaturallycontain small amounts ofradioactiveisotopes. Even your own body isnaturallyradioactivebecause it containspotassium-40and carbon-14, anothernaturallyoccurring isotope. Very low levels of radiation are just a normal and uneventful part of everyday life. But now ...",
+      "url": "https://www.britannica.com/science/Are-Bananas-Radioactive",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Natural Radioactivity in Food | US EPA",
+      "snippet": "Themost well known examples ofnaturally-occurring radionuclides in foods arebananasand Brazil nuts.Bananasarea good source ofpotassiumin your diet and a small fraction of allpotassiumisradioactive. Consuming onebananawould deliver a total dose of 0.01 millirem (0.1 microsieverts) of radiation. This is a very small amount of radiation.",
+      "url": "https://www.epa.gov/radtown/natural-radioactivity-food",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Potassium-40 - Wikipedia",
+      "snippet": "Potassium-40(40K) is a long lived and the mainnaturallyoccurringradioactiveisotope ofpotassium, with a half-life of 1.248 billion years. It makes up about 117 ppm of naturalpotassium, making that mixture very weaklyradioactive.",
+      "url": "https://en.wikipedia.org/wiki/Potassium-40",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Can Eating Bananas Kill You Due To Radiation Poisoning?",
+      "snippet": "Yes,bananasaremildlyradioactivebecause they containpotassium-40, anaturallyoccurring isotope. The dose is tiny (about 0.1 microsieverts perbanana) and your body regulates excesspotassium, so eatingbananasis completely safe.",
+      "url": "https://www.scienceabc.com/eyeopeners/can-eating-bananas-kill-radiation-poisoning",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Banana equivalent dose - Wikipedia",
+      "snippet": "Bananaequivalent dose Abananacontainsnaturallyoccurringradioactivematerial in the form ofpotassium-40.Bananaequivalent dose (BED) is an informal unit of measurement of ionizing radiation exposure, intended as a general educational example to compare a dose of radioactivity to the dose one is exposed to by eating one average-sizedbanana.",
+      "url": "https://en.wikipedia.org/wiki/Banana_equivalent_dose",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Banana equivalent dose (Wikipedia)",
+      "snippet": "Banana equivalent dose (BED) is an informal unit of measurement of ionizing radiation exposure, intended as a general educational example to compare a dose of radioactivity to the dose one is exposed to by eating one average-sized banana. Bananas contain naturally occurring radioactive isotopes, particularly potassium-40 (40K), one of several naturally occurring isotopes of potassium. One BED is often correlated to 10\u22127 sievert (0.1 \u03bcSv); however, in practice, this dose is not cumulative, as the potassium in foods is excreted in urine to maintain homeostasis. The BED is only meant as an educational exercise and is not a formally adopted dose measurement.",
+      "url": "https://en.wikipedia.org/wiki/Banana_equivalent_dose",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Isotopes of potassium (Wikipedia)",
+      "snippet": "Potassium (19K) has 25 known isotopes from 34K to 57K as well as 31K, as well as an unconfirmed report of 59K. Three of those isotopes occur naturally: the two stable forms 39K (93.26%) and 41K (6.72%), and the long-lived radioisotope 40K (0.012%).\nNaturally occurring radioactive 40K decays with a half-life of 1.248\u00d7109 years. 89% of those decays are to stable 40Ca by beta decay, whilst 11% are to 40Ar by either electron capture or positron emission. This latter decay branch has produced an isotopic abundance of argon on Earth which differs greatly from that seen in gas giants and stellar spectra.",
+      "url": "https://en.wikipedia.org/wiki/Isotopes_of_potassium",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Potassium (Wikipedia)",
+      "snippet": "Potassium is a chemical element; it has symbol K (from Neo-Latin kalium) and atomic number 19. It is a silvery white metal that is soft enough to easily cut with a knife. Potassium metal reacts rapidly with atmospheric oxygen to form flaky white potassium peroxide in only seconds of exposure. It was first isolated from potash, the ashes of plants, from which its name derives.",
+      "url": "https://en.wikipedia.org/wiki/Potassium",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Potassium-40 (Wikipedia)",
+      "snippet": "Potassium-40 (40K) is a long lived and the main naturally occurring radioactive isotope of potassium, with a half-life of 1.248 billion years. It makes up about 117 ppmTooltip parts-per-million of natural potassium, making that mixture very weakly radioactive. The half-life is much shorter than the age of Earth, meaning this fraction was significantly larger earlier in Earth's history.\nPotassium-40 undergoes four different paths of radioactive decay, including all three main types of beta decay: \n\nElectron emission (\u03b2\u2212) to 40Ca with a decay energy of 1.31 MeV at 89.6% probability\nElectron capture (EC) to 40Ar* followed by a gamma decay emitting a photon with an energy of 1.46 MeV at 10.3% probability\nDirect electron capture (EC) to the ground state of 40Ar at 0.1% probability\nPositron emission (\u03b2+) to 40Ar at 0.001% probability\nBoth forms of the electron capture decay release further photons, when electrons from the outer shells fall into the inner shells to replace the electron taken from there.",
+      "url": "https://en.wikipedia.org/wiki/Potassium-40",
+      "source": "Wikipedia"
+    }
+  ],
+  "DEV-06": [
+    {
+      "title": "Why Does Water Expand When It Freezes? \u00bb ScienceABC",
+      "snippet": "Waterexpands by about 9% when it freezes because hydrogen bonds lock its molecules into an open hexagonal lattice (iceIh), makingiceless dense thanliquidwater\u2014 which is whyicefloats.",
+      "url": "https://www.scienceabc.com/pure-sciences/why-does-water-expand-when-it-freezes",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "The Expansion of Water Upon Freezing - HyperPhysics",
+      "snippet": "The Expansion ofWaterUponFreezing",
+      "url": "https://www.hyperphysics.phy-astr.gsu.edu/hbase/Chemical/waterdens.html",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "True or False Water contracts on freezing class 11 chemistry CBSE - Vedantu",
+      "snippet": "True or FalseWatercontractsonfreezingHint: Whenwaterfreezes, formation oficetakes place. It changes fromliquidtosolidstate.Watercrystallizes into hexagonal structure. It begins to take a more stable and definite shape. Complete step by step answer: The normal behavior observed in any substance is that they usually expand when heated as their densitydecreasesandcontractson ...",
+      "url": "https://www.vedantu.com/question-answer/true-or-false-water-contracts-on-freezing-class-11-chemistry-cbse-5fbababeffe88b10a64a0b0b",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Thermal Expansion and Density - Student Materials",
+      "snippet": "This educational webpage, part of the InTeGrate teaching materials for &quot;Water Science and Society,&quot; explains the unique thermal expansion and density properties ofwater, emphasizing howwaterexpands upon freezing\u2014makingiceless dense thanliquidwater\u2014and the critical implications for aquatic ecosystems, geology, and everyday phenomena, supported by diagrams illustrating ...",
+      "url": "https://serc.carleton.edu/integrate/teaching_materials/water_science_society/student_materials/842",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "As water freezes to ice does its volume decrease or class 11 ... - Vedantu",
+      "snippet": "Whenit freezes toice, the atoms will be arranged in a closed crystal which is known as a six-sided crystalline system. This crystalline system has less density compared towaterinliquidstate. Thus,waterexpands onfreezingleads to the increase involume. Whereas the mass will be constant either inliquidstate orsolidstate. Note:",
+      "url": "https://www.vedantu.com/question-answer/as-water-freezes-to-ice-does-its-volume-decrease-class-11-chemistry-cbse-612db9b4540c0f52b69ca7e6",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Why does water expand when it gets cold while metals contract?",
+      "snippet": "Thissolidis less dense (the molecules have lots of space between each other) than theliquidform ofwaterbecause the molecules form a crystalline structure when they freeze, similar to what you'd see in a snowflake. A lower density means that the molecules take up more space and therefore,waterexpands when it turns intoice.",
+      "url": "https://www.mytutor.co.uk/answers/4004/13-Plus/Science/Why-does-water-expand-when-it-gets-cold-while-metals-contract",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Liquid (Wikipedia)",
+      "snippet": "Liquid is a state of matter with a definite volume but no fixed shape. When confined in a container and subject to a force such as gravity, liquids will adapt to the internal shape of the container in the direction of the force. Liquids are nearly incompressible, maintaining their volume even under pressure. The density of a liquid is usually close to that of a solid, and much higher than that of a gas.",
+      "url": "https://en.wikipedia.org/wiki/Liquid",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Mercury-in-glass thermometer (Wikipedia)",
+      "snippet": "The mercury-in-glass or mercury thermometer is a thermometer that uses the thermal expansion and contraction of liquid mercury to indicate the temperature.",
+      "url": "https://en.wikipedia.org/wiki/Mercury-in-glass_thermometer",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Water (Wikipedia)",
+      "snippet": "Water is an inorganic compound with the chemical formula H2O. It is a transparent, tasteless, odorless, and nearly colorless chemical substance. It is the main constituent of Earth's streams, lakes, and oceans. Water is also the fluid of all known living organisms, in which it acts as a solvent. Water, being a polar molecule, undergoes strong intermolecular hydrogen bonding which is a large contributor to its physical and chemical properties.",
+      "url": "https://en.wikipedia.org/wiki/Water",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Water on Mars (Wikipedia)",
+      "snippet": "Although very small amounts of liquid water may occur transiently on the surface of Mars, limited to traces of dissolved moisture from the atmosphere and thin films, large quantities of ice are present on and under the surface. Small amounts of water vapor are present in the atmosphere, and liquid water may be present under the surface. In addition, a large quantity of liquid water was likely present on the surface in the distant past. Currently, ice is mostly present in polar permafrost.",
+      "url": "https://en.wikipedia.org/wiki/Water_on_Mars",
+      "source": "Wikipedia"
+    }
+  ],
+  "DEV-07": [],
+  "DEV-08": [],
+  "DEV-09": [],
+  "DEV-10": [],
+  "DEV-11": [],
+  "DEV-12": [],
+  "DEV-13": [],
+  "DEV-14": [],
+  "DEV-15": [],
+  "DEV-16": [],
+  "TEST-01": [],
+  "TEST-02": [],
+  "TEST-03": [],
+  "TEST-04": [],
+  "TEST-05": [],
+  "TEST-06": [],
+  "TEST-07": [],
+  "TEST-08": [],
+  "TEST-09": [],
+  "TEST-10": [
+    {
+      "title": "Vanilla ice cream - Wikipedia",
+      "snippet": "Vanillaicecreamisa dessert flavoured withvanillabeans,vanillaextract, or synthetic vanillin that is especially common in North America, Asia, and Europe. [1][2][3] The type ofvanillaused varies by location: in North America and Europe for instance, prominent, smokyflavorsare more common, while in Ireland, an anise -likeflavoris...",
+      "url": "https://en.wikipedia.org/wiki/Vanilla_ice_cream",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Why is vanilla the most popular ice cream flavor? - Blue Pacific Flavors",
+      "snippet": "Vanillaisthemost popularicecreamflavorintheUnited States, and possibly the world. Its naturalflavorenhances this frozen dessert, creating a sweet and creamy harmony between taste, texture,flavor, and aroma. Whether in a soft serveicecreamcone or plant-based gelato,vanillaisa universally recognizableflavor. Dive deeper into the food science and sensory profiles ofvanilla...",
+      "url": "https://www.bluepacificflavors.com/december-flavor-of-the-month-vanilla/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Why plain old vanilla is the world's favourite ice cream flavour",
+      "snippet": "Theterm \"vanilla\"issynonymous with boring, dull or bland. Yet a scoop ofvanillaisthenumber one choice across the globe.",
+      "url": "https://www.cbc.ca/radio/undertheinfluence/why-plain-old-vanilla-is-the-world-s-favourite-ice-cream-flavour-1.6459223",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "The Story of Vanilla and How it Became the Most Prolific Flavor - Synergy",
+      "snippet": "Often unfairly described as simple or boring,vanillaisanything but plain. Not only is it considered to be the world's favoriteflavorbecause of its subtle yet intoxicatingly sweet, creamy and floral notes, but the process for producingvanillaismeticulous, unforgiving and exhilarating.Vanillabegins with a single flower that opens for pollination only one day every year and if you ...",
+      "url": "https://www.synergytaste.com/insights/the-story-of-vanilla-and-how-it-became-the-most-prolific-flavor-blog/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "How Vanilla Became the World's Favorite Flavor - Saveur",
+      "snippet": "Once it became obvious that avanillabean could elevate the simplest cake or cookie,vanillaextract\u2014and in turn, artificialvanillaflavoring\u2014was on the fast track to development.",
+      "url": "https://www.saveur.com/how-vanilla-took-over-the-world/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Vanilla ice cream - Wikiwand",
+      "snippet": "Vanillaisfrequently used toflavoricecream, especially in North America, Asia, and Europe. [1]Vanillaicecream, like otherflavorsoficecream, was originally created by cooling a mixture made ofcream, sugar, andvanillaabove a container oficeand salt. [2] The type ofvanillaused toflavoricecreamvaries by location.",
+      "url": "https://www.wikiwand.com/en/articles/Vanilla_ice_cream",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "TEST-11": [
+    {
+      "title": "Ozone layer | Description, Importance, & Facts | Britannica",
+      "snippet": "Ozonelayer, region of the upperatmosphere, between roughly 15 and 35 km (9 and 22 miles) aboveEarth'ssurface, containing relatively high concentrations ofozonemolecules. Approximately 90 percent of theatmosphere'sozoneoccurs from 10-18 km (6-11 miles) to about 50 km (about 30 miles) aboveEarth'ssurface.",
+      "url": "https://www.britannica.com/science/ozone-layer",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Ozone layer - Wikipedia",
+      "snippet": "Theozonelayerorozoneshield is a region ofEarth'sstratospherethat absorbs most of the Sun 's ultraviolet radiation. It contains a high concentration ofozone(O 3) in relation to other parts of theatmosphere, although still small in relation to other gases in thestratosphere.",
+      "url": "https://en.wikipedia.org/wiki/The_ozone_layer",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "NASA Knows: The Ozone Hole - NASA Science",
+      "snippet": "TheozonelayershieldsEarthfrom ultraviolet (UV) radiation from the Sun that can harm plants, animals, and humans. Theozonelayerforms in thestratosphere7-31 miles (11-50 km) above theEarth'ssurface. Chlorofluorocarbons (CFCs) and halons are human-produced chemicals, used in products in refrigerants, spray cans, and fire extinguishers.",
+      "url": "https://science.nasa.gov/earth/explore/nasa-knows-the-ozone-hole/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Ozone - NASA Science",
+      "snippet": "Ozone: What Is It, and Why Do We Care About It?Ozone(O 3) is a relatively unstable molecule made up of three atoms of oxygen (O). Although it represents only a tiny fraction of theatmosphere,ozoneiscrucial for life onEarth. Depending on whereozoneresides, it can protect or harm life onEarth. Mostozoneresides in thestratosphere(alayeroftheatmospherebetween 10 and 40 km above ...",
+      "url": "https://science.nasa.gov/earth/earth-observatory/ozone/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Ozone - Wikipedia",
+      "snippet": "Ozoneisformed from dioxygen by the action of ultraviolet (UV) light and electrical discharges within theEarth'satmosphere.It is present in very low concentrations throughout theatmosphere, with its highest concentration high in theozonelayerofthestratosphere, which absorbs most of the Sun 's ultraviolet (UV) radiation.",
+      "url": "https://en.wikipedia.org/wiki/Ozone",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Basic Ozone Layer Science - US EPA",
+      "snippet": "I.TheOzoneLayerTheEarth'satmosphereiscomposed of severallayers.Thelowestlayer,thetroposphere troposphereThe region of theatmosphereclosest to theEarth.Thetroposphere extends from the surface up to about 10 km in altitude, although this height varies with latitude. Almost all weather takes place in the troposphere. Mt. Everest, the highest mountain onEarth,isonly 8.8 km ...",
+      "url": "https://www.epa.gov/ozone-layer-protection/basic-ozone-layer-science",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Atmosphere of Earth (Wikipedia)",
+      "snippet": "The atmosphere of Earth consists of a multi-layered gas mixture (commonly referred to as air) surrounding the Earth's planetary surface, which is retained by gravity. Like the atmospheres of other planets, Earth's atmosphere also contains variable quantities of suspended aerosols and particulates that create weather features such as clouds and hazes. The atmosphere serves as a protective buffer between the Earth's crust and the outer space, shielding the surface from most meteoroids and ultraviolet solar radiation. It also reduces diurnal temperature variation (i.e.",
+      "url": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Ground-level ozone (Wikipedia)",
+      "snippet": "Ground-level ozone (O3), also known as surface-level ozone and tropospheric ozone, is a trace gas in the troposphere (the lowest level of the Earth's atmosphere), with an average concentration of 20\u201330 parts per billion by volume (ppbv), with close to 100 ppbv in polluted areas. Ozone is also an important constituent of the stratosphere, where the ozone layer (2 to 8 parts per million ozone) exists which is located between 10 and 50 kilometers above the Earth's surface. The troposphere extends from the ground up to a variable height of approximately 14 kilometers above sea level. Ozone is least concentrated in the ground layer (or planetary boundary layer) of the troposphere.",
+      "url": "https://en.wikipedia.org/wiki/Ground-level_ozone",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Ozone (Wikipedia)",
+      "snippet": "Ozone ( ), also called trioxygen, is an inorganic molecule with the chemical formula O3. It is a pale-blue gas with a distinctively pungent odour. It is an allotrope of oxygen that is much less stable than the diatomic allotrope O2, breaking down in the lower atmosphere to O2 (dioxygen). Ozone is formed from dioxygen by the action of ultraviolet (UV) light and electrical discharges within the Earth's atmosphere.",
+      "url": "https://en.wikipedia.org/wiki/Ozone",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Troposphere (Wikipedia)",
+      "snippet": "The troposphere is the lowest layer of the atmosphere of Earth. Pronounced , the name comes from Ancient Greek  \u03c4\u03c1\u03cc\u03c0\u03bf\u03c2 (tr\u00f3pos) 'turning, change' and  -sphere. It contains 80% of the total mass of the planetary atmosphere and 99% of the total mass of water vapor and aerosols, and is where most weather phenomena occur. From the planetary surface of the Earth, the average height of the troposphere is 18 km (11 mi; 59,000 ft) in the tropics; 11 km (6.8 mi; 36,000 ft) in the middle latitudes; and 6 km (3.7 mi; 20,000 ft) in the high latitudes of the polar regions in winter; thus the average height of the troposphere is 13 km (8.1 mi; 43,000 ft).",
+      "url": "https://en.wikipedia.org/wiki/Troposphere",
+      "source": "Wikipedia"
+    }
+  ],
+  "TEST-12": [
+    {
+      "title": "Bats: Vision or echolocation, why not both? - ScienceDirect",
+      "snippet": "Echolocationallowsbatstonavigatein complete darkness. Yet, somebatsalso have keen eyesight. A new study shows thatbatsintegrate these sensory modalities, even when light abundance would make it possible for them torelysolelyonvision.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S096098222200313X",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "How Do Bats Navigate in Total Darkness? The Secrets of Echolocation",
+      "snippet": "Batsmayrelyonmemory to access familiar routes or locations, integrating both real-timeecholocationdata and past experiences to optimize their flight paths.",
+      "url": "https://www.animalsaroundtheglobe.com/how-do-bats-navigate-in-total-darkness-the-secrets-of-echolocation-3-387248/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Are Bats Really Blind? | Britannica",
+      "snippet": "Contrary to what most people believe,batsaregenerally notblindat all and in fact are believed to have eyesight keener than that of most humans The misconception thatbatsareblindcomes from their nocturnal nature and enhanced hearing abilities. Because they hunt mostly in the dead of night, when lighting conditionsare, of course, very dark,batsrelyonecholocationtopinpoint exact ...",
+      "url": "https://www.britannica.com/story/are-bats-really-blind",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Are Bats Blind? | Ask A Biologist",
+      "snippet": "What is Echolocation?Echolocation is the use of sound waves and echoes to determine where objects are in space.Batsuseecholocationtonavigateandfind food in the dark. To echolocate,batssend out sound waves from the mouth or nose. When the sound waves hit an object they produce echoes. The echo bounces off the object and returns to thebats'ears.Batslisten to the echoes to figure out ...",
+      "url": "https://askabiologist.asu.edu/echolocation",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Are Bats Blind? | WARN - worldanimalrescuenetwork.org",
+      "snippet": "No.Batscan see. Many species useecholocationtohunt in darkness, but their eyes are functional \u2014 especially in fruitbatsthatrelymore on vision and smell. The \"blindas abat\" phrase is wrong. Microbats combine functional vision withecholocation\u2014 high-frequency calls and echoes that map prey in total darkness.",
+      "url": "https://worldanimalrescuenetwork.org/answers/are-bats-blind/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Are Bats Really Blind? - Myths and Facts About Bat Vision",
+      "snippet": "As we have explained, whilebatsdorelyheavily onecholocationfor navigation and hunting, they are notcompletelyblind. The origin of this idiom is unclear, but it's likely rooted in the observation ofbatsflying erratically in the dark. Did you know thatbatreproduction involves some interesting behaviors?",
+      "url": "https://www.animalwised.com/are-bats-really-blind-5384.html",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "TEST-13": [
+    {
+      "title": "Boiling point - Wikipedia",
+      "snippet": "Thestandardboilingpointhas been defined by IUPAC since 1982 as the temperature at whichboilingoccurs under apressureofone bar. [6] The heat of vaporization is the energy required to transform a given quantity (a mol, kg, pound, etc.) of a substance from a liquid into a gas at a givenpressure(oftenatmosphericpressure).",
+      "url": "https://en.wikipedia.org/wiki/Boiling_point",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Boiling & Atmospheric Pressure",
+      "snippet": "Atmosphericpressureissometimes called barometricpressure. On Earth theatmosphericpressure(atsea level) is defined as1atmosphere (atm).Purewaterboils at100degreesCelsiusatStandardPressure(1atm). Other VideosBoilingAtmosphericPressureVaporPressureBoilingPoint",
+      "url": "https://terpconnect.umd.edu/~wbreslyn/chemistry/pressure/atmo-pressure.html",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Water Boiling Point Calculator (Altitude, Pressure & Vacuum)",
+      "snippet": "Calculate theboilingpointofwateratanypressure, including vacuum, or at altitude, and findwater'svaporpressureata temperature in \u00b0C, \u00b0F or K.",
+      "url": "https://calculator.academy/boiling-point-calculator-water/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "The normal boiling point of water is 100oC At 100oC class 11 ... - Vedantu",
+      "snippet": "Atanatmosphericpressureofprecisely 760mm Hg(1atm),thetemperature at which a liquid boils is termed as the normalboilingpointoftheliquid. In case ofwater,thevapourpressureapproaches thestandardatmosphericpressureof1atmosphere at ${100}^{o}C$ .",
+      "url": "https://www.vedantu.com/question-answer/the-normal-boiling-point-of-water-is-100oc-at-class-11-chemistry-cbse-5f8dd92946566e310ba34d85",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "boiling point at 1 atm - calculator.org",
+      "snippet": "Theboilingpointatone atmosphere oratmosphericboilingpointisthetemperature at which the vapourpressurebecomes equalatmosphericpressureatsea level.",
+      "url": "https://www.calculator.org/properties/boiling_point_at_1_atm.html",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "At normal atmospheric pressure, the boiling point of water is ________.",
+      "snippet": "Theboilingpointcan change with variations inatmosphericpressure;athigher altitudes,waterboils at lower temperatures. At sea level, where theatmosphericpressureisapproximately 101.3 kPa,waterreaches itsboilingpointat100\u00b0C.",
+      "url": "https://testbook.com/question-answer/at-normal-atmospheric-pressure-the-boiling-point--67d7c2fb7f80e95504ebc97f",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Atmospheric pressure (Wikipedia)",
+      "snippet": "Atmospheric pressure, also known as air pressure or barometric pressure (after the barometer), is the pressure within the atmosphere of Earth. The standard atmosphere (symbol: atm) is a unit of pressure defined as 101.325 kPa (1,013.25 hPa), which is equivalent to 1,013.25 millibars, 760 torr (or about 760 mmHg), about 29.9212 inHg, or about 14.696 psi. The atm unit is roughly equivalent to the mean sea-level atmospheric pressure on Earth; that is, Earth's atmospheric pressure at sea level is approximately one atm. \nIn most circumstances, atmospheric pressure is closely approximated by the hydrostatic pressure caused by the weight of air above the measurement point.",
+      "url": "https://en.wikipedia.org/wiki/Atmospheric_pressure",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Boiling point (Wikipedia)",
+      "snippet": "The boiling point of a substance is the temperature at which the vapor pressure of a liquid equals the pressure surrounding the liquid and the liquid changes into a vapor.\nThe boiling point of a liquid varies depending upon the surrounding environmental pressure.  A liquid in a partial vacuum, i.e., under a lower pressure, has a lower boiling point than when that liquid is at atmospheric pressure. Because of this, water boils at 100 \u00b0C, rounded from scientific precision of 99.97 \u00b0C (211.95 \u00b0F), under standard pressure at sea level, but at 93.4 \u00b0C (200.1 \u00b0F) at 1,905 metres (6,250 ft) altitude.",
+      "url": "https://en.wikipedia.org/wiki/Boiling_point",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Vapor pressure (Wikipedia)",
+      "snippet": "Vapor pressure or equilibrium vapor pressure is the pressure exerted by a vapor in thermodynamic equilibrium with its condensed phases (solid or liquid) at a given temperature in a closed system. The equilibrium vapor pressure is an indication of a liquid's thermodynamic tendency to evaporate. It relates to the balance of particles escaping from the liquid (or solid) in equilibrium with those in a coexisting vapor phase. A substance with a high vapor pressure at normal temperatures is often referred to as volatile.",
+      "url": "https://en.wikipedia.org/wiki/Vapor_pressure",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Vapor pressure of water (Wikipedia)",
+      "snippet": "The vapor pressure of water is the pressure exerted by molecules of water vapor in gaseous form (whether pure or in a mixture with other gases such as air). The saturation vapor pressure is the pressure at which water vapor is in thermodynamic equilibrium with its condensed state. At pressures higher than saturation vapor pressure, water will condense, while at lower pressures it will evaporate or sublimate.  The saturation vapor pressure of water increases with increasing temperature and can be determined with the Clausius\u2013Clapeyron relation.",
+      "url": "https://en.wikipedia.org/wiki/Vapor_pressure_of_water",
+      "source": "Wikipedia"
+    }
+  ],
+  "TEST-14": [
+    {
+      "title": "The Nobel Prize in Physics 1921 - NobelPrize.org",
+      "snippet": "TheNobelPrizeinPhysics1921was awarded toAlbertEinstein\"forhisservices to TheoreticalPhysics, and especially for hisdiscoveryofthelawofthephotoelectric effect\"AlbertEinsteinreceivedhisNobelPrizeone year later, in 1922. During the selection process in1921,theNobel...",
+      "url": "https://www.nobelprize.org/prizes/physics/1921/summary/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Albert Einstein - Facts - NobelPrize.org",
+      "snippet": "AlbertEinsteinNobelPrizeinPhysics1921Born: 14 March 1879, Ulm, Germany Died: 18 April 1955, Princeton, NJ, USA Affiliation at the time of the award: Kaiser-Wilhelm-Institut (now Max-Planck-Institut) f\u00fcr Physik, Berlin, GermanyPrizemotivation: \"forhisservices to TheoreticalPhysics, and especially for hisdiscoveryofthelawofthephotoelectric effect\"AlbertEinsteinreceived...",
+      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/facts/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Albert Einstein - Wikipedia",
+      "snippet": "Einsteinreceivednumerous awards and honors, and in 1922, he was awarded the1921NobelPrizeinPhysics\"forhisservices to TheoreticalPhysics, and especially for hisdiscoveryofthelawofthephotoelectric effect\".",
+      "url": "https://en.wikipedia.org/wiki/Albert_Einstein",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "List of awards and honors received by Albert Einstein",
+      "snippet": "U.S. postage stamp (1966) In 1922AlbertEinsteinwas awarded the1921NobelPrizeinPhysics, [1] \"forhisservices to TheoreticalPhysics, and especially for hisdiscoveryofthelawofthephotoelectric effect \". This refers to his 1905 paper on the photoelectric effect, \"On a Heuristic Viewpoint Concerning the Production and Transformation of Light\", which was well supported by the ...",
+      "url": "https://en.wikipedia.org/wiki/List_of_awards_and_honors_received_by_Albert_Einstein",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Albert Einstein \u2014 Nobel Prize in Physics 1921 | Nobeledge",
+      "snippet": "AlbertEinsteinwas honored with the1921NobelPrizeinPhysicsforhisexceptional contributions to theoreticalphysics, and specifically for his groundbreaking elucidation of thelawofthephotoelectric effect.",
+      "url": "https://www.nobeledge.org/prize/en/1921/physics",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Why did Einstein receive the 1921 Nobel Prize in Physics for work on ...",
+      "snippet": "AlbertEinsteinwas awarded the1921NobelPrizeinPhysicsforhis1905 explanation of the photoelectric effect, a phenomenon where light causes a material to emit electrons. 1 2 Classicalphysicscould not explain why the kinetic energy of these electrons depended on the light's frequency rather than its intensity, nor why emission occurred without a time delay.Einsteinresolved these ...",
+      "url": "https://www.britannica.com/science/Why-did-Einstein-receive-the-1921-Nobel-Prize-in-Physics-for-work-on-the-photoelectric-effect",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Albert A. Michelson (Wikipedia)",
+      "snippet": "Albert Abraham Michelson (; December 19, 1852 \u2013 May 9, 1931) was an American experimental physicist known for his work on measuring the speed of light and especially for the Michelson\u2013Morley experiment. In 1907, he received the Nobel Prize in Physics, becoming the first American to win the Nobel Prize in a science. He was the founder and the first head of the physics departments of the Case School of Applied Science and the University of Chicago.",
+      "url": "https://en.wikipedia.org/wiki/Albert_A._Michelson",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Albert Einstein (Wikipedia)",
+      "snippet": "Albert Einstein (14 March 1879 \u2013 18 April 1955) was a German-born theoretical physicist best known for developing the theory of relativity. Einstein also made important contributions to quantum theory. His mass\u2013energy equivalence formula E = mc2, which arises from special relativity, has been called \"the world's most famous equation\". He received the 1921 Nobel Prize in Physics for \"his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect\".",
+      "url": "https://en.wikipedia.org/wiki/Albert_Einstein",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "List of Nobel laureates by country (Wikipedia)",
+      "snippet": "This is a list of Nobel Prize laureates by country. Listings for Economics refer to the related Nobel Memorial Prize in Economic Sciences. The Nobel Prizes and the Prize in Economic Sciences have been awarded 577 times to 889 recipients, of which 26 awards (all Peace Prizes) were to organizations. Due to some recipients receiving multiple awards, the total number of recipients is 860 individuals and 22 organizations.",
+      "url": "https://en.wikipedia.org/wiki/List_of_Nobel_laureates_by_country",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Nobel Prize in Physics controversies (Wikipedia)",
+      "snippet": "Since the first award in 1901, conferment of the Nobel Prizes, including the Nobel Prize in Physics, has engendered criticism and controversies. After his death in 1896, the will of Swedish industrialist Alfred Nobel established that an annual prize be awarded for service to humanity in the fields of physics, chemistry, physiology or medicine, literature, and peace. Similarly, the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel, first awarded in 1969, is awarded along with the Nobel Prizes.\nNobel sought to reward \"those who, during the preceding year, shall have conferred the greatest benefit on mankind\".",
+      "url": "https://en.wikipedia.org/wiki/Nobel_Prize_in_Physics_controversies",
+      "source": "Wikipedia"
+    }
+  ],
+  "TEST-15": [
+    {
+      "title": "PDFtrack people. for vaccines to It is impossible",
+      "snippet": "Explanation Absolutely novaccines- including thevaccinesagainst COVID-19 - contain anymicrochips, including ones that would let governments or any other entities in powertrackpeople.",
+      "url": "https://www.paho.org/sites/default/files/body-data/2025/11/paho-cim-immunization-myths-10.pdf",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Fact Check: Vaccines contain microchips used to track peo... - False ...",
+      "snippet": "Claims thatvaccinescontainmicrochipsused totrackpeople are not supported by any credible scientific or medical evidence.Vaccinesundergo extensive testing and regulatory review, and their full ingredient lists are publicly available through agencies like the FDA, EMA, and WHO. These ingredients typically include active components such as inactivated viruses, mRNA, or proteins, along ...",
+      "url": "https://factsentinel.com/check/vaccines-contain-microchips-used-to-track-people",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Covid Queries: Altered DNA and microchips - Mayo Clinic News Network",
+      "snippet": "\"There is absolutely not amicrochipin thevaccine,\" says Martin Herrmann, M.D., medical director of Mayo Clinic Health System in Waseca and New Prague. \"Also, there's no way for thevaccinetotrackpeople or gatherpersonalinformation on a person.\"",
+      "url": "https://newsnetwork.mayoclinic.org/discussion/covid-queries-altered-dna-and-microchips/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "COVID-19 Vaccines Don't Have Patient-Tracking Devices",
+      "snippet": "A video circulating on social media falsely claims thatvaccinesfor COVID-19 have amicrochipthat \"tracksthe location of the patient.\" The chip, which is not currently in use, would be attached ...",
+      "url": "https://www.factcheck.org/2020/12/covid-19-vaccines-dont-have-patient-tracking-devices/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Are There Microchips in COVID-19 Vaccines? - factually.co",
+      "snippet": "The central assertion \u2014 that COVID-19vaccinessecretly contain tiny implantedmicrochipsthattrackpeople \u2014 circulated early in the pandemic and proliferated through social platforms and altered videos, in part by conflating unrelated footage and out-of-context interviews [1] [3] [5].",
+      "url": "https://factually.co/fact-checks/health/microchips-in-covid-vaccines-myth-or-fact-5dd7ab",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "COVID Vaccine Microchip Myth Debunked: Facts vs. Conspiracy Claims",
+      "snippet": "Explore the truth behind COVID-19vaccinemicrochipconspiracy theories. Learn why these claims emerged, how science disproves them, and understand the real technology behindvaccinetracking. Separate fact from fiction in this comprehensive analysis ofvaccinesafety and public health concerns.",
+      "url": "https://www.factualamerica.com/conspiracy-critic/needles-and-nanochips-injecting-truth-into-the-vaccine-microchip-myth",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "TEST-16": [
+    {
+      "title": "Europa - NASA Science",
+      "snippet": "Europais the fourth largest ofJupiter'smoons. It's the sixth-closestmoonto the planet.Europamay be one of the most promising places in our solar system to find present-day environments suitable for someformoflifebeyond Earth. NASA launchedEuropaClipper on Oct. 14, 2024, to determine whether there are places belowEuropa'ssurface that could supportlife.",
+      "url": "https://science.nasa.gov/jupiter/jupiter-moons/europa/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "(PDF) Exploring the Potential for Life on Europa - ResearchGate",
+      "snippet": "The potential forextraterrestriallifeonEuropa, one ofJupiter'smoons, has become a focal point of astrobiological research. This paper presents a comprehensive analysis ofEuropa's...",
+      "url": "https://www.researchgate.net/publication/377531129_Exploring_the_Potential_for_Life_on_Europa",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Jupiter's Moon Europa Is a Top Candidate for Hosting Alien Life. But It ...",
+      "snippet": "Jupiter'sMoonEuropaIs a Top Candidate for Hosting AlienLife. But It May Lack the Geologic Activity Needed to Birth Microbes On Earth, deep-sea vents may have given rise to the planet's ...",
+      "url": "https://www.smithsonianmag.com/smart-news/jupiters-moon-europa-is-a-top-candidate-for-hosting-alien-life-but-it-may-lack-the-geologic-activity-needed-to-birth-microbes-180988013/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Europa Facts - NASA Science",
+      "snippet": "Decades ago, science fiction offered a hypothetical scenario: What if alienlifewere thriving in an ocean beneath the icy surface ofJupiter'smoonEuropa? The notion pulledEuropaout of obscurity and into the limelight where it has remained, stoking the imaginations of people both within and outside the science community who fantasize ...",
+      "url": "https://science.nasa.gov/jupiter/jupiter-moons/europa/europa-facts/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Is Life Possible on Europa? Unveiling the Habitability of Jupiter's Icy ...",
+      "snippet": "Europahabitability is supported by a subsurface ocean and chemical energy sources, makinglifeonEuropaa top astrobiology target in the solar system.",
+      "url": "https://www.sciencetimes.com/articles/61423/20260310/life-possible-europa-unveiling-habitability-jupiters-icy-moon.htm",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "If life exists on Jupiter's moon Europa, scientists might soon be able ...",
+      "snippet": "Europais one of the largest of more than 90moonsin orbit around the planetJupiter. It is also one of the best places to look for alienlife. Often termed an \"ocean world\" by scientists ...",
+      "url": "https://theconversation.com/if-life-exists-on-jupiters-moon-europa-scientists-might-soon-be-able-to-detect-it-226656",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Extraterrestrial life (Wikipedia)",
+      "snippet": "Extraterrestrial life, or alien life (colloquially aliens), is life that originates from another world rather than on Earth. No extraterrestrial life has yet been detected. Such life might range from simple forms such as microbes to intelligent beings, possibly bringing forth civilizations that might be far more, or far less, advanced than humans. The science of extraterrestrial life is known as astrobiology.",
+      "url": "https://en.wikipedia.org/wiki/Extraterrestrial_life",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Extraterrestrials in fiction (Wikipedia)",
+      "snippet": "An extraterrestrial or alien is a lifeform that does not originate on Earth. Extraterrestrials are a common theme in modern science fiction but also appear in much earlier works.",
+      "url": "https://en.wikipedia.org/wiki/Extraterrestrials_in_fiction",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Life (Wikipedia)",
+      "snippet": "Life is the capacity in matter, formed of one or more units called cells, for processes such as cell signalling, homeostasis, metabolism, cell growth, adaptation, response to stimuli, and reproduction. All life eventually reaches a state of death. Many philosophical definitions of living systems have been proposed, such as self-organising systems. Defining life is further complicated by viruses, which replicate only in host cells, and the possibility of extraterrestrial life, which could be very different from life on Earth.",
+      "url": "https://en.wikipedia.org/wiki/Life",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Planetary habitability in the Solar System (Wikipedia)",
+      "snippet": "Planetary habitability in the Solar System is the study that searches the possible existence of past or present extraterrestrial life in those celestial bodies. As exoplanets are too far away and can only be studied by indirect means, the celestial bodies in the Solar System allow for a much more detailed study: direct telescope observation, space probes, rovers and even human spaceflight.\nAside from Earth, no planets in the solar system are known to harbor life. Mars, Europa, and Titan are considered to have once had or currently have conditions permitting the existence of life.",
+      "url": "https://en.wikipedia.org/wiki/Planetary_habitability_in_the_Solar_System",
+      "source": "Wikipedia"
+    }
+  ],
+  "TEST-17": [
+    {
+      "title": "How Do Diamonds Form? | They Don't Form From Coal! - Geology.com",
+      "snippet": "Methods ofDiamondFormation Many people believe thatdiamondsareformedfromthe metamorphism ofcoal. That idea continues to be the \"howdiamondsform\" story in many science classrooms.Coalhas rarely - if ever - played a role in the formation ofdiamonds. In fact, mostdiamondsthat have been dated are much older than Earth's first land plants - the source material ofcoal! That alone ...",
+      "url": "https://geology.com/articles/diamonds-from-coal/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Are Diamonds Made From Coal? No. Here's How They Form",
+      "snippet": "No. Mostdiamondsformeddeep in the mantle long before the plants that becamecoalexisted. Howdiamondsreally form and how they reach the surface.",
+      "url": "https://geoscopy.com/are-diamonds-made-from-coal-debunking-the-myth/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "The Truth About Diamonds: Made From Compressed Coal Myth",
+      "snippet": "The majority of Earth'sdiamondsformedlong before the first tree even existed. This chronological impossibility alone disproves thecompressed-coaltheory for naturaldiamonds. The timeline simply doesn't work. HowDiamondsActually Reach the Surface Ifdiamondsform so deep underground, how do we find them?",
+      "url": "https://triviaowl.com/diamonds-coal-myth-truth/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Is \"Diamonds are formed from\u2026\" true? | School Myths",
+      "snippet": "Science class loved the tidy story: squeezecoalhard enough and you get adiamond. Both are carbon, so the leap felt obvious. Most naturaldiamondscrystallized far deeper and far earlier thancoalever existed. Mantle carbonunderextreme heat and pressure, later blasted up in rare volcanic pipes, is the real path for nearly every gem ever mined.",
+      "url": "https://www.schoolmyths.com/fact/diamonds-form-from-coal",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "The Truth About Diamonds Being Made From Coal | Triv Central",
+      "snippet": "WhatDiamondsActually Tell Us Far from beingcompressedcoal,diamondsaregeological time capsules. Some contain tiny mineral inclusions trapped during formation, providing scientists with direct samples of mantle material otherwise impossible to obtain. These inclusions have revealed the presence of water-bearing minerals deep underground, suggesting vast reservoirs of water locked in Earth ...",
+      "url": "https://trivcentral.com/diamond-formation-coal-myth/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Do Diamonds Come From Coal? The Myth Debunked - farmonaut.com",
+      "snippet": "Coalforms fromancientplant material that accumulates inswampsand getscompressedover millions of years at shallow depths,underconditions very different from those needed to creatediamonds.Diamondformation is a mineralogical transformation of carbon-rich rocks, not the direct result of turningcoalseams into gemstones.",
+      "url": "https://farmonaut.com/mining/diamonds-from-coal-myth-7-powerful-truths-for-soil-and-land",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Carbon (Wikipedia)",
+      "snippet": "Carbon (from Latin  carbo 'coal') is a chemical element;  it has symbol C and atomic number 6. It is nonmetallic and tetravalent\u2014meaning that its atoms are able to form up to four covalent bonds due to its valence shell exhibiting 4 electrons. It belongs to group 14 of the periodic table. Carbon makes up about 0.025 percent of Earth's crust.",
+      "url": "https://en.wikipedia.org/wiki/Carbon",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Cremation (Wikipedia)",
+      "snippet": "Cremation is a method of final disposition of a corpse or animal carcass through burning.\nCremation may serve as a funeral or post-funeral rite and as an alternative to burial. In some countries, including India and Nepal, cremation on an open-air pyre is an ancient tradition. Starting in the 19th century, cremation was introduced or reintroduced into other parts of the world.",
+      "url": "https://en.wikipedia.org/wiki/Cremation",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Hydrogen (Wikipedia)",
+      "snippet": "Hydrogen is a chemical element; it has the symbol H and atomic number 1. It is the lightest and most abundant chemical element in the universe, constituting about 75% of all normal matter. Under standard conditions, hydrogen is a gas of diatomic molecules with the formula H2, called dihydrogen, or sometimes hydrogen gas, molecular hydrogen, or simply hydrogen. Dihydrogen is colorless, odorless, non-toxic, and highly combustible.",
+      "url": "https://en.wikipedia.org/wiki/Hydrogen",
+      "source": "Wikipedia"
+    }
+  ],
+  "TEST-18": [
+    {
+      "title": "Mount Everest - Wikipedia",
+      "snippet": "MountEverest(known in Nepali as Sagarm\u0101th\u0101[a], in Sherpa as Chamolangma[4], and in Tibetan as Jomolangma / \u010chomolangma[b]) is thehighestmountainonEarthabovesealevel.",
+      "url": "https://en.wikipedia.org/wiki/Mount_Everest",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Mount Everest | Height, Map, Deaths, Facts, & Climbers | Britannica",
+      "snippet": "MountEverest,mountainonthecrest of the Great Himalayas of southern Asia that lies on the border between Nepal and the Tibet Autonomous Region of China. Reaching an elevation of 29,032 feet (8,849 meters),MountEverestisthehighestmountainin the world. It has long been revered by local peoples.",
+      "url": "https://www.britannica.com/place/Mount-Everest",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Highest Mountain in the World - Tallest Mountain - Geology.com",
+      "snippet": "HighestAltitude: An altitude of 8,848.86 meters (29,031.69 feet)abovesealevelmakesMountEverestthemountainonEarthwiththehighestaltitude. \"Highestaltitude\" means that it has thehighestelevationabovemeansealevel.",
+      "url": "https://geology.com/records/highest-mountain-in-the-world.shtml",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Mount Everest - Education",
+      "snippet": "MountEverestisthehighestpoint onEarth.Learn about its history, the people who live there, and the people who visit to climb.",
+      "url": "https://education.nationalgeographic.org/resource/mount-everest/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "How Tall is Mount Everest? Height in Feet & Meters 2026",
+      "snippet": "Everestisthehighestpointabovesealevel, but not the tallestmountainmeasured base to summit Thepeakisstill rising by roughly 2 mm a year, faster than tectonics alone explains",
+      "url": "https://www.magicalnepal.com/blog/how-tall-is-mount-everest/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Peak of Mount Everest | The highest peak on Earth",
+      "snippet": "Themaximum elevation ofMountEverestis8,848.86 meters (29,031.7 feet), making it thehighestpeakonEarthabovesealevel. Its height can slightly change due to earthquakes, plate tectonics, and snow accumulation.",
+      "url": "https://www.himalayanrecreation.com/blog/peak-of-mount-everest",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "List of mountain peaks by prominence (Wikipedia)",
+      "snippet": "This is a list of mountain peaks ordered by their topographic prominence.",
+      "url": "https://en.wikipedia.org/wiki/List_of_mountain_peaks_by_prominence",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Mount Everest (Wikipedia)",
+      "snippet": "Mount Everest (known in Nepali as Sagarm\u0101th\u0101, in Sherpa as Chamolangma, and in Tibetan  as Jomolangma/\u010chomolangma) is the highest mountain on Earth above sea level. It lies in the Mahalangur Himal sub-range of the Himalayas and marks part of the China\u2013Nepal border at its summit. Its height was most recently measured in 2020 through a joint survey by Nepalese and Chinese authorities as 8,848.86 m (29,031 ft 8+1\u20442 in).\nMount Everest attracts many climbers, including highly experienced mountaineers.",
+      "url": "https://en.wikipedia.org/wiki/Mount_Everest",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Mountain (Wikipedia)",
+      "snippet": "A mountain is an elevated portion of the surface of a planet, generally with steep sides that show significant exposed bedrock. Although there are no universally accepted definitions, a mountain is usually considered higher than a hill. By definition, mountains are often thought of as being a landform which is higher than 2,000 feet (610 m). It may either have a limited summit area or be a smaller plateau with high elevation and steep sides.",
+      "url": "https://en.wikipedia.org/wiki/Mountain",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Timeline of Mount Everest expeditions (Wikipedia)",
+      "snippet": "Mount Everest is the world's highest mountain, with a peak at 8,848.86 m (29,031 ft 8+1\u20442 in) above sea level. It is situated in the Himalayan range of Solukhumbu district (Province 1 in present days), Nepal.",
+      "url": "https://en.wikipedia.org/wiki/Timeline_of_Mount_Everest_expeditions",
+      "source": "Wikipedia"
+    }
+  ],
+  "TEST-19": [
+    {
+      "title": "Do Goldfish Really Have A 3-Second Memory? \u00bb ScienceABC",
+      "snippet": "No, thegoldfish3-secondmemoryclaim is a myth. Experiments show they can remember objects, landmarks, feeding times and trained tasks for weeks to months, and a 2022 study even showedgoldfishcan learn to \"drive\" a wheeled tank toward a visual target.",
+      "url": "https://www.scienceabc.com/nature/animals/do-goldfish-really-have-a-3-second-memory",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Do goldfish really have a 3-second memory? | Live Science",
+      "snippet": "It is hard to pinpoint an exact timespanforgoldfishmemory, given that different memories are more notable than others. You're more likely to remember a scary event, for instance, than a ...",
+      "url": "https://www.livescience.com/goldfish-memory.html",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Do Goldfish Memory Only Lasts for 3 Seconds? Science Debunks Popular Myth",
+      "snippet": "Scientists say thatgoldfishhavegoodmemorythan the myth that these fish only has a 3-second recall. Find out how intelligent these creatures are in this article.",
+      "url": "https://www.sciencetimes.com/articles/40734/20221028/goldfish-memory-lasts-3-seconds-science-debunks-popular-myth.htm",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Do Goldfish Have Three Second Memory? | WARN",
+      "snippet": "Dogoldfishhaveathree-secondmemory? In short: No.Goldfishremember far longer thanthreeseconds\u2014 trained individuals learn feeding cues and maze routes and retain them for months, not moments. Thethree-secondmemoryclaim is a durable folk belief with no support in experimental work on Carassius auratus.",
+      "url": "https://worldanimalrescuenetwork.org/answers/do-goldfish-have-three-second-memory/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Do goldfish really only have a 3 second memory? - Discover Wildlife",
+      "snippet": "The prevalent myth thatgoldfishonlyhaveathree-secondmemorydoesgoldfishagreat disservice, says Ellen Husain. In fact,goldfishcan retain memories for at leastthreemonths, can be trained, and can also tell the time.",
+      "url": "https://www.discoverwildlife.com/animal-facts/fish/goldfish-memory",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Goldfish May Have a Longer Memory Span Than Just Three Seconds",
+      "snippet": "It's a common adage \u2014 to have a \"memorylike agoldfish\" is to be absolutely absent-minded. Though they're beloved by many as household pets,goldfish(Carassius auratus) are known for having amemorythat lasts justthreeseconds.",
+      "url": "https://www.discovermagazine.com/goldfish-may-have-longer-memories-than-just-three-seconds-46062",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Goldfish (Wikipedia)",
+      "snippet": "The goldfish (Carassius auratus) is a freshwater fish in the family Cyprinidae of the order Cypriniformes. It is commonly kept as a pet in indoor aquariums, and is one of the most popular aquarium fish. Goldfish released into the wild have become an invasive pest in parts of North America and Australia.\nNative to China, the goldfish is a relatively small member of the genus Carassius (which also includes the Prussian carp and the crucian carp).",
+      "url": "https://en.wikipedia.org/wiki/Goldfish",
+      "source": "Wikipedia"
+    }
+  ],
+  "TEST-20": [
+    {
+      "title": "Scientists Discover a Vast Structure Hiding Beneath Antarctica's Ice",
+      "snippet": "At the world's southernmost reaches, the land is buried under a layer oficethat can reach thousands of meters thick.",
+      "url": "https://www.sciencealert.com/scientists-discover-a-vast-structure-hiding-beneath-antarcticas-ice",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "What Is the Hidden Structure Discovery Made in Antarctica?",
+      "snippet": "Scientists have made a massive discoverybeneaththesurface of Antarctica, where they say they haveuncoveredahidden structure older than the continent.",
+      "url": "https://www.greenmatters.com/news/antarctica-hidden-structure-discovery",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Discovery Beneath Antarctica: Scientists \"Unlocked\" an 80-Million-Year ...",
+      "snippet": "Scientists haveuncoveredan ancient \"lost world\"beneaththeiceofAntarctica a landscape 80 millionyearsold that resembles Patagonia or a tropical forest. For more than 34 millionyears, Antarctica has been covered by a massiveicesheet.",
+      "url": "https://www.thearchaeologist.org/blog/discovery-beneath-antarctica-scientists-unlocked-an-80-million-year-old-lost-world-under-the-ice",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Hidden Worlds Are Hiding Under Antarctica's Ice Shelf - Parade",
+      "snippet": "Themore scientists explore Antarctica, the more interesting it becomes. A recent discovery may rewrite science as we know it.",
+      "url": "https://parade.com/news/antarcticas-ice-is-revealing-secrets",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "\"We've Uncovered a Lost World\": Scientists Staggered by the Discovery ...",
+      "snippet": "Thevast, icy expanse of Antarctica holdssecretsthat continue to intrigue scientists around the globe.Beneathits thick, frozen surface lies a world of ancient geological marvels, including a mountain range estimated to be 500 millionyearsold. This extraordinary discovery is shedding light on the intricate dynamics between these hidden landforms and the sprawlingicesheets that cover ...",
+      "url": "https://www.sustainability-times.com/research/weve-uncovered-a-lost-world-scientists-staggered-by-the-discovery-of-an-ancient-hidden-ecosystem-beneath-antarctica/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Strange structures found lurking beneath Antarctic ice - indy100",
+      "snippet": "Strange structures up to 1,300 feet (around 400 metres) long have been discovered deepbeneaththeiceinAntarctica. The never-before-seen shapes wereuncoveredwhen a remotely operated vehicle (ROV) dove 10 miles (17 kilometres) below the DotsonIceShelf, in the west of the continent, and travelled more than 600 miles (1,000 kilometres) along the underside of theice, Live Science reports ...",
+      "url": "https://www.indy100.com/science-tech/antarctica-structure-under-ice-2676636358",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "2013 in science (Wikipedia)",
+      "snippet": "channels discovered beneath Antarctic ice shelf\". University of Exeter. 6 October 2013. Retrieved 8 October 2013. \"Nobel Prize in Physiology or Medicine",
+      "url": "https://en.wikipedia.org/wiki/2013_in_science",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "April\u2013June 2020 in science (Wikipedia)",
+      "snippet": "String Ties Us to Neanderthals - A 50,000- year -old fragment of cord hints at the cognitive abilities of our ancient hominid cousins\". The New York Times",
+      "url": "https://en.wikipedia.org/wiki/April%E2%80%93June_2020_in_science",
+      "source": "Wikipedia"
+    }
+  ]
+}

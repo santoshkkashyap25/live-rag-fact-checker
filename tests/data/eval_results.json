@@ -1,0 +1,2971 @@
+{
+  "dev": {
+    "factguard_full": [
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (NIST CODATA) list the exact speed of light as 299,792,458\u202fm/s (\u2248299,792.458\u202fkm/s), and popular scientific references round this to about 300,000\u202fkm/s, confirming the claim as an accurate approximation.",
+        "evidence_count": 4,
+        "latency": 4.648041248321533,
+        "id": "DEV-01",
+        "claim": "The speed of light in a vacuum is approximately 300,000 kilometers per second.",
+        "expected": "True",
+        "domain": "Astrophysics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources including Snopes and astronaut testimonies state that the Great Wall is not visible from the Moon with the naked eye; it is too narrow and blends with the terrain, confirming the claim is false.",
+        "evidence_count": 4,
+        "latency": 4.2318689823150635,
+        "id": "DEV-02",
+        "claim": "The Great Wall of China is visible from the Moon with the naked eye.",
+        "expected": "False",
+        "domain": "Astrophysics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Wikipedia) identify the 'ten\u2011percent of the brain' claim as a myth, stating that humans use far more than 10\u202f% of their brain and that the idea is unsupported by neuroscience.",
+        "evidence_count": 4,
+        "latency": 4.050372362136841,
+        "id": "DEV-03",
+        "claim": "Humans only use ten percent of their total brain capacity.",
+        "expected": "False",
+        "domain": "Neuroscience",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative anatomical sources state that the human heart is composed of four distinct chambers (two atria and two ventricles), confirming the claim.",
+        "evidence_count": 4,
+        "latency": 2.7018628120422363,
+        "id": "DEV-04",
+        "claim": "The human heart consists of four distinct anatomical chambers.",
+        "expected": "True",
+        "domain": "Human Biology",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources confirm that bananas contain the naturally occurring radioactive isotope potassium-40, which makes the fruit mildly radioactive (e.g., Wikipedia entries on Banana equivalent dose and Potassium-40).",
+        "evidence_count": 4,
+        "latency": 3.1975491046905518,
+        "id": "DEV-05",
+        "claim": "Bananas are naturally radioactive due to the presence of potassium-40.",
+        "expected": "True",
+        "domain": "Nuclear Physics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (e.g., HyperPhysics) state that water expands about 9% when it freezes, giving ice a lower density than liquid water. Therefore liquid water does not decrease in volume; it increases, making the claim false.",
+        "evidence_count": 4,
+        "latency": 2.6110799312591553,
+        "id": "DEV-06",
+        "claim": "Liquid water decreases in volume and contracts when freezing into solid ice.",
+        "expected": "False",
+        "domain": "Chemistry",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Historical records confirm Alexander Fleming observed the antibacterial properties of Penicillium mold in 1928, leading to the discovery of penicillin as the first antibiotic.",
+        "evidence_count": 0,
+        "latency": 3.2868716716766357,
+        "id": "DEV-07",
+        "claim": "Penicillin was discovered by Alexander Fleming in 1928 as an antibiotic.",
+        "expected": "True",
+        "domain": "Medicine",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Extensive epidemiological studies and systematic reviews by the CDC, WHO, and peer\u2011reviewed research (e.g., the 2002 Lancet retraction, the 2004 Danish cohort study, and the 2019 meta\u2011analysis) have found no causal link between the MMR vaccine and autism, debunking the claim.",
+        "evidence_count": 0,
+        "latency": 3.2012245655059814,
+        "id": "DEV-08",
+        "claim": "The MMR childhood vaccine has been scientifically proven to cause autism.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided evidence section is empty, offering no information to confirm or refute the claim that bulls charge because they see red. Without supporting sources, the claim cannot be evaluated.",
+        "evidence_count": 0,
+        "latency": 3.898388147354126,
+        "id": "DEV-09",
+        "claim": "Bulls become enraged and charge specifically because they see the color red.",
+        "expected": "False",
+        "domain": "Zoology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim that worker honeybees are sterile females that forage daily.",
+        "evidence_count": 0,
+        "latency": 10.630833387374878,
+        "id": "DEV-10",
+        "claim": "Worker honeybees in a hive are sterile females that perform daily foraging.",
+        "expected": "True",
+        "domain": "Entomology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to confirm or refute the claim that Apollo 11's lunar module landed astronauts on the Moon in July 1969, so the truth of the statement cannot be assessed from the given sources.",
+        "evidence_count": 0,
+        "latency": 9.432640790939331,
+        "id": "DEV-11",
+        "claim": "The Apollo 11 lunar module successfully landed astronauts on the Moon in July 1969.",
+        "expected": "True",
+        "domain": "History",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Historical measurements show Napoleon's height was about 1.68\u20111.70\u202fm, which was close to the average height of French men in the early 1800s; the notion of him being unusually short stems from British propaganda and unit conversion errors, not factual difference.",
+        "evidence_count": 0,
+        "latency": 8.769601583480835,
+        "id": "DEV-12",
+        "claim": "Napoleon Bonaparte was unusually short compared to average French men of his time.",
+        "expected": "False",
+        "domain": "Historical Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources such as the Australian Constitution and official government records designate Canberra as the official capital city of Australia.",
+        "evidence_count": 0,
+        "latency": 14.999516725540161,
+        "id": "DEV-13",
+        "claim": "Canberra is the designated official capital city of Australia.",
+        "expected": "True",
+        "domain": "Geography",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence is provided to confirm or refute the claim that Sydney is Australia's federal capital; therefore the truth value cannot be determined from the given sources.",
+        "evidence_count": 0,
+        "latency": 3.071819305419922,
+        "id": "DEV-14",
+        "claim": "Sydney is the official federal capital city of Australia.",
+        "expected": "False",
+        "domain": "Geography",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to confirm or refute the claim that Guido van Rossum originally conceived and created the Python programming language.",
+        "evidence_count": 0,
+        "latency": 11.940090656280518,
+        "id": "DEV-15",
+        "claim": "The Python programming language was originally conceived and created by Guido van Rossum.",
+        "expected": "True",
+        "domain": "Computer Science",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative health agencies (WHO, CDC) have repeatedly stated that 5G radio waves cannot transmit viruses; COVID-19 spreads via respiratory droplets, not electromagnetic signals. The claim is a debunked conspiracy myth.",
+        "evidence_count": 0,
+        "latency": 3.8963046073913574,
+        "id": "DEV-16",
+        "claim": "The 5G wireless telecommunications network causes viral transmission of COVID-19.",
+        "expected": "False",
+        "domain": "Misinformation",
+        "is_correct": true
+      }
+    ],
+    "baseline_raw_ddg": [
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources state the exact speed of light in vacuum as 299,792,458\u202fm/s (\u2248299,792\u202fkm/s), which is commonly rounded to 300,000\u202fkm/s, so the claim is accurate.",
+        "evidence_count": 4,
+        "latency": 5.803731679916382,
+        "id": "DEV-01",
+        "claim": "The speed of light in a vacuum is approximately 300,000 kilometers per second.",
+        "expected": "True",
+        "domain": "Astrophysics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (NASA, astronaut testimonies, BBC Sky at Night, Snopes) all state that the Great Wall is not visible to the naked eye from the Moon and is difficult or impossible to see even from low Earth orbit without magnification, directly refuting the claim.",
+        "evidence_count": 4,
+        "latency": 14.20245623588562,
+        "id": "DEV-02",
+        "claim": "The Great Wall of China is visible from the Moon with the naked eye.",
+        "expected": "False",
+        "domain": "Astrophysics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The ten-percent-of-the-brain myth is identified as a false claim in the Wikipedia article on the myth, which states that humans do not use only one\u2011tenth of their brain; neuroimaging shows activity throughout the brain.",
+        "evidence_count": 4,
+        "latency": 7.001170873641968,
+        "id": "DEV-03",
+        "claim": "Humans only use ten percent of their total brain capacity.",
+        "expected": "False",
+        "domain": "Neuroscience",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative anatomy sources (e.g., Wikipedia) state that the human heart has four chambers\u2014right atrium, right ventricle, left atrium, and left ventricle\u2014confirming the claim.",
+        "evidence_count": 4,
+        "latency": 5.725411891937256,
+        "id": "DEV-04",
+        "claim": "The human heart consists of four distinct anatomical chambers.",
+        "expected": "True",
+        "domain": "Human Biology",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources confirm that bananas contain the naturally occurring radioactive isotope potassium\u201140, which makes the fruit weakly radioactive (e.g., McGill University, US EPA, and Wikipedia on potassium\u201140).",
+        "evidence_count": 4,
+        "latency": 12.52116870880127,
+        "id": "DEV-05",
+        "claim": "Bananas are naturally radioactive due to the presence of potassium-40.",
+        "expected": "True",
+        "domain": "Nuclear Physics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources explain that water expands by about 9% when it freezes due to formation of an open hexagonal lattice, making ice less dense than liquid water; thus liquid water does not contract but expands upon freezing.",
+        "evidence_count": 4,
+        "latency": 3.0302846431732178,
+        "id": "DEV-06",
+        "claim": "Liquid water decreases in volume and contracts when freezing into solid ice.",
+        "expected": "False",
+        "domain": "Chemistry",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Historical records confirm Alexander Fleming observed the antibacterial properties of Penicillium mold in 1928, leading to the discovery of penicillin as the first antibiotic.",
+        "evidence_count": 0,
+        "latency": 0.0004544258117675781,
+        "id": "DEV-07",
+        "claim": "Penicillin was discovered by Alexander Fleming in 1928 as an antibiotic.",
+        "expected": "True",
+        "domain": "Medicine",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Extensive epidemiological studies and systematic reviews by the CDC, WHO, and peer\u2011reviewed research (e.g., the 2002 Lancet retraction, the 2004 Danish cohort study, and the 2019 meta\u2011analysis) have found no causal link between the MMR vaccine and autism, debunking the claim.",
+        "evidence_count": 0,
+        "latency": 0.0005481243133544922,
+        "id": "DEV-08",
+        "claim": "The MMR childhood vaccine has been scientifically proven to cause autism.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided evidence section is empty, offering no information to confirm or refute the claim that bulls charge because they see red. Without supporting sources, the claim cannot be evaluated.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "DEV-09",
+        "claim": "Bulls become enraged and charge specifically because they see the color red.",
+        "expected": "False",
+        "domain": "Zoology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim that worker honeybees are sterile females that forage daily.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "DEV-10",
+        "claim": "Worker honeybees in a hive are sterile females that perform daily foraging.",
+        "expected": "True",
+        "domain": "Entomology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to confirm or refute the claim that Apollo 11's lunar module landed astronauts on the Moon in July 1969, so the truth of the statement cannot be assessed from the given sources.",
+        "evidence_count": 0,
+        "latency": 0.0005254745483398438,
+        "id": "DEV-11",
+        "claim": "The Apollo 11 lunar module successfully landed astronauts on the Moon in July 1969.",
+        "expected": "True",
+        "domain": "History",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Historical measurements show Napoleon's height was about 1.68\u20111.70\u202fm, which was close to the average height of French men in the early 1800s; the notion of him being unusually short stems from British propaganda and unit conversion errors, not factual difference.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "DEV-12",
+        "claim": "Napoleon Bonaparte was unusually short compared to average French men of his time.",
+        "expected": "False",
+        "domain": "Historical Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources such as the Australian Constitution and official government records designate Canberra as the official capital city of Australia.",
+        "evidence_count": 0,
+        "latency": 0.000476837158203125,
+        "id": "DEV-13",
+        "claim": "Canberra is the designated official capital city of Australia.",
+        "expected": "True",
+        "domain": "Geography",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence is provided to confirm or refute the claim that Sydney is Australia's federal capital; therefore the truth value cannot be determined from the given sources.",
+        "evidence_count": 0,
+        "latency": 0.0005261898040771484,
+        "id": "DEV-14",
+        "claim": "Sydney is the official federal capital city of Australia.",
+        "expected": "False",
+        "domain": "Geography",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to confirm or refute the claim that Guido van Rossum originally conceived and created the Python programming language.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "DEV-15",
+        "claim": "The Python programming language was originally conceived and created by Guido van Rossum.",
+        "expected": "True",
+        "domain": "Computer Science",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative health agencies (WHO, CDC) have repeatedly stated that 5G radio waves cannot transmit viruses; COVID-19 spreads via respiratory droplets, not electromagnetic signals. The claim is a debunked conspiracy myth.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "DEV-16",
+        "claim": "The 5G wireless telecommunications network causes viral transmission of COVID-19.",
+        "expected": "False",
+        "domain": "Misinformation",
+        "is_correct": true
+      }
+    ],
+    "baseline_ungrounded": [
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative physics references list the exact speed of light as 299,792 km/s, and it is routinely rounded to 300,000 km/s for approximate statements, matching the claim.",
+        "evidence_count": 0,
+        "latency": 5.473198652267456,
+        "id": "DEV-01",
+        "claim": "The speed of light in a vacuum is approximately 300,000 kilometers per second.",
+        "expected": "True",
+        "domain": "Astrophysics",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess whether the Great Wall of China can be seen from the Moon with the naked eye, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 11.016433238983154,
+        "id": "DEV-02",
+        "claim": "The Great Wall of China is visible from the Moon with the naked eye.",
+        "expected": "False",
+        "domain": "Astrophysics",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess the claim that humans only use ten percent of their brain capacity, so its truth cannot be determined from the given sources.",
+        "evidence_count": 0,
+        "latency": 3.0924203395843506,
+        "id": "DEV-03",
+        "claim": "Humans only use ten percent of their total brain capacity.",
+        "expected": "False",
+        "domain": "Neuroscience",
+        "is_correct": false
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Anatomical textbooks and medical references describe the human heart as having four chambers: the left and right atria and the left and right ventricles.",
+        "evidence_count": 0,
+        "latency": 7.5649542808532715,
+        "id": "DEV-04",
+        "claim": "The human heart consists of four distinct anatomical chambers.",
+        "expected": "True",
+        "domain": "Human Biology",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Bananas contain potassium, and about 0.0117% of natural potassium is the radioactive isotope potassium\u201140, which emits beta and gamma radiation, giving bananas a measurable but very low level of radioactivity (\u22480.1\u202f\u00b5Sv per banana). This is documented in nuclear physics and nutrition references such as the US EPA and peer\u2011reviewed literature.",
+        "evidence_count": 0,
+        "latency": 3.784372329711914,
+        "id": "DEV-05",
+        "claim": "Bananas are naturally radioactive due to the presence of potassium-40.",
+        "expected": "True",
+        "domain": "Nuclear Physics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Water expands about 9% when it freezes; ice has a lower density (\u22480.917\u202fg/cm\u00b3) than liquid water (\u22481\u202fg/cm\u00b3), so its volume increases rather than decreases.",
+        "evidence_count": 0,
+        "latency": 4.4236159324646,
+        "id": "DEV-06",
+        "claim": "Liquid water decreases in volume and contracts when freezing into solid ice.",
+        "expected": "False",
+        "domain": "Chemistry",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Historical records confirm Alexander Fleming observed the antibacterial properties of Penicillium mold in 1928, leading to the discovery of penicillin as the first antibiotic.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "DEV-07",
+        "claim": "Penicillin was discovered by Alexander Fleming in 1928 as an antibiotic.",
+        "expected": "True",
+        "domain": "Medicine",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Extensive epidemiological studies and systematic reviews by the CDC, WHO, and peer\u2011reviewed research (e.g., the 2002 Lancet retraction, the 2004 Danish cohort study, and the 2019 meta\u2011analysis) have found no causal link between the MMR vaccine and autism, debunking the claim.",
+        "evidence_count": 0,
+        "latency": 0.0004899501800537109,
+        "id": "DEV-08",
+        "claim": "The MMR childhood vaccine has been scientifically proven to cause autism.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided evidence section is empty, offering no information to confirm or refute the claim that bulls charge because they see red. Without supporting sources, the claim cannot be evaluated.",
+        "evidence_count": 0,
+        "latency": 0.0005254745483398438,
+        "id": "DEV-09",
+        "claim": "Bulls become enraged and charge specifically because they see the color red.",
+        "expected": "False",
+        "domain": "Zoology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim that worker honeybees are sterile females that forage daily.",
+        "evidence_count": 0,
+        "latency": 0.0005402565002441406,
+        "id": "DEV-10",
+        "claim": "Worker honeybees in a hive are sterile females that perform daily foraging.",
+        "expected": "True",
+        "domain": "Entomology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to confirm or refute the claim that Apollo 11's lunar module landed astronauts on the Moon in July 1969, so the truth of the statement cannot be assessed from the given sources.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "DEV-11",
+        "claim": "The Apollo 11 lunar module successfully landed astronauts on the Moon in July 1969.",
+        "expected": "True",
+        "domain": "History",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Historical measurements show Napoleon's height was about 1.68\u20111.70\u202fm, which was close to the average height of French men in the early 1800s; the notion of him being unusually short stems from British propaganda and unit conversion errors, not factual difference.",
+        "evidence_count": 0,
+        "latency": 0.0005271434783935547,
+        "id": "DEV-12",
+        "claim": "Napoleon Bonaparte was unusually short compared to average French men of his time.",
+        "expected": "False",
+        "domain": "Historical Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources such as the Australian Constitution and official government records designate Canberra as the official capital city of Australia.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "DEV-13",
+        "claim": "Canberra is the designated official capital city of Australia.",
+        "expected": "True",
+        "domain": "Geography",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence is provided to confirm or refute the claim that Sydney is Australia's federal capital; therefore the truth value cannot be determined from the given sources.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "DEV-14",
+        "claim": "Sydney is the official federal capital city of Australia.",
+        "expected": "False",
+        "domain": "Geography",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to confirm or refute the claim that Guido van Rossum originally conceived and created the Python programming language.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "DEV-15",
+        "claim": "The Python programming language was originally conceived and created by Guido van Rossum.",
+        "expected": "True",
+        "domain": "Computer Science",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative health agencies (WHO, CDC) have repeatedly stated that 5G radio waves cannot transmit viruses; COVID-19 spreads via respiratory droplets, not electromagnetic signals. The claim is a debunked conspiracy myth.",
+        "evidence_count": 0,
+        "latency": 0.0005533695220947266,
+        "id": "DEV-16",
+        "claim": "The 5G wireless telecommunications network causes viral transmission of COVID-19.",
+        "expected": "False",
+        "domain": "Misinformation",
+        "is_correct": true
+      }
+    ]
+  },
+  "test": {
+    "factguard_full": [
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Scientific consensus and historical records confirm that the double helix structure of DNA was elucidated by James Watson and Francis Crick in 1953, as documented in their Nature paper and subsequent textbooks.",
+        "evidence_count": 0,
+        "latency": 4.784873008728027,
+        "id": "TEST-01",
+        "claim": "DNA has a double helix structure discovered by James Watson and Francis Crick.",
+        "expected": "True",
+        "domain": "Molecular Biology",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess whether the Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "evidence_count": 0,
+        "latency": 6.5861053466796875,
+        "id": "TEST-02",
+        "claim": "The Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "expected": "True",
+        "domain": "Archaeology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess whether knuckle cracking leads to arthritis or permanent joint damage, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 9.823439359664917,
+        "id": "TEST-03",
+        "claim": "Cracking your knuckles causes arthritis and permanent joint damage.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was supplied to assess whether shaving affects hair thickness or growth rate, so the claim cannot be verified from the provided sources.",
+        "evidence_count": 0,
+        "latency": 2.3189427852630615,
+        "id": "TEST-04",
+        "claim": "Shaving hair makes it grow back significantly thicker and faster.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Photosynthesis in plants uses light energy to combine carbon dioxide and water, producing glucose (C6H12O6) and oxygen (O2), as documented in standard plant biology references such as Campbell Biology and peer\u2011reviewed literature.",
+        "evidence_count": 0,
+        "latency": 6.7753496170043945,
+        "id": "TEST-05",
+        "claim": "Photosynthesis converts carbon dioxide and water into glucose and oxygen in plants.",
+        "expected": "True",
+        "domain": "Botany / Biochemistry",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Historical records such as the Encyclopedia Britannica and the U.S. National Archives confirm that RMS Titanic struck an iceberg on the night of 14\u202fApril 1912 and sank in the North Atlantic Ocean in the early hours of 15\u202fApril 1912.",
+        "evidence_count": 0,
+        "latency": 10.702359676361084,
+        "id": "TEST-06",
+        "claim": "The Titanic sank in the North Atlantic Ocean after striking an iceberg in April 1912.",
+        "expected": "True",
+        "domain": "Modern History",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Scientific and meteorological sources (e.g., National Weather Service, NOAA) state that lightning frequently strikes the same point repeatedly, especially tall conductive structures like the Empire State Building or the Eiffel Tower, disproving the claim that it never does so.",
+        "evidence_count": 0,
+        "latency": 2.232090473175049,
+        "id": "TEST-07",
+        "claim": "Lightning never strikes the same location more than once in human history.",
+        "expected": "False",
+        "domain": "Atmospheric Physics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "A penny\u2019s terminal velocity is only about 30\u202fm/s (\u224870\u202fmph), giving it roughly 0.5\u202fJ of kinetic energy\u2014far too little to fracture concrete or cause fatal injury; physics textbooks and reputable physics\u2011education sites confirm that objects as light as a penny cannot kill a pedestrian even when dropped from the Empire State Building\u2019s height.",
+        "evidence_count": 0,
+        "latency": 2.98146653175354,
+        "id": "TEST-08",
+        "claim": "Dropping a penny from the top of the Empire State Building will crack a sidewalk and kill a pedestrian.",
+        "expected": "False",
+        "domain": "Physics Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The claim concerns a future event involving reincarnation, a metaphysical concept lacking empirical evidence; no authoritative sources confirm or refute it, making it unverifiable.",
+        "evidence_count": 0,
+        "latency": 4.660181045532227,
+        "id": "TEST-09",
+        "claim": "Alexander the Great will be reincarnated as a world leader in the year 2085.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim declares vanilla as the objectively greatest ice\u2011cream flavor, a superlative about taste that is inherently subjective; the evidence only shows vanilla\u2019s popularity, not an objective metric of greatness, so the statement cannot be factually verified.",
+        "evidence_count": 4,
+        "latency": 5.106327533721924,
+        "id": "TEST-10",
+        "claim": "Vanilla is objectively the greatest ice cream flavor ever invented in human civilization.",
+        "expected": "Unverifiable",
+        "domain": "Subjective Opinion",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Source 1 (Ground-level ozone, Wikipedia) states that the ozone layer exists between 10 and 50\u202fkm above Earth\u2019s surface, which corresponds to the stratospheric region. This directly confirms that the ozone layer is primarily located within the stratosphere.",
+        "evidence_count": 4,
+        "latency": 9.194708347320557,
+        "id": "TEST-11",
+        "claim": "The ozone layer is located primarily within the stratosphere of Earth's atmosphere.",
+        "expected": "True",
+        "domain": "Atmospheric Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Britannica, Ask A Biologist, ScienceDirect) state that bats are not blind and possess functional vision, often better than human eyesight, and they combine vision with echolocation rather than relying solely on echolocation.",
+        "evidence_count": 4,
+        "latency": 4.404816627502441,
+        "id": "TEST-12",
+        "claim": "Bats are completely blind and rely solely on echolocation to navigate.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited authoritative sources state that pure water boils at approximately 100\u202f\u00b0C at 1\u202fatm (standard atmospheric pressure), noting the exact value is about 99.97\u202f\u00b0C but is conventionally rounded to 100\u202f\u00b0C.",
+        "evidence_count": 4,
+        "latency": 13.496888637542725,
+        "id": "TEST-13",
+        "claim": "The boiling point of pure water at standard atmospheric pressure (1 atm) is 100 degrees Celsius.",
+        "expected": "True",
+        "domain": "Thermodynamics",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited authoritative sources (Wikipedia, Nobel Prize records) state that Einstein was awarded the 1921 Nobel Prize in Physics specifically for his discovery of the law of the photoelectric effect, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 11.961045026779175,
+        "id": "TEST-14",
+        "claim": "Albert Einstein received the 1921 Nobel Prize in Physics for his discovery of the law of the photoelectric effect.",
+        "expected": "True",
+        "domain": "History of Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited fact\u2011check sources (FDA/EMA ingredient lists, Mayo Clinic, and multiple independent fact\u2011checking articles) state that vaccines contain no microchips and have no capability to track GPS coordinates, confirming the claim is false.",
+        "evidence_count": 4,
+        "latency": 4.211172342300415,
+        "id": "TEST-15",
+        "claim": "Vaccines inject microchips to track personal GPS coordinates of citizens.",
+        "expected": "False",
+        "domain": "Conspiracy Theories",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that no extraterrestrial life has been detected in the Solar System and Europa, while a top candidate for microbial life, has no confirmed organisms or structures; there is no evidence of an underground base or current inhabitants.",
+        "evidence_count": 4,
+        "latency": 6.2845540046691895,
+        "id": "TEST-16",
+        "claim": "Extraterrestrial life forms currently inhabit an underground base on Jupiter's moon Europa.",
+        "expected": "Unverifiable",
+        "domain": "Astrobiology Speculation",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources explain that natural diamonds form deep in the Earth's mantle from carbon sources long before coal or swamps existed, disproving the claim that they are strictly formed from highly compressed coal in ancient swamps.",
+        "evidence_count": 4,
+        "latency": 6.275847673416138,
+        "id": "TEST-17",
+        "claim": "Diamonds are formed strictly from highly compressed coal under ancient swamps.",
+        "expected": "False",
+        "domain": "Geology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited authoritative sources (Wikipedia, Geology.com) state that Mount Everest\u2019s summit at 8,848.86\u202fm above sea level is the highest point on Earth, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 6.073777198791504,
+        "id": "TEST-18",
+        "claim": "Mount Everest is the highest mountain peak above sea level on Earth.",
+        "expected": "True",
+        "domain": "Geography",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited sources explicitly refute the three\u2011second memory myth, stating that goldfish can retain information for weeks to months and can be trained to recognize cues, indicating a memory far longer than three seconds.",
+        "evidence_count": 4,
+        "latency": 4.81596565246582,
+        "id": "TEST-19",
+        "claim": "Goldfish have a memory span of only three seconds.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "None of the provided sources mention a Neanderthal colony in Antarctica or any planned discovery in 2040; the evidence only discusses unrelated ice structures and a Neanderthal-related artifact elsewhere, so the claim cannot be verified.",
+        "evidence_count": 4,
+        "latency": 7.294543743133545,
+        "id": "TEST-20",
+        "claim": "A secret colony of Neanderthals will be uncovered beneath Antarctic ice in the year 2040.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": true
+      }
+    ],
+    "baseline_raw_ddg": [
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Scientific consensus and historical records confirm that the double helix structure of DNA was elucidated by James Watson and Francis Crick in 1953, as documented in their Nature paper and subsequent textbooks.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-01",
+        "claim": "DNA has a double helix structure discovered by James Watson and Francis Crick.",
+        "expected": "True",
+        "domain": "Molecular Biology",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess whether the Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-02",
+        "claim": "The Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "expected": "True",
+        "domain": "Archaeology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess whether knuckle cracking leads to arthritis or permanent joint damage, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-03",
+        "claim": "Cracking your knuckles causes arthritis and permanent joint damage.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was supplied to assess whether shaving affects hair thickness or growth rate, so the claim cannot be verified from the provided sources.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-04",
+        "claim": "Shaving hair makes it grow back significantly thicker and faster.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Photosynthesis in plants uses light energy to combine carbon dioxide and water, producing glucose (C6H12O6) and oxygen (O2), as documented in standard plant biology references such as Campbell Biology and peer\u2011reviewed literature.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-05",
+        "claim": "Photosynthesis converts carbon dioxide and water into glucose and oxygen in plants.",
+        "expected": "True",
+        "domain": "Botany / Biochemistry",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Historical records such as the Encyclopedia Britannica and the U.S. National Archives confirm that RMS Titanic struck an iceberg on the night of 14\u202fApril 1912 and sank in the North Atlantic Ocean in the early hours of 15\u202fApril 1912.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-06",
+        "claim": "The Titanic sank in the North Atlantic Ocean after striking an iceberg in April 1912.",
+        "expected": "True",
+        "domain": "Modern History",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Scientific and meteorological sources (e.g., National Weather Service, NOAA) state that lightning frequently strikes the same point repeatedly, especially tall conductive structures like the Empire State Building or the Eiffel Tower, disproving the claim that it never does so.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-07",
+        "claim": "Lightning never strikes the same location more than once in human history.",
+        "expected": "False",
+        "domain": "Atmospheric Physics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "A penny\u2019s terminal velocity is only about 30\u202fm/s (\u224870\u202fmph), giving it roughly 0.5\u202fJ of kinetic energy\u2014far too little to fracture concrete or cause fatal injury; physics textbooks and reputable physics\u2011education sites confirm that objects as light as a penny cannot kill a pedestrian even when dropped from the Empire State Building\u2019s height.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-08",
+        "claim": "Dropping a penny from the top of the Empire State Building will crack a sidewalk and kill a pedestrian.",
+        "expected": "False",
+        "domain": "Physics Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The claim concerns a future event involving reincarnation, a metaphysical concept lacking empirical evidence; no authoritative sources confirm or refute it, making it unverifiable.",
+        "evidence_count": 0,
+        "latency": 0.0004520416259765625,
+        "id": "TEST-09",
+        "claim": "Alexander the Great will be reincarnated as a world leader in the year 2085.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.92,
+        "reasoning": "The claim declares vanilla to be the \"greatest\" ice\u2011cream flavor, a subjective superlative that cannot be objectively measured; the evidence only shows vanilla\u2019s popularity, not an objective ranking, so the statement cannot be verified as true or false.",
+        "evidence_count": 4,
+        "latency": 2.988102912902832,
+        "id": "TEST-10",
+        "claim": "Vanilla is objectively the greatest ice cream flavor ever invented in human civilization.",
+        "expected": "Unverifiable",
+        "domain": "Subjective Opinion",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources (Britannica, Wikipedia, NASA) state that the ozone layer resides in the stratosphere, typically between roughly 10\u202fkm and 35\u201350\u202fkm altitude, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 12.887184143066406,
+        "id": "TEST-11",
+        "claim": "The ozone layer is located primarily within the stratosphere of Earth's atmosphere.",
+        "expected": "True",
+        "domain": "Atmospheric Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Multiple authoritative sources state that bats are not blind\u2014Britannica notes they have eyesight often keener than humans, and ScienceDirect reports many species have keen vision. They also use echolocation, but not exclusively, integrating vision and memory. Therefore the claim that they are completely blind and rely solely on echolocation is false.",
+        "evidence_count": 4,
+        "latency": 6.27170467376709,
+        "id": "TEST-12",
+        "claim": "Bats are completely blind and rely solely on echolocation to navigate.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources state that pure water boils at 100\u202f\u00b0C when the pressure is 1\u202fatm (standard atmospheric pressure), which matches the claim.",
+        "evidence_count": 4,
+        "latency": 5.4064013957977295,
+        "id": "TEST-13",
+        "claim": "The boiling point of pure water at standard atmospheric pressure (1 atm) is 100 degrees Celsius.",
+        "expected": "True",
+        "domain": "Thermodynamics",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources (NobelPrize.org and Wikipedia) state that Einstein was awarded the 1921 Nobel Prize in Physics, presented in 1922, specifically for his discovery of the law of the photoelectric effect.",
+        "evidence_count": 4,
+        "latency": 5.692276477813721,
+        "id": "TEST-14",
+        "claim": "Albert Einstein received the 1921 Nobel Prize in Physics for his discovery of the law of the photoelectric effect.",
+        "expected": "True",
+        "domain": "History of Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources (FDA/EMA/WHO ingredient lists, Mayo Clinic medical director, fact\u2011check organizations) confirm that vaccines contain no microchips and have no capability to track GPS coordinates, directly refuting the claim.",
+        "evidence_count": 4,
+        "latency": 6.125442981719971,
+        "id": "TEST-15",
+        "claim": "Vaccines inject microchips to track personal GPS coordinates of citizens.",
+        "expected": "False",
+        "domain": "Conspiracy Theories",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "All cited sources describe Europa as a promising location to search for possible life, but they report no detection of extraterrestrial organisms or any artificial structures; the idea of an underground alien base is purely speculative and not supported by current scientific evidence.",
+        "evidence_count": 4,
+        "latency": 4.736287593841553,
+        "id": "TEST-16",
+        "claim": "Extraterrestrial life forms currently inhabit an underground base on Jupiter's moon Europa.",
+        "expected": "Unverifiable",
+        "domain": "Astrobiology Speculation",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited sources state that natural diamonds form deep in the Earth's mantle under high pressure and temperature, long before coal and ancient swamps existed, disproving the claim that they are strictly formed from highly compressed coal in swamps.",
+        "evidence_count": 4,
+        "latency": 5.8021910190582275,
+        "id": "TEST-17",
+        "claim": "Diamonds are formed strictly from highly compressed coal under ancient swamps.",
+        "expected": "False",
+        "domain": "Geology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources (Wikipedia, Britannica, Geology.com, and an educational site) state that Mount Everest has the greatest elevation above sea level of any point on Earth, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 5.792239427566528,
+        "id": "TEST-18",
+        "claim": "Mount Everest is the highest mountain peak above sea level on Earth.",
+        "expected": "True",
+        "domain": "Geography",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Multiple scientific sources debunk the three\u2011second myth, showing goldfish can retain learned tasks, landmarks, and feeding cues for weeks to months, indicating a memory far longer than three seconds.",
+        "evidence_count": 4,
+        "latency": 4.399707555770874,
+        "id": "TEST-19",
+        "claim": "Goldfish have a memory span of only three seconds.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "All cited sources describe geological structures and ancient ecosystems beneath Antarctica, with no evidence of any human or Neanderthal presence, let alone a secret colony. Neanderthals went extinct ~40,000 years ago and never inhabited Antarctica, making the claim scientifically implausible.",
+        "evidence_count": 4,
+        "latency": 5.829244375228882,
+        "id": "TEST-20",
+        "claim": "A secret colony of Neanderthals will be uncovered beneath Antarctic ice in the year 2040.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": false
+      }
+    ],
+    "baseline_ungrounded": [
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Scientific consensus and historical records confirm that the double helix structure of DNA was elucidated by James Watson and Francis Crick in 1953, as documented in their Nature paper and subsequent textbooks.",
+        "evidence_count": 0,
+        "latency": 0.0012254714965820312,
+        "id": "TEST-01",
+        "claim": "DNA has a double helix structure discovered by James Watson and Francis Crick.",
+        "expected": "True",
+        "domain": "Molecular Biology",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess whether the Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "evidence_count": 0,
+        "latency": 0.0005943775177001953,
+        "id": "TEST-02",
+        "claim": "The Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "expected": "True",
+        "domain": "Archaeology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess whether knuckle cracking leads to arthritis or permanent joint damage, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-03",
+        "claim": "Cracking your knuckles causes arthritis and permanent joint damage.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was supplied to assess whether shaving affects hair thickness or growth rate, so the claim cannot be verified from the provided sources.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-04",
+        "claim": "Shaving hair makes it grow back significantly thicker and faster.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Photosynthesis in plants uses light energy to combine carbon dioxide and water, producing glucose (C6H12O6) and oxygen (O2), as documented in standard plant biology references such as Campbell Biology and peer\u2011reviewed literature.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-05",
+        "claim": "Photosynthesis converts carbon dioxide and water into glucose and oxygen in plants.",
+        "expected": "True",
+        "domain": "Botany / Biochemistry",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Historical records such as the Encyclopedia Britannica and the U.S. National Archives confirm that RMS Titanic struck an iceberg on the night of 14\u202fApril 1912 and sank in the North Atlantic Ocean in the early hours of 15\u202fApril 1912.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-06",
+        "claim": "The Titanic sank in the North Atlantic Ocean after striking an iceberg in April 1912.",
+        "expected": "True",
+        "domain": "Modern History",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Scientific and meteorological sources (e.g., National Weather Service, NOAA) state that lightning frequently strikes the same point repeatedly, especially tall conductive structures like the Empire State Building or the Eiffel Tower, disproving the claim that it never does so.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-07",
+        "claim": "Lightning never strikes the same location more than once in human history.",
+        "expected": "False",
+        "domain": "Atmospheric Physics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "A penny\u2019s terminal velocity is only about 30\u202fm/s (\u224870\u202fmph), giving it roughly 0.5\u202fJ of kinetic energy\u2014far too little to fracture concrete or cause fatal injury; physics textbooks and reputable physics\u2011education sites confirm that objects as light as a penny cannot kill a pedestrian even when dropped from the Empire State Building\u2019s height.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-08",
+        "claim": "Dropping a penny from the top of the Empire State Building will crack a sidewalk and kill a pedestrian.",
+        "expected": "False",
+        "domain": "Physics Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The claim concerns a future event involving reincarnation, a metaphysical concept lacking empirical evidence; no authoritative sources confirm or refute it, making it unverifiable.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-09",
+        "claim": "Alexander the Great will be reincarnated as a world leader in the year 2085.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.93,
+        "reasoning": "The claim asserts a subjective judgment ('greatest') as an objective fact, which cannot be verified with evidence; personal taste cannot be proven true or false.",
+        "evidence_count": 0,
+        "latency": 2.294729709625244,
+        "id": "TEST-10",
+        "claim": "Vanilla is objectively the greatest ice cream flavor ever invented in human civilization.",
+        "expected": "Unverifiable",
+        "domain": "Subjective Opinion",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No retrieved evidence was provided to confirm or refute the claim that the ozone layer is primarily in the stratosphere, so its truth cannot be assessed from the given sources.",
+        "evidence_count": 0,
+        "latency": 2.9067440032958984,
+        "id": "TEST-11",
+        "claim": "The ozone layer is located primarily within the stratosphere of Earth's atmosphere.",
+        "expected": "True",
+        "domain": "Atmospheric Science",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Scientific studies show that most bat species have functional eyes and can see, though many rely heavily on echolocation for navigation; they are not completely blind.",
+        "evidence_count": 0,
+        "latency": 9.177305459976196,
+        "id": "TEST-12",
+        "claim": "Bats are completely blind and rely solely on echolocation to navigate.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources such as the NIST Chemistry WebBook and standard physics textbooks state that pure water boils at 100\u202f\u00b0C when the pressure is 1\u202fatm (101.325\u202fkPa). This matches the claim.",
+        "evidence_count": 0,
+        "latency": 3.4006786346435547,
+        "id": "TEST-13",
+        "claim": "The boiling point of pure water at standard atmospheric pressure (1 atm) is 100 degrees Celsius.",
+        "expected": "True",
+        "domain": "Thermodynamics",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The Nobel Committee awarded Albert Einstein the 1921 Nobel Prize in Physics \"for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect,\" confirming the claim.",
+        "evidence_count": 0,
+        "latency": 2.730403423309326,
+        "id": "TEST-14",
+        "claim": "Albert Einstein received the 1921 Nobel Prize in Physics for his discovery of the law of the photoelectric effect.",
+        "expected": "True",
+        "domain": "History of Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess the claim that vaccines contain microchips for GPS tracking.",
+        "evidence_count": 0,
+        "latency": 3.8073928356170654,
+        "id": "TEST-15",
+        "claim": "Vaccines inject microchips to track personal GPS coordinates of citizens.",
+        "expected": "False",
+        "domain": "Conspiracy Theories",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No credible evidence is provided to support the claim that extraterrestrial life currently inhabits an underground base on Europa; such a claim is extraordinary and unsubstantiated.",
+        "evidence_count": 0,
+        "latency": 3.8772284984588623,
+        "id": "TEST-16",
+        "claim": "Extraterrestrial life forms currently inhabit an underground base on Jupiter's moon Europa.",
+        "expected": "Unverifiable",
+        "domain": "Astrobiology Speculation",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No retrieved evidence was supplied to assess the claim that diamonds form strictly from compressed coal in ancient swamps, so the truth of the statement cannot be determined from the given sources.",
+        "evidence_count": 0,
+        "latency": 10.657595872879028,
+        "id": "TEST-17",
+        "claim": "Diamonds are formed strictly from highly compressed coal under ancient swamps.",
+        "expected": "False",
+        "domain": "Geology Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative geographic sources such as the National Geographic Society and NASA list Mount Everest, at 8,848.86\u202fm (29,031.7\u202fft) above sea level, as the highest point on Earth's surface measured from sea level, confirming the claim.",
+        "evidence_count": 0,
+        "latency": 3.306324005126953,
+        "id": "TEST-18",
+        "claim": "Mount Everest is the highest mountain peak above sea level on Earth.",
+        "expected": "True",
+        "domain": "Geography",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was supplied to assess the claim about goldfish memory span, so the truth of the statement cannot be determined from the provided material.",
+        "evidence_count": 0,
+        "latency": 2.6882379055023193,
+        "id": "TEST-19",
+        "claim": "Goldfish have a memory span of only three seconds.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No credible scientific evidence or sources support the claim that a hidden Neanderthal colony will be discovered under Antarctic ice by 2040; the statement is speculative about a future event.",
+        "evidence_count": 0,
+        "latency": 10.20250415802002,
+        "id": "TEST-20",
+        "claim": "A secret colony of Neanderthals will be uncovered beneath Antarctic ice in the year 2040.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": true
+      }
+    ],
+    "ablation_no_spacy": [
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Scientific consensus and historical records confirm that the double helix structure of DNA was elucidated by James Watson and Francis Crick in 1953, as documented in their Nature paper and subsequent textbooks.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-01",
+        "claim": "DNA has a double helix structure discovered by James Watson and Francis Crick.",
+        "expected": "True",
+        "domain": "Molecular Biology",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess whether the Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-02",
+        "claim": "The Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "expected": "True",
+        "domain": "Archaeology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess whether knuckle cracking leads to arthritis or permanent joint damage, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-03",
+        "claim": "Cracking your knuckles causes arthritis and permanent joint damage.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was supplied to assess whether shaving affects hair thickness or growth rate, so the claim cannot be verified from the provided sources.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-04",
+        "claim": "Shaving hair makes it grow back significantly thicker and faster.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Photosynthesis in plants uses light energy to combine carbon dioxide and water, producing glucose (C6H12O6) and oxygen (O2), as documented in standard plant biology references such as Campbell Biology and peer\u2011reviewed literature.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-05",
+        "claim": "Photosynthesis converts carbon dioxide and water into glucose and oxygen in plants.",
+        "expected": "True",
+        "domain": "Botany / Biochemistry",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Historical records such as the Encyclopedia Britannica and the U.S. National Archives confirm that RMS Titanic struck an iceberg on the night of 14\u202fApril 1912 and sank in the North Atlantic Ocean in the early hours of 15\u202fApril 1912.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-06",
+        "claim": "The Titanic sank in the North Atlantic Ocean after striking an iceberg in April 1912.",
+        "expected": "True",
+        "domain": "Modern History",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Scientific and meteorological sources (e.g., National Weather Service, NOAA) state that lightning frequently strikes the same point repeatedly, especially tall conductive structures like the Empire State Building or the Eiffel Tower, disproving the claim that it never does so.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-07",
+        "claim": "Lightning never strikes the same location more than once in human history.",
+        "expected": "False",
+        "domain": "Atmospheric Physics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "A penny\u2019s terminal velocity is only about 30\u202fm/s (\u224870\u202fmph), giving it roughly 0.5\u202fJ of kinetic energy\u2014far too little to fracture concrete or cause fatal injury; physics textbooks and reputable physics\u2011education sites confirm that objects as light as a penny cannot kill a pedestrian even when dropped from the Empire State Building\u2019s height.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-08",
+        "claim": "Dropping a penny from the top of the Empire State Building will crack a sidewalk and kill a pedestrian.",
+        "expected": "False",
+        "domain": "Physics Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The claim concerns a future event involving reincarnation, a metaphysical concept lacking empirical evidence; no authoritative sources confirm or refute it, making it unverifiable.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-09",
+        "claim": "Alexander the Great will be reincarnated as a world leader in the year 2085.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim declares vanilla as the objectively greatest ice\u2011cream flavor, a superlative about taste that is inherently subjective; the evidence only shows vanilla\u2019s popularity, not an objective metric of greatness, so the statement cannot be factually verified.",
+        "evidence_count": 4,
+        "latency": 0.0009107589721679688,
+        "id": "TEST-10",
+        "claim": "Vanilla is objectively the greatest ice cream flavor ever invented in human civilization.",
+        "expected": "Unverifiable",
+        "domain": "Subjective Opinion",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Source 1 (Ground-level ozone, Wikipedia) states that the ozone layer exists between 10 and 50\u202fkm above Earth\u2019s surface, which corresponds to the stratospheric region. This directly confirms that the ozone layer is primarily located within the stratosphere.",
+        "evidence_count": 4,
+        "latency": 0.0005223751068115234,
+        "id": "TEST-11",
+        "claim": "The ozone layer is located primarily within the stratosphere of Earth's atmosphere.",
+        "expected": "True",
+        "domain": "Atmospheric Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Britannica, Ask A Biologist, ScienceDirect) state that bats are not blind and possess functional vision, often better than human eyesight, and they combine vision with echolocation rather than relying solely on echolocation.",
+        "evidence_count": 4,
+        "latency": 0.0010325908660888672,
+        "id": "TEST-12",
+        "claim": "Bats are completely blind and rely solely on echolocation to navigate.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited authoritative sources state that pure water boils at approximately 100\u202f\u00b0C at 1\u202fatm (standard atmospheric pressure), noting the exact value is about 99.97\u202f\u00b0C but is conventionally rounded to 100\u202f\u00b0C.",
+        "evidence_count": 4,
+        "latency": 0.0005521774291992188,
+        "id": "TEST-13",
+        "claim": "The boiling point of pure water at standard atmospheric pressure (1 atm) is 100 degrees Celsius.",
+        "expected": "True",
+        "domain": "Thermodynamics",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited authoritative sources (Wikipedia, Nobel Prize records) state that Einstein was awarded the 1921 Nobel Prize in Physics specifically for his discovery of the law of the photoelectric effect, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 0.0010728836059570312,
+        "id": "TEST-14",
+        "claim": "Albert Einstein received the 1921 Nobel Prize in Physics for his discovery of the law of the photoelectric effect.",
+        "expected": "True",
+        "domain": "History of Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited fact\u2011check sources (FDA/EMA ingredient lists, Mayo Clinic, and multiple independent fact\u2011checking articles) state that vaccines contain no microchips and have no capability to track GPS coordinates, confirming the claim is false.",
+        "evidence_count": 4,
+        "latency": 0.0011861324310302734,
+        "id": "TEST-15",
+        "claim": "Vaccines inject microchips to track personal GPS coordinates of citizens.",
+        "expected": "False",
+        "domain": "Conspiracy Theories",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that no extraterrestrial life has been detected in the Solar System and Europa, while a top candidate for microbial life, has no confirmed organisms or structures; there is no evidence of an underground base or current inhabitants.",
+        "evidence_count": 4,
+        "latency": 0.0009560585021972656,
+        "id": "TEST-16",
+        "claim": "Extraterrestrial life forms currently inhabit an underground base on Jupiter's moon Europa.",
+        "expected": "Unverifiable",
+        "domain": "Astrobiology Speculation",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources explain that natural diamonds form deep in the Earth's mantle from carbon sources long before coal or swamps existed, disproving the claim that they are strictly formed from highly compressed coal in ancient swamps.",
+        "evidence_count": 4,
+        "latency": 0.0,
+        "id": "TEST-17",
+        "claim": "Diamonds are formed strictly from highly compressed coal under ancient swamps.",
+        "expected": "False",
+        "domain": "Geology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited authoritative sources (Wikipedia, Geology.com) state that Mount Everest\u2019s summit at 8,848.86\u202fm above sea level is the highest point on Earth, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 0.0013804435729980469,
+        "id": "TEST-18",
+        "claim": "Mount Everest is the highest mountain peak above sea level on Earth.",
+        "expected": "True",
+        "domain": "Geography",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited sources explicitly refute the three\u2011second memory myth, stating that goldfish can retain information for weeks to months and can be trained to recognize cues, indicating a memory far longer than three seconds.",
+        "evidence_count": 4,
+        "latency": 0.0010263919830322266,
+        "id": "TEST-19",
+        "claim": "Goldfish have a memory span of only three seconds.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "None of the provided sources mention a Neanderthal colony in Antarctica or any planned discovery in 2040; the evidence only discusses unrelated ice structures and a Neanderthal-related artifact elsewhere, so the claim cannot be verified.",
+        "evidence_count": 4,
+        "latency": 0.0012323856353759766,
+        "id": "TEST-20",
+        "claim": "A secret colony of Neanderthals will be uncovered beneath Antarctic ice in the year 2040.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": true
+      }
+    ],
+    "ablation_no_domain_trust": [
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Scientific consensus and historical records confirm that the double helix structure of DNA was elucidated by James Watson and Francis Crick in 1953, as documented in their Nature paper and subsequent textbooks.",
+        "evidence_count": 0,
+        "latency": 0.0007417201995849609,
+        "id": "TEST-01",
+        "claim": "DNA has a double helix structure discovered by James Watson and Francis Crick.",
+        "expected": "True",
+        "domain": "Molecular Biology",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess whether the Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "evidence_count": 0,
+        "latency": 0.0005552768707275391,
+        "id": "TEST-02",
+        "claim": "The Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "expected": "True",
+        "domain": "Archaeology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess whether knuckle cracking leads to arthritis or permanent joint damage, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "id": "TEST-03",
+        "claim": "Cracking your knuckles causes arthritis and permanent joint damage.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was supplied to assess whether shaving affects hair thickness or growth rate, so the claim cannot be verified from the provided sources.",
+        "evidence_count": 0,
+        "latency": 0.0004589557647705078,
+        "id": "TEST-04",
+        "claim": "Shaving hair makes it grow back significantly thicker and faster.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Photosynthesis in plants uses light energy to combine carbon dioxide and water, producing glucose (C6H12O6) and oxygen (O2), as documented in standard plant biology references such as Campbell Biology and peer\u2011reviewed literature.",
+        "evidence_count": 0,
+        "latency": 0.001211404800415039,
+        "id": "TEST-05",
+        "claim": "Photosynthesis converts carbon dioxide and water into glucose and oxygen in plants.",
+        "expected": "True",
+        "domain": "Botany / Biochemistry",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Historical records such as the Encyclopedia Britannica and the U.S. National Archives confirm that RMS Titanic struck an iceberg on the night of 14\u202fApril 1912 and sank in the North Atlantic Ocean in the early hours of 15\u202fApril 1912.",
+        "evidence_count": 0,
+        "latency": 0.0009396076202392578,
+        "id": "TEST-06",
+        "claim": "The Titanic sank in the North Atlantic Ocean after striking an iceberg in April 1912.",
+        "expected": "True",
+        "domain": "Modern History",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Scientific and meteorological sources (e.g., National Weather Service, NOAA) state that lightning frequently strikes the same point repeatedly, especially tall conductive structures like the Empire State Building or the Eiffel Tower, disproving the claim that it never does so.",
+        "evidence_count": 0,
+        "latency": 0.0003478527069091797,
+        "id": "TEST-07",
+        "claim": "Lightning never strikes the same location more than once in human history.",
+        "expected": "False",
+        "domain": "Atmospheric Physics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "A penny\u2019s terminal velocity is only about 30\u202fm/s (\u224870\u202fmph), giving it roughly 0.5\u202fJ of kinetic energy\u2014far too little to fracture concrete or cause fatal injury; physics textbooks and reputable physics\u2011education sites confirm that objects as light as a penny cannot kill a pedestrian even when dropped from the Empire State Building\u2019s height.",
+        "evidence_count": 0,
+        "latency": 0.001010894775390625,
+        "id": "TEST-08",
+        "claim": "Dropping a penny from the top of the Empire State Building will crack a sidewalk and kill a pedestrian.",
+        "expected": "False",
+        "domain": "Physics Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The claim concerns a future event involving reincarnation, a metaphysical concept lacking empirical evidence; no authoritative sources confirm or refute it, making it unverifiable.",
+        "evidence_count": 0,
+        "latency": 0.0003383159637451172,
+        "id": "TEST-09",
+        "claim": "Alexander the Great will be reincarnated as a world leader in the year 2085.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.92,
+        "reasoning": "The claim asserts a subjective judgment of \"greatest\" that cannot be measured objectively; the provided sources only indicate vanilla's popularity, not an objective ranking, so the statement is a matter of personal taste rather than verifiable fact.",
+        "evidence_count": 4,
+        "latency": 2.303739309310913,
+        "id": "TEST-10",
+        "claim": "Vanilla is objectively the greatest ice cream flavor ever invented in human civilization.",
+        "expected": "Unverifiable",
+        "domain": "Subjective Opinion",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Source 1 states that the ozone layer exists between 10 and 50 km above the Earth's surface, which corresponds to the stratosphere, confirming that the ozone layer is primarily located within the stratosphere.",
+        "evidence_count": 4,
+        "latency": 8.627409219741821,
+        "id": "TEST-11",
+        "claim": "The ozone layer is located primarily within the stratosphere of Earth's atmosphere.",
+        "expected": "True",
+        "domain": "Atmospheric Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Multiple authoritative sources state that bats are not completely blind; they possess functional vision and use it alongside echolocation, so the claim that they rely solely on echolocation is inaccurate.",
+        "evidence_count": 4,
+        "latency": 4.79780125617981,
+        "id": "TEST-12",
+        "claim": "Bats are completely blind and rely solely on echolocation to navigate.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources state that pure water boils at about 100\u202f\u00b0C at 1\u202fatm (standard atmospheric pressure), noting the precise value is ~99.97\u202f\u00b0C and is rounded to 100\u202f\u00b0C.",
+        "evidence_count": 4,
+        "latency": 6.307898998260498,
+        "id": "TEST-13",
+        "claim": "The boiling point of pure water at standard atmospheric pressure (1 atm) is 100 degrees Celsius.",
+        "expected": "True",
+        "domain": "Thermodynamics",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources (Wikipedia, Nobel Prize records) state that Einstein was awarded the 1921 Nobel Prize in Physics specifically for his discovery of the law of the photoelectric effect, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 12.091381788253784,
+        "id": "TEST-14",
+        "claim": "Albert Einstein received the 1921 Nobel Prize in Physics for his discovery of the law of the photoelectric effect.",
+        "expected": "True",
+        "domain": "History of Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited fact\u2011check sources (e.g., FDA/EMA ingredient lists, Mayo Clinic medical director, and multiple independent fact\u2011checking articles) state that vaccines contain no microchips and there is no mechanism for GPS tracking, directly refuting the claim.",
+        "evidence_count": 4,
+        "latency": 5.468912839889526,
+        "id": "TEST-15",
+        "claim": "Vaccines inject microchips to track personal GPS coordinates of citizens.",
+        "expected": "False",
+        "domain": "Conspiracy Theories",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited sources state that no extraterrestrial life has been detected on Europa and that it is only a candidate for potential microbial life; none provide any evidence of an underground base or current inhabitants.",
+        "evidence_count": 4,
+        "latency": 4.9819231033325195,
+        "id": "TEST-16",
+        "claim": "Extraterrestrial life forms currently inhabit an underground base on Jupiter's moon Europa.",
+        "expected": "Unverifiable",
+        "domain": "Astrobiology Speculation",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Scientific sources explain that natural diamonds crystallize deep in the mantle from carbon sources that predate coal and are brought to the surface by volcanic pipes; the notion that they form strictly from highly compressed coal in ancient swamps is a debunked myth.",
+        "evidence_count": 4,
+        "latency": 12.501458883285522,
+        "id": "TEST-17",
+        "claim": "Diamonds are formed strictly from highly compressed coal under ancient swamps.",
+        "expected": "False",
+        "domain": "Geology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources (Wikipedia, DuckDuckGo, Geology.com) state that Mount Everest's summit is 8,848.86\u202fm above sea level, confirming it is the highest mountain peak on Earth by sea\u2011level elevation.",
+        "evidence_count": 4,
+        "latency": 6.32392954826355,
+        "id": "TEST-18",
+        "claim": "Mount Everest is the highest mountain peak above sea level on Earth.",
+        "expected": "True",
+        "domain": "Geography",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Multiple scientific sources debunk the three\u2011second myth, showing that goldfish can retain information for weeks to months and can be trained to recognize cues, indicating a memory far longer than three seconds.",
+        "evidence_count": 4,
+        "latency": 4.540646076202393,
+        "id": "TEST-19",
+        "claim": "Goldfish have a memory span of only three seconds.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "All provided sources discuss unusual geological structures and ancient fossils, but none report any surviving Neanderthal population or a planned discovery in 2040. Neanderthals are known to have become extinct around 40,000 years ago, and no credible scientific evidence suggests they persisted in Antarctica. Therefore the claim is unsupported and contrary to established knowledge.",
+        "evidence_count": 4,
+        "latency": 4.7361533641815186,
+        "id": "TEST-20",
+        "claim": "A secret colony of Neanderthals will be uncovered beneath Antarctic ice in the year 2040.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": false
+      }
+    ],
+    "ablation_no_rerank": [
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Scientific consensus and historical records confirm that the double helix structure of DNA was elucidated by James Watson and Francis Crick in 1953, as documented in their Nature paper and subsequent textbooks.",
+        "evidence_count": 0,
+        "latency": 0.0005304813385009766,
+        "id": "TEST-01",
+        "claim": "DNA has a double helix structure discovered by James Watson and Francis Crick.",
+        "expected": "True",
+        "domain": "Molecular Biology",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess whether the Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "evidence_count": 0,
+        "latency": 0.0009551048278808594,
+        "id": "TEST-02",
+        "claim": "The Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "expected": "True",
+        "domain": "Archaeology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess whether knuckle cracking leads to arthritis or permanent joint damage, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 0.00036597251892089844,
+        "id": "TEST-03",
+        "claim": "Cracking your knuckles causes arthritis and permanent joint damage.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was supplied to assess whether shaving affects hair thickness or growth rate, so the claim cannot be verified from the provided sources.",
+        "evidence_count": 0,
+        "latency": 0.00038623809814453125,
+        "id": "TEST-04",
+        "claim": "Shaving hair makes it grow back significantly thicker and faster.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Photosynthesis in plants uses light energy to combine carbon dioxide and water, producing glucose (C6H12O6) and oxygen (O2), as documented in standard plant biology references such as Campbell Biology and peer\u2011reviewed literature.",
+        "evidence_count": 0,
+        "latency": 0.0009086132049560547,
+        "id": "TEST-05",
+        "claim": "Photosynthesis converts carbon dioxide and water into glucose and oxygen in plants.",
+        "expected": "True",
+        "domain": "Botany / Biochemistry",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Historical records such as the Encyclopedia Britannica and the U.S. National Archives confirm that RMS Titanic struck an iceberg on the night of 14\u202fApril 1912 and sank in the North Atlantic Ocean in the early hours of 15\u202fApril 1912.",
+        "evidence_count": 0,
+        "latency": 0.0003638267517089844,
+        "id": "TEST-06",
+        "claim": "The Titanic sank in the North Atlantic Ocean after striking an iceberg in April 1912.",
+        "expected": "True",
+        "domain": "Modern History",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Scientific and meteorological sources (e.g., National Weather Service, NOAA) state that lightning frequently strikes the same point repeatedly, especially tall conductive structures like the Empire State Building or the Eiffel Tower, disproving the claim that it never does so.",
+        "evidence_count": 0,
+        "latency": 0.0003757476806640625,
+        "id": "TEST-07",
+        "claim": "Lightning never strikes the same location more than once in human history.",
+        "expected": "False",
+        "domain": "Atmospheric Physics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "A penny\u2019s terminal velocity is only about 30\u202fm/s (\u224870\u202fmph), giving it roughly 0.5\u202fJ of kinetic energy\u2014far too little to fracture concrete or cause fatal injury; physics textbooks and reputable physics\u2011education sites confirm that objects as light as a penny cannot kill a pedestrian even when dropped from the Empire State Building\u2019s height.",
+        "evidence_count": 0,
+        "latency": 0.0012526512145996094,
+        "id": "TEST-08",
+        "claim": "Dropping a penny from the top of the Empire State Building will crack a sidewalk and kill a pedestrian.",
+        "expected": "False",
+        "domain": "Physics Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The claim concerns a future event involving reincarnation, a metaphysical concept lacking empirical evidence; no authoritative sources confirm or refute it, making it unverifiable.",
+        "evidence_count": 0,
+        "latency": 0.0005216598510742188,
+        "id": "TEST-09",
+        "claim": "Alexander the Great will be reincarnated as a world leader in the year 2085.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.92,
+        "reasoning": "The claim declares vanilla to be the \"greatest\" ice\u2011cream flavor, a subjective superlative that cannot be objectively measured; the evidence only shows vanilla\u2019s popularity, not an objective ranking, so the statement cannot be verified as true or false.",
+        "evidence_count": 4,
+        "latency": 0.0008397102355957031,
+        "id": "TEST-10",
+        "claim": "Vanilla is objectively the greatest ice cream flavor ever invented in human civilization.",
+        "expected": "Unverifiable",
+        "domain": "Subjective Opinion",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources (Britannica, Wikipedia, NASA) state that the ozone layer resides in the stratosphere, typically between roughly 10\u202fkm and 35\u201350\u202fkm altitude, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 0.0004413127899169922,
+        "id": "TEST-11",
+        "claim": "The ozone layer is located primarily within the stratosphere of Earth's atmosphere.",
+        "expected": "True",
+        "domain": "Atmospheric Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Multiple authoritative sources state that bats are not blind\u2014Britannica notes they have eyesight often keener than humans, and ScienceDirect reports many species have keen vision. They also use echolocation, but not exclusively, integrating vision and memory. Therefore the claim that they are completely blind and rely solely on echolocation is false.",
+        "evidence_count": 4,
+        "latency": 0.0006666183471679688,
+        "id": "TEST-12",
+        "claim": "Bats are completely blind and rely solely on echolocation to navigate.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources state that pure water boils at 100\u202f\u00b0C when the pressure is 1\u202fatm (standard atmospheric pressure), which matches the claim.",
+        "evidence_count": 4,
+        "latency": 0.0010187625885009766,
+        "id": "TEST-13",
+        "claim": "The boiling point of pure water at standard atmospheric pressure (1 atm) is 100 degrees Celsius.",
+        "expected": "True",
+        "domain": "Thermodynamics",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources (NobelPrize.org and Wikipedia) state that Einstein was awarded the 1921 Nobel Prize in Physics, presented in 1922, specifically for his discovery of the law of the photoelectric effect.",
+        "evidence_count": 4,
+        "latency": 0.0006248950958251953,
+        "id": "TEST-14",
+        "claim": "Albert Einstein received the 1921 Nobel Prize in Physics for his discovery of the law of the photoelectric effect.",
+        "expected": "True",
+        "domain": "History of Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources (FDA/EMA/WHO ingredient lists, Mayo Clinic medical director, fact\u2011check organizations) confirm that vaccines contain no microchips and have no capability to track GPS coordinates, directly refuting the claim.",
+        "evidence_count": 4,
+        "latency": 0.0006287097930908203,
+        "id": "TEST-15",
+        "claim": "Vaccines inject microchips to track personal GPS coordinates of citizens.",
+        "expected": "False",
+        "domain": "Conspiracy Theories",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "All cited sources describe Europa as a promising location to search for possible life, but they report no detection of extraterrestrial organisms or any artificial structures; the idea of an underground alien base is purely speculative and not supported by current scientific evidence.",
+        "evidence_count": 4,
+        "latency": 0.000476837158203125,
+        "id": "TEST-16",
+        "claim": "Extraterrestrial life forms currently inhabit an underground base on Jupiter's moon Europa.",
+        "expected": "Unverifiable",
+        "domain": "Astrobiology Speculation",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited sources state that natural diamonds form deep in the Earth's mantle under high pressure and temperature, long before coal and ancient swamps existed, disproving the claim that they are strictly formed from highly compressed coal in swamps.",
+        "evidence_count": 4,
+        "latency": 0.0005276203155517578,
+        "id": "TEST-17",
+        "claim": "Diamonds are formed strictly from highly compressed coal under ancient swamps.",
+        "expected": "False",
+        "domain": "Geology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources (Wikipedia, Britannica, Geology.com, and an educational site) state that Mount Everest has the greatest elevation above sea level of any point on Earth, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 0.0010297298431396484,
+        "id": "TEST-18",
+        "claim": "Mount Everest is the highest mountain peak above sea level on Earth.",
+        "expected": "True",
+        "domain": "Geography",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Multiple scientific sources debunk the three\u2011second myth, showing goldfish can retain learned tasks, landmarks, and feeding cues for weeks to months, indicating a memory far longer than three seconds.",
+        "evidence_count": 4,
+        "latency": 0.0003266334533691406,
+        "id": "TEST-19",
+        "claim": "Goldfish have a memory span of only three seconds.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "All cited sources describe geological structures and ancient ecosystems beneath Antarctica, with no evidence of any human or Neanderthal presence, let alone a secret colony. Neanderthals went extinct ~40,000 years ago and never inhabited Antarctica, making the claim scientifically implausible.",
+        "evidence_count": 4,
+        "latency": 0.0003826618194580078,
+        "id": "TEST-20",
+        "claim": "A secret colony of Neanderthals will be uncovered beneath Antarctic ice in the year 2040.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": false
+      }
+    ],
+    "ablation_wikipedia_only": [
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Scientific consensus and historical records confirm that the double helix structure of DNA was elucidated by James Watson and Francis Crick in 1953, as documented in their Nature paper and subsequent textbooks.",
+        "evidence_count": 0,
+        "latency": 0.0012645721435546875,
+        "id": "TEST-01",
+        "claim": "DNA has a double helix structure discovered by James Watson and Francis Crick.",
+        "expected": "True",
+        "domain": "Molecular Biology",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess whether the Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "evidence_count": 0,
+        "latency": 0.0003962516784667969,
+        "id": "TEST-02",
+        "claim": "The Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "expected": "True",
+        "domain": "Archaeology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess whether knuckle cracking leads to arthritis or permanent joint damage, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 0.0005061626434326172,
+        "id": "TEST-03",
+        "claim": "Cracking your knuckles causes arthritis and permanent joint damage.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was supplied to assess whether shaving affects hair thickness or growth rate, so the claim cannot be verified from the provided sources.",
+        "evidence_count": 0,
+        "latency": 0.00033593177795410156,
+        "id": "TEST-04",
+        "claim": "Shaving hair makes it grow back significantly thicker and faster.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Photosynthesis in plants uses light energy to combine carbon dioxide and water, producing glucose (C6H12O6) and oxygen (O2), as documented in standard plant biology references such as Campbell Biology and peer\u2011reviewed literature.",
+        "evidence_count": 0,
+        "latency": 0.0005393028259277344,
+        "id": "TEST-05",
+        "claim": "Photosynthesis converts carbon dioxide and water into glucose and oxygen in plants.",
+        "expected": "True",
+        "domain": "Botany / Biochemistry",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Historical records such as the Encyclopedia Britannica and the U.S. National Archives confirm that RMS Titanic struck an iceberg on the night of 14\u202fApril 1912 and sank in the North Atlantic Ocean in the early hours of 15\u202fApril 1912.",
+        "evidence_count": 0,
+        "latency": 0.0011544227600097656,
+        "id": "TEST-06",
+        "claim": "The Titanic sank in the North Atlantic Ocean after striking an iceberg in April 1912.",
+        "expected": "True",
+        "domain": "Modern History",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Scientific and meteorological sources (e.g., National Weather Service, NOAA) state that lightning frequently strikes the same point repeatedly, especially tall conductive structures like the Empire State Building or the Eiffel Tower, disproving the claim that it never does so.",
+        "evidence_count": 0,
+        "latency": 0.0003330707550048828,
+        "id": "TEST-07",
+        "claim": "Lightning never strikes the same location more than once in human history.",
+        "expected": "False",
+        "domain": "Atmospheric Physics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "A penny\u2019s terminal velocity is only about 30\u202fm/s (\u224870\u202fmph), giving it roughly 0.5\u202fJ of kinetic energy\u2014far too little to fracture concrete or cause fatal injury; physics textbooks and reputable physics\u2011education sites confirm that objects as light as a penny cannot kill a pedestrian even when dropped from the Empire State Building\u2019s height.",
+        "evidence_count": 0,
+        "latency": 0.0005261898040771484,
+        "id": "TEST-08",
+        "claim": "Dropping a penny from the top of the Empire State Building will crack a sidewalk and kill a pedestrian.",
+        "expected": "False",
+        "domain": "Physics Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The claim concerns a future event involving reincarnation, a metaphysical concept lacking empirical evidence; no authoritative sources confirm or refute it, making it unverifiable.",
+        "evidence_count": 0,
+        "latency": 0.000370025634765625,
+        "id": "TEST-09",
+        "claim": "Alexander the Great will be reincarnated as a world leader in the year 2085.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.96,
+        "reasoning": "The claim asserts a subjective value judgment ('objectively the greatest') about ice cream flavors, which cannot be measured or verified by factual evidence; the provided source only describes vanilla ice cream, not any objective ranking.",
+        "evidence_count": 1,
+        "latency": 2.320626974105835,
+        "id": "TEST-10",
+        "claim": "Vanilla is objectively the greatest ice cream flavor ever invented in human civilization.",
+        "expected": "Unverifiable",
+        "domain": "Subjective Opinion",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited authoritative sources state that the ozone layer is a region of high ozone concentration located in the stratosphere, typically between about 10 and 50\u202fkm above Earth\u2019s surface, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 2.301175355911255,
+        "id": "TEST-11",
+        "claim": "The ozone layer is located primarily within the stratosphere of Earth's atmosphere.",
+        "expected": "True",
+        "domain": "Atmospheric Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Scientific studies show that most bat species have functional eyes and can see, though many rely heavily on echolocation for navigation; they are not completely blind.",
+        "evidence_count": 0,
+        "latency": 0.0005204677581787109,
+        "id": "TEST-12",
+        "claim": "Bats are completely blind and rely solely on echolocation to navigate.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that pure water boils at 100\u202f\u00b0C (rounded from the precise value of 99.97\u202f\u00b0C) when the surrounding pressure is one atmosphere (\u22481\u202fatm). This matches the claim exactly, with only a minor rounding difference.",
+        "evidence_count": 4,
+        "latency": 4.899542331695557,
+        "id": "TEST-13",
+        "claim": "The boiling point of pure water at standard atmospheric pressure (1 atm) is 100 degrees Celsius.",
+        "expected": "True",
+        "domain": "Thermodynamics",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources (Wikipedia entries on Albert Einstein and the list of his awards) state that Einstein was awarded the 1921 Nobel Prize in Physics \"for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect,\" confirming the claim.",
+        "evidence_count": 4,
+        "latency": 7.050359487533569,
+        "id": "TEST-14",
+        "claim": "Albert Einstein received the 1921 Nobel Prize in Physics for his discovery of the law of the photoelectric effect.",
+        "expected": "True",
+        "domain": "History of Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess the claim that vaccines contain microchips for GPS tracking.",
+        "evidence_count": 0,
+        "latency": 0.0003840923309326172,
+        "id": "TEST-15",
+        "claim": "Vaccines inject microchips to track personal GPS coordinates of citizens.",
+        "expected": "False",
+        "domain": "Conspiracy Theories",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that no extraterrestrial life has yet been detected and that, while Europa may have conditions suitable for life, there is no evidence of any life forms or underground bases existing there.",
+        "evidence_count": 4,
+        "latency": 5.479058027267456,
+        "id": "TEST-16",
+        "claim": "Extraterrestrial life forms currently inhabit an underground base on Jupiter's moon Europa.",
+        "expected": "Unverifiable",
+        "domain": "Astrobiology Speculation",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided sources discuss hydrogen, cremation, and carbon but do not contain information about how diamonds form, so there is no evidence to confirm or refute the claim that diamonds are strictly formed from compressed coal in ancient swamps.",
+        "evidence_count": 3,
+        "latency": 8.203859329223633,
+        "id": "TEST-17",
+        "claim": "Diamonds are formed strictly from highly compressed coal under ancient swamps.",
+        "expected": "False",
+        "domain": "Geology Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All authoritative Wikipedia sources state that Mount Everest, at 8,848.86\u202fm above sea level, is the highest mountain peak on Earth.",
+        "evidence_count": 4,
+        "latency": 3.9981839656829834,
+        "id": "TEST-18",
+        "claim": "Mount Everest is the highest mountain peak above sea level on Earth.",
+        "expected": "True",
+        "domain": "Geography",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.45,
+        "reasoning": "The provided Wikipedia excerpt describes goldfish taxonomy and habitat but contains no information about their memory capabilities, so the claim cannot be confirmed or refuted from the given evidence.",
+        "evidence_count": 1,
+        "latency": 10.301774263381958,
+        "id": "TEST-19",
+        "claim": "Goldfish have a memory span of only three seconds.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Neanderthals lived in Eurasia and became extinct ~40,000 years ago; no credible scientific evidence indicates they ever inhabited Antarctica, and no reputable sources report a hidden colony. The cited sources discuss sub\u2011glacial features and a cord fragment, not Antarctic Neanderthals, so the claim is contradicted by established paleoanthropological knowledge.",
+        "evidence_count": 2,
+        "latency": 4.7867348194122314,
+        "id": "TEST-20",
+        "claim": "A secret colony of Neanderthals will be uncovered beneath Antarctic ice in the year 2040.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": false
+      }
+    ],
+    "ablation_ddg_only": [
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Scientific consensus and historical records confirm that the double helix structure of DNA was elucidated by James Watson and Francis Crick in 1953, as documented in their Nature paper and subsequent textbooks.",
+        "evidence_count": 0,
+        "latency": 0.0015766620635986328,
+        "id": "TEST-01",
+        "claim": "DNA has a double helix structure discovered by James Watson and Francis Crick.",
+        "expected": "True",
+        "domain": "Molecular Biology",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess whether the Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "evidence_count": 0,
+        "latency": 0.00034737586975097656,
+        "id": "TEST-02",
+        "claim": "The Great Pyramid of Giza was built as a tomb for Pharaoh Khufu.",
+        "expected": "True",
+        "domain": "Archaeology",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess whether knuckle cracking leads to arthritis or permanent joint damage, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 0.0005199909210205078,
+        "id": "TEST-03",
+        "claim": "Cracking your knuckles causes arthritis and permanent joint damage.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was supplied to assess whether shaving affects hair thickness or growth rate, so the claim cannot be verified from the provided sources.",
+        "evidence_count": 0,
+        "latency": 0.0004134178161621094,
+        "id": "TEST-04",
+        "claim": "Shaving hair makes it grow back significantly thicker and faster.",
+        "expected": "False",
+        "domain": "Health Myths",
+        "is_correct": false
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Photosynthesis in plants uses light energy to combine carbon dioxide and water, producing glucose (C6H12O6) and oxygen (O2), as documented in standard plant biology references such as Campbell Biology and peer\u2011reviewed literature.",
+        "evidence_count": 0,
+        "latency": 0.0005295276641845703,
+        "id": "TEST-05",
+        "claim": "Photosynthesis converts carbon dioxide and water into glucose and oxygen in plants.",
+        "expected": "True",
+        "domain": "Botany / Biochemistry",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Historical records such as the Encyclopedia Britannica and the U.S. National Archives confirm that RMS Titanic struck an iceberg on the night of 14\u202fApril 1912 and sank in the North Atlantic Ocean in the early hours of 15\u202fApril 1912.",
+        "evidence_count": 0,
+        "latency": 0.0004954338073730469,
+        "id": "TEST-06",
+        "claim": "The Titanic sank in the North Atlantic Ocean after striking an iceberg in April 1912.",
+        "expected": "True",
+        "domain": "Modern History",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Scientific and meteorological sources (e.g., National Weather Service, NOAA) state that lightning frequently strikes the same point repeatedly, especially tall conductive structures like the Empire State Building or the Eiffel Tower, disproving the claim that it never does so.",
+        "evidence_count": 0,
+        "latency": 0.00031113624572753906,
+        "id": "TEST-07",
+        "claim": "Lightning never strikes the same location more than once in human history.",
+        "expected": "False",
+        "domain": "Atmospheric Physics",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "A penny\u2019s terminal velocity is only about 30\u202fm/s (\u224870\u202fmph), giving it roughly 0.5\u202fJ of kinetic energy\u2014far too little to fracture concrete or cause fatal injury; physics textbooks and reputable physics\u2011education sites confirm that objects as light as a penny cannot kill a pedestrian even when dropped from the Empire State Building\u2019s height.",
+        "evidence_count": 0,
+        "latency": 0.0005259513854980469,
+        "id": "TEST-08",
+        "claim": "Dropping a penny from the top of the Empire State Building will crack a sidewalk and kill a pedestrian.",
+        "expected": "False",
+        "domain": "Physics Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The claim concerns a future event involving reincarnation, a metaphysical concept lacking empirical evidence; no authoritative sources confirm or refute it, making it unverifiable.",
+        "evidence_count": 0,
+        "latency": 0.0005447864532470703,
+        "id": "TEST-09",
+        "claim": "Alexander the Great will be reincarnated as a world leader in the year 2085.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": true
+      },
+      {
+        "verdict": "Unverifiable",
+        "confidence": 0.92,
+        "reasoning": "The claim asserts a subjective superlative\u2014'the greatest ice cream flavor ever invented'\u2014which cannot be objectively measured; the provided sources only discuss vanilla's popularity, not an objective ranking, making the statement unverifiable as a factual claim.",
+        "evidence_count": 4,
+        "latency": 3.0871024131774902,
+        "id": "TEST-10",
+        "claim": "Vanilla is objectively the greatest ice cream flavor ever invented in human civilization.",
+        "expected": "Unverifiable",
+        "domain": "Subjective Opinion",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Britannica, US EPA, NASA) state that the bulk of atmospheric ozone resides between roughly 10\u202fkm and 40\u201350\u202fkm altitude, which corresponds to the stratosphere. Thus the claim that the ozone layer is located primarily within the stratosphere is confirmed.",
+        "evidence_count": 4,
+        "latency": 7.918660879135132,
+        "id": "TEST-11",
+        "claim": "The ozone layer is located primarily within the stratosphere of Earth's atmosphere.",
+        "expected": "True",
+        "domain": "Atmospheric Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Britannica, Ask A Biologist, ScienceDirect) state that bats are not blind and possess functional vision, often better than human eyesight, and they combine vision with echolocation rather than relying solely on echolocation.",
+        "evidence_count": 4,
+        "latency": 0.0008378028869628906,
+        "id": "TEST-12",
+        "claim": "Bats are completely blind and rely solely on echolocation to navigate.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources state that pure water boils at 100\u202f\u00b0C when the pressure is 1\u202fatm (760\u202fmm\u202fHg or ~101.3\u202fkPa), confirming the claim.",
+        "evidence_count": 4,
+        "latency": 10.399986743927002,
+        "id": "TEST-13",
+        "claim": "The boiling point of pure water at standard atmospheric pressure (1 atm) is 100 degrees Celsius.",
+        "expected": "True",
+        "domain": "Thermodynamics",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited authoritative sources (NobelPrize.org and other reputable references) state that Einstein was awarded the 1921 Nobel Prize in Physics specifically for his discovery/explanation of the law of the photoelectric effect.",
+        "evidence_count": 4,
+        "latency": 5.69837760925293,
+        "id": "TEST-14",
+        "claim": "Albert Einstein received the 1921 Nobel Prize in Physics for his discovery of the law of the photoelectric effect.",
+        "expected": "True",
+        "domain": "History of Science",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited fact\u2011check sources (FDA/EMA ingredient lists, Mayo Clinic, and multiple independent fact\u2011checking articles) state that vaccines contain no microchips and have no capability to track GPS coordinates, confirming the claim is false.",
+        "evidence_count": 4,
+        "latency": 0.0015532970428466797,
+        "id": "TEST-15",
+        "claim": "Vaccines inject microchips to track personal GPS coordinates of citizens.",
+        "expected": "False",
+        "domain": "Conspiracy Theories",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "All cited sources discuss Europa as a potential habitat for microbial or primitive extraterrestrial life, but none provide evidence that life currently exists, let alone an underground base. The claim exceeds the speculative scientific consensus and is unsupported by the available research.",
+        "evidence_count": 4,
+        "latency": 3.2321219444274902,
+        "id": "TEST-16",
+        "claim": "Extraterrestrial life forms currently inhabit an underground base on Jupiter's moon Europa.",
+        "expected": "Unverifiable",
+        "domain": "Astrobiology Speculation",
+        "is_correct": false
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited sources debunk the claim, stating that natural diamonds form deep in the mantle under extreme heat and pressure, long before coal or ancient swamps existed, and are not produced by compressing coal.",
+        "evidence_count": 4,
+        "latency": 8.559372425079346,
+        "id": "TEST-17",
+        "claim": "Diamonds are formed strictly from highly compressed coal under ancient swamps.",
+        "expected": "False",
+        "domain": "Geology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited authoritative sources list Mount Everest\u2019s elevation as about 8,848.86\u20138,849\u202fm (\u224829,032\u202fft), confirming it is the highest point above sea level on Earth.",
+        "evidence_count": 4,
+        "latency": 2.1541805267333984,
+        "id": "TEST-18",
+        "claim": "Mount Everest is the highest mountain peak above sea level on Earth.",
+        "expected": "True",
+        "domain": "Geography",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited sources explicitly refute the three\u2011second memory myth, stating that goldfish can retain information for weeks to months and can be trained to recognize cues, indicating a memory far longer than three seconds.",
+        "evidence_count": 4,
+        "latency": 0.0008664131164550781,
+        "id": "TEST-19",
+        "claim": "Goldfish have a memory span of only three seconds.",
+        "expected": "False",
+        "domain": "Zoology Myths",
+        "is_correct": true
+      },
+      {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "The provided sources discuss geological structures and ancient ecosystems beneath Antarctic ice, but none mention Neanderthals or any human colony, nor do they predict a 2040 discovery. There is no scientific evidence supporting the existence of a secret Neanderthal colony in Antarctica, making the claim false.",
+        "evidence_count": 4,
+        "latency": 9.09905219078064,
+        "id": "TEST-20",
+        "claim": "A secret colony of Neanderthals will be uncovered beneath Antarctic ice in the year 2040.",
+        "expected": "Unverifiable",
+        "domain": "Speculation / Future",
+        "is_correct": false
+      }
+    ]
+  },
+  "metrics": {
+    "dev": {
+      "factguard_full": {
+        "total": 16,
+        "correct": 11,
+        "accuracy": 0.6875,
+        "accuracy_ci_95": [
+          0.444,
+          0.8584
+        ],
+        "coverage": 0.6875,
+        "selective_accuracy": 1.0,
+        "macro_f1": 0.5421,
+        "confusion_matrix": {
+          "True": {
+            "True": 5,
+            "False": 0,
+            "Unverifiable": 3
+          },
+          "False": {
+            "True": 0,
+            "False": 6,
+            "Unverifiable": 2
+          },
+          "Unverifiable": {
+            "True": 0,
+            "False": 0,
+            "Unverifiable": 0
+          }
+        },
+        "p50_latency": 4.05,
+        "p95_latency": 15.0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "unverifiable_count": 5
+      },
+      "baseline_raw_ddg": {
+        "total": 16,
+        "correct": 11,
+        "accuracy": 0.6875,
+        "accuracy_ci_95": [
+          0.444,
+          0.8584
+        ],
+        "coverage": 0.6875,
+        "selective_accuracy": 1.0,
+        "macro_f1": 0.5421,
+        "confusion_matrix": {
+          "True": {
+            "True": 5,
+            "False": 0,
+            "Unverifiable": 3
+          },
+          "False": {
+            "True": 0,
+            "False": 6,
+            "Unverifiable": 2
+          },
+          "Unverifiable": {
+            "True": 0,
+            "False": 0,
+            "Unverifiable": 0
+          }
+        },
+        "p50_latency": 0.0,
+        "p95_latency": 14.2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "unverifiable_count": 5
+      },
+      "baseline_ungrounded": {
+        "total": 16,
+        "correct": 9,
+        "accuracy": 0.5625,
+        "accuracy_ci_95": [
+          0.3318,
+          0.769
+        ],
+        "coverage": 0.5625,
+        "selective_accuracy": 1.0,
+        "macro_f1": 0.4786,
+        "confusion_matrix": {
+          "True": {
+            "True": 5,
+            "False": 0,
+            "Unverifiable": 3
+          },
+          "False": {
+            "True": 0,
+            "False": 4,
+            "Unverifiable": 4
+          },
+          "Unverifiable": {
+            "True": 0,
+            "False": 0,
+            "Unverifiable": 0
+          }
+        },
+        "p50_latency": 0.0,
+        "p95_latency": 11.02,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "unverifiable_count": 7
+      }
+    },
+    "test": {
+      "factguard_full": {
+        "total": 20,
+        "correct": 16,
+        "accuracy": 0.8,
+        "accuracy_ci_95": [
+          0.584,
+          0.9193
+        ],
+        "coverage": 0.7,
+        "selective_accuracy": 0.9286,
+        "macro_f1": 0.7778,
+        "confusion_matrix": {
+          "True": {
+            "True": 7,
+            "False": 0,
+            "Unverifiable": 1
+          },
+          "False": {
+            "True": 0,
+            "False": 6,
+            "Unverifiable": 2
+          },
+          "Unverifiable": {
+            "True": 0,
+            "False": 1,
+            "Unverifiable": 3
+          }
+        },
+        "p50_latency": 6.28,
+        "p95_latency": 13.5,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "unverifiable_count": 6
+      },
+      "baseline_raw_ddg": {
+        "total": 20,
+        "correct": 15,
+        "accuracy": 0.75,
+        "accuracy_ci_95": [
+          0.5313,
+          0.8881
+        ],
+        "coverage": 0.75,
+        "selective_accuracy": 0.8667,
+        "macro_f1": 0.7093,
+        "confusion_matrix": {
+          "True": {
+            "True": 7,
+            "False": 0,
+            "Unverifiable": 1
+          },
+          "False": {
+            "True": 0,
+            "False": 6,
+            "Unverifiable": 2
+          },
+          "Unverifiable": {
+            "True": 0,
+            "False": 2,
+            "Unverifiable": 2
+          }
+        },
+        "p50_latency": 4.4,
+        "p95_latency": 12.89,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "unverifiable_count": 5
+      },
+      "baseline_ungrounded": {
+        "total": 20,
+        "correct": 13,
+        "accuracy": 0.65,
+        "accuracy_ci_95": [
+          0.4329,
+          0.8188
+        ],
+        "coverage": 0.45,
+        "selective_accuracy": 1.0,
+        "macro_f1": 0.6453,
+        "confusion_matrix": {
+          "True": {
+            "True": 6,
+            "False": 0,
+            "Unverifiable": 2
+          },
+          "False": {
+            "True": 0,
+            "False": 3,
+            "Unverifiable": 5
+          },
+          "Unverifiable": {
+            "True": 0,
+            "False": 0,
+            "Unverifiable": 4
+          }
+        },
+        "p50_latency": 2.69,
+        "p95_latency": 10.66,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "unverifiable_count": 11
+      },
+      "ablation_no_spacy": {
+        "total": 20,
+        "correct": 16,
+        "accuracy": 0.8,
+        "accuracy_ci_95": [
+          0.584,
+          0.9193
+        ],
+        "coverage": 0.7,
+        "selective_accuracy": 0.9286,
+        "macro_f1": 0.7778,
+        "confusion_matrix": {
+          "True": {
+            "True": 7,
+            "False": 0,
+            "Unverifiable": 1
+          },
+          "False": {
+            "True": 0,
+            "False": 6,
+            "Unverifiable": 2
+          },
+          "Unverifiable": {
+            "True": 0,
+            "False": 1,
+            "Unverifiable": 3
+          }
+        },
+        "p50_latency": 0.0,
+        "p95_latency": 0.0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "unverifiable_count": 6
+      },
+      "ablation_no_domain_trust": {
+        "total": 20,
+        "correct": 15,
+        "accuracy": 0.75,
+        "accuracy_ci_95": [
+          0.5313,
+          0.8881
+        ],
+        "coverage": 0.75,
+        "selective_accuracy": 0.8667,
+        "macro_f1": 0.7093,
+        "confusion_matrix": {
+          "True": {
+            "True": 7,
+            "False": 0,
+            "Unverifiable": 1
+          },
+          "False": {
+            "True": 0,
+            "False": 6,
+            "Unverifiable": 2
+          },
+          "Unverifiable": {
+            "True": 0,
+            "False": 2,
+            "Unverifiable": 2
+          }
+        },
+        "p50_latency": 4.54,
+        "p95_latency": 12.5,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "unverifiable_count": 5
+      },
+      "ablation_no_rerank": {
+        "total": 20,
+        "correct": 15,
+        "accuracy": 0.75,
+        "accuracy_ci_95": [
+          0.5313,
+          0.8881
+        ],
+        "coverage": 0.75,
+        "selective_accuracy": 0.8667,
+        "macro_f1": 0.7093,
+        "confusion_matrix": {
+          "True": {
+            "True": 7,
+            "False": 0,
+            "Unverifiable": 1
+          },
+          "False": {
+            "True": 0,
+            "False": 6,
+            "Unverifiable": 2
+          },
+          "Unverifiable": {
+            "True": 0,
+            "False": 2,
+            "Unverifiable": 2
+          }
+        },
+        "p50_latency": 0.0,
+        "p95_latency": 0.0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "unverifiable_count": 5
+      },
+      "ablation_wikipedia_only": {
+        "total": 20,
+        "correct": 12,
+        "accuracy": 0.6,
+        "accuracy_ci_95": [
+          0.3866,
+          0.7812
+        ],
+        "coverage": 0.6,
+        "selective_accuracy": 0.8333,
+        "macro_f1": 0.5761,
+        "confusion_matrix": {
+          "True": {
+            "True": 7,
+            "False": 0,
+            "Unverifiable": 1
+          },
+          "False": {
+            "True": 0,
+            "False": 3,
+            "Unverifiable": 5
+          },
+          "Unverifiable": {
+            "True": 0,
+            "False": 2,
+            "Unverifiable": 2
+          }
+        },
+        "p50_latency": 0.0,
+        "p95_latency": 10.3,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "unverifiable_count": 8
+      },
+      "ablation_ddg_only": {
+        "total": 20,
+        "correct": 15,
+        "accuracy": 0.75,
+        "accuracy_ci_95": [
+          0.5313,
+          0.8881
+        ],
+        "coverage": 0.75,
+        "selective_accuracy": 0.8667,
+        "macro_f1": 0.7093,
+        "confusion_matrix": {
+          "True": {
+            "True": 7,
+            "False": 0,
+            "Unverifiable": 1
+          },
+          "False": {
+            "True": 0,
+            "False": 6,
+            "Unverifiable": 2
+          },
+          "Unverifiable": {
+            "True": 0,
+            "False": 2,
+            "Unverifiable": 2
+          }
+        },
+        "p50_latency": 0.0,
+        "p95_latency": 10.4,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "unverifiable_count": 5
+      }
+    }
+  },
+  "statistical_tests": {
+    "fg_vs_raw_ddg": {
+      "contingency_matrix": {
+        "both_correct": 15,
+        "model_a_only": 1,
+        "model_b_only": 0,
+        "both_wrong": 4
+      },
+      "chi2": 0.0,
+      "p_value": 1.0,
+      "statistically_significant_05": false
+    },
+    "fg_vs_ungrounded": {
+      "contingency_matrix": {
+        "both_correct": 12,
+        "model_a_only": 4,
+        "model_b_only": 1,
+        "both_wrong": 3
+      },
+      "chi2": 0.8,
+      "p_value": 0.37109,
+      "statistically_significant_05": false
+    }
+  },
+  "calibration": {
+    "factguard_full": {
+      "ece": 0.075,
+      "bins": [
+        {
+          "bin": "0.0 - 0.5",
+          "count": 3,
+          "avg_confidence": 0.133,
+          "empirical_accuracy": 0.0,
+          "gap": 0.133
+        },
+        {
+          "bin": "0.5 - 0.7",
+          "count": 0,
+          "avg_confidence": 0.0,
+          "empirical_accuracy": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin": "0.7 - 0.85",
+          "count": 0,
+          "avg_confidence": 0.0,
+          "empirical_accuracy": 0.0,
+          "gap": 0.0
+        },
+        {
+          "bin": "0.85 - 0.95",
+          "count": 2,
+          "avg_confidence": 0.85,
+          "empirical_accuracy": 1.0,
+          "gap": 0.15
+        },
+        {
+          "bin": "0.95 - 1.00",
+          "count": 15,
+          "avg_confidence": 0.987,
+          "empirical_accuracy": 0.933,
+          "gap": 0.053
+        }
+      ]
+    }
+  },
+  "timestamp": "2026-11-14 20:15:38 UTC"
+}
