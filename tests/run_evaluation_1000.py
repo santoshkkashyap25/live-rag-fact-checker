@@ -20,6 +20,7 @@ import json
 import time
 import math
 import argparse
+import re
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 
@@ -230,9 +231,17 @@ def evaluate_single(
                 res = llm_service.get_verdict(raw_text, evidence=[], provider="groq")
                 v, c, r = res.verdict, res.confidence, res.reasoning
                 if "Rate limit" in r or "rate_limit_exceeded" in r or "429" in r:
-                    if "per day" in r.lower() or "tpd" in r.lower() or "rpd" in r.lower():
-                        raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {r}")
                     consecutive_rate_limits += 1
+                    if "per day" in r.lower() or "tpd" in r.lower() or "rpd" in r.lower():
+                        if consecutive_rate_limits >= 3:
+                            raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {r}")
+                        wait_sec = 45.0
+                        m_m = re.search(r'try again in (?:(\d+)m)?(\d+(?:\.\d+)?)s', r)
+                        if m_m:
+                            wait_sec = min(float(m_m.group(1) or 0) * 60 + float(m_m.group(2) or 0) + 5, 120.0)
+                        print(f"    ⏳ Rolling quota window full. Waiting {wait_sec:.0f}s for tokens to free up...")
+                        time.sleep(wait_sec)
+                        continue
                     if consecutive_rate_limits >= 4:
                         raise DailyQuotaExhaustedError("Persistent rate limit encountered across multiple retries.")
                     backoff = 6.0 * (attempt + 1)
@@ -246,10 +255,18 @@ def evaluate_single(
                 raise
             except Exception as e:
                 err_msg = str(e)
+                consecutive_rate_limits += 1
                 if "per day" in err_msg.lower() or "tpd" in err_msg.lower() or "rpd" in err_msg.lower():
-                    raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {err_msg}")
+                    if consecutive_rate_limits >= 3:
+                        raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {err_msg}")
+                    wait_sec = 45.0
+                    m_m = re.search(r'try again in (?:(\d+)m)?(\d+(?:\.\d+)?)s', err_msg)
+                    if m_m:
+                        wait_sec = min(float(m_m.group(1) or 0) * 60 + float(m_m.group(2) or 0) + 5, 120.0)
+                    print(f"    ⏳ Rolling quota window full. Waiting {wait_sec:.0f}s for tokens to free up...")
+                    time.sleep(wait_sec)
+                    continue
                 if "429" in err_msg or "rate" in err_msg.lower():
-                    consecutive_rate_limits += 1
                     if consecutive_rate_limits >= 4:
                         raise DailyQuotaExhaustedError("Persistent rate limit encountered across multiple retries.")
                     backoff = 6.0 * (attempt + 1)
@@ -299,9 +316,17 @@ def evaluate_single(
             c = verdict_obj.confidence
             r = verdict_obj.reasoning
             if "Rate limit" in r or "rate_limit_exceeded" in r or "429" in r:
-                if "per day" in r.lower() or "tpd" in r.lower() or "rpd" in r.lower():
-                    raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {r}")
                 consecutive_rate_limits += 1
+                if "per day" in r.lower() or "tpd" in r.lower() or "rpd" in r.lower():
+                    if consecutive_rate_limits >= 3:
+                        raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {r}")
+                    wait_sec = 45.0
+                    m_m = re.search(r'try again in (?:(\d+)m)?(\d+(?:\.\d+)?)s', r)
+                    if m_m:
+                        wait_sec = min(float(m_m.group(1) or 0) * 60 + float(m_m.group(2) or 0) + 5, 120.0)
+                    print(f"    ⏳ Rolling quota window full. Waiting {wait_sec:.0f}s for tokens to free up...")
+                    time.sleep(wait_sec)
+                    continue
                 if consecutive_rate_limits >= 4:
                     raise DailyQuotaExhaustedError("Persistent rate limit encountered across multiple retries.")
                 backoff = 6.0 * (attempt + 1)
@@ -315,10 +340,18 @@ def evaluate_single(
             raise
         except Exception as e:
             err_msg = str(e)
+            consecutive_rate_limits += 1
             if "per day" in err_msg.lower() or "tpd" in err_msg.lower() or "rpd" in err_msg.lower():
-                raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {err_msg}")
+                if consecutive_rate_limits >= 3:
+                    raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {err_msg}")
+                wait_sec = 45.0
+                m_m = re.search(r'try again in (?:(\d+)m)?(\d+(?:\.\d+)?)s', err_msg)
+                if m_m:
+                    wait_sec = min(float(m_m.group(1) or 0) * 60 + float(m_m.group(2) or 0) + 5, 120.0)
+                print(f"    ⏳ Rolling quota window full. Waiting {wait_sec:.0f}s for tokens to free up...")
+                time.sleep(wait_sec)
+                continue
             if "429" in err_msg or "rate" in err_msg.lower():
-                consecutive_rate_limits += 1
                 if consecutive_rate_limits >= 4:
                     raise DailyQuotaExhaustedError("Persistent rate limit encountered across multiple retries.")
                 backoff = 6.0 * (attempt + 1)

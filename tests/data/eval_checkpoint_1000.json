@@ -6590,5 +6590,101 @@
         "is_correct": true
       }
     }
+  },
+  "T1000-0207": {
+    "id": "T1000-0207",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Swallowed chewing gum remains indigestible and lodged inside the human stomach for seven years.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim that swallowed chewing gum remains in the stomach for seven years is a common myth. Medical evidence confirms that while the gum base is indigestible, it passes through the digestive system in the same manner as other indigestible foods, typically within a few days.",
+        "evidence_count": 0,
+        "latency": 12.325138330459595,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim that swallowed chewing gum remains in the stomach for seven years is a common myth. Medical evidence confirms that while the gum base is indigestible, it passes through the digestive system in the same manner as other indigestible foods, typically within a few days.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim that swallowed chewing gum remains in the stomach for seven years is a common myth. Medical evidence confirms that while the gum base is indigestible, it passes through the digestive system in the same manner as other indigestible foods, typically within a few days.",
+        "evidence_count": 0,
+        "latency": 0.0005095005035400391,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0208": {
+    "id": "T1000-0208",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Shaving body hair causes the hair follicles to grow back significantly thicker, darker, and faster.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided sources discuss hair transplantation, body hair biology, hair removal, and hair loss but do not contain information about the effects of shaving on hair thickness, color, or growth rate, so the claim cannot be confirmed or refuted based on the given evidence.",
+        "evidence_count": 4,
+        "latency": 48.20185041427612,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Shaving cuts hair at the skin surface and does not alter the follicle\u2019s growth cycle; Wikipedia\u2019s entries on body hair and hair removal state that hair regrowth after shaving is the same thickness, color, and rate as before, contradicting the claim.",
+        "evidence_count": 4,
+        "latency": 57.405308961868286,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Scientific consensus and dermatological studies confirm that shaving does not alter the thickness, color, or growth rate of hair, as these characteristics are determined by genetics and hormones rather than the method of hair removal. The perception that hair grows back thicker is a common optical illusion caused by the blunt tip of the newly emerging hair shaft.",
+        "evidence_count": 0,
+        "latency": 213.40118169784546,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0209": {
+    "id": "T1000-0209",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Drinking eight glasses of pure water daily is a scientifically proven physiological requirement for all human beings.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that all humans must drink exactly eight glasses of pure water daily is not supported by scientific evidence; water needs vary with age, sex, activity, climate, and health status, and no authoritative source confirms a universal eight\u2011glass requirement. The provided evidence (human nutrition, 2012 in science, homeopathy) does not address water intake and therefore does not substantiate the claim.",
+        "evidence_count": 3,
+        "latency": 387.34919691085815,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Authoritative sources on human nutrition do not state that eight glasses of water per day is a physiological requirement for all people; water needs vary with age, activity, climate, and diet, and guidelines are expressed as approximate ranges, not a universal mandate. The provided evidence contains no support for the claim, indicating it is not scientifically proven.",
+        "evidence_count": 3,
+        "latency": 226.21102809906006,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that eight glasses of water is a universal physiological requirement is a common myth; authoritative health organizations like the U.S. National Academies of Sciences, Engineering, and Medicine state that water needs vary significantly by individual, environment, and activity level, and that water can be obtained from food and other beverages.",
+        "evidence_count": 0,
+        "latency": 23.62929058074951,
+        "is_correct": true
+      }
+    }
   }
 }

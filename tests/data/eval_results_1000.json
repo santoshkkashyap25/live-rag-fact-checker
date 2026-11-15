@@ -1,25 +1,25 @@
 {
   "metadata": {
-    "total_claims": 206,
-    "timestamp": "2026-11-15 23:10:25",
+    "total_claims": 209,
+    "timestamp": "2026-11-15 23:44:55",
     "groq_model": "qwen/qwen3.8-27b",
     "temperature": 0.2
   },
   "summary": {
     "factguard_full": {
       "name": "FactGuard AI (BM25 + Authority + Dynamic Prompts)",
-      "n": 206,
-      "accuracy": 0.8398,
+      "n": 209,
+      "accuracy": 0.8373,
       "wilson_ci_95": [
-        0.7836,
-        0.8836
+        0.7813,
+        0.8812
       ],
-      "coverage": 0.7864,
-      "selective_accuracy": 0.9136,
+      "coverage": 0.7847,
+      "selective_accuracy": 0.9146,
       "false_positives": 0,
       "false_negatives": 1,
       "p50_latency": 12.16,
-      "ece": 0.0629,
+      "ece": 0.06,
       "calibration_bins": [
         {
           "bin": "0.00 - 0.50",
@@ -30,10 +30,10 @@
         },
         {
           "bin": "0.50 - 0.70",
-          "count": 14,
+          "count": 15,
           "avg_confidence": 0.609,
-          "empirical_accuracy": 0.643,
-          "gap": 0.034
+          "empirical_accuracy": 0.6,
+          "gap": 0.009
         },
         {
           "bin": "0.70 - 0.85",
@@ -51,27 +51,27 @@
         },
         {
           "bin": "0.95 - 1.00",
-          "count": 148,
+          "count": 150,
           "avg_confidence": 0.977,
-          "empirical_accuracy": 0.932,
-          "gap": 0.045
+          "empirical_accuracy": 0.933,
+          "gap": 0.044
         }
       ]
     },
     "baseline_raw_search": {
       "name": "Baseline: Raw Web Search + LLM (No BM25/Trust)",
-      "n": 206,
-      "accuracy": 0.7816,
+      "n": 209,
+      "accuracy": 0.7847,
       "wilson_ci_95": [
-        0.7203,
-        0.8325
+        0.7241,
+        0.835
       ],
-      "coverage": 0.733,
-      "selective_accuracy": 0.894,
+      "coverage": 0.7368,
+      "selective_accuracy": 0.8961,
       "false_positives": 0,
       "false_negatives": 4,
       "p50_latency": 12.06,
-      "ece": 0.0741,
+      "ece": 0.0725,
       "calibration_bins": [
         {
           "bin": "0.00 - 0.50",
@@ -103,27 +103,27 @@
         },
         {
           "bin": "0.95 - 1.00",
-          "count": 142,
+          "count": 145,
           "avg_confidence": 0.976,
-          "empirical_accuracy": 0.901,
-          "gap": 0.074
+          "empirical_accuracy": 0.903,
+          "gap": 0.072
         }
       ]
     },
     "baseline_ungrounded": {
       "name": "Baseline: Ungrounded Zero-Shot LLM (Parametric)",
-      "n": 206,
-      "accuracy": 0.5388,
+      "n": 209,
+      "accuracy": 0.5455,
       "wilson_ci_95": [
-        0.4707,
-        0.6056
+        0.4777,
+        0.6115
       ],
-      "coverage": 0.3786,
-      "selective_accuracy": 0.9615,
+      "coverage": 0.3876,
+      "selective_accuracy": 0.963,
       "false_positives": 0,
       "false_negatives": 1,
       "p50_latency": 12.26,
-      "ece": 0.1611,
+      "ece": 0.1584,
       "calibration_bins": [
         {
           "bin": "0.00 - 0.50",
@@ -155,10 +155,10 @@
         },
         {
           "bin": "0.95 - 1.00",
-          "count": 83,
-          "avg_confidence": 0.983,
-          "empirical_accuracy": 0.976,
-          "gap": 0.007
+          "count": 86,
+          "avg_confidence": 0.982,
+          "empirical_accuracy": 0.977,
+          "gap": 0.006
         }
       ]
     }
@@ -166,28 +166,28 @@
   "mcnemar_paired_tests": {
     "factguard_vs_ungrounded": {
       "contingency_matrix": {
-        "both_correct": 93,
+        "both_correct": 95,
         "model_a_only": 80,
-        "model_b_only": 18,
+        "model_b_only": 19,
         "both_wrong": 15
       },
-      "discordant_pairs": 98,
-      "chi2": 37.9694,
+      "discordant_pairs": 99,
+      "chi2": 36.3636,
       "p_value": 0.0,
       "statistically_significant_05": true,
       "statistically_significant_01": true
     },
     "factguard_vs_raw_search": {
       "contingency_matrix": {
-        "both_correct": 153,
+        "both_correct": 155,
         "model_a_only": 20,
-        "model_b_only": 8,
+        "model_b_only": 9,
         "both_wrong": 25
       },
-      "discordant_pairs": 28,
-      "chi2": 4.3214,
-      "p_value": 0.037635,
-      "statistically_significant_05": true,
+      "discordant_pairs": 29,
+      "chi2": 3.4483,
+      "p_value": 0.063318,
+      "statistically_significant_05": false,
       "statistically_significant_01": false
     }
   }
