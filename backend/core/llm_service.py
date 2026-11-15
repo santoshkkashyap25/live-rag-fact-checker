@@ -126,20 +126,35 @@ EVIDENCE:
             
         clean_text = text.strip()
 
+        def _to_dict(data: Any) -> Optional[Dict[str, Any]]:
+            if isinstance(data, dict):
+                return data
+            if isinstance(data, list):
+                for item in data:
+                    if isinstance(item, dict) and "verdict" in item:
+                        return item
+                if data and isinstance(data[0], dict):
+                    return data[0]
+            return None
+
         # 1. Direct JSON parse
         try:
-            return json.loads(clean_text)
+            d = _to_dict(json.loads(clean_text))
+            if d is not None:
+                return d
         except Exception:
             pass
 
         # 2. Markdown fenced block extraction
-        fence_match = re.search(r"```(?:json)?\s*(\{[\s\S]*?\})\s*```", clean_text)
+        fence_match = re.search(r"```(?:json)?\s*(\{[\s\S]*?\}|\[[\s\S]*?\])\s*```", clean_text)
         if fence_match:
             candidate = fence_match.group(1).strip()
             # Clean trailing commas (e.g. {"a": 1,})
             cleaned_candidate = re.sub(r',\s*([\]}])', r'\1', candidate)
             try:
-                return json.loads(cleaned_candidate)
+                d = _to_dict(json.loads(cleaned_candidate))
+                if d is not None:
+                    return d
             except Exception:
                 pass
 
@@ -169,7 +184,9 @@ EVIDENCE:
                             candidate = clean_text[start_idx:i+1].strip()
                             cleaned_candidate = re.sub(r',\s*([\]}])', r'\1', candidate)
                             try:
-                                return json.loads(cleaned_candidate)
+                                d = _to_dict(json.loads(cleaned_candidate))
+                                if d is not None:
+                                    return d
                             except Exception:
                                 break
 
@@ -195,7 +212,18 @@ EVIDENCE:
             }
 
         # Last resort fallback parse
-        return json.loads(clean_text)
+        try:
+            d = _to_dict(json.loads(clean_text))
+            if d is not None:
+                return d
+        except Exception:
+            pass
+
+        return {
+            "verdict": "Unverifiable",
+            "confidence": 0.0,
+            "reasoning": f"Could not parse valid verdict JSON: {clean_text[:120]}"
+        }
 
     def test_connection(
         self, 
@@ -341,44 +369,66 @@ EVIDENCE:
         try:
             content = None
             
-            # --- Branch 1: Groq (via native client) ---
+            # --- Branch 1: Groq (via native client with multi-key pooling & rotation) ---
             if effective_provider == "groq":
-                target_key = custom_key or os.environ.get("GROQ_API_KEY", "").strip()
-                if not target_key:
+                # Gather all available Groq API keys
+                key_pool = []
+                if custom_key:
+                    key_pool.append(custom_key.strip())
+                for env_var in ["GROQ_API_KEYS", "GROQ_API_KEY", "GROQ_API_KEY_2", "GROQ_API_KEY_3"]:
+                    val = os.environ.get(env_var, "")
+                    if val:
+                        parts = [k.strip() for k in re.split(r"[,;\s]+", val) if k.strip().startswith("gsk_")]
+                        key_pool.extend(parts)
+                key_pool = list(dict.fromkeys(key_pool))
+
+                if not key_pool:
                     raise ValueError("Groq API key not provided or configured in server environment.")
-                
-                client = Groq(api_key=target_key)
-                
+
                 # Candidate fallback models on Groq (only accessible models)
                 candidates = list(dict.fromkeys([
                     effective_model,
                     GROQ_MODEL,
-                    "openai/gpt-oss-120b",
-                    "openai/gpt-oss-20b",
                     "qwen/qwen3.8-27b",
-                    "allam-2-7b"
+                    "openai/gpt-oss-120b",
+                    "openai/gpt-oss-20b"
                 ]))
-                
+
+                # Round-robin key pool ordering to distribute load 50/50 across keys
+                self._key_rotation_idx = getattr(self, "_key_rotation_idx", 0)
+                n_k = len(key_pool)
+                start_k = self._key_rotation_idx % n_k
+                self._key_rotation_idx = (self._key_rotation_idx + 1) % n_k
+                ordered_keys = key_pool[start_k:] + key_pool[:start_k]
+
                 last_err = None
+                content = None
+                # Iterate model candidates first, then try available keys in pool
                 for cand in candidates:
-                    try:
-                        logger.info(f"Querying Groq with model: {cand}...")
-                        res = client.chat.completions.create(
-                            model=cand,
-                            messages=messages,
-                            max_tokens=1536,
-                            temperature=0.2,
-                            response_format={"type": "json_object"}
-                        )
-                        content = res.choices[0].message.content
-                        effective_model = cand
+                    for target_key in ordered_keys:
+                        client = Groq(api_key=target_key, max_retries=0)
+                        key_tag = f"...{target_key[-6:]}"
+                        try:
+                            logger.info(f"Querying Groq [{cand} | Key: {key_tag}]...")
+                            res = client.chat.completions.create(
+                                model=cand,
+                                messages=messages,
+                                max_tokens=1536,
+                                temperature=0.2,
+                                response_format={"type": "json_object"}
+                            )
+                            content = res.choices[0].message.content
+                            effective_model = cand
+                            break
+                        except Exception as ge:
+                            err_str = str(ge)
+                            logger.warning(f"Groq model {cand} failed on key {key_tag}: {err_str[:90]}")
+                            last_err = ge
+                    if content:
                         break
-                    except Exception as ge:
-                        logger.warning(f"Groq model {cand} failed: {ge}")
-                        last_err = ge
-                
+
                 if not content:
-                    raise last_err or RuntimeError("No Groq models available.")
+                    raise last_err or RuntimeError("All Groq models and keys exhausted.")
 
             # --- Branch 2: Ollama (Direct native REST API with configurable host) ---
             elif effective_provider == "ollama":
@@ -438,6 +488,8 @@ EVIDENCE:
 
             # Parse JSON output
             result_dict = self._extract_json(content)
+            if not isinstance(result_dict, dict):
+                result_dict = {}
             
             raw_verdict = result_dict.get("verdict", "Unverifiable")
             if isinstance(raw_verdict, bool):

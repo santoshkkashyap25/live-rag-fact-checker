@@ -5822,5 +5822,693 @@
         "is_correct": true
       }
     }
+  },
+  "T1000-0183": {
+    "id": "T1000-0183",
+    "domain": "Climate Science",
+    "expected": "False",
+    "claim": "Atmospheric carbon dioxide levels during the pre-industrial Holocene were routinely higher than 500 ppm.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided evidence does not contain any information about atmospheric CO\u2082 concentrations during the pre\u2011industrial Holocene, so it cannot confirm or refute the claim. No source in the evidence set addresses the historical CO\u2082 level, leaving the assertion unsupported by the retrieved data.",
+        "evidence_count": 4,
+        "latency": 13.085525512695312,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence consists of Wikipedia articles on recent science events, climate mitigation, methane emissions, and planetary boundaries, none of which discuss atmospheric CO\u2082 concentrations during the pre\u2011industrial Holocene. Therefore, there is no relevant evidence to confirm or refute the claim.",
+        "evidence_count": 4,
+        "latency": 12.000110149383545,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to assess the claim, so its truth value cannot be determined.",
+        "evidence_count": 0,
+        "latency": 11.72735047340393,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0184": {
+    "id": "T1000-0184",
+    "domain": "Climate Science",
+    "expected": "False",
+    "claim": "The scientific consensus on anthropogenic climate change among publishing climate experts is below 50 percent.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Evidence 1 states that nearly all actively publishing climate scientists affirm anthropogenic climate change, indicating a consensus well above 50\u202f%.",
+        "evidence_count": 4,
+        "latency": 11.979356288909912,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Wikipedia\u2019s entry on scientific consensus on climate change states that \u201cNearly all actively publishing climate scientists say humans are causing climate change,\u201d indicating a consensus well above 50\u202f% among publishing experts.",
+        "evidence_count": 4,
+        "latency": 11.982623100280762,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was supplied to assess the level of consensus among publishing climate experts, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 36.96002435684204,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0185": {
+    "id": "T1000-0185",
+    "domain": "Climate Science",
+    "expected": "Unverifiable",
+    "claim": "The Atlantic Meridional Overturning Circulation (AMOC) will undergo complete irreversible collapse before December 2035.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "None of the provided sources discuss the Atlantic Meridional Overturning Circulation (AMOC) or its projected timeline, so there is no evidence to confirm or refute the claim of a complete irreversible collapse before December 2035.",
+        "evidence_count": 4,
+        "latency": 36.58791494369507,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided sources discuss general climate topics and tipping points but contain no specific information about the timing or irreversibility of an AMOC collapse before December 2035, so the claim cannot be confirmed or refuted with the given evidence.",
+        "evidence_count": 4,
+        "latency": 35.55268979072571,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.25,
+        "reasoning": "No evidence is provided to confirm or refute the claim, and the statement concerns a specific future climate event that cannot be verified with the given information.",
+        "evidence_count": 0,
+        "latency": 35.87883162498474,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0186": {
+    "id": "T1000-0186",
+    "domain": "Climate Science",
+    "expected": "Unverifiable",
+    "claim": "Stratospheric solar radiation management with sulfur dioxide will cause catastrophic drought across the Indian subcontinent.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.62,
+        "reasoning": "The provided authoritative sources describe stratospheric aerosol injection (SAI) as a proposed solar geoengineering method that could affect temperature and precipitation, but they do not contain specific evidence that SAI using sulfur dioxide would cause catastrophic drought across the Indian subcontinent. Without direct evidence confirming or refuting this regional impact, the claim cannot be verified.",
+        "evidence_count": 4,
+        "latency": 35.27536487579346,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts that stratospheric solar radiation management (specifically via sulfur dioxide/aerosols) will cause 'catastrophic drought' across the Indian subcontinent. However, the provided evidence from the IPCC and Wikipedia indicates that stratospheric aerosol injection (SAI) is designed to 'counter most changes to temperature and precipitation' and that it 'could limit warming to below 1.5 \u00b0C'. While the evidence notes that SAI would act 'imperfectly' and 'other effects are possible', it does not support the absolute, deterministic assertion of 'catastrophic drought' as a guaranteed outcome. In fact, the primary modeled effect of SAI is often a reduction in monsoon rainfall, but characterizing this as an inevitable 'catastrophic drought' contradicts the evidence which frames SAI as a tool to mitigate extreme climate changes, including precipitation shifts, rather than a cause of specific catastrophic regional droughts without qualification. The claim presents a speculative worst-case scenario as a factual certainty, which is refuted by the consensus that SAI is a mitigation strategy with complex but not universally catastrophic regional precipitation outcomes.",
+        "evidence_count": 4,
+        "latency": 63.08869910240173,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The provided evidence field is empty, so there is no information to confirm or refute the claim. While scientific literature suggests stratospheric aerosol injection could alter monsoon patterns, the specific assertion of 'catastrophic drought' is a speculative outcome dependent on model parameters and scale, and cannot be verified as a definitive fact without specific cited evidence.",
+        "evidence_count": 0,
+        "latency": 12.139037609100342,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0187": {
+    "id": "T1000-0187",
+    "domain": "Climate Science",
+    "expected": "Unverifiable",
+    "claim": "Global carbon emissions will achieve true net-zero equilibrium across all G20 economies by the year 2050.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim is a future prediction regarding the specific achievement of net-zero carbon emissions by all G20 economies by 2050. The provided evidence consists of definitions of zero-energy buildings, general information on carbon sequestration, historical/current climate data for New Zealand, and current atmospheric CO2 levels. None of the sources provide data, projections, or commitments specifically confirming that all G20 economies will achieve net-zero status by 2050.",
+        "evidence_count": 4,
+        "latency": 12.016791582107544,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a specific future outcome (net-zero equilibrium by 2050) for all G20 economies. The provided evidence consists of historical atmospheric data, definitions of carbon sequestration and zero-energy buildings, and specific statistics for New Zealand. None of the sources provide projections, commitments, or factual confirmations regarding the future emissions status of G20 nations in 2050.",
+        "evidence_count": 4,
+        "latency": 11.956575870513916,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a specific future outcome (net-zero emissions by 2050 for all G20 economies) that has not yet occurred. While many G20 nations have set targets for 2050, current scientific and policy evidence cannot confirm that this equilibrium will actually be achieved, making the claim a speculative future event rather than an established fact.",
+        "evidence_count": 0,
+        "latency": 12.447292804718018,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0188": {
+    "id": "T1000-0188",
+    "domain": "Climate Science",
+    "expected": "Unverifiable",
+    "claim": "Siberian permafrost methane pulse release will trigger runaway warming exceeding 6 degrees Celsius within fifty years.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.55,
+        "reasoning": "The provided sources discuss the clathrate gun hypothesis and general Earth history but contain no specific data on Siberian permafrost methane release magnitude, timing, or its projected warming impact, so the claim cannot be confirmed or refuted from the given evidence.",
+        "evidence_count": 2,
+        "latency": 35.580079793930054,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence consists of general Wikipedia entries on the clathrate gun hypothesis and Earth's history, neither of which addresses Siberian permafrost methane release or predicts a 6\u202f\u00b0C runaway warming within 50 years. No authoritative source confirms or refutes the specific claim, so its truth cannot be determined from the evidence.",
+        "evidence_count": 2,
+        "latency": 63.97805213928223,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The evidence provided does not specify a clear cause-and-effect relationship between Siberian permafrost methane release and extreme warming.",
+        "evidence_count": 0,
+        "latency": 81.72445559501648,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0189": {
+    "id": "T1000-0189",
+    "domain": "Climate Science",
+    "expected": "Unverifiable",
+    "claim": "Direct air carbon capture costs will fall below twenty dollars per ton of carbon dioxide before 2030.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.8,
+        "reasoning": "The claim discusses the environmental impact of carbon capture and storage (CCS) technology, aviation, and carbon credits. The retrieved evidence supports the claim by discussing the environmental impact of aviation, the role of carbon credits in offsetting emissions, and the concept of carbon capture and storage (CCS) technology. The retrieved evidence does not directly address the cost of carbon capture, but the overall context suggests that the cost is likely to be influenced by the environmental impact of aviation and carbon credits. The retrieved evidence does not provide a definitive cost figure, but the overall context suggests that the cost is likely to be influenced by the environmental impact of aviation and carbon credits.",
+        "evidence_count": 4,
+        "latency": 83.23130822181702,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "The claim states that direct costs (wholesale) of electricity generation methods are passed on to consumers. This is supported by the provided evidence from Wikipedia sources about electricity generation costs, environmental impact of aviation, and carbon offsetting programs.",
+        "evidence_count": 4,
+        "latency": 83.58792233467102,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.8,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 0,
+        "latency": 83.97049117088318,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0190": {
+    "id": "T1000-0190",
+    "domain": "Climate Science",
+    "expected": "Unverifiable",
+    "claim": "Artificial cloud brightening technology will be globally deployed by an international coalition before 2040.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 79.63551044464111,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 79.30559992790222,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a specific future event (global deployment by 2040) that has not yet occurred. While there are ongoing research projects and proposals for solar radiation management, there is no authoritative evidence confirming a binding international agreement or guaranteed global deployment schedule for this technology by 2040. Such future speculative events cannot be factually verified as true or false at this time.",
+        "evidence_count": 0,
+        "latency": 11.918575048446655,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0191": {
+    "id": "T1000-0191",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "The human heart possesses four distinct internal chambers: two atria and two ventricles.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 79.78314471244812,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The supplied evidence discusses general anatomy, fish anatomy, lungs, and Nigerian politics, none of which mention the structure of the human heart. Therefore there is no information to confirm or refute the claim that the human heart has four chambers (two atria and two ventricles).",
+        "evidence_count": 4,
+        "latency": 35.14787149429321,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so its truth cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 58.59476399421692,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0192": {
+    "id": "T1000-0192",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "Insulin is a peptide hormone produced and secreted by the beta cells of the pancreatic islets of Langerhans.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.8,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 82.35524988174438,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 80.68240070343018,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Insulin is a peptide hormone produced by the beta cells of the pancreas, specifically within the islets of Langerhans. Multiple scientific sources, such as the National Institutes of Health and PubMed, confirm this information.",
+        "evidence_count": 0,
+        "latency": 82.87435364723206,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0193": {
+    "id": "T1000-0193",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "Aspirin produces its analgesic and anti-inflammatory effects by irreversibly inhibiting cyclooxygenase enzymes.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.8,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 81.78289484977722,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.8,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 79.88323450088501,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Aspirin (acetylsalicylic acid) is pharmacologically distinct from other non-steroidal anti-inflammatory drugs (NSAIDs) because it irreversibly acetylates the serine residue in the active site of cyclooxygenase (COX) enzymes, thereby permanently inhibiting their activity until new enzymes are synthesized. This mechanism is the standard explanation for its analgesic and anti-inflammatory effects.",
+        "evidence_count": 0,
+        "latency": 12.275063037872314,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0194": {
+    "id": "T1000-0194",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "Type 1 diabetes mellitus is characterized by autoimmune destruction of insulin-producing pancreatic beta cells.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "The retrieved evidence from reputable sources (Wikipedia) consistently support the claim that diabetes mellitus is a group of chronic diseases characterized by high blood sugar levels. The disease is caused by the body's inability to produce insulin or effectively use insulin. Insulin is a hormone that regulates glucose uptake in cells. In diabetes, cells cannot absorb glucose efficiently, leading to high blood sugar levels.",
+        "evidence_count": 4,
+        "latency": 81.3189058303833,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.8,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 82.5658438205719,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the statement that Type 1 diabetes mellitus involves autoimmune destruction of pancreatic beta cells.",
+        "evidence_count": 0,
+        "latency": 46.53982400894165,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0195": {
+    "id": "T1000-0195",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "Hepatitis C is caused by an enveloped positive-sense single-stranded RNA virus.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 93.07490873336792,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The evidence from the Hepatitis C virus (Wikipedia) source explicitly states that HCV is an enveloped, positive\u2011sense single\u2011stranded RNA virus and that it causes hepatitis C, directly supporting the claim.",
+        "evidence_count": 4,
+        "latency": 58.201534032821655,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Hepatitis C virus (HCV) is scientifically classified as an enveloped, positive-sense, single-stranded RNA virus belonging to the family Flaviviridae. This classification is consistent with authoritative medical and virological sources.",
+        "evidence_count": 0,
+        "latency": 11.768568515777588,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0196": {
+    "id": "T1000-0196",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "Sickle cell anemia is caused by a point mutation in the beta-globin gene resulting in hemoglobin S.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.8,
+        "reasoning": "The retrieved evidence from reputable sources (Wikipedia) supports the claim that sickle cell anemia is caused by a point mutation in the beta-globin gene (HBB). The retrieved evidence also supports the claim that point mutations can lead to genetic disorders, such as sickle cell anemia. The retrieved evidence supports the claim that CRISPR gene editing is a genetic engineering technique used in molecular biology to modify living organisms' genomes. The retrieved evidence supports the claim that CRISPR gene editing is based on a simplified version of the bacterial CRISPR-Cas9 antiviral defense system. The retrieved evidence supports the claim that point mutations can be corrected or introduced using CRISPR gene editing technology.",
+        "evidence_count": 4,
+        "latency": 82.42247366905212,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.8,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 82.20553922653198,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Scientific consensus confirms that sickle cell anemia is indeed caused by a point mutation in the beta-globin gene. Multiple scientific sources, including the National Institutes of Health and World Health Organization, support this claim.",
+        "evidence_count": 0,
+        "latency": 83.79324221611023,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0197": {
+    "id": "T1000-0197",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "Statins lower plasma low-density lipoprotein cholesterol by inhibiting HMG-CoA reductase.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "The retrieved evidence supports the claim that statins, which target HMG-CoA reductase, are used to lower cholesterol levels, including LDL (low-density lipoprotein) and HDL (high-density lipoprotein). Statins work by inhibiting HMG-CoA reductase, which is the rate-limiting step in cholesterol synthesis. This leads to a decrease in LDL and an increase in HDL, thus helping to prevent heart disease.",
+        "evidence_count": 4,
+        "latency": 80.76866030693054,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 83.07033586502075,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Statins are well\u2011documented HMG\u2011CoA reductase inhibitors; by blocking this key enzyme in hepatic cholesterol synthesis they increase LDL\u2011receptor expression and thereby lower plasma LDL\u2011cholesterol levels (e.g., NIH/MedlinePlus, Mayo Clinic).",
+        "evidence_count": 0,
+        "latency": 35.90564227104187,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0198": {
+    "id": "T1000-0198",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "The human body requires vitamin C for the enzymatic synthesis and stabilization of collagen.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 80.5556058883667,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.8,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 81.1219892501831,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Vitamin C (ascorbic acid) is a well-established essential cofactor for the enzymes prolyl hydroxylase and lysyl hydroxylase, which are required for the hydroxylation of proline and lysine residues in collagen. This hydroxylation is critical for the stability and proper triple-helix formation of collagen fibers; without it, collagen is unstable and degraded, leading to conditions like scurvy.",
+        "evidence_count": 0,
+        "latency": 13.085776567459106,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0199": {
+    "id": "T1000-0199",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "Tuberculosis is an infectious bacterial disease primarily caused by Mycobacterium tuberculosis.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "The retrieved evidence supports the claim that tuberculosis is caused by Mycobacterium tuberculosis and can affect various parts of the body, including the lungs, spine, and other organs. The disease was named after Dr. Robert Koch, who discovered the bacteria in 1882.",
+        "evidence_count": 4,
+        "latency": 80.59332013130188,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The claim is supported by multiple authoritative sources: Wikipedia entries on tuberculosis and Mycobacterium tuberculosis state that TB is an infectious disease caused by the Mycobacterium tuberculosis complex, with M. tuberculosis as the primary pathogen.",
+        "evidence_count": 4,
+        "latency": 57.77554416656494,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was supplied to confirm or refute the claim that tuberculosis is an infectious bacterial disease caused by Mycobacterium tuberculosis.",
+        "evidence_count": 0,
+        "latency": 35.391908407211304,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0200": {
+    "id": "T1000-0200",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "Hypertension is clinically defined in adult guidelines as sustained systolic blood pressure of 130 mmHg or higher.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 80.65537881851196,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.8,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 80.15521621704102,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The 2017 ACC/AHA guidelines define hypertension in adults as a systolic blood pressure of 130 mmHg or higher (or diastolic 80 mmHg or higher). While other guidelines (such as ESC/ESH) use a threshold of 140 mmHg, the claim specifies 'adult guidelines' generally, and the 130 mmHg threshold is a widely recognized and authoritative clinical definition in major medical literature.",
+        "evidence_count": 0,
+        "latency": 11.840198040008545,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0201": {
+    "id": "T1000-0201",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "The blood-brain barrier is formed by endothelial cells with tight junctions and astrocyte end-feet.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.8,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 91.75032114982605,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.97,
+        "reasoning": "Authoritative sources state that the blood\u2011brain barrier consists of endothelial cells (which possess tight junctions) and astrocyte end\u2011feet (along with pericytes), confirming the claim.",
+        "evidence_count": 4,
+        "latency": 36.19883894920349,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The blood-brain barrier is indeed composed of specialized cells, specifically endothelial cells and astrocytes. These cells form the blood-brain barrier, which helps regulate substances entering the brain and protects the brain from harmful substances.",
+        "evidence_count": 0,
+        "latency": 88.51828694343567,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0202": {
+    "id": "T1000-0202",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "Parkinson's disease is neurobiologically marked by the loss of dopaminergic neurons in the substantia nigra.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 81.07650709152222,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 82.57311463356018,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim, so its truth cannot be determined from the given sources.",
+        "evidence_count": 0,
+        "latency": 60.45962333679199,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0203": {
+    "id": "T1000-0203",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Routine childhood MMR vaccination causes autism spectrum disorder in pediatric patients.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.9,
+        "reasoning": "The claim that routine childhood vaccinations cause autism is false. Autism is a complex condition influenced by genetic, epigenetic, prenatal, perinatal, and environmental factors. Genetics plays a significant role, with heritability estimates ranging from 60 to 90%. De novo mutations, including copy number variations and gene-disrupting mutations, contribute to approximately 30\u201340% of cases. The claim is a part of the anti-vaccine movement, which is a social movement opposing vaccination. Activists often spread misinformation and disinformation to increase vaccine hesitancy. As a social movement, it employs various communication channels, including traditional news media and social media.",
+        "evidence_count": 4,
+        "latency": 81.57914710044861,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.8,
+        "reasoning": "Evidence evaluated against claim.",
+        "evidence_count": 4,
+        "latency": 81.31039476394653,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Extensive scientific research and consensus from major health organizations, including the CDC and WHO, have definitively debunked the claim that MMR vaccination causes autism. The original study suggesting a link was retracted due to data fabrication, and subsequent large-scale studies involving millions of children have found no association between MMR and autism spectrum disorder.",
+        "evidence_count": 0,
+        "latency": 12.150045156478882,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0204": {
+    "id": "T1000-0204",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Humans only use approximately 10 percent of their actual cerebral capacity.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is a well-known neuromyth explicitly debunked by authoritative sources such as the MIT McGovern Institute and Wikipedia, which state that humans use virtually all parts of the brain and that the '10 percent' figure is a misconception.",
+        "evidence_count": 4,
+        "latency": 0.005546092987060547,
+        "is_correct": true
+      }
+    }
   }
 }

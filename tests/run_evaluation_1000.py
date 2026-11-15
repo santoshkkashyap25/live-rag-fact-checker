@@ -402,7 +402,7 @@ def run_benchmark_1000(limit: int = 1000, resume: bool = True):
 
             # Run evaluation
             try:
-                eval_res = evaluate_single(claim_dict, cfg_id, evidence, pacing_delay=3.8)
+                eval_res = evaluate_single(claim_dict, cfg_id, evidence, pacing_delay=5.0)
                 is_corr = (eval_res["verdict"] == expected)
                 eval_res["is_correct"] = is_corr
 
