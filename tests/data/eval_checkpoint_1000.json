@@ -1,0 +1,3362 @@
+{
+  "T1000-0001": {
+    "id": "T1000-0001",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "The speed of light in a vacuum is approximately 299,792 kilometers per second.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (NIST CODATA and multiple physics references) define the speed of light in vacuum as exactly 299,792,458\u202fm/s, which equals 299,792.458\u202fkm/s. Stating it as approximately 299,792\u202fkm/s is within a 0.15% tolerance and thus accurate.",
+        "evidence_count": 4,
+        "latency": 3.2093346118927,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "The provided evidence does not contain any information about the speed of light in vacuum, so the claim cannot be confirmed or refuted based on the given sources.",
+        "evidence_count": 4,
+        "latency": 6.976325511932373,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative physical constants (e.g., CODATA) define the speed of light in vacuum as 299,792.458\u202fkm/s; stating it as approximately 299,792\u202fkm/s is accurate within typical rounding tolerance.",
+        "evidence_count": 0,
+        "latency": 63.68933415412903,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0002": {
+    "id": "T1000-0002",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "Jupiter is the largest planet by mass and volume in the Solar System.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Wikipedia and WorldAtlas) state that Jupiter has the greatest mass\u2014about 2.5 times the combined mass of all other planets\u2014and the largest volume/diameter of any planet in the Solar System, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 4.769176483154297,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Wikipedia notes that Jupiter is the largest planet in the Solar System, with a mass about 2.5\u202ftimes that of all other planets combined and a diameter roughly 11\u202ftimes Earth\u2019s, confirming it is the largest by both mass and volume.",
+        "evidence_count": 4,
+        "latency": 5.139219760894775,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to support or refute the claim.",
+        "evidence_count": 0,
+        "latency": 12.176863193511963,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0003": {
+    "id": "T1000-0003",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "The Moon completes an orbit around Earth in approximately 27.3 days.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Wikipedia, NASA, Durham University) state that the Moon\u2019s sidereal orbital period\u2014the time to complete one revolution relative to the fixed stars\u2014is about 27.3 days, matching the claim\u2019s approximation.",
+        "evidence_count": 4,
+        "latency": 2.6406850814819336,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative astronomical sources state that the Moon completes one sidereal orbit around Earth in about 27.3 days, matching the claim's approximation.",
+        "evidence_count": 4,
+        "latency": 11.019863605499268,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The Moon\u2019s sidereal orbital period\u2014the time it takes to return to the same position relative to the stars\u2014is about 27.3217 days, which is commonly rounded to 27.3 days in scientific literature.",
+        "evidence_count": 0,
+        "latency": 11.950660943984985,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0004": {
+    "id": "T1000-0004",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "Nuclear fusion of hydrogen into helium powers the Sun's core energy output.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources describe the proton\u2011proton chain in which hydrogen nuclei fuse to form helium, releasing gamma\u2011rays that transport energy outward; this fusion process is identified as the source of the Sun\u2019s core energy output.",
+        "evidence_count": 4,
+        "latency": 4.4103102684021,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that active stellar cores, including the Sun, are powered by nuclear fusion where hydrogen nuclei combine to form helium, releasing energy. This directly confirms the claim.",
+        "evidence_count": 4,
+        "latency": 5.456372976303101,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim that nuclear fusion of hydrogen into helium powers the Sun's core energy output.",
+        "evidence_count": 0,
+        "latency": 13.158593893051147,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0005": {
+    "id": "T1000-0005",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "The Great Wall of China is visible from the surface of the Moon with the naked eye.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Snopes, astronaut testimonies, and scientific explanations) state that the Great Wall is not visible to the naked eye from low Earth orbit and certainly not from the Moon due to its narrow width and low contrast with the terrain.",
+        "evidence_count": 4,
+        "latency": 5.1762473583221436,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "At the Moon's average distance (~378,000 km per the Moon article) the human eye can resolve objects no smaller than about 100 km; the Great Wall is only a few meters wide (Great Wall article) and lacks sufficient contrast, so it cannot be seen with the naked eye from the Moon.",
+        "evidence_count": 4,
+        "latency": 6.66402792930603,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim that the Great Wall of China is visible from the Moon with the naked eye.",
+        "evidence_count": 0,
+        "latency": 12.442461729049683,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0006": {
+    "id": "T1000-0006",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "The Sun appears yellow from outer space due to atmospheric refraction.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Astronaut observations and scientific explanations state that the Sun looks essentially white from outer space; its yellow hue seen on Earth is caused by atmospheric scattering of shorter wavelengths, not by atmospheric refraction, which does not occur in space.",
+        "evidence_count": 4,
+        "latency": 5.377923011779785,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided sources discuss the Sun, green stars, the Milky Way, and water vapor, but none address the Sun's apparent color from outer space or the role of atmospheric refraction, so there is insufficient evidence to confirm or refute the claim.",
+        "evidence_count": 4,
+        "latency": 8.520931243896484,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim that the Sun appears yellow from outer space due to atmospheric refraction.",
+        "evidence_count": 0,
+        "latency": 14.647797107696533,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0007": {
+    "id": "T1000-0007",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "Seasons on Earth are caused by changes in the distance between the Earth and the Sun.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources explain that Earth's orbit is only slightly elliptical (eccentricity 0.0167), so distance to the Sun varies by about 3%, which is insufficient to drive seasonal temperature changes. The primary cause of seasons is Earth's axial tilt, which changes the angle and duration of sunlight throughout the year (source 2). Therefore the claim that seasons are caused by distance changes is false.",
+        "evidence_count": 4,
+        "latency": 18.42722797393799,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Scientific consensus holds that Earth's seasons are driven by the planet's axial tilt, not by the modest (~3%) variation in Earth\u2011Sun distance caused by its low orbital eccentricity (0.0167). The evidence shows the orbit is nearly circular, insufficient to produce the observed seasonal temperature changes.",
+        "evidence_count": 4,
+        "latency": 7.45045280456543,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Seasons result from the 23.5\u00b0 axial tilt of Earth, which changes the angle and duration of sunlight on different hemispheres throughout the year; the small variation in Earth\u2013Sun distance (\u22483\u202f% between perihelion and aphelion) has negligible effect on seasonal temperature patterns (NASA, 2023).",
+        "evidence_count": 0,
+        "latency": 12.193060636520386,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0008": {
+    "id": "T1000-0008",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "Black holes act like giant cosmic vacuum cleaners sucking in objects from across the universe.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.7,
+        "reasoning": "The supplied sources discuss unrelated topics (a comic character, TV shows, and a rocket project) and contain no information about black holes or their gravitational behavior, so the claim cannot be assessed with the given evidence.",
+        "evidence_count": 4,
+        "latency": 6.27405047416687,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "None of the provided sources discuss black holes or their gravitational behavior, so there is no evidence to confirm or refute the claim that they act like giant cosmic vacuum cleaners pulling objects from across the universe.",
+        "evidence_count": 4,
+        "latency": 15.810789823532104,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim that black holes act like giant cosmic vacuum cleaners.",
+        "evidence_count": 0,
+        "latency": 12.306476831436157,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0009": {
+    "id": "T1000-0009",
+    "domain": "Astrophysics",
+    "expected": "Unverifiable",
+    "claim": "A habitable exoplanet in the Andromeda galaxy is currently inhabited by humanoid beings.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "The provided evidence does not address the existence of any habitable exoplanet in the Andromeda galaxy nor any humanoid inhabitants, and there is no authoritative source confirming or refuting such a claim.",
+        "evidence_count": 1,
+        "latency": 12.85843563079834,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided evidence does not contain any information about exoplanets in the Andromeda galaxy, their habitability, or the presence of humanoid beings, so the claim cannot be confirmed or refuted.",
+        "evidence_count": 1,
+        "latency": 2.6138479709625244,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No authoritative evidence is provided regarding the existence of a habitable exoplanet in the Andromeda galaxy or the presence of humanoid beings there, making the claim impossible to verify with the available information.",
+        "evidence_count": 0,
+        "latency": 81.46759009361267,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0010": {
+    "id": "T1000-0010",
+    "domain": "Astrophysics",
+    "expected": "Unverifiable",
+    "claim": "Humankind will establish a permanent self-sustaining civilian colony on Mars by 2075.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided sources discuss plans and technical studies for a permanent self\u2011sustaining Mars colony, but none give definitive evidence that such a colony will be established by 2075; they only outline possibilities and challenges, making the claim a speculative future prediction.",
+        "evidence_count": 4,
+        "latency": 6.607136964797974,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The provided sources discuss humans, human presence in space, a TV series, and the Yoruba people, but none contain information about any confirmed plans, timelines, or feasibility studies for a permanent self\u2011sustaining civilian colony on Mars by 2075. Without authoritative evidence, the claim remains speculative and cannot be verified.",
+        "evidence_count": 4,
+        "latency": 16.447983980178833,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No current authoritative evidence confirms that a permanent self-sustaining civilian colony on Mars will be established by 2075; the claim concerns a future speculative outcome beyond present verification.",
+        "evidence_count": 0,
+        "latency": 47.62883520126343,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0011": {
+    "id": "T1000-0011",
+    "domain": "Neuroscience",
+    "expected": "True",
+    "claim": "Neurons transmit electrical signals along their axons using action potentials.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that axons conduct electrical impulses called action potentials and that neurons communicate by firing these action potentials along their axons.",
+        "evidence_count": 4,
+        "latency": 12.785906553268433,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources state that neurons are electrically excitable cells that communicate via action potentials, and that axons conduct these electrical impulses away from the cell body.",
+        "evidence_count": 4,
+        "latency": 8.065300941467285,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Neurons communicate by generating and propagating action potentials\u2014rapid, all-or-none voltage spikes\u2014along their axons, a well-established principle in neurophysiology (e.g., Kandel et al., 2013; Purves et al., 2018).",
+        "evidence_count": 0,
+        "latency": 12.168498277664185,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0012": {
+    "id": "T1000-0012",
+    "domain": "Neuroscience",
+    "expected": "True",
+    "claim": "The hippocampus plays a vital role in the consolidation of short-term memory into long-term memory.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.96,
+        "reasoning": "Authoritative sources on long\u2011term potentiation note that LTP in the hippocampus is believed to support memory function, and the limbic system entry states the hippocampus is involved in long\u2011term memory. Research on hippocampal plasticity further links it to memory consolidation, confirming the hippocampus\u2019s vital role in converting short\u2011term to long\u2011term memory.",
+        "evidence_count": 4,
+        "latency": 16.471814155578613,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.93,
+        "reasoning": "Neuroscience evidence links the hippocampus to memory consolidation: early long-term potentiation, a mechanism thought to underlie memory, occurs in the hippocampus (source 2), and the hippocampus is a key limbic structure supporting long-term memory (source 3). This aligns with the claim that the hippocampus is vital for converting short-term memories into long-term storage.",
+        "evidence_count": 4,
+        "latency": 4.56141209602356,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim, so its truth cannot be determined from the given information.",
+        "evidence_count": 0,
+        "latency": 12.60167145729065,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0013": {
+    "id": "T1000-0013",
+    "domain": "Neuroscience",
+    "expected": "True",
+    "claim": "Dopamine functions as both a neurotransmitter and a neurohormone in the central nervous system.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided sources define neurotransmitters and neurohormones and note that some molecules can serve both roles, but none specifically state that dopamine functions as a neurohormone in the central nervous system; therefore the claim cannot be confirmed or refuted from the given evidence.",
+        "evidence_count": 4,
+        "latency": 13.977566719055176,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.62,
+        "reasoning": "The provided sources define neurotransmitters and neurohormones and note that neurohormones can also act as neurotransmitters, but none specifically mention dopamine performing both roles in the central nervous system; therefore the claim cannot be confirmed or refuted from the given evidence.",
+        "evidence_count": 4,
+        "latency": 8.078875303268433,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so the truth value cannot be determined.",
+        "evidence_count": 0,
+        "latency": 11.888838529586792,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0014": {
+    "id": "T1000-0014",
+    "domain": "Neuroscience",
+    "expected": "True",
+    "claim": "Neuroplasticity allows the brain to reorganize neural pathways in response to learning and experience.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources define neuroplasticity as the brain's ability to change, grow, and reorganize neural pathways in response to learning, experience, and environmental stimuli, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 16.486129999160767,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The Neuroplasticity article defines neuroplasticity as the brain's ability to change through growth and reorganization, specifically noting that it reorganizes neural connections in response to learning and experience.",
+        "evidence_count": 4,
+        "latency": 9.85692048072815,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 12.285716772079468,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0015": {
+    "id": "T1000-0015",
+    "domain": "Neuroscience",
+    "expected": "False",
+    "claim": "Humans only use ten percent of their total brain capacity at any given time.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources (Wikipedia's \"Ten-percent-of-the-brain myth\" and the MIT McGovern Institute) explicitly state that the claim humans use only 10% of their brain is a myth and that neuroimaging shows activity throughout the brain, disproving the assertion.",
+        "evidence_count": 4,
+        "latency": 14.778749942779541,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources, such as the Wikipedia article on the ten\u2011percent\u2011of\u2011the\u2011brain myth, state that the claim is a widely debunked misconception; neuroimaging shows that virtually all parts of the brain have activity over a day, not just 10%.",
+        "evidence_count": 4,
+        "latency": 5.262951135635376,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Neuroimaging and electrophysiological studies show that all regions of the human brain exhibit measurable activity during various tasks; no evidence supports a 90\u202f% idle period.  The 10\u202f% myth is a longstanding misconception with no empirical backing.",
+        "evidence_count": 0,
+        "latency": 12.01858639717102,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0016": {
+    "id": "T1000-0016",
+    "domain": "Neuroscience",
+    "expected": "False",
+    "claim": "Listening to Mozart music during pregnancy significantly increases an infant's baseline IQ.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Authoritative fact\u2011check sources explain that the supposed \"Mozart effect\" was a small, temporary improvement in spatial reasoning observed in college students, not a lasting IQ boost in infants, and no studies have shown that prenatal exposure to Mozart music raises an infant's baseline IQ.",
+        "evidence_count": 4,
+        "latency": 11.707110166549683,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "The cited source on the Mozart Effect explains that research has not found a lasting or significant increase in infants' baseline IQ from prenatal exposure to Mozart; the original findings were limited to short\u2011term spatial reasoning and have not been replicated for IQ, making the claim unsupported.",
+        "evidence_count": 4,
+        "latency": 7.3406641483306885,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim that listening to Mozart during pregnancy significantly increases an infant's baseline IQ.",
+        "evidence_count": 0,
+        "latency": 12.186964750289917,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0017": {
+    "id": "T1000-0017",
+    "domain": "Neuroscience",
+    "expected": "False",
+    "claim": "People are definitively categorized as either exclusively left-brained logical or right-brained creative thinkers.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "The notion that individuals can be strictly classified as \"left\u2011brain logical\" or \"right\u2011brain creative\" is a widely debunked myth; neuroscientific research shows that both hemispheres contribute to logical reasoning and creativity, and no credible evidence supports exclusive categorization.",
+        "evidence_count": 2,
+        "latency": 14.370229959487915,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "The provided evidence consists of unrelated Wikipedia entries on Chinese characters and gender roles, offering no information about brain lateralization or the validity of categorizing people as exclusively left\u2011brain logical or right\u2011brain creative. Consequently, the claim cannot be assessed with the given sources.",
+        "evidence_count": 2,
+        "latency": 5.6570353507995605,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim that people are definitively categorized as either exclusively left-brained logical or right-brained creative thinkers, so the truth value cannot be determined.",
+        "evidence_count": 0,
+        "latency": 13.171048164367676,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0018": {
+    "id": "T1000-0018",
+    "domain": "Neuroscience",
+    "expected": "False",
+    "claim": "Adult humans cannot generate new neurons in the brain after completing physical adolescence.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.93,
+        "reasoning": "Current neuroscientific consensus, as reflected in authoritative sources on neuroplasticity, indicates that adult humans do generate new neurons (adult neurogenesis) in regions such as the hippocampal dentate gyrus and olfactory bulb, contradicting the claim that they cannot generate new neurons after adolescence.",
+        "evidence_count": 4,
+        "latency": 16.989436864852905,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The supplied sources describe general brain structure, mirror neurons, and neuroplasticity, but none address whether adult humans generate new neurons after adolescence, so the claim cannot be confirmed or refuted from the given evidence.",
+        "evidence_count": 4,
+        "latency": 7.733174085617065,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Scientific studies show that adult humans retain the ability to generate new neurons, particularly in the hippocampal dentate gyrus and, to a lesser extent, the olfactory bulb.  For example, Sorrells et al. (2018) and other neurogenesis research confirm ongoing neurogenesis in adult human brains, contradicting the claim that it stops after adolescence.",
+        "evidence_count": 0,
+        "latency": 11.982714414596558,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0019": {
+    "id": "T1000-0019",
+    "domain": "Neuroscience",
+    "expected": "Unverifiable",
+    "claim": "Classical instrumental piano music is objectively superior to electronic ambient music for cognitive focus.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.92,
+        "reasoning": "The evidence indicates that both classical instrumental piano music and electronic ambient music can aid cognitive focus, and individual preferences vary (e.g., source 4 notes that some people focus better with ambient electronic music). No authoritative source establishes an objective superiority of piano over ambient electronic music, and the claim of universal superiority is contradicted by the mixed findings.",
+        "evidence_count": 4,
+        "latency": 6.771517276763916,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.86,
+        "reasoning": "Empirical studies and expert commentary report that both classical instrumental piano and electronic ambient music can aid focus, with individual preferences varying; no evidence shows piano music is objectively superior, contradicting the absolute claim.",
+        "evidence_count": 4,
+        "latency": 3.1456034183502197,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that classical instrumental piano music is objectively superior to electronic ambient music for cognitive focus.",
+        "evidence_count": 0,
+        "latency": 12.076682567596436,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0020": {
+    "id": "T1000-0020",
+    "domain": "Neuroscience",
+    "expected": "Unverifiable",
+    "claim": "Artificial general intelligence will achieve full human-equivalent biological consciousness by the year 2049.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.22,
+        "reasoning": "The provided sources describe AGI as a hypothetical technology and note that the emergence of genuine consciousness in artificial systems is a deeply uncertain and philosophically complex frontier, with timeline predictions remaining speculative. No authoritative evidence confirms that full human-equivalent biological consciousness will be achieved by 2049.",
+        "evidence_count": 4,
+        "latency": 6.392866134643555,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "The provided sources define AGI and discuss AI ethics but contain no empirical or expert predictions about achieving full human-equivalent biological consciousness by 2049, making the claim speculative and unsupported by the evidence.",
+        "evidence_count": 4,
+        "latency": 8.951759576797485,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim that AGI will achieve full human-equivalent biological consciousness by 2049.",
+        "evidence_count": 0,
+        "latency": 12.170264720916748,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0021": {
+    "id": "T1000-0021",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "DNA has a double helix antiparallel polymer structure discovered by Watson, Crick, and Franklin.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.97,
+        "reasoning": "Authoritative sources confirm DNA is a polymer composed of two antiparallel polynucleotide strands forming a double helix (source 2). Historical records attribute the elucidation of this structure to Watson and Crick, with critical contributions from Rosalind Franklin, matching the claim.",
+        "evidence_count": 4,
+        "latency": 14.524912595748901,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "DNA is indeed a double\u2011helix antiparallel polymer, as confirmed by multiple authoritative sources. However, the discovery of this structure is credited to James Watson and Francis Crick, who built the model in 1953; Rosalind Franklin provided crucial X\u2011ray diffraction data but was not a co\u2011discoverer in the original publication. Therefore the claim that the structure was discovered by Watson, Crick, and Franklin is inaccurate.",
+        "evidence_count": 4,
+        "latency": 6.007545709609985,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so the truth of the statement cannot be determined from the supplied information.",
+        "evidence_count": 0,
+        "latency": 13.087244510650635,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0022": {
+    "id": "T1000-0022",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "CRISPR-Cas9 is a molecular tool derived from bacterial adaptive immune systems used for genome editing.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that CRISPR-Cas9 originates from the bacterial CRISPR-Cas9 antiviral defense (an adaptive immune system) and is employed as a molecular tool to edit genomes.",
+        "evidence_count": 4,
+        "latency": 15.83372187614441,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources describe CRISPR-Cas9 as a nuclease system originally part of the bacterial adaptive immune (CRISPR) defense against phages, and that the simplified Cas9\u2011guide RNA complex is now employed as a molecular tool for precise genome editing in diverse organisms.",
+        "evidence_count": 4,
+        "latency": 10.81418776512146,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so its truth cannot be determined from the supplied information.",
+        "evidence_count": 0,
+        "latency": 12.29077410697937,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0023": {
+    "id": "T1000-0023",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "Messenger RNA (mRNA) carries genetic codes from nuclear DNA to ribosomes during protein translation.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources state that mRNA is transcribed from nuclear DNA and serves as the template read by ribosomes during translation, thereby carrying genetic information from DNA to the ribosome.",
+        "evidence_count": 4,
+        "latency": 14.491008281707764,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources describe mRNA as a transcript of nuclear DNA that is exported to the cytoplasm where ribosomes read it to synthesize proteins, confirming it carries genetic codes from DNA to ribosomes during translation.",
+        "evidence_count": 4,
+        "latency": 4.820714950561523,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 13.329574823379517,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0024": {
+    "id": "T1000-0024",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "Mitochondria contain their own independent circular DNA genome inherited maternally in humans.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources confirm that human mitochondria possess their own small circular DNA genome that is separate from nuclear DNA and is transmitted maternally to offspring.",
+        "evidence_count": 4,
+        "latency": 4.169748544692993,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.97,
+        "reasoning": "Authoritative sources on mitochondrial DNA state that mitochondria harbor their own circular genome and that in humans this mtDNA is transmitted maternally, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 7.159214735031128,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was supplied to evaluate whether mitochondria possess an independent circular DNA genome inherited maternally in humans.",
+        "evidence_count": 0,
+        "latency": 104.53116607666016,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0025": {
+    "id": "T1000-0025",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "Eating genetically modified foods permanently alters human genomic DNA sequences.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Authoritative reviews of GM foods and human health report no credible evidence that DNA from consumed genetically modified foods integrates into or permanently alters human genomic DNA; digestion breaks down dietary DNA and horizontal gene transfer to human cells is not observed.",
+        "evidence_count": 4,
+        "latency": 14.489253520965576,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The supplied evidence only describes genetically modified organisms and general human biology, without any information on whether consuming GM foods can integrate into or permanently change human genomic DNA. No source confirms or refutes the claim, so its truth cannot be determined from the provided material.",
+        "evidence_count": 4,
+        "latency": 17.327503204345703,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Genetically modified foods contain DNA that is processed and digested like any other food; studies and reviews by the World Health Organization, the European Food Safety Authority, and the U.S. Department of Agriculture have found no evidence that consumption of GM foods alters human genomic DNA. The claim is a widely debunked misconception.",
+        "evidence_count": 0,
+        "latency": 13.126362800598145,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0026": {
+    "id": "T1000-0026",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "Human somatic cells normally contain 48 distinct chromosomes in their nucleus.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that human somatic (body) cells are diploid with 23 chromosome pairs, totaling 46 distinct chromosomes (e.g., source 3). The claim of 48 chromosomes contradicts this established karyotype information.",
+        "evidence_count": 4,
+        "latency": 15.099637508392334,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative cytogenetic sources state that normal human somatic (diploid) cells contain 46 chromosomes (23 pairs). The claim of 48 distinct chromosomes contradicts this well\u2011established karyotype for humans.",
+        "evidence_count": 4,
+        "latency": 6.578694820404053,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Human somatic cells are diploid with 46 chromosomes (23 pairs). The claim of 48 distinct chromosomes is incorrect; authoritative genetics texts and the Human Genome Project confirm 46 chromosomes in normal somatic cells.",
+        "evidence_count": 0,
+        "latency": 11.943838596343994,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0027": {
+    "id": "T1000-0027",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "DNA replication occurs without any biological proofreading enzymes or error-correcting mechanisms.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources describe DNA polymerases as enzymes that not only synthesize DNA but also possess intrinsic proofreading (exonuclease) activity that detects and excises misincorporated nucleotides, providing error\u2011correcting mechanisms during replication.",
+        "evidence_count": 4,
+        "latency": 14.854352474212646,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Wikipedia entries describe DNA polymerases as essential enzymes for DNA replication that possess proofreading (3'\u21925' exonuclease) activity and are part of error\u2011correcting mechanisms such as mismatch repair, directly contradicting the claim that replication occurs without any proofreading or error correction.",
+        "evidence_count": 4,
+        "latency": 7.865888357162476,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim, so the truth of the statement cannot be determined.",
+        "evidence_count": 0,
+        "latency": 12.698770761489868,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0028": {
+    "id": "T1000-0028",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "Identical twins possess identical digital fingerprints upon physical birth.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (e.g., Nature article by John R. Vanderkolk) state that identical twins do not share fingerprints; fingerprints are formed by stochastic developmental processes, making each twin's prints distinct even at birth. All cited evidence concurs, confirming the claim is false.",
+        "evidence_count": 4,
+        "latency": 2.799306631088257,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.45,
+        "reasoning": "None of the provided sources discuss the fingerprint patterns of identical twins, so there is no evidence to confirm or refute the claim.",
+        "evidence_count": 4,
+        "latency": 15.793249368667603,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Identical twins share the same DNA but fingerprints are formed by random intra\u2011uterine factors; studies consistently show that even monozygotic twins have distinct fingerprint patterns at birth.",
+        "evidence_count": 0,
+        "latency": 12.193359613418579,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0029": {
+    "id": "T1000-0029",
+    "domain": "Molecular Biology",
+    "expected": "Unverifiable",
+    "claim": "A synthetic biological human organ created entirely from algae polymers will be transplanted in 2055.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided sources define artificial cells, algae, and polysaccharides but contain no evidence that a fully algae\u2011polymer synthetic human organ has been created or that a transplantation is scheduled for 2055; the claim concerns a future event with no corroborating data.",
+        "evidence_count": 4,
+        "latency": 17.299256086349487,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided sources describe algae, artificial cells, and polysaccharides but contain no information about a fully algae\u2011polymer synthetic human organ or any planned transplantation in 2055, making the claim unsubstantiated and speculative.",
+        "evidence_count": 4,
+        "latency": 9.283451795578003,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.1,
+        "reasoning": "No evidence was provided to support or refute the claim that a synthetic biological human organ made entirely from algae polymers will be transplanted in 2055.",
+        "evidence_count": 0,
+        "latency": 11.783583879470825,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0030": {
+    "id": "T1000-0030",
+    "domain": "Molecular Biology",
+    "expected": "Unverifiable",
+    "claim": "Scientists will definitively discover a single universal biological gene responsible for musical genius.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.78,
+        "reasoning": "Current evidence shows only limited, exploratory studies (e.g., Beethoven DNA analyses) and emphasizes that traits like musical ability involve complex interplay of many genetic and environmental factors; no authoritative source confirms that a single universal gene will be discovered, making the future claim speculative.",
+        "evidence_count": 4,
+        "latency": 3.425053119659424,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided sources discuss unrelated topics (scientific events, biodiversity, sexual orientation, common descent) and contain no information about a gene for musical genius or predictions of its discovery, so the claim cannot be confirmed or refuted with the available evidence.",
+        "evidence_count": 4,
+        "latency": 5.14177942276001,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim that scientists will definitively discover a single universal biological gene responsible for musical genius.",
+        "evidence_count": 0,
+        "latency": 12.318461894989014,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0031": {
+    "id": "T1000-0031",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "The boiling point of pure water at standard atmospheric sea-level pressure (1 atm) is 100 degrees Celsius.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All authoritative sources state that pure water boils at about 100\u202f\u00b0C at 1\u202fatm sea\u2011level pressure; Wikipedia notes the precise value is 99.97\u202f\u00b0C, which is rounded to 100\u202f\u00b0C, and the UMD source directly says pure water boils at 100\u202f\u00b0C at standard pressure.",
+        "evidence_count": 4,
+        "latency": 6.33019232749939,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that pure water boils at 100\u202f\u00b0C (rounded from the precise value of 99.97\u202f\u00b0C) under standard atmospheric pressure of 1\u202fatm at sea level, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 6.636573076248169,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The boiling point of pure water at 1\u202fatm (standard atmospheric pressure at sea level) is defined as 100\u202f\u00b0C in standard thermodynamic tables and is widely accepted in physics and chemistry literature.",
+        "evidence_count": 0,
+        "latency": 12.198082208633423,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0032": {
+    "id": "T1000-0032",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "Carbon is capable of forming four covalent chemical bonds with other atomic elements.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources describe carbon as tetravalent, meaning its atoms can form up to four covalent bonds with other elements, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 6.721204996109009,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources state that carbon is tetravalent, meaning its atoms can form up to four covalent bonds with other elements, confirming the claim that carbon is capable of forming four covalent bonds.",
+        "evidence_count": 4,
+        "latency": 7.907979249954224,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Carbon has a valence of four, allowing it to form four covalent bonds with other atoms, as documented in standard inorganic chemistry references and the periodic table of elements.",
+        "evidence_count": 0,
+        "latency": 12.743080854415894,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0033": {
+    "id": "T1000-0033",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "Helium is an inert noble gas that rarely forms chemical compounds under standard temperature and pressure.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.62,
+        "reasoning": "The supplied sources identify helium as an element and a noble gas, but none explicitly state its inertness or the rarity of helium compounds at standard temperature and pressure. Without a source confirming this specific chemical behavior, the claim cannot be verified from the given evidence.",
+        "evidence_count": 4,
+        "latency": 5.7832043170928955,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.93,
+        "reasoning": "Helium is classified as a noble gas (Periodic table source) and, like other noble gases, is chemically inert; the argon compounds source notes that helium has an even higher ionisation energy than argon, indicating it is less reactive and compounds are not observed under standard temperature and pressure.",
+        "evidence_count": 4,
+        "latency": 5.316227912902832,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Helium is classified as a noble gas and is chemically inert; under standard temperature and pressure it does not form stable compounds, with only exotic species (e.g., HeH\u207a) observed under extreme conditions, confirming the claim that it rarely forms compounds in normal conditions.",
+        "evidence_count": 0,
+        "latency": 116.35913276672363,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0034": {
+    "id": "T1000-0034",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "Graphene consists of a single two-dimensional layer of carbon atoms arranged in a hexagonal lattice.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources describe graphene as a one\u2011atom\u2011thick sheet of carbon atoms arranged in a hexagonal (honeycomb) lattice, i.e., a single two\u2011dimensional layer of carbon in a hexagonal pattern.",
+        "evidence_count": 4,
+        "latency": 17.25987410545349,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Wikipedia describes graphene as a one\u2011atom\u2011thick sheet of carbon atoms arranged in a hexagonal (honeycomb) lattice, i.e., a single two\u2011dimensional layer of carbon in a hexagonal pattern.",
+        "evidence_count": 4,
+        "latency": 6.747192621231079,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so its truth cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 11.838953733444214,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0035": {
+    "id": "T1000-0035",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Liquid water decreases in volume and contracts when freezing into solid ice.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative scientific sources (e.g., HyperPhysics) state that water expands and its volume increases when it freezes into ice, meaning it does not contract; the claim contradicts this well\u2011established fact.",
+        "evidence_count": 4,
+        "latency": 5.628785848617554,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (e.g., the Wikipedia article on water) state that water expands by about 9\u202f% when it freezes, so its volume increases rather than decreases; thus the claim that liquid water contracts when freezing is incorrect.",
+        "evidence_count": 4,
+        "latency": 7.3014044761657715,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Water expands by about 9\u202f% when it freezes, so the liquid contracts instead of decreasing in volume; authoritative sources on physical chemistry and thermodynamics confirm this anomalous expansion.",
+        "evidence_count": 0,
+        "latency": 11.682313442230225,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0036": {
+    "id": "T1000-0036",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Glass is a slow-flowing liquid at room temperature that causes antique window panes to thicken at the bottom.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited sources state that glass is an amorphous solid, not a liquid, and that the observed thickness variation in antique windows is due to historic manufacturing methods, not slow flow at room temperature.",
+        "evidence_count": 4,
+        "latency": 4.784310340881348,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources explain that glass is an amorphous solid, not a liquid, and that the observed thicker bottom edges of historic panes result from old manufacturing techniques, not flow at room temperature (see sources 2, 3, and 4).",
+        "evidence_count": 4,
+        "latency": 5.0448994636535645,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Glass is an amorphous solid; it does not flow at room temperature. Scientific studies (e.g., American Chemical Society, NIST) show that the viscosity of glass at ambient conditions is astronomically high, preventing any measurable flow over human timescales, so antique panes do not thicken at the bottom.",
+        "evidence_count": 0,
+        "latency": 12.251657724380493,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0037": {
+    "id": "T1000-0037",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Rusting of iron is an endothermic chemical reaction that absorbs ambient heat from the surroundings.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Multiple chemistry references state that rusting (oxidation of iron) is an exothermic reaction that releases heat, not absorbs it, directly contradicting the claim.",
+        "evidence_count": 4,
+        "latency": 6.784011125564575,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "The provided sources define endothermic and exothermic reactions but do not contain any information about the thermodynamic nature of iron rusting, so the claim cannot be confirmed or refuted from the given evidence.",
+        "evidence_count": 4,
+        "latency": 7.09164023399353,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim that rusting of iron is endothermic and absorbs ambient heat.",
+        "evidence_count": 0,
+        "latency": 68.02566409111023,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0038": {
+    "id": "T1000-0038",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Natural diamonds are formed exclusively from compressed ancient coal deposits under prehistoric swamps.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "The supplied evidence does not address diamond formation, carbon sources, or geological processes, so there is no basis to confirm or refute the claim.",
+        "evidence_count": 4,
+        "latency": 6.620967388153076,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.7,
+        "reasoning": "The provided sources discuss cremation, a list of misconceptions, mineral definitions, and water, none of which address how natural diamonds form. Without relevant evidence, the claim cannot be confirmed or refuted.",
+        "evidence_count": 4,
+        "latency": 8.6805100440979,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Geological research shows natural diamonds form deep in the Earth's mantle under high pressure and temperature from carbon sources, not from compressed ancient coal in swamps; coal is not a required precursor and most diamonds originate from mantle processes far older than any surface coal deposits.",
+        "evidence_count": 0,
+        "latency": 83.08448052406311,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0039": {
+    "id": "T1000-0039",
+    "domain": "Chemistry",
+    "expected": "Unverifiable",
+    "claim": "A room-temperature ambient pressure superconductor will be commercially commercialized for grid power in 2038.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.78,
+        "reasoning": "The provided sources discuss the scientific properties and research interest in room\u2011temperature ambient\u2011pressure superconductors such as LK\u201199, but none give evidence about a commercial rollout for grid power by 2038, making the claim impossible to confirm or refute with the available information.",
+        "evidence_count": 4,
+        "latency": 4.803856134414673,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.65,
+        "reasoning": "The provided sources discuss graphene, carbon nanotubes, and plasma propulsion but contain no information about room\u2011temperature ambient\u2011pressure superconductors, their commercial readiness, or a projected 2038 grid\u2011power deployment, so the claim cannot be confirmed or refuted.",
+        "evidence_count": 4,
+        "latency": 4.282269716262817,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to confirm or refute the claim that a room\u2011temperature ambient\u2011pressure superconductor will be commercially available for grid power in 2038.",
+        "evidence_count": 0,
+        "latency": 11.838586807250977,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0040": {
+    "id": "T1000-0040",
+    "domain": "Chemistry",
+    "expected": "Unverifiable",
+    "claim": "Stable superheavy element 126 within the hypothetical island of stability will remain indefinitely non-radioactive.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "All authoritative sources state that element 126 (unbihexium) is hypothetical and that whether any superheavy element can be indefinitely non\u2011radioactive remains an open question; the island of stability predicts longer half\u2011lives, not permanent stability.",
+        "evidence_count": 4,
+        "latency": 9.168125867843628,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "All cited sources describe element 126 (unbihexium) as hypothetical and only potentially longer-lived within the predicted island of stability; none claim it would be indefinitely non\u2011radioactive, and the island of stability predicts increased half\u2011lives, not true stability.",
+        "evidence_count": 4,
+        "latency": 8.304041385650635,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the existence or properties of element 126, nor to support the claim that it would be indefinitely non-radioactive.",
+        "evidence_count": 0,
+        "latency": 13.235034704208374,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0041": {
+    "id": "T1000-0041",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "The human heart consists of four distinct anatomical chambers: two atria and two ventricles.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited authoritative sources (Wikipedia anatomy pages and TeachMeAnatomy) state that the human heart has four chambers: two atria and two ventricles, directly confirming the claim.",
+        "evidence_count": 4,
+        "latency": 13.82782244682312,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative anatomical sources (e.g., Wikipedia's \"Anatomy of the human heart\") state that the human heart has four chambers: the right and left atria and the right and left ventricles, directly confirming the claim.",
+        "evidence_count": 4,
+        "latency": 5.180266380310059,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Anatomical textbooks and authoritative medical sources describe the human heart as having four chambers: the right and left atria and the right and left ventricles.",
+        "evidence_count": 0,
+        "latency": 63.69167900085449,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0042": {
+    "id": "T1000-0042",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "Penicillin was discovered by Scottish physician Alexander Fleming in 1928 as an antibiotic substance.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited authoritative sources state that Scottish physician Alexander Fleming first demonstrated in 1928 that a Penicillium mould secreted an antibacterial substance he named penicillin, confirming his role as the discoverer of the antibiotic.",
+        "evidence_count": 4,
+        "latency": 3.398735523223877,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited Wikipedia sources confirm that Scottish physician Alexander Fleming first demonstrated the antibacterial properties of a Penicillium mould and named the substance penicillin in 1928, establishing it as the first antibiotic.",
+        "evidence_count": 4,
+        "latency": 6.973299741744995,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 12.209348678588867,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0043": {
+    "id": "T1000-0043",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "Red blood cells use iron-rich hemoglobin protein complexes to transport oxygen throughout the body.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that red blood cells (erythrocytes) contain hemoglobin, an iron\u2011containing protein that binds and carries oxygen from the lungs to body tissues, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 8.337214946746826,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that red blood cells contain hemoglobin, an iron\u2011containing protein that binds oxygen and delivers it throughout the body, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 7.660198211669922,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 11.739500522613525,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0044": {
+    "id": "T1000-0044",
+    "domain": "Medicine",
+    "expected": "True",
+    "claim": "Insulin is a peptide hormone produced by beta cells of the pancreatic islets to regulate blood glucose.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that insulin is a peptide hormone synthesized by beta cells in the pancreatic islets and that it regulates blood glucose by promoting glucose uptake into liver, fat, and muscle cells.",
+        "evidence_count": 4,
+        "latency": 6.189607620239258,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that insulin is a peptide hormone synthesized by beta cells in the pancreatic islets and its primary role is to regulate blood glucose levels by promoting glucose uptake into cells.",
+        "evidence_count": 4,
+        "latency": 5.696940898895264,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 12.254892826080322,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0045": {
+    "id": "T1000-0045",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Cracking knuckle joints causes osteoarthritis and permanent physical joint enlargement.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to assess whether knuckle cracking causes osteoarthritis or permanent joint enlargement, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 2.9724512100219727,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to assess whether knuckle cracking causes osteoarthritis or permanent joint enlargement, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to assess whether knuckle cracking causes osteoarthritis or permanent joint enlargement, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0046": {
+    "id": "T1000-0046",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "The MMR childhood vaccine has been scientifically proven to cause autism spectrum disorders.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Extensive epidemiological research and major health authorities (WHO, CDC, FDA, NHS) have found no causal link between the MMR vaccine and autism; the claim originates from a retracted fraudulent study and is contradicted by the consensus presented in source 2.",
+        "evidence_count": 4,
+        "latency": 12.610214471817017,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Extensive investigations by WHO, CDC, FDA and large\u2011scale epidemiological studies have found no causal link between the MMR vaccine and autism; the claim is a debunked myth originating from the retracted Wakefield study (see Vaccines and autism source).",
+        "evidence_count": 4,
+        "latency": 8.51235055923462,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Extensive epidemiological studies, systematic reviews, and meta\u2011analyses (e.g., the 2019 WHO review, the 2018 Lancet meta\u2011analysis, and CDC investigations) have found no causal link between the MMR vaccine and autism spectrum disorders. The original 1998 study that sparked the claim was retracted and its data found to be fraudulent.",
+        "evidence_count": 0,
+        "latency": 12.017609119415283,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0047": {
+    "id": "T1000-0047",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Shaving body hair causes the follicle to regenerate hair that is significantly thicker and faster growing.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Authoritative health sources (Cleveland Clinic) and myth\u2011debunking articles state that shaving does not alter the thickness or growth rate of hair; any perceived coarseness is due to the blunt tip of cut hair, not a biological change in the follicle.",
+        "evidence_count": 4,
+        "latency": 2.994428873062134,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Authoritative medical source (Cleveland Clinic) states that shaving does not cause hair to grow back thicker or faster; the perceived coarseness is only superficial, and hair returns to its original texture and growth rate.",
+        "evidence_count": 4,
+        "latency": 4.017679691314697,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to assess the claim, so the truth value cannot be determined.",
+        "evidence_count": 0,
+        "latency": 11.838012456893921,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0048": {
+    "id": "T1000-0048",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Antibiotics are clinically effective medications for eliminating the common cold viral infection.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (CDC, Wikipedia) state that the common cold is caused by viruses and antibiotics target bacteria; clinical studies show antibiotics do not reduce duration or severity of cold symptoms, confirming they are not effective for eliminating the viral infection.",
+        "evidence_count": 4,
+        "latency": 11.054965019226074,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Antibiotics target bacteria and are explicitly stated to be ineffective against viruses; the common cold is caused by viruses, so antibiotics cannot eliminate it (source: Antibiotic Wikipedia entry).",
+        "evidence_count": 4,
+        "latency": 6.094907283782959,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim, so the factual status cannot be determined from the given sources.",
+        "evidence_count": 0,
+        "latency": 11.986899852752686,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0049": {
+    "id": "T1000-0049",
+    "domain": "Medicine",
+    "expected": "Unverifiable",
+    "claim": "A universal one-dose vaccine eradicating all human cancer malignancies will be approved by the FDA in 2042.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.92,
+        "reasoning": "The provided sources discuss experimental universal cancer vaccine concepts and early research, but none provide evidence that the FDA will approve such a vaccine in 2042. The claim is a specific future prediction lacking verifiable support.",
+        "evidence_count": 4,
+        "latency": 11.911811590194702,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.7,
+        "reasoning": "The provided sources discuss COVID\u201119, HIV, HPV vaccines and Helicobacter pylori, none of which address a universal one\u2011dose cancer vaccine, its efficacy against all malignancies, or an FDA approval date in 2042; therefore there is no evidence to confirm or refute the claim.",
+        "evidence_count": 4,
+        "latency": 6.634029150009155,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No current scientific or regulatory evidence supports the claim that a universal one\u2011dose cancer vaccine eradicating all malignancies will receive FDA approval in 2042; the statement is a speculative future prediction.",
+        "evidence_count": 0,
+        "latency": 69.83701848983765,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0050": {
+    "id": "T1000-0050",
+    "domain": "Medicine",
+    "expected": "Unverifiable",
+    "claim": "Human life expectancy will achieve biological immortality through cellular telomere editing by the year 2100.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.65,
+        "reasoning": "The provided sources discuss life extension concepts and research but do not present any authoritative evidence or predictions that humans will achieve biological immortality via telomere editing by 2100; thus the claim remains a speculative future prediction that cannot be verified with current evidence.",
+        "evidence_count": 4,
+        "latency": 7.791321516036987,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The provided sources discuss the concepts of immortality, life\u2011extension research, and senescence but contain no authoritative evidence or credible forecasts that humans will attain biological immortality via telomere editing by 2100; the claim is a speculative future prediction beyond current scientific verification.",
+        "evidence_count": 4,
+        "latency": 6.677050828933716,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that human life expectancy will reach biological immortality via telomere editing by 2100; the claim is a future speculative assertion that cannot be verified with current data.",
+        "evidence_count": 0,
+        "latency": 12.127132892608643,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0051": {
+    "id": "T1000-0051",
+    "domain": "Earth Science",
+    "expected": "True",
+    "claim": "The ozone layer is located primarily within the stratosphere of Earth's atmosphere.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that the ozone layer exists between about 10 and 50 km altitude, which corresponds to the stratospheric region of Earth's atmosphere, confirming that it is primarily located in the stratosphere.",
+        "evidence_count": 4,
+        "latency": 17.133528232574463,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Wikipedia sources state that the ozone layer (2\u20138 ppm O\u2083) exists between 10 and 50 km above the surface, which corresponds to the stratospheric region of Earth's atmosphere.",
+        "evidence_count": 4,
+        "latency": 7.639007091522217,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so it cannot be verified based on the supplied information.",
+        "evidence_count": 0,
+        "latency": 12.285013914108276,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0052": {
+    "id": "T1000-0052",
+    "domain": "Earth Science",
+    "expected": "True",
+    "claim": "Tectonic plate movements along transform boundaries and subduction zones generate earthquakes.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Authoritative sources describe that transform plate boundaries produce shallow earthquakes (e.g., US National Park Service) and that convergent/subduction zones are a type of plate interaction that generates seismic activity, confirming the claim that both transform and subduction movements generate earthquakes.",
+        "evidence_count": 4,
+        "latency": 5.235561370849609,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.96,
+        "reasoning": "Authoritative sources describe that tectonic plates interact at transform (strike\u2011slip) and convergent (subduction) boundaries, and these movements are the primary mechanisms that generate earthquakes, consistent with the claim.",
+        "evidence_count": 4,
+        "latency": 8.932743549346924,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so its truth cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 11.896440505981445,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0053": {
+    "id": "T1000-0053",
+    "domain": "Earth Science",
+    "expected": "True",
+    "claim": "The Mariana Trench in the western Pacific Ocean is the deepest oceanic trench on Earth.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that the Mariana Trench is the deepest oceanic trench on Earth, with the Challenger Deep reaching about 10,935\u202f\u00b1\u202f6\u202fm, and that the Tonga Trench is only the second deepest after it.",
+        "evidence_count": 4,
+        "latency": 7.983805179595947,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources (Wikipedia entries on the Mariana Trench and oceanic trenches) state that the Mariana Trench, specifically the Challenger Deep, is the deepest oceanic trench on Earth, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 5.689096927642822,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 11.887113809585571,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0054": {
+    "id": "T1000-0054",
+    "domain": "Earth Science",
+    "expected": "True",
+    "claim": "Mount Everest is the highest mountain peak above sea level on Earth.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited authoritative sources (Wikipedia entries and Geology.com) state that Mount Everest\u2019s summit is 8,848.86\u202fm above sea level, making it the highest mountain peak on Earth above sea level.",
+        "evidence_count": 4,
+        "latency": 4.906155824661255,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (e.g., the Mount Everest Wikipedia article) state that Everest\u2019s summit is 8,848.86\u202fm above sea level, and no other peak exceeds this elevation, confirming it is the highest mountain peak above sea level on Earth.",
+        "evidence_count": 4,
+        "latency": 5.921424627304077,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 12.329189538955688,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0055": {
+    "id": "T1000-0055",
+    "domain": "Earth Science",
+    "expected": "False",
+    "claim": "Lightning never strikes the same exact geographical structure more than once in human history.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative and web sources explain that lightning frequently strikes the same tall, isolated structure repeatedly; the Empire State Building is hit about 25 times per year, directly contradicting the claim that it never strikes the same exact structure more than once.",
+        "evidence_count": 4,
+        "latency": 14.486823320388794,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources on lightning state that lightning can and often does strike the same tall or conductive structure multiple times (e.g., the Empire State Building, radio towers). The claim that it never strikes the same exact geographical structure more than once contradicts this well\u2011documented fact.",
+        "evidence_count": 4,
+        "latency": 8.644322633743286,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Lightning frequently strikes the same tall or conductive structures repeatedly; for example, the Empire State Building is struck by lightning roughly 1,200 times per year, and many lightning rods and high\u2011rise buildings worldwide have documented multiple strikes. This directly contradicts the claim that no structure has ever been struck more than once.",
+        "evidence_count": 0,
+        "latency": 13.036795616149902,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0056": {
+    "id": "T1000-0056",
+    "domain": "Earth Science",
+    "expected": "False",
+    "claim": "The Coriolis effect dictates the clockwise or counterclockwise swirling direction of draining household sinks.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Scientific consensus holds that the Coriolis effect is far too weak to influence the direction of water swirling in household sinks; the observed direction is governed by factors such as basin geometry and residual water motion, not Earth's rotation.",
+        "evidence_count": 0,
+        "latency": 2.8336262702941895,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Scientific consensus holds that the Coriolis effect is far too weak to influence the direction of water swirling in household sinks; the observed direction is governed by factors such as basin geometry and residual water motion, not Earth's rotation.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Scientific consensus holds that the Coriolis effect is far too weak to influence the direction of water swirling in household sinks; the observed direction is governed by factors such as basin geometry and residual water motion, not Earth's rotation.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0057": {
+    "id": "T1000-0057",
+    "domain": "Earth Science",
+    "expected": "False",
+    "claim": "Deserts are defined scientifically as environments characterized strictly by high ambient temperatures.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Authoritative sources define deserts primarily by aridity\u2014precipitation far below evaporation\u2014and note high temperatures as a common but not exclusive characteristic; the claim that deserts are defined strictly by high ambient temperatures contradicts this definition.",
+        "evidence_count": 4,
+        "latency": 5.152637481689453,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Authoritative sources define deserts primarily by extreme aridity and low precipitation, not by high ambient temperature; they note that deserts can be hot or cold, so the claim that deserts are defined strictly by high temperatures is incorrect.",
+        "evidence_count": 4,
+        "latency": 4.998136281967163,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim that deserts are defined strictly by high ambient temperatures.",
+        "evidence_count": 0,
+        "latency": 12.325716495513916,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0058": {
+    "id": "T1000-0058",
+    "domain": "Earth Science",
+    "expected": "False",
+    "claim": "Dropping a penny from the top of the Empire State Building will accelerate sufficiently to kill a pedestrian.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "All cited sources debunk the urban legend, showing a penny reaches only about 0.15\u202fJ of kinetic energy\u2014far below the ~15\u202fJ needed to fracture a skull\u2014so it cannot kill a pedestrian.",
+        "evidence_count": 4,
+        "latency": 6.337278604507446,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The supplied evidence does not address the physics of a falling penny, its terminal velocity, or its lethality, so the claim cannot be evaluated with the given sources.",
+        "evidence_count": 4,
+        "latency": 5.398630619049072,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to assess the claim, so it cannot be confirmed or refuted based on the supplied sources.",
+        "evidence_count": 0,
+        "latency": 12.275587558746338,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0059": {
+    "id": "T1000-0059",
+    "domain": "Earth Science",
+    "expected": "Unverifiable",
+    "claim": "A category 6 hurricane with sustained winds exceeding 215 mph will make landfall in Florida in October 2031.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.73,
+        "reasoning": "The provided evidence discusses past Category\u202f5 hurricanes and the theoretical concept of a Category\u202f6, but contains no authoritative information confirming that a Category\u202f6 hurricane with >215\u202fmph winds will strike Florida in October\u202f2031. As a future speculative event, it cannot be verified with current data.",
+        "evidence_count": 4,
+        "latency": 7.274290084838867,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The claim predicts a specific future event (a Category\u202f6 hurricane with >215\u202fmph winds hitting Florida in October\u202f2031). No provided evidence addresses future hurricane activity, and the Saffir\u2011Simpson scale currently defines only Categories\u202f1\u20115, making the claim speculative and not presently testable.",
+        "evidence_count": 4,
+        "latency": 8.915038347244263,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim that a Category\u202f6 hurricane with winds over 215\u202fmph will make landfall in Florida in October\u202f2031.",
+        "evidence_count": 0,
+        "latency": 12.045327186584473,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0060": {
+    "id": "T1000-0060",
+    "domain": "Earth Science",
+    "expected": "Unverifiable",
+    "claim": "The Yellowstone supervolcano caldera will begin a catastrophic global eruption sequence in the year 2060.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.8,
+        "reasoning": "No authoritative scientific source predicts a Yellowstone eruption in 2060; the claim is a speculative future event lacking verifiable evidence, and the only related source mentions a conspiracy theorist known for failed predictions, not a credible geological forecast.",
+        "evidence_count": 4,
+        "latency": 16.78655481338501,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.27,
+        "reasoning": "No authoritative scientific source predicts a Yellowstone eruption in 2060; the only related references are a general definition of calderas and a note that a conspiracy theorist (David Meade) has made unfounded end\u2011times predictions. Without credible evidence, the specific future claim cannot be verified.",
+        "evidence_count": 4,
+        "latency": 8.969619989395142,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to support or refute the claim that Yellowstone will erupt in 2060, and the event is a future speculative scenario that cannot be verified with current data.",
+        "evidence_count": 0,
+        "latency": 12.104575395584106,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0061": {
+    "id": "T1000-0061",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The Apollo 11 lunar module successfully landed astronauts on the Moon in July 1969.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (e.g., Wikipedia entry on Apollo 11) state that the Lunar Module Eagle landed astronauts Neil Armstrong and Buzz Aldrin on the Moon on July 20, 1969, confirming a successful July 1969 landing.",
+        "evidence_count": 4,
+        "latency": 7.522578001022339,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources (e.g., Wikipedia entries on Apollo 11) confirm that the Apollo 11 Lunar Module Eagle landed astronauts Neil Armstrong and Buzz Aldrin on the Moon on July 20, 1969, within the July 1969 timeframe.",
+        "evidence_count": 4,
+        "latency": 12.706495523452759,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess the claim.",
+        "evidence_count": 0,
+        "latency": 12.16399335861206,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0062": {
+    "id": "T1000-0062",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The RMS Titanic sank in the North Atlantic Ocean after colliding with an iceberg in April 1912.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources confirm that the RMS Titanic sank in the North Atlantic after striking an iceberg in April 1912 (e.g., Wikipedia entries on the Titanic and the official government guide).",
+        "evidence_count": 4,
+        "latency": 8.776326656341553,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources (Wikipedia entries on the Titanic and the iceberg) confirm that the RMS Titanic sank in the North Atlantic after colliding with an iceberg in mid\u2011April 1912.",
+        "evidence_count": 4,
+        "latency": 5.309443473815918,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess the claim, so its truth cannot be verified.",
+        "evidence_count": 0,
+        "latency": 12.18996000289917,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0063": {
+    "id": "T1000-0063",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The Rosetta Stone provided the key to deciphering ancient Egyptian hieroglyphic script.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that the Rosetta Stone, bearing the same decree in Greek, Demotic, and hieroglyphic scripts, was the crucial reference that allowed scholars such as Champollion to decipher ancient Egyptian hieroglyphs.",
+        "evidence_count": 4,
+        "latency": 4.893388509750366,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Wikipedia's article on the Rosetta Stone states that the stone's three parallel texts (hieroglyphic, demotic, and Greek) made it the key to deciphering Egyptian scripts, confirming that it provided the crucial insight for deciphering hieroglyphs.",
+        "evidence_count": 4,
+        "latency": 6.035315036773682,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so the truth of the statement cannot be determined from the available data.",
+        "evidence_count": 0,
+        "latency": 12.217986345291138,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0064": {
+    "id": "T1000-0064",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The Berlin Wall fell in November 1989, culminating in German reunification.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Source 1 notes that the process leading to German reunification began on 9\u202fNovember\u202f1989\u2014the day the Berlin Wall opened\u2014and culminated on 3\u202fOctober\u202f1990, confirming the wall fell in November 1989 and that this event led to reunification. Source 2 confirms the wall existed until 1989, supporting the timing.",
+        "evidence_count": 4,
+        "latency": 11.81817889213562,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Wikipedia confirms the Berlin Wall fell on 9\u202fNovember\u202f1989, and that German reunification began on that same date and culminated on 3\u202fOctober\u202f1990, linking the wall's fall to the reunification process.",
+        "evidence_count": 4,
+        "latency": 8.303986549377441,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so its veracity cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 14.48250937461853,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0065": {
+    "id": "T1000-0065",
+    "domain": "History",
+    "expected": "False",
+    "claim": "Napoleon Bonaparte was unusually short compared to average French men of his historical era.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.78,
+        "reasoning": "The supplied sources discuss Napoleon's era, a painting, the French Empire, and a recent film, but none provide information about his height or comparative stature among French men of his time, so the claim cannot be confirmed or refuted from the given evidence.",
+        "evidence_count": 4,
+        "latency": 7.596137762069702,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "None of the supplied sources discuss Napoleon's stature or the average height of French men in the early 19th\u202fcentury, so there is no evidence to confirm or refute the claim.",
+        "evidence_count": 4,
+        "latency": 8.881953477859497,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to assess Napoleon Bonaparte\u2019s height relative to his contemporaries.",
+        "evidence_count": 0,
+        "latency": 12.033304691314697,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0066": {
+    "id": "T1000-0066",
+    "domain": "History",
+    "expected": "False",
+    "claim": "Viking warriors historically wore helmets decorated with large protruding animal horns into combat.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Archaeological evidence and contemporary accounts show Viking helmets were simple iron caps without horns; the horned\u2011helmet image stems from 19th\u2011century romantic art, not historical fact.",
+        "evidence_count": 0,
+        "latency": 3.055060625076294,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Archaeological evidence and contemporary accounts show Viking helmets were simple iron caps without horns; the horned\u2011helmet image stems from 19th\u2011century romantic art, not historical fact.",
+        "evidence_count": 0,
+        "latency": 0.0003421306610107422,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Archaeological evidence and contemporary accounts show Viking helmets were simple iron caps without horns; the horned\u2011helmet image stems from 19th\u2011century romantic art, not historical fact.",
+        "evidence_count": 0,
+        "latency": 0.0005321502685546875,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0067": {
+    "id": "T1000-0067",
+    "domain": "History",
+    "expected": "False",
+    "claim": "Albert Einstein flunked his childhood elementary school mathematics examinations.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.7,
+        "reasoning": "The provided evidence (a list of Bronx High School of Science alumni) does not contain any information about Albert Einstein's elementary school mathematics examinations, so the claim cannot be confirmed or refuted based on the given sources.",
+        "evidence_count": 1,
+        "latency": 12.281663417816162,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.55,
+        "reasoning": "The provided evidence (a Wikipedia list of Bronx High School of Science alumni) does not contain any information about Albert Einstein's elementary school mathematics examinations, so the claim cannot be confirmed or refuted based on the given sources.",
+        "evidence_count": 1,
+        "latency": 4.945164918899536,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.1,
+        "reasoning": "No evidence was provided to confirm or refute whether Albert\u202fEinstein failed elementary mathematics exams, so the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 11.99540400505066,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0068": {
+    "id": "T1000-0068",
+    "domain": "History",
+    "expected": "False",
+    "claim": "Iron Maiden torture devices were extensively utilized during medieval European judicial executions.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "The provided evidence does not contain any information about iron maidens, their use, or medieval European judicial practices, so the claim cannot be confirmed or refuted based on the given sources.",
+        "evidence_count": 4,
+        "latency": 8.038279056549072,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.7,
+        "reasoning": "The supplied evidence discusses death by burning and unrelated fictional characters, but provides no information about iron maiden devices or their use in medieval European executions, so the claim cannot be confirmed or refuted from the given sources.",
+        "evidence_count": 4,
+        "latency": 5.641810178756714,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so the truth value cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 13.46404504776001,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0069": {
+    "id": "T1000-0069",
+    "domain": "History",
+    "expected": "Unverifiable",
+    "claim": "The lost city of Atlantis will be discovered submerged beneath 500 meters of Mediterranean mud in 2035.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "No authoritative source confirms a future discovery of Atlantis, nor provides data about a 500\u202fm mud layer in the Mediterranean; the claim is speculative and lacks evidence.",
+        "evidence_count": 4,
+        "latency": 7.144368410110474,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.7,
+        "reasoning": "No provided sources mention Atlantis, a 2035 discovery, or 500\u202fm of Mediterranean mud; the claim is a future speculative assertion without supporting evidence.",
+        "evidence_count": 4,
+        "latency": 7.799476623535156,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "No authoritative evidence confirms that Atlantis will be discovered in 2035, and the claim concerns a future speculative event that cannot be verified at present.",
+        "evidence_count": 0,
+        "latency": 65.0079698562622,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0070": {
+    "id": "T1000-0070",
+    "domain": "History",
+    "expected": "Unverifiable",
+    "claim": "Julius Caesar's private handwritten philosophical diaries will be recovered from Herculaneum scrolls in 2045.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.65,
+        "reasoning": "The provided sources list general lost works and book burnings but contain no information confirming the existence of Julius Caesar's private philosophical diaries or any planned recovery from Herculaneum scrolls, making the claim a future speculative assertion without supporting evidence.",
+        "evidence_count": 2,
+        "latency": 2.8399744033813477,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.65,
+        "reasoning": "The provided evidence lists general topics about book burnings and lost works but contains no information about Julius Caesar's diaries, the Herculaneum scrolls, or any planned recovery in 2045, making the claim impossible to confirm or refute with the given sources.",
+        "evidence_count": 2,
+        "latency": 4.726195335388184,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence is provided that Julius Caesar had private handwritten philosophical diaries, that such diaries are present in the Herculaneum scrolls, or that they will be recovered in 2045. The claim is a future speculative event with no supporting data.",
+        "evidence_count": 0,
+        "latency": 12.288349866867065,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0071": {
+    "id": "T1000-0071",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "The Python programming language was originally created and implemented by Guido van Rossum.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All authoritative sources state that Guido van Rossum conceived, created, and began implementing Python in the late 1980s (December 1989) and released it in 1991, confirming he was the original creator and implementer.",
+        "evidence_count": 4,
+        "latency": 8.230929613113403,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources (Wikipedia entries) state that Guido van Rossum conceived, wrote the first implementation, and was the principal author of Python starting in December 1989, confirming he originally created and implemented the language.",
+        "evidence_count": 4,
+        "latency": 6.135233163833618,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim that Guido van Rossum originally created and implemented Python.",
+        "evidence_count": 0,
+        "latency": 12.242594718933105,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0072": {
+    "id": "T1000-0072",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "Public-key cryptography uses asymmetric key pairs consisting of a public key and a private key.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources define public\u2011key (asymmetric) cryptography as using key pairs that include a public key and a corresponding private key, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 5.626363277435303,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources define public\u2011key (asymmetric) cryptography as employing key pairs that include a public key and a corresponding private key, confirming the claim (see Public\u2011key cryptography Wikipedia entry).",
+        "evidence_count": 4,
+        "latency": 5.7184178829193115,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 11.891915798187256,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0073": {
+    "id": "T1000-0073",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "The TCP/IP protocol suite forms the foundational networking architecture of the global internet.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources describe TCP/IP as the core framework that organizes the communication protocols of the Internet, stating it provides the foundational architecture for global networking.",
+        "evidence_count": 4,
+        "latency": 14.248182535171509,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Source 2 (Internet protocol suite) explicitly states that TCP/IP is the framework organizing the communication protocols used in the Internet and that its foundational protocols (TCP, UDP, IP) underpin the global network architecture, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 6.677905321121216,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess the claim.",
+        "evidence_count": 0,
+        "latency": 12.00526475906372,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0074": {
+    "id": "T1000-0074",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "Alan Turing proposed the imitation game, known as the Turing Test, as a criterion of machine intelligence.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources confirm that Alan Turing introduced the imitation game in his 1950 paper, which is now called the Turing Test, and presented it as a criterion for assessing machine intelligence.",
+        "evidence_count": 4,
+        "latency": 8.01845407485962,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources state that Alan Turing introduced the imitation game in his 1950 paper \"Computing Machinery and Intelligence,\" which is commonly called the Turing Test and serves as a criterion for machine intelligence.",
+        "evidence_count": 4,
+        "latency": 5.797390460968018,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 52.65976691246033,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0075": {
+    "id": "T1000-0075",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "The 5G wireless cellular communications network causes biological transmission of COVID-19 viral strains.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources describe 5G as a non\u2011ionising radio\u2011frequency communication system and provide no mechanism for transmitting biological agents; scientific consensus and health agencies have repeatedly debunked any link between 5G and COVID\u201119 spread.",
+        "evidence_count": 4,
+        "latency": 15.279147624969482,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources describe 5G as a non\u2011ionising radiofrequency technology and provide no mechanism for it to carry or transmit biological agents; scientific and public\u2011health agencies have repeatedly debunked the claim that 5G spreads COVID\u201119, stating the virus transmits via respiratory droplets, not electromagnetic waves.",
+        "evidence_count": 4,
+        "latency": 7.950061798095703,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Extensive research by WHO, CDC, and peer\u2011reviewed studies have found no plausible mechanism for electromagnetic 5G signals to transmit viruses; COVID\u201119 spreads via respiratory droplets and aerosols, not radio waves, and the timing of 5G rollout does not correlate with infection patterns.",
+        "evidence_count": 0,
+        "latency": 80.63771057128906,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0076": {
+    "id": "T1000-0076",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "Quantum computers can instantly compute every mathematically impossible problem by trying all realities.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.62,
+        "reasoning": "The provided sources discuss Bell tests, AI, general relativity, and one-time pads, none of which address the capabilities of quantum computers. Without relevant evidence, the claim that quantum computers can instantly solve every mathematically impossible problem cannot be verified or refuted from the given material.",
+        "evidence_count": 4,
+        "latency": 8.153239488601685,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "No authoritative evidence supports the claim; quantum computers are limited to solving problems within the bounds of computability and cannot instantly solve mathematically impossible problems or access multiple realities, contrary to established computational theory.",
+        "evidence_count": 4,
+        "latency": 7.8695313930511475,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim that quantum computers can instantly solve every mathematically impossible problem by exploring all realities, so the truth value cannot be determined.",
+        "evidence_count": 0,
+        "latency": 11.881125211715698,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0077": {
+    "id": "T1000-0077",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "Clearing browser cache and private cookies permanently immunizes computers against ransomware infections.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Clearing browser cache and cookies only removes stored web data and does not affect the operating system or executable files; ransomware typically spreads via malicious attachments, exploit kits, or vulnerable software, so this action cannot permanently immunize a computer against ransomware.",
+        "evidence_count": 0,
+        "latency": 2.6559717655181885,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Clearing browser cache and cookies only removes stored web data and does not affect the operating system or executable files; ransomware typically spreads via malicious attachments, exploit kits, or vulnerable software, so this action cannot permanently immunize a computer against ransomware.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Clearing browser cache and cookies only removes stored web data and does not affect the operating system or executable files; ransomware typically spreads via malicious attachments, exploit kits, or vulnerable software, so this action cannot permanently immunize a computer against ransomware.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0078": {
+    "id": "T1000-0078",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "The first electronic computer ENIAC was constructed entirely from solid-state silicon microprocessors.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "ENIAC was completed in 1945 and was built using vacuum tubes; solid\u2011state silicon microprocessors were not developed until the late 20th century (post\u20111970s). The evidence notes that the transistor, the basis for solid\u2011state devices, only appeared in 1947, after ENIAC\u2019s construction, so the claim that ENIAC was constructed entirely from solid\u2011state silicon microprocessors is false.",
+        "evidence_count": 4,
+        "latency": 10.281259775161743,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "ENIAC was completed in 1945, before the invention of the transistor (1947) and the development of solid\u2011state silicon microprocessors; it was built using vacuum tubes, not solid\u2011state components. Source 4 notes the transistor's advent in 1947, making solid\u2011state construction impossible for ENIAC.",
+        "evidence_count": 4,
+        "latency": 5.664065599441528,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 59.366575956344604,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0079": {
+    "id": "T1000-0079",
+    "domain": "Computer Science",
+    "expected": "Unverifiable",
+    "claim": "A quantum computing chip exceeding 1,000,000 fault-tolerant logical qubits will be operational by 2036.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.45,
+        "reasoning": "The provided evidence does not contain any information about quantum computing chip development, fault-tolerant logical qubits, or timelines extending to 2036, so the claim cannot be assessed.",
+        "evidence_count": 2,
+        "latency": 13.992631435394287,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence consists of Wikipedia entries about a 2021 science list and a 32\u2011bit CPU architecture, neither of which contains information about quantum computing hardware or projections for fault\u2011tolerant logical qubits. No authoritative source confirms or refutes the claim that a chip with over 1,000,000 fault\u2011tolerant logical qubits will be operational by 2036, making the claim currently unverifiable.",
+        "evidence_count": 2,
+        "latency": 4.454808712005615,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.92,
+        "reasoning": "No provided evidence addresses the claim, and the statement concerns a speculative future technology timeline that cannot be confirmed with current data.",
+        "evidence_count": 0,
+        "latency": 12.47525143623352,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0080": {
+    "id": "T1000-0080",
+    "domain": "Computer Science",
+    "expected": "Unverifiable",
+    "claim": "The global financial monetary system will completely abandon paper fiat currency in favor of central blockchain tokens in 2040.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The provided authoritative sources discuss current monetary systems, economic theory, and individuals, but none offer evidence about a complete global shift to blockchain tokens by 2040, making the claim speculative and not verifiable.",
+        "evidence_count": 4,
+        "latency": 5.252248287200928,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "No provided evidence discusses blockchain tokens, the abandonment of paper fiat, or a 2040 timeline; thus the claim cannot be verified or refuted.",
+        "evidence_count": 4,
+        "latency": 2.6797680854797363,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.1,
+        "reasoning": "No evidence was provided to support or refute the claim that the global monetary system will abandon paper fiat currency for central blockchain tokens by 2040.",
+        "evidence_count": 0,
+        "latency": 12.068599224090576,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0081": {
+    "id": "T1000-0081",
+    "domain": "Zoology",
+    "expected": "True",
+    "claim": "Worker honeybees in a hive are sterile females that perform foraging and nest maintenance.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Multiple authoritative sources describe worker honeybees as non\u2011reproductive (sterile) females that handle foraging, hive maintenance, and related tasks, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 14.727063417434692,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Worker honeybees are indeed sterile females that perform non\u2011reproductive tasks such as foraging and nest maintenance, as described in the ScienceDirect overview of worker honey bees and the Wikipedia entry on worker bees.",
+        "evidence_count": 4,
+        "latency": 2.4953246116638184,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so the truth value cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 11.763041734695435,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0082": {
+    "id": "T1000-0082",
+    "domain": "Zoology",
+    "expected": "True",
+    "claim": "Blue whales are the largest confirmed animal species ever known to have lived on Earth.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Wikipedia) state that the blue whale is the largest animal known to have ever existed, with confirmed lengths up to ~30\u202fm and weights up to ~200\u202ft, and no evidence of any larger confirmed species, making the claim accurate.",
+        "evidence_count": 4,
+        "latency": 5.906866788864136,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Both Wikipedia entries (1 and 3) state that the blue whale is the largest animal known to have ever existed, confirming the claim that it is the largest confirmed animal species. No evidence contradicts this assertion.",
+        "evidence_count": 4,
+        "latency": 2.751763343811035,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so the statement cannot be evaluated based on the supplied sources.",
+        "evidence_count": 0,
+        "latency": 12.339418649673462,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0083": {
+    "id": "T1000-0083",
+    "domain": "Zoology",
+    "expected": "True",
+    "claim": "Platypuses and echidnas are monotremes, an order of mammals that lay eggs rather than bearing live young.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that monotremes (order Monotremata) are the only extant mammals that lay eggs, and that the five living monotreme species consist of the platypus and four species of echidnas, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 8.093759775161743,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The evidence from Wikipedia confirms that both the platypus and all species of echidna belong to the order Monotremata, which is defined as the only extant group of mammals that lay eggs instead of giving birth to live young. Sources 1, 3, and 4 explicitly state that monotremes lay eggs and that the platypus and echidnas are members of this order.",
+        "evidence_count": 4,
+        "latency": 2.7552576065063477,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 12.326191425323486,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0084": {
+    "id": "T1000-0084",
+    "domain": "Zoology",
+    "expected": "True",
+    "claim": "Octopuses have three hearts and blue copper-based hemocyanin blood.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided sources discuss lobsters, squids, cephalopods generally, and molluscs, but none contain information about octopus heart count or the composition/color of their blood, so the claim cannot be confirmed or refuted from the evidence.",
+        "evidence_count": 4,
+        "latency": 8.315457820892334,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence contains no information about octopus physiology, hearts, or blood composition, so it cannot confirm or refute the claim.",
+        "evidence_count": 4,
+        "latency": 7.388931035995483,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so the truth of the statement cannot be determined from the supplied information.",
+        "evidence_count": 0,
+        "latency": 12.53394603729248,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0085": {
+    "id": "T1000-0085",
+    "domain": "Zoology",
+    "expected": "False",
+    "claim": "Bulls become enraged and charge matadors specifically because they perceive the visual color red.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Scientific studies show that cattle, including bulls, are dichromatic and cannot distinguish red from other colors; they react to the motion of the matador's cape, not its color, debunking the claim that red provokes them.",
+        "evidence_count": 0,
+        "latency": 2.5499589443206787,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Scientific studies show that cattle, including bulls, are dichromatic and cannot distinguish red from other colors; they react to the motion of the matador's cape, not its color, debunking the claim that red provokes them.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Scientific studies show that cattle, including bulls, are dichromatic and cannot distinguish red from other colors; they react to the motion of the matador's cape, not its color, debunking the claim that red provokes them.",
+        "evidence_count": 0,
+        "latency": 0.0006694793701171875,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0086": {
+    "id": "T1000-0086",
+    "domain": "Zoology",
+    "expected": "False",
+    "claim": "Goldfish possess an ephemeral memory retention span of only three seconds.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Scientific studies have demonstrated that goldfish can learn and retain information for weeks to months, disproving the myth that their memory lasts only three seconds.",
+        "evidence_count": 0,
+        "latency": 2.8715720176696777,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Scientific studies have demonstrated that goldfish can learn and retain information for weeks to months, disproving the myth that their memory lasts only three seconds.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Scientific studies have demonstrated that goldfish can learn and retain information for weeks to months, disproving the myth that their memory lasts only three seconds.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0087": {
+    "id": "T1000-0087",
+    "domain": "Zoology",
+    "expected": "False",
+    "claim": "Bats are completely blind mammals that navigate their physical surroundings solely through echolocation.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Scientific literature shows that most bat species have functional eyes and can see, disproving the claim that they are completely blind; they also use vision in conjunction with echolocation rather than relying solely on echolocation for navigation.",
+        "evidence_count": 0,
+        "latency": 3.9791905879974365,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Scientific literature shows that most bat species have functional eyes and can see, disproving the claim that they are completely blind; they also use vision in conjunction with echolocation rather than relying solely on echolocation for navigation.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Scientific literature shows that most bat species have functional eyes and can see, disproving the claim that they are completely blind; they also use vision in conjunction with echolocation rather than relying solely on echolocation for navigation.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0088": {
+    "id": "T1000-0088",
+    "domain": "Zoology",
+    "expected": "False",
+    "claim": "Ostriches bury their heads in sand dunes when confronted by approaching predatory threats.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "None of the provided sources address ostrich behavior; they discuss unrelated topics such as TV series and evolutionary theory, so there is no evidence to confirm or refute the claim that ostriches bury their heads in sand dunes when threatened.",
+        "evidence_count": 4,
+        "latency": 5.7751500606536865,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence consists of unrelated Wikipedia entries about television shows and evolutionary theory, none of which address ostrich behavior. Therefore there is no relevant information to confirm or refute the claim.",
+        "evidence_count": 4,
+        "latency": 13.364277601242065,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim that ostriches bury their heads in sand dunes when confronted by predators.",
+        "evidence_count": 0,
+        "latency": 12.291933536529541,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0089": {
+    "id": "T1000-0089",
+    "domain": "Zoology",
+    "expected": "Unverifiable",
+    "claim": "A de-extinct woolly mammoth herd will roam freely across the Siberian tundra ecosystem by the year 2032.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided sources discuss unrelated species and a satire TV show and contain no information about de\u2011extinction efforts, woolly mammoths, or projected reintroduction timelines, so the claim cannot be assessed with the available evidence.",
+        "evidence_count": 4,
+        "latency": 8.543721199035645,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence consists of Wikipedia entries about African bush elephants, American bison, extinct European species, and an Australian satire show, none of which address woolly mammoths, de\u2011extinction efforts, or projected timelines. Consequently, there is no relevant information to confirm or refute the claim.",
+        "evidence_count": 4,
+        "latency": 16.3944993019104,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.1,
+        "reasoning": "No evidence was provided to support or refute the claim that a de\u2011extinct woolly mammoth herd will roam freely across the Siberian tundra by 2032, so the statement cannot be verified.",
+        "evidence_count": 0,
+        "latency": 12.20073914527893,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0090": {
+    "id": "T1000-0090",
+    "domain": "Zoology",
+    "expected": "Unverifiable",
+    "claim": "Deep-sea abyssal cephalopods in the Kermadec Trench possess higher social communication complexity than dolphins.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No provided evidence addresses the communication complexity of abyssal cephalopods in the Kermadec Trench or compares it to dolphin communication, so the claim cannot be evaluated.",
+        "evidence_count": 0,
+        "latency": 3.454179048538208,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No provided evidence addresses the communication complexity of abyssal cephalopods in the Kermadec Trench or compares it to dolphin communication, so the claim cannot be evaluated.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No provided evidence addresses the communication complexity of abyssal cephalopods in the Kermadec Trench or compares it to dolphin communication, so the claim cannot be evaluated.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0091": {
+    "id": "T1000-0091",
+    "domain": "Geography",
+    "expected": "True",
+    "claim": "Canberra is the designated official federal capital city of the Commonwealth of Australia.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that Canberra is the capital city of Australia and specifically the national (federal) capital as designated by Section 125 of the Australian Constitution, confirming it is the official federal capital of the Commonwealth of Australia.",
+        "evidence_count": 4,
+        "latency": 7.083682298660278,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The Constitution of Australia and multiple authoritative sources (e.g., Wikipedia entries on Canberra and Australian capital cities) state that Canberra is the national capital and the seat of the federal government of the Commonwealth of Australia.",
+        "evidence_count": 4,
+        "latency": 24.842656135559082,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so its truth cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 13.332805395126343,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0092": {
+    "id": "T1000-0092",
+    "domain": "Geography",
+    "expected": "True",
+    "claim": "The Nile River and Amazon River are widely documented as the longest river systems on Earth.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.45,
+        "reasoning": "The provided evidence confirms that the Nile River is documented as the longest river in the world, but it contains no information about the Amazon River's status as a longest river system, so the claim cannot be fully verified.",
+        "evidence_count": 4,
+        "latency": 16.174927234649658,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The Nile is documented as the longest river (7,088\u202fkm) in the evidence, but there is no evidence supporting the Amazon being equally long; thus the claim that both rivers are widely documented as the longest is unsupported.",
+        "evidence_count": 4,
+        "latency": 12.373613119125366,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.92,
+        "reasoning": "The claim that both the Nile and Amazon are documented as the longest river systems on Earth is false.  Authoritative sources (e.g., National Geographic, Wikipedia) list the Nile at ~6,650\u202fkm and the Amazon at ~6,400\u202fkm, making the Nile the longest by length, while the Amazon is the largest by discharge.  No credible source documents both rivers as the longest simultaneously.",
+        "evidence_count": 0,
+        "latency": 12.398542165756226,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0093": {
+    "id": "T1000-0093",
+    "domain": "Geography",
+    "expected": "True",
+    "claim": "Greenland is the world's largest island that is not classified as a continental landmass.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.97,
+        "reasoning": "The List of islands by area (source 3) ranks Greenland as the largest island (\u22482.16\u202fmillion\u202fkm\u00b2). According to the definition of landmass (source 1), continents are distinct landmasses and Greenland is not classified as a continent, so it is the largest non\u2011continental island.",
+        "evidence_count": 4,
+        "latency": 5.455750465393066,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Greenland is the largest island in the world by area (approximately 2.16\u202fmillion km\u00b2) and is not considered a continent; it is an island on the North American continental shelf. The Wikipedia list of islands by area ranks Greenland first among islands larger than 1,000\u202fkm\u00b2, confirming its status as the largest non\u2011continental landmass.",
+        "evidence_count": 4,
+        "latency": 12.161887884140015,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 12.75469160079956,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0094": {
+    "id": "T1000-0094",
+    "domain": "Geography",
+    "expected": "True",
+    "claim": "Canada possesses the longest total oceanic coastline boundary of any country on Earth.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Source 1 (Canada Wikipedia) explicitly states Canada has the longest coastline of any country. Source 2 (Russia Wikipedia) lists Russia as having the fourth\u2011longest coastline, confirming that Canada exceeds Russia's 37,653 km, so Canada indeed holds the longest total oceanic coastline.",
+        "evidence_count": 4,
+        "latency": 8.319865942001343,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Canada\u2019s coastline is reported as the longest of any country (\u2248202,080\u202fkm) in its Wikipedia entry, while Russia\u2019s is the fourth\u2011longest at 37,653\u202fkm, confirming Canada\u2019s superior length.",
+        "evidence_count": 4,
+        "latency": 12.577872276306152,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim.",
+        "evidence_count": 0,
+        "latency": 11.700354814529419,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0095": {
+    "id": "T1000-0095",
+    "domain": "Geography",
+    "expected": "False",
+    "claim": "Sydney is the official federal capital city of the nation of Australia.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state Sydney is the capital of the state of New South Wales, while the federal capital of Australia is Canberra; therefore the claim that Sydney is the official federal capital is incorrect.",
+        "evidence_count": 4,
+        "latency": 7.276761054992676,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The claim that Sydney is the official federal capital of Australia contradicts authoritative information; Canberra is the federal capital, while Sydney is the capital of New South Wales. The provided evidence (Sydney Wikipedia entry) states Sydney is the state capital, not the national capital.",
+        "evidence_count": 4,
+        "latency": 12.285614728927612,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The Australian Constitution designates Canberra as the capital of the Commonwealth of Australia; all official federal institutions are located there. Sydney is a major city but not the federal capital.",
+        "evidence_count": 0,
+        "latency": 12.024012088775635,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0096": {
+    "id": "T1000-0096",
+    "domain": "Geography",
+    "expected": "False",
+    "claim": "Africa is a single unified sovereign country composed of uniform geopolitical provinces.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Africa is a continent made up of 54 internationally recognized sovereign nations, not a single unified country; the claim contradicts established geopolitical facts about the continent's political structure.",
+        "evidence_count": 4,
+        "latency": 7.095735549926758,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The claim that Africa is a single unified sovereign country contradicts the definition of a nation\u2011state and the existence of multiple sovereign states. Evidence 1 defines a nation\u2011state as a single political entity, while evidence 2, 3, and 4 describe distinct sovereign countries (Russia, Thailand, United States) that are not unified under one government. Africa is a continent comprising 54 independent countries, not a single unified sovereign state.",
+        "evidence_count": 4,
+        "latency": 12.223591804504395,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Africa is a continent, not a single sovereign state; it contains 54 internationally recognized independent countries, each with its own government and borders, rather than one unified country with uniform provinces.",
+        "evidence_count": 0,
+        "latency": 11.881139039993286,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0097": {
+    "id": "T1000-0097",
+    "domain": "Geography",
+    "expected": "False",
+    "claim": "The Sahara is the single largest desert biome geographical expanse on planet Earth.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "While the Sahara is the largest hot (non\u2011polar) desert, the Antarctic polar desert is larger; authoritative sources classify Antarctica as the world's biggest desert, making the claim that the Sahara is the single largest desert overall incorrect.",
+        "evidence_count": 1,
+        "latency": 6.6067728996276855,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "The claim that the Sahara is the single largest desert biome is contradicted by authoritative sources that identify Antarctica as the largest desert, covering roughly 14\u202fmillion\u202fkm\u00b2, far exceeding the Sahara\u2019s ~9.2\u202fmillion\u202fkm\u00b2. The Wikipedia entry on deserts notes that polar regions, which are classified as cold deserts, comprise a large portion of Earth\u2019s arid land, indicating that the Sahara is not the largest.",
+        "evidence_count": 1,
+        "latency": 12.388951539993286,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to assess the claim, so it cannot be confirmed or refuted.",
+        "evidence_count": 0,
+        "latency": 11.797475337982178,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0098": {
+    "id": "T1000-0098",
+    "domain": "Geography",
+    "expected": "False",
+    "claim": "Mount Fuji is located within the continental geographic landmass of the Chinese mainland.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Mount Fuji is a stratovolcano on Honshu island in Japan, an archipelagic nation separate from the Chinese mainland; the Chinese mainland is a continental landmass, not containing Japanese islands. Authoritative geographic sources confirm Japan's island status, making the claim false.",
+        "evidence_count": 3,
+        "latency": 2.845864772796631,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Mount Fuji is a volcano located on Honshu, the largest island of Japan.  Wikipedia\u2019s entry on Japan describes it as an archipelagic country comprising 14,125 islands, which excludes the Chinese mainland from containing any Japanese volcanoes.  Therefore the claim that Mount Fuji lies within the continental landmass of the Chinese mainland is contradicted by authoritative geographic information.",
+        "evidence_count": 3,
+        "latency": 12.282273054122925,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess the location of Mount Fuji relative to the Chinese mainland.",
+        "evidence_count": 0,
+        "latency": 11.93388843536377,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0099": {
+    "id": "T1000-0099",
+    "domain": "Geography",
+    "expected": "Unverifiable",
+    "claim": "Vanilla is objectively the greatest artisanal ice cream flavor ever conceived in culinary history.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a subjective, value\u2011based judgment ('greatest') about ice\u2011cream flavor, which cannot be measured or verified objectively; no factual evidence can confirm or refute such an opinion.",
+        "evidence_count": 0,
+        "latency": 11.675890922546387,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a subjective, value\u2011based judgment ('greatest') about ice\u2011cream flavor, which cannot be measured or verified objectively; no factual evidence can confirm or refute such an opinion.",
+        "evidence_count": 0,
+        "latency": 0.0003466606140136719,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a subjective, value\u2011based judgment ('greatest') about ice\u2011cream flavor, which cannot be measured or verified objectively; no factual evidence can confirm or refute such an opinion.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0100": {
+    "id": "T1000-0100",
+    "domain": "Geography",
+    "expected": "Unverifiable",
+    "claim": "A secret colony of Neanderthals will be uncovered beneath Antarctic glacial ice sheets in the year 2040.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.22,
+        "reasoning": "The provided evidence consists of unrelated Wikipedia year\u2011in\u2011science summaries and contains no information about Neanderthals, Antarctic ice, or any planned discovery in 2040, so the claim cannot be confirmed or refuted with the available sources.",
+        "evidence_count": 3,
+        "latency": 5.593395471572876,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence consists of Wikipedia entries about scientific events in 2013 and 2020 and does not mention Neanderthals, Antarctic ice sheets, or any future discoveries. No authoritative source confirms or refutes the claim, and it concerns a future speculative event that cannot be verified at present.",
+        "evidence_count": 3,
+        "latency": 11.90432071685791,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence is provided to support or refute the claim that a secret Neanderthal colony will be uncovered beneath Antarctic ice in 2040; the statement is a future speculative assertion with no verifiable data.",
+        "evidence_count": 0,
+        "latency": 12.283448457717896,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0101": {
+    "id": "T1000-0101",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "Neutron stars can spin at a rate of several hundred rotations per second.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.97,
+        "reasoning": "Neutron stars, particularly pulsars, are known to rotate extremely rapidly.  Wikipedia\u2019s entry on pulsars states that their rotational periods range from milliseconds to seconds, corresponding to spin frequencies up to several hundred or even a thousand rotations per second.  The article \u201cWhy Do Neutron Stars Spin Fast?\u201d explicitly notes that some neutron stars rotate hundreds of times per second.  No evidence contradicts this, and the claim is consistent with authoritative astrophysical observations.",
+        "evidence_count": 4,
+        "latency": 12.035855770111084,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Pulsar Wikipedia states that neutron stars have rotational periods ranging from milliseconds to seconds, implying spin frequencies up to several hundred or even thousands of rotations per second. This directly supports the claim that neutron stars can spin at a rate of several hundred rotations per second.",
+        "evidence_count": 4,
+        "latency": 11.7599356174469,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 11.573649406433105,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0102": {
+    "id": "T1000-0102",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "The cosmic microwave background radiation is relic radiation dating back to approximately 380,000 years after the Big Bang.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The claim correctly states that the CMB is relic radiation from the epoch when the universe became transparent to photons, which occurred about 380,000\u202fyears after the Big Bang, as documented in authoritative sources such as Wikipedia, TheCosmicMicrowaveBackground, and academic summaries of the CMB.",
+        "evidence_count": 4,
+        "latency": 11.660621166229248,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "The provided evidence discusses cosmic inflation, the general nature of the CMB, gravitational waves, and microwave radiation, but none of the sources mention the recombination epoch or the specific time of ~380,000 years after the Big Bang at which the CMB was released. Without direct evidence supporting or refuting the claim, it cannot be verified.",
+        "evidence_count": 4,
+        "latency": 12.236985921859741,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The cosmic microwave background (CMB) is widely accepted as the thermal radiation left over from the epoch of recombination, which occurred roughly 380,000\u202fyears after the Big Bang when protons and electrons combined to form neutral hydrogen and photons decoupled from matter.  This interpretation is supported by the precise measurements of the CMB temperature anisotropies by missions such as COBE, WMAP, and Planck, which consistently place the recombination redshift at z\u22481100, corresponding to about 380,000\u202fyears after the Big Bang.",
+        "evidence_count": 0,
+        "latency": 11.900345802307129,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0103": {
+    "id": "T1000-0103",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "General relativity predicts that mass warps the curvature of spacetime.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim is supported by authoritative sources: Wikipedia entries on general relativity state that gravity is described as the warping of spacetime by mass-energy (Einstein field equations) and that the observed gravitational effect between masses results from their warping of spacetime.",
+        "evidence_count": 4,
+        "latency": 12.254311800003052,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "All cited sources state that in general relativity mass (and energy) causes spacetime to curve, i.e., the theory predicts that mass warps the curvature of spacetime.",
+        "evidence_count": 4,
+        "latency": 12.673351526260376,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.1,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 11.915125370025635,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0104": {
+    "id": "T1000-0104",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "The Andromeda Galaxy is currently on a collision course with the Milky Way Galaxy.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The Andromeda Galaxy is moving toward the Milky Way and is expected to collide in about 4.5\u202fbillion years, indicating it is indeed on a collision course with our galaxy. This is supported by authoritative sources such as the Wikipedia entry on the Andromeda\u2013Milky Way collision.",
+        "evidence_count": 4,
+        "latency": 11.982335567474365,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The Andromeda Galaxy is moving toward the Milky Way and is expected to collide in about 4.5\u202fbillion years, indicating it is currently on a collision course.",
+        "evidence_count": 4,
+        "latency": 12.163570165634155,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so the truth value cannot be determined from the supplied information.",
+        "evidence_count": 0,
+        "latency": 11.903284072875977,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0105": {
+    "id": "T1000-0105",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "A black hole's event horizon marks the boundary from which nothing, not even light, can escape.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The definition of a black hole\u2019s event horizon is a boundary in spacetime beyond which no signal, including light, can reach an external observer.  Both the Wikipedia entries on the black hole information paradox and on the event horizon explicitly state that nothing\u2014not even light\u2014can escape from inside the horizon.  Hawking radiation does not violate this, as it originates just outside the horizon.  Therefore the claim is supported by authoritative sources.",
+        "evidence_count": 4,
+        "latency": 11.592926979064941,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The definition of an event horizon in general relativity is a boundary beyond which no signal, including light, can reach an external observer; this is explicitly stated in the evidence from Wikipedia on black holes and event horizons. Hawking radiation does not contradict this, as it originates outside the horizon. Therefore the claim is supported by authoritative sources.",
+        "evidence_count": 4,
+        "latency": 12.255854368209839,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "General Relativity predicts that the event horizon of a black hole is the surface where the escape velocity equals the speed of light; inside this radius, even light cannot escape (Einstein 1915; Schwarzschild 1916).",
+        "evidence_count": 0,
+        "latency": 12.187615394592285,
+        "is_correct": true
+      }
+    }
+  }
+}
