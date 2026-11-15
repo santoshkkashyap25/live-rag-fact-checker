@@ -57,7 +57,7 @@ async def stream_fact_checking_pipeline(
         # 2. Web Search
         yield emit({"type": "status", "step": 2, "phase": "searching", "message": f"Searching live internet for: '{claim}'...", "extracted_claim": claim})
         retrieval_start = time.time()
-        web_results = await asyncio.to_thread(web_search.search, query=claim, max_results=TOP_K_RETRIEVE)
+        web_results = await web_search.async_search(query=claim, max_results=TOP_K_RETRIEVE)
         
         # Reranking with Domain Trust Matrix (Moat A)
         yield emit({"type": "status", "step": 3, "phase": "reranking", "message": "Re-ranking retrieved passages with BM25Okapi + Domain Trust Matrix...", "retrieved_count": len(web_results)})

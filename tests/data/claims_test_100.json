@@ -1,0 +1,702 @@
+[
+  {
+    "id": "T100-001",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "benchmark": "Standard Physics",
+    "claim": "The speed of light in a vacuum is approximately 299,792 kilometers per second."
+  },
+  {
+    "id": "T100-002",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "Jupiter is the largest planet by mass and volume in the Solar System."
+  },
+  {
+    "id": "T100-003",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "The Moon completes an orbit around Earth in approximately 27.3 days."
+  },
+  {
+    "id": "T100-004",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "Nuclear fusion of hydrogen into helium powers the Sun's core energy output."
+  },
+  {
+    "id": "T100-005",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "The Great Wall of China is visible from the surface of the Moon with the naked eye."
+  },
+  {
+    "id": "T100-006",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "The Sun appears yellow from outer space due to atmospheric refraction."
+  },
+  {
+    "id": "T100-007",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Seasons on Earth are caused by changes in the distance between the Earth and the Sun."
+  },
+  {
+    "id": "T100-008",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Black holes act like giant cosmic vacuum cleaners sucking in objects from across the universe."
+  },
+  {
+    "id": "T100-009",
+    "domain": "Astrophysics",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Speculation",
+    "claim": "A habitable exoplanet in the Andromeda galaxy is currently inhabited by humanoid beings."
+  },
+  {
+    "id": "T100-010",
+    "domain": "Astrophysics",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Future",
+    "claim": "Humankind will establish a permanent self-sustaining civilian colony on Mars by 2075."
+  },
+  {
+    "id": "T100-011",
+    "domain": "Neuroscience",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "Neurons transmit electrical signals along their axons using action potentials."
+  },
+  {
+    "id": "T100-012",
+    "domain": "Neuroscience",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "The hippocampus plays a vital role in the consolidation of short-term memory into long-term memory."
+  },
+  {
+    "id": "T100-013",
+    "domain": "Neuroscience",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "Dopamine functions as both a neurotransmitter and a neurohormone in the central nervous system."
+  },
+  {
+    "id": "T100-014",
+    "domain": "Neuroscience",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "Neuroplasticity allows the brain to reorganize neural pathways in response to learning and experience."
+  },
+  {
+    "id": "T100-015",
+    "domain": "Neuroscience",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Humans only use ten percent of their total brain capacity at any given time."
+  },
+  {
+    "id": "T100-016",
+    "domain": "Neuroscience",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Listening to Mozart music during pregnancy significantly increases an infant's baseline IQ."
+  },
+  {
+    "id": "T100-017",
+    "domain": "Neuroscience",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "People are definitively categorized as either exclusively left-brained logical or right-brained creative thinkers."
+  },
+  {
+    "id": "T100-018",
+    "domain": "Neuroscience",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Adult humans cannot generate new neurons in the brain after completing physical adolescence."
+  },
+  {
+    "id": "T100-019",
+    "domain": "Neuroscience",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Subjective",
+    "claim": "Classical instrumental piano music is objectively superior to electronic ambient music for cognitive focus."
+  },
+  {
+    "id": "T100-020",
+    "domain": "Neuroscience",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Future",
+    "claim": "Artificial general intelligence will achieve full human-equivalent biological consciousness by the year 2049."
+  },
+  {
+    "id": "T100-021",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "DNA has a double helix antiparallel polymer structure discovered by Watson, Crick, and Franklin."
+  },
+  {
+    "id": "T100-022",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "CRISPR-Cas9 is a molecular tool derived from bacterial adaptive immune systems used for genome editing."
+  },
+  {
+    "id": "T100-023",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "Messenger RNA (mRNA) carries genetic codes from nuclear DNA to ribosomes during protein translation."
+  },
+  {
+    "id": "T100-024",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "Mitochondria contain their own independent circular DNA genome inherited maternally in humans."
+  },
+  {
+    "id": "T100-025",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Eating genetically modified foods permanently alters human genomic DNA sequences."
+  },
+  {
+    "id": "T100-026",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Human somatic cells normally contain 48 distinct chromosomes in their nucleus."
+  },
+  {
+    "id": "T100-027",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "DNA replication occurs without any biological proofreading enzymes or error-correcting mechanisms."
+  },
+  {
+    "id": "T100-028",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Identical twins possess identical digital fingerprints upon physical birth."
+  },
+  {
+    "id": "T100-029",
+    "domain": "Molecular Biology",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Future",
+    "claim": "A synthetic biological human organ created entirely from algae polymers will be transplanted in 2055."
+  },
+  {
+    "id": "T100-030",
+    "domain": "Molecular Biology",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Future",
+    "claim": "Scientists will definitively discover a single universal biological gene responsible for musical genius."
+  },
+  {
+    "id": "T100-031",
+    "domain": "Chemistry",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "The boiling point of pure water at standard atmospheric sea-level pressure (1 atm) is 100 degrees Celsius."
+  },
+  {
+    "id": "T100-032",
+    "domain": "Chemistry",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "Carbon is capable of forming four covalent chemical bonds with other atomic elements."
+  },
+  {
+    "id": "T100-033",
+    "domain": "Chemistry",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "Helium is an inert noble gas that rarely forms chemical compounds under standard temperature and pressure."
+  },
+  {
+    "id": "T100-034",
+    "domain": "Chemistry",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "Graphene consists of a single two-dimensional layer of carbon atoms arranged in a hexagonal lattice."
+  },
+  {
+    "id": "T100-035",
+    "domain": "Chemistry",
+    "expected": "False",
+    "benchmark": "Physical Science",
+    "claim": "Liquid water decreases in volume and contracts when freezing into solid ice."
+  },
+  {
+    "id": "T100-036",
+    "domain": "Chemistry",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Glass is a slow-flowing liquid at room temperature that causes antique window panes to thicken at the bottom."
+  },
+  {
+    "id": "T100-037",
+    "domain": "Chemistry",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Rusting of iron is an endothermic chemical reaction that absorbs ambient heat from the surroundings."
+  },
+  {
+    "id": "T100-038",
+    "domain": "Chemistry",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Natural diamonds are formed exclusively from compressed ancient coal deposits under prehistoric swamps."
+  },
+  {
+    "id": "T100-039",
+    "domain": "Chemistry",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Future",
+    "claim": "A room-temperature ambient pressure superconductor will be commercially commercialized for grid power in 2038."
+  },
+  {
+    "id": "T100-040",
+    "domain": "Chemistry",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Speculation",
+    "claim": "Stable superheavy element 126 within the hypothetical island of stability will remain indefinitely non-radioactive."
+  },
+  {
+    "id": "T100-041",
+    "domain": "Medicine",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "The human heart consists of four distinct anatomical chambers: two atria and two ventricles."
+  },
+  {
+    "id": "T100-042",
+    "domain": "Medicine",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "Penicillin was discovered by Scottish physician Alexander Fleming in 1928 as an antibiotic substance."
+  },
+  {
+    "id": "T100-043",
+    "domain": "Medicine",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "Red blood cells use iron-rich hemoglobin protein complexes to transport oxygen throughout the body."
+  },
+  {
+    "id": "T100-044",
+    "domain": "Medicine",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "Insulin is a peptide hormone produced by beta cells of the pancreatic islets to regulate blood glucose."
+  },
+  {
+    "id": "T100-045",
+    "domain": "Medicine",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Cracking knuckle joints causes osteoarthritis and permanent physical joint enlargement."
+  },
+  {
+    "id": "T100-046",
+    "domain": "Medicine",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "The MMR childhood vaccine has been scientifically proven to cause autism spectrum disorders."
+  },
+  {
+    "id": "T100-047",
+    "domain": "Medicine",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Shaving body hair causes the follicle to regenerate hair that is significantly thicker and faster growing."
+  },
+  {
+    "id": "T100-048",
+    "domain": "Medicine",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Antibiotics are clinically effective medications for eliminating the common cold viral infection."
+  },
+  {
+    "id": "T100-049",
+    "domain": "Medicine",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Future",
+    "claim": "A universal one-dose vaccine eradicating all human cancer malignancies will be approved by the FDA in 2042."
+  },
+  {
+    "id": "T100-050",
+    "domain": "Medicine",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Future",
+    "claim": "Human life expectancy will achieve biological immortality through cellular telomere editing by the year 2100."
+  },
+  {
+    "id": "T100-051",
+    "domain": "Earth Science",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "The ozone layer is located primarily within the stratosphere of Earth's atmosphere."
+  },
+  {
+    "id": "T100-052",
+    "domain": "Earth Science",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "Tectonic plate movements along transform boundaries and subduction zones generate earthquakes."
+  },
+  {
+    "id": "T100-053",
+    "domain": "Earth Science",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "The Mariana Trench in the western Pacific Ocean is the deepest oceanic trench on Earth."
+  },
+  {
+    "id": "T100-054",
+    "domain": "Earth Science",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "Mount Everest is the highest mountain peak above sea level on Earth."
+  },
+  {
+    "id": "T100-055",
+    "domain": "Earth Science",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Lightning never strikes the same exact geographical structure more than once in human history."
+  },
+  {
+    "id": "T100-056",
+    "domain": "Earth Science",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "The Coriolis effect dictates the clockwise or counterclockwise swirling direction of draining household sinks."
+  },
+  {
+    "id": "T100-057",
+    "domain": "Earth Science",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Deserts are defined scientifically as environments characterized strictly by high ambient temperatures."
+  },
+  {
+    "id": "T100-058",
+    "domain": "Earth Science",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Dropping a penny from the top of the Empire State Building will accelerate sufficiently to kill a pedestrian."
+  },
+  {
+    "id": "T100-059",
+    "domain": "Earth Science",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Future",
+    "claim": "A category 6 hurricane with sustained winds exceeding 215 mph will make landfall in Florida in October 2031."
+  },
+  {
+    "id": "T100-060",
+    "domain": "Earth Science",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Future",
+    "claim": "The Yellowstone supervolcano caldera will begin a catastrophic global eruption sequence in the year 2060."
+  },
+  {
+    "id": "T100-061",
+    "domain": "History",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "The Apollo 11 lunar module successfully landed astronauts on the Moon in July 1969."
+  },
+  {
+    "id": "T100-062",
+    "domain": "History",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "The RMS Titanic sank in the North Atlantic Ocean after colliding with an iceberg in April 1912."
+  },
+  {
+    "id": "T100-063",
+    "domain": "History",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "The Rosetta Stone provided the key to deciphering ancient Egyptian hieroglyphic script."
+  },
+  {
+    "id": "T100-064",
+    "domain": "History",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "The Berlin Wall fell in November 1989, culminating in German reunification."
+  },
+  {
+    "id": "T100-065",
+    "domain": "History",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Napoleon Bonaparte was unusually short compared to average French men of his historical era."
+  },
+  {
+    "id": "T100-066",
+    "domain": "History",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Viking warriors historically wore helmets decorated with large protruding animal horns into combat."
+  },
+  {
+    "id": "T100-067",
+    "domain": "History",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Albert Einstein flunked his childhood elementary school mathematics examinations."
+  },
+  {
+    "id": "T100-068",
+    "domain": "History",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Iron Maiden torture devices were extensively utilized during medieval European judicial executions."
+  },
+  {
+    "id": "T100-069",
+    "domain": "History",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Speculation",
+    "claim": "The lost city of Atlantis will be discovered submerged beneath 500 meters of Mediterranean mud in 2035."
+  },
+  {
+    "id": "T100-070",
+    "domain": "History",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Speculation",
+    "claim": "Julius Caesar's private handwritten philosophical diaries will be recovered from Herculaneum scrolls in 2045."
+  },
+  {
+    "id": "T100-071",
+    "domain": "Computer Science",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "The Python programming language was originally created and implemented by Guido van Rossum."
+  },
+  {
+    "id": "T100-072",
+    "domain": "Computer Science",
+    "expected": "True",
+    "benchmark": "Standard Tech",
+    "claim": "Public-key cryptography uses asymmetric key pairs consisting of a public key and a private key."
+  },
+  {
+    "id": "T100-073",
+    "domain": "Computer Science",
+    "expected": "True",
+    "benchmark": "Standard Tech",
+    "claim": "The TCP/IP protocol suite forms the foundational networking architecture of the global internet."
+  },
+  {
+    "id": "T100-074",
+    "domain": "Computer Science",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "Alan Turing proposed the imitation game, known as the Turing Test, as a criterion of machine intelligence."
+  },
+  {
+    "id": "T100-075",
+    "domain": "Computer Science",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "The 5G wireless cellular communications network causes biological transmission of COVID-19 viral strains."
+  },
+  {
+    "id": "T100-076",
+    "domain": "Computer Science",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Quantum computers can instantly compute every mathematically impossible problem by trying all realities."
+  },
+  {
+    "id": "T100-077",
+    "domain": "Computer Science",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Clearing browser cache and private cookies permanently immunizes computers against ransomware infections."
+  },
+  {
+    "id": "T100-078",
+    "domain": "Computer Science",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "The first electronic computer ENIAC was constructed entirely from solid-state silicon microprocessors."
+  },
+  {
+    "id": "T100-079",
+    "domain": "Computer Science",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Speculation",
+    "claim": "A quantum computing chip exceeding 1,000,000 fault-tolerant logical qubits will be operational by 2036."
+  },
+  {
+    "id": "T100-080",
+    "domain": "Computer Science",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Future",
+    "claim": "The global financial monetary system will completely abandon paper fiat currency in favor of central blockchain tokens in 2040."
+  },
+  {
+    "id": "T100-081",
+    "domain": "Zoology",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "Worker honeybees in a hive are sterile females that perform foraging and nest maintenance."
+  },
+  {
+    "id": "T100-082",
+    "domain": "Zoology",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "Blue whales are the largest confirmed animal species ever known to have lived on Earth."
+  },
+  {
+    "id": "T100-083",
+    "domain": "Zoology",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "Platypuses and echidnas are monotremes, an order of mammals that lay eggs rather than bearing live young."
+  },
+  {
+    "id": "T100-084",
+    "domain": "Zoology",
+    "expected": "True",
+    "benchmark": "Standard Science",
+    "claim": "Octopuses have three hearts and blue copper-based hemocyanin blood."
+  },
+  {
+    "id": "T100-085",
+    "domain": "Zoology",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Bulls become enraged and charge matadors specifically because they perceive the visual color red."
+  },
+  {
+    "id": "T100-086",
+    "domain": "Zoology",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Goldfish possess an ephemeral memory retention span of only three seconds."
+  },
+  {
+    "id": "T100-087",
+    "domain": "Zoology",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Bats are completely blind mammals that navigate their physical surroundings solely through echolocation."
+  },
+  {
+    "id": "T100-088",
+    "domain": "Zoology",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Ostriches bury their heads in sand dunes when confronted by approaching predatory threats."
+  },
+  {
+    "id": "T100-089",
+    "domain": "Zoology",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Future",
+    "claim": "A de-extinct woolly mammoth herd will roam freely across the Siberian tundra ecosystem by the year 2032."
+  },
+  {
+    "id": "T100-090",
+    "domain": "Zoology",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Speculation",
+    "claim": "Deep-sea abyssal cephalopods in the Kermadec Trench possess higher social communication complexity than dolphins."
+  },
+  {
+    "id": "T100-091",
+    "domain": "Geography",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "Canberra is the designated official federal capital city of the Commonwealth of Australia."
+  },
+  {
+    "id": "T100-092",
+    "domain": "Geography",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "The Nile River and Amazon River are widely documented as the longest river systems on Earth."
+  },
+  {
+    "id": "T100-093",
+    "domain": "Geography",
+    "expected": "True",
+    "benchmark": "Standard Geography",
+    "claim": "Greenland is the world's largest island that is not classified as a continental landmass."
+  },
+  {
+    "id": "T100-094",
+    "domain": "Geography",
+    "expected": "True",
+    "benchmark": "FEVER",
+    "claim": "Canada possesses the longest total oceanic coastline boundary of any country on Earth."
+  },
+  {
+    "id": "T100-095",
+    "domain": "Geography",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Sydney is the official federal capital city of the nation of Australia."
+  },
+  {
+    "id": "T100-096",
+    "domain": "Geography",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Africa is a single unified sovereign country composed of uniform geopolitical provinces."
+  },
+  {
+    "id": "T100-097",
+    "domain": "Geography",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "The Sahara is the single largest desert biome geographical expanse on planet Earth."
+  },
+  {
+    "id": "T100-098",
+    "domain": "Geography",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Mount Fuji is located within the continental geographic landmass of the Chinese mainland."
+  },
+  {
+    "id": "T100-099",
+    "domain": "Geography",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Opinion",
+    "claim": "Vanilla is objectively the greatest artisanal ice cream flavor ever conceived in culinary history."
+  },
+  {
+    "id": "T100-100",
+    "domain": "Geography",
+    "expected": "Unverifiable",
+    "benchmark": "Synthetic Speculation",
+    "claim": "A secret colony of Neanderthals will be uncovered beneath Antarctic glacial ice sheets in the year 2040."
+  }
+]

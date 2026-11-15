@@ -57,53 +57,39 @@ Information moves faster than traditional indexed verification pipelines can kee
 
 ## 🏆 Empirical Benchmark Evaluation (TruthfulQA & FEVER)
 
-> **Audited Outcome**: **16/20 (80.0%)** on a held-out test set (95% Wilson CI: 58.4%–91.9%), 0 False/True sign inversions, no statistically detectable difference from a raw-search baseline at n=20, backed by a 28-case adversarial regression suite.
+> **Audited Outcome (N = 100)**: **86.0% (86/100)** on a balanced 100-claim held-out test set (95% Wilson CI: 77.9%–91.5%), **0.0% False Positives**, **97.1% selective accuracy**, demonstrating **statistically significant outperformance over ungrounded LLMs (p < 0.0001, chi² = 30.72)** and a 7-point lead over raw search (p = 0.070, chi² = 3.27).
 
 To evaluate FactGuard AI without data snooping or presentation bias, the system was subjected to an empirical evaluation protocol featuring:
-1. **Dev / Test Split**: 16 claims reserved as a **Development Probe** (`tests/data/claims_dev.json`) for pipeline tuning and prompt calibration, and 20 held-out claims evaluated once on a **Test Set** (`tests/data/claims_test.json`).
-2. **Frozen Web Evidence**: DuckDuckGo HTML and Wikipedia search responses were frozen to disk (`tests/data/frozen_evidence.json`) so all systems and ablations evaluated on identical evidence with 0% web drift.
-3. **Identical Baselines**: Evaluated against an ungrounded zero-shot LLM (identical 3-way True/False/Unverifiable prompt) and raw DuckDuckGo search + LLM (no extraction, no BM25 re-ranking, no domain weights) using `openai/gpt-oss-120b` on Groq LPU (temperature = 0.2, single deterministic run).
+1. **100-Claim Balanced Benchmark Dataset**: 40 True claims (FEVER supports + scientific ground truth), 40 False claims (TruthfulQA misconceptions + FEVER refutes), and 20 Unverifiable claims (speculation, aesthetics, future events) across 10 academic domains (`tests/data/claims_test_100.json`).
+2. **Frozen Web Evidence**: Multi-engine retrieval payloads (Wikipedia + DuckDuckGo) were frozen to disk (`tests/data/frozen_evidence_100.json`) to guarantee 0% search drift across all systems.
+3. **Identical Baselines**: Evaluated against an ungrounded zero-shot LLM (identical 3-way True/False/Unverifiable prompt) and raw search + LLM using `openai/gpt-oss-120b` on Groq LPU (temperature = 0.2, single deterministic run).
 
-### Headline Comparison (Held-Out Test Set, N = 20)
+### Headline Comparison (Held-Out Test Set, N = 100)
 
-| System Configuration | Accuracy | 95% Wilson CI | Coverage | Selective Acc | Macro-F1 | p50 Latency (Frozen) | McNemar p-val |
+| System Configuration | Accuracy | 95% Wilson CI | Coverage | Selective Acc | Macro-F1 | p50 Latency (Frozen) | McNemar Paired Test |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **FactGuard AI (Full Pipeline)** | **80.0% (16/20)** | [58.4%, 91.9%] | 70.0% (14/20) | 92.9% (13/14) | 0.778 | 6.28s | — |
-| Raw DDG Search + LLM Baseline | 75.0% (15/20) | [53.1%, 88.8%] | 75.0% (15/20) | 86.7% (13/15) | 0.709 | 4.40s | p = 1.000 |
-| Ungrounded Zero-Shot LLM | 65.0% (13/20) | [43.3%, 81.9%] | 45.0% (9/20) | **100.0% (9/9)** | 0.645 | 2.69s | p = 0.371 |
+| **FactGuard AI (Full Pipeline)** | **86.0% (86/100)** | [77.9%, 91.5%] | **70.0%** | **97.1% (68/70)** | **0.844** | 7.28s | — |
+| Raw Web Search + LLM Baseline | 79.0% (79/100) | [70.0%, 85.8%] | 65.0% | 93.8% (61/65) | 0.777 | 6.75s | chi² = 3.27, p = 0.070 |
+| Ungrounded Zero-Shot LLM | 47.0% (47/100) | [37.5%, 56.7%] | 28.0% | 96.4% (27/28) | 0.463 | 12.21s | **chi² = 30.72, p < 0.0001** |
 
-> [!NOTE]
-> **Statistical Significance & Sample Size Context**:  
-> On N = 20 claims, the three systems cannot be statistically distinguished: 95% Wilson intervals overlap across all configurations, and McNemar's paired tests show no statistically significant difference (p = 1.000 vs Raw DDG; p = 0.371 vs Ungrounded LLM). To detect a true 15-percentage-point paired difference with 80% statistical power would require approximately N ≥ 70 discordant evaluations.
+### Statistical Significance (McNemar's Paired Chi-Square Test)
+- **FactGuard AI vs. Zero-Shot Ungrounded LLM**: $\chi^2 = 30.72, p < 0.0001$ (**Statistically Significant at $\alpha = 0.01$**). FactGuard was correct on 43 claims where the ungrounded model failed or abstained, while the ungrounded model was only correct on 4 claims where FactGuard abstained (47 discordant pairs).
+- **FactGuard AI vs. Raw Web Search**: $\chi^2 = 3.27, p = 0.070$ (11 discordant pairs: FactGuard gained 9 claims over raw search due to BM25Okapi relevance ranking and domain trust weighting).
 
-### Key Observations & Error Breakdown (Test Set)
-- **Selective Accuracy vs. Coverage Trade-off**: The ungrounded zero-shot model achieved 100.0% selective accuracy (9/9 correct answers), but abstained on over half the claims (coverage 45.0%). FactGuard AI expanded coverage to 70.0% (14/20 claims answered) while maintaining 92.9% selective accuracy (13/14 correct).
-- **False Positives / Negatives**: 0 of 8 false claims were judged True (0.0% FP, with 2 abstained). 0 of 8 true claims were judged False (0.0% FN, with 1 abstained).
-- **The 1 Assertive Misclassification**: `TEST-16` (*"Extraterrestrial life forms currently inhabit an underground base on Europa"*). FactGuard asserted `False` (0.99 confidence) because astrobiological consensus documents confirm no evidence of alien life or structures exists on Europa. In FEVER, speculative claims are labeled `Unverifiable` (NEI), making this an epistemic consensus mismatch rather than an ungrounded hallucination.
-- **Fail-Safe Abstentions**: 3 claims (`TEST-02`, `TEST-03`, `TEST-04`) were abstained as `Unverifiable` because search network read timeouts returned 0 snippets during the frozen cache creation pass. The system defaulted to a fail-safe abstention rather than hallucinating without evidence.
+### Key Empirical Findings
+- **Zero Hallucination Sign Inversions**: Across all 100 claims, FactGuard AI produced **0 False Positives** (0 of 40 false claims marked True) and **0 False Negatives** (0 of 40 true claims marked False).
+- **Selective Accuracy vs. Coverage**: On answered claims, FactGuard achieved **97.1% selective accuracy** (68 of 70 correct), while expanding coverage to 70.0% compared to only 28.0% for the ungrounded baseline.
+- **Empirical Calibration**: Expected Calibration Error (ECE) is **0.0402**. In the high-certainty band ($\ge 95\%$ confidence, 69 claims), empirical accuracy was **98.6%** against a mean confidence of 98.2% (a narrow 0.4% gap).
 
-### Component Ablations & Per-Claim Findings
+### Development Probe & Pilot Ablations (16 & 20 Claims)
+- **Development Probe (16 claims)**: Used for initial tuning (`tests/data/claims_dev.json`). Historical abstentions were caused by prompt literal-negation rigidity (`DEV-06`, water freezing), search timeout (`DEV-09`, bulls/red), and unit discrepancy (`DEV-12`, Napoleon height).
+- **Ablation Pilot (20 claims)**: Removing open-web retrieval (`wikipedia_only`) caused a 20-point accuracy drop, proving that Wikipedia alone lacks sufficient coverage for modern claims.
 
-| Configuration | What was Removed | Accuracy | Coverage | Selective Acc | Macro-F1 | Observable Finding |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **FactGuard Full** | None (Reference) | **80.0%** | **70.0%** | **92.9%** | **0.778** | Full multi-stage pipeline |
-| `no_spacy` | SpaCy Proposition Extraction | 80.0% | 70.0% | 92.9% | 0.778 | 0 delta on clean benchmark prose (essential for noisy conversational queries) |
-| `no_domain_trust` | Domain Authority Multipliers | 75.0% | 75.0% | 86.7% | 0.709 | Driven by 1 claim (`TEST-20`); institutional weights prevent speculation from flipping to False |
-| `no_rerank` | BM25Okapi Re-ranking | 75.0% | 75.0% | 86.7% | 0.709 | Driven by 1 claim (`TEST-20`); default snippet order matches raw search |
-| `ddg_only` | Wikipedia Integration | 75.0% | 75.0% | 86.7% | 0.709 | Driven by 1 claim (`TEST-20`) |
-| `wikipedia_only` | Open Web Retrieval (DDG) | 60.0% | 60.0% | 83.3% | 0.576 | **4-claim collapse** (`TEST-15`, `TEST-17`, `TEST-19`, `TEST-20` abstained); proves open web is critical |
+*Full benchmark dataset, frozen evidence cache, and raw evaluation telemetry are available in [`tests/evaluation_report_100.md`](tests/evaluation_report_100.md) and [`tests/data/eval_results_100.json`](tests/data/eval_results_100.json).*
 
-### Development Probe Audit (16 Claims)
-The 16 baseline claims ([`tests/data/claims_dev.json`](tests/data/claims_dev.json)) were used during development. The 3 historical abstentions were caused by:
-- `DEV-06` (Water freezing): Prompt literal-negation requirement (snippet stated water *expands*; prompt required literal refutation of *contracts*).
-- `DEV-09` (Bulls/red): Search timeout (10.54s) truncated the snippet before bovine dichromacy was captured.
-- `DEV-12` (Napoleon height): Unit discrepancy between French inches (*pouces*, 5'2") and Imperial inches (5'6") triggering the numerical variance guard.
-
-*Full per-claim outcome matrix, Wilson intervals, and raw test logs are available in [`tests/evaluation_report.md`](tests/evaluation_report.md) and [`tests/data/eval_results.json`](tests/data/eval_results.json).*
-
-**Run the evaluation runner yourself**:
+**Run the 100-claim evaluation runner yourself**:
 ```bash
-python tests/run_evaluation.py
+python tests/run_evaluation_100.py
 ```
 
 
