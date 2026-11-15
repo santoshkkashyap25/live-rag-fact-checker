@@ -6508,6 +6508,86 @@
         "evidence_count": 4,
         "latency": 0.005546092987060547,
         "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is a well-documented scientific myth. Evidence from the 'Ten-percent-of-the-brain myth' article explicitly identifies this assertion as false, noting that humans use virtually all parts of the brain and that the idea of unused potential is a misconception often misattributed to figures like Einstein.",
+        "evidence_count": 4,
+        "latency": 13.317681789398193,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is a well-known neuromyth debunked by neuroscience; brain imaging studies (fMRI, PET) show that virtually all parts of the brain are active over the course of a day, and there is no evidence supporting the 10% utilization limit.",
+        "evidence_count": 0,
+        "latency": 12.33237624168396,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0205": {
+    "id": "T1000-0205",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Consuming an alkaline diet alters systemic human blood pH to cure metastatic malignancies.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.62,
+        "reasoning": "The supplied sources discuss general nutrition, uremia, gut microbiota, and cirrhosis but contain no information about the effect of an alkaline diet on systemic blood pH or its ability to cure metastatic cancer, so the claim cannot be confirmed or refuted from the provided evidence.",
+        "evidence_count": 4,
+        "latency": 35.45650911331177,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Human blood pH is tightly homeostatically regulated (\u22487.35\u20117.45) and dietary alkalinity does not produce clinically significant changes; there is no credible scientific evidence that an alkaline diet can cure metastatic cancer. The provided sources discuss unrelated topics (cirrhosis, gut microbiota, nutrition, uremia) and do not support the claim, and the medical consensus rejects the notion.",
+        "evidence_count": 4,
+        "latency": 35.142853021621704,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.62,
+        "reasoning": "The provided evidence set is empty, offering no data on whether an alkaline diet can change systemic blood pH or cure metastatic cancer, so the claim cannot be assessed from the retrieved sources.",
+        "evidence_count": 0,
+        "latency": 51.117823123931885,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0206": {
+    "id": "T1000-0206",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Cracking knuckles frequently directly precipitates osteoarthritis in synovial joints.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to assess the claim, so its truth value cannot be determined.",
+        "evidence_count": 0,
+        "latency": 58.40738272666931,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Authoritative medical consensus, including a 2017 study published in the Journal of the American Board of Family Medicine and findings from the American College of Rheumatology, indicates that habitual knuckle cracking is not associated with an increased risk of osteoarthritis or hand arthritis. The claim contradicts established clinical evidence which finds no causal link between the habit and joint degeneration.",
+        "evidence_count": 0,
+        "latency": 11.761857271194458,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Authoritative medical consensus, including a 2017 study published in the Journal of the American Board of Family Medicine and findings from the American College of Rheumatology, indicates that habitual knuckle cracking is not associated with an increased risk of osteoarthritis or hand arthritis. The claim contradicts established clinical evidence which finds no causal link between the habit and joint degeneration.",
+        "evidence_count": 0,
+        "latency": 0.0005228519439697266,
+        "is_correct": true
       }
     }
   }
