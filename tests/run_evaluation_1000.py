@@ -200,6 +200,11 @@ def freeze_evidence_1000(claims: List[Dict[str, Any]], max_fetch: int = 1000) ->
     return cache
 
 
+class DailyQuotaExhaustedError(Exception):
+    """Raised when daily API quota (RPD or TPD) is completely exhausted."""
+    pass
+
+
 # --- 3. Single Claim Evaluator ---
 
 def evaluate_single(
@@ -219,23 +224,39 @@ def evaluate_single(
     # 1. Baseline: Zero-shot ungrounded LLM
     if config == "baseline_ungrounded":
         v, c, r = "Unverifiable", 0.0, "Execution failed"
+        consecutive_rate_limits = 0
         for attempt in range(5):
             try:
                 res = llm_service.get_verdict(raw_text, evidence=[], provider="groq")
                 v, c, r = res.verdict, res.confidence, res.reasoning
                 if "Rate limit" in r or "rate_limit_exceeded" in r or "429" in r:
+                    if "per day" in r.lower() or "tpd" in r.lower() or "rpd" in r.lower():
+                        raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {r}")
+                    consecutive_rate_limits += 1
+                    if consecutive_rate_limits >= 4:
+                        raise DailyQuotaExhaustedError("Persistent rate limit encountered across multiple retries.")
                     backoff = 6.0 * (attempt + 1)
                     print(f"    ⏳ Rate limit encountered. Backing off {backoff:.1f}s...")
                     time.sleep(backoff)
                     continue
+                if "unavailable" in r.lower() or "not found" in r.lower() or "error code" in r.lower() or "404" in r:
+                    raise DailyQuotaExhaustedError(f"LLM backend unavailable: {r}")
                 break
+            except DailyQuotaExhaustedError:
+                raise
             except Exception as e:
-                if "429" in str(e) or "rate" in str(e).lower():
+                err_msg = str(e)
+                if "per day" in err_msg.lower() or "tpd" in err_msg.lower() or "rpd" in err_msg.lower():
+                    raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {err_msg}")
+                if "429" in err_msg or "rate" in err_msg.lower():
+                    consecutive_rate_limits += 1
+                    if consecutive_rate_limits >= 4:
+                        raise DailyQuotaExhaustedError("Persistent rate limit encountered across multiple retries.")
                     backoff = 6.0 * (attempt + 1)
                     print(f"    ⏳ Exception 429. Backing off {backoff:.1f}s...")
                     time.sleep(backoff)
                     continue
-                v, c, r = "Unverifiable", 0.0, str(e)
+                v, c, r = "Unverifiable", 0.0, err_msg
                 break
         return {
             "verdict": v,
@@ -266,6 +287,7 @@ def evaluate_single(
             evidence_items.append(f"[{title} | {badge}] {snippet}")
 
     v, c, r = "Unverifiable", 0.0, "Execution failed"
+    consecutive_rate_limits = 0
     for attempt in range(5):
         try:
             verdict_obj = llm_service.get_verdict(
@@ -277,20 +299,35 @@ def evaluate_single(
             c = verdict_obj.confidence
             r = verdict_obj.reasoning
             if "Rate limit" in r or "rate_limit_exceeded" in r or "429" in r:
+                if "per day" in r.lower() or "tpd" in r.lower() or "rpd" in r.lower():
+                    raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {r}")
+                consecutive_rate_limits += 1
+                if consecutive_rate_limits >= 4:
+                    raise DailyQuotaExhaustedError("Persistent rate limit encountered across multiple retries.")
                 backoff = 6.0 * (attempt + 1)
                 print(f"    ⏳ Rate limit in reasoning. Backing off {backoff:.1f}s...")
                 time.sleep(backoff)
                 continue
+            if "unavailable" in r.lower() or "not found" in r.lower() or "error code" in r.lower() or "404" in r:
+                raise DailyQuotaExhaustedError(f"LLM backend unavailable: {r}")
             break
+        except DailyQuotaExhaustedError:
+            raise
         except Exception as e:
-            if "429" in str(e) or "rate" in str(e).lower():
+            err_msg = str(e)
+            if "per day" in err_msg.lower() or "tpd" in err_msg.lower() or "rpd" in err_msg.lower():
+                raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {err_msg}")
+            if "429" in err_msg or "rate" in err_msg.lower():
+                consecutive_rate_limits += 1
+                if consecutive_rate_limits >= 4:
+                    raise DailyQuotaExhaustedError("Persistent rate limit encountered across multiple retries.")
                 backoff = 6.0 * (attempt + 1)
                 print(f"    ⏳ Exception 429. Backing off {backoff:.1f}s...")
                 time.sleep(backoff)
                 continue
             v = "Unverifiable"
             c = 0.0
-            r = f"Execution error: {str(e)}"
+            r = f"Execution error: {err_msg}"
             break
 
     return {
@@ -334,7 +371,11 @@ def run_benchmark_1000(limit: int = 1000, resume: bool = True):
         ("baseline_ungrounded", "Baseline: Ungrounded Zero-Shot LLM (Parametric)")
     ]
 
+    quota_exhausted = False
     for i, claim_dict in enumerate(claims, 1):
+        if quota_exhausted:
+            break
+
         cid = claim_dict["id"]
         c_text = claim_dict["claim"]
         expected = claim_dict["expected"]
@@ -360,44 +401,57 @@ def run_benchmark_1000(limit: int = 1000, resume: bool = True):
                 continue
 
             # Run evaluation
-            eval_res = evaluate_single(claim_dict, cfg_id, evidence, pacing_delay=3.8)
-            is_corr = (eval_res["verdict"] == expected)
-            eval_res["is_correct"] = is_corr
+            try:
+                eval_res = evaluate_single(claim_dict, cfg_id, evidence, pacing_delay=3.8)
+                is_corr = (eval_res["verdict"] == expected)
+                eval_res["is_correct"] = is_corr
 
-            checkpoint[cid]["evaluations"][cfg_id] = eval_res
+                checkpoint[cid]["evaluations"][cfg_id] = eval_res
 
-            icon = "✅" if is_corr else "❌"
-            print(f"  {icon} {cfg_label[:30]}: {eval_res['verdict']} (Conf: {eval_res['confidence']:.2f}, Latency: {eval_res['latency']:.2f}s)")
+                icon = "✅" if is_corr else "❌"
+                print(f"  {icon} {cfg_label[:30]}: {eval_res['verdict']} (Conf: {eval_res['confidence']:.2f}, Latency: {eval_res['latency']:.2f}s)")
 
-            # Save checkpoint after every evaluation step
-            with open(CHECKPOINT_1000_PATH, "w", encoding="utf-8") as f:
-                json.dump(checkpoint, f, indent=2)
+                # Save checkpoint after every evaluation step
+                with open(CHECKPOINT_1000_PATH, "w", encoding="utf-8") as f:
+                    json.dump(checkpoint, f, indent=2)
+            except DailyQuotaExhaustedError as dqe:
+                print(f"\n⚠️ {dqe}")
+                print(f"🛑 Daily quota ceiling reached. Checkpoint safely saved up to [{cid}].")
+                quota_exhausted = True
+                break
 
     # Step 3: Compute Comprehensive Benchmark Analytics
+    # Only evaluate claims that completed all configurations
+    completed_cids = [
+        cid for cid, d in checkpoint.items()
+        if all(c[0] in d.get("evaluations", {}) for c in configurations)
+    ]
+    completed_claims = [c for c in claims if c["id"] in completed_cids]
+    n_eval = len(completed_claims)
+
     print("\n" + "=" * 60)
-    print(f"📊 COMPUTING FINAL BENCHMARK METRICS ON N = {len(claims)} CLAIMS")
+    print(f"📊 COMPUTING FINAL BENCHMARK METRICS ON COMPLETED N = {n_eval} CLAIMS")
     print("=" * 60)
 
     summary: Dict[str, Any] = {}
     cfg_flat_results: Dict[str, List[Dict[str, Any]]] = {c[0]: [] for c in configurations}
 
-    for cid, data in checkpoint.items():
-        if not any(c["id"] == cid for c in claims):
-            continue
-        exp = data["expected"]
+    for c in completed_claims:
+        cid = c["id"]
+        exp = c["expected"]
+        data = checkpoint[cid]
         for cfg_id, _ in configurations:
-            if cfg_id in data["evaluations"]:
-                res = data["evaluations"][cfg_id]
-                cfg_flat_results[cfg_id].append({
-                    "id": cid,
-                    "expected": exp,
-                    "verdict": res["verdict"],
-                    "confidence": res["confidence"],
-                    "is_correct": res["is_correct"],
-                    "latency": res["latency"]
-                })
+            res = data["evaluations"][cfg_id]
+            cfg_flat_results[cfg_id].append({
+                "id": cid,
+                "expected": exp,
+                "verdict": res["verdict"],
+                "confidence": res["confidence"],
+                "is_correct": res["is_correct"],
+                "latency": res["latency"]
+            })
 
-    n_eval = len(claims)
+    n_eval = len(completed_claims)
     for cfg_id, cfg_label in configurations:
         results = cfg_flat_results[cfg_id]
         if not results:
@@ -441,7 +495,7 @@ def run_benchmark_1000(limit: int = 1000, resume: bool = True):
 
     final_payload = {
         "metadata": {
-            "total_claims": len(claims),
+            "total_claims": n_eval,
             "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
             "groq_model": os.getenv("GROQ_MODEL", "openai/gpt-oss-120b"),
             "temperature": 0.2
@@ -458,11 +512,11 @@ def run_benchmark_1000(limit: int = 1000, resume: bool = True):
     print(f"✅ Evaluation telemetry saved to {EVAL_RESULTS_1000_PATH}")
 
     # Step 4: Generate Report Markdown
-    generate_report_1000(final_payload, len(claims))
+    generate_report_1000(final_payload, n_eval)
 
     # Print Headline Metrics
     print("\n" + "=" * 60)
-    print(f"🏆 HEADLINE RESULTS (N = {len(claims)})")
+    print(f"🏆 HEADLINE RESULTS (N = {n_eval})")
     print("=" * 60)
     for cfg_id, data in summary.items():
         print(f"{data['name']}:")

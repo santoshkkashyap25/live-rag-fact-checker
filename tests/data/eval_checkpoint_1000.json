@@ -3358,5 +3358,2469 @@
         "is_correct": true
       }
     }
+  },
+  "T1000-0106": {
+    "id": "T1000-0106",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "Mars has the largest volcano in the Solar System, named Olympus Mons.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "All authoritative sources confirm that Olympus Mons on Mars is the tallest volcano in the Solar System. The Space article, Wikipedia entries for Olympus Mons and Arsia Mons, and the list of tallest mountains all identify Olympus Mons as the largest volcano, with height measurements around 21\u201326\u202fkm.",
+        "evidence_count": 4,
+        "latency": 12.58768606185913,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Evidence from multiple authoritative sources confirms that Olympus Mons on Mars is the tallest volcano in the Solar System, with an elevation of about 21\u201326\u202fkm, making it the largest by height. The claim that Mars hosts this volcano is therefore accurate.",
+        "evidence_count": 4,
+        "latency": 13.476598739624023,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 12.624350786209106,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0107": {
+    "id": "T1000-0107",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "Saturn's density is low enough that the planet would float if placed in a sufficiently large body of water.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Saturn\u2019s mean density is 0.687\u202fg\u202fcm\u207b\u00b3, which is lower than the density of liquid water (\u22481\u202fg\u202fcm\u207b\u00b3). According to the principle of buoyancy, any object with an average density less than that of the fluid it displaces will float. All cited sources confirm this density value and state that Saturn would float in a sufficiently large body of water.",
+        "evidence_count": 4,
+        "latency": 11.758932113647461,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence does not contain any information about Saturn\u2019s density or its buoyancy properties, so the claim cannot be confirmed or refuted based on the supplied sources.",
+        "evidence_count": 4,
+        "latency": 12.109398126602173,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to assess the claim.",
+        "evidence_count": 0,
+        "latency": 12.251000881195068,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0108": {
+    "id": "T1000-0108",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "Gravitational waves were directly detected for the first time by the LIGO observatory in September 2015.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The first direct observation of gravitational waves was made by LIGO on 14\u202fSeptember\u202f2015 (GW150914), as documented by authoritative sources such as the LIGO collaboration and Wikipedia\u2019s entry on the first observation of gravitational waves.",
+        "evidence_count": 4,
+        "latency": 11.93230390548706,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The first direct observation of gravitational waves was made on 14\u202fSeptember\u202f2015 by the two LIGO detectors, as documented in the Wikipedia entry on the first observation of gravitational waves and in the LIGO Wikipedia page.",
+        "evidence_count": 4,
+        "latency": 12.237006902694702,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 12.211399793624878,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0109": {
+    "id": "T1000-0109",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "The James Webb Space Telescope operates in a halo orbit around the Sun-Earth L2 Lagrange point.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Wikipedia\u2019s entry on JWST explicitly states that the telescope\u2019s mission relies on maintaining a halo orbit around the Sun\u2011Earth L2 Lagrange point, confirming the claim.",
+        "evidence_count": 3,
+        "latency": 12.10046124458313,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "The evidence confirms that JWST has a halo orbit, but it does not specify that this orbit is around the Sun\u2011Earth L2 Lagrange point. Without explicit mention of L2, the claim cannot be verified from the provided sources.",
+        "evidence_count": 3,
+        "latency": 12.950440883636475,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 12.030082941055298,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0110": {
+    "id": "T1000-0110",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "Halley's Comet has an orbital period of approximately 75 to 76 years.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "All authoritative sources indicate Halley\u2019s Comet returns roughly every 74\u201380 years, with recent calculations giving about 76.1 years. The claim that its orbital period is approximately 75 to 76 years falls within this range and is not contradicted by any evidence.",
+        "evidence_count": 4,
+        "latency": 12.263326644897461,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.97,
+        "reasoning": "Wikipedia\u2019s entry on Halley\u2019s Comet states its orbital period is roughly 74\u201379 years, which includes the 75\u201376\u2011year range asserted in the claim.",
+        "evidence_count": 4,
+        "latency": 11.804834842681885,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so its truth value cannot be determined from the supplied information.",
+        "evidence_count": 0,
+        "latency": 11.899861574172974,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0111": {
+    "id": "T1000-0111",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "The Voyager 1 spacecraft has crossed the heliopause into interstellar space.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All authoritative sources state that Voyager\u202f1 crossed the heliopause and entered interstellar space in August\u202f2012, and it remains beyond the heliopause today.",
+        "evidence_count": 4,
+        "latency": 11.64696979522705,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.97,
+        "reasoning": "Evidence 2 states that as of 2025, Voyager\u202f1 and Voyager\u202f2 are the only probes that have actually reached interstellar space, which is defined as the region beyond the heliopause. This directly confirms that Voyager\u202f1 has crossed the heliopause. No contradictory evidence is present.",
+        "evidence_count": 4,
+        "latency": 12.166147470474243,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to support or refute the claim, so the truth of the statement cannot be determined.",
+        "evidence_count": 0,
+        "latency": 12.563684225082397,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0112": {
+    "id": "T1000-0112",
+    "domain": "Astrophysics",
+    "expected": "True",
+    "claim": "Venus has a runaway greenhouse effect resulting in a mean surface temperature exceeding 450 degrees Celsius.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Venus\u2019s atmosphere is dominated by CO\u2082 and its greenhouse effect is so strong that the mean surface temperature is 737\u202fK (\u2248464\u202f\u00b0C), which exceeds 450\u202f\u00b0C. This is widely documented as a runaway greenhouse effect (see Venus entry on Wikipedia).",
+        "evidence_count": 4,
+        "latency": 11.960000038146973,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Venus\u2019s surface temperature is 737\u202fK (\u2248464\u202f\u00b0C) as reported by authoritative sources, which is well above 450\u202f\u00b0C. The planet\u2019s dense CO\u2082 atmosphere creates a runaway greenhouse effect that maintains this high temperature.",
+        "evidence_count": 4,
+        "latency": 12.158005714416504,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so the truth of the statement cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 12.751153707504272,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0113": {
+    "id": "T1000-0113",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "The Apollo 11 moon landing was staged on a film studio lot directed by Stanley Kubrick.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The evidence shows that Apollo\u202f11 was a real NASA mission (source\u202f3) and that claims of a staged landing are fringe conspiracy theories (source\u202f2). No authoritative source links Stanley\u202fKubrick or a film studio lot to the Apollo\u202f11 event, and the film Operation\u202fAvalanche (source\u202f1) is a fictional thriller, not evidence of a real staging. Thus the claim is unsupported and contradicted by established facts.",
+        "evidence_count": 4,
+        "latency": 12.171895503997803,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The claim that Apollo\u202f11 was staged on a film studio lot directed by Stanley\u202fKubrick is a fringe conspiracy theory.  Wikipedia\u2019s entry on Apollo\u202f11 (source\u202f1) documents the actual mission details, launch, and lunar landing, with no mention of a film production.  The other sources (3 and 4) discuss conspiracy theories and fictional films about the Apollo program but do not support the specific claim of a Kubrick\u2011directed staged landing.  No authoritative evidence confirms the claim, and the consensus among reliable sources is that the landing was real.",
+        "evidence_count": 4,
+        "latency": 12.057644844055176,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim that the Apollo 11 moon landing was staged on a film studio lot directed by Stanley Kubrick.",
+        "evidence_count": 0,
+        "latency": 12.649094820022583,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0114": {
+    "id": "T1000-0114",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "Black holes act as giant cosmic vacuum cleaners that suck in all matter in the universe regardless of distance.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Black holes do not act as universal vacuum cleaners; they only attract matter within their gravitational influence and do not suck in all matter regardless of distance. Evidence 2 notes that supermassive black holes consume material relatively slowly and do not engulf the entire universe, and evidence 4 explicitly states that black holes do not suck anything in at all.",
+        "evidence_count": 4,
+        "latency": 12.282257556915283,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that black holes act as giant cosmic vacuum cleaners that suck in all matter regardless of distance is contradicted by authoritative sources.  The Big Think article explicitly states that black holes do not \u201csuck\u201d anything in, and NASA\u2019s description explains that a black hole\u2019s influence is limited to its gravitational field and event horizon, not a universal vacuum cleaner.",
+        "evidence_count": 4,
+        "latency": 14.21840763092041,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that black holes act as cosmic vacuum cleaners that absorb all matter regardless of distance.",
+        "evidence_count": 0,
+        "latency": 13.176570415496826,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0115": {
+    "id": "T1000-0115",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "The asteroid belt between Mars and Jupiter is densely packed with colliding rocks that make navigation hazardous.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The evidence from authoritative sources (Wikipedia) describes the asteroid belt as a torus-shaped region with many objects, but it does not indicate that the belt is densely packed or that collisions are frequent enough to make navigation hazardous. In fact, the belt\u2019s average density is very low, and collisions among asteroids are rare events. Thus the claim is not supported by the evidence.",
+        "evidence_count": 4,
+        "latency": 12.051841974258423,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.9,
+        "reasoning": "The provided evidence does not support the assertion that the asteroid belt is densely packed with colliding rocks; it discusses a near\u2011Earth asteroid (Bennu), fictional depictions, terrestrial planet geology, and the nebular hypothesis, none of which describe the belt\u2019s density or collision frequency.",
+        "evidence_count": 4,
+        "latency": 11.64850115776062,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so its truth cannot be determined.",
+        "evidence_count": 0,
+        "latency": 12.262572765350342,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0116": {
+    "id": "T1000-0116",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "Solar flares have the physical capability to cause biological radiation burns to humans living on Earth's surface.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "NASA authoritative sources state that Earth\u2019s atmosphere and magnetic field block the X\u2011ray, UV, and high\u2011energy particle radiation from solar flares, preventing any direct radiation burns to humans on the surface. The claim that flares can cause such burns is contradicted by these sources.",
+        "evidence_count": 4,
+        "latency": 12.623428583145142,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Solar flares emit high\u2011energy radiation such as gamma rays and X\u2011rays (see Gamma ray article), but the Earth's atmosphere absorbs the vast majority of this radiation before it reaches the surface, preventing the level of exposure required to produce biological radiation burns. This is consistent with established solar\u2011physics and atmospheric\u2011science consensus.",
+        "evidence_count": 4,
+        "latency": 12.306472539901733,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that solar flares can cause biological radiation burns on Earth's surface.",
+        "evidence_count": 0,
+        "latency": 12.024442672729492,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0117": {
+    "id": "T1000-0117",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "The North Star (Polaris) is the brightest star visible in the entire night sky.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.9,
+        "reasoning": "Polaris has an apparent magnitude of about 1.98, making it the brightest star in its own constellation (Ursa Minor) as stated in the evidence. The claim that it is the brightest star visible in the entire night sky is not supported by the evidence, which does not assert this universal status and is contradicted by the known fact that stars such as Sirius (magnitude \u20131.46) are brighter. Therefore the claim is false.",
+        "evidence_count": 4,
+        "latency": 12.692576885223389,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Polaris has an apparent magnitude of about 1.98 (source 2), which is much fainter than the brightest stars in the night sky such as Sirius (\u2248\u20131.46) and Canopus (\u2248\u20130.74). Therefore Polaris is not the brightest star visible at night.",
+        "evidence_count": 4,
+        "latency": 11.969942092895508,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim that Polaris is the brightest star in the night sky.",
+        "evidence_count": 0,
+        "latency": 11.959667205810547,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0118": {
+    "id": "T1000-0118",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "Meteorites are typically red-hot or glowing when they hit the surface of the Earth.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Evidence shows that freshly fallen meteorites are only warm at most and often cold inside, not glowing or red\u2011hot at impact (Treasure Coast Meteorite Co.). NASA\u2019s description of meteors and meteorites likewise indicates that the glowing fireball occurs in the atmosphere, not at the moment of ground impact. Thus the claim that meteorites are typically red\u2011hot or glowing when they hit the surface is unsupported.",
+        "evidence_count": 4,
+        "latency": 103.93265700340271,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The Wikipedia entry on meteorites states that the object heats up and radiates energy while entering the atmosphere, forming a fireball, but once it settles on the surface it becomes a meteorite \u2013 it is not described as remaining red\u2011hot or glowing at impact. Thus the claim that meteorites are typically red\u2011hot or glowing when they hit the surface is not supported by authoritative evidence.",
+        "evidence_count": 4,
+        "latency": 12.552826642990112,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess the claim.",
+        "evidence_count": 0,
+        "latency": 11.86388897895813,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0119": {
+    "id": "T1000-0119",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "The Moon's dark side never receives sunlight from the Sun.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The far side of the Moon (often called the \"dark side\") does receive sunlight; each lunar location experiences about two weeks of daylight followed by two weeks of night, as documented by authoritative sources such as Wikipedia.",
+        "evidence_count": 4,
+        "latency": 12.645275115966797,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The claim is contradicted by the Wikipedia entry on the far side of the Moon, which states that each location on the Moon receives about two weeks of sunlight during each lunar cycle; the so\u2011called \"dark side\" is simply the hemisphere that is not visible from Earth, not a permanently unilluminated region.",
+        "evidence_count": 4,
+        "latency": 11.854544639587402,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The Moon is tidally locked to Earth, but it still rotates once every 27.3\u202fdays relative to the Sun, so each lunar hemisphere receives about 14\u202fdays of sunlight followed by 14\u202fdays of darkness. NASA and other authoritative sources state that the far side (often called the \"dark side\") does indeed receive sunlight during its lunar day.",
+        "evidence_count": 0,
+        "latency": 11.95612120628357,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0120": {
+    "id": "T1000-0120",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "Comets are made entirely of burning gas that ignites upon approaching the Sun.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Comets are composed of ice, dust, rock, and organic material, not solely burning gas. When they approach the Sun, solar heating causes sublimation of volatile ices, releasing gas and dust, but no combustion occurs. Sources: LPI, NASA, and Royal Museums Greenwich all describe comets as icy bodies that sublimate, not ignite.",
+        "evidence_count": 4,
+        "latency": 11.803699970245361,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that comets are made entirely of burning gas that ignites upon approaching the Sun is a known misconception; comets are composed of ice, dust, and rocky material that sublimate rather than ignite. No evidence provided supports this assertion, and authoritative astronomical sources consistently describe comets as icy bodies, not burning gases.",
+        "evidence_count": 4,
+        "latency": 12.599815845489502,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim that comets are made entirely of burning gas that ignites upon approaching the Sun.",
+        "evidence_count": 0,
+        "latency": 12.076079368591309,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0121": {
+    "id": "T1000-0121",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "Planet Nibiru is an undiscovered rogue world scheduled to collide with Earth.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that a planet named Nibiru exists or is scheduled to collide with Earth.",
+        "evidence_count": 0,
+        "latency": 12.351877450942993,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that a planet named Nibiru exists or is scheduled to collide with Earth.",
+        "evidence_count": 0,
+        "latency": 0.0010578632354736328,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that a planet named Nibiru exists or is scheduled to collide with Earth.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0122": {
+    "id": "T1000-0122",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "Astronomers have discovered a Dyson sphere megastructure orbiting Tabby's Star (KIC 8462852).",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "No peer\u2011reviewed or observational evidence supports the existence of a Dyson sphere around Tabby's Star; the cited sources discuss the concept of Dyson spheres and the speculation that Tabby's Star\u2019s dimming might be due to an alien megastructure, but none report a confirmed discovery.",
+        "evidence_count": 4,
+        "latency": 12.312955379486084,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "No scientific source reports the detection of a Dyson sphere around Tabby's Star; the provided Wikipedia entries describe the concept of a Dyson sphere, the Kardashev scale, SETI, and Tabetha Boyajian\u2019s work on the star\u2019s light curve, but none provide evidence of such a megastructure.",
+        "evidence_count": 4,
+        "latency": 12.04245638847351,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that a Dyson sphere has been discovered around Tabby's Star.",
+        "evidence_count": 0,
+        "latency": 12.255804300308228,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0123": {
+    "id": "T1000-0123",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "Mercury is hotter on its night side than Venus is on its night side.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Mercury\u2019s nightside temperature can drop to about \u2013180\u202f\u00b0C (\u2013290\u202f\u00b0F)\u30104\u3011, whereas Venus\u2019s nightside remains extremely hot (~462\u202f\u00b0C) due to its dense CO\u2082 atmosphere\u30102\u3011. Thus Mercury is not hotter on its night side than Venus is on its night side.",
+        "evidence_count": 4,
+        "latency": 13.389968395233154,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Venus has a dense CO\u2082 atmosphere that traps heat, keeping its night side temperatures around 300\u202fK, whereas Mercury has only a tenuous exosphere and its night side drops to ~100\u202fK; thus Mercury is not hotter on its night side than Venus.",
+        "evidence_count": 4,
+        "latency": 12.723774194717407,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that Mercury\u2019s night side is hotter than Venus\u2019s night side.",
+        "evidence_count": 0,
+        "latency": 12.772185802459717,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0124": {
+    "id": "T1000-0124",
+    "domain": "Astrophysics",
+    "expected": "False",
+    "claim": "Humans exploded instantly when briefly exposed to vacuum conditions during space agency test chamber accidents.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Scientific evidence shows that brief exposure to vacuum causes asphyxiation, swelling, and ebullism, but does not cause humans to explode. Sources 1\u20133 describe black\u2011out and non\u2011fatal effects in vacuum chamber incidents, confirming the claim is false.",
+        "evidence_count": 4,
+        "latency": 15.381812572479248,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "None of the provided sources discuss humans exploding in vacuum; in fact, established scientific understanding (e.g., principles of human physiology in space) shows that brief exposure to vacuum causes asphyxiation and ebullism, not instantaneous explosion. The claim is a known misconception and is not supported by any authoritative evidence.",
+        "evidence_count": 4,
+        "latency": 12.933034420013428,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to confirm or refute the claim that humans explode instantly when briefly exposed to vacuum conditions during space agency test chamber accidents.",
+        "evidence_count": 0,
+        "latency": 12.21807861328125,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0125": {
+    "id": "T1000-0125",
+    "domain": "Astrophysics",
+    "expected": "Unverifiable",
+    "claim": "Extraterrestrial microbial life currently thrives in the subsurface ocean of Jupiter's moon Europa.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The evidence states that no extraterrestrial life has yet been detected (source 2), and the claim asserts that microbial life currently thrives on Europa, which is not supported by any authoritative source. Therefore the claim is false.",
+        "evidence_count": 4,
+        "latency": 11.979772806167603,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Source 3 states that no extraterrestrial life has yet been detected, directly contradicting the claim that microbial life currently thrives in Europa\u2019s subsurface ocean.",
+        "evidence_count": 4,
+        "latency": 12.477058410644531,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to support or refute the claim that extraterrestrial microbial life currently thrives in Europa\u2019s subsurface ocean.",
+        "evidence_count": 0,
+        "latency": 12.231999397277832,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0126": {
+    "id": "T1000-0126",
+    "domain": "Astrophysics",
+    "expected": "Unverifiable",
+    "claim": "Our universe is one of an infinite number of bubble universes within an eternal inflationary multiverse.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.9,
+        "reasoning": "Evidence 1, an authoritative source on eternal inflation, states that the transition from an inflationary state to ordinary expansion occurs at different times and locations, producing an arbitrarily large or infinite number of post\u2011inflationary regions conceptualized as bubble universes. This directly supports the claim that our universe is one of an infinite number of bubble universes within an eternal inflationary multiverse.",
+        "evidence_count": 4,
+        "latency": 12.351039409637451,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided sources discuss cosmic inflation and the Big Bang but do not provide evidence for or against the specific hypothesis that our universe is one of an infinite number of bubble universes produced by eternal inflation. The claim remains a speculative extension of inflationary theory that is not confirmed by the cited evidence.",
+        "evidence_count": 4,
+        "latency": 12.764117956161499,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that our universe is one of an infinite number of bubble universes within an eternal inflationary multiverse.",
+        "evidence_count": 0,
+        "latency": 12.561448097229004,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0127": {
+    "id": "T1000-0127",
+    "domain": "Astrophysics",
+    "expected": "Unverifiable",
+    "claim": "Dark matter consists entirely of primordial black holes formed during the first second after the Big Bang.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that dark matter consists entirely of primordial black holes formed during the first second after the Big Bang is not supported by current evidence.  Primordial black holes are hypothetical and, while they are a candidate for dark matter, observational constraints (microlensing, CMB, gravitational\u2011wave limits) rule out them making up all of the dark matter over the relevant mass ranges.  Moreover, PBHs could form over a broad range of times, not exclusively within the first second.  Thus the claim is contradicted by authoritative sources.",
+        "evidence_count": 4,
+        "latency": 12.544671058654785,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The evidence indicates that primordial black holes (PBHs) are hypothetical objects that may have formed shortly after the Big Bang, but there is no evidence that they constitute all dark matter. Dark matter is also described as a hypothetical, non\u2011luminous component of the universe, and the sources do not link it exclusively to PBHs. Thus the claim that dark matter consists entirely of PBHs formed during the first second after the Big Bang is unsupported and contradicted by current scientific consensus.",
+        "evidence_count": 4,
+        "latency": 12.072474241256714,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim that dark matter consists entirely of primordial black holes formed during the first second after the Big Bang.",
+        "evidence_count": 0,
+        "latency": 11.551285028457642,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0128": {
+    "id": "T1000-0128",
+    "domain": "Astrophysics",
+    "expected": "Unverifiable",
+    "claim": "An advanced Type II Kardashev civilization currently operates in the Andromeda galaxy.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.9,
+        "reasoning": "The evidence provided only describes the Kardashev scale and the characteristics of a Type\u202fII civilization; it does not contain any observational or theoretical evidence indicating that such a civilization exists in the Andromeda galaxy. In the absence of supporting data, the claim is unsupported and thus false.",
+        "evidence_count": 4,
+        "latency": 12.966092824935913,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "The evidence provided discusses the Kardashev scale and the rarity of complex life, but it does not contain any observational or theoretical support for the existence of a Type\u202fII civilization in Andromeda. Without empirical data or credible theoretical models indicating such a civilization, the claim cannot be confirmed or refuted.",
+        "evidence_count": 4,
+        "latency": 12.175981998443604,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the existence of a Type\u202fII Kardashev civilization in Andromeda.",
+        "evidence_count": 0,
+        "latency": 11.509283781051636,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0129": {
+    "id": "T1000-0129",
+    "domain": "Astrophysics",
+    "expected": "Unverifiable",
+    "claim": "The Oumuamua interstellar object was an artificial reconnaissance light sail created by an alien civilization.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The available sources discuss speculation that Oumuamua could be an artificial light sail (e.g., Avi Loeb\u2019s hypothesis and other web articles) but none provide definitive evidence confirming its artificial origin or alien construction. NASA\u2019s authoritative page identifies it only as an interstellar object, and the Wikipedia entry on UFOs notes that unidentified objects are not proven to be extraterrestrial. Thus, the claim remains unverified.",
+        "evidence_count": 4,
+        "latency": 12.169271469116211,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.9,
+        "reasoning": "The claim that \u02bbOumuamua was an artificial reconnaissance light sail is not supported by authoritative evidence. While astronomer Avi Loeb and collaborator Shmuel Bialy published a paper proposing the possibility of a thin solar sail to explain its non\u2011gravitational acceleration, this remains a hypothesis and has not been confirmed; the mainstream scientific consensus attributes \u02bbOumuamua\u2019s properties to a natural interstellar object. NASA\u2019s official description also identifies it as a natural interstellar object, not an engineered craft.",
+        "evidence_count": 4,
+        "latency": 12.147062301635742,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to support or refute the claim that Oumuamua was an artificial light sail; therefore the claim cannot be verified.",
+        "evidence_count": 0,
+        "latency": 11.727014064788818,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0130": {
+    "id": "T1000-0130",
+    "domain": "Astrophysics",
+    "expected": "Unverifiable",
+    "claim": "A ninth major planet with ten Earth masses exists beyond the Kuiper belt at an orbit of 400 AU.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts the existence of a ninth major planet with ten Earth masses at 400\u202fAU. All authoritative sources (Wikipedia entries on Pluto and Planet\u202fNine) describe Planet\u202fNine as a *hypothetical* object whose existence has not been confirmed, and no evidence indicates a mass of ten Earth masses or an orbit of 400\u202fAU. Thus the claim is not supported by current scientific evidence.",
+        "evidence_count": 4,
+        "latency": 11.786945104598999,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim states that a ninth major planet with ten Earth masses exists at 400\u202fAU. Wikipedia\u2019s entry on Planet\u202fNine describes it as a *hypothetical* planet whose existence has not been confirmed, and it does not specify a mass of exactly ten Earth masses or an orbit of precisely 400\u202fAU. No source in the evidence provides evidence of an actual planet with those properties. Therefore the claim is not supported by authoritative evidence.",
+        "evidence_count": 4,
+        "latency": 12.43192982673645,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to support or refute the claim.",
+        "evidence_count": 0,
+        "latency": 12.139249086380005,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0131": {
+    "id": "T1000-0131",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "CRISPR-Cas9 functions as an adaptive immune defense mechanism in bacteria against bacteriophages.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The CRISPR-Cas9 system is a bacterial adaptive immune mechanism that uses Cas9 endonuclease to target and cleave invading phage DNA, as described in authoritative sources such as the Cas9 and CRISPR Wikipedia entries.",
+        "evidence_count": 4,
+        "latency": 12.880573511123657,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that CRISPR sequences are derived from prior bacteriophage infections and are used by bacteria to detect and destroy invading phage DNA, and that Cas9 is a key component of this CRISPR immune system, confirming that CRISPR\u2011Cas9 functions as an adaptive immune defense against bacteriophages (see sources 1 and 3).",
+        "evidence_count": 4,
+        "latency": 12.834102869033813,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Extensive experimental work (e.g., Barrangou et\u202fal., Science 2007; Doudna & Charpentier, Nature 2014) shows that CRISPR-Cas systems, with Cas9 as the nuclease, acquire spacers from invading bacteriophage DNA and use them to recognize and cleave subsequent infections, providing adaptive immunity in bacteria.",
+        "evidence_count": 0,
+        "latency": 12.26011037826538,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0132": {
+    "id": "T1000-0132",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "DNA replication in eukaryotic cells is semi-conservative, producing two copies each containing one original strand.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Wikipedia, LibreTexts) state that DNA replication proceeds by a semi-conservative mechanism, whereby each daughter double helix contains one parental strand and one newly synthesized strand, and this applies to eukaryotic cells as described in the eukaryotic replication overview.",
+        "evidence_count": 4,
+        "latency": 12.464540958404541,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided sources describe DNA structure and that replication produces copies for daughter cells, but none specify that eukaryotic DNA replication is semi-conservative or that each new molecule contains one original strand, so the claim cannot be confirmed or refuted from the given evidence.",
+        "evidence_count": 4,
+        "latency": 13.002248287200928,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Extensive molecular biology research confirms that eukaryotic DNA replication follows the semi-conservative mechanism described by the Meselson\u2011Stahl experiment, yielding two daughter DNA molecules each composed of one parental strand and one newly synthesized strand.",
+        "evidence_count": 0,
+        "latency": 12.154301404953003,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0133": {
+    "id": "T1000-0133",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "Ribosomes are ribonucleoprotein complexes responsible for protein translation from mRNA templates.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources describe ribosomes as complexes of ribosomal RNA and proteins (ribonucleoproteins) that decode messenger RNA to synthesize polypeptides, confirming they are responsible for protein translation from mRNA templates.",
+        "evidence_count": 4,
+        "latency": 12.48925256729126,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The supplied sources discuss various RNA-related molecules and ribonucleoprotein complexes (e.g., RISC) but do not provide information about ribosomes or their role in translating mRNA, so the claim cannot be confirmed or refuted from the given evidence.",
+        "evidence_count": 4,
+        "latency": 12.55463981628418,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim, so its truth cannot be determined from the given information.",
+        "evidence_count": 0,
+        "latency": 60.31250071525574,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0134": {
+    "id": "T1000-0134",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "Mitochondria contain their own circular genome distinct from the cell's nuclear DNA.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that mitochondria house mitochondrial DNA, which is a circular chromosome separate from the nuclear genome (see Mitochondrial DNA Wikipedia and NHGRI). This directly confirms the claim.",
+        "evidence_count": 4,
+        "latency": 12.523653745651245,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that mitochondria house mitochondrial DNA, a small circular genome that is separate from the cell's nuclear DNA (see Mitochondrial DNA article). This distinct, circular genome is a well\u2011established fact in cell biology.",
+        "evidence_count": 4,
+        "latency": 16.00120997428894,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Mitochondria possess their own small, circular DNA molecule (mtDNA) which is distinct from the linear nuclear DNA found in the cell nucleus, a fundamental principle of cell biology supported by extensive scientific consensus.",
+        "evidence_count": 0,
+        "latency": 11.97475552558899,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0135": {
+    "id": "T1000-0135",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "RNA polymerase II is the primary enzyme responsible for synthesizing messenger RNA in eukaryotes.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim is consistent with established molecular biology principles. While the provided evidence generally defines RNA polymerase and primary transcripts, it confirms that RNA is synthesized from DNA templates via transcription. In eukaryotes, RNA Polymerase II is the specific isoenzyme responsible for transcribing protein-coding genes into pre-mRNA, which is processed into mature messenger RNA (mRNA). The other polymerases (I and III) synthesize rRNA and tRNA/small RNAs, respectively, making Pol II the primary enzyme for mRNA synthesis.",
+        "evidence_count": 4,
+        "latency": 12.424412250518799,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim is consistent with established molecular biology principles. While the provided evidence generally defines RNA polymerase as the enzyme synthesizing RNA from DNA (Source 4) and notes that pre-mRNA is synthesized by transcription (Source 3), it does not explicitly distinguish between the three eukaryotic RNA polymerases. However, it is a fundamental scientific fact that RNA Polymerase II is the specific enzyme responsible for transcribing protein-coding genes into messenger RNA (mRNA) in eukaryotes, whereas RNA Pol I synthesizes rRNA and RNA Pol III synthesizes tRNA and other small RNAs. The evidence supports the general mechanism of transcription described in the claim.",
+        "evidence_count": 4,
+        "latency": 12.730237007141113,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 12.290276288986206,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0136": {
+    "id": "T1000-0136",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "Telomeres shorten with successive rounds of cell division in human somatic cells lacking telomerase.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The provided evidence consists of a definition of meiosis and a glossary index, neither of which contains information regarding telomere length, cell division in somatic cells, or the role of telomerase. Therefore, the claim cannot be verified or refuted based solely on the retrieved evidence.",
+        "evidence_count": 2,
+        "latency": 11.838783979415894,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The provided evidence consists of a glossary introduction and a definition of meiosis, neither of which contains information regarding telomere dynamics, cell division in somatic cells, or the role of telomerase. Therefore, the claim cannot be verified or refuted based solely on the retrieved evidence.",
+        "evidence_count": 2,
+        "latency": 11.846692562103271,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "It is a well-established biological fact that human somatic cells lack significant telomerase activity, leading to progressive telomere shortening with each cell division until the Hayflick limit is reached. This mechanism is a primary driver of cellular senescence and aging.",
+        "evidence_count": 0,
+        "latency": 13.475450992584229,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0137": {
+    "id": "T1000-0137",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "ATP synthase produces adenosine triphosphate driven by a proton electrochemical gradient across a membrane.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence from Wikipedia's articles on Chemiosmosis and the Electron Transport Chain explicitly confirms that ATP synthase synthesizes ATP by harnessing the electrochemical gradient of protons (H+) across a membrane.",
+        "evidence_count": 4,
+        "latency": 12.149385452270508,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence explicitly confirms that ATP synthase synthesizes ATP using the energy from the movement of protons (H+) down their electrochemical gradient across a membrane, a process known as chemiosmosis. Sources 2 and 3 directly support the mechanism described in the claim.",
+        "evidence_count": 4,
+        "latency": 12.054395914077759,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim accurately describes the fundamental mechanism of ATP synthase, which utilizes the energy stored in the proton motive force (electrochemical gradient) to drive the phosphorylation of ADP to ATP. This is a standard, well-established fact in biochemistry and cellular biology.",
+        "evidence_count": 0,
+        "latency": 12.892851114273071,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0138": {
+    "id": "T1000-0138",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "Histone acetylation generally increases chromatin accessibility and promotes gene transcription.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim is supported by established biological principles and the provided evidence. Source 1 explicitly links lysine acetylation of histone tails to gene expression, and Source 3 confirms that open chromatin (euchromatin), which is the state associated with acetylation, is enriched in genes and often under active transcription.",
+        "evidence_count": 4,
+        "latency": 12.656347274780273,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim aligns with established molecular biology principles where histone acetylation neutralizes the positive charge of histones, reducing their affinity for negatively charged DNA. This leads to a more open chromatin structure (euchromatin), which, as described in the evidence, is enriched in genes and under active transcription, thereby promoting gene expression.",
+        "evidence_count": 4,
+        "latency": 12.166465282440186,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Although no specific evidence text was provided, this is a fundamental and well-established principle of molecular biology. Histone acetylation neutralizes the positive charge on lysine residues, reducing the affinity between histones and negatively charged DNA, which relaxes chromatin structure (euchromatin) and facilitates the binding of transcription factors and RNA polymerase, thereby promoting gene transcription.",
+        "evidence_count": 0,
+        "latency": 76.46809101104736,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0139": {
+    "id": "T1000-0139",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "MicroRNAs regulate gene expression by binding to complementary sequences on target mRNAs to repress translation.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim is supported by authoritative evidence indicating that microRNAs bind to complementary sequences on target mRNAs to repress gene expression. Source 4 explicitly states that miRNAs cause 'translation inhibition' of their target genes, while Source 1 confirms they base-pair to complementary sequences to silence mRNA, which includes mechanisms that prevent translation or lead to degradation.",
+        "evidence_count": 4,
+        "latency": 11.880802631378174,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The evidence confirms that microRNAs are non-coding RNAs involved in post-transcriptional regulation of gene expression by base-pairing to complementary sequences in mRNA. While the provided text explicitly lists mRNA cleavage and destabilization as mechanisms, it identifies the general process as 'RNA silencing,' which in molecular biology encompasses the repression of translation. The core assertion that miRNAs bind complementary mRNA sequences to regulate (repress) expression is factually correct and supported by the description of their function in silencing target mRNAs.",
+        "evidence_count": 4,
+        "latency": 12.12366271018982,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "MicroRNAs (miRNAs) are short non\u2011coding RNAs that guide the RNA\u2011induced silencing complex (RISC) to target messenger RNAs (mRNAs) through base\u2011pairing with complementary sequences, typically in the 3\u2032 untranslated region, leading to translational repression or mRNA degradation. This mechanism is well documented in numerous peer\u2011reviewed studies and is a foundational concept in post\u2011transcriptional gene regulation.",
+        "evidence_count": 0,
+        "latency": 11.539844751358032,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0140": {
+    "id": "T1000-0140",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "Ubiquitination is an enzymatic post-translational modification that targets proteins for degradation by the proteasome.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim is supported by the evidence, which identifies ubiquitin as a protein involved in post-translational modification and explicitly notes its role in regulating protein degradation. Additionally, the description of ubiquitin ligases confirms the enzymatic mechanism (E3 ligases catalyzing the transfer of ubiquitin) that marks proteins for this process, which is canonically known to target them for proteasomal degradation.",
+        "evidence_count": 4,
+        "latency": 13.70523190498352,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "The claim is supported by the evidence, which identifies ubiquitin as the best-known member of the ubiquitin-like protein family for its role in regulating protein degradation through covalent modification (ubiquitination). Additionally, the description of ubiquitin ligases confirms the enzymatic nature of the process, where E3 ligases catalyze the transfer of ubiquitin to target proteins, a mechanism known to target them for proteasomal degradation.",
+        "evidence_count": 4,
+        "latency": 14.809761762619019,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Ubiquitination is a well-established enzymatic post-translational modification where ubiquitin is attached to target proteins, serving as the primary signal for their recognition and degradation by the 26S proteasome.",
+        "evidence_count": 0,
+        "latency": 12.174878597259521,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0141": {
+    "id": "T1000-0141",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "Okazaki fragments are synthesized discontinuously on the lagging strand during DNA replication.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim is directly confirmed by the first piece of evidence, which states that Okazaki fragments are 'synthesized discontinuously and later linked together... to create the lagging strand during DNA replication.'",
+        "evidence_count": 4,
+        "latency": 12.128315687179565,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Evidence 4 explicitly states that Okazaki fragments are 'synthesized discontinuously' and are linked together to create the 'lagging strand' during DNA replication, which directly confirms the claim.",
+        "evidence_count": 4,
+        "latency": 12.14863896369934,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 75.67146468162537,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0142": {
+    "id": "T1000-0142",
+    "domain": "Molecular Biology",
+    "expected": "True",
+    "claim": "Aquaporins are specialized integral membrane proteins that facilitate water transport across cell membranes.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence explicitly confirms that aquaporins are specialized integral membrane protein channels that facilitate water transport across biomembranes, as stated in sources 3 and 4. Source 1 provides context that integral membrane proteins serve as transporters, consistent with the function of aquaporins.",
+        "evidence_count": 4,
+        "latency": 12.735891580581665,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The provided evidence discusses general cell membrane composition, CFTR, and TRPV6, but contains no specific information regarding aquaporins or their function in water transport. Therefore, the claim cannot be verified or refuted based solely on the retrieved evidence.",
+        "evidence_count": 4,
+        "latency": 11.968813419342041,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was supplied to confirm or refute the statement that aquaporins are specialized integral membrane proteins facilitating water transport across cell membranes.",
+        "evidence_count": 0,
+        "latency": 12.962356090545654,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0143": {
+    "id": "T1000-0143",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "Animal cells contain a rigid cell wall composed of cellulose.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Authoritative sources explicitly state that animal cells lack a cell wall, which is a feature present in plant cells (composed of cellulose) and other organisms. Evidence 4 from Britannica directly confirms that the rigid cellulose cell wall is 'absent in animal cells'.",
+        "evidence_count": 4,
+        "latency": 12.202149152755737,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Animal cells do not possess cell walls; they are bounded only by a cell membrane. Cell walls composed of cellulose are a distinctive feature of plant cells, as confirmed by the evidence regarding plant cell structure.",
+        "evidence_count": 4,
+        "latency": 12.014827013015747,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Animal cells do not possess cell walls; they are surrounded only by a flexible cell membrane. Cell walls composed of cellulose are characteristic of plant cells, fungi (chitin), and bacteria (peptidoglycan), but are absent in animal cells.",
+        "evidence_count": 0,
+        "latency": 12.195597410202026,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0144": {
+    "id": "T1000-0144",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "Human red blood cells (erythrocytes) in mature circulation contain nuclear DNA.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Mature human red blood cells (erythrocytes) are anucleate, meaning they lack a nucleus and therefore do not contain nuclear DNA. While they retain mitochondrial DNA (mtDNA) and RNA fragments, the specific assertion that they contain *nuclear* DNA is factually incorrect according to standard biological consensus and the provided evidence.",
+        "evidence_count": 4,
+        "latency": 11.906701564788818,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Evidence 3 explicitly states that in mammals, nucleated red blood cells (NRBCs) are precursors to mature red blood cells and that mature mammalian red blood cells lack a nucleus. Since humans are mammals, mature human erythrocytes do not contain nuclear DNA.",
+        "evidence_count": 4,
+        "latency": 12.159401178359985,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Mature human red blood cells (erythrocytes) are anucleate, meaning they lack a nucleus and therefore contain no nuclear DNA. This is a fundamental biological characteristic that distinguishes them from most other mammalian cells and allows for greater oxygen transport capacity.",
+        "evidence_count": 0,
+        "latency": 13.231169939041138,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0145": {
+    "id": "T1000-0145",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "Eating genetically modified crops alters human nuclear DNA and causes permanent inheritable mutations.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim is a well-known scientific myth refuted by extensive research and consensus from major health organizations (such as the WHO, AMA, and NAS), which state that GM foods do not alter human DNA or cause inheritable mutations. The provided evidence defines GM organisms and genetic engineering but does not support the false causal mechanism asserted in the claim; in fact, standard biological understanding confirms that ingested DNA is digested into nucleotides and does not integrate into the human genome.",
+        "evidence_count": 4,
+        "latency": 12.1593337059021,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim is a known scientific myth refuted by global health authorities (such as the WHO, FDA, and AMA), which state that GM foods do not alter human DNA or cause inheritable mutations. The provided evidence defines GM foods as products of genetic engineering but does not support the false causal link between consumption and human genetic alteration, which contradicts established biological consensus that dietary DNA is digested and does not integrate into the human genome.",
+        "evidence_count": 4,
+        "latency": 12.14044451713562,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Scientific consensus and authoritative bodies such as the WHO and FDA confirm that genetically modified foods are digested like any other food, with DNA broken down into nucleotides and not incorporated into human nuclear DNA. There is no evidence that GM crops cause permanent inheritable mutations in humans.",
+        "evidence_count": 0,
+        "latency": 12.210645198822021,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0146": {
+    "id": "T1000-0146",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "Antibiotics directly target and degrade viral capsid proteins in influenza infections.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Antibiotics are designed to target bacterial structures and processes (such as cell wall synthesis or protein synthesis) and have no effect on viruses, which are not bacteria. The claim that antibiotics target viral capsid proteins is a fundamental misconception; antiviral medications, not antibiotics, are used to treat influenza.",
+        "evidence_count": 2,
+        "latency": 11.845492362976074,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Antibiotics are specifically designed to target bacterial structures and processes (such as cell wall synthesis or protein synthesis) and have no effect on viruses, including influenza. Influenza is a viral infection that requires antiviral medications, not antibiotics, as antibiotics cannot degrade viral capsid proteins or inhibit viral replication.",
+        "evidence_count": 2,
+        "latency": 12.248810052871704,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Antibiotics are designed to target bacterial structures (such as cell walls or protein synthesis machinery) and have no mechanism to target or degrade viral capsid proteins. Influenza is a viral infection, for which antibiotics are ineffective; antiviral medications are the appropriate treatment.",
+        "evidence_count": 0,
+        "latency": 11.899231910705566,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0147": {
+    "id": "T1000-0147",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "All bacteria are pathogenic to human tissue and cause clinical disease upon colonization.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is explicitly refuted by authoritative evidence stating that 'Most species of bacteria are harmless and many are beneficial.' Furthermore, the evidence notes that fewer than a hundred species are pathogenic to humans, while thousands are part of the normal gut microbiome, directly contradicting the universal quantifier 'All bacteria'.",
+        "evidence_count": 4,
+        "latency": 11.874815225601196,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is explicitly refuted by Evidence 4, which states that 'Most species of bacteria are harmless and many are beneficial' and that only a small number (fewer than a hundred) are pathogenic to humans. Additionally, Evidence 3 confirms that bacteria are a major component of the human microbiome, where they typically reside without causing disease.",
+        "evidence_count": 4,
+        "latency": 13.003351211547852,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim uses a universal quantifier ('All bacteria') which is factually incorrect; the majority of bacteria are non-pathogenic, including many commensal and mutualistic species (such as Lactobacillus and Bifidobacterium) that reside in the human microbiome without causing disease. Authoritative medical and microbiological consensus confirms that only a small fraction of bacterial species are pathogenic to humans.",
+        "evidence_count": 0,
+        "latency": 13.314367532730103,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0148": {
+    "id": "T1000-0148",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "Enzymes increase the activation energy of chemical reactions, slowing down metabolic rates.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect because enzymes act as biological catalysts that lower, not increase, the activation energy of chemical reactions, thereby accelerating rather than slowing down metabolic rates. Evidence from PMC explicitly states that enzymes increase the rate of reactions by lowering the activation energy, and Wikipedia confirms that enzymes accelerate chemical reactions.",
+        "evidence_count": 4,
+        "latency": 12.12846851348877,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect because enzymes act as biological catalysts that lower, not increase, the activation energy of chemical reactions. According to the evidence, enzymes accelerate chemical reactions to occur at biologically relevant rates, whereas increasing activation energy would slow them down.",
+        "evidence_count": 4,
+        "latency": 12.034117221832275,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect because enzymes function as biological catalysts that lower, not increase, the activation energy of chemical reactions. By lowering the activation energy barrier, enzymes accelerate reaction rates, thereby speeding up metabolic processes rather than slowing them down.",
+        "evidence_count": 0,
+        "latency": 12.293190479278564,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0149": {
+    "id": "T1000-0149",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "Proteins are converted directly into nucleic acids through reverse transcription.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim is biologically incorrect. Reverse transcription is the process of synthesizing DNA from an RNA template, not from a protein template. While Evidence 1 mentions 'protein-template-based mechanisms' in the context of defense-associated reverse transcriptases (DRTs) manipulating nucleic acid sequences, this is a specific, non-standard regulatory mechanism and does not represent the general biological definition of reverse transcription, which strictly involves RNA-to-DNA conversion as confirmed by Evidence 2 and 3. Proteins are not standardly converted directly into nucleic acids via reverse transcription.",
+        "evidence_count": 4,
+        "latency": 12.364684820175171,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim incorrectly asserts that proteins are converted into nucleic acids. Reverse transcription is the process of synthesizing DNA from an RNA template, not from proteins. Furthermore, the central dogma of molecular biology states that information flows from nucleic acids to proteins, not the reverse.",
+        "evidence_count": 4,
+        "latency": 13.960202693939209,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is biologically incorrect. Reverse transcription is the process of synthesizing DNA from an RNA template, not converting proteins into nucleic acids. Furthermore, proteins are not converted into nucleic acids in biological systems; nucleic acids (DNA/RNA) are synthesized from nucleotides, and proteins are synthesized from amino acids based on the genetic code.",
+        "evidence_count": 0,
+        "latency": 12.265467643737793,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0150": {
+    "id": "T1000-0150",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "Human somatic cells reproduce exclusively through the process of meiosis.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect because human somatic cells reproduce via mitosis, not meiosis. Meiosis is a specialized form of cell division that occurs only in germ cells to produce gametes (sperm and eggs), as indicated by the evidence linking meiosis to genetic recombination in the context of offspring production and the distinction between somatic and germline cells.",
+        "evidence_count": 4,
+        "latency": 12.563564538955688,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect because human somatic cells reproduce via mitosis, not meiosis. Meiosis is a specialized form of cell division that occurs only in germ cells to produce gametes (sperm and eggs), as indicated by the evidence discussing genetic recombination during meiosis in the context of offspring production and the distinction of the germline.",
+        "evidence_count": 4,
+        "latency": 12.644327163696289,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Human somatic cells reproduce through mitosis, not meiosis. Meiosis is a specialized form of cell division that occurs only in germ cells to produce gametes (sperm and eggs), whereas mitosis is the process responsible for growth, maintenance, and repair of somatic tissues.",
+        "evidence_count": 0,
+        "latency": 12.088739395141602,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0151": {
+    "id": "T1000-0151",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "DNA double helices are held together primarily by covalent bonds between complementary nitrogenous bases.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect because the two strands of the DNA double helix are held together by hydrogen bonds between complementary nitrogenous bases, not covalent bonds. Covalent bonds (specifically phosphodiester bonds) link the nucleotides within each individual strand, while hydrogen bonds facilitate the interaction between the two strands.",
+        "evidence_count": 4,
+        "latency": 12.977248668670654,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect because the two strands of the DNA double helix are held together by hydrogen bonds between complementary nitrogenous bases, not covalent bonds. Covalent bonds form the phosphodiester backbone of each individual strand, while the evidence explicitly states that base pairs (including Hoogsteen and non-canonical variants) are held together by hydrogen bonds.",
+        "evidence_count": 4,
+        "latency": 13.078642845153809,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect because the two strands of the DNA double helix are held together by hydrogen bonds between complementary nitrogenous bases, not covalent bonds. Covalent bonds form the sugar-phosphate backbone of each individual strand, but the inter-strand connection is non-covalent (hydrogen bonding).",
+        "evidence_count": 0,
+        "latency": 13.55295467376709,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0152": {
+    "id": "T1000-0152",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "Chloroplasts are naturally occurring organelles inside normal human epidermal skin cells.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Chloroplasts are organelles found exclusively in plant cells and some algae, not in human cells. Human epidermal cells are animal cells and do not contain chloroplasts, as confirmed by biological consensus and the provided evidence which discusses the absence of chloroplasts in plant epidermal cells to allow light transmission, implicitly confirming their plant-specific nature.",
+        "evidence_count": 4,
+        "latency": 12.394622087478638,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Chloroplasts are organelles found exclusively in plant cells and some algae, not in human cells. Human epidermal cells are animal cells and do not contain chloroplasts, as confirmed by biological consensus and the specific evidence regarding plant epidermal cells.",
+        "evidence_count": 4,
+        "latency": 12.187726736068726,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Chloroplasts are organelles found in plant cells and some algae, responsible for photosynthesis; they are not present in human cells, including epidermal skin cells, which lack the genetic machinery and structural components for chloroplasts.",
+        "evidence_count": 0,
+        "latency": 13.048573732376099,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0153": {
+    "id": "T1000-0153",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "Prions are living viral organisms with a single-stranded RNA genome.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect on multiple counts. Authoritative evidence explicitly states that prions are not living organisms and do not contain genetic material such as DNA or RNA; they are misfolded proteins. The description of a 'single-stranded RNA genome' applies to viroids, not prions.",
+        "evidence_count": 4,
+        "latency": 12.458408832550049,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Prions are misfolded proteins, not living organisms and they do not possess any genetic material (RNA or DNA). The description of a 'single-stranded RNA genome' applies to viroids or certain viruses, not prions.",
+        "evidence_count": 4,
+        "latency": 14.485146045684814,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess the claim that prions are living viral organisms with a single\u2011stranded RNA genome.",
+        "evidence_count": 0,
+        "latency": 75.05808234214783,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0154": {
+    "id": "T1000-0154",
+    "domain": "Molecular Biology",
+    "expected": "False",
+    "claim": "Human genome sequencing proved that 90% of human genes are identical to fungal penicillin genes.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is biologically nonsensical and factually incorrect. Humans and fungi are distantly related eukaryotes, and while they share some conserved housekeeping genes, they do not share 'penicillin genes' (penicillin is a metabolite produced by fungi, not a gene category in humans) nor is 90% of the human genome identical to fungal genes. The provided evidence confirms that human genetic variation and evolution are distinct from other species, and no source supports the existence of 'fungal penicillin genes' in the human genome.",
+        "evidence_count": 4,
+        "latency": 13.398118019104004,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is biologically nonsensical and factually incorrect. Humans and fungi are distantly related eukaryotes; while they share some conserved housekeeping genes, the vast majority of human genes are not 'identical' to fungal genes, and there is no specific category of 'fungal penicillin genes' that constitute 90% of the human genome. Penicillin is a secondary metabolite produced by fungi, not a gene family shared with humans.",
+        "evidence_count": 4,
+        "latency": 12.757013082504272,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "The provided evidence section is empty, offering no data to assess whether human genes are identical to fungal penicillin genes, so the claim cannot be verified from the given sources.",
+        "evidence_count": 0,
+        "latency": 12.912341594696045,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0155": {
+    "id": "T1000-0155",
+    "domain": "Molecular Biology",
+    "expected": "Unverifiable",
+    "claim": "The first self-replicating molecular system on prebiotic Earth was an autocatalytic RNA network rather than peptide amyloid.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "While the evidence supports the 'RNA World' hypothesis and the role of autocatalytic RNA networks in early life, it does not provide evidence to refute the specific claim that this was the *first* self-replicating system *rather than* peptide amyloid. The evidence notes that questions persist about the genesis of the first self-replicating molecule and does not address peptide amyloids as a competing or preceding candidate, making the comparative exclusion unverifiable based on the provided text.",
+        "evidence_count": 4,
+        "latency": 12.303727149963379,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The provided evidence discusses the RNA World hypothesis and autocatalytic networks as attractive or proposed scenarios for the origin of life, but it explicitly states that questions persist regarding the genesis of the first self-replicating molecule. It does not provide authoritative confirmation that an autocatalytic RNA network was definitively the first system, nor does it refute the peptide amyloid hypothesis; thus, the specific comparative claim cannot be verified as fact based on the current scientific consensus presented in the evidence.",
+        "evidence_count": 4,
+        "latency": 12.106600761413574,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The scientific consensus does not definitively establish that the *first* self-replicating system was specifically an autocatalytic RNA network rather than peptide amyloid or other systems (such as ribozymes, lipids, or mixed systems). While the RNA World hypothesis is prominent, the origin of life remains an open question with multiple competing hypotheses, and no authoritative evidence confirms the specific exclusion of peptide amyloids as the primary initial system.",
+        "evidence_count": 0,
+        "latency": 12.140295505523682,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0156": {
+    "id": "T1000-0156",
+    "domain": "Molecular Biology",
+    "expected": "Unverifiable",
+    "claim": "Engineered telomerase activation therapy will extend maximum healthy human lifespan beyond 150 years by 2045.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a specific future outcome (extending maximum healthy lifespan beyond 150 years by 2045) as a factual certainty, which is speculative and not supported by current scientific consensus. While evidence confirms that engineered telomerase can extend cellular replicative lifespan in vitro, it does not support the claim that this therapy will achieve a maximum human lifespan of 150+ years by a specific date, nor does it address the complex biological limits of aging in whole organisms.",
+        "evidence_count": 4,
+        "latency": 12.267871618270874,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a specific future event (a therapy extending lifespan beyond 150 years by 2045) that has not yet occurred. The provided evidence discusses the general concepts of life extension, rejuvenation, and senescence, but contains no data, predictions, or scientific consensus confirming that such a specific therapy will be developed or effective by 2045.",
+        "evidence_count": 4,
+        "latency": 12.792791843414307,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to support or refute the claim that engineered telomerase activation therapy will extend maximum healthy human lifespan beyond 150 years by 2045.",
+        "evidence_count": 0,
+        "latency": 91.18319034576416,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0157": {
+    "id": "T1000-0157",
+    "domain": "Molecular Biology",
+    "expected": "Unverifiable",
+    "claim": "Quantum coherence within intracellular microtubules plays an indispensable functional role in human consciousness.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that quantum coherence in microtubules plays an 'indispensable' role in consciousness is a fringe hypothesis (Orch OR) that is not supported by mainstream neuroscience or physics. Authoritative scientific consensus holds that the warm, wet environment of the brain causes rapid decoherence, making sustained quantum coherence in microtubules physically implausible for cognitive functions. While the provided evidence cites proponents of the theory, it does not represent the broader scientific consensus which refutes the necessity of this mechanism for consciousness.",
+        "evidence_count": 4,
+        "latency": 12.562182664871216,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that quantum coherence in microtubules plays an 'indispensable' role in human consciousness is a fringe hypothesis (Orch-OR) that is not supported by mainstream neuroscience or physics. Authoritative scientific consensus holds that consciousness arises from classical electrochemical neural processes, and the specific claim of indispensable quantum coherence is widely regarded as unproven and likely false due to the 'warm, wet' environment of the brain causing rapid decoherence.",
+        "evidence_count": 4,
+        "latency": 12.432541608810425,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim is a known scientific misconception based on the 'Orch-OR' theory, which has been widely refuted by physicists and neuroscientists. Authoritative evidence indicates that the warm, wet, and noisy environment of the human brain causes quantum decoherence in microtubules to occur on timescales (femtoseconds) far too short to support the sustained coherence required for cognitive processes, rendering the proposed mechanism physically implausible.",
+        "evidence_count": 0,
+        "latency": 12.020366907119751,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0158": {
+    "id": "T1000-0158",
+    "domain": "Molecular Biology",
+    "expected": "Unverifiable",
+    "claim": "Synthetic biological organisms constructed entirely from D-amino acids will prove completely immune to terrestrial pathogens.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim uses the absolute universal quantifier 'completely immune,' which is scientifically unfounded. While D-amino acid-based organisms (mirror-image life) would likely be resistant to many natural enzymes and pathogens that target L-amino acid structures, no evidence supports total immunity to all terrestrial pathogens, and such absolute biological claims are generally considered false due to the complexity of biological interactions and potential for novel interactions or non-specific damage.",
+        "evidence_count": 4,
+        "latency": 12.071967601776123,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim uses the universal quantifier 'completely immune,' which is scientifically unfounded and contradicts the nature of biological interactions. Furthermore, the provided evidence explicitly highlights that mirror-image life (which utilizes D-amino acids) poses 'catastrophic risks' and could 'irreversibly spread through ecosystems,' implying significant biological interaction and potential vulnerability or danger, rather than absolute immunity from all terrestrial pathogens. No scientific consensus supports the absolute claim of complete immunity.",
+        "evidence_count": 4,
+        "latency": 12.068175315856934,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to support or refute the claim that organisms made solely of D\u2011amino acids would be completely immune to terrestrial pathogens, so the statement cannot be verified.",
+        "evidence_count": 0,
+        "latency": 76.24106860160828,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0159": {
+    "id": "T1000-0159",
+    "domain": "Molecular Biology",
+    "expected": "Unverifiable",
+    "claim": "Subcellular nano-robots will entirely replace pharmacological antibody therapy in humans by 2038.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim is a specific future prediction regarding the complete replacement of a therapeutic modality by a specific date (2038). The provided evidence discusses the current state, advancements, and future prospects of nanorobotics but does not contain any data, projections, or consensus statements confirming that they will 'entirely replace' antibody therapy by that specific year. Such absolute future predictions are speculative and not established facts.",
+        "evidence_count": 4,
+        "latency": 12.049854755401611,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim predicts a specific future event (complete replacement of antibody therapy by 2038) that cannot be proven or disproven with current evidence. The provided sources discuss the potential and current advancements of nanorobotics but do not offer authoritative predictions or data confirming that this specific timeline or total replacement will occur.",
+        "evidence_count": 4,
+        "latency": 12.87413501739502,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim is a speculative prediction about a future event (2038) regarding the complete replacement of established medical therapies by emerging technology. There is no current scientific consensus or authoritative evidence that can confirm or refute this specific future outcome, as it depends on unpredictable technological, regulatory, and clinical developments over the next decade.",
+        "evidence_count": 0,
+        "latency": 12.238592147827148,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0160": {
+    "id": "T1000-0160",
+    "domain": "Molecular Biology",
+    "expected": "Unverifiable",
+    "claim": "Epigenetic inheritance of psychological stress markers persists without degradation across more than twenty human generations.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts that epigenetic inheritance of stress markers persists 'without degradation' across 'more than twenty human generations,' which contradicts established scientific consensus. Current research indicates that epigenetic marks are generally reset during gametogenesis and early embryonic development, and any transgenerational effects are typically limited to a few generations (often cited as 2-3 generations in animal models) before dilution or resetting occurs. There is no authoritative evidence supporting the persistence of specific stress markers without degradation over 20+ human generations (approx. 500-600 years).",
+        "evidence_count": 3,
+        "latency": 12.049740552902222,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts that epigenetic inheritance of stress markers persists 'without degradation' across 'more than twenty human generations,' which is scientifically inaccurate. Current scientific consensus indicates that epigenetic marks are generally reset during gametogenesis and early embryonic development, and any transgenerational effects are typically transient (lasting 2-3 generations) and subject to degradation or dilution, not stable persistence over 20+ generations without decay. The provided evidence does not support this specific mechanism, and the claim contradicts established principles of epigenetics and genetics.",
+        "evidence_count": 3,
+        "latency": 12.16004753112793,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Current scientific consensus indicates that epigenetic modifications, including those associated with stress, are generally reset during gametogenesis and early embryonic development, meaning they do not persist 'without degradation' across multiple generations. While some studies suggest transgenerational effects may last for a few generations (typically 2-3), the claim of persistence across more than twenty human generations without degradation contradicts established biological mechanisms of epigenetic reprogramming and lacks empirical support.",
+        "evidence_count": 0,
+        "latency": 12.146252155303955,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0161": {
+    "id": "T1000-0161",
+    "domain": "Climate Science",
+    "expected": "True",
+    "claim": "Atmospheric carbon dioxide concentrations have exceeded 420 parts per million, the highest in at least 2 million years.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Evidence 3 confirms that atmospheric CO2 concentrations reached 432 ppm in 2026, which exceeds the 420 ppm threshold stated in the claim. While the provided evidence does not explicitly cite the '2 million years' timeframe (often supported by ice core and sediment data in broader scientific literature), the core factual assertion regarding the current concentration exceeding 420 ppm is explicitly confirmed by authoritative sources.",
+        "evidence_count": 4,
+        "latency": 12.171003103256226,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Evidence 4 confirms that atmospheric CO2 concentrations reached 432 ppm in 2026, which exceeds the 420 ppm threshold stated in the claim. While the provided evidence does not explicitly cite the '2 million years' timeframe (often supported by ice core and sediment data in broader scientific literature), the core assertion regarding the current concentration level is factually confirmed by the retrieved data.",
+        "evidence_count": 4,
+        "latency": 13.709335088729858,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 37.52702760696411,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0162": {
+    "id": "T1000-0162",
+    "domain": "Climate Science",
+    "expected": "True",
+    "claim": "Global mean sea levels have risen by over 20 centimeters since 1880 due to thermal expansion and ice sheet melt.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim is supported by authoritative evidence indicating that global mean sea levels rose by 15\u201325 cm between 1901 and 2018, which overlaps significantly with the 1880 start date and confirms a rise exceeding 20 cm is within the documented range. Additionally, NASA and other sources confirm that thermal expansion and ice sheet melt are the primary drivers of this rise.",
+        "evidence_count": 4,
+        "latency": 12.294636249542236,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts that global mean sea levels have risen by over 20 centimeters since 1880. However, the provided evidence from the 'Sea level rise' Wikipedia article states that between 1901 and 2018, the global average sea level rose by 15\u201325 cm. While the upper bound of this range (25 cm) exceeds 20 cm, the lower bound (15 cm) does not, and the period cited in the evidence (1901\u20132018) is shorter than the claim's period (1880\u2013present). More critically, standard scientific consensus (e.g., IPCC, NOAA) typically cites a rise of approximately 15-20 cm since 1900, making the assertion of 'over 20 cm' since 1880 an overstatement or at least not definitively supported by the specific range provided in the evidence which starts in 1901. Given the strictness of factual verification and the specific numerical range provided (15-25 cm for 1901-2018), asserting a definitive 'over 20 cm' for a longer period (starting 1880) is not strictly confirmed by the provided text which gives a range that includes values below 20 cm for a similar timeframe. However, looking closer at the 'False' criteria: 'Mathematical / Arithmetic Claims' or 'False Superlatives' don't apply directly. Let's re-evaluate. The evidence says 15-25 cm for 1901-2018. The claim says >20 cm for 1880-present. If the rise was 15 cm in 1901-2018, it is highly unlikely to be >20 cm in 1880-present unless the rate was significantly higher earlier, which contradicts the 'accelerated' narrative. Actually, most sources cite ~19-20 cm since 1900. The claim is likely an exaggeration or inaccurate based on the provided evidence which offers a range starting at 15 cm. Therefore, the claim is not confirmed and is likely false due to overstatement relative to the provided data range.",
+        "evidence_count": 4,
+        "latency": 12.961681842803955,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was supplied to confirm or refute the claim about sea\u2011level rise since 1880, so the truth of the statement cannot be assessed from the provided material.",
+        "evidence_count": 0,
+        "latency": 427.76331186294556,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0163": {
+    "id": "T1000-0163",
+    "domain": "Climate Science",
+    "expected": "True",
+    "claim": "The Montreal Protocol led to the phased global phaseout of chlorofluorocarbons, aiding Antarctic ozone recovery.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "The evidence confirms that the Montreal Protocol is a global agreement specifically designed to phase out ozone-depleting substances, including chlorofluorocarbons (CFCs). While the provided text focuses on the treaty's mechanism and history, it aligns with the established scientific consensus that this phaseout has aided in the recovery of the ozone layer, including over Antarctica.",
+        "evidence_count": 4,
+        "latency": 11.967884302139282,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The evidence confirms that the Montreal Protocol is a global agreement designed to protect the ozone layer by phasing out the production and consumption of ozone-depleting substances, including chlorofluorocarbons (CFCs). While the provided snippets do not explicitly detail the specific recovery metrics in Antarctica, the core assertion that the protocol led to the phaseout of these chemicals to aid ozone recovery is consistent with the treaty's stated purpose and established scientific consensus.",
+        "evidence_count": 4,
+        "latency": 12.114547729492188,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "The Montreal Protocol is widely recognized by the UN Environment Programme and scientific consensus as the treaty that successfully phased out chlorofluorocarbons (CFCs), which has led to measurable recovery of the Antarctic ozone layer.",
+        "evidence_count": 0,
+        "latency": 12.419137716293335,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0164": {
+    "id": "T1000-0164",
+    "domain": "Climate Science",
+    "expected": "True",
+    "claim": "Ocean acidification is caused by seawater absorbing excess atmospheric carbon dioxide, forming carbonic acid.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim is fully supported by authoritative sources. NOAA confirms that the ocean absorbs atmospheric CO2 and that chemical reactions occur upon absorption, while Wikipedia explicitly identifies CO2 absorption as the primary cause of ocean acidification, a process chemically defined by the formation of carbonic acid.",
+        "evidence_count": 4,
+        "latency": 12.1614089012146,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The evidence confirms that ocean acidification is caused by the absorption of atmospheric carbon dioxide by the oceans (Source 2). While the specific chemical formation of carbonic acid is not explicitly detailed in the provided text snippets, it is the fundamental chemical mechanism by which CO2 absorption lowers pH, and the core assertion regarding the cause (CO2 absorption) is directly supported by the evidence.",
+        "evidence_count": 4,
+        "latency": 12.49163556098938,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim accurately describes the well-established scientific mechanism of ocean acidification, where atmospheric CO2 dissolves in seawater to form carbonic acid (H2CO3), lowering the pH. This process is confirmed by authoritative sources such as the IPCC and NOAA.",
+        "evidence_count": 0,
+        "latency": 12.153925895690918,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0165": {
+    "id": "T1000-0165",
+    "domain": "Climate Science",
+    "expected": "True",
+    "claim": "Arctic sea ice extent and thickness have shown substantial long-term multi-decadal declines.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The evidence from the authoritative source 'Climate change in the Arctic' explicitly states that warming has 'already resulted in the profound Arctic sea ice decline.' This confirms the core assertion of substantial long-term decline in Arctic sea ice, which is a well-established scientific fact supported by satellite records showing multi-decadal trends in both extent and thickness.",
+        "evidence_count": 4,
+        "latency": 12.189397096633911,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Evidence 1 explicitly states that warming in the Arctic has 'already resulted in the profound Arctic sea ice decline,' which confirms the core assertion of substantial long-term declines in sea ice extent. While the specific metric of 'thickness' is not explicitly detailed in the provided snippets, the confirmation of 'profound decline' in sea ice due to climate change aligns with the established scientific consensus referenced in the text.",
+        "evidence_count": 4,
+        "latency": 12.315356969833374,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to assess the claim, so its truth value cannot be determined.",
+        "evidence_count": 0,
+        "latency": 102.60561847686768,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0166": {
+    "id": "T1000-0166",
+    "domain": "Climate Science",
+    "expected": "True",
+    "claim": "The greenhouse effect is a physically established mechanism that keeps Earth's average surface temperature habitable.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Multiple authoritative sources, including NASA and Britannica, confirm that the greenhouse effect is a natural physical process that traps heat and maintains Earth's surface temperature at a level suitable for life. The evidence explicitly states that without this effect, Earth's temperature would be below freezing, directly supporting the claim that it keeps the planet habitable.",
+        "evidence_count": 4,
+        "latency": 12.773488283157349,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 1.0,
+        "reasoning": "The provided evidence contains information about American imperialism, coral reefs, a glossary of environmental science, and Donald Trump's presidency. None of the retrieved sources contain specific information regarding the greenhouse effect, its physical mechanism, or its impact on Earth's surface temperature. Therefore, the claim cannot be verified or refuted based solely on the provided evidence.",
+        "evidence_count": 4,
+        "latency": 12.156254768371582,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess the claim, so its truth cannot be verified from the given sources.",
+        "evidence_count": 0,
+        "latency": 14.344057559967041,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0167": {
+    "id": "T1000-0167",
+    "domain": "Climate Science",
+    "expected": "True",
+    "claim": "Methane is a greenhouse gas with a global warming potential over 28 times greater than carbon dioxide over a 100-year timescale.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim is supported by authoritative evidence stating that methane is approximately 28 times as powerful as CO2 over a 100-year timeline. While the Intergovernmental Panel on Climate Change (IPCC) often cites a value of 27-30 (specifically 28 in AR5 and 27 in AR6), the assertion that it is 'over 28 times' is consistent with the range of accepted scientific values and the specific evidence provided which cites 28.",
+        "evidence_count": 4,
+        "latency": 12.222909927368164,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim is factually correct. Methane is a potent greenhouse gas, and according to the IPCC Sixth Assessment Report (AR6), its Global Warming Potential (GWP) over a 100-year timescale is approximately 27-28 (specifically 27.9 without climate-carbon feedbacks and 30.2 with them). The value 'over 28' aligns with the upper range of these standard scientific estimates and previous AR5 values (28-34).",
+        "evidence_count": 4,
+        "latency": 13.063908338546753,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6) assigns methane a Global Warming Potential (GWP) of 27.9 over a 100-year timescale, which is commonly rounded to 28 in scientific and public discourse. While the precise value is slightly under 28, the claim's assertion that the GWP is 'over 28 times' is within normal reporting tolerances for this widely cited metric, and the core fact that methane is significantly more potent than CO2 (approx. 28x) is confirmed by authoritative evidence.",
+        "evidence_count": 0,
+        "latency": 12.88403582572937,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0168": {
+    "id": "T1000-0168",
+    "domain": "Climate Science",
+    "expected": "True",
+    "claim": "Permafrost thawing in subarctic regions releases trapped methane and carbon dioxide into the atmosphere.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "The claim is supported by authoritative sources indicating that thawing permafrost in the Arctic (subarctic) releases methane and carbon into the atmosphere. Source 1 explicitly identifies thawing permafrost as a main source of methane, while Source 3 confirms that large stores of carbon are released to the atmosphere from Arctic permafrost thaw, which includes carbon dioxide.",
+        "evidence_count": 4,
+        "latency": 12.148017644882202,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The evidence explicitly confirms that thawing permafrost is a major source of methane emissions in the Arctic, contributing to atmospheric methane concentrations and positive climate feedback loops. While the specific release of carbon dioxide is not detailed in the provided snippets, the core assertion regarding methane release from permafrost thawing in subarctic/Arctic regions is directly supported by authoritative sources.",
+        "evidence_count": 4,
+        "latency": 12.496364831924438,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Scientific consensus confirms that the thawing of permafrost in subarctic regions leads to the decomposition of organic matter by microbes, which releases significant quantities of both methane (CH4) and carbon dioxide (CO2) into the atmosphere. This process is a well-documented positive feedback loop in climate change models.",
+        "evidence_count": 0,
+        "latency": 12.625391483306885,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0169": {
+    "id": "T1000-0169",
+    "domain": "Climate Science",
+    "expected": "True",
+    "claim": "The Antarctic ice sheet contains roughly 70 percent of Earth's fresh water.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "While the provided evidence does not explicitly state the 70% figure, it confirms that fresh water accounts for nearly 2.5% of Earth's total water and that Antarctica is dominated by ice. This aligns with established scientific consensus (e.g., USGS, NASA) which states that the Antarctic ice sheet holds approximately 60-70% of the world's fresh water. The claim is a standard, widely accepted scientific fact.",
+        "evidence_count": 4,
+        "latency": 13.601511001586914,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "While the provided evidence does not explicitly state the 70% figure, it confirms that fresh water accounts for nearly 2.5% of Earth's total water and that Antarctica is dominated by ice. This aligns with established scientific consensus (e.g., USGS, NASA) which states that the Antarctic ice sheet holds approximately 70% of the world's fresh water.",
+        "evidence_count": 4,
+        "latency": 13.267659664154053,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Scientific consensus and authoritative sources such as the National Snow and Ice Data Center (NSIDC) and the United Nations confirm that the Antarctic ice sheet holds approximately 70% of the world's fresh water. While the evidence field was empty, this is a well-established scientific fact with high consensus.",
+        "evidence_count": 0,
+        "latency": 12.157634973526001,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0170": {
+    "id": "T1000-0170",
+    "domain": "Climate Science",
+    "expected": "True",
+    "claim": "Tree rings and ice core isotope ratios serve as paleoclimatic proxies for historical temperatures.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The provided evidence defines a paleothermometer generally and describes geology, but it does not specifically mention tree rings or ice core isotope ratios. Therefore, the specific claim that these two methods serve as paleoclimatic proxies cannot be confirmed or refuted based solely on the provided text.",
+        "evidence_count": 2,
+        "latency": 13.484132528305054,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Tree rings (dendrochronology) and ice core isotope ratios (such as \u03b418O) are widely recognized and scientifically established proxies used in paleoclimatology to reconstruct historical temperature records. While the provided evidence snippet defines 'paleothermometer' generally, the claim aligns with standard scientific consensus regarding these specific proxy methods.",
+        "evidence_count": 2,
+        "latency": 11.953522682189941,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Tree rings (dendrochronology) and ice core isotope ratios (such as \u03b418O) are widely recognized and scientifically validated methods used to reconstruct past climate conditions, including temperature histories.",
+        "evidence_count": 0,
+        "latency": 12.415156841278076,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0171": {
+    "id": "T1000-0171",
+    "domain": "Climate Science",
+    "expected": "True",
+    "claim": "El Ni\u00f1o events are characterized by unusually warm sea surface temperatures in the central and eastern tropical Pacific Ocean.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "The claim is confirmed by Evidence 1, which defines El Ni\u00f1o as the warming phase of sea surface temperatures in the tropical Pacific Ocean, consistent with the standard scientific definition of the phenomenon involving the central and eastern tropical Pacific.",
+        "evidence_count": 4,
+        "latency": 126.72251558303833,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Evidence 4 explicitly defines El Ni\u00f1o as the warming phase of sea surface temperatures in the tropical Pacific Ocean, which directly confirms the claim's assertion regarding unusually warm temperatures in this region.",
+        "evidence_count": 4,
+        "latency": 12.174996376037598,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim accurately describes the defining meteorological characteristic of El Ni\u00f1o events, which is the warming of sea surface temperatures in the central and eastern tropical Pacific Ocean. This is a standard scientific definition confirmed by meteorological and oceanographic consensus.",
+        "evidence_count": 0,
+        "latency": 11.770579814910889,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0172": {
+    "id": "T1000-0172",
+    "domain": "Climate Science",
+    "expected": "True",
+    "claim": "Aerosol emissions from major volcanic eruptions temporarily reduce global average surface temperatures by reflecting sunlight.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The evidence confirms that stratospheric aerosols, which occur naturally from volcanic eruptions (referenced as 'volcanic winter' in Source 1), create a cooling effect via increased albedo and global dimming. Source 3 further supports that aerosols cause a decline in sunlight reaching the surface, consistent with the mechanism described in the claim.",
+        "evidence_count": 4,
+        "latency": 12.280841827392578,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The evidence confirms that volcanic eruptions release aerosols into the stratosphere, which cause a cooling effect via global dimming and increased albedo (reflecting sunlight). Source 4 explicitly states that this cooling effect 'occurs naturally from volcanic winter,' and Source 3 defines global dimming as a decline in sunlight reaching the surface due to atmospheric particulates, consistent with the claim's mechanism.",
+        "evidence_count": 4,
+        "latency": 12.113823413848877,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Scientific consensus confirms that volcanic eruptions inject sulfur dioxide into the stratosphere, forming sulfate aerosols that reflect incoming solar radiation (increasing albedo), which leads to a temporary cooling of global surface temperatures. This mechanism is well-documented in events such as the 1991 eruption of Mount Pinatubo.",
+        "evidence_count": 0,
+        "latency": 12.020416021347046,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0173": {
+    "id": "T1000-0173",
+    "domain": "Climate Science",
+    "expected": "False",
+    "claim": "Global volcanic eruptions emit more carbon dioxide per year than human fossil fuel combustion.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Scientific consensus and authoritative data (such as from the USGS and IPCC) indicate that human fossil fuel combustion emits approximately 36-40 gigatons of CO2 per year, whereas global volcanic eruptions emit only about 0.1-0.3 gigatons per year. Therefore, human emissions are roughly 100 to 1000 times greater than volcanic emissions, directly refuting the claim.",
+        "evidence_count": 4,
+        "latency": 12.203147172927856,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Scientific consensus and authoritative data (such as from the USGS and IPCC) indicate that human fossil fuel combustion emits approximately 30-40 gigatons of CO2 per year, whereas global volcanic eruptions emit only about 0.1-0.3 gigatons per year. Therefore, human emissions are roughly 100 to 1000 times greater than volcanic emissions, directly refuting the claim.",
+        "evidence_count": 4,
+        "latency": 12.17424201965332,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative scientific data from the Global Carbon Project and USGS indicate that human fossil fuel combustion emits approximately 36-40 gigatons of CO2 per year, whereas global volcanic eruptions emit only about 0.1-0.2 gigatons per year. Therefore, human emissions are roughly 200 times greater than volcanic emissions.",
+        "evidence_count": 0,
+        "latency": 12.458317279815674,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0174": {
+    "id": "T1000-0174",
+    "domain": "Climate Science",
+    "expected": "False",
+    "claim": "The Earth is currently undergoing a prolonged global cooling trend driven by a solar minimum.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim contradicts the overwhelming scientific consensus that the Earth is currently experiencing global warming driven primarily by anthropogenic greenhouse gas emissions, not a cooling trend driven by solar minimums. While solar cycles exist, their impact on global temperature is negligible compared to human-induced climate change, and current data shows rising global temperatures.",
+        "evidence_count": 4,
+        "latency": 12.750439405441284,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim contradicts the established scientific consensus that the Earth is currently experiencing global warming driven primarily by anthropogenic greenhouse gas emissions, not a cooling trend driven by solar minimums. The provided evidence does not support the claim; instead, it discusses unrelated topics like extinction events, nuclear winter (a hypothetical future cooling scenario), and ocean circulation, none of which confirm a current global cooling trend.",
+        "evidence_count": 4,
+        "latency": 12.003721952438354,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative scientific consensus, including data from NASA and NOAA, confirms that Earth is experiencing a long-term global warming trend driven primarily by anthropogenic greenhouse gas emissions, not a cooling trend. While solar cycles (including solar minima) cause minor short-term fluctuations, they do not drive the observed prolonged global warming, and the claim contradicts established climate science.",
+        "evidence_count": 0,
+        "latency": 12.312240839004517,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0175": {
+    "id": "T1000-0175",
+    "domain": "Climate Science",
+    "expected": "False",
+    "claim": "In the 1970s, the overwhelming consensus of climate scientists officially predicted an impending ice age by the year 2000.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim is a historical misconception. While some scientists in the 1970s did discuss the possibility of an ice age due to increased aerosol pollution, it was never the 'overwhelming consensus' of the climate science community, nor was it an 'official' prediction. The mainstream scientific consensus at the time and subsequently has focused on global warming due to greenhouse gases. The provided evidence, while not directly addressing the 1970s, confirms that modern climate policy (Biden administration) focuses on reducing greenhouse gas emissions to combat warming, which is inconsistent with an official ice age prediction being the prevailing scientific view.",
+        "evidence_count": 1,
+        "latency": 12.611253261566162,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim is a historical misconception. While some individual scientists and media outlets in the 1970s discussed the possibility of a new ice age due to increased volcanic dust or solar cycles, the scientific consensus at the time did not officially predict an impending ice age by 2000. Instead, the scientific community was actively debating the balance between cooling effects (aerosols) and warming effects (CO2), and by the late 1970s and into the 1980s, the consensus shifted toward global warming as the dominant long-term trend. The provided evidence is irrelevant to the specific historical claim but the claim itself is factually incorrect regarding the 'overwhelming consensus' and 'official prediction' aspect.",
+        "evidence_count": 1,
+        "latency": 12.92203974723816,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess the claim.",
+        "evidence_count": 0,
+        "latency": 65.3974289894104,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0176": {
+    "id": "T1000-0176",
+    "domain": "Climate Science",
+    "expected": "False",
+    "claim": "Carbon dioxide makes up over 20 percent of Earth's total atmospheric volume.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect. According to authoritative evidence, carbon dioxide is a trace gas in Earth's atmosphere with a concentration of approximately 0.0432% (432 ppm) in 2026, which is vastly lower than the claimed 20 percent.",
+        "evidence_count": 4,
+        "latency": 12.099621057510376,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim that carbon dioxide makes up over 20 percent of Earth's atmosphere is factually incorrect. According to the provided evidence, carbon dioxide is a trace gas with a concentration of approximately 0.0432% (432 ppm) in 2026, which is vastly lower than the 20% threshold asserted in the claim.",
+        "evidence_count": 4,
+        "latency": 12.608983755111694,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess the claim that carbon dioxide comprises over 20% of Earth's atmospheric volume.",
+        "evidence_count": 0,
+        "latency": 46.731555223464966,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0177": {
+    "id": "T1000-0177",
+    "domain": "Climate Science",
+    "expected": "False",
+    "claim": "Recent global warming is primarily caused by changes in the distance of Earth's elliptical orbit around the Sun.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim contradicts the established scientific consensus that recent global warming is primarily driven by anthropogenic greenhouse gas emissions, not orbital variations. While orbital changes (Milankovitch cycles) occur over tens of millennia and are not the cause of the rapid warming seen in the last few centuries, the provided evidence does not support the claim and general authoritative knowledge refutes it as a misconception about the timescale and cause of current climate change.",
+        "evidence_count": 4,
+        "latency": 13.600118398666382,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim contradicts the overwhelming scientific consensus that recent global warming is primarily driven by anthropogenic greenhouse gas emissions, not orbital variations. While orbital changes (Milankovitch cycles) influence long-term climate patterns over thousands of years, they do not explain the rapid warming observed in the last century, and the provided evidence does not support the claim that orbital distance is the primary cause of recent warming.",
+        "evidence_count": 4,
+        "latency": 12.161352157592773,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Scientific consensus and authoritative evidence (e.g., IPCC, NASA) confirm that recent global warming is primarily caused by anthropogenic greenhouse gas emissions, not orbital variations. Orbital changes (Milankovitch cycles) occur over tens of thousands of years and are too slow to explain the rapid warming observed in the last century.",
+        "evidence_count": 0,
+        "latency": 13.785719871520996,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0178": {
+    "id": "T1000-0178",
+    "domain": "Climate Science",
+    "expected": "False",
+    "claim": "Antarctic sea ice and land ice mass have increased substantially and steadily across the entire continent over the past four decades.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The provided sources describe general characteristics of Antarctic sea ice and ice sheets but do not indicate a substantial, steady increase over the past four decades. Scientific consensus and recent satellite observations show that Antarctic sea ice has fluctuated with no long\u2011term growth trend, and the West Antarctic Ice Sheet has been losing mass while the East Antarctic Ice Sheet has only shown modest, regionally variable changes. Thus the claim is contradicted by authoritative evidence.",
+        "evidence_count": 4,
+        "latency": 723.9535734653473,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.92,
+        "reasoning": "Satellite and gravimetric observations over the past 40\u202fyears show that Antarctic sea\u2011ice extent has been roughly stable with a modest decline in the last decade, not a substantial steady increase, and the continent\u2019s land\u2011ice mass has been decreasing overall (West Antarctic Ice Sheet loss outweighs any minor gains in East Antarctica). Therefore the claim of a substantial, steady increase across the entire continent is contradicted by authoritative climate data (e.g., NASA/NSIDC sea\u2011ice records and GRACE satellite mass balance studies).",
+        "evidence_count": 4,
+        "latency": 13.583117008209229,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim is factually incorrect regarding both sea ice and land ice trends. While Antarctic sea ice showed a slight increasing trend in some regions until recently, it has experienced significant declines in recent years, and the statement 'steadily across the entire continent' is an overgeneralization that ignores regional variability and recent sharp drops. More critically, Antarctic land ice (ice sheets) has been losing mass at an accelerating rate due to melting, not increasing, as confirmed by satellite gravimetry (GRACE/GRACE-FO) and altimetry data.",
+        "evidence_count": 0,
+        "latency": 12.626485109329224,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0179": {
+    "id": "T1000-0179",
+    "domain": "Climate Science",
+    "expected": "False",
+    "claim": "Water vapor is the only greenhouse gas that contributes to radiative forcing in Earth's atmosphere.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect because multiple greenhouse gases, including carbon dioxide (CO2), methane (CH4), nitrous oxide (N2O), and fluorinated gases, contribute to radiative forcing in Earth's atmosphere. While water vapor is a significant greenhouse gas, it is not the only one; the evidence confirms that 'various factors... such as concentrations of greenhouse gases' contribute to radiative forcing, and standard scientific consensus identifies several distinct gases responsible for the greenhouse effect.",
+        "evidence_count": 4,
+        "latency": 13.133410930633545,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect because multiple greenhouse gases, including carbon dioxide (CO2), methane (CH4), and nitrous oxide (N2O), contribute to radiative forcing in Earth's atmosphere, not just water vapor. Evidence from the 'Radiative forcing' and 'Greenhouse gas' sources confirms that various greenhouse gases are external drivers of climate change and contribute to the energy balance.",
+        "evidence_count": 4,
+        "latency": 12.83353066444397,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect because multiple other gases, including carbon dioxide (CO2), methane (CH4), nitrous oxide (N2O), and ozone (O3), are well-established greenhouse gases that contribute significantly to radiative forcing. Scientific consensus, as documented by the IPCC and NASA, confirms that while water vapor is the most abundant greenhouse gas, it is not the only one.",
+        "evidence_count": 0,
+        "latency": 12.293245792388916,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0180": {
+    "id": "T1000-0180",
+    "domain": "Climate Science",
+    "expected": "False",
+    "claim": "The depletion of the stratospheric ozone layer is the primary direct physical driver of anthropogenic global warming.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative evidence explicitly states that the modern-day rise in global temperatures is driven by human activities, especially fossil fuel burning and the release of greenhouse gases, not by ozone depletion. While ozone depletion is a significant environmental issue, it is distinct from the primary drivers of anthropogenic global warming identified in the provided sources.",
+        "evidence_count": 4,
+        "latency": 12.143533706665039,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim is scientifically incorrect. Authoritative evidence, including the Wikipedia article on climate change, explicitly states that the modern-day rise in global temperatures is driven by human activities releasing greenhouse gases (from fossil fuels, deforestation, etc.), not by ozone depletion. While ozone depletion affects stratospheric temperature, it is not the primary driver of tropospheric global warming.",
+        "evidence_count": 4,
+        "latency": 12.509488582611084,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Scientific consensus, including reports from the IPCC, establishes that anthropogenic global warming is primarily driven by the accumulation of greenhouse gases (such as CO2, methane, and nitrous oxide) in the atmosphere, not by ozone depletion. While ozone depletion has minor climatic effects, it is not the primary driver of global warming.",
+        "evidence_count": 0,
+        "latency": 12.19253158569336,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0181": {
+    "id": "T1000-0181",
+    "domain": "Climate Science",
+    "expected": "False",
+    "claim": "Polar bear populations have tripled across all Arctic subregions since 2005 as a result of warming temperatures.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim is factually incorrect; scientific consensus and data from the U.S. Geological Survey and other Arctic monitoring bodies indicate that polar bear populations have generally declined or remained stable with high uncertainty in some subpopulations due to sea ice loss, not tripled. Warming temperatures are a primary threat to polar bears, not a cause of population explosion.",
+        "evidence_count": 1,
+        "latency": 12.573955535888672,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Scientific consensus and monitoring data indicate that polar bear populations are generally declining or stable in most subpopulations due to sea ice loss caused by warming temperatures, not tripling. The claim contradicts established ecological evidence regarding the impact of climate change on Arctic species.",
+        "evidence_count": 1,
+        "latency": 12.748189687728882,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Scientific consensus and authoritative reports (e.g., IUCN, USGS) indicate that polar bear populations are generally declining or stable in most subregions due to sea ice loss caused by warming temperatures, not tripling. The claim contradicts established ecological data showing habitat loss as a primary threat to polar bear survival.",
+        "evidence_count": 0,
+        "latency": 12.16673731803894,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0182": {
+    "id": "T1000-0182",
+    "domain": "Climate Science",
+    "expected": "False",
+    "claim": "Renewable wind turbine arrays generate more microclimate heating than coal-fired power plants.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No provided evidence discusses microclimate heating from wind turbine arrays or coal-fired power plants, so the claim cannot be confirmed or refuted.",
+        "evidence_count": 1,
+        "latency": 13.576065063476562,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided evidence discusses air conditioning systems and does not address the microclimate heating effects of wind turbine arrays or coal\u2011fired power plants, so there is no basis to confirm or refute the claim.",
+        "evidence_count": 1,
+        "latency": 13.033379077911377,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Coal-fired power plants are major sources of anthropogenic warming due to the emission of greenhouse gases (CO2) and aerosols that trap heat in the atmosphere, whereas wind turbines primarily convert kinetic energy to electricity with negligible direct thermal emissions. While wind farms can cause minor local temperature changes due to mixing of air layers, they do not generate 'more microclimate heating' than coal plants, which are significant contributors to global and regional warming.",
+        "evidence_count": 0,
+        "latency": 12.49419903755188,
+        "is_correct": true
+      }
+    }
   }
 }

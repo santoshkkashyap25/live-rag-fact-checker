@@ -349,15 +349,14 @@ EVIDENCE:
                 
                 client = Groq(api_key=target_key)
                 
-                # Candidate fallback models on Groq
+                # Candidate fallback models on Groq (only accessible models)
                 candidates = list(dict.fromkeys([
                     effective_model,
                     GROQ_MODEL,
                     "openai/gpt-oss-120b",
                     "openai/gpt-oss-20b",
                     "qwen/qwen3.8-27b",
-                    "llama-3.3-70b-versatile",
-                    "llama-3.1-8b-instant"
+                    "allam-2-7b"
                 ]))
                 
                 last_err = None
