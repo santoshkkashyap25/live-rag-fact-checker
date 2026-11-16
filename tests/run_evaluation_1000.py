@@ -248,12 +248,12 @@ def evaluate_single(
                     print(f"    ⏳ Rate limit encountered. Backing off {backoff:.1f}s...")
                     time.sleep(backoff)
                     continue
-                if "connection error" in r.lower():
+                if any(k in r.lower() for k in ["connection error", "timed out", "timeout"]):
                     consecutive_rate_limits += 1
                     if consecutive_rate_limits >= 4:
-                        raise DailyQuotaExhaustedError(f"Persistent connection failure: {r}")
+                        raise DailyQuotaExhaustedError(f"Persistent connection/timeout failure: {r}")
                     backoff = 5.0 * (attempt + 1)
-                    print(f"    ⏳ Transient connection error. Retrying in {backoff:.1f}s...")
+                    print(f"    ⏳ Transient network/timeout glitch. Retrying in {backoff:.1f}s...")
                     time.sleep(backoff)
                     continue
                 if "unavailable" in r.lower() or "not found" in r.lower() or "error code" in r.lower() or "404" in r:
@@ -264,11 +264,11 @@ def evaluate_single(
             except Exception as e:
                 err_msg = str(e)
                 consecutive_rate_limits += 1
-                if "connection error" in err_msg.lower():
+                if any(k in err_msg.lower() for k in ["connection error", "timed out", "timeout"]):
                     if consecutive_rate_limits >= 4:
-                        raise DailyQuotaExhaustedError(f"Persistent connection failure: {err_msg}")
+                        raise DailyQuotaExhaustedError(f"Persistent connection/timeout failure: {err_msg}")
                     backoff = 5.0 * (attempt + 1)
-                    print(f"    ⏳ Transient connection error. Retrying in {backoff:.1f}s...")
+                    print(f"    ⏳ Transient network/timeout glitch. Retrying in {backoff:.1f}s...")
                     time.sleep(backoff)
                     continue
                 if "per day" in err_msg.lower() or "tpd" in err_msg.lower() or "rpd" in err_msg.lower():
@@ -348,12 +348,12 @@ def evaluate_single(
                 print(f"    ⏳ Rate limit in reasoning. Backing off {backoff:.1f}s...")
                 time.sleep(backoff)
                 continue
-            if "connection error" in r.lower():
+            if any(k in r.lower() for k in ["connection error", "timed out", "timeout"]):
                 consecutive_rate_limits += 1
                 if consecutive_rate_limits >= 4:
-                    raise DailyQuotaExhaustedError(f"Persistent connection failure: {r}")
+                    raise DailyQuotaExhaustedError(f"Persistent connection/timeout failure: {r}")
                 backoff = 5.0 * (attempt + 1)
-                print(f"    ⏳ Transient connection error. Retrying in {backoff:.1f}s...")
+                print(f"    ⏳ Transient network/timeout glitch. Retrying in {backoff:.1f}s...")
                 time.sleep(backoff)
                 continue
             if "unavailable" in r.lower() or "not found" in r.lower() or "error code" in r.lower() or "404" in r:
@@ -364,11 +364,11 @@ def evaluate_single(
         except Exception as e:
             err_msg = str(e)
             consecutive_rate_limits += 1
-            if "connection error" in err_msg.lower():
+            if any(k in err_msg.lower() for k in ["connection error", "timed out", "timeout"]):
                 if consecutive_rate_limits >= 4:
-                    raise DailyQuotaExhaustedError(f"Persistent connection failure: {err_msg}")
+                    raise DailyQuotaExhaustedError(f"Persistent connection/timeout failure: {err_msg}")
                 backoff = 5.0 * (attempt + 1)
-                print(f"    ⏳ Transient connection error. Retrying in {backoff:.1f}s...")
+                print(f"    ⏳ Transient network/timeout glitch. Retrying in {backoff:.1f}s...")
                 time.sleep(backoff)
                 continue
             if "per day" in err_msg.lower() or "tpd" in err_msg.lower() or "rpd" in err_msg.lower():
