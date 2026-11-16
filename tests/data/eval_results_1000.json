@@ -1,91 +1,91 @@
 {
   "metadata": {
-    "total_claims": 288,
-    "timestamp": "2026-11-16 22:30:01",
+    "total_claims": 351,
+    "timestamp": "2026-11-16 23:45:51",
     "groq_model": "qwen/qwen3.8-27b",
     "temperature": 0.2
   },
   "summary": {
     "factguard_full": {
       "name": "FactGuard AI (BM25 + Authority + Dynamic Prompts)",
-      "n": 288,
-      "accuracy": 0.8472,
+      "n": 351,
+      "accuracy": 0.8519,
       "wilson_ci_95": [
-        0.8011,
-        0.8842
+        0.8109,
+        0.8852
       ],
-      "coverage": 0.7882,
-      "selective_accuracy": 0.9119,
+      "coverage": 0.7778,
+      "selective_accuracy": 0.9194,
       "false_positives": 0,
-      "false_negatives": 1,
-      "p50_latency": 12.27,
-      "ece": 0.0697,
+      "false_negatives": 2,
+      "p50_latency": 12.25,
+      "ece": 0.0725,
       "calibration_bins": [
         {
           "bin": "0.00 - 0.50",
-          "count": 19,
-          "avg_confidence": 0.307,
-          "empirical_accuracy": 0.421,
-          "gap": 0.114
+          "count": 27,
+          "avg_confidence": 0.285,
+          "empirical_accuracy": 0.481,
+          "gap": 0.197
         },
         {
           "bin": "0.50 - 0.70",
-          "count": 18,
-          "avg_confidence": 0.611,
-          "empirical_accuracy": 0.667,
-          "gap": 0.056
+          "count": 25,
+          "avg_confidence": 0.584,
+          "empirical_accuracy": 0.68,
+          "gap": 0.096
         },
         {
           "bin": "0.70 - 0.85",
-          "count": 13,
-          "avg_confidence": 0.773,
-          "empirical_accuracy": 0.615,
-          "gap": 0.158
+          "count": 15,
+          "avg_confidence": 0.763,
+          "empirical_accuracy": 0.6,
+          "gap": 0.163
         },
         {
           "bin": "0.85 - 0.95",
-          "count": 19,
-          "avg_confidence": 0.899,
-          "empirical_accuracy": 0.789,
-          "gap": 0.11
+          "count": 21,
+          "avg_confidence": 0.897,
+          "empirical_accuracy": 0.762,
+          "gap": 0.135
         },
         {
           "bin": "0.95 - 1.00",
-          "count": 219,
-          "avg_confidence": 0.976,
-          "empirical_accuracy": 0.918,
-          "gap": 0.058
+          "count": 263,
+          "avg_confidence": 0.975,
+          "empirical_accuracy": 0.928,
+          "gap": 0.047
         }
       ]
     },
     "baseline_raw_search": {
       "name": "Baseline: Raw Web Search + LLM (No BM25/Trust)",
-      "n": 288,
-      "accuracy": 0.7778,
+      "n": 351,
+      "accuracy": 0.7806,
       "wilson_ci_95": [
-        0.7263,
-        0.822
+        0.7344,
+        0.8208
       ],
-      "coverage": 0.7222,
-      "selective_accuracy": 0.8942,
+      "coverage": 0.7123,
+      "selective_accuracy": 0.9,
       "false_positives": 0,
-      "false_negatives": 4,
+      "false_negatives": 6,
       "p50_latency": 12.16,
-      "ece": 0.0891,
+      "ece": 0.081,
       "calibration_bins": [
         {
           "bin": "0.00 - 0.50",
-          "count": 21,
-          "avg_confidence": 0.315,
-          "empirical_accuracy": 0.286,
-          "gap": 0.03
+          "count": 33,
+          "avg_confidence": 0.308,
+          "empirical_accuracy": 0.364,
+          "gap": 0.056
         },
         {
           "bin": "0.50 - 0.70",
-          "count": 34,
-          "avg_confidence": 0.578,
-          "empirical_accuracy": 0.5,
-          "gap": 0.078
+          "count": 43,
+          "avg_confidence": 0.573,
+          "empirical_accuracy": 0.512,
+          "gap": 0.062
         },
         {
           "bin": "0.70 - 0.85",
@@ -96,48 +96,48 @@
         },
         {
           "bin": "0.85 - 0.95",
-          "count": 15,
-          "avg_confidence": 0.889,
-          "empirical_accuracy": 0.6,
-          "gap": 0.289
+          "count": 18,
+          "avg_confidence": 0.891,
+          "empirical_accuracy": 0.611,
+          "gap": 0.279
         },
         {
           "bin": "0.95 - 1.00",
-          "count": 206,
-          "avg_confidence": 0.976,
-          "empirical_accuracy": 0.888,
-          "gap": 0.087
+          "count": 245,
+          "avg_confidence": 0.975,
+          "empirical_accuracy": 0.898,
+          "gap": 0.077
         }
       ]
     },
     "baseline_ungrounded": {
       "name": "Baseline: Ungrounded Zero-Shot LLM (Parametric)",
-      "n": 288,
-      "accuracy": 0.5972,
+      "n": 351,
+      "accuracy": 0.5812,
       "wilson_ci_95": [
-        0.5397,
-        0.6522
+        0.529,
+        0.6317
       ],
-      "coverage": 0.4618,
-      "selective_accuracy": 0.9323,
+      "coverage": 0.4359,
+      "selective_accuracy": 0.9412,
       "false_positives": 0,
       "false_negatives": 1,
-      "p50_latency": 12.29,
-      "ece": 0.1303,
+      "p50_latency": 12.26,
+      "ece": 0.1369,
       "calibration_bins": [
         {
           "bin": "0.00 - 0.50",
-          "count": 79,
-          "avg_confidence": 0.165,
-          "empirical_accuracy": 0.291,
-          "gap": 0.126
+          "count": 97,
+          "avg_confidence": 0.174,
+          "empirical_accuracy": 0.309,
+          "gap": 0.136
         },
         {
           "bin": "0.50 - 0.70",
-          "count": 61,
-          "avg_confidence": 0.507,
-          "empirical_accuracy": 0.18,
-          "gap": 0.327
+          "count": 86,
+          "avg_confidence": 0.505,
+          "empirical_accuracy": 0.186,
+          "gap": 0.319
         },
         {
           "bin": "0.70 - 0.85",
@@ -155,10 +155,10 @@
         },
         {
           "bin": "0.95 - 1.00",
-          "count": 144,
-          "avg_confidence": 0.982,
-          "empirical_accuracy": 0.938,
-          "gap": 0.044
+          "count": 164,
+          "avg_confidence": 0.983,
+          "empirical_accuracy": 0.945,
+          "gap": 0.038
         }
       ]
     }
@@ -166,27 +166,27 @@
   "mcnemar_paired_tests": {
     "factguard_vs_ungrounded": {
       "contingency_matrix": {
-        "both_correct": 148,
-        "model_a_only": 96,
-        "model_b_only": 24,
-        "both_wrong": 20
+        "both_correct": 178,
+        "model_a_only": 121,
+        "model_b_only": 26,
+        "both_wrong": 26
       },
-      "discordant_pairs": 120,
-      "chi2": 42.0083,
+      "discordant_pairs": 147,
+      "chi2": 60.1088,
       "p_value": 0.0,
       "statistically_significant_05": true,
       "statistically_significant_01": true
     },
     "factguard_vs_raw_search": {
       "contingency_matrix": {
-        "both_correct": 215,
-        "model_a_only": 29,
-        "model_b_only": 9,
-        "both_wrong": 35
+        "both_correct": 262,
+        "model_a_only": 37,
+        "model_b_only": 12,
+        "both_wrong": 40
       },
-      "discordant_pairs": 38,
-      "chi2": 9.5,
-      "p_value": 0.002055,
+      "discordant_pairs": 49,
+      "chi2": 11.7551,
+      "p_value": 0.000607,
       "statistically_significant_05": true,
       "statistically_significant_01": true
     }

@@ -15897,28 +15897,26 @@
   ],
   "T1000-0332": [
     {
-      "title": "Alkali metal (Wikipedia)",
-      "snippet": "The alkali metals consist of the chemical elements lithium (Li), sodium (Na), potassium (K), rubidium (Rb), caesium (Cs), and francium (Fr). Together with hydrogen they constitute group 1, which lies in the s-block of the periodic table. All alkali metals have their outermost electron in an s-orbital: this shared electron configuration results in them having very similar characteristic properties. Indeed, the alkali metals provide the best example of group trends in properties in the periodic table, with elements exhibiting well-characterised homologous behaviour.",
-      "url": "https://en.wikipedia.org/wiki/Alkali_metal",
-      "source": "Wikipedia"
-    },
-    {
-      "title": "Gallium (Wikipedia)",
-      "snippet": "Gallium is a chemical element; it has symbol Ga and atomic number 31. Discovered by the French chemist Paul-\u00c9mile Lecoq de Boisbaudran in Paris, France, 1875,\nelemental gallium is a soft, silvery metal at standard temperature and pressure with a complex orthorhombic crystal structure. In its liquid state, it becomes silvery white. If enough force is applied, solid gallium may fracture conchoidally.",
-      "url": "https://en.wikipedia.org/wiki/Gallium",
-      "source": "Wikipedia"
-    },
-    {
       "title": "Mercury (element) (Wikipedia)",
-      "snippet": "Mercury is a chemical element; it has symbol Hg (from Latin hydrargyrum) and atomic number 80. It is commonly known as quicksilver. A heavy, silvery d-block element, mercury is the only metallic element that is known to be liquid at standard temperature and pressure. As well as having the lowest freezing point, mercury has the lowest boiling point and the narrowest liquid state range of any metal at standard conditions.",
-      "url": "https://en.wikipedia.org/wiki/Mercury_%28element%29",
-      "source": "Wikipedia"
+      "snippet": "Mercury is a chemical element with symbol Hg and atomic number 80. A heavy, silvery d-block element, mercury is the only metallic element that is known to be liquid at standard temperature and pressure; the only other element that is liquid under these conditions is the halogen bromine.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mercury_(element)",
+      "domain_trust": {
+        "badge": "Wikipedia",
+        "is_satire": false,
+        "weight": 1.2
+      }
     },
     {
-      "title": "Transition metal (Wikipedia)",
-      "snippet": "In chemistry, a transition metal (or transition element) is a chemical element in the d-block of the periodic table (groups 3 to 12), though the elements of group 12 (and less often group 3) are sometimes excluded. The lanthanide and actinide elements (the f-block) are called inner transition metals and are sometimes considered to be transition metals as well.\nThey are lustrous metals with good electrical and thermal conductivity. Most (with the exception of group 11 and group 12) are hard and strong, and have high melting and boiling temperatures.",
-      "url": "https://en.wikipedia.org/wiki/Transition_metal",
-      "source": "Wikipedia"
+      "title": "Bromine (Wikipedia)",
+      "snippet": "Bromine is a chemical element with the symbol Br and atomic number 35. It is the third-lightest halogen and is a volatile red-brown liquid at room temperature that evaporates readily to form a similarly coloured vapour.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bromine",
+      "domain_trust": {
+        "badge": "Wikipedia",
+        "is_satire": false,
+        "weight": 1.2
+      }
     }
   ],
   "T1000-0333": [

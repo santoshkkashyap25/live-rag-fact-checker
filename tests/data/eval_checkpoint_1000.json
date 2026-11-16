@@ -9214,5 +9214,2015 @@
         "is_correct": true
       }
     }
+  },
+  "T1000-0289": {
+    "id": "T1000-0289",
+    "domain": "Physics",
+    "expected": "True",
+    "claim": "Absolute zero is defined as 0 Kelvin or approximately -273.15 degrees Celsius.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "All retrieved authoritative sources explicitly confirm that absolute zero is defined as 0 Kelvin and is equivalent to -273.15 degrees Celsius.",
+        "evidence_count": 4,
+        "latency": 3.080122232437134,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided sources discuss absolute magnitude, cryogenics, Seebeck coefficient, and specific heat capacity, none of which address the definition of absolute zero, so there is no evidence to confirm or refute the claim.",
+        "evidence_count": 4,
+        "latency": 6.3834123611450195,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Absolute zero is defined by the International System of Units as 0\u202fK, which corresponds exactly to \u2013273.15\u202f\u00b0C; this definition is universally accepted in physics literature.",
+        "evidence_count": 0,
+        "latency": 10.483570098876953,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0290": {
+    "id": "T1000-0290",
+    "domain": "Physics",
+    "expected": "True",
+    "claim": "The escape velocity from Earth's surface is approximately 11.2 kilometers per second.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Britannica, medicneet.com, Escape Velocity Explained) state the escape velocity at Earth's surface is about 11.2\u202fkm/s (\u224811,186\u202fm/s), matching the claim within normal rounding tolerance.",
+        "evidence_count": 4,
+        "latency": 8.264310836791992,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.42,
+        "reasoning": "The provided sources define escape velocity but do not include the specific value for Earth; without a numeric reference in the evidence, the claim cannot be confirmed or refuted from the given material.",
+        "evidence_count": 4,
+        "latency": 11.089833498001099,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative physics references list Earth's escape velocity as 11.186\u202fkm/s, which is routinely rounded to 11.2\u202fkm/s; the claim matches this accepted value.",
+        "evidence_count": 0,
+        "latency": 10.931113004684448,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0291": {
+    "id": "T1000-0291",
+    "domain": "Physics",
+    "expected": "True",
+    "claim": "Quantum entanglement enables instantaneous correlations between measurement outcomes of entangled particles.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.97,
+        "reasoning": "Authoritative sources (e.g., the no\u2011communication theorem) confirm that entangled particles exhibit correlations that are observed instantaneously regardless of spatial separation, even though no usable information is transmitted. This matches the claim that entanglement enables instantaneous correlations between measurement outcomes.",
+        "evidence_count": 4,
+        "latency": 6.59905743598938,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.96,
+        "reasoning": "Authoritative sources state that entangled particles exhibit correlations in their measurement outcomes that are observed instantaneously regardless of spatial separation (e.g., the no\u2011communication theorem notes such non\u2011local correlations), confirming the claim that quantum entanglement enables instantaneous correlations.",
+        "evidence_count": 4,
+        "latency": 7.452629566192627,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Extensive experimental tests (e.g., Bell\u2011inequality violations by Aspect et al., 1982 and subsequent loophole\u2011free tests) show that measurements on entangled particles are correlated instantly regardless of distance, confirming that entanglement enables instantaneous correlations, though it does not allow faster\u2011than\u2011light communication.",
+        "evidence_count": 0,
+        "latency": 9.284489870071411,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0292": {
+    "id": "T1000-0292",
+    "domain": "Physics",
+    "expected": "True",
+    "claim": "Nuclear fission involves splitting a heavy atomic nucleus into lighter nuclei with energy release.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources define nuclear fission as a reaction where a heavy atomic nucleus splits into two or more lighter nuclei and releases a very large amount of energy, directly confirming the claim.",
+        "evidence_count": 4,
+        "latency": 8.227719068527222,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources define nuclear fission as a reaction where a heavy atomic nucleus splits into two or more lighter nuclei and releases a very large amount of energy (see sources 1 and 4). This directly matches the claim.",
+        "evidence_count": 4,
+        "latency": 7.106234550476074,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative nuclear physics sources define fission as the splitting of a heavy atomic nucleus into lighter nuclei, accompanied by the release of energy (e.g., from the binding energy difference).",
+        "evidence_count": 0,
+        "latency": 6.237645149230957,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0293": {
+    "id": "T1000-0293",
+    "domain": "Physics",
+    "expected": "False",
+    "claim": "Perpetual motion machines of the first kind can operate indefinitely without an external energy supply.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited sources (Wikipedia, Unacademy, eigenplus, Physics LibreTexts) state that a first\u2011kind perpetual motion machine would violate the first law of thermodynamics (conservation of energy) and is therefore impossible, so it cannot operate indefinitely without an external energy supply.",
+        "evidence_count": 4,
+        "latency": 8.216672420501709,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Source 2 (Perpetual motion) states that a perpetual motion machine of the first kind, which would do work indefinitely without an external energy source, is impossible because it would violate the first law of thermodynamics (conservation of energy). This authoritative consensus directly refutes the claim.",
+        "evidence_count": 4,
+        "latency": 7.111639022827148,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "First\u2011kind perpetual motion machines would produce work without any energy input, violating the first law of thermodynamics (conservation of energy). This is universally rejected by physics literature and experimental evidence, confirming the claim is false.",
+        "evidence_count": 0,
+        "latency": 10.72415280342102,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0294": {
+    "id": "T1000-0294",
+    "domain": "Physics",
+    "expected": "False",
+    "claim": "Heavy objects fall significantly faster in a pure vacuum than light objects due to greater gravitational mass.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative physics sources explain that in a vacuum all objects experience the same gravitational acceleration (~9.8\u202fm/s\u00b2) regardless of mass; the larger gravitational force on a heavier object is exactly balanced by its greater inertia, so heavy objects do not fall significantly faster.",
+        "evidence_count": 4,
+        "latency": 9.884137153625488,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.32,
+        "reasoning": "The supplied sources discuss aviation history, the definition of mass, siphons, and vacuum tubes, but none address the rate at which objects fall in a vacuum. Without relevant evidence, the claim cannot be confirmed or refuted based on the provided material.",
+        "evidence_count": 4,
+        "latency": 8.224646091461182,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "In a pure vacuum, gravitational acceleration is independent of an object's mass, so heavy and light objects fall at the same rate; the claim that heavier objects fall significantly faster contradicts well\u2011established physics (Galilean equivalence principle).",
+        "evidence_count": 0,
+        "latency": 7.01781964302063,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0295": {
+    "id": "T1000-0295",
+    "domain": "Physics",
+    "expected": "False",
+    "claim": "Laser beams are physically visible as continuous glowing rods in empty outer space.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources explain that laser beams become visible only when particles scatter the light toward the observer; in the near vacuum of outer space there are virtually no particles to scatter light, so a laser would not appear as a continuous glowing rod.",
+        "evidence_count": 4,
+        "latency": 8.085243463516235,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative optics sources explain that laser beams become visible only when particles (dust, smoke, haze) scatter the light. In the near\u2011vacuum of outer space the particle density (~1 atom per cubic meter) is far too low to produce visible scattering, so a laser would not appear as a continuous glowing rod.",
+        "evidence_count": 4,
+        "latency": 6.44464898109436,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was supplied to assess whether laser beams appear as continuous glowing rods in empty outer space, so the claim cannot be verified or refuted based on the provided material.",
+        "evidence_count": 0,
+        "latency": 14.858576536178589,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0296": {
+    "id": "T1000-0296",
+    "domain": "Physics",
+    "expected": "False",
+    "claim": "Glass is a slow-moving liquid that flows downward over centuries, making antique church windows thicker at the base.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.7,
+        "reasoning": "The provided sources discuss glaciers, siphons, solids, and heat transfer, but none address the physical behavior of glass over long timescales or the thickness of historic stained\u2011glass windows, so there is no evidence to confirm or refute the claim.",
+        "evidence_count": 4,
+        "latency": 7.845322132110596,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "None of the supplied sources discuss the physical behavior of glass or the thickness variation in historic stained\u2011glass windows, so the claim cannot be confirmed or refuted based on the provided evidence.",
+        "evidence_count": 4,
+        "latency": 13.855520248413086,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "No evidence was supplied to confirm or refute the claim that glass flows over centuries and causes thicker bases in antique windows.",
+        "evidence_count": 0,
+        "latency": 11.933104038238525,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0297": {
+    "id": "T1000-0297",
+    "domain": "Physics",
+    "expected": "False",
+    "claim": "Quantum mechanics proves that human thought can directly alter distant physical macroscopic objects via telekinesis.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources (Wikipedia) describe telekinesis as a \"purported\" ability with no scientific validation, and quantum mechanics does not provide mechanisms for macroscopic objects to be altered by human thought. The claim lacks any credible evidence and contradicts established physics.",
+        "evidence_count": 4,
+        "latency": 10.728785514831543,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative scientific sources and the provided evidence show no credible support that quantum mechanics allows human thought to affect distant macroscopic objects; the claim aligns with pseudoscientific ideas (e.g., New Age claims) and is contradicted by established physics.",
+        "evidence_count": 4,
+        "latency": 9.617799520492554,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "No credible scientific evidence supports that quantum mechanics allows human thought to cause macroscopic telekinesis; mainstream physics holds that quantum effects do not enable such direct mind\u2011matter interactions at a distance.",
+        "evidence_count": 0,
+        "latency": 10.94144868850708,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0298": {
+    "id": "T1000-0298",
+    "domain": "Physics",
+    "expected": "False",
+    "claim": "Centrifugal force is a genuine fundamental physical interaction alongside gravity and electromagnetism.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (e.g., Britannica, Wikipedia) describe centrifugal force as a pseudoforce or inertial force that appears only in rotating reference frames, not as a fundamental interaction. Fundamental forces are limited to gravity, electromagnetism, the strong nuclear force, and the weak nuclear force; centrifugal force is not listed among them.",
+        "evidence_count": 4,
+        "latency": 8.393595695495605,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources (Wikipedia, Britannica, ScienceDirect) describe centrifugal force as a pseudoforce arising in rotating reference frames, not a fundamental interaction like gravity or electromagnetism.",
+        "evidence_count": 4,
+        "latency": 7.609944105148315,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Centrifugal force is an inertial (pseudo) force that appears only in rotating reference frames; it is not a fundamental interaction. Established physics texts list only four fundamental forces\u2014gravity, electromagnetism, the strong nuclear force, and the weak nuclear force\u2014so the claim is a common misconception.",
+        "evidence_count": 0,
+        "latency": 11.931004762649536,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0299": {
+    "id": "T1000-0299",
+    "domain": "Physics",
+    "expected": "False",
+    "claim": "Electrons orbit the atomic nucleus in fixed, circular planar planetary orbits like miniature solar systems.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Modern quantum mechanics shows electrons occupy probabilistic orbitals, not fixed circular planar paths; the Bohr model's \"planetary\" orbits are a historical approximation and have been superseded (Britannica; LibreTexts).",
+        "evidence_count": 4,
+        "latency": 16.566535711288452,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that electrons orbit the nucleus in fixed, circular planar planetary orbits is contradicted by modern quantum mechanics, which describes electrons as existing in probabilistic orbitals rather than definite circular paths. While the Bohr model (sources 3 and 4) historically proposed such orbits, it has been superseded and is not considered accurate for describing atomic structure.",
+        "evidence_count": 4,
+        "latency": 11.977463245391846,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Modern quantum mechanics shows that electrons do not travel in fixed, circular planar orbits around the nucleus; instead they occupy orbitals described by probability distributions. The Bohr model's planetary orbits have been superseded by the Schr\u00f6dinger equation and experimental evidence such as electron diffraction and spectroscopy.",
+        "evidence_count": 0,
+        "latency": 6.491662263870239,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0300": {
+    "id": "T1000-0300",
+    "domain": "Physics",
+    "expected": "False",
+    "claim": "Lightning never strikes the exact same geographic location twice on Earth.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Lightning can strike the same geographic location multiple times; for example, the Empire State Building is struck by lightning dozens of times each year. This contradicts the claim that lightning never strikes the exact same location twice.",
+        "evidence_count": 4,
+        "latency": 10.5838041305542,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The claim is a well\u2011known misconception; lightning can strike the same geographic location repeatedly (e.g., tall buildings, trees, or the same spot on the ground). No authoritative source supports the assertion that it never does, and the evidence provided is unrelated.",
+        "evidence_count": 4,
+        "latency": 18.690457105636597,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.1,
+        "reasoning": "No evidence was provided to assess the claim, so its truth value cannot be determined.",
+        "evidence_count": 0,
+        "latency": 14.116965770721436,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0301": {
+    "id": "T1000-0301",
+    "domain": "Physics",
+    "expected": "False",
+    "claim": "Microwave ovens heat food from the inside out by cooking internal atomic nuclei first.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Microwave ovens heat food by inducing rotation of polar molecules (dielectric heating), not by cooking internal atomic nuclei.  The heating begins at the surface and propagates inward, as described in the authoritative Wikipedia entry and the science\u2011based article.  Microwaves are non\u2011ionizing and cannot initiate nuclear reactions.",
+        "evidence_count": 4,
+        "latency": 11.051318407058716,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Microwave ovens heat food by inducing rotation of polar molecules (mainly water) throughout the food, producing heat via dielectric heating (source 3). They do not target internal atomic nuclei first; microwaves are non\u2011ionizing and do not selectively heat nuclei (source 1). The claim that heating occurs from the inside out by cooking nuclei first is unsupported and contradicts established microwave physics.",
+        "evidence_count": 4,
+        "latency": 12.993293285369873,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "The supplied evidence is empty, so there is no source material to confirm or refute the claim that microwave ovens heat food from the inside out by cooking internal atomic nuclei first.",
+        "evidence_count": 0,
+        "latency": 10.301061630249023,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0302": {
+    "id": "T1000-0302",
+    "domain": "Physics",
+    "expected": "False",
+    "claim": "Radioactive materials glow with an intense bright green luminescence in ordinary dark rooms.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Evidence shows that radioactive materials do not emit an intense bright green glow in ordinary dark rooms; they either emit blue light or are essentially invisible. Source\u202f1 notes the light is typically blue, not green, and Source\u202f3 confirms that real elements do not glow like the green phosphorescence seen in movies. Source\u202f2 describes green fluorescence only under UV illumination of uranium\u2011doped glass, not in normal darkness.",
+        "evidence_count": 4,
+        "latency": 15.28403639793396,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The evidence shows that Cherenkov radiation, a common visible effect of radioactive decay in water, produces a characteristic blue glow, not green. No authoritative source indicates that radioactive materials emit an intense bright green luminescence in ordinary dark rooms; typical radioactive substances may produce faint phosphorescence, but not the described intense green glow.",
+        "evidence_count": 4,
+        "latency": 12.12688684463501,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim that radioactive materials emit intense bright green luminescence in ordinary dark rooms.",
+        "evidence_count": 0,
+        "latency": 11.620991706848145,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0303": {
+    "id": "T1000-0303",
+    "domain": "Physics",
+    "expected": "False",
+    "claim": "The speed of sound is faster in air than in solid steel beams.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The evidence shows that sound travels at roughly 343\u202fm/s in air at room temperature, whereas in solid steel it travels at about 5,000\u20136,000\u202fm/s, which is orders of magnitude faster. Therefore the claim that sound is faster in air than in steel beams is contradicted by authoritative sources.",
+        "evidence_count": 4,
+        "latency": 24.83678698539734,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence contains no information about the speed of sound in air or steel, so it cannot confirm or refute the claim.",
+        "evidence_count": 4,
+        "latency": 9.859408140182495,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The speed of sound in solid steel is approximately 5,960 m/s, whereas in air it is approximately 343 m/s. Therefore, sound travels significantly faster in steel than in air, directly contradicting the claim.",
+        "evidence_count": 0,
+        "latency": 2.221775770187378,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0304": {
+    "id": "T1000-0304",
+    "domain": "Physics",
+    "expected": "False",
+    "claim": "Magnets lose all magnetic capability when placed in ordinary freshwater lakes.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "The provided evidence consists of Wikipedia articles about the ALICE experiment and space colonization, neither of which contains information about the magnetic properties of magnets in freshwater lakes. Therefore, there is no relevant evidence to confirm or refute the claim.",
+        "evidence_count": 2,
+        "latency": 12.933354139328003,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "The provided evidence discusses the ALICE experiment at CERN and space colonization; neither source contains information about the magnetic properties of magnets in freshwater lakes. Therefore, there is no relevant evidence to confirm or refute the claim.",
+        "evidence_count": 2,
+        "latency": 15.801159858703613,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim that magnets lose all magnetic capability in ordinary freshwater lakes.",
+        "evidence_count": 0,
+        "latency": 14.155057668685913,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0305": {
+    "id": "T1000-0305",
+    "domain": "Physics",
+    "expected": "Unverifiable",
+    "claim": "String theory will be experimentally confirmed by observable supersymmetry particles at future colliders.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The evidence indicates that supersymmetry particles have not yet been observed and that string theory remains a theoretical framework; it does not provide any confirmation that future colliders will detect supersymmetry particles that would validate string theory.",
+        "evidence_count": 4,
+        "latency": 15.142424583435059,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The evidence indicates that supersymmetry has not yet been observed in experiments and that string theory remains a theoretical framework without experimental confirmation. No source provides evidence that future colliders will detect supersymmetric particles that would confirm string theory, making the claim a future speculative prediction that cannot be verified with current data.",
+        "evidence_count": 4,
+        "latency": 14.117834091186523,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim that string theory will be experimentally confirmed by observable supersymmetry particles at future colliders.",
+        "evidence_count": 0,
+        "latency": 11.039060115814209,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0306": {
+    "id": "T1000-0306",
+    "domain": "Physics",
+    "expected": "Unverifiable",
+    "claim": "The fundamental constant of fine-structure alpha varies across cosmic space and time.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The evidence does not provide a definitive measurement that the fine\u2011structure constant \u03b1 varies across space or time; it only notes that some studies have explored possible variations. No authoritative source confirms a variation, and the current scientific consensus treats \u03b1 as constant within experimental limits.",
+        "evidence_count": 4,
+        "latency": 13.350561380386353,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.92,
+        "reasoning": "The fine\u2011structure constant (\u03b1) is described as a fundamental, dimensionless physical constant in authoritative sources (e.g., the Fine\u2011structure constant Wikipedia entry).  Such constants are defined to be invariant across space and time; no cited evidence indicates any measurable variation of \u03b1.  Therefore the claim that \u03b1 varies across cosmic space and time is not supported and is contradicted by the definition of the constant.",
+        "evidence_count": 4,
+        "latency": 12.4831702709198,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that the fine\u2011structure constant varies across cosmic space and time.",
+        "evidence_count": 0,
+        "latency": 12.204693078994751,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0307": {
+    "id": "T1000-0307",
+    "domain": "Physics",
+    "expected": "Unverifiable",
+    "claim": "Commercial net-positive nuclear fusion energy will supply over 10 percent of global electricity by 2045.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "The evidence provided does not contain any authoritative forecast that commercial net\u2011positive fusion will supply more than 10\u202f% of global electricity by 2045.  The cited web article (source\u202f3) only states that commercial fusion may become available by 2045, without quantifying its share of global generation.  No other source confirms or refutes the specific 10\u202f% claim, making the statement a future speculative projection that cannot be verified with the available data.",
+        "evidence_count": 4,
+        "latency": 10.883519172668457,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided evidence discusses existing nuclear fission facilities, HALEU production, and general fusion research history, but contains no data or projections indicating that commercial net\u2011positive fusion power will contribute more than 10\u202f% of global electricity by 2045. Without supporting or contradicting information, the claim cannot be verified.",
+        "evidence_count": 4,
+        "latency": 12.512593030929565,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to assess the claim that commercial net\u2011positive nuclear fusion will supply >10\u202f% of global electricity by 2045.",
+        "evidence_count": 0,
+        "latency": 18.297304153442383,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0308": {
+    "id": "T1000-0308",
+    "domain": "Physics",
+    "expected": "Unverifiable",
+    "claim": "Wormholes through spacetime can be physically stabilized using negative mass exotic matter.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence discusses weak gravitational lensing, the Casimir effect, and interstellar travel, none of which address the existence, stabilization, or use of negative mass exotic matter for wormholes. No authoritative source in the evidence confirms or refutes the claim, leaving its truth value undetermined.",
+        "evidence_count": 3,
+        "latency": 10.0524160861969,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "The provided evidence discusses the Casimir effect, interstellar travel, and weak gravitational lensing, none of which address wormholes or exotic matter.  Consequently, there is no relevant data to confirm or refute the claim that wormholes can be stabilized with negative mass exotic matter.",
+        "evidence_count": 3,
+        "latency": 11.02381706237793,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that wormholes can be stabilized with negative mass exotic matter, and the claim remains speculative within current physics literature.",
+        "evidence_count": 0,
+        "latency": 13.916754722595215,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0309": {
+    "id": "T1000-0309",
+    "domain": "Physics",
+    "expected": "Unverifiable",
+    "claim": "The graviton will be directly detected as an individual particle by high-precision sensors before 2060.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence only reports the first observation of gravitational waves in 2015\u20132016 and does not mention any detection of gravitons or predictions about such a detection before 2060. No authoritative source confirms the claim, and it remains a future speculative event that cannot be verified with current data.",
+        "evidence_count": 1,
+        "latency": 13.82934284210205,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided evidence (2015 in science Wikipedia) only reports the first observation of gravitational waves in 2016 and does not mention any detection of the graviton or any future plan to detect it before 2060. No authoritative source confirms such a future event, so the claim cannot be verified or falsified with the available evidence.",
+        "evidence_count": 1,
+        "latency": 13.468380451202393,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that gravitons will be directly detected before 2060, and the claim concerns a future speculative event that cannot be verified with current data.",
+        "evidence_count": 0,
+        "latency": 14.586490631103516,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0310": {
+    "id": "T1000-0310",
+    "domain": "Physics",
+    "expected": "Unverifiable",
+    "claim": "Protons undergo spontaneous radioactive decay with a half-life of 10 to the 34th years.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.85,
+        "reasoning": "The claim asserts that protons spontaneously decay with a half\u2011life of 10^34\u202fyears. While grand\u2011unification theories predict a proton lifetime in the range 10^30\u201310^35\u202fyears, no experimental observation of proton decay has been made, and the decay has not been confirmed. Therefore the definitive statement in the claim is not supported by evidence.",
+        "evidence_count": 4,
+        "latency": 15.028472185134888,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.55,
+        "reasoning": "The claim asserts that protons decay with a half\u2011life of 10^34\u202fyears. Current authoritative sources (e.g., the cited ResearchGate article) state that grand\u2011unification models predict a proton half\u2011life in the range 10^30\u201310^35\u202fyears, but no experimental observation has confirmed proton decay. Thus the claim cannot be verified as true or false with present evidence.",
+        "evidence_count": 4,
+        "latency": 12.541517496109009,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim that protons decay with a half\u2011life of 10^34 years; current experimental limits only set a lower bound on proton lifetime, not an exact value.",
+        "evidence_count": 0,
+        "latency": 11.599944114685059,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0311": {
+    "id": "T1000-0311",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "Water molecules have a bent molecular geometry with a bond angle of approximately 104.5 degrees.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The claim matches authoritative chemistry sources that state water (H\u2082O) has a bent (V\u2011shaped) geometry with a bond angle of about 104.45\u00b0, which is effectively 104.5\u00b0 within normal tolerances.",
+        "evidence_count": 4,
+        "latency": 19.8641459941864,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The claim matches authoritative chemistry sources: Wikipedia states water is a bent molecule with a bond angle of about 104.45\u00b0, which rounds to 104.5\u00b0.",
+        "evidence_count": 4,
+        "latency": 19.24059534072876,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so the truth of the statement cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 12.124304294586182,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0312": {
+    "id": "T1000-0312",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "Carbon has the unique ability to form long, stable catenated chains and rings of covalent bonds.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The evidence confirms that carbon can form long chains and rings of covalent bonds, but it does not assert that this ability is unique to carbon. In fact, other elements such as silicon, germanium, phosphorus, and sulfur also form catenated chains and rings, though typically shorter or less stable. Therefore the claim\u2019s assertion of uniqueness is unsupported and contradicted by established chemical knowledge.",
+        "evidence_count": 4,
+        "latency": 10.214720964431763,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that carbon uniquely forms long, stable catenated chains and rings is contradicted by evidence that other elements such as silicon, boron, and phosphorus also form strong covalent chains and rings (e.g., polysilanes, boranes, phosphanes). Thus, carbon is not unique in this ability.",
+        "evidence_count": 4,
+        "latency": 11.28412127494812,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Carbon is chemically distinguished by its tetravalency and small atomic size, which allow it to form exceptionally stable covalent bonds with itself (catenation), creating long chains and rings. While other elements like silicon can catenate, carbon's chains are significantly more stable and versatile, making this a defining characteristic of organic chemistry.",
+        "evidence_count": 0,
+        "latency": 3.06540846824646,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0313": {
+    "id": "T1000-0313",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "The pH scale measures the decimal logarithm of the reciprocal of hydrogen ion activity in a solution.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The definition of pH is pH = -log10(a_H+), which is the decimal logarithm of the reciprocal of hydrogen ion activity. This matches the claim exactly, as shown in the authoritative source (Wikipedia, PH).",
+        "evidence_count": 4,
+        "latency": 12.481256484985352,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The PH Wikipedia entry defines pH as pH\u202f=\u202f\u2212log10(a_H+), which is mathematically equivalent to log10(1/a_H+); thus the claim that the pH scale measures the decimal logarithm of the reciprocal of hydrogen ion activity is correct.",
+        "evidence_count": 4,
+        "latency": 12.584862470626831,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was supplied to confirm or refute the definition of the pH scale, so the claim cannot be evaluated based on the provided sources.",
+        "evidence_count": 0,
+        "latency": 8.555391073226929,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0314": {
+    "id": "T1000-0314",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "Helium is a noble gas with a full outer electron shell, making it chemically inert under standard conditions.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Helium is listed as a noble gas in group\u202f18 and has a full outer 1s\u00b2 electron configuration, which makes it chemically inert under standard conditions, as stated in the authoritative sources.",
+        "evidence_count": 4,
+        "latency": 10.325378656387329,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Helium is listed as a member of group\u202f18 (noble gases) in the noble gas entry, which describes these elements as having very low chemical reactivity under standard conditions.  Helium\u2019s electronic configuration (1s\u00b2) gives it a full outer shell, which is the reason for its inertness.  The period\u202f1 element entry confirms helium\u2019s position in the first period, consistent with its 1s\u00b2 configuration.",
+        "evidence_count": 4,
+        "latency": 9.777909517288208,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so the truth value cannot be determined.",
+        "evidence_count": 0,
+        "latency": 16.287652015686035,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0315": {
+    "id": "T1000-0315",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "Graphene consists of a single two-dimensional layer of carbon atoms arranged in a hexagonal honeycomb lattice.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The claim is supported by authoritative sources: Wikipedia\u2019s entry on graphene states it is a one\u2011atom\u2011thick sheet of carbon atoms arranged in hexagonal rings, and the entry on single\u2011layer materials confirms that such materials consist of a single atomic layer. Both sources directly confirm the hexagonal honeycomb lattice structure of graphene.",
+        "evidence_count": 4,
+        "latency": 14.175383806228638,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "The claim matches authoritative descriptions: Wikipedia\u2019s entry on Graphene states it is a one\u2011atom\u2011thick sheet of carbon atoms arranged in hexagonal (honeycomb) rings, and the definition of single\u2011layer materials confirms that graphene is a single two\u2011dimensional layer of carbon. No evidence contradicts this fact.",
+        "evidence_count": 4,
+        "latency": 16.672258138656616,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so its truth cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 14.73823618888855,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0316": {
+    "id": "T1000-0316",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "Endothermic chemical reactions absorb thermal energy from their surrounding environment.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence discusses thermal energy storage, fusion power, combustion, and nuclear fusion, none of which address the thermodynamic nature of endothermic chemical reactions. Consequently, the evidence does not support or refute the claim that endothermic reactions absorb thermal energy from their surroundings.",
+        "evidence_count": 4,
+        "latency": 17.406212091445923,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Endothermic reactions are defined as chemical processes that absorb heat from their surroundings, a standard thermodynamic principle not contradicted by the provided evidence.",
+        "evidence_count": 4,
+        "latency": 14.941040277481079,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim that endothermic reactions absorb thermal energy from their surroundings.",
+        "evidence_count": 0,
+        "latency": 10.634298324584961,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0317": {
+    "id": "T1000-0317",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "Gold is resistant to oxidation and does not tarnish when exposed to normal atmospheric air.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "The provided evidence discusses copper, chromium, manganese, and rare\u2011earth elements, but contains no information about gold\u2019s chemical behavior. Without evidence directly addressing gold\u2019s resistance to oxidation or tarnishing, the claim cannot be confirmed or refuted.",
+        "evidence_count": 4,
+        "latency": 16.969354152679443,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided evidence discusses chromium, copper, manganese, and rare\u2011earth elements, but contains no information about gold\u2019s chemical behavior. Without relevant evidence, the claim cannot be confirmed or refuted.",
+        "evidence_count": 4,
+        "latency": 15.506705284118652,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so its truth cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 13.15458369255066,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0318": {
+    "id": "T1000-0318",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "Catalysts accelerate the rate of chemical reactions without being consumed in the overall reaction.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The claim is supported by authoritative sources: Wikipedia\u2019s entry on catalysis explicitly states that catalysts are not consumed and remain unchanged after the reaction, and the Haber process example shows an iron catalyst that is regenerated. Enzyme kinetics and decarboxylation entries further illustrate biological catalysts that accelerate reactions without being consumed.",
+        "evidence_count": 4,
+        "latency": 14.51200795173645,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The claim is supported by multiple authoritative sources. Wikipedia\u2019s entry on catalysis states that catalysts are not consumed by the reaction and remain unchanged after the reaction, and that they accelerate the reaction rate. Enzyme kinetics also describes enzymes as biological catalysts that accelerate reactions without being consumed. These sources confirm the core assertion.",
+        "evidence_count": 4,
+        "latency": 13.648334741592407,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "A catalyst is defined as a substance that speeds up a chemical reaction by lowering the activation energy and is regenerated at the end of the reaction, so it is not consumed overall (e.g., IUPAC definition and standard chemistry textbooks).",
+        "evidence_count": 0,
+        "latency": 9.065991640090942,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0319": {
+    "id": "T1000-0319",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "Sodium and chlorine react vigorously in an exothermic redox reaction to produce sodium chloride.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Sodium (an alkali metal) readily donates an electron to chlorine (a strong oxidizing halogen), forming Na\u207a and Cl\u207b that combine to NaCl; the process is a vigorous, exothermic redox reaction. Sources: Alkali metals (Wikipedia) and Chlorine (Wikipedia).",
+        "evidence_count": 4,
+        "latency": 11.914824724197388,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided evidence discusses the properties of sodium and chlorine but does not mention their reaction, its vigor, or its exothermic nature. Without evidence directly addressing the reaction, the claim cannot be confirmed or refuted.",
+        "evidence_count": 4,
+        "latency": 19.64899253845215,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 16.23836326599121,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0320": {
+    "id": "T1000-0320",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "Polymers are large macromolecules composed of repeating structural units called monomers.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "All cited authoritative sources define polymers as large macromolecules built from many repeating subunits (monomers).",
+        "evidence_count": 4,
+        "latency": 15.051366329193115,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The definition of a polymer in the evidence states that it consists of very large molecules made of many repeating subunits derived from one or more species of monomers, which matches the claim that polymers are large macromolecules composed of repeating structural units called monomers. The macromolecular assembly source also notes that macromolecules are often characterized by repeating units, reinforcing this definition.",
+        "evidence_count": 4,
+        "latency": 17.06553816795349,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 12.354633331298828,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0321": {
+    "id": "T1000-0321",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "Diamond and graphite are allotropes of carbon with radically distinct crystal structures and electrical properties.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Both Wikipedia entries confirm that diamond and graphite are allotropes of carbon with distinct crystal structures: diamond has a cubic lattice of tetrahedra, while graphite consists of hexagonal sheets. Diamond is a wide\u2011bandgap insulator, whereas graphite is a good electrical conductor, establishing radically different electrical properties.",
+        "evidence_count": 4,
+        "latency": 10.088594436645508,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.55,
+        "reasoning": "The evidence confirms that diamond and graphite are both allotropes of carbon and that they possess distinct crystal structures (diamond cubic vs. hexagonal layered sheets). However, none of the cited sources explicitly discuss their electrical properties, so the claim that they have radically distinct electrical properties cannot be verified from the provided evidence.",
+        "evidence_count": 4,
+        "latency": 13.69176197052002,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so its truth cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 10.787973642349243,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0322": {
+    "id": "T1000-0322",
+    "domain": "Chemistry",
+    "expected": "True",
+    "claim": "The molar mass of an element or compound is expressed in grams per mole.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The molar mass is defined as the mass per amount of substance, with the unit grams per mole (g\u202fmol\u207b\u00b9) as shown in authoritative sources such as the Wikipedia entries on molar mass, mole, and amount of substance.",
+        "evidence_count": 4,
+        "latency": 19.76014232635498,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The molar mass is defined as the mass per amount of substance, with the unit of mass in grams and the unit of amount of substance in moles, yielding grams per mole (see Molar mass and Mole entries on Wikipedia).",
+        "evidence_count": 4,
+        "latency": 12.989813804626465,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Molar mass is defined as the mass of one mole of a substance and is conventionally expressed in grams per mole (g\u202fmol\u207b\u00b9) as per IUPAC and standard chemistry texts.",
+        "evidence_count": 0,
+        "latency": 10.01855182647705,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0323": {
+    "id": "T1000-0323",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Water has a scientific memory of dissolved solutes that persists after repeated homeopathic dilutions.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that water retains a memory of dissolved solutes after repeated homeopathic dilutions is a widely debunked hypothesis in the scientific community. No credible evidence supports this idea, and the provided sources are unrelated to the claim. The consensus among authoritative scientific literature is that water does not exhibit such memory effects.",
+        "evidence_count": 2,
+        "latency": 12.277100086212158,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The provided evidence consists of Wikipedia articles on Latin phrases and decompression physiology, neither of which discuss or support the notion that water retains a memory of dissolved solutes after homeopathic dilutions. Scientific consensus and empirical studies have repeatedly shown that such a memory effect does not exist, and the claim is widely regarded as a debunked homeopathic misconception.",
+        "evidence_count": 2,
+        "latency": 10.963881015777588,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Scientific consensus and rigorous studies confirm that water does not retain a 'memory' of dissolved substances after dilution, particularly at homeopathic levels where no molecules of the original solute remain. The claim contradicts established principles of thermodynamics and molecular kinetics, which dictate that information about solutes is lost as the solution approaches pure water.",
+        "evidence_count": 0,
+        "latency": 2.6276228427886963,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0324": {
+    "id": "T1000-0324",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Natural chemicals are universally non-toxic, whereas all synthetic synthetic chemicals are inherently toxic.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.9,
+        "reasoning": "The claim asserts that all natural chemicals are non\u2011toxic and all synthetic chemicals are inherently toxic. None of the provided evidence addresses the toxicity of natural versus synthetic compounds; the sources discuss genetic code expansion, geopolymer chemistry, psychedelics, and castor oil, none of which establish universal toxicity patterns. Moreover, well\u2011documented examples exist of natural toxins (e.g., cyanide, arsenic) and of non\u2011toxic synthetic substances (e.g., many pharmaceuticals). Therefore the claim is false.",
+        "evidence_count": 4,
+        "latency": 10.647597312927246,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a universal rule that all natural chemicals are non\u2011toxic and all synthetic chemicals are inherently toxic. Evidence shows natural substances such as castor oil (derived from Ricinus communis) can be toxic (ricin is a potent toxin in the seeds) and that synthetic chemistry produces many non\u2011toxic compounds (e.g., many pharmaceuticals). The provided sources discuss castor oil, geopolymer, expanded genetic code, and psychedelics, none of which support the blanket statement; in fact, they illustrate that both natural and synthetic chemicals can be toxic or non\u2011toxic depending on context.",
+        "evidence_count": 4,
+        "latency": 19.336026668548584,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Natural chemicals can be highly toxic (e.g., cyanide, ricin, poison ivy) and synthetic chemicals can be non\u2011toxic or even beneficial (e.g., aspirin, insulin, many approved drugs). The claim that all natural chemicals are non\u2011toxic and all synthetic chemicals are toxic contradicts well\u2011documented toxicological data and regulatory classifications.",
+        "evidence_count": 0,
+        "latency": 11.442937850952148,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0325": {
+    "id": "T1000-0325",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Diamonds are formed in nature from ancient compressed organic coal deposits.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Diamonds are a mineral form of carbon that crystallizes under high pressure and temperature deep in the Earth\u2019s mantle; they are not formed from ancient compressed organic coal deposits. The provided sources describe diamond as a crystalline form of carbon (source 3) and do not mention coal as a precursor.",
+        "evidence_count": 4,
+        "latency": 15.556145429611206,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The evidence shows that diamond is a crystalline form of elemental carbon formed under high pressure and temperature in the Earth\u2019s mantle, not from ancient compressed organic coal deposits. The diamond Wikipedia entry does not mention coal as a source, and the general geological definition of minerals excludes organic compounds like coal as a source of diamond formation.",
+        "evidence_count": 4,
+        "latency": 12.164734840393066,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to assess the claim that diamonds originate from ancient compressed organic coal deposits.",
+        "evidence_count": 0,
+        "latency": 10.942557334899902,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0326": {
+    "id": "T1000-0326",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Pure gold is magnetic and adheres strongly to ordinary household refrigerator magnets.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Gold is a diamagnetic metal; it is not attracted to magnets and therefore does not adhere strongly to ordinary refrigerator magnets. The provided evidence about cement does not support the claim and authoritative sources on gold\u2019s magnetic properties confirm the claim is false.",
+        "evidence_count": 1,
+        "latency": 9.730214357376099,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Gold (Au) is a diamagnetic metal with a very weak negative magnetic susceptibility, so it is not attracted to ordinary refrigerator magnets, which are ferromagnetic. Consequently, pure gold does not adhere strongly to such magnets.",
+        "evidence_count": 1,
+        "latency": 14.23565673828125,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to assess the claim.",
+        "evidence_count": 0,
+        "latency": 10.010157823562622,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0327": {
+    "id": "T1000-0327",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Boiling water freeze faster than cold water under all physical container and convection conditions.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The Mpemba effect shows that hot (boiling) water can freeze faster than colder water, but only under specific conditions (e.g., certain containers, convection patterns, and environmental factors). The claim asserts this behavior under *all* physical container and convection conditions, which is contradicted by the conditional nature of the Mpemba effect and the lack of universal evidence supporting it.",
+        "evidence_count": 4,
+        "latency": 14.71336317062378,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.92,
+        "reasoning": "The Mpemba effect, as documented in Wikipedia, shows that hot water can freeze faster than cold water only under certain conditions (e.g., similar volumes and surrounding temperatures). It does not hold under all container or convection scenarios; many experiments find no advantage or even slower freezing for hot water. Thus the universal claim is contradicted by authoritative evidence.",
+        "evidence_count": 4,
+        "latency": 12.298077583312988,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim that boiling water freezes faster than cold water under all conditions. Without relevant data, the truth value cannot be determined.",
+        "evidence_count": 0,
+        "latency": 16.38276195526123,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0328": {
+    "id": "T1000-0328",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Monosodium glutamate (MSG) causes scientifically verified acute neurotoxicity in normal dietary consumption.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "No evidence provided supports acute neurotoxicity of MSG at normal dietary levels; the cited sources discuss ibotenic acid and LD50 concepts, not MSG. Scientific consensus indicates MSG is safe when consumed within typical dietary amounts.",
+        "evidence_count": 2,
+        "latency": 10.001728773117065,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The evidence provided discusses ibotenic acid, a potent glutamate receptor agonist found in certain mushrooms, and the general concept of LD50 as a measure of acute toxicity. It does not mention monosodium glutamate (MSG) or provide any data indicating that MSG causes acute neurotoxicity at normal dietary levels. Scientific consensus and regulatory agencies (e.g., FDA, EFSA) classify MSG as generally recognized as safe, with no evidence of acute neurotoxic effects from typical consumption.",
+        "evidence_count": 2,
+        "latency": 10.75058627128601,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to assess the claim.",
+        "evidence_count": 0,
+        "latency": 10.944292306900024,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0329": {
+    "id": "T1000-0329",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Bleach and ammonia can be safely combined in home cleaning to produce an enhanced sanitizing foam.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Bleach (sodium hypochlorite) is a strong oxidizer (see evidence 1\u20133). When mixed with ammonia it reacts to form chloramine gases, which are toxic and not safe for home cleaning. Therefore the claim that they can be safely combined is false.",
+        "evidence_count": 4,
+        "latency": 10.877774000167847,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Bleach (sodium hypochlorite) is a strong oxidizer; when mixed with ammonia it generates chloramine gases, which are toxic and harmful. This well\u2011documented hazard makes the claim that the combination is safe false.",
+        "evidence_count": 4,
+        "latency": 14.682970762252808,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim, so the truth value cannot be determined from the given sources.",
+        "evidence_count": 0,
+        "latency": 10.727725505828857,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0330": {
+    "id": "T1000-0330",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Table salt (NaCl) is chemically explosive because it contains elemental sodium metal.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Table salt is sodium chloride (NaCl), a stable ionic compound that contains sodium ions (Na\u207a) and chloride ions (Cl\u207b), not elemental sodium metal. The evidence on sodium confirms it is a highly reactive metal, but it is not present in NaCl. Therefore the claim that NaCl is chemically explosive because it contains elemental sodium is false.",
+        "evidence_count": 4,
+        "latency": 11.070444822311401,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Table salt is the ionic compound sodium chloride (NaCl), not elemental sodium metal. Sodium metal is a highly reactive alkali metal that is separate from NaCl; the presence of sodium ions in NaCl does not confer explosive properties. The evidence confirms sodium is a reactive metal (source 4) but does not indicate that NaCl contains elemental sodium or is explosive.",
+        "evidence_count": 4,
+        "latency": 10.515838861465454,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to assess the claim, so it cannot be confirmed or refuted.",
+        "evidence_count": 0,
+        "latency": 11.448081254959106,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0331": {
+    "id": "T1000-0331",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Ozone molecules consist of four oxygen atoms bonded in a tetrahedral pyramid.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Ozone is a triatomic molecule (O\u2083) with a bent geometry, not a tetrahedral pyramid of four oxygen atoms. The claim contradicts well\u2011established chemical knowledge and is not supported by any of the provided evidence, which discusses unrelated elements and compounds.",
+        "evidence_count": 4,
+        "latency": 14.383342981338501,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Ozone (O\u2083) is a triatomic molecule composed of three oxygen atoms arranged in a bent (V\u2011shaped) geometry, not four atoms in a tetrahedral pyramid. The claim contradicts established chemical knowledge and authoritative sources such as the IUPAC and standard inorganic chemistry references.",
+        "evidence_count": 4,
+        "latency": 19.520557403564453,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Ozone (O\u2083) is a triatomic molecule composed of three oxygen atoms arranged in a bent (V\u2011shaped) geometry, not a tetrahedral pyramid of four atoms. This is a well\u2011established fact in chemistry.",
+        "evidence_count": 0,
+        "latency": 13.893025398254395,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0332": {
+    "id": "T1000-0332",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Mercury is the only chemical element that exists in liquid form at room temperature and standard pressure.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim is contradicted by evidence that bromine (Br) is also a liquid at room temperature and standard pressure. Wikipedia\u2019s entry on mercury states it is the only metallic element liquid at STP, but explicitly notes that bromine is the only other element liquid under those conditions.",
+        "latency": 3.0
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The claim is contradicted by evidence that bromine (Br) is also a liquid at room temperature and standard pressure. Wikipedia entries for Mercury and Bromine both state that bromine is a red\u2011brown liquid under these conditions, while Mercury is the only metallic element liquid at STP.",
+        "latency": 3.0
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199907, Requested 1446. Please try again in 9m44.496s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "latency": 3.0
+      }
+    }
+  },
+  "T1000-0333": {
+    "id": "T1000-0333",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Dry ice is solid compressed nitrogen gas that sublimes directly into liquid water.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is factually incorrect on two counts: dry ice is solid carbon dioxide, not nitrogen, and it sublimes into carbon dioxide gas, not liquid water. Evidence from Wikipedia explicitly defines dry ice as the solid form of carbon dioxide that sublimes directly to gas.",
+        "evidence_count": 4,
+        "latency": 346.0389196872711,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that dry ice is the solid form of carbon dioxide, not nitrogen, and it sublimates directly from solid to gas, not to liquid water. (See Dry ice (Wikipedia) which describes dry ice as solid CO\u2082 that sublimes to gas.)",
+        "evidence_count": 4,
+        "latency": 10.62795615196228,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim, so its truth value cannot be determined.",
+        "evidence_count": 0,
+        "latency": 18.41106677055359,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0334": {
+    "id": "T1000-0334",
+    "domain": "Chemistry",
+    "expected": "False",
+    "claim": "Acids and bases produce elemental uranium when neutralized together in aqueous solutions.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Neutralization of an acid and a base in aqueous solution yields a salt and water; it does not produce elemental uranium. None of the cited authoritative sources discuss uranium production from acid\u2013base reactions, and standard inorganic chemistry principles confirm that uranium is not formed in such a process.",
+        "evidence_count": 3,
+        "latency": 14.336222887039185,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Neutralization of an acid with a base in aqueous solution yields a salt and water; it does not produce elemental uranium. No credible source in the evidence supports the claim, and general chemical principles refute it.",
+        "evidence_count": 3,
+        "latency": 10.699376106262207,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to support or refute the claim that acids and bases produce elemental uranium upon neutralization in aqueous solutions.",
+        "evidence_count": 0,
+        "latency": 17.418003797531128,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0335": {
+    "id": "T1000-0335",
+    "domain": "Chemistry",
+    "expected": "Unverifiable",
+    "claim": "Room-temperature ambient-pressure superconductivity will be achieved in modified copper-substituted lead apatites before 2030.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "The provided evidence discusses carbon nanotubes and high\u2011entropy alloys, neither of which addresses room\u2011temperature ambient\u2011pressure superconductivity in copper\u2011substituted lead apatites. No authoritative source confirms or refutes the claim, so its truth value cannot be determined.",
+        "evidence_count": 2,
+        "latency": 10.976340293884277,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "The provided evidence discusses carbon nanotubes and high\u2011entropy alloys, neither of which addresses copper\u2011substituted lead apatites or their superconducting properties. No authoritative source confirms or refutes the claim, so its truth cannot be determined.",
+        "evidence_count": 2,
+        "latency": 12.383610010147095,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to support or refute the claim that room\u2011temperature ambient\u2011pressure superconductivity will be achieved in modified copper\u2011substituted lead apatites before 2030.",
+        "evidence_count": 0,
+        "latency": 12.726980209350586,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0336": {
+    "id": "T1000-0336",
+    "domain": "Chemistry",
+    "expected": "Unverifiable",
+    "claim": "Lithium-sulfur battery cells will exceed 1,000 watt-hours per kilogram energy density in commercial vehicles by 2032.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided evidence consists of Wikipedia entries on distributed generation and metalloids, which contain no information about lithium\u2011sulfur battery energy densities or projections for commercial vehicles. Therefore, the claim cannot be verified or refuted based on the supplied sources.",
+        "evidence_count": 2,
+        "latency": 14.850551128387451,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence consists of Wikipedia entries on distributed generation and metalloids, which contain no information about lithium\u2011sulfur battery energy densities or projections for commercial vehicles. Without relevant data or authoritative sources addressing the claim, its truth value cannot be determined.",
+        "evidence_count": 2,
+        "latency": 11.28430438041687,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim that lithium\u2011sulfur batteries will reach >1,000\u202fWh/kg in commercial vehicles by 2032.",
+        "evidence_count": 0,
+        "latency": 21.24704384803772,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0337": {
+    "id": "T1000-0337",
+    "domain": "Chemistry",
+    "expected": "Unverifiable",
+    "claim": "Synthetic molecular assemblers capable of mechanosynthesis will be manufactured before 2040.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.7,
+        "reasoning": "The claim concerns a future event\u2014manufacturing of synthetic molecular assemblers before 2040. Current authoritative sources (Wikipedia summaries of the Drexler\u2013Smalley debate and nanorobotics research) indicate that such assemblers are still theoretical, with significant debate over their feasibility, and that nanomachines remain largely in the research phase. No evidence confirms that they will be produced by 2040, and the claim cannot be verified or falsified with the available data.",
+        "evidence_count": 3,
+        "latency": 10.359316110610962,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.55,
+        "reasoning": "The available sources discuss the theoretical nature of molecular assemblers and the debate over their feasibility, but none provide evidence that such devices have been manufactured or that production will occur before 2040. The claim is a future prediction with no supporting data.",
+        "evidence_count": 3,
+        "latency": 21.56019926071167,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim that synthetic molecular assemblers capable of mechanosynthesis will be manufactured before 2040.",
+        "evidence_count": 0,
+        "latency": 13.287700653076172,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0338": {
+    "id": "T1000-0338",
+    "domain": "Chemistry",
+    "expected": "Unverifiable",
+    "claim": "A stable island of superheavy elements with atomic numbers above 120 will exhibit half-lives exceeding millennia.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The Wikipedia article on the island of stability states that superheavy isotopes in that region may have considerably longer half\u2011lives than currently known isotopes, but it does not provide a quantitative estimate that exceeds millennia. No source in the evidence explicitly confirms or denies that half\u2011lives would be longer than 1,000 years.",
+        "evidence_count": 4,
+        "latency": 10.023414373397827,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.55,
+        "reasoning": "The provided sources discuss the island of stability and predict longer half\u2011lives for superheavy isotopes, but none specify that isotopes with atomic numbers above 120 would have half\u2011lives exceeding millennia. No evidence confirms or contradicts the claim, so its truth cannot be determined.",
+        "evidence_count": 4,
+        "latency": 10.204454898834229,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to assess the claim, so its truth value cannot be determined.",
+        "evidence_count": 0,
+        "latency": 14.235615253448486,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0339": {
+    "id": "T1000-0339",
+    "domain": "Chemistry",
+    "expected": "Unverifiable",
+    "claim": "Carbon dioxide conversion via heterogeneous photocatalysis will become economically cheaper than fossil fuel extraction by 2035.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "The provided evidence discusses the nature of green photocatalysts and reticular materials but contains no economic data, cost projections, or comparative analyses of CO\u2082 conversion versus fossil fuel extraction. Without authoritative sources addressing future cost competitiveness by 2035, the claim cannot be verified.",
+        "evidence_count": 2,
+        "latency": 16.980527639389038,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided sources discuss the nature of green photocatalysts and reticular materials but contain no economic data, cost projections, or comparative analyses with fossil fuel extraction. Therefore, there is no evidence to confirm or refute the claim that heterogeneous photocatalysis will become cheaper than fossil fuel extraction by 2035.",
+        "evidence_count": 2,
+        "latency": 10.441484212875366,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess the economic comparison between heterogeneous photocatalytic CO\u2082 conversion and fossil fuel extraction by 2035.",
+        "evidence_count": 0,
+        "latency": 12.777530670166016,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0340": {
+    "id": "T1000-0340",
+    "domain": "Chemistry",
+    "expected": "Unverifiable",
+    "claim": "Biological enzymes capable of completely degrading high-density polyethylene in marine waters will be deployed by 2031.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence contains only general information about bioplastics, carbon nanotubes, microplastics, and plastics, and does not mention any biological enzymes that can completely degrade high\u2011density polyethylene (HDPE) in marine waters, nor any plans to deploy such enzymes by 2031. Consequently, there is no authoritative support or refutation for the claim, making it a future speculative statement that cannot be verified with the given sources.",
+        "evidence_count": 4,
+        "latency": 17.88173747062683,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "The provided evidence consists of general Wikipedia entries on bioplastics, carbon nanotubes, microplastics, and plastics, none of which discuss enzymes that can fully degrade high\u2011density polyethylene (HDPE) in marine environments or any deployment plans for such enzymes by 2031. Consequently, there is no authoritative source confirming the claim, nor any evidence refuting it, leaving the claim unverified.",
+        "evidence_count": 4,
+        "latency": 17.53550910949707,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the deployment of enzymes that fully degrade high\u2011density polyethylene in marine waters by 2031.",
+        "evidence_count": 0,
+        "latency": 13.701041460037231,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0341": {
+    "id": "T1000-0341",
+    "domain": "Economics",
+    "expected": "True",
+    "claim": "Inflation is defined as a general increase in prices and fall in the purchasing value of money over time.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim matches the authoritative definition of inflation: a general rise in the price level that reduces the purchasing power of money over time, as described in the Wikipedia inflation entry and supported by the CPI description.",
+        "evidence_count": 4,
+        "latency": 13.400036096572876,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The Wikipedia entry on inflation states that it is an increase in the average price of goods and services and that this rise in the general price level causes each unit of currency to buy fewer goods and services, i.e., a reduction in purchasing power. This matches the claim that inflation is a general increase in prices and a fall in the purchasing value of money over time.",
+        "evidence_count": 4,
+        "latency": 15.609601974487305,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim accurately reflects the standard economic definition of inflation, which is characterized by a sustained increase in the general price level of goods and services, resulting in a decrease in the purchasing power of money. This definition is universally accepted in economics and confirmed by major financial institutions and educational resources.",
+        "evidence_count": 0,
+        "latency": 2.5924196243286133,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0342": {
+    "id": "T1000-0342",
+    "domain": "Economics",
+    "expected": "True",
+    "claim": "Comparative advantage demonstrates that trade can benefit two nations even if one is more productive in all goods.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The Wikipedia article on comparative advantage explicitly states that trade can benefit both parties even when one is more productive at producing every good, because each country specializes in the activity with the lowest opportunity cost. This directly supports the claim.",
+        "evidence_count": 4,
+        "latency": 20.121652841567993,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The Wikipedia article on comparative advantage explicitly states that trade can benefit both parties even when one is more productive at producing every good, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 11.1566481590271,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was provided to support or refute the claim, so its truth cannot be determined from the available information.",
+        "evidence_count": 0,
+        "latency": 10.05277943611145,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0343": {
+    "id": "T1000-0343",
+    "domain": "Economics",
+    "expected": "True",
+    "claim": "Gross Domestic Product (GDP) measures the monetary value of all finished goods and services produced within a country.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The definition of GDP in the cited Wikipedia source states it is the monetary measure of the total market value of all final goods and services produced within a country, which matches the claim that it measures the value of finished goods and services produced domestically.",
+        "evidence_count": 4,
+        "latency": 11.247992038726807,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Wikipedia defines GDP as the monetary measure of the total market value of all final (finished) goods and services produced within a country during a specific period, which matches the claim.",
+        "evidence_count": 4,
+        "latency": 11.566147089004517,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Standard economic definitions (e.g., World Bank, IMF) state that GDP is the total monetary value of all final (finished) goods and services produced within a country's borders during a specific period, matching the claim.",
+        "evidence_count": 0,
+        "latency": 15.84605622291565,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0344": {
+    "id": "T1000-0344",
+    "domain": "Economics",
+    "expected": "True",
+    "claim": "The law of demand states that, ceteris paribus, higher prices lead to a lower quantity demanded.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The law of demand, as described in authoritative sources such as Wikipedia, states that all else equal, an increase in price leads to a decrease in quantity demanded, and vice versa. This directly confirms the claim.",
+        "evidence_count": 4,
+        "latency": 16.26416563987732,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The Wikipedia article on the law of demand explicitly states that, ceteris paribus, higher prices lead to a lower quantity demanded, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 13.909968614578247,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so the truth of the statement cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 16.98400330543518,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0345": {
+    "id": "T1000-0345",
+    "domain": "Economics",
+    "expected": "True",
+    "claim": "A central bank lowers interest rates during economic contractions to stimulate borrowing and investment.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.45,
+        "reasoning": "The provided sources describe what interest rates are, the role of central banks, and the general objectives of monetary policy, but none explicitly state that central banks lower rates during economic contractions to stimulate borrowing and investment. Without direct evidence confirming this policy action, the claim cannot be verified.",
+        "evidence_count": 4,
+        "latency": 12.999670028686523,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.85,
+        "reasoning": "Central banks use interest\u2011rate policy to influence borrowing and investment, and it is standard practice to lower rates during economic contractions to stimulate the economy. The monetary\u2011policy entry notes that central banks adjust monetary conditions to achieve objectives such as high employment, implying rate cuts during downturns.",
+        "evidence_count": 4,
+        "latency": 12.369933366775513,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so its truth cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 33.17156004905701,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0346": {
+    "id": "T1000-0346",
+    "domain": "Economics",
+    "expected": "True",
+    "claim": "Opportunity cost represents the potential benefits an individual, investor, or business misses out on when choosing one alternative over another.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The definition of opportunity cost in microeconomic theory and the Oxford American Dictionary both state that it is the value of the best alternative forgone, i.e., the potential benefits missed when choosing one alternative over another. This matches the claim exactly.",
+        "evidence_count": 4,
+        "latency": 9.61304521560669,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "The Wikipedia entry on opportunity cost defines it as the value of the best alternative forgone, i.e., the potential benefits missed when choosing one option over another, which matches the claim.",
+        "evidence_count": 4,
+        "latency": 11.212515115737915,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Opportunity cost is defined in economics as the value of the next best alternative foregone when a decision is made, i.e., the potential benefits an individual, investor, or business misses out on by choosing one option over another.",
+        "evidence_count": 0,
+        "latency": 11.581286907196045,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0347": {
+    "id": "T1000-0347",
+    "domain": "Economics",
+    "expected": "True",
+    "claim": "The Lorenz curve and Gini coefficient are standard statistical measures of income inequality.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Both the Gini coefficient and the Lorenz curve are widely recognized in economics as standard tools for measuring income inequality; the Gini coefficient quantifies dispersion while the Lorenz curve graphically represents the distribution, as documented in authoritative sources.",
+        "evidence_count": 4,
+        "latency": 11.647899866104126,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Both the Lorenz curve and the Gini coefficient are widely used statistical tools for measuring income inequality; Wikipedia entries on each explicitly describe them as standard measures of income or wealth dispersion.",
+        "evidence_count": 4,
+        "latency": 15.556250095367432,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so the truth value cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 10.616103649139404,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0348": {
+    "id": "T1000-0348",
+    "domain": "Economics",
+    "expected": "True",
+    "claim": "Monopoly power allows a single firm to set market prices above marginal cost due to barriers to entry.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Both sources 1 and 2 state that a firm with monopoly power can set its price above marginal cost because it faces a downward\u2011sloping demand curve and barriers to entry prevent competition, allowing it to earn excess profits.",
+        "evidence_count": 4,
+        "latency": 11.35992956161499,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim is supported by standard economic theory: a monopoly, by virtue of being the sole supplier and facing a downward\u2011sloping demand curve, can set a price above marginal cost to maximize profit, and barriers to entry prevent competitors from entering the market. This is explicitly stated in the Wikipedia entries on market power and monopoly.",
+        "evidence_count": 4,
+        "latency": 11.846030473709106,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim that monopoly power allows a single firm to set market prices above marginal cost due to barriers to entry.",
+        "evidence_count": 0,
+        "latency": 13.662691116333008,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0349": {
+    "id": "T1000-0349",
+    "domain": "Economics",
+    "expected": "True",
+    "claim": "Hyperinflation historically affected the Weimar Republic in 1923, rendering its currency worthless.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence discusses the Spanish financial crisis, the Great Recession, and the subprime mortgage crisis, none of which address the Weimar Republic or its 1923 hyperinflation. Without relevant evidence, the claim cannot be confirmed or refuted.",
+        "evidence_count": 3,
+        "latency": 10.81126594543457,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.1,
+        "reasoning": "The provided evidence discusses the Spanish financial crisis, the Great Recession, and the subprime mortgage crisis, none of which address the Weimar Republic or its hyperinflation in 1923. Therefore, the evidence does not support or refute the claim.",
+        "evidence_count": 3,
+        "latency": 14.81515383720398,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim.",
+        "evidence_count": 0,
+        "latency": 10.322510004043579,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0350": {
+    "id": "T1000-0350",
+    "domain": "Economics",
+    "expected": "True",
+    "claim": "Fiscal policy involves government spending and taxation to influence macroeconomic conditions.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Fiscal policy is defined as the use of government revenue collection (taxes or tax cuts) and expenditure to influence a country's economy, as stated in the authoritative Wikipedia entry on fiscal policy, and it is explicitly described as a tool to affect macroeconomic variables such as aggregate demand and economic activity.",
+        "evidence_count": 4,
+        "latency": 9.378137588500977,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Fiscal policy is defined as the use of government revenue collection (taxes or tax cuts) and expenditure to influence a country's economy, directly affecting macroeconomic conditions such as aggregate demand and economic activity (see evidence 2). Evidence 1 also confirms that fiscal policy deals with government revenue and expenditure decisions. Thus the claim is supported by authoritative sources.",
+        "evidence_count": 4,
+        "latency": 10.27780556678772,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was provided to confirm or refute the claim, so its truth cannot be determined from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 12.494152307510376,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0351": {
+    "id": "T1000-0351",
+    "domain": "Economics",
+    "expected": "True",
+    "claim": "Tariffs are taxes imposed by a government on imported goods and services.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The definition of a tariff as an import duty imposed by a government on imported goods and services is confirmed by authoritative sources, including the Wikipedia entry on Tariff (source 2) and the descriptions of U.S. tariffs during the Trump administration (sources 3 and 4).",
+        "evidence_count": 4,
+        "latency": 11.196466207504272,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The definition of a tariff (source 3) states it is a duty imposed on imports of goods, not services. Therefore the claim that tariffs are taxes on imported goods and services is incorrect.",
+        "evidence_count": 4,
+        "latency": 11.622052431106567,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim accurately defines tariffs as taxes or duties imposed by a government on imported goods. While the term is most commonly applied to goods, it can also apply to services in broader economic contexts, and the core assertion regarding the nature of tariffs as government-imposed taxes on imports is factually correct according to standard economic and legal definitions.",
+        "evidence_count": 0,
+        "latency": 4.376526355743408,
+        "is_correct": true
+      }
+    }
   }
 }
