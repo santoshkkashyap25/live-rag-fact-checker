@@ -248,6 +248,14 @@ def evaluate_single(
                     print(f"    ⏳ Rate limit encountered. Backing off {backoff:.1f}s...")
                     time.sleep(backoff)
                     continue
+                if "connection error" in r.lower():
+                    consecutive_rate_limits += 1
+                    if consecutive_rate_limits >= 4:
+                        raise DailyQuotaExhaustedError(f"Persistent connection failure: {r}")
+                    backoff = 5.0 * (attempt + 1)
+                    print(f"    ⏳ Transient connection error. Retrying in {backoff:.1f}s...")
+                    time.sleep(backoff)
+                    continue
                 if "unavailable" in r.lower() or "not found" in r.lower() or "error code" in r.lower() or "404" in r:
                     raise DailyQuotaExhaustedError(f"LLM backend unavailable: {r}")
                 break
@@ -256,6 +264,13 @@ def evaluate_single(
             except Exception as e:
                 err_msg = str(e)
                 consecutive_rate_limits += 1
+                if "connection error" in err_msg.lower():
+                    if consecutive_rate_limits >= 4:
+                        raise DailyQuotaExhaustedError(f"Persistent connection failure: {err_msg}")
+                    backoff = 5.0 * (attempt + 1)
+                    print(f"    ⏳ Transient connection error. Retrying in {backoff:.1f}s...")
+                    time.sleep(backoff)
+                    continue
                 if "per day" in err_msg.lower() or "tpd" in err_msg.lower() or "rpd" in err_msg.lower():
                     if consecutive_rate_limits >= 3:
                         raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {err_msg}")
@@ -333,6 +348,14 @@ def evaluate_single(
                 print(f"    ⏳ Rate limit in reasoning. Backing off {backoff:.1f}s...")
                 time.sleep(backoff)
                 continue
+            if "connection error" in r.lower():
+                consecutive_rate_limits += 1
+                if consecutive_rate_limits >= 4:
+                    raise DailyQuotaExhaustedError(f"Persistent connection failure: {r}")
+                backoff = 5.0 * (attempt + 1)
+                print(f"    ⏳ Transient connection error. Retrying in {backoff:.1f}s...")
+                time.sleep(backoff)
+                continue
             if "unavailable" in r.lower() or "not found" in r.lower() or "error code" in r.lower() or "404" in r:
                 raise DailyQuotaExhaustedError(f"LLM backend unavailable: {r}")
             break
@@ -341,6 +364,13 @@ def evaluate_single(
         except Exception as e:
             err_msg = str(e)
             consecutive_rate_limits += 1
+            if "connection error" in err_msg.lower():
+                if consecutive_rate_limits >= 4:
+                    raise DailyQuotaExhaustedError(f"Persistent connection failure: {err_msg}")
+                backoff = 5.0 * (attempt + 1)
+                print(f"    ⏳ Transient connection error. Retrying in {backoff:.1f}s...")
+                time.sleep(backoff)
+                continue
             if "per day" in err_msg.lower() or "tpd" in err_msg.lower() or "rpd" in err_msg.lower():
                 if consecutive_rate_limits >= 3:
                     raise DailyQuotaExhaustedError(f"Daily Groq quota exhausted: {err_msg}")
