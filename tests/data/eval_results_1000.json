@@ -1,150 +1,150 @@
 {
   "metadata": {
-    "total_claims": 253,
-    "timestamp": "2026-11-16 20:20:45",
+    "total_claims": 288,
+    "timestamp": "2026-11-16 22:30:01",
     "groq_model": "qwen/qwen3.8-27b",
     "temperature": 0.2
   },
   "summary": {
     "factguard_full": {
       "name": "FactGuard AI (BM25 + Authority + Dynamic Prompts)",
-      "n": 253,
-      "accuracy": 0.834,
+      "n": 288,
+      "accuracy": 0.8472,
       "wilson_ci_95": [
-        0.7832,
-        0.8748
+        0.8011,
+        0.8842
       ],
-      "coverage": 0.7905,
-      "selective_accuracy": 0.9,
+      "coverage": 0.7882,
+      "selective_accuracy": 0.9119,
       "false_positives": 0,
       "false_negatives": 1,
-      "p50_latency": 12.13,
-      "ece": 0.0793,
+      "p50_latency": 12.27,
+      "ece": 0.0697,
       "calibration_bins": [
         {
           "bin": "0.00 - 0.50",
-          "count": 16,
-          "avg_confidence": 0.315,
-          "empirical_accuracy": 0.438,
-          "gap": 0.122
+          "count": 19,
+          "avg_confidence": 0.307,
+          "empirical_accuracy": 0.421,
+          "gap": 0.114
         },
         {
           "bin": "0.50 - 0.70",
-          "count": 16,
+          "count": 18,
           "avg_confidence": 0.611,
-          "empirical_accuracy": 0.625,
-          "gap": 0.014
+          "empirical_accuracy": 0.667,
+          "gap": 0.056
         },
         {
           "bin": "0.70 - 0.85",
-          "count": 12,
+          "count": 13,
           "avg_confidence": 0.773,
-          "empirical_accuracy": 0.583,
-          "gap": 0.189
+          "empirical_accuracy": 0.615,
+          "gap": 0.158
         },
         {
           "bin": "0.85 - 0.95",
-          "count": 17,
-          "avg_confidence": 0.901,
-          "empirical_accuracy": 0.765,
-          "gap": 0.136
+          "count": 19,
+          "avg_confidence": 0.899,
+          "empirical_accuracy": 0.789,
+          "gap": 0.11
         },
         {
           "bin": "0.95 - 1.00",
-          "count": 192,
+          "count": 219,
           "avg_confidence": 0.976,
-          "empirical_accuracy": 0.906,
-          "gap": 0.069
+          "empirical_accuracy": 0.918,
+          "gap": 0.058
         }
       ]
     },
     "baseline_raw_search": {
       "name": "Baseline: Raw Web Search + LLM (No BM25/Trust)",
-      "n": 253,
-      "accuracy": 0.7866,
+      "n": 288,
+      "accuracy": 0.7778,
       "wilson_ci_95": [
-        0.732,
-        0.8326
+        0.7263,
+        0.822
       ],
-      "coverage": 0.747,
-      "selective_accuracy": 0.8836,
+      "coverage": 0.7222,
+      "selective_accuracy": 0.8942,
       "false_positives": 0,
       "false_negatives": 4,
-      "p50_latency": 12.01,
-      "ece": 0.0877,
+      "p50_latency": 12.16,
+      "ece": 0.0891,
       "calibration_bins": [
         {
           "bin": "0.00 - 0.50",
-          "count": 19,
-          "avg_confidence": 0.312,
-          "empirical_accuracy": 0.316,
-          "gap": 0.004
+          "count": 21,
+          "avg_confidence": 0.315,
+          "empirical_accuracy": 0.286,
+          "gap": 0.03
         },
         {
           "bin": "0.50 - 0.70",
-          "count": 24,
-          "avg_confidence": 0.565,
-          "empirical_accuracy": 0.542,
-          "gap": 0.024
+          "count": 34,
+          "avg_confidence": 0.578,
+          "empirical_accuracy": 0.5,
+          "gap": 0.078
         },
         {
           "bin": "0.70 - 0.85",
-          "count": 10,
-          "avg_confidence": 0.76,
-          "empirical_accuracy": 0.7,
-          "gap": 0.06
+          "count": 12,
+          "avg_confidence": 0.757,
+          "empirical_accuracy": 0.75,
+          "gap": 0.007
         },
         {
           "bin": "0.85 - 0.95",
-          "count": 13,
-          "avg_confidence": 0.895,
-          "empirical_accuracy": 0.692,
-          "gap": 0.203
+          "count": 15,
+          "avg_confidence": 0.889,
+          "empirical_accuracy": 0.6,
+          "gap": 0.289
         },
         {
           "bin": "0.95 - 1.00",
-          "count": 187,
-          "avg_confidence": 0.975,
-          "empirical_accuracy": 0.877,
-          "gap": 0.098
+          "count": 206,
+          "avg_confidence": 0.976,
+          "empirical_accuracy": 0.888,
+          "gap": 0.087
         }
       ]
     },
     "baseline_ungrounded": {
       "name": "Baseline: Ungrounded Zero-Shot LLM (Parametric)",
-      "n": 253,
-      "accuracy": 0.5968,
+      "n": 288,
+      "accuracy": 0.5972,
       "wilson_ci_95": [
-        0.5354,
-        0.6554
+        0.5397,
+        0.6522
       ],
-      "coverage": 0.4585,
-      "selective_accuracy": 0.931,
+      "coverage": 0.4618,
+      "selective_accuracy": 0.9323,
       "false_positives": 0,
       "false_negatives": 1,
-      "p50_latency": 12.24,
-      "ece": 0.1504,
+      "p50_latency": 12.29,
+      "ece": 0.1303,
       "calibration_bins": [
         {
           "bin": "0.00 - 0.50",
-          "count": 65,
-          "avg_confidence": 0.144,
-          "empirical_accuracy": 0.323,
-          "gap": 0.179
+          "count": 79,
+          "avg_confidence": 0.165,
+          "empirical_accuracy": 0.291,
+          "gap": 0.126
         },
         {
           "bin": "0.50 - 0.70",
-          "count": 59,
-          "avg_confidence": 0.505,
-          "empirical_accuracy": 0.169,
-          "gap": 0.336
+          "count": 61,
+          "avg_confidence": 0.507,
+          "empirical_accuracy": 0.18,
+          "gap": 0.327
         },
         {
           "bin": "0.70 - 0.85",
-          "count": 1,
-          "avg_confidence": 0.8,
+          "count": 2,
+          "avg_confidence": 0.79,
           "empirical_accuracy": 1.0,
-          "gap": 0.2
+          "gap": 0.21
         },
         {
           "bin": "0.85 - 0.95",
@@ -155,9 +155,9 @@
         },
         {
           "bin": "0.95 - 1.00",
-          "count": 126,
-          "avg_confidence": 0.98,
-          "empirical_accuracy": 0.937,
+          "count": 144,
+          "avg_confidence": 0.982,
+          "empirical_accuracy": 0.938,
           "gap": 0.044
         }
       ]
@@ -166,29 +166,29 @@
   "mcnemar_paired_tests": {
     "factguard_vs_ungrounded": {
       "contingency_matrix": {
-        "both_correct": 129,
-        "model_a_only": 82,
-        "model_b_only": 22,
+        "both_correct": 148,
+        "model_a_only": 96,
+        "model_b_only": 24,
         "both_wrong": 20
       },
-      "discordant_pairs": 104,
-      "chi2": 33.4712,
+      "discordant_pairs": 120,
+      "chi2": 42.0083,
       "p_value": 0.0,
       "statistically_significant_05": true,
       "statistically_significant_01": true
     },
     "factguard_vs_raw_search": {
       "contingency_matrix": {
-        "both_correct": 190,
-        "model_a_only": 21,
+        "both_correct": 215,
+        "model_a_only": 29,
         "model_b_only": 9,
-        "both_wrong": 33
+        "both_wrong": 35
       },
-      "discordant_pairs": 30,
-      "chi2": 4.0333,
-      "p_value": 0.04461,
+      "discordant_pairs": 38,
+      "chi2": 9.5,
+      "p_value": 0.002055,
       "statistically_significant_05": true,
-      "statistically_significant_01": false
+      "statistically_significant_01": true
     }
   }
 }

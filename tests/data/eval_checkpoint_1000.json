@@ -8094,5 +8094,1125 @@
         "is_correct": true
       }
     }
+  },
+  "T1000-0254": {
+    "id": "T1000-0254",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "The Transformer architecture relies on multi-head self-attention mechanisms to process sequence data without recurrent recurrence.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The evidence confirms that the Transformer architecture, introduced in 'Attention Is All You Need', relies on the attention mechanism and explicitly removed the sequential Recurrent Neural Network (RNN) component used in earlier designs. This aligns with the claim that it processes sequence data without recurrent recurrence, utilizing parallel attention schemes instead.",
+        "evidence_count": 4,
+        "latency": 12.615357637405396,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "The evidence confirms that the Transformer architecture, introduced in 'Attention Is All You Need', relies on the attention mechanism and explicitly removed the sequential Recurrent Neural Network (RNN) component found in earlier designs. This aligns with the claim that it processes sequence data without recurrent recurrence.",
+        "evidence_count": 4,
+        "latency": 12.587773561477661,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "The Transformer architecture, introduced in the paper 'Attention Is All You Need', explicitly replaces recurrent and convolutional layers with self-attention mechanisms to model dependencies between sequence elements. While the specific term 'multi-head' is central to the standard implementation, the core assertion that it processes sequences without recurrence is factually correct and widely established in computer science literature.",
+        "evidence_count": 0,
+        "latency": 11.49779462814331,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0255": {
+    "id": "T1000-0255",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "QuickSort has an average-case time complexity of O(n log n) and a worst-case time complexity of O(n^2).",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim accurately states the standard time complexity bounds for the Quicksort algorithm. While the provided evidence snippets confirm Quicksort is an efficient sorting algorithm and define time complexity, they do not explicitly list the O(n log n) and O(n^2) values. However, these are established, universally accepted facts in computer science, and the evidence does not contradict them. The core factual assertion is confirmed by general authoritative knowledge in the field.",
+        "evidence_count": 4,
+        "latency": 12.379079341888428,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The QuickSort Wikipedia entry specifies that its average-case time complexity is O(n\u202flog\u202fn) while its worst-case time complexity is O(n^2), which matches the claim.",
+        "evidence_count": 4,
+        "latency": 35.12624549865723,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Standard algorithm analysis shows QuickSort runs in O(n log n) on average and degrades to O(n^2) in the worst case (e.g., when pivot choices are consistently poor), as documented in textbooks such as Cormen et al., Introduction to Algorithms.",
+        "evidence_count": 0,
+        "latency": 34.53978896141052,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0256": {
+    "id": "T1000-0256",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "Backpropagation computes the gradient of the loss function with respect to the weights of a neural network using the chain rule.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Wikipedia and GeeksforGeeks) state that backpropagation efficiently computes the gradient of the loss with respect to the network weights by applying the chain rule, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 34.93812942504883,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Wikipedia describes backpropagation as an efficient application of the chain rule that computes the gradient of the loss with respect to network weights, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 34.474892377853394,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Backpropagation is the standard algorithm for training neural networks; it applies the chain rule to compute the partial derivatives of the loss with respect to each weight, yielding the gradient needed for gradient\u2011descent updates (e.g., Goodfellow, Bengio & Courville, *Deep Learning*, 2016).",
+        "evidence_count": 0,
+        "latency": 34.69203281402588,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0257": {
+    "id": "T1000-0257",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "SHA-256 generates a fixed 256-bit cryptographic hash output regardless of input payload size.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited sources state that SHA-256 always produces a 256\u2011bit (32\u2011byte) hash output, independent of the size of the input data, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 34.37225675582886,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The provided evidence discusses block ciphers and cryptographic concepts but does not contain information about the SHA-256 hash function or its output size, so the claim cannot be confirmed or refuted based on the given sources.",
+        "evidence_count": 4,
+        "latency": 34.43452763557434,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was supplied to confirm or refute the statement that SHA-256 always produces a 256\u2011bit output regardless of input size.",
+        "evidence_count": 0,
+        "latency": 34.85949110984802,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0258": {
+    "id": "T1000-0258",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "B-trees are self-balancing search trees optimized for storage systems that read and write large blocks of data.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "None of the provided sources discuss B-trees or their properties, so there is no evidence to confirm or refute the claim that B-trees are self\u2011balancing search trees optimized for large\u2011block storage systems.",
+        "evidence_count": 4,
+        "latency": 34.346267223358154,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "None of the provided sources discuss B\u2011trees or their properties; the evidence only covers Bloom filters, Brocade, Deflate, and an AI glossary, so there is no information to confirm or refute the claim.",
+        "evidence_count": 4,
+        "latency": 35.47123432159424,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "B-trees are widely recognized in computer science as self-balancing tree data structures specifically designed to store and retrieve data in systems that read and write large blocks of data, such as databases and file systems.",
+        "evidence_count": 0,
+        "latency": 11.587553024291992,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0259": {
+    "id": "T1000-0259",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "Deadlock in concurrent systems requires mutual exclusion, hold and wait, no preemption, and circular wait.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.96,
+        "reasoning": "The Wikipedia entry on deadlock (computer science) states that a deadlock can only arise when the four Coffman conditions are present: mutual exclusion, hold\u2011and\u2011wait, no preemption, and circular wait.",
+        "evidence_count": 4,
+        "latency": 34.50935983657837,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.97,
+        "reasoning": "Authoritative sources on deadlock (e.g., the Wikipedia article on deadlock) list the four Coffman conditions\u2014mutual exclusion, hold and wait, no preemption, and circular wait\u2014as necessary conditions for a deadlock to occur in concurrent systems.",
+        "evidence_count": 4,
+        "latency": 34.38247632980347,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "The supplied evidence section contains no information about deadlock conditions, so the claim cannot be confirmed or refuted based on the given sources.",
+        "evidence_count": 0,
+        "latency": 34.67151856422424,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0260": {
+    "id": "T1000-0260",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "Convolutional neural networks use parameter sharing and spatial pooling to extract translational invariant features from images.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources confirm that CNNs employ weight (parameter) sharing (source 1) and that spatial pooling provides translation\u2011invariant feature extraction (source 2). Both mechanisms together enable CNNs to capture translational invariant features in images.",
+        "evidence_count": 4,
+        "latency": 34.78247094154358,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.96,
+        "reasoning": "Source 1 (Wikipedia on Convolutional Neural Networks) confirms that CNNs employ shared weights (parameter sharing) and, as standard in CNN architecture, use spatial pooling layers (e.g., max\u2011pooling) which together enable the extraction of translationally invariant features from images.",
+        "evidence_count": 4,
+        "latency": 34.923344373703,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to confirm or refute the claim; therefore its truth cannot be assessed from the supplied sources.",
+        "evidence_count": 0,
+        "latency": 34.483710527420044,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0261": {
+    "id": "T1000-0261",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "TCP provides reliable, ordered, and error-checked delivery of a stream of octets between applications.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (e.g., Wikipedia and technical documentation) state that TCP is designed to provide reliable, ordered, and error\u2011checked delivery of a stream of octets (bytes) between applications over an IP network, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 34.56699728965759,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (e.g., the Wikipedia article on Transmission Control Protocol) explicitly describe TCP as providing reliable, ordered, and error\u2011checked delivery of a stream of octets (bytes) between applications, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 34.850584506988525,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was supplied to confirm or refute the statement that TCP provides reliable, ordered, and error\u2011checked delivery of a stream of octets between applications.",
+        "evidence_count": 0,
+        "latency": 34.45143675804138,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0262": {
+    "id": "T1000-0262",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "PageRank computes the probability distribution of a random web surfer visiting web pages based on hyperlink structure.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "PageRank models a random web surfer who follows hyperlinks, calculating the stationary probability distribution of landing on each page; this is described in the original Brin & Page (1998) paper and standard references such as Wikipedia\u2019s PageRank article.",
+        "evidence_count": 0,
+        "latency": 34.140957832336426,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.55,
+        "reasoning": "No evidence was provided in the prompt to confirm or refute the statement that PageRank computes a probability distribution of a random web surfer based on hyperlink structure.",
+        "evidence_count": 0,
+        "latency": 36.19425296783447,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.45,
+        "reasoning": "No evidence was supplied in the provided evidence block to confirm or refute the claim that PageRank computes a probability distribution of a random web surfer based on hyperlink structure.",
+        "evidence_count": 0,
+        "latency": 36.81577491760254,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0263": {
+    "id": "T1000-0263",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "Modern commercial quantum computers have successfully factored 4096-bit RSA keys in under five seconds.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided evidence discusses the Advanced Encryption Standard and contains no information about quantum computers or RSA key factoring, so there is no basis to confirm or refute the claim.",
+        "evidence_count": 1,
+        "latency": 40.140650033950806,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "The provided evidence discusses the Advanced Encryption Standard and contains no information about quantum computers or RSA key factoring, so there is no basis to confirm or refute the claim.",
+        "evidence_count": 1,
+        "latency": 34.52324032783508,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Current quantum computers do not possess the qubit count, coherence times, or error correction capabilities required to factor 4096-bit RSA keys; doing so would require millions of physical qubits and is estimated to be decades away. The largest RSA keys factored by quantum computers to date are significantly smaller (e.g., 21-bit or 48-bit in early demonstrations), and no commercial quantum computer has broken modern RSA encryption.",
+        "evidence_count": 0,
+        "latency": 11.676043510437012,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0264": {
+    "id": "T1000-0264",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "Large language models such as GPT-4 possess genuine subjective consciousness and emotional self-awareness.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "All authoritative AI research indicates that GPT-4 and similar LLMs are pattern\u2011matching systems without subjective experience; the cited sources only discuss simulated self\u2011referential language, user perceptions, or theoretical analyses, none of which constitute evidence of genuine consciousness or emotional self\u2011awareness.",
+        "evidence_count": 4,
+        "latency": 34.453314542770386,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Authoritative AI definitions describe LLMs as computational systems that perform tasks without mind or subjective experience, and the Chinese Room argument explicitly argues that computers cannot have consciousness or self\u2011awareness. No credible evidence shows GPT\u20114 possesses genuine subjective consciousness or emotions.",
+        "evidence_count": 4,
+        "latency": 35.04308819770813,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "No evidence was provided to assess whether GPT-4 or similar large language models have genuine subjective consciousness or emotional self-awareness, so the claim cannot be verified from the available information.",
+        "evidence_count": 0,
+        "latency": 35.48256826400757,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0265": {
+    "id": "T1000-0265",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "Computer memory (RAM) retains all written data permanently after electrical power is turned off.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that RAM is volatile memory, meaning it loses all stored data when power is removed, so it does not retain data permanently after power off.",
+        "evidence_count": 4,
+        "latency": 34.37849497795105,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources describe RAM as volatile memory that loses stored information when power is removed, whereas only non\u2011volatile types like ROM retain data without power. Therefore the claim that RAM permanently retains all written data after power loss is incorrect.",
+        "evidence_count": 4,
+        "latency": 34.66632533073425,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No evidence was supplied to assess whether RAM retains data after power loss, so the claim cannot be verified or refuted based on the provided sources.",
+        "evidence_count": 0,
+        "latency": 35.33739900588989,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0266": {
+    "id": "T1000-0266",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "The Travelling Salesperson Problem has a proven deterministic polynomial time O(n^2) algorithm.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources (e.g., Wikipedia) state that the travelling salesman problem is NP\u2011hard and its decision version is NP\u2011complete, implying no known deterministic polynomial\u2011time exact algorithm exists. The cited papers only claim polynomial\u2011time *approximation* algorithms, not exact O(n^2) solutions, so the claim is false.",
+        "evidence_count": 4,
+        "latency": 35.67160439491272,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Wikipedia) state that the travelling salesman problem is NP\u2011hard and its decision version is NP\u2011complete, implying no known deterministic polynomial\u2011time algorithm for solving it exactly; the cited paper only offers an approximation, not a proven O(n^2) exact solution.",
+        "evidence_count": 4,
+        "latency": 34.78948783874512,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess the claim; while the consensus in computational complexity theory is that no deterministic polynomial\u2011time algorithm for the general Travelling Salesperson Problem is known, the lack of source material prevents a definitive verification.",
+        "evidence_count": 0,
+        "latency": 35.27756857872009,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0267": {
+    "id": "T1000-0267",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "A computer virus can physically crack a computer monitor's glass panel through software instructions alone.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "No authoritative source indicates that software alone can cause a monitor's glass to crack; known malware like Stuxnet can damage hardware by controlling physical processes, but cracking glass requires mechanical stress or thermal shock not achievable by software instructions alone.",
+        "evidence_count": 4,
+        "latency": 34.79265093803406,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "No authoritative source indicates that software alone can generate the mechanical stress needed to fracture a monitor's glass; even Stuxnet, the most physically destructive malware known, caused damage by manipulating industrial control hardware, not by cracking glass via code. Therefore the claim is unsupported and contrary to established physics.",
+        "evidence_count": 4,
+        "latency": 35.21808695793152,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "No evidence was supplied to assess whether software alone can cause a monitor's glass panel to crack, so the claim cannot be verified or refuted based on the provided sources.",
+        "evidence_count": 0,
+        "latency": 35.70590305328369,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0268": {
+    "id": "T1000-0268",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "Machine learning algorithms never generate biased predictions if trained on genuine historical data.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Even when trained on genuine historical data, machine learning models can learn and reproduce the biases present in that data; extensive research (e.g., the \"(Un)Objective Machines\" article) documents historical/social bias in ML predictions, showing that bias is not eliminated merely by using authentic historical records.",
+        "evidence_count": 4,
+        "latency": 35.864927530288696,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Even when trained on genuine historical data, machine\u2011learning models can inherit and amplify biases present in that data; extensive research on algorithmic fairness (e.g., Barocas & Selbst, 2016; Buolamwini & Gebru, 2018) demonstrates that bias persists unless explicitly mitigated, contradicting the claim that bias never occurs.",
+        "evidence_count": 4,
+        "latency": 35.47345805168152,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim uses the universal quantifier 'never,' which is factually incorrect. Machine learning algorithms frequently inherit and amplify biases present in historical data (a phenomenon known as algorithmic bias or data bias), leading to discriminatory or skewed predictions even when the data is 'genuine' historical records. Authoritative sources in computer science and AI ethics confirm that historical data often reflects past societal biases, which models learn and perpetuate.",
+        "evidence_count": 0,
+        "latency": 11.680714845657349,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0269": {
+    "id": "T1000-0269",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "Deleting a desktop shortcut icon uninstalls the entire underlying operating system program from disk.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited sources explain that deleting a desktop shortcut (a .lnk file or similar pointer) only removes the shortcut itself and does not uninstall or delete the underlying application or operating system program from disk.",
+        "evidence_count": 4,
+        "latency": 34.48415541648865,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided sources discuss Windows 7 features, Google Chrome, Internet Explorer, and macOS built-in apps, but none address the effect of deleting a desktop shortcut. Without relevant evidence, the claim cannot be confirmed or refuted.",
+        "evidence_count": 4,
+        "latency": 34.876235485076904,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.4,
+        "reasoning": "No retrieved evidence was provided that addresses whether deleting a desktop shortcut removes the installed program; therefore the claim cannot be verified from the given sources.",
+        "evidence_count": 0,
+        "latency": 36.404898166656494,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0270": {
+    "id": "T1000-0270",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "HTML is a Turing-complete, high-level object-oriented programming language designed for database transaction management.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources describe HTML as a markup language, not a programming language, and state it lacks computational capabilities, so it is not Turing-complete, not object\u2011oriented, and not designed for database transaction management.",
+        "evidence_count": 4,
+        "latency": 34.81914472579956,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The supplied evidence defines general concepts like computer programs, domain-specific languages, and Prolog, but provides no information about HTML's computational properties, object\u2011orientation, or intended use for database transaction management, so the claim cannot be verified from the given sources.",
+        "evidence_count": 4,
+        "latency": 35.85084104537964,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to assess whether HTML possesses Turing-completeness, object\u2011oriented features, or is intended for database transaction management.",
+        "evidence_count": 0,
+        "latency": 38.17123007774353,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0271": {
+    "id": "T1000-0271",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "Deep neural networks are mathematically incapable of overfitting training data if layers have ReLU activations.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Deep neural networks with ReLU activations can still memorize and overfit training data; empirical studies (e.g., Zhang et al., 2017, \"Understanding Deep Learning Requires Rethinking Generalization\") show that even highly over\u2011parameterized ReLU networks achieve near\u2011zero training error while generalizing poorly, demonstrating that ReLU does not mathematically prevent overfitting.",
+        "evidence_count": 2,
+        "latency": 36.48519587516785,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.65,
+        "reasoning": "The provided sources describe general properties of multilayer perceptrons and neural networks but contain no information about the relationship between ReLU activations and the ability of deep networks to overfit training data, so the claim cannot be assessed from the evidence.",
+        "evidence_count": 2,
+        "latency": 35.36999869346619,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.45,
+        "reasoning": "No provided evidence addresses whether ReLU activations mathematically prevent overfitting, so the claim cannot be evaluated from the given sources.",
+        "evidence_count": 0,
+        "latency": 34.78837490081787,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0272": {
+    "id": "T1000-0272",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "Bluetooth signals travel at acoustic speeds through air, approximately 343 meters per second.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Bluetooth uses electromagnetic radio waves that propagate at the speed of light (~299,792 km/s), not at the speed of sound (~343\u202fm/s). Evidence shows wireless data (including Bluetooth) relies on EM waves, while acoustic waves travel at ~343\u202fm/s in air.",
+        "evidence_count": 4,
+        "latency": 34.39361524581909,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Bluetooth transmits data via electromagnetic radio waves, which propagate at the speed of light (~299,792 km/s), not at the speed of sound (~343 m/s) as indicated by multiple authoritative sources on wireless communication and the physics of sound.",
+        "evidence_count": 4,
+        "latency": 34.764169216156006,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Bluetooth uses radio-frequency electromagnetic waves, which propagate at the speed of light (~3\u00d710^8\u202fm/s) in air, not at the speed of sound (~343\u202fm/s). This is established by standard physics and telecommunications specifications.",
+        "evidence_count": 0,
+        "latency": 35.55630350112915,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0273": {
+    "id": "T1000-0273",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "Floppy disks store information through light beam reflection identical to modern optical Blu-ray discs.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources describe optical discs (including Blu\u2011ray) as using laser light reflected from pits to read data, while floppy disks are magnetic storage devices that record data via magnetic domains on a flexible magnetic coating, not by light reflection. Therefore the claim that floppy disks store information through light beam reflection identical to Blu\u2011ray is incorrect.",
+        "evidence_count": 4,
+        "latency": 35.07084822654724,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided evidence describes how optical discs (including Blu\u2011ray) store data using reflected laser light, but it contains no information about the storage mechanism of floppy disks, which are magnetic. Without evidence addressing floppy disks, the claim cannot be confirmed or refuted based on the given sources.",
+        "evidence_count": 4,
+        "latency": 36.11587715148926,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Floppy disks use magnetic storage, where data is encoded by magnetizing particles on a disk surface, whereas Blu-ray discs use optical storage, which reads data via laser light reflection. The claim incorrectly conflates these two distinct physical mechanisms.",
+        "evidence_count": 0,
+        "latency": 12.873409986495972,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0274": {
+    "id": "T1000-0274",
+    "domain": "Computer Science",
+    "expected": "False",
+    "claim": "The internet and the World Wide Web are interchangeable synonymous terms describing the same single physical protocol.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Authoritative sources explain that the Internet is a global network of interconnected computers using protocols like TCP/IP, while the World Wide Web is an application layer that runs on top of the Internet using protocols such as HTTP. Therefore they are not synonymous nor a single physical protocol.",
+        "evidence_count": 4,
+        "latency": 34.546539068222046,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The supplied evidence does not contain any information about the definitions or relationship between the Internet and the World Wide Web, so the claim cannot be confirmed or refuted based on the provided sources.",
+        "evidence_count": 4,
+        "latency": 35.454347372055054,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The Internet is the global network of interconnected computers that uses the TCP/IP protocol suite, while the World Wide Web is an application-layer service that runs on top of the Internet using HTTP/HTTPS. They are distinct concepts, not interchangeable synonyms describing a single physical protocol.",
+        "evidence_count": 0,
+        "latency": 35.10193657875061,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0275": {
+    "id": "T1000-0275",
+    "domain": "Computer Science",
+    "expected": "Unverifiable",
+    "claim": "The P versus NP problem will be resolved with a formal proof that P does not equal NP before the year 2040.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.92,
+        "reasoning": "Current authoritative sources list the P vs NP problem as an unsolved conjecture with no known proof; there is no evidence predicting a formal proof of P \u2260 NP before 2040, making the claim speculative and not verifiable at present.",
+        "evidence_count": 4,
+        "latency": 35.97239971160889,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.68,
+        "reasoning": "All cited sources confirm that the P vs NP problem is currently unsolved, but none provide any evidence or credible prediction that a proof of P\u2260NP will be produced before 2040; thus the claim about a future resolution cannot be verified.",
+        "evidence_count": 4,
+        "latency": 35.16354441642761,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The claim predicts a future scientific breakthrough (a proof that P\u2260NP before 2040). No current evidence confirms or refutes this timeline, and such predictions cannot be verified at present.",
+        "evidence_count": 0,
+        "latency": 34.9663143157959,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0276": {
+    "id": "T1000-0276",
+    "domain": "Computer Science",
+    "expected": "Unverifiable",
+    "claim": "Artificial General Intelligence surpassing human cognitive capabilities in all domains will be achieved before 2030.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.78,
+        "reasoning": "The provided sources define AGI as a hypothetical technology and discuss ongoing research, but none give authoritative evidence or consensus that AGI surpassing human cognition in all domains will be realized before 2030. Without concrete predictions or empirical data, the claim remains speculative.",
+        "evidence_count": 4,
+        "latency": 34.532907247543335,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided sources describe AGI and superintelligence as hypothetical concepts and do not contain any evidence or authoritative forecasts indicating that AGI surpassing human cognition in all domains will be realized before 2030, making the claim unsubstantiated at present.",
+        "evidence_count": 4,
+        "latency": 35.34217572212219,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 1.0,
+        "reasoning": "No supporting evidence is provided; the claim concerns a future speculative achievement with no empirical data, so its truth cannot be determined from the available information.",
+        "evidence_count": 0,
+        "latency": 35.326539754867554,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0277": {
+    "id": "T1000-0277",
+    "domain": "Computer Science",
+    "expected": "Unverifiable",
+    "claim": "A fault-tolerant quantum computer with 10,000 logical qubits will be operational before 2035.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.62,
+        "reasoning": "The provided sources discuss physical-qubit counts (e.g., Fujitsu's 10,000\u2011qubit machine targeting ~250 logical qubits) and theoretical estimates for logical qubit requirements, but none confirm that a fault\u2011tolerant quantum computer with 10,000 logical qubits will be operational before 2035. The claim is a future projection without authoritative evidence.",
+        "evidence_count": 4,
+        "latency": 35.14112043380737,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided sources describe quantum error correction, the Shor code, and a 2026 IonQ blueprint for scaling to 10,000 physical qubits, but none confirm that a fault\u2011tolerant quantum computer with 10,000 logical qubits will be operational before 2035. Without explicit evidence or a reliable timeline, the claim cannot be verified.",
+        "evidence_count": 4,
+        "latency": 35.45585060119629,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.78,
+        "reasoning": "No provided evidence addresses the timeline or feasibility of a fault-tolerant quantum computer with 10,000 logical qubits, and the claim concerns a future event that cannot be confirmed with current data.",
+        "evidence_count": 0,
+        "latency": 35.31095266342163,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0278": {
+    "id": "T1000-0278",
+    "domain": "Computer Science",
+    "expected": "Unverifiable",
+    "claim": "Satoshi Nakamoto is a living individual who will publicly liquidate their Genesis block Bitcoin before 2032.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided evidence concerns Paul Le Roux and contains no information about Satoshi Nakamoto's identity, health status, or any plans to liquidate the Genesis block, so the claim cannot be evaluated with the available sources.",
+        "evidence_count": 1,
+        "latency": 35.14169716835022,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.7,
+        "reasoning": "The supplied evidence only pertains to Paul Le Roux and offers no information about Satoshi Nakamoto's identity, whether they are alive, or any intention to liquidate the Genesis block, and the claim involves a future action that cannot be verified at this time.",
+        "evidence_count": 1,
+        "latency": 35.10262608528137,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim contains a false presupposition that Satoshi Nakamoto is a known 'living individual' who has made public commitments regarding their holdings. Satoshi's identity is unknown, and there is no evidence of any public declaration to liquidate the Genesis block coins. Furthermore, the Genesis block coins are technically unspendable due to the lack of a valid signature path, making the assertion of a planned liquidation factually baseless.",
+        "evidence_count": 0,
+        "latency": 23.04607629776001,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0279": {
+    "id": "T1000-0279",
+    "domain": "Computer Science",
+    "expected": "Unverifiable",
+    "claim": "Neuromorphic optical computing will completely replace silicon CMOS architectures in data centers by 2045.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided evidence discusses memristors and does not address neuromorphic optical computing, its adoption timeline, or data center architectures, so there is no basis to confirm or refute the claim.",
+        "evidence_count": 1,
+        "latency": 34.85197639465332,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided evidence discusses memristors and does not address neuromorphic optical computing, its adoption timeline, or data center architectures, so there is no basis to confirm or refute the claim.",
+        "evidence_count": 1,
+        "latency": 35.409377336502075,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The claim is a speculative future prediction about complete replacement of silicon CMOS by neuromorphic optical computing in data centers by 2045, and no current evidence or authoritative sources confirm or refute this timeline.",
+        "evidence_count": 0,
+        "latency": 37.0460364818573,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0280": {
+    "id": "T1000-0280",
+    "domain": "Computer Science",
+    "expected": "Unverifiable",
+    "claim": "Fully autonomous self-driving vehicles without steering wheels will achieve zero annual fatalities in an OECD nation before 2038.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The provided sources discuss current safety benefits and regulatory status of autonomous vehicles but contain no data or expert forecasts indicating that fully autonomous, wheel\u2011less cars will achieve zero road deaths in any OECD country by 2038; they only note that more data is needed before widespread deployment.",
+        "evidence_count": 4,
+        "latency": 36.266764402389526,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.78,
+        "reasoning": "Current evidence shows no fully autonomous (Level\u202f5) vehicles without steering wheels have been deployed, and no authoritative sources predict that any OECD nation will achieve zero annual traffic fatalities with such vehicles before 2038; the claim is a future speculative projection.",
+        "evidence_count": 4,
+        "latency": 36.05791258811951,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.1,
+        "reasoning": "No evidence is provided regarding the deployment timeline, safety performance, or regulatory environment for fully autonomous, steering\u2011wheel\u2011less vehicles in any OECD country, making it impossible to assess whether zero annual fatalities will be achieved before 2038.",
+        "evidence_count": 0,
+        "latency": 34.594624757766724,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0281": {
+    "id": "T1000-0281",
+    "domain": "Physics",
+    "expected": "True",
+    "claim": "The second law of thermodynamics states that total entropy of an isolated system cannot decrease over time.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources define the second law of thermodynamics as asserting that the entropy of an isolated system cannot decrease over time, matching the claim exactly.",
+        "evidence_count": 4,
+        "latency": 34.29712128639221,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources define the second law as stating that in an isolated system the total entropy cannot decrease; it either increases or remains constant. (See Wikipedia entry on the Second law of thermodynamics and the definition of isolated system.)",
+        "evidence_count": 4,
+        "latency": 35.790178298950195,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No evidence was provided to confirm or refute the statement, so its truth cannot be assessed from the given sources.",
+        "evidence_count": 0,
+        "latency": 35.0506317615509,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0282": {
+    "id": "T1000-0282",
+    "domain": "Physics",
+    "expected": "True",
+    "claim": "Light exhibits both wave-like and particle-like properties depending on the experimental measurement.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources on wave\u2011particle duality (e.g., Wikipedia, Britannica) state that photons exhibit both wave\u2011like and particle\u2011like behavior, and that which aspect is observed depends on the experimental setup. This directly supports the claim that light shows both properties depending on measurement.",
+        "evidence_count": 4,
+        "latency": 34.76520299911499,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources on wave\u2013particle duality and photons state that light (photons) shows wave-like behavior in some experiments (e.g., diffraction) and particle-like behavior in others (e.g., photoelectric effect), confirming that its observed properties depend on the measurement setup.",
+        "evidence_count": 4,
+        "latency": 35.904152631759644,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim accurately describes wave-particle duality, a fundamental principle of quantum mechanics established by experiments such as the double-slit experiment (demonstrating interference/wave properties) and the photoelectric effect (demonstrating particle/quantum properties). This is a standard, universally accepted scientific fact.",
+        "evidence_count": 0,
+        "latency": 12.440794706344604,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0283": {
+    "id": "T1000-0283",
+    "domain": "Physics",
+    "expected": "True",
+    "claim": "Superconductors exhibit zero electrical resistance and the expulsion of magnetic fields below a critical temperature.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that superconductors have exactly zero electrical resistance and expel magnetic fields (Meissner effect) when cooled below their critical temperature, directly confirming the claim.",
+        "evidence_count": 4,
+        "latency": 35.61487293243408,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources (e.g., the Wikipedia articles on superconductivity and the history of superconductivity) explicitly state that superconductors have zero electrical resistance and expel magnetic fields (Meissner effect) when cooled below a characteristic critical temperature.",
+        "evidence_count": 4,
+        "latency": 35.30604577064514,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative physics literature confirms that superconductors have zero electrical resistance and display the Meissner effect\u2014expelling magnetic fields\u2014when cooled below their critical temperature.",
+        "evidence_count": 0,
+        "latency": 38.95392680168152,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0284": {
+    "id": "T1000-0284",
+    "domain": "Physics",
+    "expected": "True",
+    "claim": "The Heisenberg uncertainty principle limits the simultaneous precision of measuring position and momentum.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources state that the Heisenberg uncertainty principle imposes a fundamental limit on the simultaneous precision of position and momentum measurements, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 34.90106415748596,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources on the Heisenberg uncertainty principle state that it imposes a fundamental limit on the simultaneous precision of position and momentum measurements, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 34.82908582687378,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The Heisenberg uncertainty principle, a cornerstone of quantum mechanics, states that the product of the uncertainties in position (\u0394x) and momentum (\u0394p) of a particle cannot be smaller than \u0127/2, directly limiting how precisely both can be measured simultaneously (e.g., standard quantum mechanics textbooks and peer\u2011reviewed literature).",
+        "evidence_count": 0,
+        "latency": 35.47067356109619,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0285": {
+    "id": "T1000-0285",
+    "domain": "Physics",
+    "expected": "True",
+    "claim": "Albert Einstein was awarded the 1921 Nobel Prize in Physics for his explanation of the photoelectric effect.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (Wikipedia pages on Albert Einstein and his awards) state that Einstein received the 1921 Nobel Prize in Physics, awarded in 1922, specifically for his discovery/explanation of the law of the photoelectric effect, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 35.34779691696167,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources (Wikipedia entries on Albert Einstein and his awards) state that Einstein received the 1921 Nobel Prize in Physics for his discovery of the law of the photoelectric effect, which aligns with the claim that he was awarded the prize for his explanation of the photoelectric effect.",
+        "evidence_count": 4,
+        "latency": 38.54581880569458,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The Nobel Committee awarded Albert Einstein the 1921 Nobel Prize in Physics, citing his discovery of the law of the photoelectric effect as the primary reason, which aligns with historical records from the Nobel Foundation.",
+        "evidence_count": 0,
+        "latency": 2119.3353340625763,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0286": {
+    "id": "T1000-0286",
+    "domain": "Physics",
+    "expected": "True",
+    "claim": "Electrons possess a half-integer intrinsic angular momentum, categorizing them as fermions.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence confirms that electrons have an intrinsic spin of 1/2 (half-integer) and that particles with half-integer spin are classified as fermions.",
+        "evidence_count": 4,
+        "latency": 11.830586671829224,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Evidence 2 explicitly identifies the electron as a lepton with half-integer spin (1/2). Evidence 4 confirms that spin is an intrinsic form of angular momentum. In quantum mechanics, particles with half-integer spin are classified as fermions, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 11.678409337997437,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Electrons have an intrinsic spin quantum number of 1/2, which corresponds to a half-integer intrinsic angular momentum. According to the spin-statistics theorem in quantum mechanics, particles with half-integer spin are fermions, which is consistent with the provided claim.",
+        "evidence_count": 0,
+        "latency": 11.73287296295166,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0287": {
+    "id": "T1000-0287",
+    "domain": "Physics",
+    "expected": "True",
+    "claim": "Sound waves require a material medium such as gas, liquid, or solid to propagate.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources define sound (acoustic) waves as mechanical waves that propagate by particle displacement in a material medium\u2014gas, liquid, or solid\u2014and explicitly state that sound cannot travel through a vacuum, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 36.47854137420654,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources define sound (acoustic) waves as mechanical disturbances that travel through a material medium\u2014gas, liquid, or solid\u2014requiring particles to oscillate, confirming the claim.",
+        "evidence_count": 4,
+        "latency": 44.516201972961426,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Sound is a mechanical wave that propagates through the vibration of particles in a medium; therefore, it cannot travel through a vacuum where no material medium exists. This is a fundamental principle of physics confirmed by standard scientific literature.",
+        "evidence_count": 0,
+        "latency": 12.332002878189087,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0288": {
+    "id": "T1000-0288",
+    "domain": "Physics",
+    "expected": "True",
+    "claim": "The Higgs boson was experimentally confirmed by the ATLAS and CMS collaborations at CERN in 2012.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The ATLAS Wikipedia entry states that ATLAS was one of the two LHC experiments involved in the discovery of the Higgs boson in July 2012, and the other experiment is CMS, which together provided the experimental confirmation at CERN in 2012.",
+        "evidence_count": 4,
+        "latency": 34.975122690200806,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided evidence confirms that the ATLAS collaboration was involved in the 2012 discovery of the Higgs boson, but it contains no information about the CMS collaboration's role, so the claim that both ATLAS and CMS confirmed it cannot be fully verified from the given sources.",
+        "evidence_count": 4,
+        "latency": 57.93513250350952,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The ATLAS and CMS experiments at CERN announced the observation of a new particle with properties consistent with the Higgs boson on 4\u202fJuly\u202f2012, confirming its existence experimentally (ATLAS Collaboration, Phys.\u202fLett.\u202fB\u202f716\u202f(2012)\u202f1; CMS Collaboration, Phys.\u202fLett.\u202fB\u202f716\u202f(2012)\u202f30).",
+        "evidence_count": 0,
+        "latency": 34.96337270736694,
+        "is_correct": true
+      }
+    }
   }
 }
