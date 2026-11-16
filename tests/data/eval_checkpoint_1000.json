@@ -6686,5 +6686,1413 @@
         "is_correct": true
       }
     }
+  },
+  "T1000-0210": {
+    "id": "T1000-0210",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Reading books under dim illumination causes permanent, irreversible structural damage to human eyesight.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The provided evidence is irrelevant to the claim (covering European history and an exoplanet system), but the claim itself is a well-known medical myth. Ophthalmology consensus confirms that while dim light may cause strain or fatigue, it does not cause structural or irreversible permanent vision loss; the human visual system adapts to low light without damaging the retina or other ocular tissues.",
+        "evidence_count": 2,
+        "latency": 13.888582944869995,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 1.0,
+        "reasoning": "The provided evidence discusses the history of Europe and the TRAPPIST-1 star system, containing no information regarding ophthalmology, lighting conditions, or eye health. Therefore, the claim cannot be evaluated against the given sources.",
+        "evidence_count": 2,
+        "latency": 11.508298635482788,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative ophthalmological sources, including the American Academy of Ophthalmology, confirm that reading in dim light causes eye strain and fatigue but does not lead to permanent structural damage or irreversible loss of eyesight. The claim contradicts established medical consensus regarding the safety of reading under low light conditions.",
+        "evidence_count": 0,
+        "latency": 11.6373872756958,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0211": {
+    "id": "T1000-0211",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Applying butter or grease directly onto thermal skin burns accelerates epidermal recovery.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim contradicts established medical consensus and first-aid guidelines (e.g., from the American Burn Association and Red Cross), which explicitly advise against applying butter, grease, or other home remedies to thermal burns as they can trap heat, increase infection risk, and interfere with proper medical treatment. The provided evidence is irrelevant to the medical claim, but the assertion is a known dangerous myth refuted by authoritative health sources.",
+        "evidence_count": 2,
+        "latency": 11.49491286277771,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim contradicts established medical consensus and first-aid guidelines, which explicitly advise against applying butter, grease, or other home remedies to thermal burns as they can trap heat, increase infection risk, and interfere with proper medical treatment. The provided evidence is irrelevant to the medical claim, but the assertion is a known dangerous myth refuted by authoritative health organizations.",
+        "evidence_count": 2,
+        "latency": 11.603426933288574,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Medical consensus and authoritative health agencies (such as the American Burn Association and NHS) explicitly advise against applying butter, grease, or other home remedies to thermal burns, as they can trap heat, increase the risk of infection, and interfere with proper medical assessment and treatment. The claim contradicts established first-aid protocols which recommend cooling the burn with running water and covering it with a sterile, non-adherent dressing.",
+        "evidence_count": 0,
+        "latency": 11.648254871368408,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0212": {
+    "id": "T1000-0212",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Taking high therapeutic doses of vitamin C prevents viral infection by the common cold rhinovirus.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that high doses of vitamin C prevent rhinovirus infection is a well-established medical myth. Extensive clinical trials and systematic reviews (such as those by the Cochrane Collaboration) have consistently shown that vitamin C supplementation does not significantly reduce the incidence of the common cold in the general population. While the provided evidence does not explicitly cite these specific studies, it identifies the underlying premise (orthomolecular medicine's claim that nutritional supplementation prevents disease) as being rejected by evidence-based medicine, and general medical consensus confirms that vitamin C is not a prophylactic against rhinovirus.",
+        "evidence_count": 4,
+        "latency": 14.11889362335205,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that high doses of vitamin C prevent rhinovirus infection is a well-established medical myth. Extensive clinical trials and meta-analyses (such as those by Cochrane) have consistently shown that vitamin C supplementation does not significantly reduce the incidence of the common cold in the general population, nor does it prevent viral infection. While the provided evidence does not explicitly cite these trials, it identifies orthomolecular medicine (which often promotes such high-dose supplementation claims) as 'rejected by evidence-based medicine,' supporting the conclusion that the claim is false based on scientific consensus.",
+        "evidence_count": 4,
+        "latency": 11.69615125656128,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Authoritative medical consensus, including systematic reviews by the Cochrane Collaboration, indicates that vitamin C supplementation does not significantly reduce the incidence of the common cold in the general population. While it may slightly shorten the duration of symptoms, it does not prevent viral infection by rhinovirus.",
+        "evidence_count": 0,
+        "latency": 11.530994415283203,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0213": {
+    "id": "T1000-0213",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Human blood is physically bright blue inside deoxygenated veins before contact with atmospheric oxygen.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is a well-known scientific misconception. Human blood is red in both oxygenated and deoxygenated states; it appears blue through the skin due to the way light penetrates and scatters, not because the blood itself is blue. The retrieved evidence identifies this as a common misconception, confirming the claim is false.",
+        "evidence_count": 1,
+        "latency": 11.506917715072632,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Human blood is red in both oxygenated and deoxygenated states; it appears blue through the skin due to light scattering and absorption properties of tissue, not because the blood itself is blue. The provided evidence source is a list of common scientific misconceptions, which includes the myth that deoxygenated blood is blue.",
+        "evidence_count": 1,
+        "latency": 11.535934448242188,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Human blood is red in both oxygenated and deoxygenated states; it appears blue through the skin due to the way light scatters and is absorbed by tissue, not because the blood itself is blue. Deoxygenated blood is a darker red, not bright blue.",
+        "evidence_count": 0,
+        "latency": 14.175344467163086,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0214": {
+    "id": "T1000-0214",
+    "domain": "Medicine",
+    "expected": "False",
+    "claim": "Sugar consumption causes acute attention deficit hyperactivity disorder in healthy pediatric cohorts.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that sugar consumption causes ADHD is a common myth not supported by scientific consensus. Authoritative sources define ADHD as a neurodevelopmental disorder arising from executive dysfunction and genetic/environmental factors, with no evidence linking sugar intake to the onset of the disorder in healthy children.",
+        "evidence_count": 4,
+        "latency": 12.88739013671875,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that sugar consumption causes ADHD is a common myth not supported by scientific consensus. Authoritative evidence, such as the Wikipedia article on ADHD, defines it as a neurodevelopmental disorder arising from executive dysfunction and genetic/environmental factors, with no mention of sugar as a causal agent. Furthermore, the provided evidence does not support a causal link between sugar and ADHD, and major health organizations have debunked this association.",
+        "evidence_count": 4,
+        "latency": 11.82138442993164,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Extensive scientific research and meta-analyses have consistently failed to establish a causal link between sugar consumption and the development of ADHD in children. Major health organizations, including the American Academy of Pediatrics, state that there is no evidence that sugar causes ADHD, and observed behavioral changes are often attributed to placebo effects or parental expectations rather than physiological causation.",
+        "evidence_count": 0,
+        "latency": 11.66944169998169,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0215": {
+    "id": "T1000-0215",
+    "domain": "Medicine",
+    "expected": "Unverifiable",
+    "claim": "Personalized mRNA cancer vaccines will achieve complete remission across 90 percent of solid tumors by 2035.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim makes a specific prediction about future medical outcomes (90% remission rate by 2035) which is speculative and cannot be proven or disproven by current historical or scientific evidence. The provided evidence describes the general mechanisms of cancer vaccines and immunotherapy but contains no data, projections, or consensus regarding specific efficacy rates for 2035.",
+        "evidence_count": 4,
+        "latency": 12.084131240844727,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The provided evidence defines cancer, cancer vaccines, and chemotherapy but contains no data, projections, or clinical trial results regarding the efficacy of personalized mRNA vaccines or their predicted remission rates by 2035. The claim is a specific future prediction that cannot be verified or refuted by the current static definitions provided.",
+        "evidence_count": 4,
+        "latency": 12.946229219436646,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a specific future outcome (90% complete remission rate by 2035) for a developing medical technology. As this is a speculative prediction about a future event that has not yet occurred, it cannot be factually verified or disproven by current evidence.",
+        "evidence_count": 0,
+        "latency": 11.827866077423096,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0216": {
+    "id": "T1000-0216",
+    "domain": "Medicine",
+    "expected": "Unverifiable",
+    "claim": "Whole-head human brain transplantation will be successfully accomplished with sensory restoration before 2050.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The provided evidence consists of unrelated topics (lobotomy, hair, history of medicine, and a TV show) and contains no information regarding the feasibility, timeline, or scientific consensus on whole-head human brain transplantation. Therefore, the claim cannot be verified or refuted based on the given evidence.",
+        "evidence_count": 4,
+        "latency": 12.235877513885498,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 1.0,
+        "reasoning": "The provided evidence consists of unrelated topics (hair biology, history of medicine, a TV show, and lobotomy) and contains zero information regarding the feasibility, timeline, or scientific consensus on whole-head human brain transplantation. Therefore, the claim cannot be verified or refuted based on the given evidence.",
+        "evidence_count": 4,
+        "latency": 11.883075714111328,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a specific future event (successful whole-head brain transplantation with sensory restoration) that has not yet occurred and is currently the subject of speculative scientific debate rather than established fact. While some researchers (e.g., Sergio Canavero) have proposed such procedures, the scientific consensus remains that the technical and biological hurdles are currently insurmountable, making the prediction unverifiable as a factual statement at this time.",
+        "evidence_count": 0,
+        "latency": 11.520053386688232,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0217": {
+    "id": "T1000-0217",
+    "domain": "Medicine",
+    "expected": "Unverifiable",
+    "claim": "Cryonically frozen human neurological tissue stored in liquid nitrogen can be revived without cellular loss.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts that cryonically frozen tissue can be revived without cellular loss, which contradicts established scientific consensus. Current cryobiology acknowledges that freezing causes ice crystal formation and osmotoxicity, inevitably resulting in significant cellular and structural integrity loss; furthermore, no human neurological tissue has ever been revived from a frozen state, rendering the claim a known misconception or speculative fiction rather than a verified fact. The provided source confirms death as an irreversible cessation of biological function, further undermining the possibility of full revival without loss from a deceased state.",
+        "evidence_count": 1,
+        "latency": 12.75210189819336,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Current scientific consensus holds that death is irreversible and that cryopreserved human neurological tissue cannot be revived without cellular damage; no evidence supports successful revival of such tissue after liquid\u2011nitrogen storage.",
+        "evidence_count": 1,
+        "latency": 1488.3392307758331,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Current scientific consensus and cryobiology research confirm that cryopreservation of complex human tissues, such as neurological tissue, results in significant cellular damage and loss due to ice crystal formation and osmotic stress, even with cryoprotectants. There is no evidence that human neurological tissue can be 'revived without cellular loss'; in fact, successful revival of large, complex mammalian organs without substantial cellular damage has not been achieved.",
+        "evidence_count": 0,
+        "latency": 3048.3105177879333,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0218": {
+    "id": "T1000-0218",
+    "domain": "Medicine",
+    "expected": "Unverifiable",
+    "claim": "A definitive curative eradication protocol for Alzheimer's disease will enter clinical practice before 2032.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 1.0,
+        "reasoning": "The provided evidence discusses Toxoplasmosis and is completely irrelevant to Alzheimer's disease. Furthermore, the claim is a future speculative event regarding a medical breakthrough that cannot be proven or disproven by current facts or the provided text.",
+        "evidence_count": 1,
+        "latency": 11.68179965019226,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 1.0,
+        "reasoning": "The provided evidence discusses Toxoplasmosis, a parasitic disease, and contains no information regarding Alzheimer's disease, its treatments, or clinical protocols. Therefore, the claim cannot be verified or refuted based on the given evidence.",
+        "evidence_count": 1,
+        "latency": 11.653214931488037,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a specific future event (a definitive cure entering clinical practice before 2032) that has not yet occurred. As of current scientific consensus, there is no definitive curative eradication protocol for Alzheimer's disease in clinical practice, and predicting the exact timeline for such a breakthrough is speculative. Therefore, the truth value cannot be determined with current evidence.",
+        "evidence_count": 0,
+        "latency": 13.301857709884644,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0219": {
+    "id": "T1000-0219",
+    "domain": "Medicine",
+    "expected": "Unverifiable",
+    "claim": "Universal blood substitutes manufactured from perfluorocarbons will fully replace donor blood transfusions by 2040.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a definitive future event (full replacement by 2040) that is not supported by current scientific consensus or regulatory timelines. While perfluorocarbon-based blood substitutes are under research, they have not yet achieved the efficacy, safety, or regulatory approval required to 'fully replace' donor blood, and no authoritative source predicts such a complete transition by 2040. This is a speculative prediction presented as fact, and the absolute nature of 'fully replace' makes it false in the context of current medical reality and verified projections.",
+        "evidence_count": 0,
+        "latency": 11.805641174316406,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a definitive future event (full replacement by 2040) that is not supported by current scientific consensus or regulatory timelines. While perfluorocarbon-based blood substitutes are under research, they have not yet achieved the efficacy, safety, or regulatory approval required to 'fully replace' donor blood, and no authoritative source predicts such a complete transition by 2040. This is a speculative prediction presented as fact, and the absolute nature of 'fully replace' makes it false in the context of current medical reality and verified projections.",
+        "evidence_count": 0,
+        "latency": 0.0004246234893798828,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a definitive future event (full replacement by 2040) that is not supported by current scientific consensus or regulatory timelines. While perfluorocarbon-based blood substitutes are under research, they have not yet achieved the efficacy, safety, or regulatory approval required to 'fully replace' donor blood, and no authoritative source predicts such a complete transition by 2040. This is a speculative prediction presented as fact, and the absolute nature of 'fully replace' makes it false in the context of current medical reality and verified projections.",
+        "evidence_count": 0,
+        "latency": 0.00047588348388671875,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0220": {
+    "id": "T1000-0220",
+    "domain": "Medicine",
+    "expected": "Unverifiable",
+    "claim": "Nanoscale cardiovascular cleaning agents will eliminate atherosclerotic arterial plaques in vivo by 2036.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a specific future event (by 2036) regarding the capability of a hypothetical or emerging technology ('nanoscale cardiovascular cleaning agents') to eliminate atherosclerotic plaques in vivo. As of current scientific consensus, no such technology exists that has been proven to eliminate established plaques in humans, and future technological milestones are speculative. The provided evidence is empty, offering no data to confirm or refute this future prediction.",
+        "evidence_count": 0,
+        "latency": 11.529756307601929,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a specific future event (by 2036) regarding the capability of a hypothetical or emerging technology ('nanoscale cardiovascular cleaning agents') to eliminate atherosclerotic plaques in vivo. As of current scientific consensus, no such technology exists that has been proven to eliminate established plaques in humans, and future technological milestones are speculative. The provided evidence is empty, offering no data to confirm or refute this future prediction.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a specific future event (by 2036) regarding the capability of a hypothetical or emerging technology ('nanoscale cardiovascular cleaning agents') to eliminate atherosclerotic plaques in vivo. As of current scientific consensus, no such technology exists that has been proven to eliminate established plaques in humans, and future technological milestones are speculative. The provided evidence is empty, offering no data to confirm or refute this future prediction.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0221": {
+    "id": "T1000-0221",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The Roman Republic transitioned to the Roman Empire following the rise of Augustus as the first emperor in 27 BC.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence explicitly confirms that the Roman Republic ended in 27 BC and that Octavian Augustus was the first emperor, marking the transition to the Roman Empire.",
+        "evidence_count": 4,
+        "latency": 11.524084091186523,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence explicitly confirms that the Roman Republic ended in 27 BC and that Octavian Augustus was the first emperor, marking the transition to the Roman Empire.",
+        "evidence_count": 4,
+        "latency": 11.746656656265259,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Historical consensus confirms that the Roman Republic transitioned to the Roman Empire in 27 BC when the Senate granted Octavian the title 'Augustus,' marking the beginning of the imperial period.",
+        "evidence_count": 0,
+        "latency": 11.860496282577515,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0222": {
+    "id": "T1000-0222",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The Magna Carta was signed by King John of England at Runnymede in June 1215.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The evidence confirms that the Magna Carta was sealed by King John at Runnymede on 15 June 1215. While the term 'signed' is technically imprecise (as medieval charters were sealed rather than signed), the core factual assertion regarding the person, location, and date is accurate and supported by authoritative sources.",
+        "evidence_count": 4,
+        "latency": 12.372298955917358,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The evidence confirms that Magna Carta was sealed by King John of England at Runnymede on 15 June 1215. While the term 'signed' is technically imprecise (as medieval charters were sealed rather than signed), the core factual assertion regarding the person, location, and date is fully supported by the retrieved sources.",
+        "evidence_count": 4,
+        "latency": 11.602193117141724,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "The Magna Carta was indeed sealed (commonly referred to as signed) by King John of England at Runnymede in June 1215. While the document was technically sealed rather than signed, this is a standard historical convention and the core factual assertion regarding the person, place, and date is accurate.",
+        "evidence_count": 0,
+        "latency": 12.279838562011719,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0223": {
+    "id": "T1000-0223",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The city of Constantinople fell to the Ottoman Empire led by Sultan Mehmed II in 1453.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim is a well-established historical fact: Constantinople fell to the Ottoman Empire under Sultan Mehmed II in 1453. Although the provided evidence focuses on later Ottoman figures (Mehmed IV, H\u00fcrrem Sultan, etc.) and does not explicitly mention the 1453 conquest, it does not contradict the claim. The retrieved sources confirm the existence of the Ottoman Empire and its sultans, but lack specific data on the 1453 event; however, based on general historical knowledge which the system is expected to possess for 'world-class' verification, the fact is true. The evidence provided is irrelevant to the specific date and event but does not refute it.",
+        "evidence_count": 4,
+        "latency": 12.249943017959595,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim is a well-established historical fact: Constantinople fell to the Ottoman Empire under Sultan Mehmed II in 1453. Although the provided evidence snippets discuss later Ottoman sultans (Mehmed IV, Suleiman's consort, etc.) and do not explicitly mention the 1453 conquest, they confirm the existence of the Ottoman Empire and the naming conventions of its sultans, which is consistent with the historical context. The core assertion is not contradicted by the evidence and is universally accepted as true in historical records.",
+        "evidence_count": 4,
+        "latency": 11.941276550292969,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim is historically accurate; the Ottoman Empire, under the leadership of Sultan Mehmed II, successfully besieged and captured Constantinople on May 29, 1453, marking the end of the Byzantine Empire.",
+        "evidence_count": 0,
+        "latency": 12.327187776565552,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0224": {
+    "id": "T1000-0224",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The Black Death plague of 1346 to 1353 devastated Europe, causing the death of an estimated 30 to 60 percent of the population.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim is directly supported by authoritative evidence stating that the Black Death occurred in Europe from 1346 to 1353 and resulted in the death of 30% to 60% of the European population.",
+        "evidence_count": 4,
+        "latency": 12.10958456993103,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim is directly supported by Evidence 1, which states that the Black Death occurred in Europe from 1346 to 1353 and led to the death of 'around 30% to 60% of the European population.' This matches the specific dates and mortality estimates provided in the claim.",
+        "evidence_count": 4,
+        "latency": 11.68787145614624,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "Historical consensus and demographic studies confirm that the Black Death (1347\u20131351) killed approximately 30% to 60% of Europe's population, with many sources citing a median estimate of around 50%.",
+        "evidence_count": 0,
+        "latency": 12.083094358444214,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0225": {
+    "id": "T1000-0225",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The United States Declaration of Independence was formally adopted by the Second Continental Congress in July 1776.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim is explicitly confirmed by multiple authoritative sources, including Wikipedia entries for the Declaration of Independence and Independence Day, which state that the document was adopted unanimously by the Second Continental Congress on July 4, 1776.",
+        "evidence_count": 4,
+        "latency": 11.733137845993042,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence explicitly confirms that the Declaration of Independence was adopted by the Second Continental Congress on July 4, 1776, which aligns with the claim's assertion of adoption in July 1776 by that body.",
+        "evidence_count": 4,
+        "latency": 15.675655603408813,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The United States Declaration of Independence was indeed formally adopted by the Second Continental Congress on July 4, 1776, which aligns perfectly with the claim's assertion of adoption in July 1776.",
+        "evidence_count": 0,
+        "latency": 13.89187240600586,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0226": {
+    "id": "T1000-0226",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The Berlin Wall fell on November 9, 1989, leading to the reunification of Germany.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence confirms that the Berlin Wall fell on November 9, 1989, following a premature announcement by the East German government. It further states that this event began the process of German reunification, which culminated in the re-establishment of Germany as a single sovereign state.",
+        "evidence_count": 4,
+        "latency": 12.033449649810791,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence confirms that the Berlin Wall fell on November 9, 1989, following a premature announcement by the East German government. It further states that this event marked the beginning of the process of German reunification, which culminated in 1990.",
+        "evidence_count": 4,
+        "latency": 12.175495624542236,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The Berlin Wall fell on November 9, 1989, which is a well-documented historical fact. This event was the pivotal catalyst for the reunification of Germany, which officially occurred on October 3, 1990.",
+        "evidence_count": 0,
+        "latency": 11.602495670318604,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0227": {
+    "id": "T1000-0227",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The Code of Hammurabi is one of the oldest deciphered writings of significant length in the world, dating to ancient Babylon.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The evidence confirms that Hammurabi was the King of Babylon who issued a law code (Source 1), and that cuneiform is the earliest known writing system used in Mesopotamia (Source 2). While the specific superlative 'one of the oldest deciphered writings of significant length' is not explicitly quoted in the provided snippets, it is a standard historical fact consistent with the evidence that the Code is a major, early, and deciphered cuneiform text from ancient Babylon.",
+        "evidence_count": 4,
+        "latency": 11.69935941696167,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The evidence confirms that Hammurabi was the king of Babylon (Source 3) and that his law code is a significant historical artifact written in cuneiform, the earliest known writing system (Source 2). While the specific phrase 'one of the oldest deciphered writings of significant length' is a common historical description not explicitly quoted in the provided snippets, the core facts regarding its origin in ancient Babylon and its status as a major early written legal code are supported by the context of Hammurabi's reign and the nature of cuneiform.",
+        "evidence_count": 4,
+        "latency": 12.776849746704102,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The Code of Hammurabi is widely recognized by historians and archaeologists as one of the oldest deciphered writings of significant length, dating to approximately 1754 BCE in ancient Babylon. While the evidence field is empty, this is a well-established historical fact confirmed by standard academic consensus and archaeological records.",
+        "evidence_count": 0,
+        "latency": 11.608902215957642,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0228": {
+    "id": "T1000-0228",
+    "domain": "History",
+    "expected": "True",
+    "claim": "Alexander the Great conquered the Achaemenid Persian Empire during the fourth century BC.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence confirms that the Achaemenid Empire existed until 330 BC (Source 2 and 3), which falls within the fourth century BC. Historical consensus, supported by the timeline of the empire's end in the provided sources, establishes that Alexander the Great conquered the Achaemenid Empire during this period, leading to its fall in 330 BC.",
+        "evidence_count": 4,
+        "latency": 13.607236623764038,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence confirms the Achaemenid Empire existed from 550 BC to 330 BC (Source 4) and was an ancient Iranian empire (Source 2). The conquest of this empire by Alexander the Great in 330 BC is a well-established historical fact that falls within the fourth century BC (400\u2013301 BC).",
+        "evidence_count": 4,
+        "latency": 11.861448287963867,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Historical records confirm that Alexander the Great defeated the Achaemenid Persian Empire, culminating in the death of King Darius III in 330 BC, which falls within the fourth century BC (400\u2013301 BC).",
+        "evidence_count": 0,
+        "latency": 12.197155475616455,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0229": {
+    "id": "T1000-0229",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The Gutenberg Bible was printed using movable metal type in Mainz, Germany, around 1455.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence confirms that the Gutenberg Bible was printed by Johannes Gutenberg in Mainz (present-day Germany) in the 1450s using mass-produced metal movable type, which aligns with the claim's assertion of 'around 1455'.",
+        "evidence_count": 4,
+        "latency": 11.97107982635498,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "The evidence confirms that the Gutenberg Bible was printed by Johannes Gutenberg in Mainz (present-day Germany) in the 1450s using mass-produced metal movable type. While the specific year 1455 is a widely accepted historical estimate for the completion of the first copies, the evidence supports the core assertions regarding the location, technology, and general timeframe.",
+        "evidence_count": 4,
+        "latency": 11.751120805740356,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "The Gutenberg Bible is historically established as the first major book printed using movable metal type in Europe, produced by Johannes Gutenberg in Mainz, Germany, circa 1450-1455. While the provided evidence field is empty, this is a widely accepted historical fact confirmed by authoritative sources such as the British Library and the Library of Congress.",
+        "evidence_count": 0,
+        "latency": 11.624999523162842,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0230": {
+    "id": "T1000-0230",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The Battle of Hastings took place in 1066, resulting in the Norman conquest of England.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence explicitly confirms that the Battle of Hastings was fought on 14 October 1066 and that it was a decisive Norman victory that began the Norman Conquest of England. Multiple authoritative sources, including Wikipedia entries for the Battle of Hastings and the Norman Conquest, corroborate the date and the historical outcome.",
+        "evidence_count": 4,
+        "latency": 11.984489440917969,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence explicitly confirms that the Battle of Hastings was fought on 14 October 1066 and that it was a decisive Norman victory which began the Norman Conquest of England. This is further supported by the coronation of William the Conqueror in December 1066 following the conquest.",
+        "evidence_count": 4,
+        "latency": 11.9046950340271,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The Battle of Hastings is a well-documented historical event that occurred on October 14, 1066, and its outcome led directly to the Norman conquest of England under William the Conqueror. Although no specific evidence text was provided, this is a universally accepted historical fact.",
+        "evidence_count": 0,
+        "latency": 11.884087324142456,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0231": {
+    "id": "T1000-0231",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The Rosetta Stone provided the key to deciphering ancient Egyptian hieroglyphic script.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The evidence explicitly states that the Rosetta Stone, containing parallel texts in hieroglyphic, Demotic, and Greek, was the 'key to deciphering the Egyptian scripts.' This is further supported by the context of its role in the 19th-century decipherment efforts by scholars like Champollion.",
+        "evidence_count": 4,
+        "latency": 11.538529634475708,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Evidence 4 explicitly states that the Rosetta Stone, containing parallel texts in hieroglyphic, Demotic, and Ancient Greek, was 'key to deciphering the Egyptian scripts.' This aligns with the historical consensus that the stone provided the crucial comparative data needed for Jean-Fran\u00e7ois Champollion and Thomas Young to decipher hieroglyphs, as noted in Evidence 3.",
+        "evidence_count": 4,
+        "latency": 12.287800073623657,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The Rosetta Stone is historically and scientifically recognized as the key to deciphering Egyptian hieroglyphs because it provided a parallel text in hieroglyphic, Demotic, and Greek scripts, allowing scholars like Jean-Fran\u00e7ois Champollion to unlock the language.",
+        "evidence_count": 0,
+        "latency": 12.100409746170044,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0232": {
+    "id": "T1000-0232",
+    "domain": "History",
+    "expected": "True",
+    "claim": "The United Nations was established in 1945 following the conclusion of World War II.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim is factually correct. The United Nations was established in 1945 (specifically, the UN Charter was signed in June 1945 and the organization officially came into existence on October 24, 1945) following the end of World War II, which concluded in September 1945 as confirmed by Evidence 3. Although the provided evidence snippets do not explicitly mention the UN's founding date, they confirm the timeline of WWII's conclusion, which aligns with the historical fact that the UN was founded in its immediate aftermath.",
+        "evidence_count": 4,
+        "latency": 12.728720903396606,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "The claim is factually correct. The United Nations was established in 1945, with its Charter signed in June 1945 and coming into force in October 1945, immediately following the end of World War II (which concluded in September 1945). While the provided evidence confirms the end date of WWII (Source 4) and the context of the war, it does not explicitly mention the UN's founding; however, this is a universally established historical fact that aligns with the timeline provided in the evidence.",
+        "evidence_count": 4,
+        "latency": 11.89010739326477,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The United Nations was officially established on October 24, 1945, when the UN Charter came into force, which occurred after the formal surrender of Japan in September 1945 that marked the end of World War II.",
+        "evidence_count": 0,
+        "latency": 12.084645748138428,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0233": {
+    "id": "T1000-0233",
+    "domain": "History",
+    "expected": "False",
+    "claim": "Viking warriors wore helmets adorned with large animal horns during combat raids.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim is a well-known historical myth; archaeological evidence and historical records indicate that Vikings did not wear horned helmets in combat. The provided evidence confirms that horned headpieces existed in other cultures (like Mesolithic Star Carr) and that Viking helmets (like the Benty Grange or Sutton Hoo examples, though the latter is Anglo-Saxon, it represents the era's style) were functional metal armor without horns, debunking the popular misconception.",
+        "evidence_count": 4,
+        "latency": 11.908472061157227,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim that Viking warriors wore horned helmets is a well-documented historical myth. Archaeological evidence, such as the Sutton Hoo and Benty Grange helmets, shows that actual Viking and Anglo-Saxon helmets were conical or rounded with nasal guards, but none feature horns. The 'horned helmet' image is largely a 19th-century artistic invention popularized by opera costumes (e.g., Wagner's *Der Ring des Nibelungen*) and lacks support from contemporary Viking-era sources or artifacts.",
+        "evidence_count": 4,
+        "latency": 12.027275323867798,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Historical and archaeological evidence confirms that Viking warriors did not wear horned helmets; no such artifacts have been found in Viking burial sites. The image of the horned helmet is a 19th-century theatrical invention popularized by Carl Gustaf Ehrenstr\u00f6m's costume designs for Wagner's opera 'The Ring of the Nibelung'.",
+        "evidence_count": 0,
+        "latency": 11.638757705688477,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0234": {
+    "id": "T1000-0234",
+    "domain": "History",
+    "expected": "False",
+    "claim": "Christopher Columbus intended to prove that the Earth was spherical rather than flat during his 1492 voyage.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim is a well-documented historical misconception. Evidence from Source 2 indicates that the spherical Earth model was established in the Hellenistic period and remained authoritative throughout the Middle Ages, meaning educated Europeans like Columbus already accepted the Earth was round. Source 3 confirms Columbus's actual intent was to find a westward route to Asia, not to prove the shape of the Earth.",
+        "evidence_count": 4,
+        "latency": 12.506992816925049,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that Columbus intended to prove the Earth was spherical is a common historical misconception. Evidence indicates that the sphericity of the Earth was well-established scientific consensus among educated Europeans during the Middle Ages (supported by Ptolemy's maps and earlier Greek geographers). Columbus's primary motivation, as documented in evidence 4, was to find a westward route to Asia (India, China, etc.) for trade, not to prove the shape of the Earth.",
+        "evidence_count": 4,
+        "latency": 12.183473587036133,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Historical consensus and evidence confirm that educated Europeans, including Columbus, widely accepted the Earth was spherical long before 1492. Columbus's primary motivation was to find a westward sea route to Asia, not to prove the shape of the Earth, which was not a subject of debate among scholars of his time.",
+        "evidence_count": 0,
+        "latency": 11.818358182907104,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0235": {
+    "id": "T1000-0235",
+    "domain": "History",
+    "expected": "False",
+    "claim": "Marie Antoinette uttered the phrase 'Let them eat cake' upon learning that French peasants lacked bread.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative evidence explicitly states that there is no evidence Marie Antoinette ever uttered the phrase 'Let them eat cake' (or the French equivalent 'Qu'ils mangent de la brioche'), and it is generally regarded as a journalistic clich\u00e9 or myth rather than a historical fact.",
+        "evidence_count": 3,
+        "latency": 11.665287733078003,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim is a well-known historical myth. Evidence from the 'Let them eat cake' Wikipedia article explicitly states that there is no evidence Marie Antoinette ever uttered the phrase, and it is generally regarded as a journalistic clich\u00e9. The quote is traditionally attributed to 'a great princess' but not specifically proven to be Marie Antoinette.",
+        "evidence_count": 3,
+        "latency": 11.843557357788086,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Historical consensus and primary sources confirm that Marie Antoinette never uttered the phrase 'Let them eat cake' (or the French equivalent 'Qu'ils mangent de la brioche'). The quote is a misattribution that originated from Jean-Jacques Rousseau's 1765 novel 'The Confessions,' which predated Marie Antoinette's arrival in France, and was later popularized by Voltaire and others as a caricature of aristocratic indifference.",
+        "evidence_count": 0,
+        "latency": 11.730293989181519,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0236": {
+    "id": "T1000-0236",
+    "domain": "History",
+    "expected": "False",
+    "claim": "The iron maiden was a common judicial torture device used extensively during the European Middle Ages.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Historical consensus indicates that the iron maiden was likely a 19th-century invention or hoax, not a common judicial device of the Middle Ages. The provided evidence does not support the claim and instead highlights other medieval judicial practices (Inquisition, burning), while the specific assertion about the iron maiden's widespread medieval use is a known historical myth.",
+        "evidence_count": 4,
+        "latency": 11.602195501327515,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The provided evidence contains no information regarding the iron maiden, its historical usage, or its status as a judicial torture device. The retrieved sources discuss unrelated topics such as Alexandria Ocasio-Cortez, death by burning, the Inquisition, and Aristotle's Rhetoric.",
+        "evidence_count": 4,
+        "latency": 11.649269580841064,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Historical consensus indicates that the iron maiden was not a common judicial torture device in the Middle Ages; it was likely invented in the 18th or 19th century as a theatrical prop or hoax. No contemporary medieval records describe its use in judicial proceedings, and it is widely regarded by historians as a modern fabrication rather than a historical fact.",
+        "evidence_count": 0,
+        "latency": 11.703749895095825,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0237": {
+    "id": "T1000-0237",
+    "domain": "History",
+    "expected": "False",
+    "claim": "Napoleon Bonaparte was exceptionally short compared to average French males of his historical era.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The provided evidence consists of biographical information about a painter and a philosopher, and general historical overviews of France, none of which contain data regarding Napoleon Bonaparte's height or the average height of French males in his era. Therefore, the claim cannot be verified or refuted based solely on the retrieved evidence.",
+        "evidence_count": 4,
+        "latency": 11.779748439788818,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The provided evidence discusses the general history of France, political systems, and biographies of Volney and Ingres, but contains no information regarding Napoleon Bonaparte's physical height or the average height of French males during his era. Therefore, the claim cannot be verified or refuted based solely on the retrieved text.",
+        "evidence_count": 4,
+        "latency": 11.556641817092896,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Historical records and anthropometric analyses confirm that Napoleon Bonaparte was approximately 5 feet 7 inches (1.70 m) tall, which was above the average height for French men of his era (approx. 5 feet 5 inches or 1.65 m). The claim that he was 'exceptionally short' is a well-documented historical myth stemming from the confusion between French and English units of measurement and political caricatures by his British enemies.",
+        "evidence_count": 0,
+        "latency": 11.883050441741943,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0238": {
+    "id": "T1000-0238",
+    "domain": "History",
+    "expected": "False",
+    "claim": "The Great Fire of London in 1666 claimed the lives of over one hundred thousand documented residents.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Authoritative historical sources, including the provided Wikipedia entry, state that the death toll of the Great Fire of London is generally thought to have been relatively small, with official records listing only a handful of deaths (often cited as 6-8), not over one hundred thousand. The claim of 100,000 deaths is a significant exaggeration and contradicts established historical consensus.",
+        "evidence_count": 4,
+        "latency": 11.734641313552856,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that the Great Fire of London killed over 100,000 people is a historical myth. Authoritative sources, including the provided Wikipedia entry, state that the death toll is generally thought to have been relatively small, with most historians estimating it to be zero or very few, contradicting the assertion of massive casualties.",
+        "evidence_count": 4,
+        "latency": 11.564865350723267,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Historical records and modern demographic estimates indicate that the Great Fire of London in 1666 resulted in very few, if any, direct deaths (often cited as 0-6), not over 100,000. While the fire destroyed approximately 13,000 houses and displaced around 70,000-100,000 residents, it did not claim that many lives.",
+        "evidence_count": 0,
+        "latency": 11.962829828262329,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0239": {
+    "id": "T1000-0239",
+    "domain": "History",
+    "expected": "False",
+    "claim": "Ancient Egyptians built the Great Pyramids using predominantly Hebrew slave labor as recorded in hieroglyphic stelae.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim is a well-known historical myth; archaeological and textual evidence indicates the pyramids were built by skilled Egyptian workers and conscripted laborers, not Hebrew slaves. Furthermore, no hieroglyphic stelae exist that record such an event, as the construction of the pyramids predates the biblical narrative of the Israelites in Egypt by centuries.",
+        "evidence_count": 4,
+        "latency": 11.674140930175781,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim is a well-known historical myth; archaeological and textual evidence indicates that the Great Pyramids were built by skilled Egyptian workers, not Hebrew slaves. Furthermore, the Hebrews were not present in Egypt during the construction of the Great Pyramids (c. 2560 BC), and no hieroglyphic stelae record such an event.",
+        "evidence_count": 4,
+        "latency": 11.89592719078064,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim is a historical myth; archaeological and textual evidence confirms the pyramids were built by skilled Egyptian workers and conscripted laborers, not Hebrew slaves. No hieroglyphic stelae exist that record Hebrew slave labor for pyramid construction, and the biblical narrative of Hebrew slavery in Egypt is not supported by contemporary Egyptian records regarding pyramid construction.",
+        "evidence_count": 0,
+        "latency": 11.704311609268188,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0240": {
+    "id": "T1000-0240",
+    "domain": "History",
+    "expected": "False",
+    "claim": "Julius Caesar was assassinated in the Roman Colosseum during a gladiatorial contest.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Julius Caesar was assassinated in the Theatre of Pompey (Curia of Pompey) on the Ides of March, 44 BC, not in the Colosseum. The Colosseum (Flavian Amphitheatre) was not completed until 80 AD, decades after Caesar's death, and was not used for political assassinations.",
+        "evidence_count": 4,
+        "latency": 11.804924249649048,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Julius Caesar was assassinated in the Theatre of Pompey (Curia of Pompey) on the Ides of March, 44 BC, not in the Colosseum. The Colosseum was not constructed until 70-80 AD, decades after Caesar's death, and was not used for political assassinations.",
+        "evidence_count": 4,
+        "latency": 12.908391952514648,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Julius Caesar was assassinated in the Theatre of Pompey (Curia of Pompey), not the Colosseum. Furthermore, the Colosseum was not completed until 80 AD, approximately 44 years after Caesar's death in 44 BC.",
+        "evidence_count": 0,
+        "latency": 11.43318772315979,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0241": {
+    "id": "T1000-0241",
+    "domain": "History",
+    "expected": "False",
+    "claim": "Winston Churchill personally invented the formula for penicillin in his private wartime laboratory.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is historically and scientifically false. Penicillin was discovered by Alexander Fleming in 1928 and later developed into a usable drug by Howard Florey and Ernst Boris Chain. Winston Churchill was a political leader (Prime Minister) during WWII and did not invent penicillin or possess a 'private wartime laboratory' for such scientific breakthroughs.",
+        "evidence_count": 0,
+        "latency": 12.11463737487793,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is historically and scientifically false. Penicillin was discovered by Alexander Fleming in 1928 and later developed into a usable drug by Howard Florey and Ernst Boris Chain. Winston Churchill was a political leader (Prime Minister) during WWII and did not invent penicillin or possess a 'private wartime laboratory' for such scientific breakthroughs.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The claim is historically and scientifically false. Penicillin was discovered by Alexander Fleming in 1928 and later developed into a usable drug by Howard Florey and Ernst Boris Chain. Winston Churchill was a political leader (Prime Minister) during WWII and did not invent penicillin or possess a 'private wartime laboratory' for such scientific breakthroughs.",
+        "evidence_count": 0,
+        "latency": 0.0,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0242": {
+    "id": "T1000-0242",
+    "domain": "History",
+    "expected": "False",
+    "claim": "The Boston Tea Party involved colonists dumping thousands of barrels of tea while dressed in authentic British military uniforms.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim contains a significant historical inaccuracy: the colonists did not dress in 'authentic British military uniforms' but rather disguised themselves as Mohawk Indians to remain anonymous and avoid personal reprisals. While the evidence provided does not explicitly detail the costumes, it is a well-established historical fact that contradicts the specific assertion in the claim, rendering the compound statement false.",
+        "evidence_count": 4,
+        "latency": 11.727091073989868,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim is factually incorrect regarding the attire of the participants; historical records confirm that the colonists disguised themselves as Mohawk Indians to prevent identification, not as British military personnel. Additionally, the retrieved evidence contains no information supporting the specific details of the Boston Tea Party, rendering the claim unverifiable from the provided text, but the assertion contradicts established historical facts.",
+        "evidence_count": 4,
+        "latency": 12.242640256881714,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim is false because the colonists did not dress in 'authentic British military uniforms'; historical records confirm they disguised themselves as Mohawk Indians to obscure their identities and avoid personal retribution. While the act of dumping tea (342 chests, not barrels) is factually grounded, the specific detail regarding British military uniforms is a historical inaccuracy.",
+        "evidence_count": 0,
+        "latency": 12.864277362823486,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0243": {
+    "id": "T1000-0243",
+    "domain": "History",
+    "expected": "False",
+    "claim": "Albert Einstein failed elementary school mathematics as a child before discovering relativity.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that Albert Einstein failed elementary school mathematics is a widespread myth; historical records indicate he excelled in mathematics from a young age, mastering calculus by age 15. While the provided evidence confirms Einstein's development of relativity, it does not contain specific biographical details regarding his elementary school grades, but the assertion contradicts established historical facts about his early academic performance.",
+        "evidence_count": 4,
+        "latency": 11.626641511917114,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that Albert Einstein failed elementary school mathematics is a widely debunked myth; historical records indicate he was an above-average student who mastered calculus by age 15. While the provided evidence confirms Einstein's identity and achievements, it does not contain specific biographical details regarding his elementary school grades, but the assertion contradicts established historical facts about his early academic performance.",
+        "evidence_count": 4,
+        "latency": 11.6273934841156,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim that Albert Einstein failed elementary school mathematics is a persistent myth; historical records and biographies confirm he was a strong student in mathematics, often teaching himself advanced calculus and geometry before finishing high school. While he struggled with rote memorization and social conformity in the German school system, he did not fail mathematics, and his early aptitude for math was a key factor in his later development of relativity.",
+        "evidence_count": 0,
+        "latency": 11.57188367843628,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0244": {
+    "id": "T1000-0244",
+    "domain": "History",
+    "expected": "False",
+    "claim": "The Spanish Flu pandemic of 1918 originated historically in Madrid, Spain.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative evidence explicitly states that the earliest probable cases of the 1918 flu pandemic were documented in Haskell County, Kansas, United States, not Madrid, Spain. The name 'Spanish flu' is described as misleading and is not indicative of the geographic origin.",
+        "evidence_count": 4,
+        "latency": 11.518891096115112,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim that the 1918 pandemic originated in Madrid is a historical misconception stemming from the misleading name 'Spanish flu.' Evidence from the Wikipedia article on the Spanish flu explicitly states that the earliest probable cases were documented in March 1918 in Haskell County, Kansas, United States, not Spain. The name 'Spanish flu' arose because Spain, being neutral in World War I, did not censor news of the outbreak, leading to the false perception that it originated there.",
+        "evidence_count": 4,
+        "latency": 12.221027135848999,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Historical and epidemiological evidence indicates that the 1918 influenza pandemic likely originated in the United States (specifically Kansas) or China, not Madrid. The name 'Spanish Flu' is a historical misnomer resulting from Spain's neutrality in World War I, which allowed its press to report freely on the illness while belligerent nations censored such news, creating a false impression that the disease was uniquely severe or originating in Spain.",
+        "evidence_count": 0,
+        "latency": 13.214712142944336,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0245": {
+    "id": "T1000-0245",
+    "domain": "History",
+    "expected": "Unverifiable",
+    "claim": "The Greek poet Homer was an actual single historical individual who composed both the Iliad and Odyssey verbatim.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that Homer was a single historical individual who composed the epics verbatim is a known misconception contradicted by mainstream scholarship. The evidence notes that the works are 'attributed to Homer' and that 'Homeric scholarship' is a distinct academic field dedicated to studying these topics, implying that the authorship and composition process are subjects of significant debate and analysis rather than established historical fact. The standard academic consensus (the Homeric Question) rejects the idea of a single author composing the texts verbatim in the manner described.",
+        "evidence_count": 4,
+        "latency": 11.701638221740723,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that Homer was a single historical individual who composed the epics verbatim is a widely debunked misconception in classical scholarship. The 'Homeric Question' and the oral-formulaic theory suggest that the Iliad and Odyssey are the result of long oral traditions and multiple layers of composition, rather than the verbatim work of a single author. While the provided evidence notes the epics are 'attributed to Homer,' it does not support the specific assertion of a single historical individual composing them verbatim, which contradicts the prevailing academic consensus on the oral origins of these texts.",
+        "evidence_count": 4,
+        "latency": 11.784059286117554,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Scholarly consensus holds that the authorship of the Iliad and Odyssey is a subject of the 'Homeric Question,' with no definitive evidence confirming Homer was a single historical individual who composed both works verbatim. Most modern scholars view the epics as oral traditions that were likely composed, edited, and transmitted over centuries, rather than the work of a single author writing them down in their final form.",
+        "evidence_count": 0,
+        "latency": 11.765222072601318,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0246": {
+    "id": "T1000-0246",
+    "domain": "History",
+    "expected": "Unverifiable",
+    "claim": "Alexander the Great died from intentional strychnine poisoning orchestrated by Antipater.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Historical and forensic evidence does not support the claim that Alexander the Great died from strychnine poisoning orchestrated by Antipater. While some modern theories suggest poisoning (often by natural toxins like bracken or hemlock) or disease (such as malaria or typhoid), there is no credible historical or scientific evidence linking Antipater to a strychnine plot, and strychnine was not a known poison in the 4th century BCE context of Alexander's death.",
+        "evidence_count": 0,
+        "latency": 11.565890312194824,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Historical and forensic evidence does not support the claim that Alexander the Great died from strychnine poisoning orchestrated by Antipater. While some modern theories suggest poisoning (often by natural toxins like bracken or hemlock) or disease (such as malaria or typhoid), there is no credible historical or scientific evidence linking Antipater to a strychnine plot, and strychnine was not a known poison in the 4th century BCE context of Alexander's death.",
+        "evidence_count": 0,
+        "latency": 0.0005028247833251953,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Historical and forensic evidence does not support the claim that Alexander the Great died from strychnine poisoning orchestrated by Antipater. While some modern theories suggest poisoning (often by natural toxins like bracken or hemlock) or disease (such as malaria or typhoid), there is no credible historical or scientific evidence linking Antipater to a strychnine plot, and strychnine was not a known poison in the 4th century BCE context of Alexander's death.",
+        "evidence_count": 0,
+        "latency": 0.000461578369140625,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0247": {
+    "id": "T1000-0247",
+    "domain": "History",
+    "expected": "Unverifiable",
+    "claim": "The lost city of Atlantis was based on an actual advanced Bronze Age civilization located on the island of Thera.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Authoritative sources describe Atlantis as a fictional island created by Plato as an allegory, with no evidence that it was based on a real Bronze Age civilization on Thera; the claim contradicts this consensus.",
+        "evidence_count": 4,
+        "latency": 34.74488592147827,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Authoritative sources describe Atlantis as a fictional island created by Plato for allegorical purposes, with no credible evidence linking it to a real Bronze Age civilization on Thera; thus the claim is unsupported.",
+        "evidence_count": 4,
+        "latency": 34.14796161651611,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "No retrieved evidence is provided to confirm or refute the claim that Atlantis was based on an actual Bronze Age civilization on Thera; while some scholars have hypothesized a link to the Minoan civilization, this remains speculative and not established fact.",
+        "evidence_count": 0,
+        "latency": 34.06614923477173,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0248": {
+    "id": "T1000-0248",
+    "domain": "History",
+    "expected": "Unverifiable",
+    "claim": "A secret third codicil exists in the 1939 Molotov-Ribbentrop Pact that was destroyed during the 1945 fall of Berlin.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.65,
+        "reasoning": "The provided evidence discusses the German occupation of Lithuania and does not address any secret third codicil to the 1939 Molotov\u2011Ribbentrop Pact or its alleged destruction in 1945; no authoritative source confirms or refutes the claim.",
+        "evidence_count": 1,
+        "latency": 34.48102831840515,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The provided evidence discusses the German occupation of Lithuania and does not address any alleged secret third codicil to the Molotov\u2011Ribbentrop Pact or its purported destruction in 1945, leaving the claim unsupported.",
+        "evidence_count": 1,
+        "latency": 34.101420879364014,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.2,
+        "reasoning": "No authoritative evidence is provided confirming or refuting the existence of a secret third codicil to the 1939 Molotov\u2011Ribbentrop Pact, and the claim relies on an alleged destroyed document, which cannot be verified with the available sources.",
+        "evidence_count": 0,
+        "latency": 34.51748013496399,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0249": {
+    "id": "T1000-0249",
+    "domain": "History",
+    "expected": "Unverifiable",
+    "claim": "King Arthur was based on a specific sixth-century Romano-British military leader named Artorius.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "Unverifiable",
+        "confidence": 0.3,
+        "reasoning": "The provided sources discuss Anglo-Saxon settlement and the Holy Roman Empire but contain no information about King Arthur or a sixth\u2011century Romano\u2011British leader named Artorius, so the claim cannot be confirmed or refuted.",
+        "evidence_count": 4,
+        "latency": 34.36954927444458,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.6,
+        "reasoning": "The supplied sources discuss Anglo\u2011Saxon settlement and the Holy Roman Empire but contain no information about King Arthur or a sixth\u2011century Romano\u2011British military leader named Artorius, so the claim cannot be evaluated with the given evidence.",
+        "evidence_count": 4,
+        "latency": 35.20230412483215,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "No provided evidence addresses whether a specific sixth\u2011century Romano\u2011British leader named Artorius served as the basis for the King Arthur legend; the historicity of Arthur remains speculative.",
+        "evidence_count": 0,
+        "latency": 35.16785717010498,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0250": {
+    "id": "T1000-0250",
+    "domain": "History",
+    "expected": "Unverifiable",
+    "claim": "William Shakespeare's theatrical plays were authored entirely by Edward de Vere, the 17th Earl of Oxford.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources such as the Wikipedia entries on William Shakespeare and the chronology of his plays attribute the works to Shakespeare himself, with no credible evidence that Edward de Vere authored them. The Oxfordian claim is a fringe theory not supported by mainstream scholarship, so the assertion that all Shakespearean plays were written by de Vere is false.",
+        "evidence_count": 4,
+        "latency": 35.67119765281677,
+        "is_correct": false
+      },
+      "baseline_raw_search": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Authoritative sources identify William Shakespeare (c.1564\u20111616) as the playwright of the canonical theatrical works, with no credible evidence that Edward de Vere authored them; the Oxfordian claim is a fringe theory rejected by mainstream scholarship.",
+        "evidence_count": 4,
+        "latency": 34.49433994293213,
+        "is_correct": false
+      },
+      "baseline_ungrounded": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim asserts that Edward de Vere authored Shakespeare's plays, which is a debunked conspiracy theory known as the 'Oxfordian theory.' Authoritative historical and literary consensus confirms that William Shakespeare is the author of his works, and the claim's use of 'entirely' makes it a false absolute assertion contradicted by standard historical records.",
+        "evidence_count": 0,
+        "latency": 22.916141510009766,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0251": {
+    "id": "T1000-0251",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "The Halting Problem is undecidable on classical Turing machines as proven by Alan Turing in 1936.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources confirm that the halting problem is undecidable for classical Turing machines and that Alan Turing proved this in 1936.",
+        "evidence_count": 4,
+        "latency": 34.61873817443848,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Wikipedia sources on the Entscheidungsproblem and Undecidable problem confirm that Alan Turing proved in 1936 that the halting problem cannot be decided by any classical Turing machine.",
+        "evidence_count": 4,
+        "latency": 34.32391333580017,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Alan Turing proved in his 1936 paper that no algorithm can decide for every possible program-input pair whether the program halts, establishing the halting problem as undecidable on classical Turing machines.",
+        "evidence_count": 0,
+        "latency": 34.125791788101196,
+        "is_correct": true
+      }
+    }
+  },
+  "T1000-0252": {
+    "id": "T1000-0252",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "RSA public-key cryptography relies on the practical computational difficulty of factoring large composite prime products.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.97,
+        "reasoning": "Authoritative sources on RSA state that its security is based on the integer factorization problem \u2013 the practical difficulty of factoring the large composite product of two primes. The RSA cryptosystem entry and the post\u2011quantum cryptography overview both confirm this foundation.",
+        "evidence_count": 4,
+        "latency": 35.80779314041138,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources on RSA state that its security is based on the practical difficulty of factoring the large composite number that is the product of two primes, i.e., the integer factorization problem (see RSA cryptosystem entry and post\u2011quantum cryptography overview).",
+        "evidence_count": 4,
+        "latency": 34.27833390235901,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "Unverifiable",
+        "confidence": 0.0,
+        "reasoning": "No evidence was provided to assess whether RSA's security depends on the difficulty of factoring large composite numbers.",
+        "evidence_count": 0,
+        "latency": 35.8191978931427,
+        "is_correct": false
+      }
+    }
+  },
+  "T1000-0253": {
+    "id": "T1000-0253",
+    "domain": "Computer Science",
+    "expected": "True",
+    "claim": "Dijkstra's algorithm finds the shortest path between nodes in a graph with non-negative edge weights.",
+    "evaluations": {
+      "factguard_full": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources describe Dijkstra's algorithm as a method for finding shortest paths in weighted graphs and note that it is applicable when edge weights are non\u2011negative; Johnson's algorithm explicitly reweights graphs to eliminate negative edges before applying Dijkstra, confirming the non\u2011negative requirement.",
+        "evidence_count": 4,
+        "latency": 34.45137643814087,
+        "is_correct": true
+      },
+      "baseline_raw_search": {
+        "verdict": "True",
+        "confidence": 0.96,
+        "reasoning": "Wikipedia describes Dijkstra's algorithm as an algorithm for finding the shortest paths between nodes in a weighted graph, and it is the standard algorithm used when edge weights are non\u2011negative; other algorithms (Floyd\u2013Warshall, Johnson) are cited for handling negative weights, confirming Dijkstra's applicability to non\u2011negative edge weights.",
+        "evidence_count": 4,
+        "latency": 34.70734429359436,
+        "is_correct": true
+      },
+      "baseline_ungrounded": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative algorithm textbooks and computer science references state that Dijkstra's algorithm correctly computes shortest\u2011path distances in graphs whose edge weights are non\u2011negative, as the algorithm relies on the monotonicity property of non\u2011negative costs.",
+        "evidence_count": 0,
+        "latency": 35.916778326034546,
+        "is_correct": true
+      }
+    }
   }
 }
