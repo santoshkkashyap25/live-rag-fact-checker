@@ -18,6 +18,12 @@ from typing import List, Dict, Any, Optional
 from bs4 import BeautifulSoup
 import httpx
 
+try:
+    import trafilatura
+    HAS_TRAFILATURA = True
+except ImportError:
+    HAS_TRAFILATURA = False
+
 from config import BRAVE_API_KEY
 
 logger = logging.getLogger(__name__)
@@ -293,6 +299,97 @@ class WebSearchEngine:
             pass
         return None
 
+    @staticmethod
+    def _extract_salient_passage(full_text: str, query: str, max_chars: int = 800) -> str:
+        """Find the most relevant paragraph or passage containing query keywords."""
+        paragraphs = [p.strip() for p in re.split(r'\n+', full_text) if len(p.strip()) > 40]
+        if not paragraphs:
+            clean_all = re.sub(r'\s+', ' ', full_text).strip()
+            return clean_all[:max_chars].rsplit(' ', 1)[0] + '...' if len(clean_all) > max_chars else clean_all
+
+        # Tokenize query keywords (excluding stop words)
+        q_tokens = set(re.findall(r'[a-zA-Z0-9]+', query.lower())) - {
+            "a", "an", "the", "in", "on", "at", "to", "for", "of", "and", "or",
+            "is", "are", "was", "were", "it", "this", "that", "these", "those",
+            "be", "been", "being", "have", "has", "had", "do", "does", "did",
+            "by", "with", "from", "as", "about", "into", "through", "during"
+        }
+
+        best_score = -1
+        best_p = paragraphs[0]
+
+        for p in paragraphs:
+            p_tokens = set(re.findall(r'[a-zA-Z0-9]+', p.lower()))
+            overlap = len(q_tokens.intersection(p_tokens))
+            if overlap > best_score:
+                best_score = overlap
+                best_p = p
+
+        clean_passage = re.sub(r'\s+', ' ', best_p).strip()
+        if len(clean_passage) > max_chars:
+            return clean_passage[:max_chars].rsplit(' ', 1)[0] + '...'
+        return clean_passage
+
+    async def _async_extract_article_content(
+        self,
+        client: httpx.AsyncClient,
+        url: str,
+        query: str,
+        timeout_sec: float = 1.5,
+        max_chars: int = 800
+    ) -> Optional[str]:
+        """
+        Fetch webpage HTML asynchronously and extract salient article body text.
+        Uses trafilatura if available, falling back to BeautifulSoup paragraph extraction.
+        """
+        if not url or not url.startswith("http"):
+            return None
+
+        lower_url = url.lower()
+        # Skip Wikipedia (already has introductory extracts) or non-HTML/media assets
+        if "wikipedia.org" in lower_url or any(ext in lower_url for ext in [".pdf", ".jpg", ".png", ".zip", ".mp4", "youtube.com"]):
+            return None
+
+        try:
+            resp = await client.get(url, timeout=timeout_sec, follow_redirects=True)
+            if resp.status_code != 200 or not resp.text:
+                return None
+
+            html = resp.text
+            extracted_text = None
+
+            # 1. Trafilatura Extraction
+            if HAS_TRAFILATURA:
+                try:
+                    extracted_text = trafilatura.extract(
+                        html,
+                        include_comments=False,
+                        include_tables=False,
+                        include_images=False,
+                        include_links=False,
+                        deduplicate=True
+                    )
+                except Exception:
+                    extracted_text = None
+
+            # 2. BeautifulSoup Fallback
+            if not extracted_text:
+                soup = BeautifulSoup(html, "html.parser")
+                for tag in soup(["script", "style", "nav", "header", "footer", "aside"]):
+                    tag.decompose()
+                paragraphs = [p.get_text(strip=True) for p in soup.find_all("p") if len(p.get_text(strip=True)) > 50]
+                if paragraphs:
+                    extracted_text = "\n\n".join(paragraphs)
+
+            if not extracted_text or len(extracted_text.strip()) < 80:
+                return None
+
+            # 3. Locate Salient Passage Matching Query Keywords
+            return self._extract_salient_passage(extracted_text, query, max_chars=max_chars)
+        except Exception as e:
+            logger.debug(f"Article extraction skipped for {url}: {e}")
+            return None
+
     async def async_search(self, query: str, max_results: int = 16) -> List[Dict[str, str]]:
         """
         Execute concurrent non-blocking web retrieval across Wikipedia, DuckDuckGo,
@@ -377,6 +474,24 @@ class WebSearchEngine:
                 if key and key not in seen_texts:
                     seen_texts.add(key)
                     all_results.append(item)
+
+            # 6. Deep Article Body Enrichment (Trafilatura / BeautifulSoup)
+            # Parallel fetch top non-Wikipedia URLs to enrich short snippets into full salient passages
+            external_items = [
+                item for item in all_results
+                if item.get("url") and "wikipedia.org" not in item.get("url", "").lower()
+            ][:3]
+
+            if external_items:
+                extract_tasks = [
+                    self._async_extract_article_content(client, item["url"], query)
+                    for item in external_items
+                ]
+                extracted_passages = await asyncio.gather(*extract_tasks, return_exceptions=True)
+                for item, passage in zip(external_items, extracted_passages):
+                    if isinstance(passage, str) and len(passage) > len(item.get("snippet", "")):
+                        logger.debug(f"Enriched snippet for {item.get('url')} ({len(item.get('snippet', ''))} -> {len(passage)} chars)")
+                        item["snippet"] = passage
 
         logger.info(f"Async search aggregated {len(all_results)} results for '{query}'")
         return all_results[:max_results]

@@ -311,6 +311,25 @@ class TestAPIEndpoints(unittest.TestCase):
         self.assertIn("<svg", svg_res.text)
 
 
+class TestDeepArticleExtraction(unittest.TestCase):
+    def test_extract_salient_passage(self):
+        from core.web_search import web_search
+        text = (
+            "Introduction and history of astrophysics.\n\n"
+            "Classical mechanics described orbits for centuries.\n\n"
+            "Type Ia supernovae serve as standard candles for measuring cosmological expansion rates accurately across distant galaxies.\n\n"
+            "Conclusion and future telescopes."
+        )
+        query = "Type Ia supernovae standard candles cosmological expansion"
+        passage = web_search._extract_salient_passage(text, query, max_chars=300)
+        self.assertIn("Type Ia supernovae", passage)
+        self.assertIn("standard candles", passage)
+
+    def test_trafilatura_available(self):
+        from core.web_search import HAS_TRAFILATURA
+        self.assertTrue(HAS_TRAFILATURA)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
 
