@@ -81,6 +81,7 @@ class MetricsCollector:
             'verdict_distribution': {
                 'True': sum(1 for m in recent if m.verdict == 'True'),
                 'False': sum(1 for m in recent if m.verdict == 'False'),
+                'Unsupported': sum(1 for m in recent if m.verdict == 'Unsupported'),
                 'Unverifiable': sum(1 for m in recent if m.verdict == 'Unverifiable'),
             },
             'avg_evidence_count': sum(m.num_evidence_retrieved for m in recent) / len(recent)

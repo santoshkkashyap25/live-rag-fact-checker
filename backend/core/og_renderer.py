@@ -5,8 +5,8 @@ from core.security import sanitize_secrets
 
 def render_og_svg(item: Dict[str, Any]) -> str:
     """Generate dynamic OpenGraph SVG card badge"""
-    verdict_raw = str(item.get("verdict", "Unverifiable"))
-    verdict = html.escape(verdict_raw if verdict_raw in ["True", "False", "Unverifiable"] else "Unverifiable")
+    verdict_raw = str(item.get("verdict", "Unsupported"))
+    verdict = html.escape(verdict_raw if verdict_raw in ["True", "False", "Unsupported", "Unverifiable"] else "Unsupported")
     raw_claim = sanitize_secrets(item.get("extracted_claim") or item.get("input_text") or "Verified Claim")
     claim = html.escape(raw_claim[:90])
     confidence_raw = item.get("confidence", 0.9)
@@ -16,7 +16,7 @@ def render_og_svg(item: Dict[str, Any]) -> str:
     except Exception:
         conf_pct = 90
 
-    # Color scheme based on verdict
+    # Color scheme based on 4-class taxonomy
     if verdict == "True":
         accent_color = "#22c55e"
         badge_bg = "rgba(34, 197, 94, 0.15)"
@@ -25,10 +25,14 @@ def render_og_svg(item: Dict[str, Any]) -> str:
         accent_color = "#ef4444"
         badge_bg = "rgba(239, 68, 68, 0.15)"
         badge_border = "#ef4444"
-    else:
+    elif verdict == "Unsupported":
         accent_color = "#f59e0b"
         badge_bg = "rgba(245, 158, 11, 0.15)"
         badge_border = "#f59e0b"
+    else:  # Unverifiable
+        accent_color = "#64748b"
+        badge_bg = "rgba(100, 116, 139, 0.15)"
+        badge_border = "#64748b"
 
     citations_count = len(item.get("evidence", []))
 
@@ -129,8 +133,8 @@ def render_shared_page_html(item: Dict[str, Any], share_id: str, app_url: str = 
     """Generate dynamic server-rendered HTML page with OpenGraph & Twitter Card tags"""
     raw_claim = sanitize_secrets(item.get("extracted_claim") or item.get("input_text") or "Verified Claim")
     claim = html.escape(raw_claim[:250])
-    raw_verdict = str(item.get("verdict", "Unverifiable"))
-    verdict = html.escape(raw_verdict if raw_verdict in ["True", "False", "Unverifiable"] else "Unverifiable")
+    raw_verdict = str(item.get("verdict", "Unsupported"))
+    verdict = html.escape(raw_verdict if raw_verdict in ["True", "False", "Unsupported", "Unverifiable"] else "Unsupported")
     raw_reasoning = sanitize_secrets(item.get("reasoning", "Evidence analyzed against claim."))
     reasoning = html.escape(raw_reasoning[:1000])
     confidence_raw = item.get("confidence", 0.9)
@@ -148,10 +152,14 @@ def render_shared_page_html(item: Dict[str, Any], share_id: str, app_url: str = 
         verdict_color = "#ef4444"
         badge_bg = "rgba(239, 68, 68, 0.15)"
         badge_border = "#ef4444"
-    else:
+    elif verdict == "Unsupported":
         verdict_color = "#f59e0b"
         badge_bg = "rgba(245, 158, 11, 0.15)"
         badge_border = "#f59e0b"
+    else:  # Unverifiable
+        verdict_color = "#64748b"
+        badge_bg = "rgba(100, 116, 139, 0.15)"
+        badge_border = "#64748b"
 
     engine = item.get("engine", {})
     provider_name = engine.get("provider", "LLM").upper()

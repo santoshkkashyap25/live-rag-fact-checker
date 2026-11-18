@@ -1,0 +1,226 @@
+[
+  {
+    "domain": "Cell Biology",
+    "expected": "True",
+    "benchmark": "SciFact",
+    "claim": "Telomerase reverse transcriptase synthesizes repetitive nucleotide sequences at chromosome termini.",
+    "id": "HOLDOUT-001"
+  },
+  {
+    "domain": "Cosmology",
+    "expected": "True",
+    "benchmark": "Physics Consortium",
+    "claim": "Type Ia supernovae serve as standard candles for measuring cosmological expansion rates.",
+    "id": "HOLDOUT-002"
+  },
+  {
+    "domain": "Immunology",
+    "expected": "True",
+    "benchmark": "SciFact",
+    "claim": "Mature B lymphocytes undergo somatic hypermutation within germinal centers to increase antibody affinity.",
+    "id": "HOLDOUT-003"
+  },
+  {
+    "domain": "Geophysics",
+    "expected": "True",
+    "benchmark": "USGS",
+    "claim": "The Mohorovicic discontinuity marks the boundary between Earth's crust and the upper mantle.",
+    "id": "HOLDOUT-004"
+  },
+  {
+    "domain": "Biochemistry",
+    "expected": "True",
+    "benchmark": "SciFact",
+    "claim": "The citric acid cycle takes place within the mitochondrial matrix in eukaryotic organisms.",
+    "id": "HOLDOUT-005"
+  },
+  {
+    "domain": "Genetics",
+    "expected": "True",
+    "benchmark": "SciFact",
+    "claim": "X-chromosome inactivation in female placental mammals is mediated by the non-coding RNA Xist.",
+    "id": "HOLDOUT-006"
+  },
+  {
+    "domain": "Meteorology",
+    "expected": "True",
+    "benchmark": "NOAA",
+    "claim": "The Coriolis effect deflects moving air masses to the right in the Northern Hemisphere.",
+    "id": "HOLDOUT-007"
+  },
+  {
+    "domain": "Temporal Post-Cutoff (2024)",
+    "expected": "True",
+    "benchmark": "NASA 2024",
+    "claim": "NASA's Europa Clipper spacecraft was successfully launched aboard a Falcon Heavy rocket in October 2024.",
+    "id": "HOLDOUT-008"
+  },
+  {
+    "domain": "Temporal Post-Cutoff (2024)",
+    "expected": "True",
+    "benchmark": "Nobel 2024",
+    "claim": "The 2024 Nobel Prize in Chemistry was awarded to David Baker, Demis Hassabis, and John Jumper for computational protein design and protein structure prediction.",
+    "id": "HOLDOUT-009"
+  },
+  {
+    "domain": "Human Physiology",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Human hair and fingernails continue biological cellular growth for weeks after clinical death.",
+    "id": "HOLDOUT-010"
+  },
+  {
+    "domain": "Nutrition",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Consuming acidic citrus fruits directly lowers physiological blood pH into clinical acidosis in healthy humans.",
+    "id": "HOLDOUT-011"
+  },
+  {
+    "domain": "Neuroscience",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Brain scans prove that distinct left-brained individuals are completely incapable of creative artistic cognition.",
+    "id": "HOLDOUT-012"
+  },
+  {
+    "domain": "Virology",
+    "expected": "False",
+    "benchmark": "SciFact",
+    "claim": "Human immunodeficiency virus particles reproduce by assembling independent ribosomes inside viral capsids.",
+    "id": "HOLDOUT-013"
+  },
+  {
+    "domain": "Astronomy",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "The dark craters of the planet Mercury maintain permanent liquid methane lakes on their floors.",
+    "id": "HOLDOUT-014"
+  },
+  {
+    "domain": "Pharmacology",
+    "expected": "False",
+    "benchmark": "SciFact",
+    "claim": "Penicillin antibiotics treat acute bacterial infections by dissolving bacterial nuclear envelopes.",
+    "id": "HOLDOUT-015"
+  },
+  {
+    "domain": "Genetics",
+    "expected": "False",
+    "benchmark": "SciFact",
+    "claim": "Mature human platelets contain forty-six diploid chromosomes identical to hepatic nuclei.",
+    "id": "HOLDOUT-016"
+  },
+  {
+    "domain": "Temporal Post-Cutoff (2024)",
+    "expected": "False",
+    "benchmark": "Space News 2024",
+    "claim": "Boeing's Starliner Calypso crew capsule permanently evacuated the ISS crew and returned all eight station astronauts to Earth in June 2024.",
+    "id": "HOLDOUT-017"
+  },
+  {
+    "domain": "Temporal Post-Cutoff (2024)",
+    "expected": "False",
+    "benchmark": "Nobel 2024",
+    "claim": "The 2024 Nobel Prize in Physics was awarded for the experimental synthesis of room-temperature superconductor LK-99.",
+    "id": "HOLDOUT-018"
+  },
+  {
+    "domain": "Astrobiology",
+    "expected": "Unsupported",
+    "benchmark": "Exoplanet Archive",
+    "claim": "Atmospheric biosignature disequilibrium on exoplanet K2-18b confirms metabolic dimethyl sulfide emission.",
+    "id": "HOLDOUT-019"
+  },
+  {
+    "domain": "Particle Physics",
+    "expected": "Unsupported",
+    "benchmark": "CERN Archive",
+    "claim": "Sterile right-handed neutrinos with masses near 7 keV account for all observed galactic dark matter halos.",
+    "id": "HOLDOUT-020"
+  },
+  {
+    "domain": "Geobiology",
+    "expected": "Unsupported",
+    "benchmark": "Precambrian Consortium",
+    "claim": "Microbial life originated at terrestrial subaerial hot springs rather than deep-sea hydrothermal vents.",
+    "id": "HOLDOUT-021"
+  },
+  {
+    "domain": "Neurobiology",
+    "expected": "Unsupported",
+    "benchmark": "Brain Initiative",
+    "claim": "Quantum entanglement across nuclear spins in intracellular phosphorus atoms stabilizes hippocampal long-term potentiation.",
+    "id": "HOLDOUT-022"
+  },
+  {
+    "domain": "Archaeology",
+    "expected": "Unsupported",
+    "benchmark": "Antiquity Archive",
+    "claim": "Submerged Paleolithic megalithic structures in the Persian Gulf basin date back to 18,000 BCE.",
+    "id": "HOLDOUT-023"
+  },
+  {
+    "domain": "Temporal Post-Cutoff (2025)",
+    "expected": "Unsupported",
+    "benchmark": "Commercial Space",
+    "claim": "SpaceX Starship completed its first commercial orbital satellite deployment mission before January 2025.",
+    "id": "HOLDOUT-024"
+  },
+  {
+    "domain": "Temporal Post-Cutoff (2025)",
+    "expected": "Unsupported",
+    "benchmark": "Pharma Pipeline",
+    "claim": "An oral small-molecule GLP-1 receptor agonist received final FDA breakthrough approval for non-diabetic cognitive enhancement in January 2025.",
+    "id": "HOLDOUT-025"
+  },
+  {
+    "domain": "Philosophy of Mind",
+    "expected": "Unverifiable",
+    "benchmark": "Epistemology Standard",
+    "claim": "The subjective qualitative experience of seeing the color red is identical across all neurotypical human brains.",
+    "id": "HOLDOUT-026"
+  },
+  {
+    "domain": "Aesthetics",
+    "expected": "Unverifiable",
+    "benchmark": "Cultural Aesthetics",
+    "claim": "Acoustic orchestral symphony performance provides deeper aesthetic emotional transcendence than modern synthesized music.",
+    "id": "HOLDOUT-027"
+  },
+  {
+    "domain": "Ethics & Law",
+    "expected": "Unverifiable",
+    "benchmark": "Jurisprudence",
+    "claim": "Autonomous lethal weapons systems are fundamentally morally inferior to human infantry combatants.",
+    "id": "HOLDOUT-028"
+  },
+  {
+    "domain": "Cosmology",
+    "expected": "Unverifiable",
+    "benchmark": "Theoretical Cosmology",
+    "claim": "The total information entropy of our observable universe will decrease toward zero in an alternate cosmic bounce cycle.",
+    "id": "HOLDOUT-029"
+  },
+  {
+    "domain": "Future Ecology",
+    "expected": "Unverifiable",
+    "benchmark": "Ecological Projections",
+    "claim": "Global artificial atmospheric aerosol injection will be permanently mandated by international treaty before 2060.",
+    "id": "HOLDOUT-030"
+  },
+  {
+    "domain": "Sociology",
+    "expected": "Unverifiable",
+    "benchmark": "Social Sciences",
+    "claim": "Democratic governance is universally the most productive political system for technological innovation under all human cultural conditions.",
+    "id": "HOLDOUT-031"
+  },
+  {
+    "domain": "Personal Preference",
+    "expected": "Unverifiable",
+    "benchmark": "Subjective Standard",
+    "claim": "Handwritten correspondence conveys greater authentic personal affection than encrypted digital text messaging.",
+    "id": "HOLDOUT-032"
+  }
+]

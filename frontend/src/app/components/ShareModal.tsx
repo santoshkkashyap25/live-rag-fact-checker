@@ -27,7 +27,7 @@ export default function ShareModal({ isOpen, onClose, shareUrl, claim, verdict, 
   const redditShareUrl = `https://reddit.com/submit?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(`FactGuard: ${verdict} - ${claim.slice(0, 80)}`)}`;
   const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
 
-  const badgeColor = verdict === "True" ? "22c55e" : verdict === "False" ? "ef4444" : "f59e0b";
+  const badgeColor = verdict === "True" ? "22c55e" : verdict === "False" ? "ef4444" : verdict === "Unsupported" ? "f59e0b" : "64748b";
   const markdownBadge = `[![FactGuard: ${verdict}](https://img.shields.io/badge/FactGuard-${verdict}-${badgeColor})](${shareUrl})`;
 
   const handleCopyLink = () => {

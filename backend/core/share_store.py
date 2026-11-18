@@ -67,8 +67,8 @@ class ShareStore:
     def save_verdict(self, result: Dict[str, Any]) -> str:
         """Store verification result with strict field whitelisting and zero credential leakage"""
         claim = sanitize_secrets(result.get("extracted_claim") or result.get("input_text") or "Claim")[:250]
-        raw_verdict = str(result.get("verdict", "Unverifiable"))[:20]
-        verdict = raw_verdict if raw_verdict in ["True", "False", "Unverifiable"] else "Unverifiable"
+        raw_verdict = str(result.get("verdict", "Unsupported"))[:20]
+        verdict = raw_verdict if raw_verdict in ["True", "False", "Unsupported", "Unverifiable"] else "Unsupported"
 
         # Check if already stored recently with identical claim and verdict
         clean_claim = claim.strip().lower()

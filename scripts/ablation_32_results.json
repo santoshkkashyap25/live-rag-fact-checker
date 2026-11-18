@@ -1,0 +1,298 @@
+{
+  "prompt_version": "2.0.0-clean-4class",
+  "prompt_hash": "a170d05dc9c3",
+  "migrated_to_unsupported": 12,
+  "migrated_to_unverifiable": 3,
+  "remained_false": 17,
+  "other_verdict": 0,
+  "details": [
+    {
+      "id": "T1000-0019",
+      "claim": "Classical instrumental piano music is objectively superior to electronic ambient music for cognitive focus.",
+      "domain": "Neuroscience",
+      "old_verdict": "False",
+      "new_verdict": "Unverifiable",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim asserts an objective superiority of one music genre over another for a specific cognitive task, which is a subjective value judgment. Retrieved evidence (Source 4) explicitly states that individual preferences vary (some focus better with neo-classical piano, others with ambient electronic), and Source 5 notes that research findings on background music effects are inconclusive, making the claim inherently non-falsifiable and subjective."
+    },
+    {
+      "id": "T1000-0040",
+      "claim": "Stable superheavy element 126 within the hypothetical island of stability will remain indefinitely non-radioactive.",
+      "domain": "Chemistry",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim asserts that element 126 will remain 'indefinitely non-radioactive,' but the evidence explicitly states that whether any superheavy elements exist that are stable indefinitely is 'still an open question' (Source 9). Furthermore, the island of stability is defined as a region where isotopes have 'considerably longer half-lives' (Sources 2, 5, 8, 10), implying they are still radioactive, just with extended decay times, rather than being non-radioactive."
+    },
+    {
+      "id": "T1000-0125",
+      "claim": "Extraterrestrial microbial life currently thrives in the subsurface ocean of Jupiter's moon Europa.",
+      "domain": "Astrophysics",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.98,
+      "new_reasoning": "The claim asserts that extraterrestrial microbial life currently thrives on Europa, but retrieved evidence explicitly states that 'No extraterrestrial life has yet been detected.' While the existence of a subsurface ocean is confirmed, the presence of life within it remains unconfirmed and hypothetical."
+    },
+    {
+      "id": "T1000-0127",
+      "claim": "Dark matter consists entirely of primordial black holes formed during the first second after the Big Bang.",
+      "domain": "Astrophysics",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim that dark matter consists 'entirely' of primordial black holes is contradicted by current scientific consensus and observational constraints. While primordial black holes (PBHs) are a hypothetical candidate for dark matter (as noted in Evidence 6, 8, 9, and 10), they are not confirmed to constitute the entirety of dark matter. Evidence 9 explicitly states that historically the most popular candidates are elementary particles (WIMPs, axions), and PBHs are 'another possibility.' Furthermore, observational data (such as gravitational lensing and CMB constraints) generally rule out PBHs making up 100% of dark matter across all mass ranges, and the retrieved evidence presents PBHs as a speculative alternative or partial component, not an established fact of total composition."
+    },
+    {
+      "id": "T1000-0128",
+      "claim": "An advanced Type II Kardashev civilization currently operates in the Andromeda galaxy.",
+      "domain": "Astrophysics",
+      "old_verdict": "False",
+      "new_verdict": "Unsupported",
+      "new_confidence": 0.95,
+      "new_reasoning": "The retrieved evidence defines the Kardashev scale as a theoretical framework for measuring technological advancement and notes that humanity is currently at Type 0.7. It provides no evidence confirming the existence of any extraterrestrial civilization, let alone a Type II civilization in the Andromeda galaxy. The claim asserts an empirical fact that is not supported by the provided sources or current scientific consensus."
+    },
+    {
+      "id": "T1000-0130",
+      "claim": "A ninth major planet with ten Earth masses exists beyond the Kuiper belt at an orbit of 400 AU.",
+      "domain": "Astrophysics",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim asserts that Planet Nine 'exists,' but retrieved evidence explicitly defines it as a 'hypothetical' planet that has not been directly observed or confirmed. Furthermore, while the orbital distance of 400 AU is within the estimated range, the claim's assertion of existence contradicts the current scientific consensus that it remains an unproven hypothesis."
+    },
+    {
+      "id": "T1000-0156",
+      "claim": "Engineered telomerase activation therapy will extend maximum healthy human lifespan beyond 150 years by 2045.",
+      "domain": "Molecular Biology",
+      "old_verdict": "False",
+      "new_verdict": "Unsupported",
+      "new_confidence": 0.95,
+      "new_reasoning": "The retrieved evidence confirms that engineered telomerase RNA can extend replicative lifespan in human cells in vitro and that telomerase activation is a target for geroscience, but it provides no evidence supporting the specific prediction that this therapy will extend maximum healthy human lifespan beyond 150 years by 2045. The claim is a specific future prediction that is not confirmed by the current scientific literature provided."
+    },
+    {
+      "id": "T1000-0157",
+      "claim": "Quantum coherence within intracellular microtubules plays an indispensable functional role in human consciousness.",
+      "domain": "Molecular Biology",
+      "old_verdict": "False",
+      "new_verdict": "Unsupported",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim asserts that quantum coherence in microtubules plays an 'indispensable functional role' in human consciousness, which is a specific hypothesis (Orchestrated Objective Reduction) proposed by Penrose and Hameroff. The retrieved evidence consists of abstracts and texts from proponents of this theory, describing it as a 'hypothesis' or 'theory' and noting experimental consistency with anesthetic targets. However, the evidence does not provide authoritative scientific consensus or definitive proof that this mechanism is the actual, indispensable cause of consciousness in humans; it remains a speculative and controversial model in neuroscience and physics."
+    },
+    {
+      "id": "T1000-0158",
+      "claim": "Synthetic biological organisms constructed entirely from D-amino acids will prove completely immune to terrestrial pathogens.",
+      "domain": "Molecular Biology",
+      "old_verdict": "False",
+      "new_verdict": "Unsupported",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim asserts a definitive future outcome ('will prove completely immune') regarding a hypothetical form of life (mirror-image organisms). While evidence confirms that mirror-image biology uses D-amino acids and is designed for metabolic isolation from terrestrial biology (Evidence 8), it also notes that such organisms are currently hypothetical and that recent reports suggest they could pose catastrophic risks if they were to reproduce and spread (Evidence 2). The evidence does not confirm that such organisms have been successfully constructed to the point of proving complete immunity, nor does it validate the absolute certainty of the claim's prediction."
+    },
+    {
+      "id": "T1000-0160",
+      "claim": "Epigenetic inheritance of psychological stress markers persists without degradation across more than twenty human generations.",
+      "domain": "Molecular Biology",
+      "old_verdict": "False",
+      "new_verdict": "Unsupported",
+      "new_confidence": 0.95,
+      "new_reasoning": "The retrieved evidence does not contain any information regarding the epigenetic inheritance of psychological stress markers or their persistence across human generations. The provided sources discuss the definition of historical trauma, Huntington's disease, and the biological function of telomeres, none of which address the specific claim about multi-generational epigenetic transmission of stress."
+    },
+    {
+      "id": "T1000-0217",
+      "claim": "Cryonically frozen human neurological tissue stored in liquid nitrogen can be revived without cellular loss.",
+      "domain": "Medicine",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim is contradicted by established scientific consensus regarding cryonics and cellular biology. While liquid nitrogen storage prevents decomposition, it does not prevent cellular damage caused by ice crystal formation or vitrification artifacts, leading to significant cellular loss and structural damage that currently precludes revival. The provided evidence supports the irreversibility of death and biological breakdown, which aligns with the scientific understanding that current cryonic preservation does not result in viable, loss-free tissue revival."
+    },
+    {
+      "id": "T1000-0219",
+      "claim": "Universal blood substitutes manufactured from perfluorocarbons will fully replace donor blood transfusions by 2040.",
+      "domain": "Medicine",
+      "old_verdict": "False",
+      "new_verdict": "Unverifiable",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim makes a definitive prediction about a future event (full replacement of donor blood by 2040) that has not yet occurred. While perfluorocarbon-based blood substitutes are an active area of research, no authoritative scientific or regulatory body has confirmed that they will fully replace donor blood by this specific date, making the claim a speculative future prediction that cannot be empirically resolved with current evidence."
+    },
+    {
+      "id": "T1000-0245",
+      "claim": "The Greek poet Homer was an actual single historical individual who composed both the Iliad and Odyssey verbatim.",
+      "domain": "History",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim that Homer was a single historical individual who composed the epics verbatim is contradicted by the scholarly consensus reflected in the evidence, which describes the works as 'attributed to Homer' rather than definitively authored by a verified single person. The term 'attributed' in classical scholarship acknowledges the 'Homeric Question,' where the existence of a single historical author and the oral/evolutionary nature of the texts are subjects of significant debate and are not established as historical fact."
+    },
+    {
+      "id": "T1000-0246",
+      "claim": "Alexander the Great died from intentional strychnine poisoning orchestrated by Antipater.",
+      "domain": "History",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.95,
+      "new_reasoning": "Historical consensus and modern forensic analyses (such as the 2014 study in the Journal of Analytical Toxicology) suggest Alexander the Great likely died from acute delirium tremens due to alcohol withdrawal or a febrile disease like malaria, not poisoning. While ancient sources (e.g., Plutarch) mention rumors of poisoning, there is no authoritative evidence confirming strychnine specifically or that Antipater orchestrated it; in fact, Antipater was a loyal regent and Alexander's mother Olympias was the primary suspect in ancient accounts, not Antipater."
+    },
+    {
+      "id": "T1000-0247",
+      "claim": "The lost city of Atlantis was based on an actual advanced Bronze Age civilization located on the island of Thera.",
+      "domain": "History",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.95,
+      "new_reasoning": "The retrieved evidence explicitly identifies Atlantis as a 'fictional island' and an 'allegory' created by Plato, not an actual historical civilization. While the Thera eruption is a real historical event often cited in theories linking the myth to reality, the claim that Atlantis *was* an actual advanced Bronze Age civilization located on Thera is contradicted by the consensus that Atlantis is a literary construct, and the evidence provided does not support the existence of a lost city named Atlantis on Thera."
+    },
+    {
+      "id": "T1000-0250",
+      "claim": "William Shakespeare's theatrical plays were authored entirely by Edward de Vere, the 17th Earl of Oxford.",
+      "domain": "History",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.98,
+      "new_reasoning": "The claim contradicts the overwhelming scholarly consensus and historical evidence that William Shakespeare authored his plays. Retrieved evidence explicitly identifies William Shakespeare as the playwright and poet who wrote the works, and standard chronologies attribute the oeuvre to him, not Edward de Vere."
+    },
+    {
+      "id": "T1000-0310",
+      "claim": "Protons undergo spontaneous radioactive decay with a half-life of 10 to the 34th years.",
+      "domain": "Physics",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim asserts that protons 'undergo' spontaneous radioactive decay, implying it is an established physical fact. However, authoritative evidence (Source 3) states that protons have 'long been considered to be a stable particle' and that decay is only a suggestion from grand unification models, not an observed phenomenon. Furthermore, experimental evidence (Source 4) explicitly notes that major detectors like IMB 'did not register a proton decay,' contradicting the assertion that the decay currently occurs. While the half-life range (10^34 years) falls within the theoretical prediction range (10^30 - 10^35 years), the core assertion that the decay is a confirmed reality is false."
+    },
+    {
+      "id": "T1000-0389",
+      "claim": "Targeted optogenetic stimulation can permanently erase traumatic autobiographical memories without cognitive deficits.",
+      "domain": "Neuroscience",
+      "old_verdict": "False",
+      "new_verdict": "Unsupported",
+      "new_confidence": 0.95,
+      "new_reasoning": "The provided evidence defines memory generally but contains no information regarding optogenetics, targeted stimulation, or the specific claim about erasing traumatic memories without cognitive deficits. While optogenetics is a real field, the specific assertion of 'permanent erasure without cognitive deficits' is a strong empirical claim that is not confirmed by the retrieved text, which is silent on the topic."
+    },
+    {
+      "id": "T1000-0390",
+      "claim": "The neural correlate of subjective visual consciousness is localized exclusively within claustrum syncytia.",
+      "domain": "Neuroscience",
+      "old_verdict": "False",
+      "new_verdict": "Unsupported",
+      "new_confidence": 0.95,
+      "new_reasoning": "The retrieved evidence does not mention the claustrum, syncytia, or the specific neural correlates of subjective visual consciousness. While the evidence discusses general concepts of consciousness and neuroscience, it provides no data to confirm or refute the specific claim that the neural correlate is localized exclusively within claustrum syncytia."
+    },
+    {
+      "id": "T1000-0407",
+      "claim": "A supervolcanic eruption at Yellowstone caldera will occur within the next two hundred years.",
+      "domain": "Geology",
+      "old_verdict": "False",
+      "new_verdict": "Unsupported",
+      "new_confidence": 0.95,
+      "new_reasoning": "The provided evidence defines volcanoes and their tectonic contexts but contains no information regarding Yellowstone's eruption history, current status, or future predictions. Scientific consensus does not support a definitive prediction that a supervolcanic eruption will occur within the next 200 years, as such events are stochastic and not predictable on such short timescales with certainty."
+    },
+    {
+      "id": "T1000-0408",
+      "claim": "A complete geomagnetic reversal of Earth's magnetic poles will initiate within the next century.",
+      "domain": "Geology",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.86,
+      "new_reasoning": "Authoritative geophysical research indicates geomagnetic reversals occur on timescales of thousands to millions of years and appear statistically random; no credible evidence predicts a full reversal within the next 100 years. The only temporal estimate in the sources suggests a possible reversal in one to two millennia, not a century, making the claim unsupported and contradicted by the evidence."
+    },
+    {
+      "id": "T1000-0410",
+      "claim": "Subterranean mantle plumes contain more liquid water dissolved in ringwoodite than all surface oceans combined.",
+      "domain": "Geology",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim is false because the water in the mantle transition zone is not 'liquid'; it is chemically bound as hydroxide within the crystal structure of minerals like ringwoodite (Evidence 5, 9). Additionally, while some sources suggest the reservoir holds three times the volume of the oceans (Evidence 6, 8), other rigorous estimates suggest it holds more than all surface *freshwater* (Evidence 9), creating a discrepancy in the magnitude, but the primary factual error is the state of the water."
+    },
+    {
+      "id": "T1000-0427",
+      "claim": "Convergent evolution on extraterrestrial exoplanets will inevitably produce humanoid bipedal sentient body plans.",
+      "domain": "Evolutionary Biology",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim uses the word 'inevitably,' which asserts a deterministic outcome that is contradicted by astrobiological consensus and the provided evidence. Evidence 3 explicitly states that a humanoid body plan is 'unlikely' to evolve, and Evidence 2 highlights the 'remarkable diversity' of life on Earth, suggesting that similar problems can be solved by many different body plans (e.g., flight, camouflage) rather than converging on a single humanoid form. Scientific consensus holds that while certain features (like eyes or limbs) may converge, the specific combination of bipedal, humanoid, and sentient traits is not an inevitable outcome of evolution."
+    },
+    {
+      "id": "T1000-0428",
+      "claim": "De-extinction cloning will establish a breeding wild population of woolly mammoths in Siberia by 2035.",
+      "domain": "Evolutionary Biology",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim is false for two primary reasons: first, the method described is scientifically inaccurate, as authoritative evidence states that true cloning is not feasible due to the lack of intact mammoth cells, and the project relies on genetic engineering (genome editing) rather than cloning; second, the timeline is contradicted by evidence showing that the target date for producing hybrid calves has been pushed to the early 2030s, not 2035, and the goal is to produce hybrids, not necessarily a fully established wild breeding population by that specific date."
+    },
+    {
+      "id": "T1000-0429",
+      "claim": "Human biological evolution has completely ceased due to modern medical interventions and technology.",
+      "domain": "Evolutionary Biology",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.95,
+      "new_reasoning": "Retrieved evidence explicitly refutes the claim that human evolution has ceased, stating that while modern medicine may reduce some selection pressures, other mechanisms of evolution continue to alter allelic frequencies. Furthermore, evidence highlights that the 'arms race' between humans and microbial pathogens continues to shape genetic variation in modern populations, confirming that biological evolution is ongoing."
+    },
+    {
+      "id": "T1000-0430",
+      "claim": "The Ediacaran biota were a completely independent evolutionary experiment unrelated to modern Metazoa.",
+      "domain": "Evolutionary Biology",
+      "old_verdict": "False",
+      "new_verdict": "Unsupported",
+      "new_confidence": 0.6,
+      "new_reasoning": "The provided sources describe the Ediacaran biota as early, soft\u2011bodied multicellular organisms but do not supply evidence confirming that they were completely independent of, or unrelated to, modern Metazoa. Current scientific literature remains divided on whether Ediacaran forms are stem\u2011group animals or represent extinct lineages, so the claim cannot be verified with the given evidence."
+    },
+    {
+      "id": "T1000-0448",
+      "claim": "An engineered synthetic bacteriophage therapy will permanently eliminate hospital-acquired superbugs by 2034.",
+      "domain": "Immunology & Virology",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.95,
+      "new_reasoning": "The claim asserts that bacteriophage therapy will 'permanently eliminate' hospital-acquired superbugs by 2034. Evidence #5 and #6 explicitly note that bacteriophages face challenges such as 'bacterial resistance' and 'delayed-onset resistance development,' making permanent elimination scientifically implausible. Furthermore, Evidence #10 states that therapies are expected to evolve into 'standardized, clinically integrated antimicrobial platforms' over the next 5-10 years, which describes a progression of clinical utility rather than the total eradication of a pathogen class."
+    },
+    {
+      "id": "T1000-0467",
+      "claim": "Over 90 percent of macro-scale abyssal marine species remain completely undiscovered by modern science.",
+      "domain": "Oceanography & Marine Biology",
+      "old_verdict": "False",
+      "new_verdict": "Unsupported",
+      "new_confidence": 0.73,
+      "new_reasoning": "The retrieved sources cite estimates that roughly 90% of all ocean species remain undiscovered, but none specifically address macro-scale abyssal marine species. Without direct evidence for that particular habitat and size class, the claim cannot be confirmed nor refuted."
+    },
+    {
+      "id": "T1000-0468",
+      "claim": "Widespread ocean fertilization with iron nanoparticles will successfully sequester 5 gigatons of CO2 annually by 2038.",
+      "domain": "Oceanography & Marine Biology",
+      "old_verdict": "False",
+      "new_verdict": "Unsupported",
+      "new_confidence": 0.6,
+      "new_reasoning": "The provided sources describe ocean iron fertilization as a proposed geoengineering technique and discuss its potential to enhance phytoplankton growth and carbon sequestration, but none supply quantitative evidence that widespread deployment of iron nanoparticles will achieve 5\u202fgigatons of CO\u2082 removal per year by 2038. Without concrete data or peer\u2011reviewed assessments confirming that specific figure, the claim cannot be verified."
+    },
+    {
+      "id": "T1000-0479",
+      "claim": "All modern spoken human languages originated from a single proto-sapiens tongue spoken in East Africa 100,000 years ago.",
+      "domain": "Linguistics",
+      "old_verdict": "False",
+      "new_verdict": "Unsupported",
+      "new_confidence": 0.8,
+      "new_reasoning": "The provided evidence notes that the origins of language are highly debated with little agreement among scholars, and does not present any authoritative data confirming a single proto\u2011sapiens language spoken in East Africa 100,000 years ago; thus the claim lacks supporting evidence."
+    },
+    {
+      "id": "T1000-0544",
+      "claim": "A quantum computing architecture will solve NP-complete problems in polynomial time by 2038.",
+      "domain": "Computer Science",
+      "old_verdict": "False",
+      "new_verdict": "Unverifiable",
+      "new_confidence": 0.9,
+      "new_reasoning": "The claim predicts a specific future breakthrough\u2014solving NP\u2011complete problems in polynomial time with a quantum architecture by 2038\u2014but the provided sources only discuss general quantum computing concepts and do not confirm or refute such a development, nor is there any current empirical evidence to verify the prediction."
+    },
+    {
+      "id": "T1000-0562",
+      "claim": "Homo floresiensis survived in isolated Indonesian caves until the mid-nineteenth century CE.",
+      "domain": "Anthropology",
+      "old_verdict": "False",
+      "new_verdict": "False",
+      "new_confidence": 0.98,
+      "new_reasoning": "Authoritative scientific consensus and archaeological evidence indicate that Homo floresiensis went extinct approximately 50,000 years ago (Late Pleistocene), not in the mid-nineteenth century CE. The claim contradicts established paleoanthropological timelines regarding the species' survival period."
+    }
+  ]
+}

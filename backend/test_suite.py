@@ -255,7 +255,7 @@ class TestAPIEndpoints(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         data = res.json()
         self.assertIn("verdict", data)
-        self.assertIn(data["verdict"], ["True", "False", "Unverifiable"])
+        self.assertIn(data["verdict"], ["True", "False", "Unsupported", "Unverifiable"])
         self.assertIn("confidence", data)
         self.assertIn("performance", data)
         self.assertIn("evidence", data)

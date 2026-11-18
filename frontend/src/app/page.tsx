@@ -6,6 +6,7 @@ import {
   CheckCircle2, 
   XCircle, 
   AlertCircle, 
+  HelpCircle,
   Search, 
   Trash2, 
   Clock, 
@@ -445,6 +446,8 @@ export default function VerifyPage() {
         return <CheckCircle2 className={`${styles.verdictIcon} ${styles.trueIcon}`} />;
       case "False":
         return <XCircle className={`${styles.verdictIcon} ${styles.falseIcon}`} />;
+      case "Unsupported":
+        return <HelpCircle className={`${styles.verdictIcon} ${styles.unsupportedIcon}`} />;
       default:
         return <AlertCircle className={`${styles.verdictIcon} ${styles.unverifiableIcon}`} />;
     }
@@ -456,6 +459,8 @@ export default function VerifyPage() {
         return styles.verdictTrue;
       case "False":
         return styles.verdictFalse;
+      case "Unsupported":
+        return styles.verdictUnsupported;
       default:
         return styles.verdictUnverifiable;
     }

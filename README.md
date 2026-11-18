@@ -55,42 +55,42 @@ Information moves faster than traditional indexed verification pipelines can kee
 
 ---
 
-## 🏆 Empirical Benchmark Evaluation (TruthfulQA & FEVER)
+## 🏆 Evaluation & Scientific Failure Audit
 
-> **Audited Outcome (N = 100)**: **86.0% (86/100)** on a balanced 100-claim held-out test set (95% Wilson CI: 77.9%–91.5%), **0.0% False Positives**, **97.1% selective accuracy**, demonstrating **statistically significant outperformance over ungrounded LLMs (p < 0.0001, chi² = 30.72)** and a 7-point lead over raw search (p = 0.070, chi² = 3.27).
+> **Methodological Disclosure**:
+> Early benchmark suites (including the 100-claim and 564-claim sets) are classified as **Development Evaluations (Not Held-Out)** because earlier prompt revisions were tuned on observed failure modes. In accordance with open-science standards, all evaluation data, code, cluster bootstrap analyses, and failure post-mortems are openly published.
 
-To evaluate FactGuard AI without data snooping or presentation bias, the system was subjected to an empirical evaluation protocol featuring:
-1. **100-Claim Balanced Benchmark Dataset**: 40 True claims (FEVER supports + scientific ground truth), 40 False claims (TruthfulQA misconceptions + FEVER refutes), and 20 Unverifiable claims (speculation, aesthetics, future events) across 10 academic domains (`tests/data/claims_test_100.json`).
-2. **Frozen Web Evidence**: Multi-engine retrieval payloads (Wikipedia + DuckDuckGo) were frozen to disk (`tests/data/frozen_evidence_100.json`) to guarantee 0% search drift across all systems.
-3. **Identical Baselines**: Evaluated against an ungrounded zero-shot LLM (identical 3-way True/False/Unverifiable prompt) and raw search + LLM using `openai/gpt-oss-120b` on Groq LPU (temperature = 0.2, single deterministic run).
+### 1. 4-Class Epistemic Architecture
+FactGuard AI operates on a rigorous 4-class classification standard:
+* **`True`**: Core factual assertion confirmed by authoritative retrieved evidence.
+* **`False`**: Core factual assertion contradicted or refuted by evidence or established consensus.
+* **`Unsupported`**: Empirical assertion where retrieved evidence provides no confirmation, insufficient documentation, or remains silent. (Absence of positive evidence in retrieved sources does *not* prove falsehood).
+* **`Unverifiable`**: Inherently non-falsifiable in principle (subjective taste, ethical opinion, or speculative future prediction).
 
-### Headline Comparison (Held-Out Test Set, N = 100)
+*See the formal written standard in [`docs/labeling_policy.md`](docs/labeling_policy.md).*
 
-| System Configuration | Accuracy | 95% Wilson CI | Coverage | Selective Acc | Macro-F1 | p50 Latency (Frozen) | McNemar Paired Test |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **FactGuard AI (Full Pipeline)** | **86.0% (86/100)** | [77.9%, 91.5%] | **70.0%** | **97.1% (68/70)** | **0.844** | 7.28s | — |
-| Raw Web Search + LLM Baseline | 79.0% (79/100) | [70.0%, 85.8%] | 65.0% | 93.8% (61/65) | 0.777 | 6.75s | chi² = 3.27, p = 0.070 |
-| Ungrounded Zero-Shot LLM | 47.0% (47/100) | [37.5%, 56.7%] | 28.0% | 96.4% (27/28) | 0.463 | 12.21s | **chi² = 30.72, p < 0.0001** |
+### 2. Development Evaluation on Unique Claims ($N = 564$)
 
-### Statistical Significance (McNemar's Paired Chi-Square Test)
-- **FactGuard AI vs. Zero-Shot Ungrounded LLM**: $\chi^2 = 30.72, p < 0.0001$ (**Statistically Significant at $\alpha = 0.01$**). FactGuard was correct on 43 claims where the ungrounded model failed or abstained, while the ungrounded model was only correct on 4 claims where FactGuard abstained (47 discordant pairs).
-- **FactGuard AI vs. Raw Web Search**: $\chi^2 = 3.27, p = 0.070$ (11 discordant pairs: FactGuard gained 9 claims over raw search due to BM25Okapi relevance ranking and domain trust weighting).
+Evaluating the 564 unique base propositions (deduplicated by stripping synthetic variant suffixes):
 
-### Key Empirical Findings
-- **Zero Hallucination Sign Inversions**: Across all 100 claims, FactGuard AI produced **0 False Positives** (0 of 40 false claims marked True) and **0 False Negatives** (0 of 40 true claims marked False).
-- **Selective Accuracy vs. Coverage**: On answered claims, FactGuard achieved **97.1% selective accuracy** (68 of 70 correct), while expanding coverage to 70.0% compared to only 28.0% for the ungrounded baseline.
-- **Empirical Calibration**: Expected Calibration Error (ECE) is **0.0402**. In the high-certainty band ($\ge 95\%$ confidence, 69 claims), empirical accuracy was **98.6%** against a mean confidence of 98.2% (a narrow 0.4% gap).
+| System Configuration | Overall Accuracy | 95% Wilson CI | Coverage (Decisive) | Selective Precision | Confident Errors |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **FactGuard AI (Full Pipeline)** | **83.87% (473/564)** | [80.6%, 86.7%] | **75.53% (426/564)** | **91.31% (389/426)** | 37 (6.6%) |
+| Raw Web Search + LLM Baseline | 79.61% (449/564) | [76.1%, 82.7%] | 69.86% (394/564) | 91.12% (359/394) | 35 (6.2%) |
+| Ungrounded Zero-Shot LLM | 63.83% (360/564) | [59.8%, 67.7%] | 52.30% (295/564) | 90.51% (267/295) | 28 (5.0%) |
 
-### Development Probe & Pilot Ablations (16 & 20 Claims)
-- **Development Probe (16 claims)**: Used for initial tuning (`tests/data/claims_dev.json`). Historical abstentions were caused by prompt literal-negation rigidity (`DEV-06`, water freezing), search timeout (`DEV-09`, bulls/red), and unit discrepancy (`DEV-12`, Napoleon height).
-- **Ablation Pilot (20 claims)**: Removing open-web retrieval (`wikipedia_only`) caused a 20-point accuracy drop, proving that Wikipedia alone lacks sufficient coverage for modern claims.
+### 3. Key Findings & Honest Trade-offs
+- **Selective Precision is Constant Across Systems**: Precision on answered claims is virtually identical across all systems (**91.3% vs 91.1% vs 90.5%**). Grounding and retrieval pipeline components do not buy higher precision; they buy **higher decisive coverage** (75.5% vs 69.9% vs 52.3%) at equivalent precision.
+- **Statistical Significance**: On the 564 unique claims, the paired lead over raw search is $+4.26$ percentage points (95% CI: $[+1.37\%, +7.14\%]$, McNemar $p = 0.0060$). However, when accounting for cluster pseudo-replication across the 46 repeated proposition clusters via cluster bootstrapping, the mean difference is $+3.29$ pts with a cluster-robust 95% CI of **`[-0.11% to +6.86%]` ($p = 0.0654$)**.
+- **Determinable vs. Unverifiable Asymmetry**: On determinable True/False claims ($N = 445$), FactGuard resolves 87.4% against 80.7% for raw search (+30 net correct). On unverifiable claims ($N = 119$), FactGuard historically trailed baselines (70.6% vs 75.6% and 78.2%) by treating missing evidence as refutation.
+- **Decontaminated Prompt Ablation**: In offline ablation across the 32 previously misclassified claims, the decontaminated 4-class prompt naturally rescued **46.9% of claims (15/32)** to `Unsupported` (12) or `Unverifiable` (3), while preserving genuine refutations as `False` (17).
 
-*Full benchmark dataset, frozen evidence cache, and raw evaluation telemetry are available in [`tests/evaluation_report_100.md`](tests/evaluation_report_100.md) and [`tests/data/eval_results_100.json`](tests/data/eval_results_100.json).*
+*Full development telemetry and the 32-case failure mode audit are available in [`tests/evaluation_report_1000.md`](tests/evaluation_report_1000.md).*
 
-**Run the 100-claim evaluation runner yourself**:
-```bash
-python tests/run_evaluation_100.py
-```
+### 4. Pristine Held-Out Evaluation Protocol
+To establish true statistical confirmation without contamination:
+* A fresh pilot suite of 32 claims has been constructed in [`tests/data/heldout_suite/claims_heldout_pilot.json`](tests/data/heldout_suite/claims_heldout_pilot.json) with automated Levenshtein decontamination filtering.
+* Features balanced partitions across the 4 classes and dedicated post-training-cutoff events (2024–2026) where live web search is strictly necessary.
 
 
 ---

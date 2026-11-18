@@ -459,7 +459,8 @@ def run_benchmark_1000(limit: int = 1000, resume: bool = True):
             # Check if this configuration was already completed in checkpoint
             if cfg_id in checkpoint[cid]["evaluations"]:
                 res = checkpoint[cid]["evaluations"][cfg_id]
-                icon = "✅" if res["is_correct"] else "❌"
+                is_corr = res.get("is_correct", res.get("verdict") == expected)
+                icon = "✅" if is_corr else "❌"
                 print(f"  {icon} {cfg_label[:30]}: {res['verdict']} (cached)")
                 continue
 
@@ -644,8 +645,8 @@ def generate_report_1000(payload: Dict[str, Any], n_count: int):
   - Both Wrong: `{m_raw['contingency_matrix']['both_wrong']}`
 * **Discordant Pairs**: `{m_raw['discordant_pairs']}`
 * **Chi-Square Statistic ($\chi^2$)**: `{m_raw['chi2']}`
-* **p-value**: `p = {m_raw['p_value']}`
-* **Statistical Significance**: **{'Statistically Significant at p < 0.01' if m_raw['statistically_significant_01'] else 'Trending at p = ' + str(m_raw['p_value'])}**
+* **p-value**: `p = {m_raw['p_value']:.4f}`
+* **Statistical Significance**: **{'Statistically Significant at p < 0.01' if m_raw['statistically_significant_01'] else ('Statistically Significant at p < 0.05 (p = ' + f"{m_raw['p_value']:.4f}" + ')' if m_raw['statistically_significant_05'] else 'Not Significant')}**
 
 ---
 

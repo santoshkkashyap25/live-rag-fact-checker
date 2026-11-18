@@ -939,9 +939,14 @@
   background: linear-gradient(to right, rgba(239, 68, 68, 0.03), rgba(13, 20, 38, 0.6));
 }
 
+.verdictUnsupported {
+  border-left: 6px solid #f59e0b;
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.04), rgba(13, 20, 38, 0.6));
+}
+
 .verdictUnverifiable {
-  border-left: 6px solid var(--warning);
-  background: linear-gradient(to right, rgba(245, 158, 11, 0.03), rgba(13, 20, 38, 0.6));
+  border-left: 6px solid #64748b;
+  background: linear-gradient(to right, rgba(100, 116, 139, 0.04), rgba(13, 20, 38, 0.6));
 }
 
 .verdictHeader {
@@ -966,9 +971,14 @@
   filter: drop-shadow(0 0 10px var(--danger-glow));
 }
 
+.unsupportedIcon {
+  color: #f59e0b;
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.4));
+}
+
 .unverifiableIcon {
-  color: var(--warning);
-  filter: drop-shadow(0 0 10px var(--warning-glow));
+  color: #94a3b8;
+  filter: drop-shadow(0 0 10px rgba(148, 163, 184, 0.3));
 }
 
 .verdictLabel {
@@ -1034,8 +1044,11 @@
 .verdictFalse .progressBarFill {
   background: var(--danger);
 }
+.verdictUnsupported .progressBarFill {
+  background: #f59e0b;
+}
 .verdictUnverifiable .progressBarFill {
-  background: var(--warning);
+  background: #64748b;
 }
 
 .claimBox {
