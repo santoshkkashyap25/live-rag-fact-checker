@@ -1,5 +1,11 @@
 # FactGuard AI: Development Evaluation & Failure Mode Audit (564 Unique Claims)
 
+> **Held-Out Evaluation Notice**:
+> For the decontaminated, strictly held-out evaluation series free from development tuning, please see:
+> - **Pilot Evaluation ($N = 32$)**: [`tests/data/heldout_suite/report_heldout_pilot.md`](data/heldout_suite/report_heldout_pilot.md)
+> - **Scaled Benchmark Suite ($N = 300$)**: [`tests/data/heldout_suite/claims_heldout_300.json`](data/heldout_suite/claims_heldout_300.json)
+> - **Labeling Standard**: [`docs/labeling_policy.md`](../docs/labeling_policy.md)
+
 > **Methodological Disclosure**:
 > - **Evaluation Status**: **Development Audit (Not Held-Out)**. The 564 unique claims evaluated here include items and themes from earlier development and test iterations.
 > - **Dataset Provenance**: The 1,000-row file (`tests/data/claims_test_1000.json`) consists of **564 unique base propositions** (222 True, 223 False, 119 Unverifiable) plus **436 synthetic variant repetitions** across 46 multi-item clusters (appended suffixes like `(Observation #X)`, `(Myth variant #X)`).

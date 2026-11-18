@@ -36,6 +36,8 @@ Information moves faster than traditional indexed verification pipelines can kee
 ## ✨ Key Features
 
 - **🌐 Live Internet Intelligence**: Queries DuckDuckGo and Wikipedia concurrently on the fly. No stale static databases.
+- **📄 Deep Article Body Extraction (Trafilatura)**: Eliminates 200-character snippet truncation by extracting full topical paragraphs (600–800 chars) with BM25 passage salience scoring.
+- **⚖️ 4-Class Epistemic Reasoning**: Rigorous classification into `True`, `False`, `Unsupported` (empirical but unproven/insufficient evidence), and `Unverifiable` (inherently non-falsifiable: taste, ethics, future prediction).
 - **⚡ Real-Time SSE Event Streaming**: Live progress transitions (`Claim Parsing` → `Live Search` → `BM25 Re-Ranking` → `LLM Verification`) streamed directly over Server-Sent Events with transparent telemetry.
 - **🦙 100% Local Offline AI (Ollama)**: Full support for local models (`gemma4:e2b`, `llama3.2`, `qwen2.5`, `mistral`) running on `http://localhost:11434` or custom endpoints with zero cloud keys.
 - **🔗 Shareable Verdict Permalinks**: One-click social sharing to Twitter/X, Reddit, LinkedIn, and Markdown badges with dynamic server-rendered OpenGraph cards (`/v/:id`).
@@ -87,10 +89,27 @@ Evaluating the 564 unique base propositions (deduplicated by stripping synthetic
 
 *Full development telemetry and the 32-case failure mode audit are available in [`tests/evaluation_report_1000.md`](tests/evaluation_report_1000.md).*
 
-### 4. Pristine Held-Out Evaluation Protocol
-To establish true statistical confirmation without contamination:
-* A fresh pilot suite of 32 claims has been constructed in [`tests/data/heldout_suite/claims_heldout_pilot.json`](tests/data/heldout_suite/claims_heldout_pilot.json) with automated Levenshtein decontamination filtering.
-* Features balanced partitions across the 4 classes and dedicated post-training-cutoff events (2024–2026) where live web search is strictly necessary.
+### 4. Held-Out Pilot Scientific Evaluation ($N = 32$)
+
+To establish empirical confirmation free from development tuning, FactGuard was evaluated on a strictly held-out pilot suite ([`tests/data/heldout_suite/claims_heldout_pilot.json`](tests/data/heldout_suite/claims_heldout_pilot.json)) using **frozen multi-engine retrieval** across all systems:
+
+| System Configuration | 4-Class Accuracy | 95% Wilson CI | FEVER 3-Class Accuracy | Coverage (Decisive) | Selective Precision |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **FactGuard AI (Full Pipeline)** | **68.8% (22/32)** | [51.4%, 82.0%] | **84.4%** | **65.6%** (21/32) | **81.0%** |
+| Raw Web Search + LLM Baseline | 65.6% (21/32) | [48.3%, 79.6%] | 81.2% | 56.2% (18/32) | 83.3% |
+| Fair Ungrounded Zero-Shot LLM | 84.4% (27/32) | [68.2%, 93.1%] | 87.5% | 62.5% (20/32) | 85.0% |
+
+- **100% Precision on Refutations (`False`)**: FactGuard correctly refuted 9/9 False claims, resolving both complex scientific fallacies and temporal post-cutoff events (`HOLDOUT-011` citrus blood pH, `HOLDOUT-018` 2024 Nobel Physics room-temperature superconductivity) where raw search failed.
+- **Epistemic Order of Precedence (`Prompt v2.1.0-precedence-4class`)**: When external search snippets discussing a topic were supplied, the LLM initially checked evidence coverage first and labeled non-falsifiable claims as `Unsupported`. Upgrading to a two-step sequence—**Step 1 (Falsifiability Check)** immediately separates non-falsifiable propositions as `Unverifiable` prior to **Step 2 (Evidence Evaluation)**—resolved subjective and aesthetic propositions with $0.95–1.0$ confidence.
+
+*Full pilot evaluation telemetry and audit are documented in [`tests/data/heldout_suite/report_heldout_pilot.md`](tests/data/heldout_suite/report_heldout_pilot.md).*
+
+### 5. Scaled Benchmark Suite ($N = 300$) & Decontamination Protocol
+To scale statistical power beyond pilot sample sizes:
+* Created [`tests/data/heldout_suite/claims_heldout_300.json`](tests/data/heldout_suite/claims_heldout_300.json) featuring **exactly 75 claims per class** (75 True, 75 False, 75 Unsupported, 75 Unverifiable).
+* Sourced from canonical academic benchmarks (Climate-FEVER, SciFact, FEVER) and rigorous scientific/philosophical propositions.
+* **Automated Levenshtein Decontamination**: Every single candidate was cross-checked against all 1,016 development and pilot claims ($< 0.60$ threshold); over 20 candidate claims matching development concepts were automatically identified and rejected.
+* Executable via the checkpointed, frozen-evidence runner: `python tests/run_heldout_300.py`.
 
 
 ---
