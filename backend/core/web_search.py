@@ -346,16 +346,31 @@ class WebSearchEngine:
             return None
 
         lower_url = url.lower()
-        # Skip Wikipedia (already has introductory extracts) or non-HTML/media assets
-        if "wikipedia.org" in lower_url or any(ext in lower_url for ext in [".pdf", ".jpg", ".png", ".zip", ".mp4", "youtube.com"]):
+        # Skip Wikipedia (already has extracts), PDFs, or non-HTML/archive repositories
+        skip_indicators = [
+            "wikipedia.org", ".pdf", "/pdf/", "arxiv.org/pdf", "osti.gov", ".jpg", ".png",
+            ".zip", ".mp4", "youtube.com", "sciencedirect.com", ".xml", ".json"
+        ]
+        if any(ind in lower_url for ind in skip_indicators):
             return None
 
         try:
-            resp = await client.get(url, timeout=timeout_sec, follow_redirects=True)
-            if resp.status_code != 200 or not resp.text:
+            # Enforce hard asyncio timeout so trickling downloads or slow servers never hang
+            resp = await asyncio.wait_for(
+                client.get(url, timeout=timeout_sec, follow_redirects=True),
+                timeout=timeout_sec
+            )
+            if resp.status_code != 200:
                 return None
 
-            html = resp.text
+            content_type = resp.headers.get("content-type", "").lower()
+            if "text/html" not in content_type:
+                return None
+
+            html = resp.text[:500000] if resp.text else ""
+            if not html:
+                return None
+
             extracted_text = None
 
             # 1. Trafilatura Extraction

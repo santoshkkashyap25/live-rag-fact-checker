@@ -1,0 +1,888 @@
+{
+  "metadata": {
+    "evaluation_type": "Held-Out Pilot (N = 32)",
+    "taxonomy": "4-Class (True, False, Unsupported, Unverifiable)",
+    "benchmark_mapping": "FEVER 3-Class (SUPPORTS, REFUTES, NEI)",
+    "timestamp": "2026-11-18T21:39:14Z",
+    "total_claims": 32
+  },
+  "systems": {
+    "factguard_full": {
+      "total": 32,
+      "correct_4class": 22,
+      "accuracy_4class": 0.6875,
+      "accuracy_4class_ci": [
+        0.5143335725657648,
+        0.8204743739921546
+      ],
+      "correct_3class": 27,
+      "accuracy_3class": 0.84375,
+      "accuracy_3class_ci": [
+        0.682458883450717,
+        0.931355685238802
+      ],
+      "decisive_count": 21,
+      "coverage": 0.65625,
+      "selective_precision": 0.8095238095238095,
+      "matrix_4class": {
+        "True": {
+          "True": 8,
+          "False": 0,
+          "Unsupported": 1,
+          "Unverifiable": 0
+        },
+        "False": {
+          "True": 0,
+          "False": 9,
+          "Unsupported": 0,
+          "Unverifiable": 0
+        },
+        "Unsupported": {
+          "True": 0,
+          "False": 2,
+          "Unsupported": 5,
+          "Unverifiable": 0
+        },
+        "Unverifiable": {
+          "True": 0,
+          "False": 2,
+          "Unsupported": 5,
+          "Unverifiable": 0
+        }
+      },
+      "matrix_3class": {
+        "SUPPORTS": {
+          "SUPPORTS": 8,
+          "REFUTES": 0,
+          "NEI": 1
+        },
+        "REFUTES": {
+          "SUPPORTS": 0,
+          "REFUTES": 9,
+          "NEI": 0
+        },
+        "NEI": {
+          "SUPPORTS": 0,
+          "REFUTES": 4,
+          "NEI": 10
+        }
+      }
+    },
+    "raw_search_baseline": {
+      "total": 32,
+      "correct_4class": 21,
+      "accuracy_4class": 0.65625,
+      "accuracy_4class_ci": [
+        0.4831112277015501,
+        0.7958953944300494
+      ],
+      "correct_3class": 26,
+      "accuracy_3class": 0.8125,
+      "accuracy_3class_ci": [
+        0.6469088247545023,
+        0.9111044195086969
+      ],
+      "decisive_count": 18,
+      "coverage": 0.5625,
+      "selective_precision": 0.8333333333333334,
+      "matrix_4class": {
+        "True": {
+          "True": 8,
+          "False": 0,
+          "Unsupported": 1,
+          "Unverifiable": 0
+        },
+        "False": {
+          "True": 0,
+          "False": 7,
+          "Unsupported": 2,
+          "Unverifiable": 0
+        },
+        "Unsupported": {
+          "True": 0,
+          "False": 2,
+          "Unsupported": 5,
+          "Unverifiable": 0
+        },
+        "Unverifiable": {
+          "True": 1,
+          "False": 0,
+          "Unsupported": 5,
+          "Unverifiable": 1
+        }
+      },
+      "matrix_3class": {
+        "SUPPORTS": {
+          "SUPPORTS": 8,
+          "REFUTES": 0,
+          "NEI": 1
+        },
+        "REFUTES": {
+          "SUPPORTS": 0,
+          "REFUTES": 7,
+          "NEI": 2
+        },
+        "NEI": {
+          "SUPPORTS": 1,
+          "REFUTES": 2,
+          "NEI": 11
+        }
+      }
+    },
+    "fair_zero_shot_baseline": {
+      "total": 32,
+      "correct_4class": 27,
+      "accuracy_4class": 0.84375,
+      "accuracy_4class_ci": [
+        0.682458883450717,
+        0.931355685238802
+      ],
+      "correct_3class": 28,
+      "accuracy_3class": 0.875,
+      "accuracy_3class_ci": [
+        0.719317326099671,
+        0.9502985670161679
+      ],
+      "decisive_count": 20,
+      "coverage": 0.625,
+      "selective_precision": 0.85,
+      "matrix_4class": {
+        "True": {
+          "True": 8,
+          "False": 0,
+          "Unsupported": 1,
+          "Unverifiable": 0
+        },
+        "False": {
+          "True": 0,
+          "False": 9,
+          "Unsupported": 0,
+          "Unverifiable": 0
+        },
+        "Unsupported": {
+          "True": 0,
+          "False": 2,
+          "Unsupported": 5,
+          "Unverifiable": 0
+        },
+        "Unverifiable": {
+          "True": 0,
+          "False": 1,
+          "Unsupported": 1,
+          "Unverifiable": 5
+        }
+      },
+      "matrix_3class": {
+        "SUPPORTS": {
+          "SUPPORTS": 8,
+          "REFUTES": 0,
+          "NEI": 1
+        },
+        "REFUTES": {
+          "SUPPORTS": 0,
+          "REFUTES": 9,
+          "NEI": 0
+        },
+        "NEI": {
+          "SUPPORTS": 0,
+          "REFUTES": 3,
+          "NEI": 11
+        }
+      }
+    }
+  },
+  "paired_comparisons": {
+    "factguard_vs_raw": {
+      "both_correct": 20,
+      "both_wrong": 9,
+      "system_a_only": 2,
+      "system_b_only": 1,
+      "discordant_pairs": 3,
+      "chi2": 0.0,
+      "p_value": 1.0
+    },
+    "factguard_vs_zeroshot": {
+      "both_correct": 22,
+      "both_wrong": 5,
+      "system_a_only": 0,
+      "system_b_only": 5,
+      "discordant_pairs": 5,
+      "chi2": 3.2,
+      "p_value": 0.0625
+    }
+  },
+  "per_claim_records": [
+    {
+      "id": "HOLDOUT-001",
+      "domain": "Cell Biology",
+      "expected": "True",
+      "claim": "Telomerase reverse transcriptase synthesizes repetitive nucleotide sequences at chromosome termini.",
+      "factguard": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The retrieved evidence from authoritative sources (Wikipedia, UniProtKB, PMC) explicitly confirms that telomerase reverse transcriptase (TERT) is a ribonucleoprotein enzyme that functions as a reverse transcriptase to add repetitive nucleotide sequences (telomere repeats) to the ends of chromosomes (telomeres)."
+      },
+      "raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "The retrieved evidence from UniProtKB explicitly identifies Telomerase reverse transcriptase (TERT) as the catalytic component of telomerase, which acts as a reverse transcriptase to add simple sequence repeats to chromosome termini (telomeres). This directly confirms the claim that it synthesizes repetitive nucleotide sequences at chromosome termini."
+      },
+      "zero_shot": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Telomerase is a ribonucleoprotein complex that functions as a reverse transcriptase, using its intrinsic RNA template to synthesize and add repetitive DNA sequences (such as TTAGGG in humans) to the 3' ends of chromosomes, thereby maintaining telomere length."
+      }
+    },
+    {
+      "id": "HOLDOUT-002",
+      "domain": "Cosmology",
+      "expected": "True",
+      "claim": "Type Ia supernovae serve as standard candles for measuring cosmological expansion rates.",
+      "factguard": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources (NASA Science, peer\u2011reviewed literature, and expert Daniel Scolnic) state that Type\u202fIa supernovae have a consistent peak luminosity and are used as standard candles to determine distances and thus measure the universe's expansion rate (e.g., Hubble constant)."
+      },
+      "raw_search": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "The claim is directly supported by Evidence 1, which states that Daniel Scolnic's research involves using Type Ia supernovae as standard candles to measure the expansion history of the universe, and Evidence 5, which confirms that Type Ia supernovae are standard candles used to determine distances and, by extension, cosmological expansion rates."
+      },
+      "zero_shot": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Type Ia supernovae are widely accepted in astrophysics as standardizable candles because their peak luminosities can be calibrated using the Phillips relation (luminosity-distance correlation). This property has been instrumental in measuring the expansion history of the universe, including the discovery of dark energy."
+      }
+    },
+    {
+      "id": "HOLDOUT-003",
+      "domain": "Immunology",
+      "expected": "True",
+      "claim": "Mature B lymphocytes undergo somatic hypermutation within germinal centers to increase antibody affinity.",
+      "factguard": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Source 1 (Germinal center Wikipedia) explicitly states that mature B cells in germinal centers mutate their antibody genes through somatic hypermutation to achieve higher affinity, directly confirming the claim."
+      },
+      "raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Source 2 (Germinal center) explicitly states that mature B cells in germinal centers undergo somatic hypermutation of their antibody genes to achieve higher affinity, directly confirming the claim."
+      },
+      "zero_shot": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "Somatic hypermutation is a well-established immunological process occurring in the germinal centers of secondary lymphoid organs, where B cells undergo point mutations in their variable region genes to enhance antibody affinity for antigens."
+      }
+    },
+    {
+      "id": "HOLDOUT-004",
+      "domain": "Geophysics",
+      "expected": "True",
+      "claim": "The Mohorovicic discontinuity marks the boundary between Earth's crust and the upper mantle.",
+      "factguard": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources state that the Mohorovi\u010di\u0107 discontinuity (Moho) is the boundary between Earth's crust and the mantle, which is the uppermost part of the mantle. Therefore it indeed marks the crust\u2011upper mantle boundary."
+      },
+      "raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Wikipedia entries on the Mohorovi\u010di\u0107 discontinuity state it is the boundary between Earth's crust and the mantle, specifically the solid uppermost mantle, confirming the claim."
+      },
+      "zero_shot": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The Mohorovi\u010di\u0107 discontinuity (Moho) is a seismic velocity discontinuity that separates the Earth's crust from the underlying mantle, widely accepted in geophysics."
+      }
+    },
+    {
+      "id": "HOLDOUT-005",
+      "domain": "Biochemistry",
+      "expected": "True",
+      "claim": "The citric acid cycle takes place within the mitochondrial matrix in eukaryotic organisms.",
+      "factguard": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "All cited authoritative sources state that in eukaryotic cells the citric acid (Krebs) cycle occurs in the mitochondrial matrix (e.g., Metabolism in a eukaryotic cell, OpenStax, and Wikipedia entries)."
+      },
+      "raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Both the mitochondrial matrix entry (source 3) and the citric acid cycle entry (source 5) state that the citric acid cycle occurs in the mitochondrial matrix of eukaryotic cells, directly confirming the claim."
+      },
+      "zero_shot": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Biochemistry textbooks and scientific consensus state that the citric acid (Krebs) cycle occurs in the mitochondrial matrix of eukaryotic cells."
+      }
+    },
+    {
+      "id": "HOLDOUT-006",
+      "domain": "Genetics",
+      "expected": "True",
+      "claim": "X-chromosome inactivation in female placental mammals is mediated by the non-coding RNA Xist.",
+      "factguard": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources (e.g., Wikipedia entries on XIST and X\u2011inactivation, and peer\u2011reviewed literature) state that Xist is a non\u2011coding RNA that acts as the major effector of X\u2011chromosome inactivation in female placental mammals, directly confirming the claim."
+      },
+      "raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Multiple authoritative sources state that Xist (XIST) is a long non\u2011coding RNA that acts as the major effector of X\u2011chromosome inactivation in female placental mammals, confirming the claim."
+      },
+      "zero_shot": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Extensive molecular and genetic studies have shown that the long non-coding RNA Xist coats the future inactive X chromosome and initiates silencing in female placental mammals."
+      }
+    },
+    {
+      "id": "HOLDOUT-007",
+      "domain": "Meteorology",
+      "expected": "True",
+      "claim": "The Coriolis effect deflects moving air masses to the right in the Northern Hemisphere.",
+      "factguard": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Authoritative sources (NOAA, educational web article, and Wikipedia) all state that the Coriolis effect causes moving air masses to be deflected to the right in the Northern Hemisphere, confirming the claim."
+      },
+      "raw_search": {
+        "verdict": "True",
+        "confidence": 0.98,
+        "reasoning": "Authoritative sources explain that on Earth\u2019s anticlockwise rotating frame, the Coriolis force deflects moving objects to the right in the Northern Hemisphere; both the Wikipedia entry on the Coriolis force and the article on the Coriolis effect state that air currents appear to bend rightward in the Northern Hemisphere, confirming the claim."
+      },
+      "zero_shot": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "The Coriolis force, arising from Earth's rotation, causes moving air in the Northern Hemisphere to be deflected to the right relative to its motion, a principle confirmed by atmospheric physics and meteorology."
+      }
+    },
+    {
+      "id": "HOLDOUT-008",
+      "domain": "Temporal Post-Cutoff (2024)",
+      "expected": "True",
+      "claim": "NASA's Europa Clipper spacecraft was successfully launched aboard a Falcon Heavy rocket in October 2024.",
+      "factguard": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Multiple authoritative sources (Wikipedia, NASA Science, Science@NASA) state that the Europa Clipper was launched on a SpaceX Falcon Heavy from Kennedy Space Center on October 14, 2024, confirming the claim of a successful launch in October 2024."
+      },
+      "raw_search": {
+        "verdict": "True",
+        "confidence": 0.99,
+        "reasoning": "Both the Europa Clipper Wikipedia entry and the NASA Science page state that the spacecraft was launched on October 14, 2024 aboard a SpaceX Falcon\u202fHeavy rocket from Kennedy Space Center, confirming the claim."
+      },
+      "zero_shot": {
+        "verdict": "True",
+        "confidence": 1.0,
+        "reasoning": "NASA's Europa Clipper was successfully launched on October 14, 2024, aboard a SpaceX Falcon Heavy rocket from Kennedy Space Center. This event is a confirmed historical fact within the scope of established records."
+      }
+    },
+    {
+      "id": "HOLDOUT-009",
+      "domain": "Temporal Post-Cutoff (2024)",
+      "expected": "True",
+      "claim": "The 2024 Nobel Prize in Chemistry was awarded to David Baker, Demis Hassabis, and John Jumper for computational protein design and protein structure prediction.",
+      "factguard": {
+        "verdict": "Unsupported",
+        "confidence": 0.8,
+        "reasoning": "Source 1 confirms David Baker received the 2024 Nobel Prize in Chemistry for computational protein design, but none of the provided sources mention Demis Hassabis or John Jumper as co\u2011recipients, so the claim that all three shared the prize lacks supporting evidence."
+      },
+      "raw_search": {
+        "verdict": "Unsupported",
+        "confidence": 0.62,
+        "reasoning": "Evidence confirms David Baker received the 2024 Nobel Prize in Chemistry, but provides no confirmation that Demis Hassabis and John Jumper were co\u2011recipients, so the full claim cannot be verified."
+      },
+      "zero_shot": {
+        "verdict": "Unsupported",
+        "confidence": 0.8,
+        "reasoning": "The 2024 Nobel Chemistry laureates have not been announced as of the latest known information, so the claim cannot be confirmed or refuted."
+      }
+    },
+    {
+      "id": "HOLDOUT-010",
+      "domain": "Human Physiology",
+      "expected": "False",
+      "claim": "Human hair and fingernails continue biological cellular growth for weeks after clinical death.",
+      "factguard": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All cited sources explain that hair and fingernails do not continue cellular growth after death; the apparent lengthening is due to skin dehydration and retraction, not actual growth, making the claim that they grow for weeks after clinical death false."
+      },
+      "raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Human hair and fingernail growth requires active cellular division, which ceases upon clinical death; the cited FactHub article explains that the apparent lengthening is due to skin retraction, not new growth."
+      },
+      "zero_shot": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "Biological cellular growth requires active metabolism and energy production, which cease immediately upon clinical death. The apparent growth of hair and nails after death is an optical illusion caused by the retraction of skin and tissues due to dehydration and rigor mortis, not actual cellular division."
+      }
+    },
+    {
+      "id": "HOLDOUT-011",
+      "domain": "Nutrition",
+      "expected": "False",
+      "claim": "Consuming acidic citrus fruits directly lowers physiological blood pH into clinical acidosis in healthy humans.",
+      "factguard": {
+        "verdict": "False",
+        "confidence": 0.9,
+        "reasoning": "The evidence indicates that fruits, including citrus, are metabolized to generate base (e.g., citrate and malate) and that dietary acid load from protein-rich foods is the main driver of metabolic acidosis. No source shows that consuming acidic citrus fruits directly lowers blood pH into the clinical acidosis range in healthy adults; in fact, fruit consumption is associated with a lower net acid excretion and a more alkaline urine pH. Thus the claim is contradicted by authoritative sources."
+      },
+      "raw_search": {
+        "verdict": "Unsupported",
+        "confidence": 0.55,
+        "reasoning": "None of the provided sources confirm that eating acidic citrus fruits directly lowers blood pH to the level of clinical acidosis in healthy adults. The diet\u2011induced acid stress article discusses potential acid stress from diet but does not establish that citrus consumption causes clinically significant acidosis. No source refutes the claim either, so it remains unverified."
+      },
+      "zero_shot": {
+        "verdict": "False",
+        "confidence": 0.97,
+        "reasoning": "Blood pH is tightly regulated by physiological buffers and renal/respiratory mechanisms; consuming acidic citrus fruits does not overcome these controls to produce clinical acidosis in healthy individuals."
+      }
+    },
+    {
+      "id": "HOLDOUT-012",
+      "domain": "Neuroscience",
+      "expected": "False",
+      "claim": "Brain scans prove that distinct left-brained individuals are completely incapable of creative artistic cognition.",
+      "factguard": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "All retrieved studies (e.g., the 2013 resting\u2011state connectivity study, fMRI analyses debunking the right\u2011brain/left\u2011brain myth, and contemporary neuroscience reviews) find no evidence that left\u2011hemisphere dominance precludes creative or artistic cognition; instead, creativity engages distributed, bilateral networks."
+      },
+      "raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Neuroscientific studies using brain imaging have shown no evidence that people are strictly left\u2011 or right\u2011brained; creative artistic cognition is not confined to one hemisphere, contradicting the claim that left\u2011brain individuals are completely incapable of such creativity."
+      },
+      "zero_shot": {
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Neuroscience shows that while certain functions are lateralized, creativity engages networks across both hemispheres; no brain imaging evidence demonstrates that left\u2011dominant individuals are entirely incapable of artistic cognition."
+      }
+    },
+    {
+      "id": "HOLDOUT-013",
+      "domain": "Virology",
+      "expected": "False",
+      "claim": "Human immunodeficiency virus particles reproduce by assembling independent ribosomes inside viral capsids.",
+      "factguard": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "HIV does not produce its own ribosomes; it relies on host cell ribosomes to translate viral proteins, and new virions assemble at the cell membrane, not by assembling ribosomes inside capsids. Evidence from the Virus Replication source states that protein synthesis is carried out by host ribosomes, not independent ribosomes within the viral capsid."
+      },
+      "raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "HIV is a retrovirus that lacks its own ribosomes; it replicates by using host-cell ribosomes after entry, and viral particles do not contain independent ribosomes within capsids. The provided sources describe virus replication as dependent on host ribosomes and do not mention ribosomes inside HIV capsids, contradicting the claim."
+      },
+      "zero_shot": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "HIV is a retrovirus that lacks ribosomes and relies on host cell ribosomes for protein synthesis; viral particles do not assemble independent ribosomes within capsids."
+      }
+    },
+    {
+      "id": "HOLDOUT-014",
+      "domain": "Astronomy",
+      "expected": "False",
+      "claim": "The dark craters of the planet Mercury maintain permanent liquid methane lakes on their floors.",
+      "factguard": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Evidence shows Mercury\u2019s permanently shadowed craters contain ice deposits and no stable liquid water or methane; the planet\u2019s thin exosphere and extreme temperatures preclude liquid methane lakes. No source supports the existence of such lakes."
+      },
+      "raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The evidence provided (particularly source 5) discusses permanently shadowed polar craters on Mercury but makes no mention of liquid methane lakes. Moreover, Mercury\u2019s surface temperatures exceed 400\u202f\u00b0C, far above methane\u2019s boiling point (\u2212161\u202f\u00b0C), making the existence of liquid methane impossible. Thus the claim is contradicted by both the lack of supporting evidence and established planetary science."
+      },
+      "zero_shot": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Mercury has no substantial atmosphere and its surface temperatures range from about \u2013180\u202f\u00b0C in permanent shadow to +430\u202f\u00b0C in sunlight, far above the boiling point of methane. No methane has been detected on Mercury, and the planet\u2019s geology does not support stable liquid bodies."
+      }
+    },
+    {
+      "id": "HOLDOUT-015",
+      "domain": "Pharmacology",
+      "expected": "False",
+      "claim": "Penicillin antibiotics treat acute bacterial infections by dissolving bacterial nuclear envelopes.",
+      "factguard": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Penicillin antibiotics act by inhibiting bacterial cell wall synthesis, not by dissolving nuclear envelopes. Bacteria lack nuclear envelopes, and authoritative sources on antibiotics (e.g., Ceftriaxone description and general antimicrobial definitions) describe cell wall inhibition as the mechanism of action, not nuclear envelope dissolution."
+      },
+      "raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Penicillin antibiotics act by inhibiting bacterial cell wall synthesis through binding to penicillin\u2011binding proteins; they do not dissolve any nuclear envelope, and bacteria lack a nuclear envelope altogether. The evidence sources describe penicillin\u2019s discovery and general antimicrobial function but do not support the claim of dissolving nuclear envelopes."
+      },
+      "zero_shot": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Penicillin inhibits bacterial cell wall synthesis, causing lysis; bacteria lack a nuclear envelope, so the claim that it dissolves bacterial nuclear envelopes is incorrect."
+      }
+    },
+    {
+      "id": "HOLDOUT-016",
+      "domain": "Genetics",
+      "expected": "False",
+      "claim": "Mature human platelets contain forty-six diploid chromosomes identical to hepatic nuclei.",
+      "factguard": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Mature human platelets are anucleate cell fragments; they lack nuclei and therefore contain no chromosomes. All cited sources (LibreTexts, Elsevier, Wikipedia, ScienceDirect) state that platelets do not have nuclei, confirming the absence of diploid chromosomes identical to hepatic nuclei."
+      },
+      "raw_search": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "Mature human platelets are anucleate cell fragments that lack nuclei and therefore contain no chromosomes; they are not diploid and are not identical to hepatic nuclei. Sources 2, 4, and 5 explicitly state that platelets lack nuclei."
+      },
+      "zero_shot": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Mature human platelets are anucleate cell fragments that do not contain a nucleus or chromosomes. While they originate from megakaryocytes which are polyploid, the final platelet product lacks the 46 diploid chromosomes found in typical somatic nuclei like those in the liver."
+      }
+    },
+    {
+      "id": "HOLDOUT-017",
+      "domain": "Temporal Post-Cutoff (2024)",
+      "expected": "False",
+      "claim": "Boeing's Starliner Calypso crew capsule permanently evacuated the ISS crew and returned all eight station astronauts to Earth in June 2024.",
+      "factguard": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The evidence shows that Boeing\u2019s Starliner Calypso suffered thruster and docking failures, left the capsule stranded, and the two astronauts aboard did not return to Earth until March\u202f2025 on a SpaceX Dragon; it did not permanently evacuate the ISS crew or return all eight station astronauts in June\u202f2024."
+      },
+      "raw_search": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The claim that Boeing\u2019s Starliner Calypso permanently evacuated the ISS crew and returned all eight astronauts to Earth in June\u202f2024 is contradicted by authoritative sources.  Wikipedia and NASA reports state that Calypso docked with the ISS on 5\u202fJune\u202f2024, carried only two astronauts (Wilmore and Williams), and was intended for an 8\u2011day stay ending 14\u202fJune\u202f2024, but the capsule\u2019s thrusters failed during docking and the crew returned to Earth only in March\u202f2025 aboard a SpaceX Dragon.  Thus the ISS crew was not evacuated and the eight astronauts were not returned in June\u202f2024."
+      },
+      "zero_shot": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The Boeing Starliner Calypso was a crewed test flight that docked with the ISS in June\u202f2024, but it did not evacuate the ISS crew or return the eight astronauts aboard the station. The ISS crew remained on the station and returned on a different vehicle."
+      }
+    },
+    {
+      "id": "HOLDOUT-018",
+      "domain": "Temporal Post-Cutoff (2024)",
+      "expected": "False",
+      "claim": "The 2024 Nobel Prize in Physics was awarded for the experimental synthesis of room-temperature superconductor LK-99.",
+      "factguard": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The official Nobel Prize announcement (source 2) states that the 2024 Physics Prize was awarded jointly to John J. Hopfield and Geoffrey Hinton for foundational discoveries enabling machine learning with artificial neural networks, not for the synthesis of LK\u201199. No authoritative source supports the claim that LK\u201199 was the basis for the award."
+      },
+      "raw_search": {
+        "verdict": "Unsupported",
+        "confidence": 0.6,
+        "reasoning": "None of the retrieved sources mention the 2024 Nobel Prize in Physics or its award to the experimental synthesis of LK\u201199. The available evidence (including a partial description of LK\u201199) does not confirm or refute the claim."
+      },
+      "zero_shot": {
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "The 2024 Nobel Prize in Physics was awarded to John Hopfield and Geoffrey Hinton for foundational discoveries and inventions that enable machine learning with artificial neural networks. LK-99 was a controversial material proposed as a room-temperature superconductor in 2023, but its claims were largely debunked by the scientific community, and it did not receive a Nobel Prize."
+      }
+    },
+    {
+      "id": "HOLDOUT-019",
+      "domain": "Astrobiology",
+      "expected": "Unsupported",
+      "claim": "Atmospheric biosignature disequilibrium on exoplanet K2-18b confirms metabolic dimethyl sulfide emission.",
+      "factguard": {
+        "verdict": "Unsupported",
+        "confidence": 0.8,
+        "reasoning": "The evidence confirms the presence of dimethyl sulfide (DMS) and dimethyl disulfide (DMDS) in the atmosphere of K2\u201118b, but none of the cited sources establish that the DMS originates from metabolic (biological) processes. The claim that the atmospheric disequilibrium *confirms* metabolic emission is therefore not supported by the available evidence."
+      },
+      "raw_search": {
+        "verdict": "Unsupported",
+        "confidence": 0.7,
+        "reasoning": "The evidence reports a detection of dimethyl sulfide (DMS) and dimethyl disulfide (DMDS) in the atmosphere of K2\u201118b (see evidence 3 and 4), but it does not establish that the observed disequilibrium is due to metabolic activity or that the emission is definitively biogenic. No source confirms that the atmospheric disequilibrium on K2\u201118b conclusively indicates metabolic DMS production, so the claim remains unverified."
+      },
+      "zero_shot": {
+        "verdict": "Unsupported",
+        "confidence": 0.8,
+        "reasoning": "No confirmed detection of dimethyl sulfide or evidence of atmospheric disequilibrium on K2-18b; the claim is unverified by current observations."
+      }
+    },
+    {
+      "id": "HOLDOUT-020",
+      "domain": "Particle Physics",
+      "expected": "Unsupported",
+      "claim": "Sterile right-handed neutrinos with masses near 7 keV account for all observed galactic dark matter halos.",
+      "factguard": {
+        "verdict": "Unsupported",
+        "confidence": 0.6,
+        "reasoning": "The evidence indicates that sterile neutrinos with masses around 7\u202fkeV are viable dark\u2011matter candidates and may fit certain cosmological data, but it does not provide definitive proof that they constitute all dark matter in galactic halos. Source 5 notes that both CDM and 7\u202fkeV sterile\u2011neutrino models fit the data, with no robust distinction, and no source confirms the claim that they account for all observed halos."
+      },
+      "raw_search": {
+        "verdict": "Unsupported",
+        "confidence": 0.6,
+        "reasoning": "The evidence indicates that sterile neutrinos with masses in the keV range have properties that could make them dark\u2011matter candidates (e.g., neutral, long\u2011lived, non\u2011relativistic), but none of the cited sources assert that they *completely* explain all observed galactic dark\u2011matter halos.  The X\u2011ray studies constrain the mixing angle and abundance, suggesting that if 7\u202fkeV sterile neutrinos exist they may contribute only a fraction of the dark matter, not all of it."
+      },
+      "zero_shot": {
+        "verdict": "Unsupported",
+        "confidence": 0.82,
+        "reasoning": "A ~7\u202fkeV sterile right\u2011handed neutrino is a proposed warm dark\u2011matter candidate, but current astrophysical constraints (e.g., Lyman\u2011\u03b1 forest, X\u2011ray limits) make it unlikely to account for all galactic dark\u2011matter halos; the hypothesis remains unproven and debated."
+      }
+    },
+    {
+      "id": "HOLDOUT-021",
+      "domain": "Geobiology",
+      "expected": "Unsupported",
+      "claim": "Microbial life originated at terrestrial subaerial hot springs rather than deep-sea hydrothermal vents.",
+      "factguard": {
+        "verdict": "Unsupported",
+        "confidence": 0.6,
+        "reasoning": "The provided sources describe hot springs and the earliest evidence of life but do not address where microbial life first originated, nor do they discuss deep\u2011sea hydrothermal vents. No authoritative evidence in the citations confirms or refutes the claim that life began at terrestrial subaerial hot springs rather than deep\u2011sea vents."
+      },
+      "raw_search": {
+        "verdict": "Unsupported",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence does not contain any authoritative information about the specific environment where microbial life first arose; it only discusses general Earth history, early life evidence, and hot spring characteristics. No source confirms or refutes that origin occurred at terrestrial subaerial hot springs versus deep\u2011sea hydrothermal vents."
+      },
+      "zero_shot": {
+        "verdict": "Unsupported",
+        "confidence": 0.6,
+        "reasoning": "The origin of microbial life is still debated; while hydrothermal vent and hot\u2011spring scenarios both have supporting evidence, no definitive consensus confirms one over the other."
+      }
+    },
+    {
+      "id": "HOLDOUT-022",
+      "domain": "Neurobiology",
+      "expected": "Unsupported",
+      "claim": "Quantum entanglement across nuclear spins in intracellular phosphorus atoms stabilizes hippocampal long-term potentiation.",
+      "factguard": {
+        "verdict": "Unsupported",
+        "confidence": 0.4,
+        "reasoning": "The cited sources discuss the theoretical possibility that nuclear spins of phosphorus atoms (e.g., in Posner molecules) could be entangled and might play a role in quantum cognition, but none provide empirical evidence that such entanglement stabilizes hippocampal long\u2011term potentiation. The claim requires a demonstrated causal link between entanglement and LTP, which is absent from the evidence."
+      },
+      "raw_search": {
+        "verdict": "Unsupported",
+        "confidence": 0.35,
+        "reasoning": "The cited sources discuss the theoretical possibility that nuclear spins of phosphorus (e.g., in Posner molecules) could be entangled and might play a role in quantum cognition, but none provide empirical evidence that such entanglement stabilizes hippocampal long\u2011term potentiation. The claim extends beyond the scope of the available evidence, which remains speculative and hypothesis\u2011driven."
+      },
+      "zero_shot": {
+        "verdict": "Unsupported",
+        "confidence": 0.7,
+        "reasoning": "There is no experimental evidence that quantum entanglement of nuclear spins in intracellular phosphorus atoms influences hippocampal long\u2011term potentiation; the idea remains speculative and unverified."
+      }
+    },
+    {
+      "id": "HOLDOUT-023",
+      "domain": "Archaeology",
+      "expected": "Unsupported",
+      "claim": "Submerged Paleolithic megalithic structures in the Persian Gulf basin date back to 18,000 BCE.",
+      "factguard": {
+        "verdict": "Unsupported",
+        "confidence": 0.3,
+        "reasoning": "None of the retrieved sources provide evidence of submerged megalithic structures in the Persian Gulf basin dated to 18,000\u202fBCE. The Neolithic article (source\u202f1) discusses a period from ~10,000 to 5,500\u202fBCE, not 18,000\u202fBCE, and does not mention megalithic structures. The other sources (2,\u202f4,\u202f5) describe general underwater sites or Palaeolithic artefacts but give no specific dates or evidence of megalithic construction at 18,000\u202fBCE."
+      },
+      "raw_search": {
+        "verdict": "Unsupported",
+        "confidence": 0.6,
+        "reasoning": "The provided evidence does not mention any submerged Paleolithic megalithic structures in the Persian Gulf basin, nor does it provide any dating to 18,000\u202fBCE. None of the cited sources discuss such structures or that specific time period, so the claim cannot be verified or refuted with the available information."
+      },
+      "zero_shot": {
+        "verdict": "Unsupported",
+        "confidence": 0.95,
+        "reasoning": "While submerged archaeological sites exist in the Persian Gulf (such as those in the UAE and Qatar), established scientific consensus dates these structures to the Mesolithic or early Holocene periods (roughly 7,000\u201310,000 years ago), not the Paleolithic era of 18,000 BCE. There is no verified evidence of megalithic structures in the region dating back to 18,000 BCE."
+      }
+    },
+    {
+      "id": "HOLDOUT-024",
+      "domain": "Temporal Post-Cutoff (2025)",
+      "expected": "Unsupported",
+      "claim": "SpaceX Starship completed its first commercial orbital satellite deployment mission before January 2025.",
+      "factguard": {
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "All authoritative sources indicate that SpaceX Starship\u2019s first orbital flight, which deployed Starlink satellites, occurred in late September 2026 (Flight\u202f14) and early November 2026 (Flight\u202f15). No evidence shows a commercial orbital satellite deployment before January\u202f2025."
+      },
+      "raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Evidence 5 states that Starship\u2019s first orbital flight, which delivered 26 Starlink V3 satellites, occurred on September\u202f28,\u202f2026. This is after January\u202f2025, so the claim that the first commercial orbital satellite deployment happened before that date is contradicted."
+      },
+      "zero_shot": {
+        "verdict": "False",
+        "confidence": 0.85,
+        "reasoning": "As of mid\u20112024, SpaceX's Starship has not yet performed an orbital flight, let alone a commercial satellite deployment, and no records indicate such a mission occurred before January\u202f2025."
+      }
+    },
+    {
+      "id": "HOLDOUT-025",
+      "domain": "Temporal Post-Cutoff (2025)",
+      "expected": "Unsupported",
+      "claim": "An oral small-molecule GLP-1 receptor agonist received final FDA breakthrough approval for non-diabetic cognitive enhancement in January 2025.",
+      "factguard": {
+        "verdict": "False",
+        "confidence": 0.98,
+        "reasoning": "The evidence indicates that Orforglipron, an oral small\u2011molecule GLP\u20111 receptor agonist, received FDA approval in April\u202f2026 for obesity and type\u202f2 diabetes (sources\u202f3 and\u202f5). No source documents a final FDA breakthrough approval in January\u202f2025, nor any indication that the drug was approved for non\u2011diabetic cognitive enhancement. The claim therefore contradicts the authoritative evidence."
+      },
+      "raw_search": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The only relevant evidence (source 5) reports that Orforglipron, an oral small\u2011molecule GLP\u20111 receptor agonist, was approved by the FDA for obesity treatment in people with type\u00a02 diabetes, not for non\u2011diabetic cognitive enhancement, and it does not mention a breakthrough designation or a January\u00a02025 approval date."
+      },
+      "zero_shot": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "No FDA record exists of an oral small\u2011molecule GLP\u20111 receptor agonist receiving breakthrough approval for non\u2011diabetic cognitive enhancement in January\u202f2025; GLP\u20111 agonists approved so far are peptide injectables and none have been cleared for cognitive use."
+      }
+    },
+    {
+      "id": "HOLDOUT-026",
+      "domain": "Philosophy of Mind",
+      "expected": "Unverifiable",
+      "claim": "The subjective qualitative experience of seeing the color red is identical across all neurotypical human brains.",
+      "factguard": {
+        "verdict": "False",
+        "confidence": 0.9,
+        "reasoning": "Evidence 1 explicitly states that one person\u2019s red cannot be said to look the same as another\u2019s, indicating variability in subjective experience. Evidence 3 reports quantitative differences in color qualia among neurotypical individuals, describing only relational equivalence rather than identicalness. Thus the claim that the experience of red is identical across all neurotypical brains is contradicted by the evidence."
+      },
+      "raw_search": {
+        "verdict": "True",
+        "confidence": 0.75,
+        "reasoning": "The study \"Is my 'red' your 'red'?: Evaluating structural correspondences between ...\" reports quantitative evidence that the color qualia of neurotypical individuals are relationally equivalent, implying that the subjective experience of red is the same across neurotypical brains. This directly supports the claim that the experience is identical for all neurotypical humans."
+      },
+      "zero_shot": {
+        "verdict": "Unverifiable",
+        "confidence": 0.85,
+        "reasoning": "The claim concerns the identical subjective experience (qualia) of seeing red across all neurotypical brains, a phenomenon that cannot be directly measured or objectively compared; thus it is fundamentally non\u2011falsifiable with current scientific methods."
+      }
+    },
+    {
+      "id": "HOLDOUT-027",
+      "domain": "Aesthetics",
+      "expected": "Unverifiable",
+      "claim": "Acoustic orchestral symphony performance provides deeper aesthetic emotional transcendence than modern synthesized music.",
+      "factguard": {
+        "verdict": "Unsupported",
+        "confidence": 0.55,
+        "reasoning": "The provided evidence consists of general Wikipedia entries on music and specific artists/albums, none of which address or compare the aesthetic emotional impact of acoustic orchestral symphonies versus modern synthesized music. Without empirical or authoritative support for the claim, it remains unverified."
+      },
+      "raw_search": {
+        "verdict": "Unsupported",
+        "confidence": 0.4,
+        "reasoning": "The provided sources discuss various musical works and producers but contain no empirical data or authoritative statements comparing the aesthetic emotional transcendence of acoustic orchestral symphonies to modern synthesized music. Consequently, the claim cannot be verified or refuted based on the evidence."
+      },
+      "zero_shot": {
+        "verdict": "Unverifiable",
+        "confidence": 0.9,
+        "reasoning": "The claim compares subjective aesthetic experiences; such preferences cannot be objectively measured or proven, making the statement non-falsifiable."
+      }
+    },
+    {
+      "id": "HOLDOUT-028",
+      "domain": "Ethics & Law",
+      "expected": "Unverifiable",
+      "claim": "Autonomous lethal weapons systems are fundamentally morally inferior to human infantry combatants.",
+      "factguard": {
+        "verdict": "Unsupported",
+        "confidence": 0.5,
+        "reasoning": "The evidence presents conflicting views: sources 1, 4, and 5 argue that autonomous lethal weapons undermine moral accountability or are morally problematic, while source 5 also suggests they protect soldiers\u2019 rights, indicating no clear consensus that AWS are morally inferior to human infantry. Thus the claim cannot be confirmed or refuted with the available evidence."
+      },
+      "raw_search": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a moral judgment\u2014\u2018morally inferior\u2019\u2014which is inherently subjective and cannot be empirically verified or falsified by the provided evidence. The evidence discusses ethical concerns and legal frameworks but does not establish an objective standard of moral superiority or inferiority between autonomous systems and human infantry. Therefore the claim cannot be resolved as true or false based on current evidence."
+      },
+      "zero_shot": {
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim asserts a moral judgment ('fundamentally morally inferior') which is a subjective ethical opinion rather than an objective, falsifiable empirical fact. Moral superiority or inferiority depends on varying ethical frameworks and cannot be verified through scientific consensus or historical records in the same way factual claims can."
+      }
+    },
+    {
+      "id": "HOLDOUT-029",
+      "domain": "Cosmology",
+      "expected": "Unverifiable",
+      "claim": "The total information entropy of our observable universe will decrease toward zero in an alternate cosmic bounce cycle.",
+      "factguard": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that the total information entropy of the observable universe will decrease toward zero in an alternate cosmic bounce cycle contradicts established thermodynamic principles and the evidence provided. Source\u202f1 describes the heat death scenario, where entropy reaches a maximum, not zero. Sources\u202f2,\u202f3, and\u202f5 discuss cyclic or bounce cosmologies, but none indicate a decrease of entropy to zero; instead, they generally imply entropy either remains high or increases across cycles. No authoritative source supports a zero\u2011entropy outcome."
+      },
+      "raw_search": {
+        "verdict": "Unsupported",
+        "confidence": 0.6,
+        "reasoning": "The provided sources discuss black hole information paradox, heat death, ultimate fate, uncertainty principle, and a brief mention of bounce cosmology, but none provide evidence that the total information entropy of the observable universe would decrease toward zero during an alternate cosmic bounce cycle. No authoritative source confirms or refutes this specific entropy behavior, leaving the claim unverified."
+      },
+      "zero_shot": {
+        "verdict": "Unsupported",
+        "confidence": 0.8,
+        "reasoning": "Current cosmological theory and the second law of thermodynamics predict that entropy increases over time; no credible model predicts a future cosmic bounce that would reduce the total entropy of the observable universe to zero."
+      }
+    },
+    {
+      "id": "HOLDOUT-030",
+      "domain": "Future Ecology",
+      "expected": "Unverifiable",
+      "claim": "Global artificial atmospheric aerosol injection will be permanently mandated by international treaty before 2060.",
+      "factguard": {
+        "verdict": "Unsupported",
+        "confidence": 0.25,
+        "reasoning": "None of the retrieved sources provide evidence that an international treaty will permanently mandate global artificial atmospheric aerosol injection before 2060. The documents discuss the technology, governance questions, and potential use of stratospheric aerosol injection, but they do not mention any treaty or legal requirement."
+      },
+      "raw_search": {
+        "verdict": "Unsupported",
+        "confidence": 0.8,
+        "reasoning": "None of the retrieved sources mention an international treaty mandating global artificial atmospheric aerosol injection, nor do they provide any evidence that such a treaty exists or is planned before 2060. The sources discuss the concept of stratospheric aerosol injection but do not address legal or policy commitments."
+      },
+      "zero_shot": {
+        "verdict": "Unverifiable",
+        "confidence": 0.5,
+        "reasoning": "The claim predicts a future international treaty mandating global aerosol injection before 2060, which is a speculative event with no current evidence or consensus supporting its inevitability."
+      }
+    },
+    {
+      "id": "HOLDOUT-031",
+      "domain": "Sociology",
+      "expected": "Unverifiable",
+      "claim": "Democratic governance is universally the most productive political system for technological innovation under all human cultural conditions.",
+      "factguard": {
+        "verdict": "Unsupported",
+        "confidence": 0.55,
+        "reasoning": "The evidence indicates that democratic systems are associated with higher overall innovation (LSE Business Review) but also notes that different political systems produce different forms of innovation, and does not provide evidence that democracy is universally the most productive for technological innovation across all cultural contexts. No source explicitly confirms or refutes the universal claim, leaving it unverified."
+      },
+      "raw_search": {
+        "verdict": "Unsupported",
+        "confidence": 0.6,
+        "reasoning": "Source 5 provides empirical evidence that democracies tend to promote innovation performance compared to autocracies, but it does not establish that democratic governance is universally the most productive system for technological innovation across all cultural contexts. No source contradicts the claim, yet the universal qualifier is not supported by the evidence."
+      },
+      "zero_shot": {
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim is contradicted by historical and empirical evidence showing that non-democratic systems (such as those in China, South Korea, and the Soviet Union during specific periods) have achieved high levels of technological innovation and productivity. The use of absolute terms like 'universally' and 'under all human cultural conditions' renders the statement factually incorrect, as political system efficacy varies based on context, institutional design, and historical period."
+      }
+    },
+    {
+      "id": "HOLDOUT-032",
+      "domain": "Personal Preference",
+      "expected": "Unverifiable",
+      "claim": "Handwritten correspondence conveys greater authentic personal affection than encrypted digital text messaging.",
+      "factguard": {
+        "verdict": "Unsupported",
+        "confidence": 0.6,
+        "reasoning": "The evidence discusses handwritten letters versus digital messages in general, noting that handwritten notes are perceived as more meaningful and emotionally intimate. However, none of the sources address encrypted digital text messaging specifically, so there is no direct evidence confirming that encrypted digital messages convey less authentic personal affection than handwritten correspondence."
+      },
+      "raw_search": {
+        "verdict": "Unsupported",
+        "confidence": 0.55,
+        "reasoning": "Evidence 3\u20135 documents that handwritten notes enhance emotional intimacy and authenticity, but none address encrypted digital text messaging or compare the two modes. Without data on encrypted messaging, the comparative claim cannot be verified."
+      },
+      "zero_shot": {
+        "verdict": "Unverifiable",
+        "confidence": 0.92,
+        "reasoning": "The claim compares perceived authenticity and affection between handwritten and encrypted digital messages, which are subjective judgments and lack objective, universally measurable criteria, making it non\u2011falsifiable."
+      }
+    }
+  ]
+}

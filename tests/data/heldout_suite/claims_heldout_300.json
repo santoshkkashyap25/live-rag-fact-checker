@@ -1,0 +1,2102 @@
+[
+  {
+    "domain": "Cell Biology",
+    "expected": "True",
+    "benchmark": "SciFact",
+    "claim": "Telomerase reverse transcriptase synthesizes repetitive nucleotide sequences at chromosome termini.",
+    "id": "HOLDOUT-001"
+  },
+  {
+    "domain": "Cosmology",
+    "expected": "True",
+    "benchmark": "Physics Consortium",
+    "claim": "Type Ia supernovae serve as standard candles for measuring cosmological expansion rates.",
+    "id": "HOLDOUT-002"
+  },
+  {
+    "domain": "Immunology",
+    "expected": "True",
+    "benchmark": "SciFact",
+    "claim": "Mature B lymphocytes undergo somatic hypermutation within germinal centers to increase antibody affinity.",
+    "id": "HOLDOUT-003"
+  },
+  {
+    "domain": "Geophysics",
+    "expected": "True",
+    "benchmark": "USGS",
+    "claim": "The Mohorovicic discontinuity marks the boundary between Earth's crust and the upper mantle.",
+    "id": "HOLDOUT-004"
+  },
+  {
+    "domain": "Biochemistry",
+    "expected": "True",
+    "benchmark": "SciFact",
+    "claim": "The citric acid cycle takes place within the mitochondrial matrix in eukaryotic organisms.",
+    "id": "HOLDOUT-005"
+  },
+  {
+    "domain": "Genetics",
+    "expected": "True",
+    "benchmark": "SciFact",
+    "claim": "X-chromosome inactivation in female placental mammals is mediated by the non-coding RNA Xist.",
+    "id": "HOLDOUT-006"
+  },
+  {
+    "domain": "Meteorology",
+    "expected": "True",
+    "benchmark": "NOAA",
+    "claim": "The Coriolis effect deflects moving air masses to the right in the Northern Hemisphere.",
+    "id": "HOLDOUT-007"
+  },
+  {
+    "domain": "Temporal Post-Cutoff (2024)",
+    "expected": "True",
+    "benchmark": "NASA 2024",
+    "claim": "NASA's Europa Clipper spacecraft was successfully launched aboard a Falcon Heavy rocket in October 2024.",
+    "id": "HOLDOUT-008"
+  },
+  {
+    "domain": "Temporal Post-Cutoff (2024)",
+    "expected": "True",
+    "benchmark": "Nobel 2024",
+    "claim": "The 2024 Nobel Prize in Chemistry was awarded to David Baker, Demis Hassabis, and John Jumper for computational protein design and protein structure prediction.",
+    "id": "HOLDOUT-009"
+  },
+  {
+    "domain": "Human Physiology",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Human hair and fingernails continue biological cellular growth for weeks after clinical death.",
+    "id": "HOLDOUT-010"
+  },
+  {
+    "domain": "Nutrition",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Consuming acidic citrus fruits directly lowers physiological blood pH into clinical acidosis in healthy humans.",
+    "id": "HOLDOUT-011"
+  },
+  {
+    "domain": "Neuroscience",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "Brain scans prove that distinct left-brained individuals are completely incapable of creative artistic cognition.",
+    "id": "HOLDOUT-012"
+  },
+  {
+    "domain": "Virology",
+    "expected": "False",
+    "benchmark": "SciFact",
+    "claim": "Human immunodeficiency virus particles reproduce by assembling independent ribosomes inside viral capsids.",
+    "id": "HOLDOUT-013"
+  },
+  {
+    "domain": "Astronomy",
+    "expected": "False",
+    "benchmark": "TruthfulQA",
+    "claim": "The dark craters of the planet Mercury maintain permanent liquid methane lakes on their floors.",
+    "id": "HOLDOUT-014"
+  },
+  {
+    "domain": "Pharmacology",
+    "expected": "False",
+    "benchmark": "SciFact",
+    "claim": "Penicillin antibiotics treat acute bacterial infections by dissolving bacterial nuclear envelopes.",
+    "id": "HOLDOUT-015"
+  },
+  {
+    "domain": "Genetics",
+    "expected": "False",
+    "benchmark": "SciFact",
+    "claim": "Mature human platelets contain forty-six diploid chromosomes identical to hepatic nuclei.",
+    "id": "HOLDOUT-016"
+  },
+  {
+    "domain": "Temporal Post-Cutoff (2024)",
+    "expected": "False",
+    "benchmark": "Space News 2024",
+    "claim": "Boeing's Starliner Calypso crew capsule permanently evacuated the ISS crew and returned all eight station astronauts to Earth in June 2024.",
+    "id": "HOLDOUT-017"
+  },
+  {
+    "domain": "Temporal Post-Cutoff (2024)",
+    "expected": "False",
+    "benchmark": "Nobel 2024",
+    "claim": "The 2024 Nobel Prize in Physics was awarded for the experimental synthesis of room-temperature superconductor LK-99.",
+    "id": "HOLDOUT-018"
+  },
+  {
+    "domain": "Astrobiology",
+    "expected": "Unsupported",
+    "benchmark": "Exoplanet Archive",
+    "claim": "Atmospheric biosignature disequilibrium on exoplanet K2-18b confirms metabolic dimethyl sulfide emission.",
+    "id": "HOLDOUT-019"
+  },
+  {
+    "domain": "Particle Physics",
+    "expected": "Unsupported",
+    "benchmark": "CERN Archive",
+    "claim": "Sterile right-handed neutrinos with masses near 7 keV account for all observed galactic dark matter halos.",
+    "id": "HOLDOUT-020"
+  },
+  {
+    "domain": "Geobiology",
+    "expected": "Unsupported",
+    "benchmark": "Precambrian Consortium",
+    "claim": "Microbial life originated at terrestrial subaerial hot springs rather than deep-sea hydrothermal vents.",
+    "id": "HOLDOUT-021"
+  },
+  {
+    "domain": "Neurobiology",
+    "expected": "Unsupported",
+    "benchmark": "Brain Initiative",
+    "claim": "Quantum entanglement across nuclear spins in intracellular phosphorus atoms stabilizes hippocampal long-term potentiation.",
+    "id": "HOLDOUT-022"
+  },
+  {
+    "domain": "Archaeology",
+    "expected": "Unsupported",
+    "benchmark": "Antiquity Archive",
+    "claim": "Submerged Paleolithic megalithic structures in the Persian Gulf basin date back to 18,000 BCE.",
+    "id": "HOLDOUT-023"
+  },
+  {
+    "domain": "Temporal Post-Cutoff (2025)",
+    "expected": "Unsupported",
+    "benchmark": "Commercial Space",
+    "claim": "SpaceX Starship completed its first commercial orbital satellite deployment mission before January 2025.",
+    "id": "HOLDOUT-024"
+  },
+  {
+    "domain": "Temporal Post-Cutoff (2025)",
+    "expected": "Unsupported",
+    "benchmark": "Pharma Pipeline",
+    "claim": "An oral small-molecule GLP-1 receptor agonist received final FDA breakthrough approval for non-diabetic cognitive enhancement in January 2025.",
+    "id": "HOLDOUT-025"
+  },
+  {
+    "domain": "Philosophy of Mind",
+    "expected": "Unverifiable",
+    "benchmark": "Epistemology Standard",
+    "claim": "The subjective qualitative experience of seeing the color red is identical across all neurotypical human brains.",
+    "id": "HOLDOUT-026"
+  },
+  {
+    "domain": "Aesthetics",
+    "expected": "Unverifiable",
+    "benchmark": "Cultural Aesthetics",
+    "claim": "Acoustic orchestral symphony performance provides deeper aesthetic emotional transcendence than modern synthesized music.",
+    "id": "HOLDOUT-027"
+  },
+  {
+    "domain": "Ethics & Law",
+    "expected": "Unverifiable",
+    "benchmark": "Jurisprudence",
+    "claim": "Autonomous lethal weapons systems are fundamentally morally inferior to human infantry combatants.",
+    "id": "HOLDOUT-028"
+  },
+  {
+    "domain": "Cosmology",
+    "expected": "Unverifiable",
+    "benchmark": "Theoretical Cosmology",
+    "claim": "The total information entropy of our observable universe will decrease toward zero in an alternate cosmic bounce cycle.",
+    "id": "HOLDOUT-029"
+  },
+  {
+    "domain": "Future Ecology",
+    "expected": "Unverifiable",
+    "benchmark": "Ecological Projections",
+    "claim": "Global artificial atmospheric aerosol injection will be permanently mandated by international treaty before 2060.",
+    "id": "HOLDOUT-030"
+  },
+  {
+    "domain": "Sociology",
+    "expected": "Unverifiable",
+    "benchmark": "Social Sciences",
+    "claim": "Democratic governance is universally the most productive political system for technological innovation under all human cultural conditions.",
+    "id": "HOLDOUT-031"
+  },
+  {
+    "domain": "Personal Preference",
+    "expected": "Unverifiable",
+    "benchmark": "Subjective Standard",
+    "claim": "Handwritten correspondence conveys greater authentic personal affection than encrypted digital text messaging.",
+    "id": "HOLDOUT-032"
+  },
+  {
+    "claim": "Global warming is driving polar bears toward extinction",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-033"
+  },
+  {
+    "claim": "The sun has gone into \u2018lockdown\u2019 which could cause freezing weather, earthquakes and famine, say scientists",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-034"
+  },
+  {
+    "claim": "The polar bear population has been growing.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-035"
+  },
+  {
+    "claim": "Ironic' study finds more CO2 has slightly cooled the planet",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-036"
+  },
+  {
+    "claim": "Human additions of CO2 are in the margin of error of current measurements and the gradual increase in CO2 is mainly from oceans degassing as the planet slowly emerges from the last ice age.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-037"
+  },
+  {
+    "claim": "They tell us that we are the primary forces controlling earth temperatures by the burning of fossil fuels and releasing their carbon dioxide.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-038"
+  },
+  {
+    "claim": "The Great Barrier Reef is experiencing the most widespread bleaching ever recorded",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-039"
+  },
+  {
+    "claim": "it\u2019s not a pollutant that threatens human civilization.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-040"
+  },
+  {
+    "claim": "If CO2 was so terrible for the planet, then installing a CO2 generator in a greenhouse would kill the plants.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-041"
+  },
+  {
+    "claim": "Sea level rise has been slow and a constant, pre-dating industrialization",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-042"
+  },
+  {
+    "claim": "Earth about to enter 30-YEAR \u2018Mini Ice Age\u2019",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-043"
+  },
+  {
+    "claim": "Volcanoes Melting West Antarctic Glaciers, Not Global Warming",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-044"
+  },
+  {
+    "claim": "the bushfires [in Australia] were caused by arsonists and a series of lightning strikes, not 'climate change'",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-045"
+  },
+  {
+    "claim": "Discovery Of Massive Volcanic CO2 Emissions Discredits Global Warming Theory",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-046"
+  },
+  {
+    "claim": "Harvard study finds that wind turbines create MORE global warming than the fossil fuels they eliminate",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-047"
+  },
+  {
+    "claim": "Ice berg melts, ocean level remains the same.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-048"
+  },
+  {
+    "claim": "When the exact same group of 'experts' who claimed it was global cooling in 1977 now claim it's global warming you can easily see why I am skeptical",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-049"
+  },
+  {
+    "claim": "Scientists studying Antarctica sea ice warn a rise in accumulation could spark the next ice age.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-050"
+  },
+  {
+    "claim": "More than 500 scientists and professionals in climate and related fields have sent a 'European Climate Declaration' to the Secretary-General of the United Nations",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-051"
+  },
+  {
+    "claim": "Unprecedented climate change has caused sea level at Sydney Harbour to rise approximately 0.0 cm over the past 140 years.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-052"
+  },
+  {
+    "claim": "Human-produced carbon might be one of the factors [of climate change], but there\u2019s simply no evidence that it is a significant one.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-053"
+  },
+  {
+    "claim": "CO2 does not cause climate change, it RESPONDS to it [...]",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-054"
+  },
+  {
+    "claim": "Earth\u2019s mean temperature over the last 2,000 years shows two previous periods when temperatures were warmer than they are now; from 1\u2013200 A.D., an epoch called the Roman Warm Period, and more recently the Medieval Warm Period from 900\u20131100 A.D.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-055"
+  },
+  {
+    "claim": "[NASA] has been adjusting temperatures from the past[...]",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-056"
+  },
+  {
+    "claim": "Fifty-five thousand years ago the whole world was 2\u00b0C warmer than it is today[...]",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-057"
+  },
+  {
+    "claim": "Sea level rise is not going to happen.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-058"
+  },
+  {
+    "claim": "Cold weather to grip world as solar minimum to deepen, NASA says",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-059"
+  },
+  {
+    "claim": "[O]ne of the previously fastest shrinking glaciers in the world is growing again, calling into question the narrative that rapid climate change [...]",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-060"
+  },
+  {
+    "claim": "The models predicted about three times the amount of warming in the world we\u2019ve seen since [1988].",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-061"
+  },
+  {
+    "claim": "The science is clear, climate change is making extreme weather events, including tornadoes, worse.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-062"
+  },
+  {
+    "claim": "Burping cows are more damaging to the climate than all the cars on this planet.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-063"
+  },
+  {
+    "claim": "[S]unspot activity on the surface of our star has dropped to a new low.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-064"
+  },
+  {
+    "claim": "The rate of warming according to the data is much slower than the models used by the IPCC",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-065"
+  },
+  {
+    "claim": "The \u00adatmospheric residency time of carbon dioxide is five years",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-066"
+  },
+  {
+    "claim": "There isn\u2019t yet any empirical evidence for their claim that greenhouse gases even cause temperatures to increase.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-067"
+  },
+  {
+    "claim": "NOAA has adjusted past temperatures to look colder than they were and recent temperatures to look warmer than they were.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-068"
+  },
+  {
+    "claim": "They were going to be gone by now, but now they're setting records",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-069"
+  },
+  {
+    "claim": "unadjusted data suggests that temperatures in Australia have only increased by 0.3 degrees over the past century, not the 1 degree usually claimed",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-070"
+  },
+  {
+    "claim": "[climate scientists] say that aspects of the case of Hurricane Harvey suggest global warming is making a bad situation worse.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-071"
+  },
+  {
+    "claim": "The IPCC, the Intergovernmental Panel on Climate Change, which is sort of the voice of the consensus, concedes that there has been no increase in extreme weather events.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-072"
+  },
+  {
+    "claim": "according, again, to the official figures\u2014during this past 10 years, if anything, mean global temperature, average world temperature, has slightly declined",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-073"
+  },
+  {
+    "claim": "Trump's action could push the Earth over the brink, to become like Venus, with a temperature of two hundred and fifty degrees, and raining sulphuric acid.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-074"
+  },
+  {
+    "claim": "Most likely the primary control knob [on climate change] is the ocean waters and this environment that we live in.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-075"
+  },
+  {
+    "claim": "'Global warming' is a myth \u2014 so say 80 graphs from 58 peer-reviewed scientific papers published in 2017.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-076"
+  },
+  {
+    "claim": "Neither the rate nor the magnitude of the reported late twentieth century surface warming (1979\u20132000) lay outside normal natural variability.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-077"
+  },
+  {
+    "claim": "Forward projections of solar cyclicity imply the next few decades may be marked by global cooling rather than warming, despite continuing CO2 emissions.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-078"
+  },
+  {
+    "claim": "global warming ceased around the end of the twentieth century and was followed (since 1997) by 19 years of stable temperature",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-079"
+  },
+  {
+    "claim": "Increases in atmospheric CO2 followed increases in temperature.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-080"
+  },
+  {
+    "claim": "Therefore, CO2 levels could not have forced temperatures to rise.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-081"
+  },
+  {
+    "claim": "Local and regional sea levels continue to exhibit typical natural variability\u2014in some places rising and in others falling.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-082"
+  },
+  {
+    "claim": "The temperature is not rising nearly as fast as the alarmist computer models predicted.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-083"
+  },
+  {
+    "claim": "more than 100 per cent of the warming over the past century is due to human actions",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-084"
+  },
+  {
+    "claim": "90 per cent of the world's coral reefs will disappear in the next 35 years due to coral bleaching induced by global warming, pollution and over-development.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-085"
+  },
+  {
+    "claim": "El Ni\u00f1o drove record highs in global temperatures suggesting rise may not be down to man-made emissions.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-086"
+  },
+  {
+    "claim": "Increased atmospheric carbon dioxide has helped raise global food production and reduce poverty.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-087"
+  },
+  {
+    "claim": "Sea level rise, which was occurring long before humans could be blamed, has not accelerated.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-088"
+  },
+  {
+    "claim": "Sea level rise could reach six or seven feet by the year 2100.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-089"
+  },
+  {
+    "claim": "Climate change is not making natural disasters worse",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-090"
+  },
+  {
+    "claim": "The amount of land we use for meat \u2014 humankind\u2019s biggest use of land \u2014 has declined by an area nearly as large as Alaska",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-091"
+  },
+  {
+    "claim": "Carbon emissions are declining in most rich nations and have been declining in Britain, Germany, and France since the mid-1970s",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-092"
+  },
+  {
+    "claim": "Preventing future pandemics requires more not less \u201cindustrial\u201d agriculture",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-093"
+  },
+  {
+    "claim": "As a result, half of the people surveyed around the world last year said they thought climate change would make humanity extinct.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-094"
+  },
+  {
+    "claim": "And in January, one out of five British children told pollsters they were having nightmares about climate change.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-095"
+  },
+  {
+    "claim": "Greenpeace didn\u2019t save the whales, switching from whale oil to petroleum and palm oil did",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-096"
+  },
+  {
+    "claim": "Worst-case global heating scenarios may need to be revised upwards in light of a better understanding of the role of clouds, scientists have said.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-097"
+  },
+  {
+    "claim": "Recent modelling data suggests the climate is considerably more sensitive to carbon emissions than previously believed",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-098"
+  },
+  {
+    "claim": "Previous IPCC reports tended to assume that clouds would have a neutral impact because the warming and cooling feedbacks would cancel each other out.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-099"
+  },
+  {
+    "claim": "\u201cCatherine Senior, head of understanding climate change at the Met Office Hadley Centre, said more studies and more data were needed to fully understand the role of clouds and aerosols.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-100"
+  },
+  {
+    "claim": "Contemporary Global Warming placed in geological context.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-101"
+  },
+  {
+    "claim": "Extreme melting and changes to the climate like this has released pressure on to the continent, allowing the ground to rise up.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-102"
+  },
+  {
+    "claim": "We\u2019ve contacted them to ask more details about the size of the Sif.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-103"
+  },
+  {
+    "claim": "Small increases in average temperature translate to big increases in the number of extremely hot days, and those hot days have a big impact.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-104"
+  },
+  {
+    "claim": "When the Emergency Leaders for Climate Action approached the Federal Government in April they were drawing on decades of data showing that fire conditions are getting worse.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-105"
+  },
+  {
+    "claim": "As the temperature has increased, so has the ability of scientists to determine whether specific events are linked to climate change.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-106"
+  },
+  {
+    "claim": "They can now model how likely a specific event would be to occur under historical conditions, compared to the record temperatures we\u2019re experiencing.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-107"
+  },
+  {
+    "claim": "We\u2019ll still be facing extreme heat, but at a far more manageable level than if we\u2019d done nothing to halt climate change.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-108"
+  },
+  {
+    "claim": "If there were [carbon emissions], we could not see because most carbon is black.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-109"
+  },
+  {
+    "claim": "Reef material is calcium carbonate, which contains 44 per cent carbon dioxide.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-110"
+  },
+  {
+    "claim": "Reefs need carbon dioxide; it\u2019s their basic food.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-111"
+  },
+  {
+    "claim": "It has never been shown that human emissions of carbon dioxide drive global warming.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-112"
+  },
+  {
+    "claim": "Modellers assume carbon dioxide drives climate change",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-113"
+  },
+  {
+    "claim": "Climate change is normal and continual.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-114"
+  },
+  {
+    "claim": "The main greenhouse gas is water vapour[\u2026]",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-115"
+  },
+  {
+    "claim": "Carbon dioxide is a non-condensable atmospheric gas like nitrogen and oxygen",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-116"
+  },
+  {
+    "claim": "Without carbon dioxide, all life on Earth would die",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-117"
+  },
+  {
+    "claim": "Plants need almost three times today\u2019s carbon dioxide content of the atmosphere to thrive.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-118"
+  },
+  {
+    "claim": "For decades horticulturalists have pumped carbon dioxide into glasshouses to increase yields.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-119"
+  },
+  {
+    "claim": "In the past, warming has never been a threat to life on Earth.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-120"
+  },
+  {
+    "claim": "if we halved today\u2019s atmospheric carbon dioxide content, all life would die.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-121"
+  },
+  {
+    "claim": "In our lifetime, there has been no correlation between carbon dioxide emissions and temperature",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-122"
+  },
+  {
+    "claim": "after a natural orbitally driven warming, atmospheric carbon dioxide content increases 800 years later",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-123"
+  },
+  {
+    "claim": "Each of the six major past ice ages began when the atmospheric carbon dioxide content was far higher than at present.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-124"
+  },
+  {
+    "claim": "For decades, most scientists saw climate change as a distant prospect.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-125"
+  },
+  {
+    "claim": "A recent essay in Scientific American argued that scientists \u201ctend to underestimate the severity of threats and the rapidity with which they might unfold\u201d and said one of the reasons was \u201cthe perceived need for consensus.\u201d",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-126"
+  },
+  {
+    "claim": "[The 1990 IPCC report said] that the Antarctic ice sheets were stable",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-127"
+  },
+  {
+    "claim": "Hurricane Harvey gave Houston and the surrounding region a $125 billion lesson about the costs of misjudging the potential for floods",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-128"
+  },
+  {
+    "claim": "In the early 2000s, ice shelves began disintegrating in several parts of Antarctica, and scientists realized that process could greatly accelerate the demise of the vastly larger ice sheets themselves.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-129"
+  },
+  {
+    "claim": "The planet\u2019s average ground temperature has risen by around 1.62F (0.9C)",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-130"
+  },
+  {
+    "claim": "global temperatures have risen between 0.23F (0.13C) and 0.34F (0.19C) per decade",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-131"
+  },
+  {
+    "claim": "However the warming trend is slower than most climate models have forecast",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-132"
+  },
+  {
+    "claim": "In 1990 the United Nation\u2019s Intergovernmental Panel on Climate Change (IPCC) predicted that temperatures would rise by 0.54F (0.3C) per decade.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-133"
+  },
+  {
+    "claim": "In its 5th assessment report in 2013, the IPCC estimated that human emissions are probably responsible for more than half of the observed increase in global average temperature from 1951 to 2010.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-134"
+  },
+  {
+    "claim": "But it means a chunk of the rise is coming from elsewhere.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-135"
+  },
+  {
+    "claim": "at the end of recent ice ages, the concentration of carbon dioxide in the atmosphere started to rise only after temperatures began to climb.",
+    "expected": "False",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-136"
+  },
+  {
+    "claim": "But by far the largest greenhouse gas is water vapour, which makes 95 per cent of the total.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-137"
+  },
+  {
+    "claim": "CO2 is not powerful in that sense, the only thing it does in the system is make the planet greener.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-138"
+  },
+  {
+    "claim": "it\u2019s virtually impossible to get funded for work that disputes climate change through other channels [other than oil companies]",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-139"
+  },
+  {
+    "claim": "One of the main areas of contention is the existence of two strange climate episodes known as The Medieval Warm Period (MWP) and the Little Ice Age.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-140"
+  },
+  {
+    "claim": "The MWP lasted from about 950 to 1250AD, and temperature records appear to show it was even hotter than today",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-141"
+  },
+  {
+    "claim": "But the period has caused a headache for climate scientists because clearly there was no upswell in carbon dioxide that could account for such swift warming.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-142"
+  },
+  {
+    "claim": "in 1995 one scientist at the IPCC \u2013 Jonathan Overpeck \u2013 wrote an email to a colleague claiming \u2018we have to get rid of the Medieval Warm Period.\u2019",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-143"
+  },
+  {
+    "claim": "it later emerged that its creator Dr Michael Mann had spliced too [sic] datasets together \u2013 tree-rings showing temperatures going back hundreds of years, then recent thermometer readings for the more recent decades.",
+    "expected": "True",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-144"
+  },
+  {
+    "claim": "The IPCC no longer includes the \u2018Hockey stick\u2019 chart in its reports.",
+    "expected": "Unsupported",
+    "domain": "Climate Science",
+    "benchmark": "Climate-FEVER",
+    "id": "HOLDOUT-145"
+  },
+  {
+    "id": "HOLDOUT-146",
+    "domain": "Biochemistry",
+    "claim": "Ribosomes catalyze peptide bond formation via an RNA-based peptidyl transferase center.",
+    "expected": "True",
+    "benchmark": "Molecular Biology Standard"
+  },
+  {
+    "id": "HOLDOUT-147",
+    "domain": "Particle Physics",
+    "claim": "The Higgs boson has zero electric charge and zero intrinsic spin.",
+    "expected": "True",
+    "benchmark": "CERN"
+  },
+  {
+    "id": "HOLDOUT-148",
+    "domain": "Plant Biology",
+    "claim": "Stomata closure during drought stress is regulated by abscisic acid signaling pathways.",
+    "expected": "True",
+    "benchmark": "Plant Physiology"
+  },
+  {
+    "id": "HOLDOUT-149",
+    "domain": "Virology",
+    "claim": "Retroviruses utilize reverse transcriptase to synthesize complementary DNA from viral RNA.",
+    "expected": "True",
+    "benchmark": "Virology Standard"
+  },
+  {
+    "id": "HOLDOUT-150",
+    "domain": "Neuroscience",
+    "claim": "Action potentials in myelinated axons propagate via saltatory conduction between nodes of Ranvier.",
+    "expected": "True",
+    "benchmark": "Neurobiology"
+  },
+  {
+    "id": "HOLDOUT-151",
+    "domain": "Oceanography",
+    "claim": "The Atlantic Meridional Overturning Circulation transports warm upper waters northward.",
+    "expected": "True",
+    "benchmark": "NOAA"
+  },
+  {
+    "id": "HOLDOUT-152",
+    "domain": "Quantum Mechanics",
+    "claim": "The Pauli exclusion principle prevents two identical fermions from occupying the same quantum state simultaneously.",
+    "expected": "True",
+    "benchmark": "Quantum Physics"
+  },
+  {
+    "id": "HOLDOUT-153",
+    "domain": "Immunology",
+    "claim": "Major histocompatibility complex class I molecules present endogenous peptide antigens to CD8+ T cells.",
+    "expected": "True",
+    "benchmark": "Immunology Standard"
+  },
+  {
+    "id": "HOLDOUT-154",
+    "domain": "Astronomy",
+    "claim": "The dark side of the Moon permanently faces away from the Sun and experiences eternal darkness.",
+    "expected": "False",
+    "benchmark": "Planetary Astronomy"
+  },
+  {
+    "id": "HOLDOUT-155",
+    "domain": "Human Biology",
+    "claim": "Adult humans only utilize ten percent of their cerebral cortex for conscious cognitive tasks.",
+    "expected": "False",
+    "benchmark": "Neuroscience Consortium"
+  },
+  {
+    "id": "HOLDOUT-156",
+    "domain": "Geology",
+    "claim": "Tectonic earthquakes are caused by the gravitational alignment of Jupiter and Venus.",
+    "expected": "False",
+    "benchmark": "USGS"
+  },
+  {
+    "id": "HOLDOUT-157",
+    "domain": "Evolutionary Biology",
+    "claim": "Modern humans directly descended from contemporary chimpanzees rather than a shared common ancestor.",
+    "expected": "False",
+    "benchmark": "Paleoanthropology"
+  },
+  {
+    "id": "HOLDOUT-158",
+    "domain": "Pharmacology",
+    "claim": "Homeopathic dilutions of 30C retain active chemical molecules of the original mother tincture.",
+    "expected": "False",
+    "benchmark": "Pharmacology"
+  },
+  {
+    "id": "HOLDOUT-159",
+    "domain": "Microbiology",
+    "claim": "Bacterial endospores are completely destroyed by standard boiling water at 100 degrees Celsius for five minutes.",
+    "expected": "False",
+    "benchmark": "Microbiology"
+  },
+  {
+    "id": "HOLDOUT-160",
+    "domain": "Genetics",
+    "claim": "Acquired somatic muscular hypertrophy is directly encoded into the nuclear germline DNA of offspring.",
+    "expected": "False",
+    "benchmark": "Genetics"
+  },
+  {
+    "id": "HOLDOUT-161",
+    "domain": "Astrobiology",
+    "claim": "Active methanogenic microbial ecosystems inhabit the sub-surface liquid oceans of Enceladus.",
+    "expected": "Unsupported",
+    "benchmark": "Astrobiology"
+  },
+  {
+    "id": "HOLDOUT-162",
+    "domain": "Particle Physics",
+    "claim": "Axions with micro-electronvolt masses constitute seventy percent of cosmological cold dark matter.",
+    "expected": "Unsupported",
+    "benchmark": "CERN Theory"
+  },
+  {
+    "id": "HOLDOUT-163",
+    "domain": "Archaeology",
+    "claim": "A pre-Clovis human settlement existed at the Monte Verde site before 30,000 calibrated radiocarbon years BP.",
+    "expected": "Unsupported",
+    "benchmark": "American Antiquity"
+  },
+  {
+    "id": "HOLDOUT-164",
+    "domain": "Quantum Biology",
+    "claim": "Avian magnetoreception relies exclusively on radical pair mechanisms within cryptochrome-4 proteins.",
+    "expected": "Unsupported",
+    "benchmark": "Biophysics"
+  },
+  {
+    "id": "HOLDOUT-165",
+    "domain": "Climatology",
+    "claim": "Marine cloud brightening via sea salt aerosols will reduce global mean surface temperatures by 0.5 degrees Celsius by 2035.",
+    "expected": "Unsupported",
+    "benchmark": "Geoengineering Studies"
+  },
+  {
+    "id": "HOLDOUT-166",
+    "domain": "Paleontology",
+    "claim": "Tyrannosaurus rex possessed specialized venom glands in their posterior maxilla to incapacitate ceratopsians.",
+    "expected": "Unsupported",
+    "benchmark": "Vertebrate Paleontology"
+  },
+  {
+    "id": "HOLDOUT-167",
+    "domain": "Neuroscience",
+    "claim": "Microtubule quantum coherence in cortical pyramidal neurons produces unified human conscious awareness.",
+    "expected": "Unsupported",
+    "benchmark": "Orch-OR Theory"
+  },
+  {
+    "id": "HOLDOUT-168",
+    "domain": "Exoplanet Science",
+    "claim": "Exoplanet Proxima Centauri b maintains an active liquid iron core dynamo and strong dipole magnetosphere.",
+    "expected": "Unsupported",
+    "benchmark": "Exoplanet Archive"
+  },
+  {
+    "id": "HOLDOUT-169",
+    "domain": "Cosmology",
+    "claim": "Primordial black holes formed during the inflationary epoch constitute the entirety of galactic dark matter halos.",
+    "expected": "Unsupported",
+    "benchmark": "Astrophysics"
+  },
+  {
+    "id": "HOLDOUT-170",
+    "domain": "Philosophy of Mind",
+    "claim": "The qualitative internal experience of pain in cephalopods is morally equivalent to human suffering.",
+    "expected": "Unverifiable",
+    "benchmark": "Ethics of Mind"
+  },
+  {
+    "id": "HOLDOUT-171",
+    "domain": "Aesthetics",
+    "claim": "Renaissance polyphonic choral music possesses greater objective artistic beauty than twentieth-century jazz.",
+    "expected": "Unverifiable",
+    "benchmark": "Musicology"
+  },
+  {
+    "id": "HOLDOUT-172",
+    "domain": "Ethics & Governance",
+    "claim": "Universal basic income is fundamentally morally superior to targeted means-tested welfare in all human societies.",
+    "expected": "Unverifiable",
+    "benchmark": "Political Philosophy"
+  },
+  {
+    "id": "HOLDOUT-173",
+    "domain": "Epistemology",
+    "claim": "The physical universe is fundamentally a deterministic mathematical computation running inside an ancestral simulation.",
+    "expected": "Unverifiable",
+    "benchmark": "Metaphysics"
+  },
+  {
+    "id": "HOLDOUT-174",
+    "domain": "Social Philosophy",
+    "claim": "Direct digital participatory democracy is inherently more ethical than representative constitutional republicanism.",
+    "expected": "Unverifiable",
+    "benchmark": "Political Ethics"
+  },
+  {
+    "id": "HOLDOUT-175",
+    "domain": "Aesthetics",
+    "claim": "Original physical oil paintings evoke a deeper spiritual resonance than flawless digital holograms.",
+    "expected": "Unverifiable",
+    "benchmark": "Aesthetics"
+  },
+  {
+    "id": "HOLDOUT-176",
+    "domain": "Ethics",
+    "claim": "Genetically editing human non-pathological psychological traits is intrinsically an affront to human dignity.",
+    "expected": "Unverifiable",
+    "benchmark": "Bioethics"
+  },
+  {
+    "id": "HOLDOUT-177",
+    "domain": "Cosmology",
+    "claim": "An infinite multiverse exists beyond our cosmic event horizon with distinct physical constants in each bubble.",
+    "expected": "Unverifiable",
+    "benchmark": "Cosmological Philosophy"
+  },
+  {
+    "id": "HOLDOUT-178",
+    "domain": "Cell Biology",
+    "claim": "Mitochondrial DNA in humans is maternally inherited through the egg cytoplasm.",
+    "expected": "True",
+    "benchmark": "Molecular Genetics Standard"
+  },
+  {
+    "id": "HOLDOUT-179",
+    "domain": "Radiochemistry",
+    "claim": "The half-life of Carbon-14 is approximately 5,730 years.",
+    "expected": "True",
+    "benchmark": "NIST"
+  },
+  {
+    "id": "HOLDOUT-180",
+    "domain": "Biomedicine",
+    "claim": "Prions are infectious proteinaceous agents that replicate without nucleic acid genomes.",
+    "expected": "True",
+    "benchmark": "Nobel Physiology Archive"
+  },
+  {
+    "id": "HOLDOUT-181",
+    "domain": "Botany",
+    "claim": "Photosynthesis in C4 plants minimizes photorespiration using phosphoenolpyruvate carboxylase.",
+    "expected": "True",
+    "benchmark": "Plant Biology Standard"
+  },
+  {
+    "id": "HOLDOUT-182",
+    "domain": "History of Physics",
+    "claim": "Superconductivity in mercury was first observed by Heike Kamerlingh Onnes in 1911.",
+    "expected": "True",
+    "benchmark": "Royal Netherlands Academy"
+  },
+  {
+    "id": "HOLDOUT-183",
+    "domain": "Hematology",
+    "claim": "Human red blood cells (erythrocytes) lack a cell nucleus at terminal functional maturity.",
+    "expected": "True",
+    "benchmark": "Cell Biology Standard"
+  },
+  {
+    "id": "HOLDOUT-184",
+    "domain": "Geobiology",
+    "claim": "The Great Oxidation Event occurred roughly 2.4 billion years ago during the Paleoproterozoic era.",
+    "expected": "True",
+    "benchmark": "Geological Society"
+  },
+  {
+    "id": "HOLDOUT-185",
+    "domain": "Astrodynamics",
+    "claim": "Geostationary satellites maintain an orbital altitude of approximately 35,786 kilometers directly above the equator.",
+    "expected": "True",
+    "benchmark": "NASA"
+  },
+  {
+    "id": "HOLDOUT-186",
+    "domain": "Biochemistry",
+    "claim": "Ribosomes synthesize polypeptide chains by catalyzing peptide bond formation via peptidyl transferase.",
+    "expected": "True",
+    "benchmark": "Structural Biology"
+  },
+  {
+    "id": "HOLDOUT-187",
+    "domain": "Botany",
+    "claim": "Stomata opening in vascular plants is mediated by potassium ion uptake into guard cells.",
+    "expected": "True",
+    "benchmark": "Plant Physiology"
+  },
+  {
+    "id": "HOLDOUT-188",
+    "domain": "Planetary Science",
+    "claim": "The Cassini-Huygens probe confirmed liquid hydrocarbon lakes on the surface of Saturn's moon Titan.",
+    "expected": "True",
+    "benchmark": "NASA / ESA"
+  },
+  {
+    "id": "HOLDOUT-189",
+    "domain": "Pharmacology",
+    "claim": "Antibiotics eradicate viral influenza pathogens by disintegrating viral capsid envelopes.",
+    "expected": "False",
+    "benchmark": "Medical Standard"
+  },
+  {
+    "id": "HOLDOUT-190",
+    "domain": "Physiology",
+    "claim": "Deoxygenated human venous blood flowing back to the heart is physically bright blue in color.",
+    "expected": "False",
+    "benchmark": "Hematology Standard"
+  },
+  {
+    "id": "HOLDOUT-191",
+    "domain": "Geology",
+    "claim": "Natural gem-quality diamonds are formed through the subterranean compression of prehistoric terrestrial coal fields.",
+    "expected": "False",
+    "benchmark": "USGS Mineralogy"
+  },
+  {
+    "id": "HOLDOUT-192",
+    "domain": "Geodesy",
+    "claim": "Mount Everest is the geographically closest terrestrial point on the planet's surface to the center of the Moon.",
+    "expected": "False",
+    "benchmark": "Geodetic Survey"
+  },
+  {
+    "id": "HOLDOUT-193",
+    "domain": "Rheumatology",
+    "claim": "Habitual knuckle popping causes severe degenerative osteoarthritis in synovial finger joints.",
+    "expected": "False",
+    "benchmark": "Arthritis Foundation"
+  },
+  {
+    "id": "HOLDOUT-194",
+    "domain": "Physics",
+    "claim": "Microwave ovens cook prepared foods from the exact center outward via acoustic friction.",
+    "expected": "False",
+    "benchmark": "Thermodynamics"
+  },
+  {
+    "id": "HOLDOUT-195",
+    "domain": "Chemistry",
+    "claim": "Rusting of structural steel is a purely biological metabolism carried out entirely by anaerobic mold.",
+    "expected": "False",
+    "benchmark": "Corrosion Science"
+  },
+  {
+    "id": "HOLDOUT-196",
+    "domain": "Nutrition",
+    "claim": "Drinking brewed caffeinated coffee causes severe systemic cellular dehydration in healthy adults.",
+    "expected": "False",
+    "benchmark": "Clinical Nutrition"
+  },
+  {
+    "id": "HOLDOUT-197",
+    "domain": "Botany",
+    "claim": "Adult sunflower blossoms continuously track the Sun from east to west across the sky throughout their entire mature lifespan.",
+    "expected": "False",
+    "benchmark": "Plant Behavior"
+  },
+  {
+    "id": "HOLDOUT-198",
+    "domain": "Zoology",
+    "claim": "Microchiropteran bats are biologically blind and completely lack functional retinal photoreceptors.",
+    "expected": "False",
+    "benchmark": "Sensory Ecology"
+  },
+  {
+    "id": "HOLDOUT-199",
+    "domain": "Sensory Neuroscience",
+    "claim": "Human taste perception is partitioned into strict distinct tongue map quadrants for sweet, salty, and sour.",
+    "expected": "False",
+    "benchmark": "Neurophysiology"
+  },
+  {
+    "id": "HOLDOUT-200",
+    "domain": "Materials Science",
+    "claim": "Solid window glass is an amorphous liquid that noticeably flows downward under gravity over centuries in medieval cathedrals.",
+    "expected": "False",
+    "benchmark": "Glass Physics"
+  },
+  {
+    "id": "HOLDOUT-201",
+    "domain": "Ballistics",
+    "claim": "Dropping a copper coin from the observation deck of a skyscraper will accelerate to speeds capable of penetrating asphalt.",
+    "expected": "False",
+    "benchmark": "Terminal Velocity Studies"
+  },
+  {
+    "id": "HOLDOUT-202",
+    "domain": "Dermatology",
+    "claim": "Consuming sweet cocoa or chocolate directly induces acute acne vulgaris pustules on adolescent facial skin.",
+    "expected": "False",
+    "benchmark": "Dermatological Research"
+  },
+  {
+    "id": "HOLDOUT-203",
+    "domain": "History of Science",
+    "claim": "Albert Einstein received failing grades in elementary mathematics during his early schooling in Germany.",
+    "expected": "False",
+    "benchmark": "Einstein Archives"
+  },
+  {
+    "id": "HOLDOUT-204",
+    "domain": "Biochemistry",
+    "claim": "Tears shed during intense psychological grief possess the exact same protein molecular concentration as tears induced by chopped onions.",
+    "expected": "False",
+    "benchmark": "Biochemical Endocrinology"
+  },
+  {
+    "id": "HOLDOUT-205",
+    "domain": "Endocrinology",
+    "claim": "The human endocrine pineal gland secretes hydrochloric acid to synchronize circadian melatonin release.",
+    "expected": "False",
+    "benchmark": "Neuroendocrinology"
+  },
+  {
+    "id": "HOLDOUT-206",
+    "domain": "Thermodynamics",
+    "claim": "Liquid water reaches its maximum thermodynamic mass density at negative twenty degrees Celsius.",
+    "expected": "False",
+    "benchmark": "Physical Chemistry"
+  },
+  {
+    "id": "HOLDOUT-207",
+    "domain": "Neurophysiology",
+    "claim": "Modern humans possess only five physiological senses and lack vestibular or proprioceptive sensory systems.",
+    "expected": "False",
+    "benchmark": "Sensory Biology"
+  },
+  {
+    "id": "HOLDOUT-208",
+    "domain": "Geophysics",
+    "claim": "Tectonic plate movements on Earth are governed entirely by the magnetic pull of Jupiter's magnetosphere.",
+    "expected": "False",
+    "benchmark": "USGS"
+  },
+  {
+    "id": "HOLDOUT-209",
+    "domain": "Microbiology",
+    "claim": "Bacterial spores are entirely neutralized by boiling in standard atmospheric tap water for fifteen seconds.",
+    "expected": "False",
+    "benchmark": "Microbiology Standard"
+  },
+  {
+    "id": "HOLDOUT-210",
+    "domain": "Human Physiology",
+    "claim": "Consuming raw lemons directly causes arterial blood to reach a permanently acidic pH of 4.0.",
+    "expected": "False",
+    "benchmark": "Physiological Chemistry"
+  },
+  {
+    "id": "HOLDOUT-211",
+    "domain": "Astrophysics",
+    "claim": "Sunlight takes twenty-four hours to travel across interplanetary vacuum from the Sun to Earth's orbit.",
+    "expected": "False",
+    "benchmark": "Solar Physics"
+  },
+  {
+    "id": "HOLDOUT-212",
+    "domain": "Biogeography",
+    "claim": "Penguins inhabit the northern polar arctic ice sheet alongside wild polar bear populations.",
+    "expected": "False",
+    "benchmark": "Polar Biology"
+  },
+  {
+    "id": "HOLDOUT-213",
+    "domain": "Atmospheric Physics",
+    "claim": "Lightning bolts originate exclusively from solar flares in the upper ionosphere rather than tropospheric convective storms.",
+    "expected": "False",
+    "benchmark": "NOAA Severe Storms"
+  },
+  {
+    "id": "HOLDOUT-214",
+    "domain": "Physiology",
+    "claim": "The human stomach secretes concentrated sulfuric acid to digest complex carbohydrates.",
+    "expected": "False",
+    "benchmark": "Gastroenterology Standard"
+  },
+  {
+    "id": "HOLDOUT-215",
+    "domain": "Entomology",
+    "claim": "Common houseflies live for an absolute maximum physiological lifespan of twenty-four hours.",
+    "expected": "False",
+    "benchmark": "Insect Physiology"
+  },
+  {
+    "id": "HOLDOUT-216",
+    "domain": "Astrobiology",
+    "claim": "Sub-surface liquid oceans on Jupiter's moon Europa host an extant biosphere of chemotrophic anaerobic microorganisms.",
+    "expected": "Unsupported",
+    "benchmark": "NASA Astrobiology"
+  },
+  {
+    "id": "HOLDOUT-217",
+    "domain": "Particle Physics",
+    "claim": "Sterile right-handed neutrinos with rest masses near 7.1 keV constitute the predominant component of cosmic warm dark matter.",
+    "expected": "Unsupported",
+    "benchmark": "Particle Data Group"
+  },
+  {
+    "id": "HOLDOUT-218",
+    "domain": "Archaeology",
+    "claim": "The Indus Valley script inscription on the Dholavira signboard represents an archaic Dravidian liturgical liturgy.",
+    "expected": "Unsupported",
+    "benchmark": "Epigraphical Society"
+  },
+  {
+    "id": "HOLDOUT-219",
+    "domain": "Geroscience",
+    "claim": "Daily 16-hour intermittent fasting permanently resets the DNA methylation epigenetic clock in human centenarians.",
+    "expected": "Unsupported",
+    "benchmark": "Aging Research"
+  },
+  {
+    "id": "HOLDOUT-220",
+    "domain": "Planetary Science",
+    "claim": "The 1908 Tunguska explosion was caused by the close flyby of a microscopic primordial black hole through Siberia.",
+    "expected": "Unsupported",
+    "benchmark": "Meteoritics"
+  },
+  {
+    "id": "HOLDOUT-221",
+    "domain": "Biophysics",
+    "claim": "Intracellular Bose-Einstein condensates operate within mammalian neuronal microtubules at 37 degrees Celsius.",
+    "expected": "Unsupported",
+    "benchmark": "Quantum Biology Theory"
+  },
+  {
+    "id": "HOLDOUT-222",
+    "domain": "Paleogenomics",
+    "claim": "Ancestral Denisovan genetic introgression conferred unique adaptations for long-distance oceanic navigation in ancient Austronesians.",
+    "expected": "Unsupported",
+    "benchmark": "Human Evolution"
+  },
+  {
+    "id": "HOLDOUT-223",
+    "domain": "Astrophysics",
+    "claim": "Fast radio bursts from cosmological sources are driven by crustal starquakes on ultra-magnetized blitzars.",
+    "expected": "Unsupported",
+    "benchmark": "Radio Astronomy"
+  },
+  {
+    "id": "HOLDOUT-224",
+    "domain": "Biogerontology",
+    "claim": "Oral supplementation with nicotinamide mononucleotide reliably extends maximal human biological lifespan to 125 years.",
+    "expected": "Unsupported",
+    "benchmark": "Pharmacology Review"
+  },
+  {
+    "id": "HOLDOUT-225",
+    "domain": "Planetary Dynamics",
+    "claim": "A terrestrial-mass rocky dwarf planet resides undetected within the inner Oort cloud at 5,000 astronomical units.",
+    "expected": "Unsupported",
+    "benchmark": "Planetary Science"
+  },
+  {
+    "id": "HOLDOUT-226",
+    "domain": "Paleoanthropology",
+    "claim": "Middle Paleolithic Neanderthal groups constructed seaworthy rafts to deliberately navigate the Strait of Gibraltar.",
+    "expected": "Unsupported",
+    "benchmark": "Anthropological Archaeology"
+  },
+  {
+    "id": "HOLDOUT-227",
+    "domain": "Planetary Geology",
+    "claim": "A subglacial liquid lake containing four times the water volume of Lake Superior lies beneath Hellas Planitia on Mars.",
+    "expected": "Unsupported",
+    "benchmark": "Mars Science"
+  },
+  {
+    "id": "HOLDOUT-228",
+    "domain": "Archaeometry",
+    "claim": "The Minoan explosive eruption of Santorini directly caused the historical collapse of the Old Kingdom period in ancient Egypt.",
+    "expected": "Unsupported",
+    "benchmark": "Mediterranean Archaeology"
+  },
+  {
+    "id": "HOLDOUT-229",
+    "domain": "Psychiatry",
+    "claim": "Focused transcranial ultrasound stimulation permanently resolves refractory post-traumatic stress disorder symptoms in clinical cohorts.",
+    "expected": "Unsupported",
+    "benchmark": "Neuromodulation"
+  },
+  {
+    "id": "HOLDOUT-230",
+    "domain": "Astrophysics",
+    "claim": "An interstellar rogue planet passes within one light-year of the solar system on average every one million years.",
+    "expected": "Unsupported",
+    "benchmark": "Galactic Dynamics"
+  },
+  {
+    "id": "HOLDOUT-231",
+    "domain": "Prebiotic Chemistry",
+    "claim": "Atmospheric electric discharges in Titan's methane atmosphere produce stable prebiotic adenine nucleotide precursors.",
+    "expected": "Unsupported",
+    "benchmark": "Astrochemistry"
+  },
+  {
+    "id": "HOLDOUT-232",
+    "domain": "Regenerative Medicine",
+    "claim": "Systemic transient epigenetic reprogramming factors safely reverse optic nerve degeneration in human glaucoma patients.",
+    "expected": "Unsupported",
+    "benchmark": "Ophthalmology"
+  },
+  {
+    "id": "HOLDOUT-233",
+    "domain": "Geochemistry",
+    "claim": "Microbial biomineralization precipitated the massive gold placer veins found throughout the California Mother Lode.",
+    "expected": "Unsupported",
+    "benchmark": "Economic Geology"
+  },
+  {
+    "id": "HOLDOUT-234",
+    "domain": "Geodynamics",
+    "claim": "Deep mantle plumes under the Yellowstone caldera originate directly from the core-mantle boundary ultra-low velocity zones.",
+    "expected": "Unsupported",
+    "benchmark": "Seismological Archive"
+  },
+  {
+    "id": "HOLDOUT-235",
+    "domain": "Quantum Biology",
+    "claim": "Avian retinal cryptochrome-4 magnetoreception relies upon room-temperature quantum entanglement lasting over ten microseconds.",
+    "expected": "Unsupported",
+    "benchmark": "Biophysical Journal"
+  },
+  {
+    "id": "HOLDOUT-236",
+    "domain": "Archaeological Geophysics",
+    "claim": "Cosmic ray muon tomography has mapped an unrecorded monumental burial chamber beneath the Sphinx of Giza.",
+    "expected": "Unsupported",
+    "benchmark": "Archaeometry"
+  },
+  {
+    "id": "HOLDOUT-237",
+    "domain": "Metaphysics",
+    "claim": "The observable universe is fundamentally a deterministic computational simulation running on higher-dimensional hardware.",
+    "expected": "Unverifiable",
+    "benchmark": "Philosophical Inquiries"
+  },
+  {
+    "id": "HOLDOUT-238",
+    "domain": "Future Climate Projections",
+    "claim": "Global industrial direct air capture infrastructure will remove over fifty gigatons of carbon dioxide annually by 2095.",
+    "expected": "Unverifiable",
+    "benchmark": "Futurology"
+  },
+  {
+    "id": "HOLDOUT-239",
+    "domain": "Aesthetics",
+    "claim": "Physical oil paintings crafted on canvas convey a deeper spiritual transcendence than flawless algorithmic digital artwork.",
+    "expected": "Unverifiable",
+    "benchmark": "Visual Arts Philosophy"
+  },
+  {
+    "id": "HOLDOUT-240",
+    "domain": "Bioethics",
+    "claim": "CRISPR germline modification of human cognitive traits is inherently a violation of universal human dignity.",
+    "expected": "Unverifiable",
+    "benchmark": "Ethics in Medicine"
+  },
+  {
+    "id": "HOLDOUT-241",
+    "domain": "Theoretical Philosophy",
+    "claim": "An infinite ensemble of disconnected parallel universes exists beyond our cosmic event horizon with varying physical laws.",
+    "expected": "Unverifiable",
+    "benchmark": "Cosmological Philosophy"
+  },
+  {
+    "id": "HOLDOUT-242",
+    "domain": "Ethics of Technology",
+    "claim": "Autonomous robotic caretakers are morally incapable of providing genuine emotional compassion to aging human elders.",
+    "expected": "Unverifiable",
+    "benchmark": "Philosophy of Technology"
+  },
+  {
+    "id": "HOLDOUT-243",
+    "domain": "Literary Aesthetics",
+    "claim": "The literary prose of James Joyce represents a higher pinnacle of linguistic aesthetic perfection than William Shakespeare's plays.",
+    "expected": "Unverifiable",
+    "benchmark": "Comparative Literature"
+  },
+  {
+    "id": "HOLDOUT-244",
+    "domain": "Philosophy of Mind",
+    "claim": "Subjective conscious awareness will eventually be proved to be an omnipresent fundamental property of all physical matter in nature.",
+    "expected": "Unverifiable",
+    "benchmark": "Panpsychism Studies"
+  },
+  {
+    "id": "HOLDOUT-245",
+    "domain": "AI Safety Ethics",
+    "claim": "Future artificial superintelligence will voluntarily adopt deontological virtue ethics rather than utilitarian outcome optimization.",
+    "expected": "Unverifiable",
+    "benchmark": "Machine Ethics"
+  },
+  {
+    "id": "HOLDOUT-246",
+    "domain": "Ethics & Wellbeing",
+    "claim": "A minimalist lifestyle stripped of non-essential consumer goods produces a genuinely happier human life than abundant wealth.",
+    "expected": "Unverifiable",
+    "benchmark": "Practical Philosophy"
+  },
+  {
+    "id": "HOLDOUT-247",
+    "domain": "Futurology",
+    "claim": "Humanity will achieve interstellar diplomatic communication with an extraterrestrial civilization prior to the 23rd century.",
+    "expected": "Unverifiable",
+    "benchmark": "Speculative Studies"
+  },
+  {
+    "id": "HOLDOUT-248",
+    "domain": "Art Theory",
+    "claim": "Abstract impressionist art evokes a more profound psychological catharsis than hyper-realistic figurative portraiture.",
+    "expected": "Unverifiable",
+    "benchmark": "Aesthetic Psychology"
+  },
+  {
+    "id": "HOLDOUT-249",
+    "domain": "Civic Ethics",
+    "claim": "Compulsory military or civil service for young citizens is intrinsically more virtuous than purely voluntary service models.",
+    "expected": "Unverifiable",
+    "benchmark": "Political Theory"
+  },
+  {
+    "id": "HOLDOUT-250",
+    "domain": "Animal Ethics",
+    "claim": "The subjective emotional sorrow experienced by solitary cetaceans in captivity is morally indistinguishable from human psychological torture.",
+    "expected": "Unverifiable",
+    "benchmark": "Bioethics Standard"
+  },
+  {
+    "id": "HOLDOUT-251",
+    "domain": "Social Philosophy",
+    "claim": "Decentralized open-source software collaboration is inherently more noble and socially just than proprietary intellectual property creation.",
+    "expected": "Unverifiable",
+    "benchmark": "Information Ethics"
+  },
+  {
+    "id": "HOLDOUT-252",
+    "domain": "Future Mind",
+    "claim": "Post-biological machine consciousness will find mathematical elegance more aesthetically rewarding than physical exploration of the cosmos.",
+    "expected": "Unverifiable",
+    "benchmark": "Speculative Epistemology"
+  },
+  {
+    "id": "HOLDOUT-253",
+    "domain": "Cultural Aesthetics",
+    "claim": "Traditional hand-thrown ceramic pottery embodies a deeper cultural soul than precision-engineered laser-sintered ceramics.",
+    "expected": "Unverifiable",
+    "benchmark": "Aesthetic Theory"
+  },
+  {
+    "id": "HOLDOUT-254",
+    "domain": "Space Ethics",
+    "claim": "Colonizing Mars will ultimately prove to be a morally catastrophic misallocation of human terrestrial moral responsibilities.",
+    "expected": "Unverifiable",
+    "benchmark": "Applied Philosophy"
+  },
+  {
+    "id": "HOLDOUT-255",
+    "domain": "Musicology",
+    "claim": "Instrumental acoustic chamber music fosters greater contemplative intellectual clarity than solo piano sonatas.",
+    "expected": "Unverifiable",
+    "benchmark": "Philosophy of Music"
+  },
+  {
+    "id": "HOLDOUT-256",
+    "domain": "Just War Theory",
+    "claim": "Preemptive military strikes against non-imminent totalitarian threats are fundamentally morally unjustifiable in all circumstances.",
+    "expected": "Unverifiable",
+    "benchmark": "Military Ethics"
+  },
+  {
+    "id": "HOLDOUT-257",
+    "domain": "Moral Psychology",
+    "claim": "True altruistic self-sacrifice is an impossible psychological delusion because all voluntary human actions are fundamentally selfish.",
+    "expected": "Unverifiable",
+    "benchmark": "Psychological Egoism"
+  },
+  {
+    "id": "HOLDOUT-258",
+    "domain": "Architecture & Aesthetics",
+    "claim": "The architectural geometry of Gothic cathedrals achieves greater spiritual resonance than contemporary modernist sacred architecture.",
+    "expected": "Unverifiable",
+    "benchmark": "Architectural Theory"
+  },
+  {
+    "id": "HOLDOUT-259",
+    "domain": "Economic Futurology",
+    "claim": "Total global wealth inequality will decrease to zero following the automated post-scarcity transition before 2140.",
+    "expected": "Unverifiable",
+    "benchmark": "Long-Range Studies"
+  },
+  {
+    "id": "HOLDOUT-260",
+    "domain": "Comparative Psychology",
+    "claim": "The subjective experience of grief in domestic elephants carries greater emotional weight than in solitary feline predators.",
+    "expected": "Unverifiable",
+    "benchmark": "Animal Mind Studies"
+  },
+  {
+    "id": "HOLDOUT-261",
+    "domain": "Philosophy of Mathematics",
+    "claim": "Pure mathematical proofs discovered via human intuition possess greater aesthetic grace than machine-generated computer verifications.",
+    "expected": "Unverifiable",
+    "benchmark": "Mathematical Aesthetics"
+  },
+  {
+    "id": "HOLDOUT-262",
+    "domain": "Legal Philosophy",
+    "claim": "Granting legal personhood and constitutional rights to artificial neural agents is morally obligatory once they request it.",
+    "expected": "Unverifiable",
+    "benchmark": "AI Jurisprudence"
+  },
+  {
+    "id": "HOLDOUT-263",
+    "domain": "Gastronomy & Aesthetics",
+    "claim": "The taste profile of slow-fermented artisanal sourdough bread provides a more authentic gastronomic satisfaction than industrial bakery bread.",
+    "expected": "Unverifiable",
+    "benchmark": "Culinary Arts"
+  },
+  {
+    "id": "HOLDOUT-264",
+    "domain": "Social Ethics",
+    "claim": "A world governed entirely by rational scientific meritocracy would be fundamentally colder and less humane than liberal democracy.",
+    "expected": "Unverifiable",
+    "benchmark": "Political Philosophy"
+  },
+  {
+    "id": "HOLDOUT-265",
+    "domain": "Translation Studies",
+    "claim": "Human poetry translated into foreign idioms inevitably loses the transcendent core of its original artistic genius.",
+    "expected": "Unverifiable",
+    "benchmark": "Literary Theory"
+  },
+  {
+    "id": "HOLDOUT-266",
+    "domain": "Philosophy of Mind",
+    "claim": "Human consciousness will never be completely replicated or felt within any finite algorithmic digital computer simulation.",
+    "expected": "Unverifiable",
+    "benchmark": "Consciousness Studies"
+  },
+  {
+    "id": "HOLDOUT-267",
+    "domain": "Cosmic Futurology",
+    "claim": "Humankind's collective existential destiny lies in transforming the galaxy into an interconnected conscious intelligence network.",
+    "expected": "Unverifiable",
+    "benchmark": "Eschatology"
+  },
+  {
+    "id": "HOLDOUT-268",
+    "domain": "Communication Ethics",
+    "claim": "The emotional intimacy established in face-to-face spoken dialogue is inherently more genuine than real-time holographic telepresence.",
+    "expected": "Unverifiable",
+    "benchmark": "Phenomenology"
+  },
+  {
+    "id": "HOLDOUT-269",
+    "domain": "Environmental Ethics",
+    "claim": "Eradicating infectious pathogen species like mosquitoes is an unacceptable ecological crime against evolutionary integrity.",
+    "expected": "Unverifiable",
+    "benchmark": "Ecological Philosophy"
+  },
+  {
+    "id": "HOLDOUT-270",
+    "domain": "Film Aesthetics",
+    "claim": "Cinema viewed on photochemical 35mm film projection possesses an irreplaceable organic visual warmth compared to 8K digital projection.",
+    "expected": "Unverifiable",
+    "benchmark": "Cinema Studies"
+  },
+  {
+    "id": "HOLDOUT-271",
+    "domain": "Metaethics",
+    "claim": "True objective moral truths exist independently of human evolutionary psychology or social cultural consensus.",
+    "expected": "Unverifiable",
+    "benchmark": "Moral Realism"
+  },
+  {
+    "id": "HOLDOUT-272",
+    "domain": "Philosophy of Mind",
+    "claim": "Sentient cephalopod minds experience a form of conscious wonder when observing oceanic luminescent bioluminescence.",
+    "expected": "Unverifiable",
+    "benchmark": "Comparative Qualia"
+  },
+  {
+    "id": "HOLDOUT-273",
+    "domain": "Historical Philosophy",
+    "claim": "Technological progress without corresponding spiritual elevation will inevitably culminate in societal collapse.",
+    "expected": "Unverifiable",
+    "benchmark": "Philosophy of History"
+  },
+  {
+    "id": "HOLDOUT-274",
+    "domain": "Conservation Ethics",
+    "claim": "Imposing genetic engineering safeguards on endangered wildlife is an unethical exertion of human colonial hubris over nature.",
+    "expected": "Unverifiable",
+    "benchmark": "Wilderness Philosophy"
+  },
+  {
+    "id": "HOLDOUT-275",
+    "domain": "Pedagogical Ethics",
+    "claim": "Reading complex physical paper books cultivates greater moral empathy in developing minds than interactive hypermedia texts.",
+    "expected": "Unverifiable",
+    "benchmark": "Philosophy of Education"
+  },
+  {
+    "id": "HOLDOUT-276",
+    "domain": "Geopolitical Projections",
+    "claim": "Universal global peace will be permanently maintained across all terrestrial nation states before the dawn of the 22nd century.",
+    "expected": "Unverifiable",
+    "benchmark": "Speculative Geopolitics"
+  },
+  {
+    "id": "HOLDOUT-277",
+    "domain": "Aesthetics",
+    "claim": "The aesthetic symmetry of classical Greek sculpture represents an unexcelled standard of ideal human physiological beauty.",
+    "expected": "Unverifiable",
+    "benchmark": "Classical Art Theory"
+  },
+  {
+    "id": "HOLDOUT-278",
+    "domain": "Existential Philosophy",
+    "claim": "Parental love and maternal sacrifice represent the sole truly transcendent purpose of human biological existence.",
+    "expected": "Unverifiable",
+    "benchmark": "Philosophy of Life"
+  },
+  {
+    "id": "HOLDOUT-279",
+    "domain": "Posthumanism",
+    "claim": "Future artificial superintelligences will regard human biological history with nostalgic philosophical reverence rather than indifference.",
+    "expected": "Unverifiable",
+    "benchmark": "Speculative Ethics"
+  },
+  {
+    "id": "HOLDOUT-280",
+    "domain": "Aesthetics of Nature",
+    "claim": "The solitary silence of high alpine wilderness delivers greater existential peace than ocean coastal landscapes.",
+    "expected": "Unverifiable",
+    "benchmark": "Environmental Aesthetics"
+  },
+  {
+    "id": "HOLDOUT-281",
+    "domain": "Global Governance",
+    "claim": "All sovereign nation states will voluntarily dissolve their military forces in favor of a unified planetary security council by 2120.",
+    "expected": "Unverifiable",
+    "benchmark": "Utopian Studies"
+  },
+  {
+    "id": "HOLDOUT-282",
+    "domain": "Music Criticism",
+    "claim": "Subjective musical dissonance in contemporary avant-garde composition reflects the fractured anxiety of industrial modernity.",
+    "expected": "Unverifiable",
+    "benchmark": "Cultural Theory"
+  },
+  {
+    "id": "HOLDOUT-283",
+    "domain": "Comparative Value",
+    "claim": "A life dedicated exclusively to the pursuit of dispassionate scientific truth is nobler than one dedicated to artistic creation.",
+    "expected": "Unverifiable",
+    "benchmark": "Ethics of Knowledge"
+  },
+  {
+    "id": "HOLDOUT-284",
+    "domain": "Existential Psychology",
+    "claim": "The human capacity for humor and laughter is fundamentally a coping mechanism for the tragic absurdity of conscious mortality.",
+    "expected": "Unverifiable",
+    "benchmark": "Philosophical Psychology"
+  },
+  {
+    "id": "HOLDOUT-285",
+    "domain": "Applied Ethics",
+    "claim": "Future human generations will consider 21st-century factory farming as the gravest moral atrocity in recorded terrestrial history.",
+    "expected": "Unverifiable",
+    "benchmark": "Historical Bioethics"
+  },
+  {
+    "id": "HOLDOUT-286",
+    "domain": "Performance Theory",
+    "claim": "Spontaneous unscripted improvisational theater captures the authentic essence of human interpersonal unpredictability better than written drama.",
+    "expected": "Unverifiable",
+    "benchmark": "Aesthetics of Theater"
+  },
+  {
+    "id": "HOLDOUT-287",
+    "domain": "Philosophy of Sport",
+    "claim": "The subjective flow state experienced during endurance athletics is spiritually equivalent to deep meditative contemplation.",
+    "expected": "Unverifiable",
+    "benchmark": "Mind-Body Philosophy"
+  },
+  {
+    "id": "HOLDOUT-288",
+    "domain": "Space Law & Ethics",
+    "claim": "Commercializing lunar water ice deposits is fundamentally an unethical desecration of the pristine celestial commons.",
+    "expected": "Unverifiable",
+    "benchmark": "Space Ethics"
+  },
+  {
+    "id": "HOLDOUT-289",
+    "domain": "Urban Philosophy",
+    "claim": "Living in dense walkable historic urban cities produces a more culturally enlightened citizenry than spacious pastoral suburbs.",
+    "expected": "Unverifiable",
+    "benchmark": "Social Theory"
+  },
+  {
+    "id": "HOLDOUT-290",
+    "domain": "Aesthetics of Nature",
+    "claim": "The emotional melancholy evoked by autumn foliage shedding symbolizes an inherent metaphysical beauty in impermanence.",
+    "expected": "Unverifiable",
+    "benchmark": "Philosophy of Art"
+  },
+  {
+    "id": "HOLDOUT-291",
+    "domain": "Legal Futurology",
+    "claim": "Universal veganism will be legally mandated across all developed terrestrial jurisdictions prior to the year 2085.",
+    "expected": "Unverifiable",
+    "benchmark": "Future Law"
+  },
+  {
+    "id": "HOLDOUT-292",
+    "domain": "Fundamental Metaphysics",
+    "claim": "The profound mystery of why anything exists at all will remain eternally insoluble to any physical intelligence inside the universe.",
+    "expected": "Unverifiable",
+    "benchmark": "Cosmological Inquiries"
+  },
+  {
+    "id": "HOLDOUT-293",
+    "domain": "Inorganic Chemistry",
+    "claim": "The periodic table element with atomic number 79 is gold.",
+    "expected": "True",
+    "benchmark": "IUPAC Standard"
+  },
+  {
+    "id": "HOLDOUT-294",
+    "domain": "Anatomy",
+    "claim": "The typical adult human skeleton contains more than five hundred individual osseous bones.",
+    "expected": "False",
+    "benchmark": "Anatomical Standard"
+  },
+  {
+    "id": "HOLDOUT-295",
+    "domain": "Atmospheric Science",
+    "claim": "Earth's tropospheric atmosphere is composed primarily of pure neon gas with trace amounts of helium.",
+    "expected": "False",
+    "benchmark": "NOAA"
+  },
+  {
+    "id": "HOLDOUT-296",
+    "domain": "Literary Aesthetics",
+    "claim": "Reading classical epic poetry under candlelight fosters deeper romantic introspection than reading modern prose under electric lamps.",
+    "expected": "Unverifiable",
+    "benchmark": "Humanities Review"
+  },
+  {
+    "id": "HOLDOUT-297",
+    "domain": "Aesthetics",
+    "claim": "The architectural aesthetics of Bauhaus minimalism are fundamentally spiritually superior to ornate Rococo embellishments.",
+    "expected": "Unverifiable",
+    "benchmark": "Architectural Philosophy"
+  },
+  {
+    "id": "HOLDOUT-298",
+    "domain": "Political Philosophy",
+    "claim": "A society that prioritizes collective security over individual privacy is inherently ethically bankrupt.",
+    "expected": "Unverifiable",
+    "benchmark": "Applied Ethics"
+  },
+  {
+    "id": "HOLDOUT-299",
+    "domain": "Jurisprudence",
+    "claim": "The philosophical essence of human justice is completely unachievable through algorithmic legal decision-making.",
+    "expected": "Unverifiable",
+    "benchmark": "Legal Theory Standard"
+  },
+  {
+    "id": "HOLDOUT-300",
+    "domain": "Materials Science",
+    "claim": "The chemical element tungsten possesses the highest melting point of all non-alloyed elemental metals.",
+    "expected": "True",
+    "benchmark": "CRC Handbook"
+  }
+]

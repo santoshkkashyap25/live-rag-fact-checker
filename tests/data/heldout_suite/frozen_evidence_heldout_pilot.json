@@ -1,0 +1,1614 @@
+{
+  "HOLDOUT-001": [
+    {
+      "title": "DNA (Wikipedia)",
+      "snippet": "Deoxyribonucleic acid (; DNA) is a polymer composed of two polynucleotide chains that coil around each other in a double helical structure. DNA carries genetic instructions for the development, functioning, growth and reproduction of all known organisms and many viruses. DNA and ribonucleic acid (RNA) are the two nucleic acids found in all life.\nThe two DNA strands are series of monomeric units called nucleotides.",
+      "url": "https://en.wikipedia.org/wiki/DNA",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "DNA replication (Wikipedia)",
+      "snippet": "DNA replication is the process by which a cell makes exact copies of its DNA. This process occurs in all organisms and is essential to biological inheritance, cell division, and repair of damaged tissues. DNA replication ensures that each of the newly divided daughter cells receives its own copy of each DNA molecule.\nDNA most commonly occurs in double-stranded form, made up of two complementary strands held together by base pairing of the nucleotides comprising each strand. The two linear strands of a double-stranded DNA molecule typically twist together in the shape of a double helix.",
+      "url": "https://en.wikipedia.org/wiki/DNA_replication",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Glossary of cellular and molecular biology (M\u2013Z) (Wikipedia)",
+      "snippet": "This glossary of cellular and molecular biology is a list of definitions of terms and concepts commonly used in the study of cell biology, molecular biology, and related disciplines, including molecular genetics, biochemistry, and microbiology. It is split across two articles:\n\nGlossary of cellular and molecular biology (0\u2013L) lists terms beginning with numbers and those beginning with the letters A through L.\nGlossary of cellular and molecular biology (M\u2013Z) (this page) lists terms beginning with the letters M through Z.\nThis glossary is intended as introductory material for novices (for more specific and technical detail, see the article corresponding to each term). It has been designed as a companion to Glossary of genetics and evolutionary biology, which contains many overlapping and related terms; other related glossaries include Glossary of virology and Glossary of chemistry.",
+      "url": "https://en.wikipedia.org/wiki/Glossary_of_cellular_and_molecular_biology_%28M%E2%80%93Z%29",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "History of RNA biology (Wikipedia)",
+      "snippet": "Numerous key discoveries in biology have emerged from studies of RNA (ribonucleic acid), including seminal work in the fields of biochemistry, genetics, microbiology, molecular biology, molecular evolution, and structural biology. As of 2010, 30 scientists have been awarded Nobel Prizes for experimental work that includes studies of RNA. Specific discoveries of high biological significance are discussed in this article.\nFor related information, see the articles on History of molecular biology and History of genetics. For background information, see the articles on RNA and nucleic acids.",
+      "url": "https://en.wikipedia.org/wiki/History_of_RNA_biology",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "TERT - Telomerase reverse transcriptase - Homo sapiens (Human) | UniProtKB",
+      "snippet": "Telomeraseis a ribonucleoprotein enzyme essential for the replication ofchromosometerminiin most eukaryotes. Active in progenitor and cancer cells. Inactive, or very low activity, in normal somatic cells. Catalytic component of the teleromerase holoenzyme complex whose main activity is the elongation of telomeres by acting as areversetranscriptasethat adds simplesequencerepeats to ...",
+      "url": "https://www.uniprot.org/uniprotkb/O14746/entry",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "It all comes together at the ends: Telomerase structure, function, and ...",
+      "snippet": "Telomeraseis areversetranscriptasespecialized in the addition of telomeric DNA repeats onto the ends ofchromosomes. Telomere extension offsets the loss of telomeric repeats from the failure of DNA polymerases to fully replicate linear ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4420735/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Telomerase Mechanism of Telomere Synthesis - PMC",
+      "snippet": "Telomeraseis the essentialreversetranscriptaserequired for linearchromosomemaintenance in most eukaryotes.Telomerasesupplements the tandem array of simple-sequencerepeats atchromosomeends to compensate for the DNA erosion inherent in ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5812681/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Telomerase reverse transcriptase - Wikipedia",
+      "snippet": "Telomeraseis a ribonucleoprotein polymerase that maintains telomere ends by addition of the telomere repeat TTAGGG. The enzyme consists of a protein component withreversetranscriptaseactivity, encoded by this gene, and an RNA component that serves as a template for the telomere repeat.Telomeraseexpression plays a role in cellular senescence, as it is normally repressed in postnatal ...",
+      "url": "https://en.wikipedia.org/wiki/Telomerase_reverse_transcriptase",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Telomerase - an overview | ScienceDirect Topics",
+      "snippet": "Telomeraseis defined as an RNA-dependent DNA polymerase thatsynthesizesDNAsequencesusing RNA as a template, primarily involved in repairing and elongating telomeres during cell division. It consists of a catalytic subunit (TERT) and an RNA fragment (TERC), playing vital roles in maintaining chromosomal integrity and regulating various cellular mechanisms. AI generated definition based on ...",
+      "url": "https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/telomerase",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Structures of nucleotide-bound human telomerase at several steps of its ...",
+      "snippet": "To maintain genome stability, the specialisedreversetranscriptasetelomeraseprocessively adds telomeric DNA repeats tochromosomeends. Here the authors reported structures of humantelomerase...",
+      "url": "https://www.nature.com/articles/s41467-026-68560-8",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-002": [
+    {
+      "title": "Daniel Scolnic (Wikipedia)",
+      "snippet": "Daniel Scolnic is an American astrophysicist and academic known for his research in observational cosmology. He currently serves as an associate professor in the Physics Department at Duke University, holding a joint appointment in the Department of Electrical and Computer Engineering.\nScolnic's primary scientific research involve using Type Ia supernovae as standard candles to measure the expansion history of the universe and constrain parameters such as the Hubble constant and the properties of dark energy. His work is central to the ongoing discussion around the Hubble tension, the significant disagreement between local and cosmological measurements of the universe's expansion rate.",
+      "url": "https://en.wikipedia.org/wiki/Daniel_Scolnic",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Dark energy (Wikipedia)",
+      "snippet": "In physical cosmology and astronomy, dark energy is a proposed form of energy that affects the universe on its largest scales. Its primary effect is to drive the accelerating expansion of the universe. It also slows the rate of structure formation. Assuming that the lambda-CDM model of cosmology is correct, dark energy dominates the universe, contributing 68% of the total mass-energy in the present-day observable universe while dark matter and ordinary (baryonic) matter contribute 27% and 5%, respectively, and other components such as neutrinos and photons are nearly negligible.",
+      "url": "https://en.wikipedia.org/wiki/Dark_energy",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Distance measure (Wikipedia)",
+      "snippet": "Distance measures are used in physical cosmology to generalize the concept of distance between two objects or events in an expanding universe.  They may be used to tie some observable quantity (such as the luminosity of a distant quasar, the redshift of a distant galaxy, or the angular size of the acoustic peaks in the cosmic microwave background (CMB) power spectrum) to another quantity that is not directly observable, but is more convenient for calculations (such as the comoving coordinates of the quasar, galaxy, etc.). The distance measures discussed here all reduce to the common notion of Euclidean distance at low redshift.\nIn accord with our present understanding of cosmology, these measures are calculated within the context of general relativity, where the Friedmann\u2013Lema\u00eetre\u2013Robertson\u2013Walker solution is used to describe the universe.",
+      "url": "https://en.wikipedia.org/wiki/Distance_measure",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Type Ib and Ic supernovae (Wikipedia)",
+      "snippet": "Type Ib and Type Ic supernovae are categories of supernovae that are caused by the stellar core collapse of massive  stars. These stars have shed or been stripped of their outer envelope of hydrogen, and, when compared to the spectrum of Type Ia supernovae, they lack the absorption line of silicon. Compared to Type Ib, Type Ic supernovae are hypothesized to have lost more of their initial envelope, including most of their helium.",
+      "url": "https://en.wikipedia.org/wiki/Type_Ib_and_Ic_supernovae",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Type Ia Supernovae - Science@NASA",
+      "snippet": "These explosions peak at a similar, known intrinsic brightness, making type Ia supernovae so-called standard candles \u2013 objects or events that emit a specific amount of light, allowing scientists to find their distance with a straightforward formula. Because of this, astronomers can determine how far away the supernovae are by simply measuring how bright they appear.",
+      "url": "https://science.nasa.gov/mission/roman-space-telescope/type-ia-supernovae/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Type Ia supernova - Wikipedia",
+      "snippet": "Their consistent peak luminosity allows these explosions to be used asstandardcandlesto measure the distance to their host galaxies: the visual magnitude of aTypeIasupernova, as observed from Earth, indicates its distance from Earth.",
+      "url": "https://en.wikipedia.org/wiki/Type_Ia_supernova",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Over-Luminous Type Ia Supernovae and Standard Candle Cosmology",
+      "snippet": "AbstractTypeIasupernovae(SNeIa)serveascrucialcosmologicaldistance indicators due to their empirical consistency in peak luminosity and characteristic light-curve declinerates.These properties facilitate them to be standardizedcandlesforthe determination of the Hubble constant (\\(H_{0}\\)) within late-time universe cosmology.",
+      "url": "https://arxiv.org/pdf/2503.13904",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "What Lights the Universe's Standard Candles? - Quanta Magazine",
+      "snippet": "Our understanding of the cosmos is based on thesestandardcandles. Consider two of the biggest mysteries in cosmology: What is theexpansionrateof the universe? And why is thatexpansionrateaccelerating? Efforts to understand both of these issues rely critically on distance measurements made usingTypeIasupernovas.",
+      "url": "https://www.quantamagazine.org/what-lights-the-universes-standard-candles-20230208/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Type Ia supernovae: Inside the universe's biggest blasts",
+      "snippet": "Ultimately, the information gleaned by mappingtypeIasupernovaeacross the cosmos has allowed astronomers to measure theexpansionof the universe itself.",
+      "url": "https://www.astronomy.com/science/type-ia-supernovae-inside-the-universes-biggest-blasts/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "PDFsnow221 - Lawrence Berkeley National Laboratory",
+      "snippet": "This memo provides a brief introduction toTypeIasupernovae(SNeIa). It addresses the basic issues of how SNeIaare defined and what sorts of stellar populations produce them; why they are so valuable as distance indicators for cosmology; and the nature of thestandardphysical model for SNeIa.",
+      "url": "https://supernova.lbl.gov/~evlinder/Ia_candle.pdf",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-003": [
+    {
+      "title": "B cell (Wikipedia)",
+      "snippet": "B cells, also known as B lymphocytes, are a type of lymphocyte. They function in the humoral immunity component of the adaptive immune system. B cells produce antibody molecules which may be either secreted or inserted into the plasma membrane where they serve as a part of B-cell receptors. When a na\u00efve or memory B cell is activated by an antigen, it proliferates and differentiates into an antibody-secreting effector cell, known as a plasmablast or plasma cell.",
+      "url": "https://en.wikipedia.org/wiki/B_cell",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Germinal center (Wikipedia)",
+      "snippet": "Germinal centers or germinal centres (GCs) are transiently formed structures within B cell zone (follicles) in secondary lymphoid organs \u2013 lymph nodes, ileal Peyer's patches, and the spleen \u2013 where mature B cells are activated, proliferate, differentiate, and mutate their antibody genes (through somatic hypermutation aimed at achieving higher affinity) during a normal immune response; most of the germinal center B cells (BGC) are removed by tingible body macrophages. There are several key differences between naive B cells and GC B cells, including level of proliferative activity, size, metabolic activity and energy production. The B cells develop dynamically after the activation of follicular B cells by T-dependent antigen. The initiation of germinal center formation involves the interaction between B and T cells in the interfollicular area of the lymph node, CD40-CD40L ligation, NF-kB signaling and expression of IRF4 and BCL6.",
+      "url": "https://en.wikipedia.org/wiki/Germinal_center",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Long-lived plasma cell (Wikipedia)",
+      "snippet": "Long-lived plasma cells (LLPCs) are a distinct subset of plasma cells that play a crucial role in maintaining humoral memory and long-term immunity. They continuously produce and secrete high-affinity antibodies into the bloodstream, conversely to memory B cells, which are quiescent and respond quickly to antigens upon recall.\nInitially, it was believed that memory B cells replenish LLPCs. However, allergen-specific Immunoglobulin E (IgE) production through bone marrow transplantation in non-allergic individuals suggests LLPCs may be long-lived because the allergies developed without antigenic re-stimulation.",
+      "url": "https://en.wikipedia.org/wiki/Long-lived_plasma_cell",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Tonsil (Wikipedia)",
+      "snippet": "The tonsils (  TON-sills) are a set of lymphoid organs facing into the aerodigestive tract, which is known as Waldeyer's tonsillar ring and consists of the adenoid tonsil (or pharyngeal tonsil), two tubal tonsils, two palatine tonsils, and the lingual tonsils. These organs play an important role in the immune system.\nWhen used unqualified, the term most commonly refers specifically to the palatine tonsils, which are two lymphoid organs situated at either side of the back of the human throat. The palatine tonsils and the adenoid tonsil are organs consisting of lymphoepithelial tissue located near the oropharynx and nasopharynx (parts of the throat).",
+      "url": "https://en.wikipedia.org/wiki/Tonsil",
+      "source": "Wikipedia"
+    }
+  ],
+  "HOLDOUT-004": [
+    {
+      "title": "Core\u2013mantle boundary (Wikipedia)",
+      "snippet": "The core\u2013mantle boundary (CMB) of Earth lies between the planet's silicate mantle and its liquid iron\u2013nickel outer core, at a depth of 2,891 km (1,796 mi) below Earth's surface. The boundary is observed via the discontinuity in seismic wave velocities at that depth due to the differences between the acoustic impedances of the solid mantle and the molten outer core. P-wave velocities are much slower in the outer core than in the deep mantle while S-waves do not exist at all in the liquid portion of the core. Recent evidence suggests a distinct boundary layer directly above the CMB possibly made of a novel phase of the basic perovskite mineralogy of the deep mantle named post-perovskite.",
+      "url": "https://en.wikipedia.org/wiki/Core%E2%80%93mantle_boundary",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Gutenberg discontinuity (Wikipedia)",
+      "snippet": "The Gutenberg discontinuity occurs within Earth's interior at a depth of about 2,900 km (1,800 mi) below the surface, where there is an abrupt change in the seismic waves (generated by earthquakes or explosions) that travel through Earth. At this depth, primary seismic waves (P waves) decrease in velocity while secondary seismic waves (S waves) disappear completely. S waves shear material, and cannot transmit through liquids, so it is believed that the unit above the discontinuity is solid, while the unit below is in a liquid, or molten, form. This distinct change marks the boundary between two sections of the earth's interior, known as the lower mantle (which is considered solid) and the underlying outer core (believed to be molten).",
+      "url": "https://en.wikipedia.org/wiki/Gutenberg_discontinuity",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Lithosphere\u2013asthenosphere boundary (Wikipedia)",
+      "snippet": "The lithosphere\u2013asthenosphere boundary (referred to as the LAB by geophysicists) represents a mechanical difference between layers in Earth's inner structure. Earth's inner structure can be described both chemically (crust, mantle, and core) and mechanically. The lithosphere\u2013asthenosphere boundary lies between Earth's cooler, rigid lithosphere and the warmer, ductile asthenosphere. The actual depth of the boundary is still a topic of debate and study, although it is known to vary according to the environment.",
+      "url": "https://en.wikipedia.org/wiki/Lithosphere%E2%80%93asthenosphere_boundary",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Mohorovi\u010di\u0107 discontinuity (Wikipedia)",
+      "snippet": "The Mohorovi\u010di\u0107 discontinuity ( MOH-h\u0259-ROH-vih-chitch; Croatian: [moxor\u00f4\u028bi\u02d0t\u0283it\u0255]), usually called the Moho discontinuity, Moho boundary, or just Moho, is the boundary between the crust and the mantle of Earth. It is defined by the distinct change in velocity of seismic waves as they pass through changing densities of rock.\nThe Moho lies almost entirely within the lithosphere (the hard outer layer of the Earth, including the crust). Only beneath mid-ocean ridges does it define the lithosphere\u2013asthenosphere boundary (the depth at which the mantle becomes significantly ductile).",
+      "url": "https://en.wikipedia.org/wiki/Mohorovi%C4%8Di%C4%87_discontinuity",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Mohorovi\u010di\u0107 discontinuity - Wikipedia",
+      "snippet": "Earth'scrustandmantle, Mohodiscontinuitybetweenbottom ofcrustandsolid uppermostmantleTheMohorovi\u010di\u0107discontinuity(/ \u02ccmo\u028ah\u0259\u02c8ro\u028av\u026at\u0283\u026at\u0283 / MOH-h\u0259-ROH-vih-chitch; Croatian: [moxor\u00f4\u028bi\u02d0t\u0283it\u0255]), [1] usually called the Mohodiscontinuity, Mohoboundary, or just Moho, is theboundarybetweenthecrustandthemantleofEarth.",
+      "url": "https://en.wikipedia.org/wiki/Mohorovi%C4%8Di%C4%87_discontinuity",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Mohorovicic Discontinuity - The Moho - Geology.com",
+      "snippet": "What is theMohorovi\u010di\u0107Discontinuity?TheMohorovicicDiscontinuity, or \"Moho,\" is theboundarybetweenthecrustandthemantle.Thered line in the diagram shows its location. In geology the word \"discontinuity\" is used for a surface at which seismic waves change velocity.",
+      "url": "https://geology.com/articles/mohorovicic-discontinuity.shtml",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Mohorovicic Discontinuity: The Crust-Mantle Boundary",
+      "snippet": "TheMohorovicicdiscontinuityoccurs entirely in thecrust. It separates thecrustfromthemantle.However, at the mid-ocean ridges (MOR), it separates thecrustfrom the asthenosphere. The asthenosphere is a ductile, weaker part of theuppermantleabove which the lithosphere (crustandrigid, soliduppermantlepart) moves.",
+      "url": "https://geologybase.com/mohorovicic-discontinuity/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "What Is the Mohorovicic Discontinuity and Can Humans Ever Reach It?",
+      "snippet": "He published his finding in a 1919 journal \u2014 the first person to introduce the idea that there is a sharp boundary made up of a different material that separates the superior crust from the mantle beneath it. It's now known as the Mohorovicic discontinuity.",
+      "url": "https://science.howstuffworks.com/environmental/earth/geophysics/mohorovicic-discontinuity.htm",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Earth's Crust-Mantle Boundary: The Mohorovi\u010di\u0107 Discontinuity",
+      "snippet": "TheMohorovi\u010di\u0107discontinuity, or Moho (theboundarybetweenthecrustandmantle), was discovered in 1909 through the observation of an abrupt change in the speed of seismic waves traveling below the surface of theEarth. Its discovery was among the first evidence for the now-famous \"onion\" model of the layers of theEarth, but many of its fundamental properties are still not well ...",
+      "url": "https://www.ebsco.com/research-starters/science/earths-crust-mantle-boundary-mohorovicic-discontinuity",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Crustal Discontinuity, Seismic Wave & Earth's Interior - Britannica",
+      "snippet": "Moho,boundarybetweentheEarth'scrustanditsmantle.TheMoho lies at a depth of about 22 mi (35 km) below continents and about 4.5 mi (7 km) beneath the oceaniccrust. Modern instruments have determined that the velocity of seismic wave s increases rapidly at thisboundary.TheMoho was named for AndrijaMohorovi\u010di\u0107.",
+      "url": "https://www.britannica.com/science/Moho",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-005": [
+    {
+      "title": "Citric acid cycle (Wikipedia)",
+      "snippet": "The citric acid cycle\u2014also known as the Krebs cycle, Szent\u2013Gy\u00f6rgyi\u2013Krebs cycle, or TCA cycle (tricarboxylic acid cycle)\u2014is a series of biochemical reactions that release the energy stored in nutrients through acetyl-CoA oxidation. The energy released is available in the form of ATP. The Krebs cycle is used by organisms that generate energy via respiration, either anaerobically or aerobically (organisms that ferment use different pathways). In addition, the cycle provides precursors of certain amino acids, as well as the reducing agent NADH, which are used in other reactions. Its central importance to many biochemical pathways suggests that it was one of the earliest metabolic components.",
+      "url": "https://en.wikipedia.org/wiki/Citric_acid_cycle",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Mitochondria (Wikipedia)",
+      "snippet": "A mitochondrion (pl.\u2009mitochondria) is an organelle found in the cells of most eukaryotes, such as animals, plants and fungi. Mitochondria have a double membrane structure and use aerobic respiration to generate adenosine triphosphate (ATP), which is used throughout the cell as a source of chemical energy. They were discovered by Albert von K\u00f6lliker in 1857 in the voluntary muscles of insects. The term mitochondrion, meaning \"a thread-like granule\", was coined by Carl Benda in 1898.",
+      "url": "https://en.wikipedia.org/wiki/Mitochondria",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Mitochondrial matrix (Wikipedia)",
+      "snippet": "In a mitochondrion, the matrix is the space within the inner membrane. It can also be referred as the mitochondrial fluid. The word \"matrix\" stems from the fact that this space is viscous, compared to the relatively aqueous cytoplasm. The mitochondrial matrix contains the mitochondrial DNA, ribosomes, soluble enzymes, small organic molecules, nucleotide cofactors, and inorganic ions.[1] The enzymes in the matrix facilitate reactions responsible for the production of ATP, such as the citric acid cycle, oxidative phosphorylation, oxidation of pyruvate, and the beta oxidation of fatty acids.",
+      "url": "https://en.wikipedia.org/wiki/Mitochondrial_matrix",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Urea cycle (Wikipedia)",
+      "snippet": "The urea cycle (also known as the ornithine cycle) is a cycle of biochemical reactions that produces urea (NH2)2CO from ammonia (NH3). Animals that use this cycle, mainly amphibians and mammals, are called ureotelic.\nThe urea cycle converts highly toxic ammonia to urea for excretion. This cycle was the first metabolic cycle to be discovered by Hans Krebs and Kurt Henseleit in 1932, five years before the discovery of the TCA cycle.",
+      "url": "https://en.wikipedia.org/wiki/Urea_cycle",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Citric acid cycle - Wikipedia",
+      "snippet": "TheNADH generated by thecitricacidcycleis fed into the oxidative phosphorylation (electron transport) pathway. The net result of these two closely linked pathways is the oxidation of nutrients to produce usable chemical energy in the form of ATP. Ineukaryoticcells, thecitricacidcycleoccurs in themitochondrialmatrix.",
+      "url": "https://en.wikipedia.org/wiki/Citric_acid_cycle",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Krebs Cycle: Steps, Enzymes, Energy Production, Diagram",
+      "snippet": "KrebsCycleLocation Thecitricacidcycleineukaryotestakesplaceinthemitochondria while in prokaryotes, ittakesplaceinthecytoplasm. The pyruvate formed in the cytoplasm (from glycolysis) is brought into the mitochondria where further reactionstakeplace.Thedifferent enzymes involved in thecitricacidcycleare located either in the inner membrane or in thematrixspace of the ...",
+      "url": "https://microbenotes.com/krebs-cycle/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "4.3 Citric Acid Cycle and Oxidative Phosphorylation - OpenStax",
+      "snippet": "Like the conversion of pyruvate to acetyl CoA, the citric acid cycle in eukaryotic cells takes place in the matrix of the mitochondria. Unlike glycolysis, the citric acid cycle is a closed loop: The last part of the pathway regenerates the compound used in the first step. The eight steps of the cycle are a series of chemical reactions that produces two carbon dioxide molecules, one ATP molecule (or an equivalent), and reduced forms (NADH and FADH2) of NAD+ and FAD+, important coenzymes in the cell. Part of this is considered an aerobic pathway (oxygen-requiring) because the NADH and FADH2 produced must transfer their electrons to the next pathway in the system, which will use oxygen. If oxygen is not present, this transfer does not occur.",
+      "url": "https://openstax.org/books/concepts-biology/pages/4-3-citric-acid-cycle-and-oxidative-phosphorylation",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Metabolism in a eukaryotic cell: Glycolysis, the citric acid cycle, and ...",
+      "snippet": "Glycolysis takes place in the cytoplasm. Within the mitochondrion, the citric acid cycle occurs in the mitochondrial matrix, and oxidative metabolism occurs at the internal folded mitochondrial membranes (cristae).",
+      "url": "https://www.nature.com/scitable/content/metabolism-in-a-eukaryotic-cell-glycolysis-the-14705577/",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-006": [
+    {
+      "title": "Human genome (Wikipedia)",
+      "snippet": "The human genome is a complete set of DNA sequences for each of the 22 autosomes and the two distinct sex chromosomes (X and Y) in humans. A small DNA molecule is found within individual mitochondria. These are usually treated separately as the nuclear genome and the mitochondrial genome. \nHuman genomes include both genes and various other types of functional DNA elements.",
+      "url": "https://en.wikipedia.org/wiki/Human_genome",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Long non-coding RNA (Wikipedia)",
+      "snippet": "Long non-coding RNAs (long ncRNAs, lncRNA) are a type of RNA, generally defined as transcripts of more than 200 nucleotides that are not translated into protein. This  arbitrary limit distinguishes long ncRNAs from small non-coding RNAs, such as microRNAs (miRNAs), small interfering RNAs (siRNAs), Piwi-interacting RNAs (piRNAs), small nucleolar RNAs (snoRNAs), and other short RNAs. Given that some genuine lncRNAs may encode small proteins, the latest definition of lncRNA is a class of transcripts of over 200 nucleotides that have no or limited coding capacity.\nThe definition of lncRNAs differs from that of other RNAs such as siRNAs, mRNAs, miRNAs, and snoRNAs because it is not connected to the function of the RNA. A lncRNA is any transcript that is not one of the other well-characterized RNAs and is longer than 200-500 nucleotides.",
+      "url": "https://en.wikipedia.org/wiki/Long_non-coding_RNA",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "X-inactivation (Wikipedia)",
+      "snippet": "X-inactivation (also called Lyonization, after English geneticist Mary Lyon) is a process by which one of the copies of the X chromosome is inactivated in therian female mammals. The inactive X chromosome is silenced by being packaged into a transcriptionally inactive structure called heterochromatin. As nearly all female mammals have two X chromosomes, X-inactivation prevents them from having twice as many X chromosome gene products as males, who only possess a single copy of the X chromosome (see dosage compensation).\nThe choice of which X chromosome will be inactivated in a particular embryonic cell is random in placental mammals such as humans, but once an X chromosome is inactivated it will remain inactive throughout the lifetime of the cell and its descendants in the organism (its cell line).",
+      "url": "https://en.wikipedia.org/wiki/X-inactivation",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "XIST (Wikipedia)",
+      "snippet": "Xist (X-inactive specific transcript) is a non-coding RNA transcribed from the X chromosome of the placental mammals that acts as a major effector of the X-inactivation process. It is a component of the Xic \u2013 X-chromosome inactivation centre \u2013 along with two other RNA genes (Jpx and Ftx) and two protein genes (Tsx and Cnbp2).\nThe Xist RNA, a large (17 kb in humans) transcript, is expressed on the inactive chromosome and not on the active one. It is processed in a similar way to mRNAs, through splicing and polyadenylation.",
+      "url": "https://en.wikipedia.org/wiki/XIST",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Long noncoding RNA XIST: Mechanisms for X chromosome inactivation ...",
+      "snippet": "ThelongnoncodingRNA(lncRNA) X-inactive specific transcript (XIST)isinvolved inXchromosomeinactivation(XCI) infemaleplacentalmammals, a process that ensures the balanced expression dosage of X-linked genes between sexes.XISTisabnormally expressed in many sex-biased diseases.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2352304222001052",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Xist in X chromosome inactivation: mechanisms and disease relevance",
+      "snippet": "X-chromosomeinactivationX-chromosomeinactivation(XCI), also known as the dosage compensation mechanism, is the process by which anXchromosomeisrandomly placed in a state of transcriptional silence infemalemammalsinorder to balance the amount of gene expression between the sexes.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12723843/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "XIST - Wikipedia",
+      "snippet": "Xist(X-inactive specific transcript) is anon-codingRNAtranscribed from theXchromosomeoftheplacentalmammalsthat acts as a major effector of the X-inactivation process. [5] It is a component of the Xic -X-chromosomeinactivationcentre [6] - along with two otherRNAgenes (Jpx and Ftx) and two protein genes (Tsx and Cnbp2). [7] TheXistRNA, a large (17 kb in humans) [8 ...",
+      "url": "https://en.wikipedia.org/wiki/Xist",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Novel players in X inactivation: insights into Xist-mediated gene ...",
+      "snippet": "Thenuclear longnoncodingRNA(lncRNA)XistensuresX-chromosomeinactivation(XCI) infemaleplacentalmammals. AlthoughXistisone of the most intensively studied lncRNAs, the mechanisms ...",
+      "url": "https://www.nature.com/articles/nsmb.3370",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Xist-mediated chromatin changes that establish silencing of an entire X ...",
+      "snippet": "Xchromosomeinactivation(XCI) ensures an equal gene dosage between the sexes inplacentalmammals.Xist, a modular multi-domain X-encoded longnon-codingRNAcoats theXchromosomeincis during XCI.Xistrecruits chromatin remodelers and repressor complexes ensuring silencing of the inactiveX(Xi). Here, we review the recent work focused on the role ofXistfunctional repeats and ...",
+      "url": "https://www.sciencedirect.com/science/article/pii/S095506742030154X",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Xist recruits the X chromosome to the nuclear lamina to enable ... - AAAS",
+      "snippet": "TheXistlongnoncodingRNAcoats the inactiveXchromosomeinfemalemammalian cells. Chen et al. show that theXistRNAhelps recruit theXchromosometo the internal rim of the cell nucleus, a region where gene expression is silenced.Xistisrecruited to the domain through an interaction with the Lamin B receptor.",
+      "url": "https://www.science.org/doi/10.1126/science.aae0047",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-007": [
+    {
+      "title": "Coriolis force (Wikipedia)",
+      "snippet": "In physics, the Coriolis force is a pseudo-force that acts on objects in motion within a frame of reference that rotates with respect to an inertial frame. In a reference frame with clockwise rotation, the force acts to the left of the motion of the object. In one with anticlockwise (or counterclockwise) rotation, the force acts to the right. Deflection of an object due to the Coriolis force is called the Coriolis effect.",
+      "url": "https://en.wikipedia.org/wiki/Coriolis_force",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "High-pressure area (Wikipedia)",
+      "snippet": "A high-pressure air system, high, or anticyclone, is an area near the surface of a planet where the atmospheric pressure is greater than the pressure in the surrounding regions. Highs are middle-scale meteorological features that result from interplays between the relatively larger-scale dynamics of an entire planet's atmospheric circulation.\nThe strongest high-pressure areas result from masses of cold air which spread out from polar regions into cool neighboring regions. These highs weaken once they extend out over warmer bodies of water.",
+      "url": "https://en.wikipedia.org/wiki/High-pressure_area",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "List of Atlantic tropical storms (Wikipedia)",
+      "snippet": "The classification Atlantic tropical storm is used to refer to a tropical cyclone that forms in the North Atlantic Ocean with 1-minute maximum sustained wind speeds from 39 mph (63 km/h) to 72 mph (117 km/h). Tropical cyclones that attain such winds and move over land while maintaining those winds are capable of causing minor to moderate damage to human lives and infrastructure. Since the Atlantic hurricane database (HURDAT) began in 1851, there have been 761 tropical storms recorded, as well as 92 others not recognized by HURDAT, but recognized by the International Best Track Archive for Climate Stewardship (IBTrACS) as possible tropical storms, in the North Atlantic tropical cyclone basin, which is denoted as the part of the Atlantic Ocean north of the equator. This list does not include tropical storms that later intensified into hurricanes.",
+      "url": "https://en.wikipedia.org/wiki/List_of_Atlantic_tropical_storms",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Low-pressure area (Wikipedia)",
+      "snippet": "In meteorology, a low-pressure area (LPA), low area, or low is a region where the atmospheric pressure is lower than that of surrounding locations. It is the opposite of a high-pressure area. Low-pressure areas are commonly associated with inclement weather (such as cloudy, windy, with possible rain or storms), while high-pressure areas are associated with lighter winds and clear skies. Winds circle anti-clockwise around lows in the northern hemisphere, and clockwise in the southern hemisphere, by dint of opposing Coriolis forces.",
+      "url": "https://en.wikipedia.org/wiki/Low-pressure_area",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "The Coriolis Effect: Earth's Rotation and Its Effect on Weather",
+      "snippet": "This apparent deflection is the Coriolis effect. Fluids traveling across large areas, such as air currents, are like the path of the ball. They appear to bend to the right in the Northern Hemisphere. The Coriolis effect behaves the opposite way in the Southern Hemisphere, where currents appear to bend to the left.",
+      "url": "https://education.nationalgeographic.org/resource/coriolis-effect/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "The Coriolis Effect - NOAA's National Ocean Service",
+      "snippet": "If the Earth did not rotate and remained stationary, the atmosphere would circulate between the poles (high pressure areas) and the equator (a low pressure area) in a simple back-and-forth pattern. But because the Earth rotates, circulating air is deflected. Instead of circulating in a straight pattern, the air deflects toward the right in the Northern Hemisphere and toward the left in the Southern Hemisphere, resulting in curved paths. This deflection is called the Coriolis effect. It is named after the French mathematician Gaspard Gustave de Coriolis (1792-1843), who studied the transfer of energy in rotating systems like waterwheels. (Ross, 1995).",
+      "url": "https://oceanservice.noaa.gov/education/tutorial_currents/04currents1.html",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Coriolis force - Wikipedia",
+      "snippet": "Such motions are constrained by the surface of the Earth, so only the horizontal component of theCoriolisforce is generally important. This force causesmovingobjects on the surface of the Earth to be deflected to theright(with respect to the direction of travel) in theNorthernHemisphereandtotheleft in the SouthernHemisphere.",
+      "url": "https://en.wikipedia.org/wiki/Coriolis_force",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "The Coriolis Effect: Earth's Rotation and Its Effect on Weather",
+      "snippet": "As a result, cyclones seem to rotate clockwise. TheCorioliseffectalso helps shape regular wind patterns. For example, warmairnear the Equator flows toward the poles. In theNorthernHemisphere, these warmaircurrents are deflected to theright, or east, as they move northward. Impact on Human Activity",
+      "url": "https://education.nationalgeographic.org/resource/coriolis-effect/5th-grade/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "What Is the Coriolis Effect? | NESDIS | National Environmental ...",
+      "snippet": "Put simply, theCoriolisEffectmakes things (like planes or currents ofair) traveling long distances around Earth appear to move at a curve as opposed to a straight line.",
+      "url": "https://www.nesdis.noaa.gov/about/k-12-education/atmosphere/what-the-coriolis-effect",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "8.2: Winds and the Coriolis Effect - Geosciences LibreTexts",
+      "snippet": "TheCoriolisEffectdeflectsthepath of the winds to therightintheNorthernHemisphereandtotheleft in the SouthernHemisphere.Adding this deflection leads to the pattern of prevailing winds illustrated in Figure $8.2.4$.",
+      "url": "https://geo.libretexts.org/Bookshelves/Oceanography/Introduction_to_Oceanography_(Webb)/08%3A_Oceans_and_Climate/8.02%3A_Winds_and_the_Coriolis_Effect",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-008": [
+    {
+      "title": "Europa Clipper (Wikipedia)",
+      "snippet": "Europa Clipper (previously known as the Europa Multiple Flyby Mission) is a mission to send a space probe developed by NASA to study Europa, a Galilean moon of Jupiter. Launched by a Falcon Heavy on October 14, 2024, the probe is planned to enter Jupiter orbit in April 2030 and conduct a series of flybys of Europa from March 2031. Europa Clipper is the largest interplanetary spacecraft ever launched by NASA. The mission used a gravity assist from Mars in March 2025, and will use an assist from Earth in December 2026. \nEuropa Clipper will investigate the subsurface ocean below Europa's ice crust, found by the Galileo spacecraft which orbited Jupiter from 1995 to 2003.",
+      "url": "https://en.wikipedia.org/wiki/Europa_Clipper",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Juno (spacecraft) (Wikipedia)",
+      "snippet": "Juno is a NASA space probe orbiting the planet Jupiter. Built by Lockheed Martin and operated by NASA's Jet Propulsion Laboratory, the spacecraft was launched from Cape Canaveral Air Force Station on August 5, 2011, 16:25:00 UTC, as part of the New Frontiers program. Juno entered a polar orbit of Jupiter on July 5, 2016, 03:53:00 UTC, to begin a scientific investigation of the planet. After completing its mission, Juno was originally planned to be intentionally deorbited into Jupiter's atmosphere, but has since been approved to continue orbiting until contact is lost with the spacecraft.",
+      "url": "https://en.wikipedia.org/wiki/Juno_%28spacecraft%29",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "NASA (Wikipedia)",
+      "snippet": "The National Aeronautics and Space Administration (NASA; ) is an independent agency of the U.S. federal government responsible for the United States' civil space program, as well as research in aeronautics and space. Headquartered in Washington, D.C., NASA operates ten field centers across the US and is organized into three mission directorates: Human Spaceflight, Research and Technology, and Science. Established in 1958 amid the Space Race, NASA succeeded the National Advisory Committee for Aeronautics (NACA) to give the US space program a distinct civilian orientation focused on peaceful applications. Since then, it has led most American spaceflight programs, including Project Mercury, Project Gemini, the Apollo program, Skylab, the Space Shuttle, the International Space Station (ISS), and the ongoing multinational Artemis program.",
+      "url": "https://en.wikipedia.org/wiki/NASA",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Voyager 1 (Wikipedia)",
+      "snippet": "Voyager 1 is a space probe launched by NASA on September 5, 1977, as part of the Voyager program, to study the outer Solar System and the interstellar space beyond the Sun's heliosphere. It was launched 16 days after its twin, Voyager 2. It communicates through the NASA Deep Space Network (DSN) to receive routine commands and to transmit data to Earth. Real-time distance and velocity data are provided by NASA and JPL. At a distance of 173.02 AU (25.9 billion km; 16.1 billion mi) as of November 2026, it is the most distant human-made object from Earth.",
+      "url": "https://en.wikipedia.org/wiki/Voyager_1",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Europa Clipper - NASA Science",
+      "snippet": "EuropaClipperwill try to determine if Jupiter's icy moonEuropacurrently has habitable conditions.EuropaClipperlifted offaboardaSpaceXFalconHeavyrocketfrom Launch Complex 39A at Kennedy Space Center in Florida at 12:06 p.m. EDT on Oct. 14,2024.EuropaClipperis traveling 1.8 billion miles (2.9 billion km) to reach Jupiter in April 2030. Thespacecraftwill orbit Jupiter, and ...",
+      "url": "https://science.nasa.gov/mission/europa-clipper/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Europa Clipper - Wikipedia",
+      "snippet": "EuropaClipper(previously known as theEuropaMultiple Flyby Mission) is a mission to send a space probe developed byNASAto studyEuropa,aGalilean moon of Jupiter.LaunchedbyaFalconHeavyonOctober14,2024, [14] the probe is planned to enter Jupiter orbit in April 2030 and conduct a series of flybys ofEuropafrom March 2031. [15][16][17]EuropaClipperis the largest interplanetary ...",
+      "url": "https://en.wikipedia.org/wiki/Europa_Clipper",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Liftoff! NASA's Europa Clipper Sails Toward Ocean Moon of Jupiter",
+      "snippet": "ASpaceXFalconHeavyrocketcarryingNASA'sEuropaClipperspacecraftlifts off from Launch Complex 39A atNASA'sKennedy Space Center in Florida at 12:06 p.m. EDT on Monday, Oct. 14,2024.After launch, thespacecraftplans to fly by Mars in February 2025, then back by Earth in December 2026, using the gravity of each planet to increase its momentum. With help of these \"gravity assists ...",
+      "url": "https://www.nasa.gov/news-release/liftoff-nasas-europa-clipper-sails-toward-ocean-moon-of-jupiter/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Europa Clipper Mission - SpaceX",
+      "snippet": "On Monday,October14 at 12:06 p.m. ETFalconHeavylaunchedNASA'sEuropaClippermission from Launch Complex 39A (LC-39A) atNASA'sKennedy Space Center in Florida. This was the sixth and final flight for the first stage boosters supporting this mission, which previouslylaunchedNASA'sPsyche one year ago and other missions USSF-44, USSF-52, USSF-67, Hughes JUPITER 3.",
+      "url": "https://www.spacex.com/launches/europa-clipper",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Meet Europa Clipper - Science@NASA",
+      "snippet": "EuropaClipperlaunchedOct. 14,2024, on a SpaceXFalconHeavyrocketfrom Kennedy Space Center in Florida. Thespacecraftwill reach Jupiter in 2030. After it begins orbiting Jupiter,EuropaClipperwill spend about a year altering its trajectory to prepare for its firstEuropaflyby.",
+      "url": "https://science.nasa.gov/mission/europa-clipper/spacecraft-meet-europa-clipper/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Liftoff of NASA's Europa Clipper! - Science@NASA",
+      "snippet": "We have liftoff!NASA'sEuropaClipperspacecraft,launchedfrom Launch Complex 39A at Kennedy Space Center in Florida at 12:06 p.m. EDT. TheFalconHeavy's27 Merlin engines are generating more than 5 million pounds of thrust, quickly pushing the vehicle through the atmosphere and away from the Florida spaceport. TheFalconHeavyfirst stage \u2026",
+      "url": "https://science.nasa.gov/blogs/europa-clipper/2024/10/14/liftoff-of-nasas-europa-clipper-2/",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-009": [
+    {
+      "title": "2024 Nobel Prizes (Wikipedia)",
+      "snippet": "The 2024 Nobel Prizes were awarded by the Nobel Foundation, based in Sweden. Six categories were awarded: Physics, Chemistry, Physiology or Medicine, Literature, Peace, and Economic Sciences. The winners in each category were announced from October 7 to October 14.\nNobel Week was scheduled to take place from December 6 to 12, including programming such as lectures, dialogues, and discussions.",
+      "url": "https://en.wikipedia.org/wiki/2024_Nobel_Prizes",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "David Baker (biochemist) (Wikipedia)",
+      "snippet": "David Baker (born October 6, 1962) is an American biochemist and computational biologist who has pioneered methods to design proteins and predict their three-dimensional structures. He is the Henrietta and Aubrey Davis Endowed Professor in Biochemistry, an investigator with the Howard Hughes Medical Institute, and an adjunct professor of genome sciences, bioengineering, chemical engineering, computer science, and physics at the University of Washington. He was awarded the shared 2024 Nobel Prize in Chemistry for his work on computational protein design.\nBaker is a member of the United States National Academy of Sciences and of the United States National Academy of Engineering, and is the director of the University of Washington's Institute for Protein Design.",
+      "url": "https://en.wikipedia.org/wiki/David_Baker_%28biochemist%29",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "List of Nobel laureates by country (Wikipedia)",
+      "snippet": "This is a list of Nobel Prize laureates by country. Listings for Economics refer to the related Nobel Memorial Prize in Economic Sciences. The Nobel Prizes and the Prize in Economic Sciences have been awarded 577 times to 889 recipients, of which 26 awards (all Peace Prizes) were to organizations. Due to some recipients receiving multiple awards, the total number of recipients is 860 individuals and 22 organizations.",
+      "url": "https://en.wikipedia.org/wiki/List_of_Nobel_laureates_by_country",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "List of Nobel laureates in Chemistry (Wikipedia)",
+      "snippet": "The Nobel Prize in Chemistry (Swedish: Nobelpriset i kemi) is awarded annually by the Royal Swedish Academy of Sciences to scientists in the various fields of chemistry. It is one of the five Nobel Prizes established by the 1895 will of Alfred Nobel, who died in 1896.  These prizes are awarded for outstanding contributions in chemistry, physics, literature, peace, and physiology or medicine. As dictated by Nobel's will, the award is administered by the Nobel Foundation and awarded by the Royal Swedish Academy of Sciences.",
+      "url": "https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Chemistry",
+      "source": "Wikipedia"
+    }
+  ],
+  "HOLDOUT-010": [
+    {
+      "title": "Biotin (Wikipedia)",
+      "snippet": "Biotin (also known as vitamin B7 and vitamin H) is one of the B vitamins \u2013 a group of essential dietary micronutrients. Present in every living cell, it is involved as a cofactor for enzymes in numerous metabolic processes, both in humans and in other organisms, primarily related to the biochemistry of fats, carbohydrates, and amino acids.\nWhen isolated, biotin is a white, needle-like crystalline solid. Biotin is obtained from foods, particularly meats and liver, and is sold as a dietary supplement.",
+      "url": "https://en.wikipedia.org/wiki/Biotin",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Chemotherapy (Wikipedia)",
+      "snippet": "Chemotherapy (often abbreviated chemo, sometimes CTX and CTx) is the type of cancer treatment that uses one or more anti-cancer drugs (chemotherapeutic agents or alkylating agents) in a standard regimen. Chemotherapy may be given with a curative intent (which almost always involves combinations of drugs), or it may aim only to prolong life or to reduce symptoms (palliative chemotherapy). Chemotherapy is one of the major categories of the medical discipline specifically devoted to pharmacotherapy for cancer, which is called medical oncology.\nThe term chemotherapy now means the non-specific use of intracellular poisons to inhibit mitosis (cell division) or to induce DNA damage (so that DNA repair can augment chemotherapy).",
+      "url": "https://en.wikipedia.org/wiki/Chemotherapy",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "List of common misconceptions about science, technology, and mathematics (Wikipedia)",
+      "snippet": "Each entry on this list of common misconceptions is worded as a correction; the misconceptions themselves are implied rather than stated. These entries are concise summaries; the main subject articles can be consulted for more detail.",
+      "url": "https://en.wikipedia.org/wiki/List_of_common_misconceptions_about_science%2C_technology%2C_and_mathematics",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Progeroid syndromes (Wikipedia)",
+      "snippet": "Progeroid syndromes (PS) are a group of rare genetic disorders that mimic physiological aging, making affected individuals appear to be older than they are. The term progeroid syndrome does not necessarily imply progeria (Hutchinson\u2013Gilford progeria syndrome), which is a specific type of progeroid syndrome.\nProgeroid means \"resembling premature aging\", a definition that can apply to a broad range of diseases. Familial Alzheimer's disease and familial Parkinson's disease are two well-known accelerated-aging diseases that are more frequent in older individuals.",
+      "url": "https://en.wikipedia.org/wiki/Progeroid_syndromes",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Do Hair and Nails Grow After Death? No\u2014Skin Retraction Creates the Illusion",
+      "snippet": "FactHub rates the claim \"Hairandfingernailscontinuegrowing after a person dies\" False (high confidence):Growthneeds living cells; afterdeath, skin dries and retracts, exposing morehairandnail. Reviewed October 6, 2026.",
+      "url": "https://facthub.org/n/article/hair-and-nails-do-not-grow-after-death",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Do your hair and fingernails grow after death? - bbc.com",
+      "snippet": "In order forfingernailsto grow, new cells need to be produced and this can't happen without glucose.Fingernailsgrow by an average of 0.1mm per day, a rate which slows as we age.",
+      "url": "https://www.bbc.com/future/article/20130526-do-your-nails-grow-after-death",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Do Hair and Nails Really Grow After Death? Science vs Myth Explained",
+      "snippet": "People believe hair and nails grow after death because the skin dehydrates and shrinks, making them appear longer. In reality, no growth occurs\u2014it's an optical illusion caused by postmortem dehydration and tissue retraction, not actual biological activity.",
+      "url": "https://www.scientificworldinfo.com/2025/10/do-hair-and-nails-really-grow-after-death.html",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Do a Person's Hair and Fingernails Continue to Grow After Death?",
+      "snippet": "Hairandfingernailsmay appear longer afterdeath, but not because they are still growing. Instead, a personsfingernailsandhairmay appear longer because the skin around them has retracted, according to the Dermatology Clinic at UAMS. Afterdeath, dehydration causes the skin and other soft tissues to shrink. This occurs while thehairandnails remain the same length. This change in the ...",
+      "url": "https://uamshealth.com/medical-myths/do-a-persons-hair-and-fingernails-continue-to-grow-after-death/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Do fingernails and hair really keep growing after death?",
+      "snippet": "Not for long. The gruesome idea of nails andhaircontinuing to grow on a rotting corpse is fascinating. But it's a myth - at least if you're thinking of luscious locks and long, curlyfingernailsgrowing inside a coffin. Nails andhairmay appear to keep growing, but this is because flesh ...",
+      "url": "https://www.sciencefocus.com/the-human-body/do-fingernails-and-hair-really-keep-growing-after-death",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "The Bizarre Reason Your Hair And Nails Look Like They Keep Growing ...",
+      "snippet": "In a living, breathinghuman, thehairfollicles and nail matrices create new cells and push the existing material away, making both longer in the process. This can only happen because the body is taking in oxygen and glucose to create the energy needed for this process. Unsurprisingly, afterdeath, respiration no longer takes place, making it impossible for any sort ofgrowthto happen in the ...",
+      "url": "https://www.sciencing.com/2127037/why-hair-nails-look-like-they-keep-growing-after-death/",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-011": [
+    {
+      "title": "Flavonoid (Wikipedia)",
+      "snippet": "Flavonoids (or bioflavonoids; from the Latin word flavus, meaning yellow, their color in nature) are a class of polyphenolic secondary metabolites found in plants. Blackberry, black currant, chokeberry, and red cabbage are examples of plants with rich contents of flavonoids. In plant biology, flavonoids fulfill diverse functions, including attraction of pollinating insects, antioxidant protection against ultraviolet light, deterrence of environmental stresses and pathogens, and regulation of cell growth.\nAlthough  commonly consumed in human and animal plant foods and in dietary supplements, flavonoids are not considered to be nutrients or biological antioxidants essential to body functions, and have no established effects on human health or prevention of diseases.",
+      "url": "https://en.wikipedia.org/wiki/Flavonoid",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Food (Wikipedia)",
+      "snippet": "Food is any substance that is consumed by an organism for nutritional support. Food usually consists of plant, animal, or fungal origin and contains essential nutrients such as carbohydrates, fats, proteins, vitamins, or minerals. The substance is ingested by an organism and assimilated by the organism's cells to provide energy, maintain life, encourage physical requirements, and support growth. Different species of animals have different feeding behaviours that satisfy the needs of their metabolisms and have evolved to fill specific ecological niches within specific geographical contexts.",
+      "url": "https://en.wikipedia.org/wiki/Food",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Vitamin C (Wikipedia)",
+      "snippet": "Vitamin C or ascorbate is a water-soluble vitamin found in citrus and other fruits and vegetables. It is found as a form of ascorbic acid. It is an essential nutrient involved in the repair of tissue, the formation of collagen, and the enzymatic production of certain neurotransmitters. It is required for the functioning of several enzymes and is important for immune system function.",
+      "url": "https://en.wikipedia.org/wiki/Vitamin_C",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "\u0393-Hydroxybutyric acid (Wikipedia)",
+      "snippet": "\u03b3-Hydroxybutyric acid (GHB), also known as 4-hydroxybutanoic acid, is a naturally occurring neurotransmitter and a depressant drug. It is a precursor to GABA, glutamate, and glycine in certain brain areas.  It acts on the GHB receptor and is a weak agonist at the GABAB receptor. GHB has been used in medicine as a general anesthetic and as treatment for cataplexy, narcolepsy, and alcohol use disorder.",
+      "url": "https://en.wikipedia.org/wiki/%CE%93-Hydroxybutyric_acid",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Pathophysiology of Diet-Induced Acid Stress - MDPI",
+      "snippet": "Ongoing research will develop clinically useful tools to identify stages of acid stress earlier than metabolicacidosisand determine if dietary acid reductionlowersor eliminates the threats to health that these diets appear to cause.",
+      "url": "https://www.mdpi.com/1422-0067/25/4/2336",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "The Molecular Effects of Dietary Acid Load on Metabolic ... - Frontiers",
+      "snippet": "Metabolic acidosis can be a cause or a result of kidney dysfunction. During chronic metabolic acidosis, the excess intracellular calcium is transported out of the cell and ends up excreted by the renal system due to acidosis-induced inhibition of calcium transporters in the nephron (). The Bicarbonate buffer system is overwhelmed by the chronic acidosis, causing a decline in glomerular filtration rate (GFR), indicating kidney disease (Golebiowski et al., 2021). Kidney disease is often one of the earliest manifesting consequences of metabolic acidosis. Cells will try to compensate for the acidic environment by excreting acidic molecules into the blood stream for renal excretion. Increased acid excretion by the kidneys lowers urine pH, a key diagnostic factor for metabolic acidosis, kidney...",
+      "url": "https://www.frontiersin.org/journals/molecular-medicine/articles/10.3389/fmmed.2021.777088/full",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Dietary Treatment of Metabolic Acidosis in Chronic Kidney Disease",
+      "snippet": "Diet is known to be the most important individual factor that affects acid\u2013base status [24,25,26,27]. The typical high-animal protein Western diets yield about 1 mmol/kg body weight/day of net endogenous H+ production [28,29], mostly a result of metabolizing the sulfur-containing amino acids methionine and cysteine [27]. On the other hand, base is generated from the metabolism of organic anions such as citrate and malate, which are contained in fruits and vegetables. The total net acid excretion (NAE) is analytically quantified from the 24-h urinary excretion of ammonium and titratable acid minus bicarbonate [24]. A controlled study in healthy adults consuming various diets revealed a strong relationship between the total renal NAE and pH value in 24-h urine. The analytically determined...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5946297/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Diet-Induced Low-Grade Metabolic Acidosis and Clinical Outcomes ... - MDPI",
+      "snippet": "Low-grade metabolicacidosisis a condition characterized by a slight decrease inbloodpH, within the range considered normal, and feeding is one of the main factors that may influence the occurrence of such a condition. The excessive consumption of acid precursor foods (sources of phosphorus and proteins), to the detriment of those precursors of bases (sources of potassium, calcium, and ...",
+      "url": "https://www.mdpi.com/2072-6643/9/6/538",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Can the foods we eat change the pH of our blood? - ResearchGate",
+      "snippet": "Even small deviations outside this window \u2014acidosis(lower) or alkalosis (higher) \u2014 have major consequences. The very existence of these medical terms proves thatbloodpHcan change.",
+      "url": "https://www.researchgate.net/post/Can_the_foods_we_eat_change_the_pH_of_our_blood",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-012": [
+    {
+      "title": "Cylons (Wikipedia)",
+      "snippet": "The Cylons ( ) are a race of sentient robots in the Battlestar Galactica science fiction franchise, whose primary goal is the extermination of the human race. Introduced in the original 1978 television series, they also appear in the 1980 sequel series, the 2004\u20132009 reboot series, and the 2010 spinoff prequel series Caprica.\nIn the 1978 series, the Cylons are the creation of a long-extinct reptilian humanoid race, also called Cylons, and view humans as a nuisance and an obstacle to the expansion of the Cylon Empire. The armies of metallic, armored Cylon Centurions are ruled by a unique, yet replaceable, Cylon known as the Imperious Leader.",
+      "url": "https://en.wikipedia.org/wiki/Cylons",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Limerence (Wikipedia)",
+      "snippet": "Limerence is the mental state of being madly in love or intensely infatuated when reciprocation of the feeling is uncertain. This state is characterized by intrusive thoughts and idealization of the loved one (also called \"crystallization\"), typically with a desire for reciprocation to form a relationship. This is accompanied by feelings of ecstasy or despair, depending on whether one's feelings seem to be reciprocated or not.\nLimerence can be distinguished from other forms of romantic love using the model of obsessive and harmonious romantic passion: limerence is an obsessive passion\u2014defined as entailing a relative lack of control, and preventing full concentration on other activities.",
+      "url": "https://en.wikipedia.org/wiki/Limerence",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Origin of language (Wikipedia)",
+      "snippet": "The origin of language, its relationship with human evolution, and its consequences have been subjects of study for centuries. Scholars wishing to study the origins of language draw inferences from evidence such as the fossil record, archaeological evidence, and contemporary language diversity. They may also study language acquisition as well as comparisons between human language and systems of animal communication (particularly those of other primates). Many argue for the close relation between the origins of language and the origins of modern human behavior, but there is little agreement about the facts and implications of this connection.",
+      "url": "https://en.wikipedia.org/wiki/Origin_of_language",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Phrenology (Wikipedia)",
+      "snippet": "Phrenology is a pseudoscience that involves the measurement of bumps on the skull to predict mental traits. It is based on the concept that the brain is the organ of the mind, and that certain brain areas have localized, specific functions or modules. It was said that the brain was composed of different muscles, so those that were used more often were bigger, resulting in the different skull shapes. This provided reasoning for the common presence of bumps on the skull in different locations.",
+      "url": "https://en.wikipedia.org/wiki/Phrenology",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "The creative-right vs analytical-left brain myth: debunked!",
+      "snippet": "This popular myth was debunked by neuroscientists who usedbrainimaging technology to show there is no evidence that people are 'right-brained'or'left-brained'.",
+      "url": "https://drsarahmckay.com/left-brain-right-brain-myth/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Left-Brain vs Right-Brain: What Scans Show | IQ Metrics",
+      "snippet": "No. The idea that people are globally \"left-brained\" (logical) or \"right-brained\" (creative) has been tested directly with brain scans and was not supported. A 2013 study analysing resting-state connectivity in just over 1,000 people found no evidence that individuals rely more heavily on one hemisphere's network overall.",
+      "url": "https://iqmetrics.org/news/left-brain-right-brain-myth-what-brain-scans-show/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Where Creativity Actually Happens in the Brain",
+      "snippet": "People have been told they're either \"right-brained\" (creative, intuitive) or \"left-brained\" (logical, analytical). But modern fMRI-based neuroscience continues to debunk this false \" rightbrain...",
+      "url": "https://www.psychologytoday.com/us/blog/the-athletes-way/202503/right-brain-vs-whole-brain-how-creativity-really-works",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Left Brain vs. Right Brain: Hemisphere Function",
+      "snippet": "By contrast, the right side of thebrainis best atartistic,creative, and spontaneous tasks. Integration and the Myth of Categorization The \"left-brained\" versus \"right-brained\" personality theory is a scientific myth. This misconception suggests that people rely predominantly on one hemisphere. In healthyindividuals, the hemispheres work in constant, high-speed collaboration ...",
+      "url": "https://www.simplypsychology.org/left-brain-vs-right-brain.html",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "The Left-Brain Vs. Right-Brain Myth: What Neuroscience Says About ...",
+      "snippet": "The popular belief that logical people are \"left-brained\" whilecreativepeople are \"right-brained\" is not supported by modern neuroscience. Research shows that creativity involves ...",
+      "url": "https://www.medindia.net/news/healthinfocus/the-left-brain-vs-right-brain-myth-what-neuroscience-says-about-creativity-224978-1.htm",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "No, Left-Brained People Aren't More Logical: What Science Actually Says",
+      "snippet": "The idea thatleft-brainedpeople are logical and right-brainedpeople arecreativeis compelling\u2014but it's wrong. Here's what neuroscience really tells us about how yourbrainprocesses logic, emotion, and ideas.",
+      "url": "https://verybigbrain.com/body-brain-connection/no-left-brained-people-arent-more-logical-what-science-actually-says/",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-013": [
+    {
+      "title": "Fungus (Wikipedia)",
+      "snippet": "A fungus (pl.: fungi or funguses) is any member of the group of eukaryotic organisms that includes yeasts, molds, and mushrooms. These organisms are classified in the biological kingdom Fungi.\nA characteristic that places fungus in a different kingdom from plants, bacteria, and some protists is having chitin in their cell walls. Fungi, like animals, are heterotrophs: they acquire their nutrition by absorbing dissolved organic molecules, typically by secreting digestive enzymes into their environment.",
+      "url": "https://en.wikipedia.org/wiki/Fungus",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "HIV (Wikipedia)",
+      "snippet": "Human immunodeficiency viruses (HIVs) are two species of Lentivirus (a subgroup of retrovirus) that infect humans. Over time, they cause acquired immunodeficiency syndrome (AIDS), a condition in which progressive failure of the immune system allows life-threatening opportunistic infections and cancers to thrive. Without treatment, the average survival time after infection with HIV is estimated to be 9 to 11 years, depending on the HIV subtype.\nIn most cases, HIV is a sexually transmitted infection and is transmitted by contact with or transfer of blood, pre-ejaculate, semen, and vaginal fluids.",
+      "url": "https://en.wikipedia.org/wiki/HIV",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Virus (Wikipedia)",
+      "snippet": "A virus is a submicroscopic infectious agent that replicates only inside the living cells of an organism. Viruses infect all life forms, from animals and plants to microorganisms, including bacteria and archaea. Viruses are found in almost every ecosystem on Earth and are the most numerous type of biological entity. Since the first discovery of a virus, the tobacco mosaic virus, in the 1890s, more than 16,000 of the millions of virus species have been described in detail.",
+      "url": "https://en.wikipedia.org/wiki/Virus",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Virus Replication - PMC",
+      "snippet": "Inside, it releases and replicates its genome while facilitating the manufacture of its proteins by hostribosomes. How this is carried out depends upon the type ofviralnucleic acid.Virusparticlesare assembled from these newly synthesized biological molecules and become infectious virions.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7149683/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "HIV-1 assembly, release and maturation | Nature Reviews Microbiology",
+      "snippet": "Kaplan, A. H. et al. Partial inhibition of thehumanimmunodeficiencyvirustype 1 protease results in aberrantvirusassembly and the formation of noninfectiousparticles.",
+      "url": "https://www.nature.com/articles/nrmicro3490",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "HIV-1 assembly, release and maturation - PMC",
+      "snippet": "Kaplan AH et al. Partial inhibition of thehumanimmunodeficiencyvirustype 1 protease results in aberrantvirusassembly and the formation of noninfectiousparticles.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6936268/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Human Immunodeficiency Virus (HIV) - media.hhmi.org",
+      "snippet": "Viralgenomes and proteins assemble into new viruses at the cell surface (I), which leave the cell through a process known as budding (J). This process surrounds thevirusin a piece of the cell membrane containingviralproteins, which becomes the virus's envelope.",
+      "url": "https://media.hhmi.org/biointeractive/click/virus-explorer/hiv.html",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Structure and genome of HIV - Wikipedia",
+      "snippet": "The genome and proteins of HIV (humanimmunodeficiencyvirus) have been the subject of extensive research since the discovery of thevirusin 1983. [1][2] Each virion comprises aviralenvelope and associated matrix enclosing acapsid, which itself encloses two copies of the single-stranded RNA genome and several enzymes.",
+      "url": "https://en.wikipedia.org/wiki/Structure_and_genome_of_HIV",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Study sheds light on key steps in the HIV life cycle",
+      "snippet": "HIV, orhumanimmunodeficiencyvirus, is thevirusthat causes AIDS\u2014acquiredimmunodeficiencysyndrome. More than a million people in the United States are living with HIV today. HIV attacks the immune system by destroying immune cells vital for fighting infection. Without treatment, thevirusgradually destroys the immune system and cause AIDS.",
+      "url": "https://www.nih.gov/news-events/nih-research-matters/study-sheds-light-key-steps-hiv-life-cycle",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-014": [
+    {
+      "title": "Ceres (dwarf planet) (Wikipedia)",
+      "snippet": "Ceres (minor-planet number 1) is a dwarf planet in the main asteroid belt between the orbits of Mars and Jupiter. It was the first object identified in the asteroid belt, discovered on 1 January 1801 by Giuseppe Piazzi at Palermo Astronomical Observatory in Sicily, and announced as a new planet. Ceres was later classified as an asteroid, and then more recently as the only confirmed dwarf planet within the asteroid belt, and the largest without a moon. It is also the only recognized dwarf planet in the solar system whose orbit lies within that of Neptune.",
+      "url": "https://en.wikipedia.org/wiki/Ceres_%28dwarf_planet%29",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Life on Mars (Wikipedia)",
+      "snippet": "The possibility of life on Mars is a subject of interest in astrobiology due to the planet's proximity and similarities to Earth. To date, no conclusive evidence of past or present life has been found on Mars. Cumulative evidence suggests that during the ancient Noachian time period, the surface environment of Mars had liquid water and may have been habitable for microorganisms, but habitable conditions do not necessarily indicate life. Scientific investigations for potential life on Mars began in the 19th century and continue today with telescopes and robotic probes searching for water, chemical biosignatures in the soil and rocks at the planet's surface, and biomarker gases in the atmosphere.",
+      "url": "https://en.wikipedia.org/wiki/Life_on_Mars",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Planet (Wikipedia)",
+      "snippet": "A planet is a large, rounded astronomical body that is generally required to be in orbit around a star, stellar remnant, or brown dwarf, and is not one itself. The Solar System has eight planets by the most restrictive definition of the term: the terrestrial planets Mercury, Venus, Earth, and Mars, and the giant planets Jupiter, Saturn, Uranus, and Neptune. The best available theory of planet formation is the nebular hypothesis, which posits that an interstellar cloud collapses out of a nebula to create a young protostar orbited by a protoplanetary disk. Planets grow in this disk by the gradual accumulation of material driven by gravity, a process called accretion.",
+      "url": "https://en.wikipedia.org/wiki/Planet",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Solar System (Wikipedia)",
+      "snippet": "The Solar System is the gravitationally bound system of the Sun and the masses that orbit it, most prominently its eight planets, of which Earth is one. The Solar System is an isolated single-star planetary system (not part of a larger star system) within the Milky Way Galaxy. The system formed about 4.6 billion years ago when a dense region of a molecular cloud collapsed, creating the Sun and a protoplanetary disc from which the orbiting bodies assembled.\nThe Sun accounts for 99.86% of the Solar System's total mass.",
+      "url": "https://en.wikipedia.org/wiki/Solar_System",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Deep inside polar craters on Mercury, sunlight has never once fallen ...",
+      "snippet": "\u201cPermanent\u201d describes the illumination produced by the planet\u2019s present spin and the crater\u2019s topography. It should not be read as proof that no ray of sunlight has reached a particular floor at any time since Mercury formed. Craters have ages, and the planet\u2019s orientation has a history. What researchers can map is terrain that receives no direct sunlight under the relevant geometry today.",
+      "url": "https://www.spacedaily.com/t-deep-inside-polar-craters-on-mercury-sunlight-has-never-once-fallen-and-nasas-messenger-spacecraft-confirmed-in-2012-that-those-permanently-shadowed-floors-hold-ancient-water-ice-sitting/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "New insights into the origin of ice: chronological implication from 14 ...",
+      "snippet": "Thepolarcraterspresent absolute ages spanning through most of the chronostratigraphic period ofMercury(0.264 Ga to 3.7 Ga, cf. Fig. 4) showing a general rejuvenation of theirfloorsin relation to their respective ejecta.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0032063325001175",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Permanently shadowed crater - Wikipedia",
+      "snippet": "A lunar south pole terrain in coded color. Several permanently shadowedcratersare shown: Shackleton, Shoemaker, Cabeus Such acratermust be located at high latitude (close to a pole) and be on a body with very small axial tilt. The Moon has an axial tilt of about 1.5\u00b0;Mercury, 0.03\u00b0; [6] and Ceres, about 4\u00b0. [7] On the Moon,permanentshadow can exist at latitudes as low as 58 ...",
+      "url": "https://en.wikipedia.org/wiki/Permanently_shadowed_crater",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Thick ice deposits in shallow simple craters on the Moon and Mercury ...",
+      "snippet": "Ice deposits up to around 50 m thick infill somecratersnear the Moon's south pole andMercury'snorth pole, as inferred from the poleward shallowing of simplecraters.",
+      "url": "https://www.nature.com/articles/s41561-019-0405-8",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Mercury is the closest planet to the Sun, yet permanently shadowed ...",
+      "snippet": "Mercuryis aplanetofextremes. At the equator during the day, its surface can become hot enough to melt lead. Yet near the poles, deepcraterfloorsmay never see the Sun at all. Inside those pockets ofpermanentdarkness, temperatures can remain low enough for water ice to survive, perhaps for billions of years.",
+      "url": "https://www.spacedaily.com/t-mercury-polar-craters-water-ice-billions-years/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Is There Water on Mercury? Evidence of Ice in Its Permanently Dark Craters",
+      "snippet": "Researchers have identified substantial deposits inside deep polarcratersthat never receive direct sunlight. There are no oceans, rivers orlakesonMercury, so any water on theplanethas to be found in a very particular kind of place. Theplanethas only a very thin exosphere, so exposedliquidwater cannot remain stable on the surface.",
+      "url": "https://setiworld.com/articles/is-there-water-on-mercury/",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-015": [
+    {
+      "title": "Alexander Fleming (Wikipedia)",
+      "snippet": "Sir Alexander Fleming (6 August 1881 \u2013 11 March 1955) was a Scottish physician and microbiologist. He shared the 1945 Nobel Prize in Physiology or Medicine with Howard Florey and Ernst Chain \"for the discovery of penicillin and its curative effect in various infectious diseases\".\nThis was the first antibiotic substance discovered. His discovery in 1928 of what was later named benzylpenicillin (or penicillin G) from the mould Penicillium rubens has been described as the \"single greatest victory ever achieved over disease\".",
+      "url": "https://en.wikipedia.org/wiki/Alexander_Fleming",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Antimicrobial (Wikipedia)",
+      "snippet": "An antimicrobial is an agent that kills microorganisms (microbicide) or stops their growth (bacteriostatic agent). Antimicrobial medicines can be grouped according to the microorganisms they are used to treat. For example, antibiotics are used against bacteria, and antifungals are used against fungi. They can also be classified according to their function.",
+      "url": "https://en.wikipedia.org/wiki/Antimicrobial",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Ascending cholangitis (Wikipedia)",
+      "snippet": "Ascending cholangitis, also known as acute cholangitis or simply cholangitis, is inflammation of the bile duct, usually caused by bacteria ascending from its junction with the duodenum (first part of the small intestine). It tends to occur if the bile duct is already partially obstructed by gallstones.\nCholangitis can be life-threatening, and is regarded as a medical emergency. Characteristic symptoms include yellow discoloration of the skin or whites of the eyes, fever, abdominal pain, and in severe cases, low blood pressure and confusion.",
+      "url": "https://en.wikipedia.org/wiki/Ascending_cholangitis",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Ceftriaxone (Wikipedia)",
+      "snippet": "Ceftriaxone, sold under the brand name Rocephin, is a third-generation cephalosporin antibiotic used for the treatment of a number of bacterial infections. These include middle ear infections, endocarditis, meningitis, pneumonia, bone and joint infections, intra-abdominal infections, skin infections, urinary tract infections, gonorrhea, and pelvic inflammatory disease. It is also sometimes used before surgery and following a bite wound to try to prevent infection. Ceftriaxone can be given by injection into a vein or into a muscle.",
+      "url": "https://en.wikipedia.org/wiki/Ceftriaxone",
+      "source": "Wikipedia"
+    }
+  ],
+  "HOLDOUT-016": [
+    {
+      "title": "Platelet - Wikipedia",
+      "snippet": "Plateletdisorders can occur because there are not enoughplatelets, too manyplatelets, or theplateletsdo not function properly. [3]: vii Lowplateletconcentration is called thrombocytopenia, and is due to either decreased production, increased destruction ofplatelets, orplateletsbeing sequestered in another part of the body.",
+      "url": "https://en.wikipedia.org/wiki/Platelet",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Platelet | Complete Anatomy - Elsevier",
+      "snippet": "Platelets are small colorless discoid cell fragments that lack nuclei. They have a diameter of 2\u20134 \u03bcm, making them the smallest blood cell type (Silverthorn et al., 2013; Marieb, Wilhelm and Mallatt, 2012). The cytoplasm of each platelet contains mitochondria, smooth endoplasmic reticulum, and granules. These granules contain growth factors and cytokines.",
+      "url": "https://www.elsevier.com/resources/anatomy/blood/blood-cells/platelet/16053",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "(PDF) Platelets: Production, Morphology and Ultrastructure",
+      "snippet": "Althoughhumanadultscontainnearly one trillionplateletsin circulation that are turned over every 8-10 days, our understanding of the mechanisms involved inplateletproduction is still ...",
+      "url": "https://www.researchgate.net/publication/230733554_Platelets_Production_Morphology_and_Ultrastructure",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "14.4: Platelets - Biology LibreTexts",
+      "snippet": "Platelets, also called thrombocytes, are small fragments of cytoplasm that circulate through the bloodstream. They are not complete cells because they lack nuclei, but they are far from inactive pieces of debris. Platelets contain mitochondria, microtubules, actin and myosin filaments, membrane receptors, and secretory granules filled with chemical signals. Each platelet is only about 2 to 4 micrometers in diameter, yet these tiny fragments play a major role in preventing blood loss after vessel injury.",
+      "url": "https://bio.libretexts.org/Workbench/Human_Physiology%3A_A_Students_Open_Path_to_Understanding_the_Body/14%3A_Blood/14.04%3A_Platelets",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Platelet - an overview | ScienceDirect Topics",
+      "snippet": "At first glance, theplateletis a simple cell. However, its small size hides an extremely well conserved structure that is vital for its function in both hemostasis and vascular integrity and development. A combination of electron microscopy, light microscopy, biochemical, and cell biology studies has, over the years, revealed this structure to us and allowed the important functions of the ...",
+      "url": "https://www.sciencedirect.com/topics/medicine-and-dentistry/platelet",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Platelet - an overview | ScienceDirect Topics",
+      "snippet": "The morphology ofplateletsis surprisingly complex for a cell with no nucleus, and the structure has been split into three main regions: (1) the peripheral zone, the outermost covering, allowsplateletstointeract with other cells, tissues, and the vessel wall through presentation of mediators, coagulant proteins, and adhesion molecules; (2 ...",
+      "url": "https://www.sciencedirect.com/topics/neuroscience/platelet",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-017": [
+    {
+      "title": "Boeing Starliner Calypso - Wikipedia",
+      "snippet": "BoeingStarlinerCalypso(Spacecraft 3) is a spacecapsulemanufactured byBoeingandused in NASA 's CommercialCrewProgram. On 20 December 2019,Calypsolaunched on theBoeingOrbital Flight Test mission, an uncrewed test flight ofStarlinerto the International SpaceStation.Thespacecraft was scheduled to dock to theISSandthen return to Earth following a week in space, although due to ...",
+      "url": "https://en.wikipedia.org/wiki/Boeing_Starliner_Calypso",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Boeing Crew Flight Test - Wikipedia",
+      "snippet": "BoeingCrewFlight Test (Boe-CFT) was the first crewed mission of theBoeingStarlinercapsule. Launched on June 5, 2024, the mission flew acrewof two NASAastronauts, Barry E. Wilmore and Sunita Williams, from Cape Canaveral Space ForceStationto the International SpaceStation.Themission was meant to lasteightdays, ending on June 14 with a landing in the American Southwest. However ...",
+      "url": "https://en.wikipedia.org/wiki/Boeing_Crew_Flight_Test",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "NASA Report Reveals the Failures That Left Two Astronauts 'Stranded' on ...",
+      "snippet": "Boeing\u2014like SpaceX\u2014is contracted to shuttleastronautstoandfrom low-Earth orbit for NASA in its CommercialCrewProgram. SpaceX has been flying people to theISSin this program since 2020.",
+      "url": "https://www.smithsonianmag.com/smart-news/nasa-report-reveals-the-failures-that-left-two-astronauts-stranded-on-the-international-space-station-180988233/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "NASA says a litany of failures led to 2024 Boeing Starliner astronaut ...",
+      "snippet": "Still, despite these thruster issues and other technical problems, NASA pushed ahead with a crewed test flight, launching Wilmore and Williams on June 5, 2024. The mission\u2019s Starliner spacecraft, named Calypso, was supposed to dock at the ISS for an eight- to 14-day stay before it returned to Earth. But Calypso\u2019s thrusters malfunctioned during docking, and the spacecraft temporarily lost its ability to fully control its motion and position in space\u2014a moment that, according to Isaacman and other sources, could easily have ended in disaster. Wilmore and Williams eventually returned to Earth in March 2025 on a SpaceX Dragon spacecraft.",
+      "url": "https://www.scientificamerican.com/article/nasa-says-a-litany-of-failures-led-to-2024-boeing-starliner-astronaut/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Timeline of Boeing's Starliner mission that left NASA astronauts aboard ...",
+      "snippet": "TheNASAastronautswho have remained in space for months longer than planned are finally back on Earth. Barry \"Butch\" Wilmore and Sunita \"Suni\" Williams performed the firstastronaut-crewed flight ofBoeing'sStarlinercapsuleto the International SpaceStation(ISS) in June 2024. However, what was supposed to be a mission lasting about one week turned into a nine-month stay aboard theISS...",
+      "url": "https://abcnews.com/US/timeline-boeings-starliner-mission-left-nasa-astronauts-aboard/story?id=119867727",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Boeing's crew capsule is still on the ground. What Starliner's failure ...",
+      "snippet": "Boeing'sStarlinerflew its first crewed mission in June 2024 \u2014 and left twoastronautsstranded on theISSfor nine months after thruster failures and helium leaks forced NASA to return thecapsuleuncrewed. As of mid-2026,Starliner'sfuture remains unresolved.",
+      "url": "https://cosmicherald.com/article/boeing-starliner-grounded-iss-crew-transport-2026",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-018": [
+    {
+      "title": "2012 in science (Wikipedia)",
+      "snippet": "The year 2012 involved many significant scientific events and discoveries, including the first orbital rendezvous by a commercial spacecraft, the discovery of a particle highly similar to the long-sought Higgs boson, and the near-eradication of guinea worm disease. A total of 72 successful orbital spaceflights occurred in 2012, and the year also saw numerous developments in fields such as robotics, 3D printing, stem cell research and genetics. Over 540,000 technological patent applications were made in the United States alone in 2012.\n2012 was declared the International Year of Sustainable Energy for All by the United Nations.",
+      "url": "https://en.wikipedia.org/wiki/2012_in_science",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Brian Josephson (Wikipedia)",
+      "snippet": "Brian David Josephson (born 4 January 1940) is a British theoretical physicist and emeritus professor at the University of Cambridge. He won the 1973 Nobel Prize in Physics \"for his theoretical predictions of the properties of a supercurrent through a tunnel barrier, in particular those phenomena which are generally known as the  Josephson effects.\"\nJosephson has spent his academic career as a member of the Theory of Condensed Matter Group in Cambridge's Cavendish Laboratory. He has been a Fellow of Trinity College, Cambridge, since 1962, and served as Professor of Physics from 1974 to 2007.\nIn the early 1970s, Josephson took up Transcendental Meditation and turned his attention to issues outside the boundaries of mainstream science.",
+      "url": "https://en.wikipedia.org/wiki/Brian_Josephson",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Haber process (Wikipedia)",
+      "snippet": "The Haber process, also called the Haber\u2013Bosch process, is the main industrial method for making ammonia. It combines nitrogen from the air with hydrogen, using an iron catalyst, to form ammonia (NH3). Most of the ammonia is used to make nitrogen fertilizer, either directly or as ammonium nitrate and urea.\nNA2+3HA2\u21bd\u2212\u2212\u21c02NHA3\u0394H298 K\u2218=\u221292.28 kJ per mole of NA2\nThe German chemists Fritz Haber and Carl Bosch developed the process in the first decade of the 20th century.",
+      "url": "https://en.wikipedia.org/wiki/Haber_process",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "List of University of California, Berkeley alumni (Wikipedia)",
+      "snippet": "This page lists notable alumni and students of the University of California, Berkeley. Alumni who also served as faculty are listed in bold font, with degree and year.\nNotable faculty members are in the article List of University of California, Berkeley faculty.",
+      "url": "https://en.wikipedia.org/wiki/List_of_University_of_California%2C_Berkeley_alumni",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "LK-99 - Wikipedia",
+      "snippet": "LK-99, [2] also called PCPOSOS, [3] is a gray-black (or purple [1]), polycrystalline compound, identified as a copper - doped lead\u2012oxyapatite. A team from Korea University led by Lee Sukbae (\uc774\uc11d\ubc30) and Kim Ji-Hoon (\uae40\uc9c0\ud6c8) began studying this material as a potentialsuperconductorin1999, and in July 2023 published preprints claiming that it acted as aroom-temperature...",
+      "url": "https://en.wikipedia.org/wiki/LK-99",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "2024 Nobel Prizes - Wikipedia",
+      "snippet": "The2024NobelPrizeswereawardedbytheNobelFoundation, based in Sweden. Six categories wereawarded:Physics, Chemistry, Physiology or Medicine, Literature, Peace, and Economic Sciences.",
+      "url": "https://en.wikipedia.org/wiki/2024_Nobel_Prizes",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "The Nobel Prize in Physics 2024 - Prize announcement - NobelPrize.org",
+      "snippet": "TheNobelPrizeinPhysics2024wasawardedjointly to John J. Hopfield and Geoffrey Hinton \"forfoundational discoveries and inventions that enable machine learning with artificial neural networks\"",
+      "url": "https://www.nobelprize.org/prizes/physics/2024/prize-announcement/_/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "The First Room-Temperature Ambient-Pressure Superconductor",
+      "snippet": "Abstract:For the first time in the world, we succeeded in synthesizing the room-temperature superconductor ($T_c \\ge 400$ K, 127$^\\circ$C) working at ambient pressure with a modified lead-apatite (LK-99) structure. The superconductivity of LK-99 is proved with the Critical temperature ($T_c$), Zero-resistivity, Critical current ($I_c$), Critical magnetic field ($H_c$), and the Meissner effect. The superconductivity of LK-99 originates from minute structural distortion by a slight volume shrinkage (0.48 %), not by external factors such as temperature and pressure. The shrinkage is caused by Cu$^{2+}$ substitution of Pb$^{2+}$(2) ions in the insulating network of Pb(2)-phosphate and it generates the stress. It concurrently transfers to Pb(1) of the cylindrical column resulting in distortion...",
+      "url": "https://arxiv.org/abs/2307.12008",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Reflecting on the LK-99 fervour: insights and future prospects",
+      "snippet": "TheLK-99 rush showcased a profound dedication to discoveries, and collective ingenuity scientists share in their quest for groundbreaking advancements, particularly in the pursuit of aroom-temperaturenormal-pressure superconductor\u2014a still not achieved milestone with enormous transformative potential for humanity.",
+      "url": "https://iopscience.iop.org/article/10.1088/1361-648X/ad9804",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-019": [
+    {
+      "title": "Biosignature (Wikipedia)",
+      "snippet": "A biosignature is a phenomenon that can be explained by biological processes where all possible abiotic causes of this phenomenon have been eliminated. This term is mainly used in the field of astrobiology in the search for past or present extraterrestrial life, from planets and moons in the Solar System to exoplanets. Candidate biosignatures strongly indicate some of the earliest known life forms, aid studies of the origin of life on Earth as well as the possibility of life on Mars, Venus, and elsewhere in the universe.",
+      "url": "https://en.wikipedia.org/wiki/Biosignature",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "K2-18b (Wikipedia)",
+      "snippet": "K2-18b, also known as EPIC 201912552 b, is an exoplanet orbiting the red dwarf K2-18, located 124 light-years (38 pc) away from Earth. The planet is a sub-Neptune about 2.6 times the radius of Earth, with a 33-day orbit within the star's habitable zone; it receives approximately a similar amount of light as the Earth receives from the Sun. Initially discovered with the Kepler space telescope, it was later observed by the James Webb Space Telescope (JWST) in order to study the planet's atmosphere.\nJWST discovered water vapour, carbon dioxide and methane in its atmosphere.",
+      "url": "https://en.wikipedia.org/wiki/K2-18b",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "PDFEvidence for Sulfur-Based Biosignature Gases in Exoplanet K2-18b's ...",
+      "snippet": "Abstract We investigate the recent claim of potentialbiosignaturedetection onK2-18b, a sub-Neptuneexoplanet124 light-years away. Using James Webb Space Telescope (JWST) mid-infrared transmission spectra, Madhusudhan et al. (2025) reported detection ofdimethylsulfide(DMS) anddimethyldisulfide (DMDS) - sulfur gases that on Earth are produced by life. Our analysisconfirmsthat the ...",
+      "url": "https://msipublishers.com/wp-content/uploads/2026/06/MSIJS-052026-GS.pdf",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "K2-18 b could have dimethyl sulfide in its air. But is it a sign of life?",
+      "snippet": "The work, announced Wednesday, builds on previous observations from JWST published in 2023 by the same team that yielded weak hints of the molecule dimethyl sulfide (DMS) on K2-18 b, a planet that the team thinks could be covered with a global ocean. In the new data, additional spectra taken with a different onboard instrument have seen more evidence of the chemical signal of DMS, as well as signs of a related molecule, dimethyl disulfide (DMDS).",
+      "url": "https://www.astronomy.com/science/k2-18-b-could-have-dimethyl-sulfide-in-its-air-but-is-it-a-sign-of-life/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Dimethyl Sulfide Detection on K2-18b | Zendar Universe",
+      "snippet": "The search for life beyond Earth has entered a new era with infrared observations revealing complex molecules in exoplanet atmospheres. Within the Exoplanet Discovery Program, this research examines the detection of dimethyl sulfide in the atmosphere of K2-18b, a sub-Neptune world located within its star\u2019s habitable zone. These findings provide new insight into planetary chemistry, atmospheric processes, and the potential habitability of temperate exoplanets.",
+      "url": "https://zendaruniverse.com/research/exoplanet-discovery-program-edp/dimethyl-sulfide-detection-k2-18b/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Strongest hints yet of biological activity outside the solar system",
+      "snippet": "Astronomers have detected the most promising signs yet of a possiblebiosignatureoutside the solar system, although they remain cautious. Using data from the James Webb Space Telescope (JWST), the astronomers, led by the University of Cambridge, have detected the chemical fingerprints ofdimethylsulfide(DMS) and/ordimethyldisulfide (DMDS), in the atmosphere of theexoplanetK2-18b, which ...",
+      "url": "https://www.cam.ac.uk/stories/strongest-hints-of-biological-activity",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Webb Detects Possible Biosignature Gases in Atmosphere of K2-18b",
+      "snippet": "Astronomers using the NASA/ESA/CSA James Webb Space Telescope have detected the chemical fingerprints ofdimethylsulfideand/ordimethyldisulfide in the atmosphere of the super-EarthexoplanetK2-18b.",
+      "url": "https://www.sci.news/astronomy/webb-biosignature-gases-atmosphere-k2-18b-13837.html",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "A possible sign of life on K2-18b? Here's\u2026 | The Planetary Society",
+      "snippet": "K2-18bspectra A spectrum showing the claimed detection of methane and carbon dioxide in the atmosphere ofexoplanetK2-18b,along with potential traces ofdimethylsulfide(DMS), using the James Webb Space Telescope.",
+      "url": "https://www.planetary.org/articles/possible-sign-of-life-k2-18-b",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-020": [
+    {
+      "title": "Physics beyond the Standard Model (Wikipedia)",
+      "snippet": "Physics beyond the Standard Model (BSM) is the theoretical developments needed to explain the deficiencies of the Standard Model, such as the inability to explain the fundamental parameters of the Standard Model, the strong CP problem, neutrino oscillations, matter\u2013antimatter asymmetry, and the nature of dark matter and dark energy. Another problem lies within the mathematical framework of the Standard Model itself: the Standard Model is inconsistent with that of general relativity, and one or both theories break down under certain conditions, such as spacetime singularities like the Big Bang and black hole event horizons.\nTheories that lie beyond the Standard Model include various extensions of the standard model through supersymmetry, such as the Minimal Supersymmetric Standard Model (MSSM) and Next-to-Minimal Supersymmetric Standard Model (NMSSM), and entirely novel explanations, such as string theory, M-theory, and extra dimensions. As these theories tend to reproduce the entirety of current phenomena, the question of which theory is the right one, or at least the \"best step\" towards a Theory of Everything, can only be settled via experiments, and is one of the most active areas of research in both theoretical and experimental physics.",
+      "url": "https://en.wikipedia.org/wiki/Physics_beyond_the_Standard_Model",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Sterile neutrino (Wikipedia)",
+      "snippet": "Sterile neutrinos (or inert neutrinos) are hypothetical particles (neutral leptons \u2013 neutrinos) that interact only via gravity and not via any of the other fundamental interactions of the Standard Model. The term sterile neutrino is used to distinguish them from the known, ordinary active neutrinos in the Standard Model, which carry an isospin charge of \u2060\u00b1+1/ 2 \u2060 and engage in the weak interaction. The term typically refers to neutrinos with right-handed chirality, which may be inserted into the Standard Model. Particles that possess the quantum numbers of sterile neutrinos and masses great enough such that they do not interfere with the current theory of Big Bang nucleosynthesis are often called neutral heavy leptons (NHLs) or heavy neutral leptons (HNLs).",
+      "url": "https://en.wikipedia.org/wiki/Sterile_neutrino",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Sterile Neutrinos as Dark Matter Candidates - arXiv.org",
+      "snippet": "Sterileneutrinoswithmasses>keVhaveallthe properties required toaccountforthe DM in the Universe: they are electrically neutral, become non-relativistic early on (thus forming colddarkmatter), can have very weak couplings with other particles (if the relevant mixing angles are small), and are stable over cosmological time scales.",
+      "url": "https://arxiv.org/pdf/2109.00767",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "7.1keV sterile neutrino dark matter constraints from a deep X-ray ...",
+      "snippet": "ABSTRACT Context. Recently an unidentified emission line at 3.55keV has been detected in X-ray spectra of clusters of galaxies. The line has been discussed as a possible decay signature of 7.1keVsterileneutrinos, which have been proposed as adarkmatter(DM) candidate. Aims. We aim to further constrain the line strength and its implied mixing angle under the assumption thatallDM is made ...",
+      "url": "https://arxiv.org/pdf/1905.00916",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "7 keV sterile neutrino dark matter from split flavor mechanism",
+      "snippet": "Thesterileneutrinodarkmatterwithmass in thekeVrange is known to decay radiatively into a photon and an activeneutrino, producing a narrow X-ray line. The lifetime depends on its mass and the mixing with activeneutrinos.Forthe mass of7keV, theobservedX-ray line can be explained by the mixing angle, sin 2 2 \u03b8 \u223c7\u00d7 10 11 [1], [2], which is just below the previously known X ...",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0370269314002007",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Resonantly Produced 7 keV Sterile Neutrino Dark Matter Models and the ...",
+      "snippet": "Sterileneutrinosproduced through a resonant Shi-Fuller mechanism are arguably the simplest model for adarkmatterinterpretation of the origin of the recent unidentified x-ray line seen toward a number of objects harboringdarkmatter. Here, I calculate the exact parameters required in this mechanism to produce the signal. The suppression of small-scale structure predicted by these models ...",
+      "url": "https://link.aps.org/doi/10.1103/PhysRevLett.112.161303",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Sterile neutrinos as dark matter - ScienceDirect",
+      "snippet": "KeV-masssterileneutrinos(that can constitute cosmologicalDarkmatter) can also be searched as a kink in the spectrum of beta decay of radioactive nuclei. Such searches are discussed in the context of PTOLEMY [55] - an ambitious proposal with its main goal being the detection of relicneutrinosbackground.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0550321324000622",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Dark matter model favoured by reionization data: 7 keV sterile neutrino ...",
+      "snippet": "We found that both CDM and7keVsterileneutrinodarkmatterwell describe the data. The overall fit quality forsterileneutrinodarkmatteris slightly (with\u0394\u03c7 2 \u2243 2 \u2212 3) better than for CDM, although it is not possible to make a robust distinction between these models on the basis of the given observations.",
+      "url": "https://academic.oup.com/mnras/article/483/3/4080/5173086",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-021": [
+    {
+      "title": "History of Earth (Wikipedia)",
+      "snippet": "The natural history of Earth concerns the development of planet Earth from its formation to the present day. Nearly all branches of natural science have contributed to the understanding of the main events of Earth's past, characterized by constant geological change and biological evolution.\nThe geological time scale (GTS), as defined by international convention, depicts the large spans of time from the beginning of Earth to the present, and its divisions chronicle some definitive events of Earth history. Earth formed around 4.54 billion years ago, approximately one-third the age of the universe, by accretion from the solar nebula.",
+      "url": "https://en.wikipedia.org/wiki/History_of_Earth",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "History of life (Wikipedia)",
+      "snippet": "The history of life on Earth traces the processes by which living and extinct organisms evolved, from the earliest emergence of life to the present day. Earth formed about 4.54 \u00b1 0.05 billion years ago (abbreviated as Ga, for gigaannum) and evidence suggests that life emerged prior to 3.7 Ga. The similarities among all known present-day species indicate that they have diverged through the process of evolution from a common ancestor.\nThe earliest clear evidence of life comes from biogenic carbon signatures and stromatolite fossils discovered in 3.7 billion-year-old metasedimentary rocks from western Greenland.",
+      "url": "https://en.wikipedia.org/wiki/History_of_life",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Hot spring (Wikipedia)",
+      "snippet": "A hot spring, thermal spring, hydrothermal spring, or geothermal spring is a spring produced by the emergence of geothermally heated groundwater onto the surface of the Earth. The groundwater is heated either by shallow bodies of magma (molten rock) or by circulation through faults to hot rock deep in the Earth's crust.\nHot spring water often contains large amounts of dissolved minerals. The chemistry of hot springs ranges from acid sulfate springs with a pH as low as 0.8, to alkaline chloride springs saturated with silica, to bicarbonate springs saturated with carbon dioxide and carbonate minerals.",
+      "url": "https://en.wikipedia.org/wiki/Hot_spring",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Permian\u2013Triassic extinction event (Wikipedia)",
+      "snippet": "The Permian\u2013Triassic extinction event was an extinction event that occurred around the boundary between the Permian and Triassic geologic periods, and with them the Paleozoic and Mesozoic eras. It is Earth's most severe known extinction event, with the extinction of 57% of biological families, 62% of genera, 81% of marine species,  and 70% of terrestrial vertebrate species. It is also the greatest known mass extinction of insects. It is the greatest of the \"Big Five\" mass extinctions of the Phanerozoic.",
+      "url": "https://en.wikipedia.org/wiki/Permian%E2%80%93Triassic_extinction_event",
+      "source": "Wikipedia"
+    }
+  ],
+  "HOLDOUT-022": [
+    {
+      "title": "Quantum cognition: The possibility of processing with nuclear spins in ...",
+      "snippet": "To be functionally relevant in the brain, the dynamics andquantumentanglementof thephosphorusnuclearspinsmust be capable of modulating the excitability and signaling of neurons\u2014which we take as a working definition of \"quantumcognition\".",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0003491615003243",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Entanglement and coherence in pure and doped Posner molecules - Nature",
+      "snippet": "While the viability of this remains to be seen, the parallel betweenphosphorusnuclearspininthequantumcomputing and biological case\u2014especially given the potential forentanglement...",
+      "url": "https://www.nature.com/articles/s41598-025-96487-5",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "University of California Los Angeles, CA, 90095, USA - arXiv.org",
+      "snippet": "The potential role ofspininbiological systems is a primary topic inquantumbiology. However, much of this research focuses on electronspin. A recent hypothesis suggests thatnuclearspinmay be better suited to biological processes, being less sensitive to decoherence. The hypothesis details howphosphorusnuclei might be prepared in aspinentangled state, how thisentanglementis ...",
+      "url": "https://arxiv.org/pdf/2310.13484",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "[1508.05929] Quantum Cognition: The possibility of processing with ...",
+      "snippet": "The possibility thatquantumprocessing withnuclearspinsmight be operative in the brain is proposed and then explored.Phosphorusis identified as the unique biological element with anuclearspinthat can serve as a qubit for such putativequantumprocessing - a neural qubit - while the phosphate ion is the only possible qubit-transporter. We identify the \"Posner molecule\", $\\\\text{Ca}_9 ...",
+      "url": "https://arxiv.org/abs/1508.05929",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-023": [
+    {
+      "title": "5th millennium BC (Wikipedia)",
+      "snippet": "The 5th millennium BC spanned the years 5000 BC to 4001 BC. It is impossible to precisely date events that happened around the time of this millennium and all dates mentioned here are estimates mostly based on geological and anthropological analysis.",
+      "url": "https://en.wikipedia.org/wiki/5th_millennium_BC",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Europe (Wikipedia)",
+      "snippet": "Europe is a continent located entirely in the Northern Hemisphere and mostly in the Eastern Hemisphere. It is bordered by the Arctic Ocean to the north, the Atlantic Ocean to the west, the Mediterranean Sea to the south, and Asia to the east. Europe shares the landmass of Eurasia with Asia, and of Afro-Eurasia with both Africa and Asia. Europe is commonly considered to be separated from Asia by the watershed of the Ural Mountains, the Ural River, the Caspian Sea, the Greater Caucasus, the Black Sea, and the Turkish straits.",
+      "url": "https://en.wikipedia.org/wiki/Europe",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Neolithic in the Near East (Wikipedia)",
+      "snippet": "The Neolithic in the Near East is a period in the prehistory of Western Asia that began with the transition from a Paleolithic to a Neolithic way of life and continued with its consolidation and expansion. It took place between the Levant and the western Zagros, including part of Anatolia, at the beginning of the Holocene, between around 10000 and 5500 BCE (Before the Common Era), or 12000\u20137500 BP (Before Present).\nThis period was marked primarily by the adoption of agriculture, particularly cereal cultivation, and the domestication of animals, gradually replacing hunting and gathering. The first elements of the Neolithic way of life emerged during the final phase of the Paleolithic, known in the Near Eastern context as the Epipaleolithic, notably during the Natufian period in the Levant (c.",
+      "url": "https://en.wikipedia.org/wiki/Neolithic_in_the_Near_East",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Lost world beneath the Persian Gulf: The Persian Gulf was once a vast ...",
+      "snippet": "Imagine walking across an immense expanse of green vegetation, with rivers flowing through fertile land. The above scenario depicts the environment that existed thousands of years ago in the Middle East. This area had underground freshwater sources that sustained the plants and wildlife. This environment may sound like a remote tropical paradise, but geological evidence suggests it once existed in the Middle East thousands of years ago. Currently, this immense basin lies entirely concealed under the warm waters of the Persian Gulf.",
+      "url": "https://timesofindia.indiatimes.com/science/lost-world-beneath-the-persian-gulf-the-persian-gulf-was-once-a-vast-oasis-that-may-have-sheltered-early-humans-before-the-sea-swallowed-it-scientists-say/articleshow/132434934.cms",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Prehistory of Mesopotamia - Wikipedia",
+      "snippet": "Ingeneral,PaleolithicMesopotamia is poorly documented, with the situation worsening in southern Mesopotamia for periods prior to the 4th millennium BC. Geological conditions meant that most of the remains were buried under a thick layer of alluvium orsubmergedbeneath the waters of thePersianGulf.",
+      "url": "https://en.wikipedia.org/wiki/Prehistory_of_Mesopotamia",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Searching For Dilmun: Underwater Ruins In The Persian Gulf Predate The ...",
+      "snippet": "It's difficult to say where we can find traces of the world's oldest civilization because many ancient underwater ruins still await our discovery. There are many mysteries beneath the waters, and we have only unraveled a small percentage of them.",
+      "url": "https://www.ancientpages.com/2023/04/24/underwater-ruins-dilmun/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Khorbas: a Lower Palaeolithic site on Qeshm Island in the Persian Gulf",
+      "snippet": "Inaddition to Palaeolithic artefacts, the survey also recorded historic and late Islamic pottery at the site. In addition, a number of other sites, all of historicdate, were identified on the island. The Khorbas site is located 10km south-west of Qeshm City on thePersianGulfcoast (Figure 1).",
+      "url": "https://www.cambridge.org/core/journals/antiquity/article/khorbas-a-lower-palaeolithic-site-on-qeshm-island-in-the-persian-gulf/D230B0BAAC3DBE76D4E74AC679550AFE",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Lost civilization under Persian Gulf? | Science Codex",
+      "snippet": "A once fertile landmass nowsubmergedbeneath thePersianGulfmay have been home to some of the earliest human populations outside Africa, according to an article published today in Current Anthropology.Jeffrey Rose, an archaeologist and researcher with the University of Birmingham in the U.K., says that the area in and around this \"PersianGulfOasis\" may have been host to humans for over ...",
+      "url": "https://www.sciencecodex.com/lost_civilization_under_persian_gulf",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Ur Schatt - Wikipedia",
+      "snippet": "PersianGulfBathymetry, showing (cyan to dark blue) course of Ur Schatt and Arabian Oasis flood plain. The Ur Schatt was an ancient river system that fed and flowed through theGulfOasis, a Late Pleistocene / Early Holocene flood plain made up of a series of deep lake systems that would flood as the Pleistocene Ice Age ended and global sea levels rose some 150 metres between 12,000BCEand ...",
+      "url": "https://en.wikipedia.org/wiki/Ur_Schatt",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-024": [
+    {
+      "title": "List of Starship launches (Wikipedia)",
+      "snippet": "As of November 14, 2026, the SpaceX Starship has been launched 15 times, with 10 successes and 5 failures. SpaceX has developed Starship with the intention of lowering launch costs using economies of scale. It aims to achieve this by reusing both rocket stages, increasing payload mass to orbit, increasing launch frequency, creating a mass-manufacturing pipeline and adapting it to a wide range of space missions. Starship is the latest project in SpaceX's reusable launch system development program and plan to colonize Mars, and is one of two landing systems selected by NASA for the Artemis program's crewed Lunar missions.",
+      "url": "https://en.wikipedia.org/wiki/List_of_Starship_launches",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "SpaceX Starship (Wikipedia)",
+      "snippet": "Starship is a two-stage, fully reusable, super heavy-lift launch vehicle under development by American aerospace company SpaceX. Currently built and launched from Starbase in Texas, it is intended as the successor to the company's Falcon 9 and Falcon Heavy rockets, and is part of SpaceX's broader reusable launch system development program. If completed as designed, Starship would be the first fully reusable orbital rocket and have the highest payload capacity of any launch vehicle to date. As of November 13, 2026, Starship has launched 15 times, with 10 successful flights and 5 failures.\nThe vehicle consists of two stages: the Super Heavy booster and the Starship spacecraft, both powered by Raptor engines burning liquid methane (the main component of natural gas) and liquid oxygen.",
+      "url": "https://en.wikipedia.org/wiki/SpaceX_Starship",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "SpaceX Starship (spacecraft) (Wikipedia)",
+      "snippet": "Starship (or colloquially the Ship) is a spacecraft and second stage under development by American aerospace company SpaceX. Stacked atop its booster, Super Heavy, the pair compose SpaceX's super heavy-lift space vehicle, also called Starship. The spacecraft is designed to transport both passengers and cargo to a variety of destinations, including Earth orbit, the Moon, and Mars. It is designed to be reusable and capable of landing propulsively by firing its engines to perform a controlled descent into the arms of a tower on Earth or with landing legs on other planetary bodies. It is intended to enable long-duration interplanetary flights with up to 100 passengers.",
+      "url": "https://en.wikipedia.org/wiki/SpaceX_Starship_%28spacecraft%29",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Starship flight 15 (Wikipedia)",
+      "snippet": "Starship flight 15 was the fifteenth launch and the second operational flight of the SpaceX Starship launch system, and the first successful upright landing of a rocket's upper stage after reaching orbit. It launched on November 13, 2026, at 22:47:36 UTC (4:47:36 pm CST) from Orbital Launch Pad 2 at Starbase in Texas, obtaining regulatory approval on launch day.\nThe mission used Booster 22 and Ship 42 as the fourth pair of Block 3 vehicles to fly. SpaceX planned to catch both the ship and the Super Heavy booster with the launch tower, aiming for the first catch of a Starship upper stage, the first catch of a Block 3 booster, and the first recovery of every stage of an orbital rocket on a single flight.",
+      "url": "https://en.wikipedia.org/wiki/Starship_flight_15",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Starship Flight 14 - SpaceX",
+      "snippet": "On Monday, September 28 at 7:48 a.m. CT,Starshiplifted off from Starbase, Texas on its 14th flight andfirstattempt to go to orbit. This was thefirstorbitalStarshipflight and thefirstto deliver meaningful payload to orbit with 26 Starlink V3satellites. Themissionbegan with the Super Heavy booster igniting all of its 33 Raptor 3 engines and ascending over the Gulf of America. During ...",
+      "url": "https://www.spacex.com/launches/starship-flight-14",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Wow! Watch SpaceX's Starship megarocket deploy satellites into orbit ...",
+      "snippet": "The 407-foot-tall (124 meters)Starshipreached orbit for thefirsttime ever on Flight 14 \u2014 and it did something productive while it was up there.",
+      "url": "https://www.space.com/space-exploration/launches-spacecraft/wow-watch-spacexs-starship-megarocket-deploy-satellites-into-orbit-for-1st-time-ever-photos-video",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "SpaceX Starship Reaches Orbit for the First Time, Then Ends Flight ...",
+      "snippet": "SpaceX Starship reached Earth orbit for the first time during Flight 14 on September 28, 2026. Ship 41 completed its orbital insertion burn and deployed all 26 Starlink V3 satellites despite one Raptor vacuum engine shutting down during ascent. Controllers later shortened the mission and redirected the spacecraft toward a Pacific splashdown.",
+      "url": "https://www.sciencetimes.com/articles/62665/20260929/spacex-starship-reaches-orbit-first-time-then-ends-flight-early-fiery-splashdown.htm",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "SpaceX Starship - Wikipedia",
+      "snippet": "Starshipis a two-stage, fully reusable, super heavy-lift launch vehicle under development by American aerospace companySpaceX. Currently built and launched from Starbase in Texas, it is intended as the successor to the company's Falcon 9 and Falcon Heavy rockets, [7] and is part ofSpaceX'sbroader reusable launch system development program. Ifcompletedas designed,Starshipwould be the ...",
+      "url": "https://en.wikipedia.org/wiki/SpaceX_Starship",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "SpaceX's Starship rocket does its job during first orbital flight",
+      "snippet": "SpaceXsent itsStarshipsuper-rocket on itsfirstorbitalflight\u2014a shorter-than-planned testmissionthat put operational Starlinksatellitesinto orbit for thefirsttime.",
+      "url": "https://phys.org/news/2026-09-spacex-starship-rocket-job-orbital.html",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "SpaceX Starship splashes down after successful 1st orbital flight test",
+      "snippet": "SpaceXon Monday launched the world's largest and most powerful rocket and spacecraft on amissionthat marks thefirsttime the spacecraft achieved orbit.Starshipsplashed down in the Pacific, north of Hawaii, just before noon ET. Although themissionended some seven hours earlier than planned, with the company choosing to return to Earth during thefirstscheduledmissioncheckpoint ...",
+      "url": "https://abcnews.com/US/spacex-attempt-starships-1st-orbital-flight-test/story?id=136805227",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-025": [
+    {
+      "title": "Diabetes medication (Wikipedia)",
+      "snippet": "Drugs used in diabetes treat types of diabetes mellitus by decreasing glucose levels in the blood. There are different classes of drugs for treating diabetes, and selection of the appropriate agent depends on the nature of the diabetes (Type I vs Type II), the age and situation of the person, as well as other patient factors.\nType 1 diabetes is an endocrine disorder characterized by hyperglycemia due to autoimmune destruction of insulin-secreting pancreatic beta cells. Insulin is a hormone needed by cells to take in glucose from the blood.",
+      "url": "https://en.wikipedia.org/wiki/Diabetes_medication",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Insulin analogue (Wikipedia)",
+      "snippet": "An insulin analogue (also called an insulin analog) is a type of medical insulin that has been modified to alter its pharmacokinetic properties while maintaining the same biological function as human insulin. These modifications are achieved through genetic engineering, which allows for changes in the amino acid sequence of insulin to optimize its absorption, distribution, metabolism, and excretion (ADME) characteristics.\nAll insulin analogues work by enhancing glucose uptake in tissues and reducing glucose production by the liver. They are prescribed for conditions such as type 1 diabetes, type 2 diabetes, gestational diabetes, and diabetes-related complications such as diabetic ketoacidosis.",
+      "url": "https://en.wikipedia.org/wiki/Insulin_analogue",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Pfizer (Wikipedia)",
+      "snippet": "Pfizer Inc. ( FY-z\u0259r) is an American multinational pharmaceutical and biotechnology corporation headquartered at The Spiral in Manhattan, New York City. Founded in 1849 in New York by German entrepreneurs Charles Pfizer and Charles F. Erhart, Pfizer is one of the oldest pharmaceutical companies in North America.\nPfizer develops and produces medication and vaccines for immunology, oncology, cardiology, endocrinology, and neurology.",
+      "url": "https://en.wikipedia.org/wiki/Pfizer",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Semaglutide (Wikipedia)",
+      "snippet": "Semaglutide is an anti-diabetic medication used for the treatment of type 2 diabetes, and an anti-obesity medication used for weight management. It can be administered by subcutaneous injection or taken orally. It is sold as a generic drug by several drug companies in the Indian and Canadian markets, and worldwide by its originator, Novo, under the brand names Ozempic and Rybelsus for diabetes; under the brand name Wegovy for weight management; and under the brand names Wegovy and Kayshild for the treatment of metabolic-associated steatohepatitis (nonalcoholic steatohepatitis) and liver cirrhosis. Wegovy is also used to reduce the risk of heart attacks.",
+      "url": "https://en.wikipedia.org/wiki/Semaglutide",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "FDA Approves Orforglipron, First GLP-1 Pill Without Time, Food, or ...",
+      "snippet": "Orforglipron, anoralsmall-moleculeGLP-1receptoragonist,forthe treatment of obesity in people with type 2 diabetes (ATTAIN-2): a phase 3, double-blind, randomised, multicentre, placebo-controlled trial.",
+      "url": "https://www.pharmacytimes.com/view/fda-approves-orforglipron-first-glp-1-pill-without-time-food-or-water-restrictions",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Orforglipron FDA Approval: Why the First Small-Molecule GLP-1 Pill Matters",
+      "snippet": "TheGLP-1landscape changed on1April 2026, when theFDAapproved Eli Lilly's orforglipron under the brand name Foundayo as the firstnon-peptide,small-moleculeGLP-1receptoragonist(GLP-1RA) anywhere in the world. Theapprovalmatters because it validates a long-soughtoralsmall-moleculeroute toGLP-1agonism, with potentially major consequences for convenience, manufacturing scale ...",
+      "url": "https://www.mewburn.com/forward/orforglipron-fda-approval-why-the-first-small-molecule-glp-1-pill-matters",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Orforglipron, an Oral Small-Molecule GLP-1 Receptor Agonist, in Early ...",
+      "snippet": "Orforglipron is asmall-molecule, nonpeptide glucagon-like peptide-1 (GLP-1)receptoragonistin clinical development for type 2 diabetes and weight management. Additional data on the efficacy and ...",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2505669",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "FDA Approves First New Molecular Entity Under National Priority Voucher ...",
+      "snippet": "The U.S. Food and Drug Administration today approved Foundayo (orforglipron) marking the fifthapprovalunder the Commissioner's National Priority Voucher (CNPV) pilot program.",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-new-molecular-entity-under-national-priority-voucher-program",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Orforglipron: A Comprehensive Review of an Oral Small-Molecule GLP-1 ...",
+      "snippet": "Orforglipron (LY3502970) is a novel, orally available, nonpeptide glucagon-like peptide-1receptoragonist(GLP-1RA) designed to replicate the efficacy of injectableGLP-1RAs for glycemic control and weight reduction while improving convenience ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12898445/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Orforglipron: The First Small Molecule GLP-1 Pill, Explained - THRIVEMED",
+      "snippet": "The short version 2020: researchers publish a detailed picture of asmallmolecule, now called orforglipron, sitting inside theGLP-1receptor. 2023: in a phase 2 trial, adults with obesity lose up to about 15% of their body weight in 36 weeks, compared with about 2% on placebo. 2025: in ATTAIN-1, 3,127 adults take a daily pill for 72 weeks. On the top dose they lose about 11% on average ...",
+      "url": "https://www.thrivemed.us/thrivecityblog/2026/10/20/orforglipron-small-molecule-glp1-pill",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-026": [
+    {
+      "title": "Mind\u2013body dualism (Wikipedia)",
+      "snippet": "In philosophy of mind, mind\u2013body dualism denotes either that mental phenomena are non-physical, or that the mind and body are distinct and separable. Thus, it encompasses a set of views about the relationship between mind and matter, as well as between subject and object, and is contrasted with other positions, such as physicalism and enactivism, in the mind\u2013body problem.\nAristotle shared Plato's view of multiple souls and further elaborated a hierarchical arrangement, corresponding to the distinctive functions of plants, animals, and humans: a nutritive soul of growth and metabolism that all three share; a perceptive soul of pain, pleasure, and desire that only humans and other animals share; and the faculty of reason that is unique to humans only. In this view, a soul is the hylomorphic form of a viable organism, wherein each level of the hierarchy formally supervenes upon the substance of the preceding level.",
+      "url": "https://en.wikipedia.org/wiki/Mind%E2%80%93body_dualism",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Philosophy of mind (Wikipedia)",
+      "snippet": "Philosophy of mind is a branch of philosophy that deals with the nature of the mind and its relation to the body and the external world.\nThe mind\u2013body problem is a paradigmatic issue in philosophy of mind, although a number of other issues are addressed; these include the hard problem of consciousness and the nature of particular mental states. Aspects of the mind that are studied include mental events, mental functions, mental properties, consciousness and its neural correlates, the ontology of the mind, the nature of cognition and of thought, and the relationship of the mind to the body.\nDualism and monism are the two central schools of thought on the mind\u2013body problem, although nuanced views have arisen that do not fit either category neatly, with the current emergence of trialism, as a potential school of thought.",
+      "url": "https://en.wikipedia.org/wiki/Philosophy_of_mind",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Pleasure (Wikipedia)",
+      "snippet": "Pleasure is an experience that feels good, that involves the enjoyment of something. It contrasts with pain or suffering, which are forms of feeling bad. It is closely related to value, desire and action: humans and other conscious animals find pleasure enjoyable, positive or worthy of seeking. A great variety of activities may be experienced as pleasurable, such as eating, having sex, listening to music or playing games.",
+      "url": "https://en.wikipedia.org/wiki/Pleasure",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Qualia (Wikipedia)",
+      "snippet": "In philosophy of mind, qualia (; singular: quale ) are defined as instances of subjective experience. The term qualia derives from the Latin neuter plural form (qualia) of the Latin adjective qu\u0101lis (Latin pronunciation: [\u02c8k\u02b7a\u02d0l\u026as]) meaning \"of what sort\" or \"of what kind\" in relation to a specific instance, such as \"what it is like to taste a specific apple\u200a\u2014\u200athis particular apple now\".\nExamples of qualia include the perceived sensation of pain of a headache, the taste of wine, and the redness of an evening sky. As qualitative characteristics of sensations, qualia stand in contrast to propositional attitudes, where the focus is on beliefs about experience rather than what it is directly like to be experiencing.",
+      "url": "https://en.wikipedia.org/wiki/Qualia",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Is my \"red\" your \"red\"?: Evaluating structural correspondences between ...",
+      "snippet": "Our results provide quantitative evidence for interindividual structural equivalence or difference ofcolorqualia, implying thatcolor-neurotypicalpeople's \"red\"isrelationally equivalent to othercolor-neurotypical's\"red\", but not tocolor-blind people's \"red\".",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2589004225002895",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Your Red Is My Red: Shared Brain Codes for Color",
+      "snippet": "\u201cWe can\u2019t say that one person\u2019s red looks the same as another person\u2019s red. But to see that some sensory aspects of a subjective experience are conserved across people\u2019s brains is new,\u201d says Bannert.",
+      "url": "https://neurosciencenews.com/neural-coding-color-perception-29674/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "To our brains, your red is my red - Science News Explores",
+      "snippet": "A givencolor, such asredor yellow, may spark similarbrainactivityacrossindividuals, new research suggests. This could settle a long-standing debate.",
+      "url": "https://www.snexplores.org/article/brain-activity-see-color-red",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Do Our Brains See the Same Colours? | News of Bahrain",
+      "snippet": "Although people use the same names for colours, there has long been a scientific and philosophical question about whether their personalexperiencesofthose colours areidentical. New neuroscience research suggests thathumanbrainsmay have more in common in their processing of colour than previously understood.",
+      "url": "https://www.newsofbahrain.com/en/article/do-our-brains-see-the-same-colours",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Is my red your red? | The University of Tokyo",
+      "snippet": "\"Do we seecolorsthesame way?\" is a fundamentallyhumanquestion and one of great importance in research into thehumanmind. While impossible to answer at present, researchers from the University of Tokyo and from Monash University in Australia take steps to answering it using a method that can map theexperiencesofcolorsbetween ...",
+      "url": "https://www.u-tokyo.ac.jp/focus/en/press/z0508_00402.html",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Are Color Experiences the Same across the Visual Field?",
+      "snippet": "PDF | It seems obvious to lay people thatneurotypicalhumansexperiencecolorequivalentlyacrosstheir entire visual field. To some neuroscientists,... | Find, read and citealltheresearch you ...",
+      "url": "https://www.researchgate.net/publication/367127329_Are_Color_Experiences_the_Same_across_the_Visual_Field",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-027": [
+    {
+      "title": "Music (Wikipedia)",
+      "snippet": "Music is the arrangement of sound to create some combination of form, harmony, melody, rhythm, or otherwise expressive content. Music is generally agreed to be a cultural universal that is present in all human societies. Definitions of music vary widely in substance and approach. While scholars agree that music is defined by a small number of specific elements, there is no consensus as to what these necessary elements are.",
+      "url": "https://en.wikipedia.org/wiki/Music",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Pet Sounds (Wikipedia)",
+      "snippet": "Pet Sounds is the eleventh studio album by the American rock band the Beach Boys, released on May 16, 1966, by Capitol Records. It was produced, arranged, and primarily composed by Brian Wilson with guest lyricist Tony Asher. Recorded largely between January and April 1966, it furthered the orchestral sound introduced in The Beach Boys Today! (1965).",
+      "url": "https://en.wikipedia.org/wiki/Pet_Sounds",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Phil Spector (Wikipedia)",
+      "snippet": "Harvey Phillip Spector (December 26, 1939 \u2013 January 16, 2021) was an American record producer and songwriter known primarily for his orchestral pop productions and recording technique, dubbed the \"Wall of Sound\", and decades later for his trials and imprisonment for murder. Considered the first music producer auteur, he is the most successful American producer of the 1960s and widely regarded as one of the most influential figures in pop music history.\nBorn in the Bronx, Spector relocated to Los Angeles as a teenager and co-founded the Teddy Bears in 1958, writing their chart-topping single \"To Know Him Is to Love Him\". With Lester Sill, he co-established Philles Records in 1961, becoming the youngest U.S. label owner at the time, and exerted unprecedented artistic control over his recordings, typically working in collaboration with a rotation of songwriting teams, arranger Jack Nitzsche, and engineer Larry Levine.",
+      "url": "https://en.wikipedia.org/wiki/Phil_Spector",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Urban Hymns (Wikipedia)",
+      "snippet": "Urban Hymns is the third studio album by English rock band the Verve, released on 29 September 1997 on Hut Records. The group had broken up while promoting A Northern Soul in August 1995, though they reformed two weeks later without guitarist Nick McCabe. Frontman Richard Ashcroft moved to Bath, Somerset, where he made demos; Simon Tong joined the group soon afterwards. Following aborted recording sessions with producers John Leckie and Owen Morris, the band sought a new guitarist, contacting former Suede guitarist Bernard Butler, who played with them for a week before departing amidst creative differences.",
+      "url": "https://en.wikipedia.org/wiki/Urban_Hymns",
+      "source": "Wikipedia"
+    }
+  ],
+  "HOLDOUT-028": [
+    {
+      "title": "Autonomous weapons systems and the moral equality of combatants - Springer",
+      "snippet": "Tomany, the idea ofautonomousweaponssystems(AWS) killinghumanbeings is grotesque. Yet critics have had difficulty explaining why it should make a significant moral difference if ahumancombatantis killed by an AWS as opposed to being killed by ahumancombatant. The purpose of this paper is to explore the roots of various deontological concerns with AWS and to consider whether these ...",
+      "url": "https://link.springer.com/article/10.1007/s10676-020-09528-0",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Lethal Autonomous Weapon Systems: Ethical Dilemmas and ... - ResearchGate",
+      "snippet": "LethalAutonomousWeaponSystems(LAWS) have emerged as one of the most significant advancements in military technology, leveraging artificial intelligence (AI) and machine learning to execute ...",
+      "url": "https://www.researchgate.net/publication/384689336_Lethal_Autonomous_Weapon_Systems_Ethical_Dilemmas_and_Legal_Compliance_in_the_Era_of_Military_Disruptive_Technologies",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "(PDF) The Ethics of Autonomous Weapons Systems: AI in ... - ResearchGate",
+      "snippet": "By analyzing the intersection of AI, ethics, and warfare, we argue for the urgent need to establish international norms and frameworks to prevent the misuse ofautonomousweaponsand ensure that ...",
+      "url": "https://www.researchgate.net/publication/390033169_The_Ethics_of_Autonomous_Weapons_Systems_AI_in_Warfare_and_Global_Governance",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Full article: The ethical legitimacy of autonomous Weapons systems ...",
+      "snippet": "It argues that AWSfundamentallyundermine moral accountability in war, exacerbate risks to civilians, and corrodehumanagency inlethaldecision-making. The analysis concludes that existing ethical and legal frameworks cannot adequately govern AWS, necessitating a reconfiguration of accountability paradigms.",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/16544951.2025.2540131",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Autonomous weapons: considering the rights and interests of soldiers",
+      "snippet": "Our claim is that under current conditions in international relations,autonomousweaponssystemscan bemorallydesirable. AWSs better protect the rights and interests of soldiers by avoiding risks to their mental and physical wellbeing.",
+      "url": "https://link.springer.com/article/10.1007/s10676-025-09859-w",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-029": [
+    {
+      "title": "Black hole information paradox (Wikipedia)",
+      "snippet": "The black hole information paradox is an unsolved problem in physics and a paradox that appears when the predictions of quantum mechanics and general relativity are combined. The theory of general relativity predicts the existence of black holes that are regions of spacetime from which nothing\u2014not even light\u2014can escape. In the 1970s, Stephen Hawking applied the semiclassical approach of quantum field theory in curved spacetime to such systems and found that an isolated black hole would emit a form of radiation (now called Hawking radiation in his honor). He also argued that the detailed form of the radiation would be independent of the initial state of the black hole, and depend only on its mass, electric charge and angular momentum.",
+      "url": "https://en.wikipedia.org/wiki/Black_hole_information_paradox",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Heat death of the universe (Wikipedia)",
+      "snippet": "The heat death of the universe (also known as the Big Chill or the Big Freeze) is a scientific hypothesis regarding the ultimate fate of the universe which posits the universe will evolve to a state of no thermodynamic free energy and, having reached maximum entropy, will therefore be unable to sustain any further thermodynamic processes. Heat death does not imply any particular absolute temperature; it only requires that temperature differences or other processes may no longer be exploited to perform work. In the language of physics, this is when the universe reaches thermodynamic equilibrium.\nIf the curvature of the universe is hyperbolic or flat, or if dark energy is a positive cosmological constant, the universe will continue expanding forever, and a heat death is expected to occur, with the universe cooling to approach equilibrium at a very low temperature after a long time period.",
+      "url": "https://en.wikipedia.org/wiki/Heat_death_of_the_universe",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Ultimate fate of the universe (Wikipedia)",
+      "snippet": "The ultimate fate of the universe is a topic in physical cosmology, whose theoretical restrictions allow possible scenarios for the evolution of the universe and the ultimate fate of the universe to be described and evaluated. Based on available observational evidence, deciding the fate and evolution of the universe has become a valid cosmological question, being beyond the mostly untestable constraints of mythological or theological beliefs. Several possible futures have been predicted by different scientific hypotheses, including that the universe might have existed for a finite or infinite duration, or towards explaining the manner and circumstances of its beginning.\nObservations made by astronomer Edwin Hubble during the 1930s\u20131950s found that galaxies appeared to be moving away from each other, leading to the currently accepted Big Bang theory.",
+      "url": "https://en.wikipedia.org/wiki/Ultimate_fate_of_the_universe",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Uncertainty principle (Wikipedia)",
+      "snippet": "The uncertainty principle, also known as Heisenberg's indeterminacy principle, is a fundamental concept in quantum mechanics. It states that there is a limit to the precision with which certain pairs of physical properties, such as position and momentum, can be simultaneously known. In other words, the more accurately one property is measured, the less accurately the other property can be known.\nMore formally, the uncertainty principle is any of a variety of mathematical inequalities asserting a fundamental limit to the product of the accuracy of certain related pairs of measurements on a quantum system, such as position, x, and momentum, p.",
+      "url": "https://en.wikipedia.org/wiki/Uncertainty_principle",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Analysis of cosmic bounce solutions and entropy evolution beyond ...",
+      "snippet": "Thebounce theory proposes a periodiccosmicmodel where theuniverseundergoes alternating periods of expansion and contraction, instead of beginning from a big bang phenomenon. Bozza and Burni [42] resolved the issue of anisotropy in bouncing cosmology.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0375960125007170",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Entropy, Black Holes, and the New Cyclic Universe - arXiv.org",
+      "snippet": "We track the evolution ofentropyand black holes in a cyclicuniversethat undergoes repeated intervals of expansion followed by slow contraction and a smooth (non-singular) bounce.",
+      "url": "https://arxiv.org/pdf/2108.07101",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Heat death of the universe - Wikipedia",
+      "snippet": "Theheat death of theuniverse(also known as the Big Chill or the Big Freeze) [1][2] is a scientific hypothesis regarding the ultimate fate of theuniversewhich posits theuniversewillevolve to a state of no thermodynamic free energy and, having reached maximumentropy,willtherefore be unable to sustain any further thermodynamic processes.",
+      "url": "https://en.wikipedia.org/wiki/Heat_death_of_the_universe",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "(PDF) Different Aspects of Entropic Cosmology - ResearchGate",
+      "snippet": "Thesecond law of horizon thermodynamics states that the change intotalentropy(thesum of horizonentropy+ matter fields'entropy) with respect tocosmictime must be positive, where the ...",
+      "url": "https://www.researchgate.net/publication/383712891_Different_Aspects_of_Entropic_Cosmology",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Big Bounce - Wikipedia",
+      "snippet": "Ananimation of the Big Bounce The Big Bounce hypothesis is a cosmological model for the origin of the knownuniverse. It was originally suggested as a phase of the cyclic model or oscillatoryuniverseinterpretation of the Big Bang, where the first cosmological event was the result of the collapse of a previousuniverse. [1][2][3][4] It receded from serious consideration in the early 1980s ...",
+      "url": "https://en.wikipedia.org/wiki/Big_Bounce",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Entropy, black holes, and the new cyclic universe - ScienceDirect",
+      "snippet": "Much of the research on the earlyuniversefocuses on trying to explain the homogeneity, isotropy and spatial flatness of theuniverse, as observed in thecosmicmicrowave background (CMB) maps of the last scattering surface. However, an equally important but perhaps more vexing issue is explaining theentropydistribution.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0370269321007632",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-030": [
+    {
+      "title": "Biosphere 2 (Wikipedia)",
+      "snippet": "University of Arizona Biosphere 2 is an American Earth system science research facility located in Oracle, Arizona. Its mission is to serve as a center for research, outreach, teaching, and lifelong learning about Earth, its living systems, and its place in the universe. It is a 3.14-acre (1.27-hectare) structure originally built to be an artificial, materially closed ecological system, or vivarium. It remains the largest closed ecological system ever created.",
+      "url": "https://en.wikipedia.org/wiki/Biosphere_2",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Climate change (Wikipedia)",
+      "snippet": "Present-day climate change includes both global warming\u2014the ongoing increase in global average temperature\u2014and its wider effects on Earth's climate system. In a broader sense, climate change also includes previous long-term changes to Earth's climate. The modern-day rise in global temperatures is driven by human activities, especially fossil fuel (coal, oil and natural gas) burning since the Industrial Revolution. Fossil fuel use, deforestation, and some agricultural and industrial practices release greenhouse gases.",
+      "url": "https://en.wikipedia.org/wiki/Climate_change",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Occupational safety and health (Wikipedia)",
+      "snippet": "Occupational safety and health (OSH) or occupational health and safety (OHS) is a multidisciplinary field concerned with the safety, health, and welfare of people at work (i.e., while performing duties required by one's occupation). OSH is related to the fields of occupational medicine and occupational hygiene and aligns with workplace health promotion initiatives. OSH also protects all the general public who may be affected by the occupational environment.\nAccording to the official estimates of the United Nations, the WHO/ILO Joint Estimate of the Work-related Burden of Disease and Injury, almost 2 million people die each year due to exposure to occupational risk factors.",
+      "url": "https://en.wikipedia.org/wiki/Occupational_safety_and_health",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Stratospheric aerosol injection - Wikipedia",
+      "snippet": "StratosphericaerosolinjectionSolar radiation reduction due to volcanic eruptions, considered the best analogue for stratosphericaerosolinjection. Stratosphericaerosolinjection(SAI) is a proposed method of solar geoengineering (or solar radiation modification) to reduceglobalwarming.",
+      "url": "https://en.wikipedia.org/wiki/Stratospheric_aerosol_injection",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Stratospheric aerosol injection",
+      "snippet": "StratosphericaerosolinjectionOverview StratosphericAerosolInjectionis a technique which aims at increasing the backscattering of solar radiation directly back into the space to cool Earth's climate by injectingAerosolsin the Earth's stratosphere. It is widely considered the most effective SRM approach for rapidly reducingglobalmean temperature in a high-greenhouse-gas environment ...",
+      "url": "https://climate.esa.int/en/solar-radiation-modification/action4cooling/stratospheric-aerosol-injection-sai/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "PDFWho Could Deploy Stratospheric Aerosol Injection? The United States ...",
+      "snippet": "All other methods, including the use of solidaerosolsin the stratosphere, entail larger scientific uncertainty and require successful research before the technology could be developed with confidence.1 Stratospheric sulfateaerosolinjection(SAI) would involve distributing large quantities of aerosols\u2014typically sulfur species\u2014in the ...",
+      "url": "https://salatainstitute.harvard.edu/wp-content/uploads/2025/04/Global-Policy-2025-Horton-Who-Could-Deploy-Stratospheric-Aerosol-Injection-The-United-States-China-and-LargeE28090Scale.pdf",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Policymakers' questions explored: \"Does international law prevent SAI ...",
+      "snippet": "Existinginternationalrules were not designed with stratosphericaerosolinjectionin mind \u2014 if someinternationallaw principles and existingtreatyregimes offer partial constraints, none amount to an effective barrier against unilateral deployment. Three weaknesses stand out: The concept of territorial sovereignty is insufficient to prevent deployment: States may forbid flights in their ...",
+      "url": "https://cfg.eu/climate-interventions-faq-spotlight/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Dead before arrival: The governance of stratospheric aerosol injection",
+      "snippet": "The governance of stratosphericaerosolinjectionraises questions like who gets to control the world's climate and how they would go about it.",
+      "url": "https://thebulletin.org/2023/03/dead-before-arrival-the-governance-of-stratospheric-aerosol-injection/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Governing Stratospheric Aerosol Injection: International Law and Norms ...",
+      "snippet": "Assess The contemplation of stratosphericaerosolinjection, often termed SAI, as a potential lever against accelerating climate change introduces a complex matrix of technical possibilities and profound societal implications. This deliberate modification of the upper atmosphere, mimicking the cooling effect of large volcanic eruptions by injecting reflective particles, moves beyond ...",
+      "url": "https://prism.sustainability-directory.com/scenario/governing-stratospheric-aerosol-injection-international-law-and-norms/",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-031": [
+    {
+      "title": "Authoritarian socialism (Wikipedia)",
+      "snippet": "Authoritarian socialism, or socialism from above, is an economic and political system supporting some form of socialist economics while rejecting political pluralism. As a term, it represents a set of economic-political systems describing themselves as \"socialist\" and rejecting the liberal-democratic concepts of multi-party politics, freedom of assembly, habeas corpus, and freedom of expression, either due to fear of counter-revolution or as a means to socialist ends. Journalists and scholars have characterised several countries, most notably the Soviet Union, China, Cuba, and their allies, as authoritarian socialist states.\nContrasted to democratic socialist, social democratic, anti-statist, and libertarian forms of socialism, authoritarian socialism encompasses some forms of African, Arab and Latin American socialism.",
+      "url": "https://en.wikipedia.org/wiki/Authoritarian_socialism",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Capitalism (Wikipedia)",
+      "snippet": "Capitalism is an economic system based on the private ownership of the means of production and its use for the purpose of obtaining profit. This socioeconomic system has developed historically in several stages and is defined by a number of constituent elements: private property, profit motive, capital accumulation, competitive markets, commodification, wage labor, and an emphasis on innovation and economic growth. Capitalist economies tend to experience business cycles of economic expansion followed by recessions.\nEconomists, historians, political economists, and sociologists have adopted different perspectives in their analyses of capitalism and have recognized various forms of it in practice.",
+      "url": "https://en.wikipedia.org/wiki/Capitalism",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Communism (Wikipedia)",
+      "snippet": "Communism (from Latin  communis 'common, universal') is a political and economic ideology whose goal is the creation of a communist society, a socioeconomic classless order centered on common ownership of the means of production, distribution, and exchange that allocates products in society based on need. A communist society entails the absence of private property and social classes, and ultimately money and the state.\nCommunists often seek a voluntary state of self-governance but disagree on the means to this end. This reflects a distinction between a libertarian socialist approach of communization, revolutionary spontaneity, and workers' self-management, and an authoritarian socialist, vanguardist, or party-driven approach to establish a socialist state, which is expected to wither away.",
+      "url": "https://en.wikipedia.org/wiki/Communism",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Marxism\u2013Leninism (Wikipedia)",
+      "snippet": "Marxism\u2013Leninism is a communist ideology that became the largest faction of the communist movement following the October Revolution. It was the predominant ideology of most communist governments in the 20th century. It was developed in the Soviet Union by Joseph Stalin and drew on Bolshevism, Leninism, and Classical Marxism. It was the state ideology of the Soviet Union, Soviet satellite states in the Eastern Bloc, and various countries in the Non-Aligned Movement and Third World during the Cold War, as well as the Communist International.",
+      "url": "https://en.wikipedia.org/wiki/Marxism%E2%80%93Leninism",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "The impacts of democracy on innovation: Revisited evidence",
+      "snippet": "\u2022 This research empirically tests the Popper hypothesis (2012) by utilizing panel data that cover 95 countries. \u2022 Democracy promotesinnovationperformance; autocracy generally exhibits lowertechnologicalinnovationperformance. \u2022 We provide evidence on the influence of democracy oninnovationbeing affected by other factors.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0166497221001140",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Good governance and innovation: Economic freedom matters",
+      "snippet": "These findings underscore the mechanisms through which goodgovernanceimpactsinnovation, drawing attention to the shaping effect of goodgovernanceon the external environment and offering empirical evidence for economies to enhance economic freedom and promoteinnovation.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0040162524003238",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Democratic innovation for change: A participatory corrective to ...",
+      "snippet": "Theworld faces social,political, economic, and ecological crises, and there is doubt thatdemocraticgovernancecan cope. Democracies rely on a narrow set of institutions and processes anchored in dominant forms ofpoliticalorganisation and imagination. Power inequalities sustain the (re)production of current ills indemocraticlife. In this context, what does the field ofdemocratic...",
+      "url": "https://journals.sagepub.com/doi/10.1177/02633957251349635",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Innovation and Democracy | Springer Nature Link",
+      "snippet": "'Innovationand Democracy' published in 'Encyclopedia of Creativity, Invention,Innovationand Entrepreneurship'",
+      "url": "https://link.springer.com/rwe/10.1007/978-3-319-15347-6_262",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Technological disruption and democracy in the twenty-first century",
+      "snippet": "Between 1974 and 1990 more than thirty countries in southern Europe, Latin America, East Asia, and Eastern Europe shifted from authoritarian todemocraticsystemsof government.",
+      "url": "https://www.researchgate.net/publication/359517283_Technological_disruption_and_democracy_in_the_twenty-first_century",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Political systems affect innovation - LSE Business Review",
+      "snippet": "Innovationdrives economic growth, however data indicates innovative capability differs across economies. Simon Commander, Saul Estrin and Thamashi De Silva suggest democracy is associated with moreinnovationoverall, though differentpoliticalsystemsalso produce different forms ofinnovation.",
+      "url": "https://blogs.lse.ac.uk/businessreview/2022/04/05/political-systems-affect-innovation/",
+      "source": "DuckDuckGo"
+    }
+  ],
+  "HOLDOUT-032": [
+    {
+      "title": "Aleksandr Milyukov (Wikipedia)",
+      "snippet": "Aleksandr Milyukov (Russian: \u041c\u0438\u043b\u044e\u043a\u043e\u0432, \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u041f\u0435\u0442\u0440\u043e\u0432\u0438\u0447) (30 July [11 August] 1816, Kozlov, Tambov province \u2014 6 February [18 February] 1897, St. Petersburg) was a Russian writer, literary critic, journalist, chief ideologist and actual editor of the magazine Svetoch, memoirist, educator, literary historian, traveller, bibliographer, professor, a friend of M. M. Dostoevsky and F. M. Dostoevsky, who took an active part in the literary life of Russia in the 1840s and 1880s. He was a prototype of F. M. Dostoevsky's S. V. Liputin \u2014 a character in the novel Demons, and a follower of the Petrashevsky-Fourier circle, who belonged to the moderate wing of the movement (S. F. Durov, A. N. Pleshcheev). Many of Milyukov's works are characterised as independent, deep and persuasive in their argumentation, contain many valuable observations and have stood the test of time.",
+      "url": "https://en.wikipedia.org/wiki/Aleksandr_Milyukov",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "Frederick Douglass (Wikipedia)",
+      "snippet": "Frederick Douglass (born Frederick Augustus Washington Bailey, c. February 14, 1818 \u2013 February 20, 1895) was an American social reformer, abolitionist, orator, writer, and statesman. He was \"the most important leader of the movement for African-American civil rights in the 19th century\".\nAfter escaping from slavery in Maryland in 1838, Douglass became a national leader of the abolitionist movement in Massachusetts and New York and gained fame for his oratory and incisive antislavery writings.",
+      "url": "https://en.wikipedia.org/wiki/Frederick_Douglass",
+      "source": "Wikipedia"
+    },
+    {
+      "title": "The Power of Handwritten Notes in a Digital Age",
+      "snippet": "Handwrittennotes foster deeper emotional connections and psychological well-being by engaging the therapeutic benefits of intentional communication, creating tangible expressions of care that research links to enhanced relationship intimacy, emotional processing, andauthenticvulnerability in an increasinglydigitalworld. When was the last time you held a treasured note from someone special ...",
+      "url": "https://www.reachlink.com/advice/relationship/the-power-of-handwritten-notes-in-a-digital-age/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Handwritten Relationship Communication: Why Paper Beats Digital - Me ...",
+      "snippet": "Handwrittenrelationship communication fosters deeper emotional intimacy by prioritising intentionality and physical presence overdigitalconvenience. Unlike fleeting instant messages, ahandwrittennote serves as a tangible \"keepsake\" ofaffection, slowing down our interactions to express genuine gratitude and vulnerability,...",
+      "url": "https://meloovely.com/blogs/journal/why-thoughtful-written-notes-create-stronger-relationships-than-instant-messages",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Why Handwritten Notes Make People Feel Good | Simply Noted Blog",
+      "snippet": "The science is clear:handwrittennotes make people feel good because they tap into fundamental human psychology around effort recognition,personalconnection, gratitude, andauthenticcommunication. In our increasinglydigitalworld, these analog touchpoints create disproportionate emotional impact and measurable business results.",
+      "url": "https://simplynoted.com/blogs/news/why-handwritten-notes-make-people-feel-good",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "What Handwritten Notes Do That Digital Cannot | Hallmark Business",
+      "snippet": "In the average day, I receive more than 120 business emails, about 40textmessages and \"snaps\" from Snapchat\u2014and I won't even begin to count other apps,personalemails and social media messages. But, even with working at Hallmark, I get less than onehandwrittennote a week. However, what's amazing about that fact is how the power of ahandwrittennote still ranks above other ...",
+      "url": "https://www.hallmarkbusiness.com/insights/article/personality-permanence-and-meaning-what-handwritten-notes-do-that-email-text-and-apps-cannot/",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Why Personal Letters Are More Meaningful Than Digital Messages",
+      "snippet": "In Conclusion Althoughdigitalcommunication is undoubtedly convenient and essential in today's fast-paced world,personalletters possess a timeless charm thatdigitalmessages simply can't replicate. The care, emotional depth, and physical presence of ahandwrittennote make it far more meaningful than a quick message on a screen.",
+      "url": "https://www.iwaymagazine.com/blogs/news/why-personal-letters-are-more-meaningful-than-digital-messages",
+      "source": "DuckDuckGo"
+    },
+    {
+      "title": "Why Handwritten Letters Matter More Than Ever | 4everBound",
+      "snippet": "Why arehandwrittenletters more valuable thandigitalmessages?Handwrittenletters carry unique physical characteristics \u2014 the author's handwriting, ink choice, paper selection, and even crossed-out words \u2014 that make them impossible to replicate or forge.",
+      "url": "https://4everbound.com/a/blog/why-handwritten-letters-matter-more-than-ever-in-the-digital-age",
+      "source": "DuckDuckGo"
+    }
+  ]
+}
