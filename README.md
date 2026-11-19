@@ -108,8 +108,20 @@ To establish empirical confirmation free from development tuning, FactGuard was 
 To scale statistical power beyond pilot sample sizes:
 * Created [`tests/data/heldout_suite/claims_heldout_300.json`](tests/data/heldout_suite/claims_heldout_300.json) featuring **exactly 75 claims per class** (75 True, 75 False, 75 Unsupported, 75 Unverifiable).
 * Sourced from canonical academic benchmarks (Climate-FEVER, SciFact, FEVER) and rigorous scientific/philosophical propositions.
-* **Automated Levenshtein Decontamination**: Every single candidate was cross-checked against all 1,016 development and pilot claims ($< 0.60$ threshold); over 20 candidate claims matching development concepts were automatically identified and rejected.
-* Executable via the checkpointed, frozen-evidence runner: `python tests/run_heldout_300.py`.
+* **Automated Levenshtein Decontamination**: Every single candidate was cross-checked against all 1,016 development and pilot claims ($< 0.60$ threshold); candidate claims matching development concepts were automatically rejected.
+* Evaluated via frozen multi-engine evidence across all systems with zero retrieval drift:
+
+| System Configuration | 4-Class Accuracy | 95% Wilson CI | FEVER 3-Class Accuracy | Coverage (Decisive) | Selective Precision |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **FactGuard AI (Full Pipeline)** | **60.7% (182/300)** | [55.0%, 66.0%] | **67.3%** | **35.3%** (106/300) | **68.9%** |
+| Raw Web Search + LLM Baseline | 56.3% (169/300) | [50.7%, 61.8%] | 64.7% | 27.7% (83/300) | 73.5% |
+| Fair Ungrounded Zero-Shot LLM | 72.0% (216/300) | [66.7%, 76.8%] | 76.0% | 58.7% (176/300) | 66.5% |
+
+- **Net +13 Claims Lead over Raw Search**: FactGuard won **30 discordant claims vs. 17** for Raw Search (152 both correct, McNemar $\chi^2 = 3.064$, $p = 0.0789$).
+- **Decisive Coverage Lead**: FactGuard achieves **35.3% coverage vs. 27.7%** for Raw Search (+23 more claims decisively resolved) through Trafilatura deep article extraction and domain-weighted BM25 reranking.
+- **Hallucination Resistance on Hypotheses (`Unsupported`)**: On 75 unconfirmed hypotheses, FactGuard achieved **70.7% recall** (53/75) by properly abstaining, with only 1 false positive on `True` (1.3%). In contrast, ungrounded Zero-Shot hallucinated false confidence on **50.7%** of unconfirmed hypotheses (10 as True, 28 as False).
+
+*Full telemetry, 4x4 confusion matrices, and per-claim audit records are documented in [`tests/data/heldout_suite/report_heldout_300.md`](tests/data/heldout_suite/report_heldout_300.md).*
 
 
 ---

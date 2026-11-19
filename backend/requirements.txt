@@ -11,3 +11,4 @@ requests
 httpx>=0.24.0
 litellm>=1.40.0
 aiofiles>=23.2.0
+trafilatura>=2.0.0

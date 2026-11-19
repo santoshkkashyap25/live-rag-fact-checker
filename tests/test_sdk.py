@@ -1,7 +1,7 @@
 # tests/test_sdk.py
 import sys
 import time
-import threading
+import subprocess
 import requests
 import unittest
 from pathlib import Path
@@ -15,6 +15,7 @@ sys.path.insert(0, str(backend_dir))
 from factguard import FactGuard, FactCheckResult
 
 class TestFactGuardSDK(unittest.TestCase):
+    process = None
     
     @classmethod
     def setUpClass(cls):
@@ -27,14 +28,13 @@ class TestFactGuardSDK(unittest.TestCase):
             is_running = False
 
         if not is_running:
-            import uvicorn
-            from main import app
-            config = uvicorn.Config(app, host="127.0.0.1", port=8000, log_level="warning")
-            server = uvicorn.Server(config)
-            thread = threading.Thread(target=server.run, daemon=True)
-            thread.start()
+            cls.process = subprocess.Popen(
+                [sys.executable, "-m", "uvicorn", "main:app", "--host", "127.0.0.1", "--port", "8000", "--app-dir", str(backend_dir)],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
 
-            for _ in range(30):
+            for _ in range(50):
                 try:
                     if requests.get("http://127.0.0.1:8000/health", timeout=0.5).status_code == 200:
                         break
@@ -43,10 +43,19 @@ class TestFactGuardSDK(unittest.TestCase):
 
         cls.fg = FactGuard(api_url="http://127.0.0.1:8000")
 
+    @classmethod
+    def tearDownClass(cls):
+        if cls.process:
+            cls.process.terminate()
+            try:
+                cls.process.wait(timeout=3)
+            except Exception:
+                cls.process.kill()
+
     def test_sdk_verify(self):
         result = self.fg.verify("Bananas contain potassium.")
         self.assertIsInstance(result, FactCheckResult)
-        self.assertIn(result.verdict, ["True", "False", "Unverifiable"])
+        self.assertIn(result.verdict, ["True", "False", "Unsupported", "Unverifiable"])
         self.assertGreaterEqual(result.confidence, 0.0)
         self.assertLessEqual(result.confidence, 1.0)
         self.assertIsInstance(result.reasoning, str)
