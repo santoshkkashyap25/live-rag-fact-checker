@@ -351,7 +351,8 @@ EVIDENCE:
         provider: Optional[str] = None,
         api_key: Optional[str] = None,
         model: Optional[str] = None,
-        prompt_template: Optional[str] = None
+        prompt_template: Optional[str] = None,
+        allow_fallback: bool = True
     ) -> Verdict:
         """Get fact-checking verdict using LLM with caching and multi-provider BYOK support"""
         
@@ -415,32 +416,41 @@ EVIDENCE:
 
                 last_err = None
                 content = None
-                # Iterate model candidates first, then try available keys in pool
-                for cand in candidates:
-                    for target_key in ordered_keys:
-                        client = Groq(api_key=target_key, max_retries=0)
-                        key_tag = f"...{target_key[-6:]}"
-                        try:
-                            logger.info(f"Querying Groq [{cand} | Key: {key_tag}]...")
-                            res = client.chat.completions.create(
-                                model=cand,
-                                messages=messages,
-                                max_tokens=1536,
-                                temperature=0.2,
-                                response_format={"type": "json_object"}
-                            )
-                            content = res.choices[0].message.content
-                            effective_model = cand
+                max_retries = 3
+                for attempt in range(max_retries + 1):
+                    # Iterate model candidates first, then try available keys in pool
+                    for cand in candidates:
+                        for target_key in ordered_keys:
+                            client = Groq(api_key=target_key, max_retries=0)
+                            key_tag = f"...{target_key[-6:]}"
+                            try:
+                                logger.info(f"Querying Groq [{cand} | Key: {key_tag}]...")
+                                res = client.chat.completions.create(
+                                    model=cand,
+                                    messages=messages,
+                                    max_tokens=1536,
+                                    temperature=0.2,
+                                    response_format={"type": "json_object"}
+                                )
+                                content = res.choices[0].message.content
+                                effective_model = cand
+                                break
+                            except Exception as ge:
+                                err_str = str(ge)
+                                logger.warning(f"Groq model {cand} failed on key {key_tag}: {err_str[:90]}")
+                                last_err = ge
+                        if content:
                             break
-                        except Exception as ge:
-                            err_str = str(ge)
-                            logger.warning(f"Groq model {cand} failed on key {key_tag}: {err_str[:90]}")
-                            last_err = ge
                     if content:
                         break
+                    if attempt < max_retries:
+                        wait_time = 4.0 * (2 ** attempt)
+                        logger.warning(f"All Groq candidates rate-limited. Waiting {wait_time:.1f}s before retry {attempt + 1}/{max_retries}...")
+                        import time as _t
+                        _t.sleep(wait_time)
 
                 if not content:
-                    raise last_err or RuntimeError("All Groq models and keys exhausted.")
+                    raise last_err or RuntimeError("All Groq models and keys exhausted after retries.")
 
             # --- Branch 2: Ollama (Direct native REST API with configurable host) ---
             elif effective_provider == "ollama":
@@ -583,6 +593,8 @@ EVIDENCE:
         except Exception as e:
             sanitized_err = sanitize_secrets(str(e), custom_keys=[custom_key])
             logger.error(f"LLM service error: {sanitized_err}")
+            if not allow_fallback:
+                raise
             return self._fallback_verification(claim, evidence, sanitized_err, effective_provider, effective_model)
 
     def _verify_citation_faithfulness(self, reasoning: str, evidence: List[str]) -> str:

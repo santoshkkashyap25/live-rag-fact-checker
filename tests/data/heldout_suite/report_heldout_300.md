@@ -8,31 +8,31 @@
 
 | System Configuration | 4-Class Accuracy | 95% Wilson CI | FEVER 3-Class Accuracy | Coverage (Decisive) | Selective Precision |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **FactGuard AI (Full Pipeline)** | **60.7% (182/300)** | [55.0%, 66.0%] | **67.3%** | **35.3%** (106/300) | **68.9%** |
-| Raw Web Search + LLM Baseline | 56.3% (169/300) | [50.7%, 61.8%] | 64.7% | 27.7% (83/300) | 73.5% |
-| Fair Ungrounded Zero-Shot LLM | 72.0% (216/300) | [66.7%, 76.8%] | 76.0% | 58.7% (176/300) | 66.5% |
+| **FactGuard AI (Full Pipeline)** | **63.7% (191/300)** | [58.1%, 68.9%] | **69.0%** | **39.7%** (119/300) | **67.2%** |
+| Raw Web Search + LLM Baseline | 58.3% (175/300) | [52.7%, 63.8%] | 65.3% | 30.0% (90/300) | 71.1% |
+| Fair Ungrounded Zero-Shot LLM | 74.3% (223/300) | [69.1%, 78.9%] | 77.0% | 60.0% (180/300) | 66.7% |
 
 ---
 
 ## 2. Statistical Significance (Paired Tests)
 
 * **FactGuard AI vs. Raw Web Search Baseline**:
-  - Both Correct: `152`
-  - Both Wrong: `101`
-  - FactGuard Only ($b$): `30`
-  - Raw Search Only ($c$): `17`
-  - Discordant Pairs: `47`
-  - McNemar Statistic ($\chi^2$): `3.064`
-  - Exact Binomial p-value: **p = 0.0789**
+  - Both Correct: `157`
+  - Both Wrong: `91`
+  - FactGuard Only ($b$): `34`
+  - Raw Search Only ($c$): `18`
+  - Discordant Pairs: `52`
+  - McNemar Statistic ($\chi^2$): `4.327`
+  - Exact Binomial p-value: **p = 0.0365**
 
 * **FactGuard AI vs. Fair Ungrounded Zero-Shot Baseline**:
-  - Both Correct: `150`
-  - Both Wrong: `52`
-  - FactGuard Only ($b$): `32`
-  - Zero-Shot Only ($c$): `66`
+  - Both Correct: `158`
+  - Both Wrong: `44`
+  - FactGuard Only ($b$): `33`
+  - Zero-Shot Only ($c$): `65`
   - Discordant Pairs: `98`
-  - McNemar Statistic ($\chi^2$): `11.112`
-  - Exact Binomial p-value: **p = 0.0008**
+  - McNemar Statistic ($\chi^2$): `9.806`
+  - Exact Binomial p-value: **p = 0.0016**
 
 ---
 
@@ -41,26 +41,26 @@
 ### FactGuard AI (Full Pipeline)
 | Ground Truth \ Predicted | True | False | Unsupported | Unverifiable | Total |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **True** | **28** | 11 | 36 | 0 | 75 |
-| **False** | 1 | **45** | 29 | 0 | 75 |
-| **Unsupported** | 1 | 18 | **53** | 3 | 75 |
-| **Unverifiable** | 0 | 2 | 17 | **56** | 75 |
+| **True** | **29** | 15 | 31 | 0 | 75 |
+| **False** | 1 | **51** | 23 | 0 | 75 |
+| **Unsupported** | 1 | 19 | **52** | 3 | 75 |
+| **Unverifiable** | 0 | 3 | 13 | **59** | 75 |
 
 ### Raw Web Search Baseline
 | Ground Truth \ Predicted | True | False | Unsupported | Unverifiable | Total |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **True** | **21** | 5 | 49 | 0 | 75 |
-| **False** | 0 | **40** | 35 | 0 | 75 |
+| **True** | **21** | 8 | 46 | 0 | 75 |
+| **False** | 0 | **43** | 31 | 1 | 75 |
 | **Unsupported** | 0 | 16 | **58** | 1 | 75 |
-| **Unverifiable** | 1 | 0 | 24 | **50** | 75 |
+| **Unverifiable** | 1 | 1 | 20 | **53** | 75 |
 
 ### Fair Ungrounded Zero-Shot Baseline
 | Ground Truth \ Predicted | True | False | Unsupported | Unverifiable | Total |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **True** | **50** | 17 | 7 | 1 | 75 |
-| **False** | 3 | **67** | 2 | 3 | 75 |
+| **True** | **51** | 18 | 5 | 1 | 75 |
+| **False** | 3 | **69** | 0 | 3 | 75 |
 | **Unsupported** | 10 | 28 | **33** | 4 | 75 |
-| **Unverifiable** | 0 | 1 | 8 | **66** | 75 |
+| **Unverifiable** | 0 | 1 | 4 | **70** | 75 |
 
 ---
 
@@ -75,31 +75,31 @@
 | `HOLDOUT-005` | Biochemistry | `True` | ✅ True | ✅ True | ✅ True | The citric acid cycle takes place within the mitochondrial m... |
 | `HOLDOUT-006` | Genetics | `True` | ✅ True | ✅ True | ✅ True | X-chromosome inactivation in female placental mammals is med... |
 | `HOLDOUT-007` | Meteorology | `True` | ✅ True | ✅ True | ✅ True | The Coriolis effect deflects moving air masses to the right ... |
-| `HOLDOUT-008` | Temporal Post-Cu | `True` | ✅ True | ✅ True | ✅ True | NASA's Europa Clipper spacecraft was successfully launched a... |
-| `HOLDOUT-009` | Temporal Post-Cu | `True` | ❌ False | ❌ False | ❌ Unverifiable | The 2024 Nobel Prize in Chemistry was awarded to David Baker... |
-| `HOLDOUT-010` | Human Physiology | `False` | ✅ False | ❌ Unsupported | ✅ False | Human hair and fingernails continue biological cellular grow... |
+| `HOLDOUT-008` | Temporal Post-C | `True` | ✅ True | ✅ True | ✅ True | NASA's Europa Clipper spacecraft was successfully launched a... |
+| `HOLDOUT-009` | Temporal Post-C | `True` | ❌ False | ❌ False | ❌ Unverifiable | The 2024 Nobel Prize in Chemistry was awarded to David Baker... |
+| `HOLDOUT-010` | Human Physiolog | `False` | ✅ False | ❌ Unsupported | ✅ False | Human hair and fingernails continue biological cellular grow... |
 | `HOLDOUT-011` | Nutrition | `False` | ✅ False | ❌ Unsupported | ✅ False | Consuming acidic citrus fruits directly lowers physiological... |
 | `HOLDOUT-012` | Neuroscience | `False` | ✅ False | ❌ Unsupported | ✅ False | Brain scans prove that distinct left-brained individuals are... |
 | `HOLDOUT-013` | Virology | `False` | ✅ False | ✅ False | ✅ False | Human immunodeficiency virus particles reproduce by assembli... |
 | `HOLDOUT-014` | Astronomy | `False` | ✅ False | ❌ Unsupported | ✅ False | The dark craters of the planet Mercury maintain permanent li... |
 | `HOLDOUT-015` | Pharmacology | `False` | ✅ False | ✅ False | ✅ False | Penicillin antibiotics treat acute bacterial infections by d... |
 | `HOLDOUT-016` | Genetics | `False` | ✅ False | ✅ False | ✅ False | Mature human platelets contain forty-six diploid chromosomes... |
-| `HOLDOUT-017` | Temporal Post-Cu | `False` | ✅ False | ✅ False | ✅ False | Boeing's Starliner Calypso crew capsule permanently evacuate... |
-| `HOLDOUT-018` | Temporal Post-Cu | `False` | ✅ False | ❌ Unsupported | ❌ Unverifiable | The 2024 Nobel Prize in Physics was awarded for the experime... |
+| `HOLDOUT-017` | Temporal Post-C | `False` | ✅ False | ✅ False | ✅ False | Boeing's Starliner Calypso crew capsule permanently evacuate... |
+| `HOLDOUT-018` | Temporal Post-C | `False` | ✅ False | ❌ Unsupported | ❌ Unverifiable | The 2024 Nobel Prize in Physics was awarded for the experime... |
 | `HOLDOUT-019` | Astrobiology | `Unsupported` | ✅ Unsupported | ✅ Unsupported | ✅ Unsupported | Atmospheric biosignature disequilibrium on exoplanet K2-18b ... |
-| `HOLDOUT-020` | Particle Physics | `Unsupported` | ✅ Unsupported | ✅ Unsupported | ✅ Unsupported | Sterile right-handed neutrinos with masses near 7 keV accoun... |
+| `HOLDOUT-020` | Particle Physic | `Unsupported` | ✅ Unsupported | ✅ Unsupported | ✅ Unsupported | Sterile right-handed neutrinos with masses near 7 keV accoun... |
 | `HOLDOUT-021` | Geobiology | `Unsupported` | ✅ Unsupported | ✅ Unsupported | ✅ Unsupported | Microbial life originated at terrestrial subaerial hot sprin... |
 | `HOLDOUT-022` | Neurobiology | `Unsupported` | ✅ Unsupported | ✅ Unsupported | ✅ Unsupported | Quantum entanglement across nuclear spins in intracellular p... |
 | `HOLDOUT-023` | Archaeology | `Unsupported` | ✅ Unsupported | ✅ Unsupported | ✅ Unsupported | Submerged Paleolithic megalithic structures in the Persian G... |
-| `HOLDOUT-024` | Temporal Post-Cu | `Unsupported` | ❌ False | ✅ Unsupported | ❌ False | SpaceX Starship completed its first commercial orbital satel... |
-| `HOLDOUT-025` | Temporal Post-Cu | `Unsupported` | ❌ False | ✅ Unsupported | ❌ False | An oral small-molecule GLP-1 receptor agonist received final... |
-| `HOLDOUT-026` | Philosophy of Mi | `Unverifiable` | ❌ False | ❌ Unsupported | ✅ Unverifiable | The subjective qualitative experience of seeing the color re... |
+| `HOLDOUT-024` | Temporal Post-C | `Unsupported` | ❌ False | ✅ Unsupported | ❌ False | SpaceX Starship completed its first commercial orbital satel... |
+| `HOLDOUT-025` | Temporal Post-C | `Unsupported` | ❌ False | ✅ Unsupported | ❌ False | An oral small-molecule GLP-1 receptor agonist received final... |
+| `HOLDOUT-026` | Philosophy of M | `Unverifiable` | ❌ False | ❌ Unsupported | ✅ Unverifiable | The subjective qualitative experience of seeing the color re... |
 | `HOLDOUT-027` | Aesthetics | `Unverifiable` | ❌ Unsupported | ✅ Unverifiable | ✅ Unverifiable | Acoustic orchestral symphony performance provides deeper aes... |
 | `HOLDOUT-028` | Ethics & Law | `Unverifiable` | ✅ Unverifiable | ❌ True | ✅ Unverifiable | Autonomous lethal weapons systems are fundamentally morally ... |
 | `HOLDOUT-029` | Cosmology | `Unverifiable` | ❌ False | ✅ Unverifiable | ❌ Unsupported | The total information entropy of our observable universe wil... |
 | `HOLDOUT-030` | Future Ecology | `Unverifiable` | ❌ Unsupported | ❌ Unsupported | ✅ Unverifiable | Global artificial atmospheric aerosol injection will be perm... |
 | `HOLDOUT-031` | Sociology | `Unverifiable` | ❌ Unsupported | ❌ Unsupported | ❌ False | Democratic governance is universally the most productive pol... |
-| `HOLDOUT-032` | Personal Prefere | `Unverifiable` | ❌ Unsupported | ❌ Unsupported | ✅ Unverifiable | Handwritten correspondence conveys greater authentic persona... |
+| `HOLDOUT-032` | Personal Prefer | `Unverifiable` | ❌ Unsupported | ❌ Unsupported | ✅ Unverifiable | Handwritten correspondence conveys greater authentic persona... |
 | `HOLDOUT-033` | Climate Science | `True` | ✅ True | ❌ Unsupported | ❌ Unsupported | Global warming is driving polar bears toward extinction... |
 | `HOLDOUT-034` | Climate Science | `True` | ❌ False | ❌ Unsupported | ❌ False | The sun has gone into ‘lockdown’ which could cause freezing ... |
 | `HOLDOUT-035` | Climate Science | `False` | ✅ False | ✅ False | ✅ False | The polar bear population has been growing.... |
@@ -107,21 +107,21 @@
 | `HOLDOUT-037` | Climate Science | `False` | ✅ False | ❌ Unsupported | ✅ False | Human additions of CO2 are in the margin of error of current... |
 | `HOLDOUT-038` | Climate Science | `True` | ✅ True | ✅ True | ✅ True | They tell us that we are the primary forces controlling eart... |
 | `HOLDOUT-039` | Climate Science | `True` | ✅ True | ❌ Unsupported | ✅ True | The Great Barrier Reef is experiencing the most widespread b... |
-| `HOLDOUT-040` | Climate Science | `False` | ❌ Unsupported | ❌ Unsupported | ❌ Unverifiable | it’s not a pollutant that threatens human civilization.... |
-| `HOLDOUT-041` | Climate Science | `False` | ❌ Unsupported | ❌ Unsupported | ✅ False | If CO2 was so terrible for the planet, then installing a CO2... |
+| `HOLDOUT-040` | Climate Science | `False` | ✅ False | ❌ Unverifiable | ❌ Unverifiable | it’s not a pollutant that threatens human civilization.... |
+| `HOLDOUT-041` | Climate Science | `False` | ✅ False | ✅ False | ✅ False | If CO2 was so terrible for the planet, then installing a CO2... |
 | `HOLDOUT-042` | Climate Science | `False` | ❌ Unsupported | ❌ Unsupported | ✅ False | Sea level rise has been slow and a constant, pre-dating indu... |
 | `HOLDOUT-043` | Climate Science | `Unsupported` | ✅ Unsupported | ✅ Unsupported | ❌ False | Earth about to enter 30-YEAR ‘Mini Ice Age’... |
-| `HOLDOUT-044` | Climate Science | `True` | ❌ Unsupported | ❌ Unsupported | ❌ False | Volcanoes Melting West Antarctic Glaciers, Not Global Warmin... |
-| `HOLDOUT-045` | Climate Science | `Unsupported` | ✅ Unsupported | ✅ Unsupported | ❌ False | the bushfires [in Australia] were caused by arsonists and a ... |
-| `HOLDOUT-046` | Climate Science | `True` | ❌ Unsupported | ❌ Unsupported | ❌ Unsupported | Discovery Of Massive Volcanic CO2 Emissions Discredits Globa... |
-| `HOLDOUT-047` | Climate Science | `False` | ❌ Unsupported | ❌ Unsupported | ✅ False | Harvard study finds that wind turbines create MORE global wa... |
-| `HOLDOUT-048` | Climate Science | `False` | ❌ Unsupported | ❌ Unsupported | ❌ True | Ice berg melts, ocean level remains the same.... |
+| `HOLDOUT-044` | Climate Science | `True` | ❌ False | ❌ False | ❌ False | Volcanoes Melting West Antarctic Glaciers, Not Global Warmin... |
+| `HOLDOUT-045` | Climate Science | `Unsupported` | ❌ False | ✅ Unsupported | ❌ False | the bushfires [in Australia] were caused by arsonists and a ... |
+| `HOLDOUT-046` | Climate Science | `True` | ❌ False | ❌ False | ❌ False | Discovery Of Massive Volcanic CO2 Emissions Discredits Globa... |
+| `HOLDOUT-047` | Climate Science | `False` | ✅ False | ✅ False | ✅ False | Harvard study finds that wind turbines create MORE global wa... |
+| `HOLDOUT-048` | Climate Science | `False` | ✅ False | ❌ Unsupported | ❌ True | Ice berg melts, ocean level remains the same.... |
 | `HOLDOUT-049` | Climate Science | `Unsupported` | ✅ Unsupported | ✅ Unsupported | ✅ Unsupported | When the exact same group of 'experts' who claimed it was gl... |
-| `HOLDOUT-050` | Climate Science | `False` | ❌ Unsupported | ❌ Unsupported | ❌ Unsupported | Scientists studying Antarctica sea ice warn a rise in accumu... |
-| `HOLDOUT-051` | Climate Science | `True` | ❌ Unsupported | ❌ Unsupported | ❌ Unsupported | More than 500 scientists and professionals in climate and re... |
-| `HOLDOUT-052` | Climate Science | `False` | ❌ Unsupported | ❌ Unsupported | ❌ Unsupported | Unprecedented climate change has caused sea level at Sydney ... |
-| `HOLDOUT-053` | Climate Science | `False` | ❌ Unsupported | ❌ Unsupported | ✅ False | Human-produced carbon might be one of the factors [of climat... |
-| `HOLDOUT-054` | Climate Science | `True` | ❌ Unsupported | ❌ Unsupported | ❌ False | CO2 does not cause climate change, it RESPONDS to it [...]... |
+| `HOLDOUT-050` | Climate Science | `False` | ❌ Unsupported | ❌ Unsupported | ✅ False | Scientists studying Antarctica sea ice warn a rise in accumu... |
+| `HOLDOUT-051` | Climate Science | `True` | ✅ True | ❌ Unsupported | ✅ True | More than 500 scientists and professionals in climate and re... |
+| `HOLDOUT-052` | Climate Science | `False` | ✅ False | ❌ Unsupported | ✅ False | Unprecedented climate change has caused sea level at Sydney ... |
+| `HOLDOUT-053` | Climate Science | `False` | ✅ False | ✅ False | ✅ False | Human-produced carbon might be one of the factors [of climat... |
+| `HOLDOUT-054` | Climate Science | `True` | ❌ False | ❌ False | ❌ False | CO2 does not cause climate change, it RESPONDS to it [...]... |
 | `HOLDOUT-055` | Climate Science | `True` | ❌ False | ❌ Unsupported | ❌ False | Earth’s mean temperature over the last 2,000 years shows two... |
 | `HOLDOUT-056` | Climate Science | `Unsupported` | ✅ Unsupported | ✅ Unsupported | ❌ False | [NASA] has been adjusting temperatures from the past[...]... |
 | `HOLDOUT-057` | Climate Science | `Unsupported` | ✅ Unsupported | ✅ Unsupported | ❌ False | Fifty-five thousand years ago the whole world was 2°C warmer... |
@@ -129,7 +129,7 @@
 | `HOLDOUT-059` | Climate Science | `True` | ❌ Unsupported | ❌ Unsupported | ❌ False | Cold weather to grip world as solar minimum to deepen, NASA ... |
 | `HOLDOUT-060` | Climate Science | `Unsupported` | ❌ False | ✅ Unsupported | ❌ True | [O]ne of the previously fastest shrinking glaciers in the wo... |
 | `HOLDOUT-061` | Climate Science | `True` | ❌ False | ❌ Unsupported | ❌ False | The models predicted about three times the amount of warming... |
-| `HOLDOUT-062` | Climate Science | `True` | ❌ Unsupported | ❌ Unsupported | ❌ Unsupported | The science is clear, climate change is making extreme weath... |
+| `HOLDOUT-062` | Climate Science | `True` | ❌ False | ❌ Unsupported | ❌ Unsupported | The science is clear, climate change is making extreme weath... |
 | `HOLDOUT-063` | Climate Science | `Unsupported` | ✅ Unsupported | ✅ Unsupported | ❌ False | Burping cows are more damaging to the climate than all the c... |
 | `HOLDOUT-064` | Climate Science | `Unsupported` | ✅ Unsupported | ✅ Unsupported | ✅ Unsupported | [S]unspot activity on the surface of our star has dropped to... |
 | `HOLDOUT-065` | Climate Science | `False` | ❌ Unsupported | ❌ Unsupported | ✅ False | The rate of warming according to the data is much slower tha... |

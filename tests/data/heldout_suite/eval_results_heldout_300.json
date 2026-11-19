@@ -4,99 +4,100 @@
     "timestamp": 1795107335.4509168,
     "prompt_version": "2.1.0-precedence-4class",
     "prompt_hash": "5bb8f79a76c3",
-    "suite_file": "D:\\Projects\\llm-fact-checker\\tests\\data\\heldout_suite\\claims_heldout_300.json"
+    "suite_file": "D:\\Projects\\llm-fact-checker\\tests\\data\\heldout_suite\\claims_heldout_300.json",
+    "timestamp_re_eval": 1795110903.1466405
   },
   "systems": {
     "factguard": {
       "total": 300,
-      "correct_4class": 182,
-      "accuracy_4class": 0.6066666666666667,
+      "correct_4class": 191,
+      "accuracy_4class": 0.6366666666666667,
       "accuracy_4class_ci": [
-        0.5503753870497092,
-        0.6602607899168929
+        0.5808316248758691,
+        0.6890459629894217
       ],
-      "correct_3class": 202,
-      "accuracy_3class": 0.6733333333333333,
+      "correct_3class": 207,
+      "accuracy_3class": 0.69,
       "accuracy_3class_ci": [
-        0.6183623238467263,
-        0.7239214637240021
+        0.6355391960366674,
+        0.739656474898005
       ],
-      "decisive_count": 106,
-      "coverage": 0.35333333333333333,
-      "selective_precision": 0.6886792452830188,
+      "decisive_count": 119,
+      "coverage": 0.39666666666666667,
+      "selective_precision": 0.6722689075630253,
       "matrix_4class": {
         "True": {
-          "True": 28,
-          "False": 11,
-          "Unsupported": 36,
+          "True": 29,
+          "False": 15,
+          "Unsupported": 31,
           "Unverifiable": 0
         },
         "False": {
           "True": 1,
-          "False": 45,
-          "Unsupported": 29,
+          "False": 51,
+          "Unsupported": 23,
           "Unverifiable": 0
         },
         "Unsupported": {
           "True": 1,
-          "False": 18,
-          "Unsupported": 53,
+          "False": 19,
+          "Unsupported": 52,
           "Unverifiable": 3
         },
         "Unverifiable": {
           "True": 0,
-          "False": 2,
-          "Unsupported": 17,
-          "Unverifiable": 56
+          "False": 3,
+          "Unsupported": 13,
+          "Unverifiable": 59
         }
       },
       "matrix_3class": {
         "SUPPORTS": {
-          "SUPPORTS": 28,
-          "REFUTES": 11,
-          "NEI": 36
+          "SUPPORTS": 29,
+          "REFUTES": 15,
+          "NEI": 31
         },
         "REFUTES": {
           "SUPPORTS": 1,
-          "REFUTES": 45,
-          "NEI": 29
+          "REFUTES": 51,
+          "NEI": 23
         },
         "NEI": {
           "SUPPORTS": 1,
-          "REFUTES": 20,
-          "NEI": 129
+          "REFUTES": 22,
+          "NEI": 127
         }
       }
     },
     "raw_search": {
       "total": 300,
-      "correct_4class": 169,
-      "accuracy_4class": 0.5633333333333334,
+      "correct_4class": 175,
+      "accuracy_4class": 0.5833333333333334,
       "accuracy_4class_ci": [
-        0.5067593319322065,
-        0.6183058981417136
+        0.5268355964602695,
+        0.6377239083356395
       ],
-      "correct_3class": 194,
-      "accuracy_3class": 0.6466666666666666,
+      "correct_3class": 196,
+      "accuracy_3class": 0.6533333333333333,
       "accuracy_3class_ci": [
-        0.5910331446317957,
-        0.698591598697282
+        0.5978480299293977,
+        0.7049414588950748
       ],
-      "decisive_count": 83,
-      "coverage": 0.27666666666666667,
-      "selective_precision": 0.7349397590361446,
+      "decisive_count": 90,
+      "coverage": 0.3,
+      "selective_precision": 0.7111111111111111,
       "matrix_4class": {
         "True": {
           "True": 21,
-          "False": 5,
-          "Unsupported": 49,
+          "False": 8,
+          "Unsupported": 46,
           "Unverifiable": 0
         },
         "False": {
           "True": 0,
-          "False": 40,
-          "Unsupported": 35,
-          "Unverifiable": 0
+          "False": 43,
+          "Unsupported": 31,
+          "Unverifiable": 1
         },
         "Unsupported": {
           "True": 0,
@@ -106,57 +107,57 @@
         },
         "Unverifiable": {
           "True": 1,
-          "False": 0,
-          "Unsupported": 24,
-          "Unverifiable": 50
+          "False": 1,
+          "Unsupported": 20,
+          "Unverifiable": 53
         }
       },
       "matrix_3class": {
         "SUPPORTS": {
           "SUPPORTS": 21,
-          "REFUTES": 5,
-          "NEI": 49
+          "REFUTES": 8,
+          "NEI": 46
         },
         "REFUTES": {
           "SUPPORTS": 0,
-          "REFUTES": 40,
-          "NEI": 35
+          "REFUTES": 43,
+          "NEI": 32
         },
         "NEI": {
           "SUPPORTS": 1,
-          "REFUTES": 16,
-          "NEI": 133
+          "REFUTES": 17,
+          "NEI": 132
         }
       }
     },
     "fair_zero_shot": {
       "total": 300,
-      "correct_4class": 216,
-      "accuracy_4class": 0.72,
+      "correct_4class": 223,
+      "accuracy_4class": 0.7433333333333333,
       "accuracy_4class_ci": [
-        0.6666562277546024,
-        0.7677808872390144
+        0.6910470912298479,
+        0.7894666627742062
       ],
-      "correct_3class": 228,
-      "accuracy_3class": 0.76,
+      "correct_3class": 231,
+      "accuracy_3class": 0.77,
       "accuracy_3class_ci": [
-        0.7085789221801398,
-        0.8048467591759528
+        0.7191446136117753,
+        0.8140281819269698
       ],
-      "decisive_count": 176,
-      "coverage": 0.5866666666666667,
-      "selective_precision": 0.6647727272727273,
+      "decisive_count": 180,
+      "coverage": 0.6,
+      "selective_precision": 0.6666666666666666,
       "matrix_4class": {
         "True": {
-          "True": 50,
-          "False": 17,
-          "Unsupported": 7,
+          "True": 51,
+          "False": 18,
+          "Unsupported": 5,
           "Unverifiable": 1
         },
         "False": {
           "True": 3,
-          "False": 67,
-          "Unsupported": 2,
+          "False": 69,
+          "Unsupported": 0,
           "Unverifiable": 3
         },
         "Unsupported": {
@@ -168,20 +169,20 @@
         "Unverifiable": {
           "True": 0,
           "False": 1,
-          "Unsupported": 8,
-          "Unverifiable": 66
+          "Unsupported": 4,
+          "Unverifiable": 70
         }
       },
       "matrix_3class": {
         "SUPPORTS": {
-          "SUPPORTS": 50,
-          "REFUTES": 17,
-          "NEI": 8
+          "SUPPORTS": 51,
+          "REFUTES": 18,
+          "NEI": 6
         },
         "REFUTES": {
           "SUPPORTS": 3,
-          "REFUTES": 67,
-          "NEI": 5
+          "REFUTES": 69,
+          "NEI": 3
         },
         "NEI": {
           "SUPPORTS": 10,
@@ -193,22 +194,22 @@
   },
   "paired_comparisons": {
     "factguard_vs_raw_search": {
-      "system_a_only": 30,
-      "system_b_only": 17,
-      "both_correct": 152,
-      "both_wrong": 101,
-      "discordant_pairs": 47,
-      "chi2": 3.0638297872340425,
-      "p_value": 0.07894069368148848
+      "system_a_only": 34,
+      "system_b_only": 18,
+      "both_correct": 157,
+      "both_wrong": 91,
+      "discordant_pairs": 52,
+      "chi2": 4.326923076923077,
+      "p_value": 0.03648340000835981
     },
     "factguard_vs_zero_shot": {
-      "system_a_only": 32,
-      "system_b_only": 66,
-      "both_correct": 150,
-      "both_wrong": 52,
+      "system_a_only": 33,
+      "system_b_only": 65,
+      "both_correct": 158,
+      "both_wrong": 44,
       "discordant_pairs": 98,
-      "chi2": 11.112244897959183,
-      "p_value": 0.0007698826407272646
+      "chi2": 9.806122448979592,
+      "p_value": 0.0016005802102081268
     }
   },
   "per_claim_records": [
@@ -1105,9 +1106,9 @@
       },
       "zero_shot": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198910, Requested 1187. Please try again in 41.904s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
-        "latency_sec": 11.755632638931274,
+        "confidence": 0.95,
+        "reasoning": "The origin of life remains an active area of scientific research with no consensus; while both deep-sea hydrothermal vents and terrestrial hot springs are leading hypotheses, neither has been conclusively proven to be the site of life's origin.",
+        "latency_sec": 2.836789608001709,
         "model": "qwen/qwen3.8-27b"
       }
     },
@@ -1881,9 +1882,9 @@
       "expected": "False",
       "claim": "it\u2019s not a pollutant that threatens human civilization.",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198841, Requested 1960. Please try again in 5m46.032s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim is a non-specific negative assertion ('it's not a pollutant...') lacking a defined subject, but in the context of the provided evidence regarding climate change and air pollution, it contradicts authoritative sources. Evidence 1 explicitly states that air pollution is a growing problem and part of the greatest threat to the human race, and Evidence 5 confirms that climate change (driven by greenhouse gas emissions, which are pollutants) poses direct health threats. Therefore, asserting that such factors are 'not a pollutant that threatens human civilization' is factually incorrect based on the consensus that these environmental factors constitute significant existential and health threats.",
         "evidence_used": [
           "[Global warming 'threatens human civilization' - Asia Times | \ud83c\udf10 Web] Released in March, the UN warned that the window for combating what is seen by scientists as the greatest threat to thehumanrace was rapidly closing. It underscored the growing problem of air pollution, the genocidal extinction of species and dwindling natural resources such as clean water and unpolluted air.",
           "[Existential Risks: What Threatens Humanity's Future - Globa\u00efa | \ud83c\udf10 Web] What are existential risks? From climate tipping points to AI and nuclear threats \u2014 explore the forces that could reshape or endcivilization.",
@@ -1891,22 +1892,22 @@
           "[Climate Change is Not a Pollution Problem | \ud83c\udf10 Web] And this is the distinction we should pay the most attention to. Because while greenhouse gases do result fromhumanactivities and pose serious environmental, economic, and public health threats, their provenance and impact are fundamentally different from other atmospheric and terrestrial pollution.",
           "[Effects of climate change on human health (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Climate change affects human health in many ways, including an increase in heat-related illnesses and deaths, worsened air quality, the spread of infectious diseases, and health risks associated with extreme weather such as floods and storms. Rising global temperatures and changes in weather patterns are increasing the severity of heat waves and extreme weather events. These events in turn have direct and indirect impacts on human health. For example, when people are exposed to higher temperatures for longer time periods they might experience heat illness and heat-related death."
         ],
-        "latency_sec": 10.468088865280151,
+        "latency_sec": 1.9214632511138916,
         "model": "qwen/qwen3.8-27b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199232, Requested 1788. Please try again in 7m20.64s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "Unverifiable",
+        "confidence": 1.0,
+        "reasoning": "The claim is a subjective normative judgment or value assessment regarding the threat level of a pollutant to human civilization, rather than a specific empirical assertion about a defined substance. It lacks the necessary specificity (identifying which pollutant) and is inherently non-falsifiable as a matter of opinion or aesthetic/normative preference rather than objective scientific fact.",
         "evidence_used": [
           "[Effects of climate change on human health (Wikipedia)] Climate change affects human health in many ways, including an increase in heat-related illnesses and deaths, worsened air quality, the spread of infectious diseases, and health risks associated with extreme weather such as floods and storms. Rising global temperatures and changes in weather patterns are increasing the severity of heat waves and extreme weather events. These events in turn have direct and indirect impacts on human health. For example, when people are exposed to higher temperatures for longer time periods they might experience heat illness and heat-related death.",
           "[Human impact on the environment (Wikipedia)] Human impact on the environment (or anthropogenic environmental impact) refers to changes to biophysical environments and to ecosystems, biodiversity, and natural resources caused directly or indirectly by humans. Modifying the environment to fit the needs of society (as in the built environment) is causing severe effects including global warming, environmental degradation (such as ocean acidification), mass extinction, and biodiversity loss, ecological crisis, and ecological collapse. Some human activities that cause damage (either directly or indirectly) to the environment on a global scale include population growth, neoliberal economic policies, and rapid economic growth. Overconsumption, overexploitation, pollution, and deforestation are also contributing to this problem.",
           "[Human overpopulation (Wikipedia)] Human overpopulation or human population overshoot is the condition in which human populations may become too large to be sustained by their environment or resources in the long term. Human overpopulation or population overshoot is usually discussed in the context of world population, though it may concern individual nations, regions, and cities.\nSince 1804, the global living human population has increased from 1 billion to 8 billion due to medical advancements and improved agricultural productivity. Annual world population growth peaked at 2.1% in 1968 and has since dropped to 1.1%.",
           "[Pollution (Wikipedia)] Pollution is the introduction of contaminants into the natural environment that cause harm. Pollution can take the form of any substance (solid, liquid, or gas) or energy (such as radioactivity, heat, sound, or light). Pollutants, the components of pollution, can be either foreign substances/energies or naturally occurring contaminants.\nAlthough environmental pollution can be caused by natural events, the word pollution generally implies that the contaminants have a human source, such as manufacturing, extractive industries, poor waste management, transportation or agriculture."
         ],
-        "latency_sec": 14.062129020690918,
+        "latency_sec": 1.643132209777832,
         "model": "qwen/qwen3.8-27b",
         "prompt_version": "2.1.0-precedence-4class"
       },
@@ -1924,9 +1925,9 @@
       "expected": "False",
       "claim": "If CO2 was so terrible for the planet, then installing a CO2 generator in a greenhouse would kill the plants.",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198780, Requested 1670. Please try again in 3m14.399999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim relies on a logical fallacy (false equivalence) by asserting that because CO2 benefits plants in controlled greenhouse environments, it cannot be harmful to the planet. Authoritative sources explicitly identify this as a 'half-truth' or flawed reasoning used to mislead, noting that while CO2 is a plant nutrient, elevated atmospheric levels drive climate change which has negative global consequences unrelated to direct plant toxicity in greenhouses.",
         "evidence_used": [
           "[\"If CO2 is so bad, why do greenhouse growers pay to produce it?\" | \ud83c\udf10 Web] IfCO2wassoterriblefortheplanet,theninstallingaCO2generatorinagreenhousewould kill the plants. But scientists and even governments actually recommend supplementingCO2ingreenhousesinorder to boost plant growth and food production.",
           "[CO2 can increase plant growth in greenhouses while also negatively ... | \ud83c\udf10 Web] The claim that CO2 is a plant nutrient and not a pollutant appeared in an article published by Natural News in June 2013, and has gone viral in 2020 with over 1.6 million shares on Facebook over the past three months. This claim uses flawed reasoning to argue that elevated levels of CO2 are not bad for the planet because it doesn\u2019t kill plants in a greenhouse.",
@@ -1934,22 +1935,22 @@
           "[Fact Check: CO2 does help plants grow, but it is still bad for global ... | \ud83c\udfdb\ufe0f Authoritative Source] Theuse of extra carbon dioxide (CO2)incommercialgreenhousesto aid plant growth is being touted online to falsely imply climate-change warnings are a \"scam\".",
           "[Fact Check: Use of CO2 generators in greenhouses does not disprove ... | \ud83c\udfdb\ufe0f Authoritative Source] Inthepiece, the writer saysCO2\"is not bad for theplanet\" and highlights an advertisement forCO2generators, noting they are used ingreenhousesto enhance plant productivity."
         ],
-        "latency_sec": 9.262377977371216,
+        "latency_sec": 1.517648696899414,
         "model": "qwen/qwen3.8-27b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199182, Requested 1825. Please try again in 7m15.024s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim relies on a false premise that CO2 is inherently toxic to plants at any concentration. Scientific consensus and agricultural practice confirm that CO2 is a necessary nutrient for photosynthesis, and greenhouses often use CO2 enrichment to boost plant growth. While extremely high concentrations can be harmful, the general assertion that CO2 is 'terrible' for plants to the point where a generator would kill them contradicts established biological facts.",
         "evidence_used": [
           "[Biosphere 2 (Wikipedia)] University of Arizona Biosphere 2 is an American Earth system science research facility located in Oracle, Arizona. Its mission is to serve as a center for research, outreach, teaching, and lifelong learning about Earth, its living systems, and its place in the universe. It is a 3.14-acre (1.27-hectare) structure originally built to be an artificial, materially closed ecological system, or vivarium. It remains the largest closed ecological system ever created.",
           "[Individual action on climate change (Wikipedia)] Individual action on climate change describes the personal choices that people can make to reduce the greenhouse gas emissions of their lifestyles and catalyze other climate actions. Individuals can focus directly on how choices create emissions, such as reducing consumption of meat or flying, or can focus more on inviting political action on climate or creating greater awareness of how society can become greener.\nExcessive consumption is a significant contributor to climate change and other environmental issues, and in 2022 some said population increase is too. High consumption lifestyles have a significant environmental impact, with the richest 10% of people emitting about half the total lifestyle emissions.",
           "[Sardinia (Wikipedia)] Sardinia ( sar-DIN-ee-\u0259; Sardinian: Sardigna [sa\u027e\u02c8di\u0272\u02d0a]; Italian: Sardegna [sar\u02c8de\u0272\u02d0a] ), officially the Autonomous Region of Sardinia, is the second largest island in the Mediterranean Sea after Sicily, and one of the twenty regions of Italy. It is located 200 kilometres (110 nautical miles) west of the Italian Peninsula, 200 km (110 nmi) north of Tunisia, and 16.5 km (9 nmi) south of the French island of Corsica. Sardinia is one of five Italian regions with statutory domestic autonomy. It is divided into six provinces and two metropolitan cities.",
           "[Waste management (Wikipedia)] Waste management or waste disposal includes the processes and actions required to manage waste from its inception to its final disposal. This includes the collection, transport, treatment, and disposal of waste, together with monitoring and regulation of the waste management process and waste-related laws, technologies, and economic mechanisms.\nWaste management practices are not the same across countries (developed and developing nations); regions (urban and rural areas) and residential and industrial sectors can all take different approaches. Effective waste management can be relatively expensive, with one report estimating that it usually comprises 20%\u201350% of municipal budgets."
         ],
-        "latency_sec": 9.34801197052002,
+        "latency_sec": 1.8141412734985352,
         "model": "qwen/qwen3.8-27b",
         "prompt_version": "2.1.0-precedence-4class"
       },
@@ -1968,30 +1969,30 @@
       "claim": "Sea level rise has been slow and a constant, pre-dating industrialization",
       "factguard": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198716, Requested 2023. Please try again in 5m19.248s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.95,
+        "reasoning": "The retrieved evidence consists of historical and geographical articles regarding US industrialization, French history, and a Canadian town, none of which contain data or assertions regarding sea level rise rates or their temporal patterns. Therefore, the claim cannot be verified or refuted based on the provided sources.",
         "evidence_used": [
           "[Technological and industrial history of the United States (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The technological and industrial history of the United States describes the emergence of the United States as one of the most technologically advanced nations in the world in the 19th and 20th centuries. The availability of land and literate labor, the absence of a landed aristocracy, the prestige of entrepreneurship, the diversity of climate and large easily accessed upscale and literate markets all contributed to America's rapid industrialization. \nThe availability of capital, development by the free market of navigable rivers and coastal waterways, as well as the abundance of natural resources facilitated the cheap extraction of energy all contributed to America's rapid industrialization. Fast transport by the first transcontinental railroad built in the mid-19th century, and the Interstate Highway System built in the late 20th century, enlarged the markets and reduced shipping and production costs.",
           "[Bourbon Restoration in France (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The Bourbon Restoration was the period of French history during which the House of Bourbon returned to power after the fall of Napoleon Bonaparte in 1814 and 1815. Exiled supporters of the monarchy returned to France, which had been profoundly changed by the French Revolution. Exhausted by the Napoleonic Wars, the kingdom experienced a period of internal and external peace, stable economic prosperity and the preliminaries of industrialisation. The July Revolution of 1830 effectively ended the restoration during the reign of Charles X, brother of the late King Louis XVI, leading to the July Monarchy and eventually the French Second Republic.",
           "[Gilded Age (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] In United States history, the Gilded Age is the period from about the late 1870s to the late 1890s, which occurred between the Reconstruction era and the Progressive Era. It was named by 1920s historians after Mark Twain's 1873 novel The Gilded Age: A Tale of Today.\nIt was a time of rapid economic and capital growth, especially in the North and West. As American wages grew much higher than those in Europe, especially for skilled workers, and industry demanded an increasingly skilled labor force, the period saw an influx of millions of European immigrants.",
           "[Sackville, New Brunswick (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Sackville is a former town in southeastern New Brunswick, Canada. It held town status prior to 2023 and is now part of the town of Tantramar.\nSackville is home to Mount Allison University, a primarily undergraduate liberal arts university. The university welcomes roughly 2200 students per academic year."
         ],
-        "latency_sec": 10.425269842147827,
+        "latency_sec": 1.5043745040893555,
         "model": "qwen/qwen3.8-27b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199118, Requested 1830. Please try again in 6m49.536s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.95,
+        "reasoning": "The retrieved evidence consists of historical and geographical articles regarding France, the United States, and New Brunswick, none of which contain data on sea level rise, climate science, or industrialization timelines. Therefore, the claim cannot be verified or refuted based on the provided sources.",
         "evidence_used": [
           "[Bourbon Restoration in France (Wikipedia)] The Bourbon Restoration was the period of French history during which the House of Bourbon returned to power after the fall of Napoleon Bonaparte in 1814 and 1815. Exiled supporters of the monarchy returned to France, which had been profoundly changed by the French Revolution. Exhausted by the Napoleonic Wars, the kingdom experienced a period of internal and external peace, stable economic prosperity and the preliminaries of industrialisation. The July Revolution of 1830 effectively ended the restoration during the reign of Charles X, brother of the late King Louis XVI, leading to the July Monarchy and eventually the French Second Republic.",
           "[Gilded Age (Wikipedia)] In United States history, the Gilded Age is the period from about the late 1870s to the late 1890s, which occurred between the Reconstruction era and the Progressive Era. It was named by 1920s historians after Mark Twain's 1873 novel The Gilded Age: A Tale of Today.\nIt was a time of rapid economic and capital growth, especially in the North and West. As American wages grew much higher than those in Europe, especially for skilled workers, and industry demanded an increasingly skilled labor force, the period saw an influx of millions of European immigrants.",
           "[Sackville, New Brunswick (Wikipedia)] Sackville is a former town in southeastern New Brunswick, Canada. It held town status prior to 2023 and is now part of the town of Tantramar.\nSackville is home to Mount Allison University, a primarily undergraduate liberal arts university. The university welcomes roughly 2200 students per academic year.",
           "[Technological and industrial history of the United States (Wikipedia)] The technological and industrial history of the United States describes the emergence of the United States as one of the most technologically advanced nations in the world in the 19th and 20th centuries. The availability of land and literate labor, the absence of a landed aristocracy, the prestige of entrepreneurship, the diversity of climate and large easily accessed upscale and literate markets all contributed to America's rapid industrialization. \nThe availability of capital, development by the free market of navigable rivers and coastal waterways, as well as the abundance of natural resources facilitated the cheap extraction of energy all contributed to America's rapid industrialization. Fast transport by the first transcontinental railroad built in the mid-19th century, and the Interstate Highway System built in the late 20th century, enlarged the markets and reduced shipping and production costs."
         ],
-        "latency_sec": 9.107002258300781,
+        "latency_sec": 1.6171393394470215,
         "model": "qwen/qwen3.8-27b",
         "prompt_version": "2.1.0-precedence-4class"
       },
@@ -2010,30 +2011,30 @@
       "claim": "Earth about to enter 30-YEAR \u2018Mini Ice Age\u2019",
       "factguard": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198669, Requested 1969. Please try again in 4m35.616s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.95,
+        "reasoning": "The retrieved evidence does not contain any scientific data, forecasts, or authoritative sources confirming that Earth is about to enter a 30-year 'Mini Ice Age.' The provided sources discuss historical definitions of the Little Ice Age, fictional characters, and unrelated topics, offering no support for this specific empirical prediction.",
         "evidence_used": [
           "[Little Ice Age (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The Little Ice Age (LIA) was a period of regional cooling, particularly pronounced in the North Atlantic region. It was not a true ice age of global extent. The term was introduced into scientific literature by Fran\u00e7ois E. Matthes in 1939. The period has been conventionally defined as extending from the 16th to the 19th centuries, but some experts prefer an alternative time-span from about 1300 to about 1850.",
           "[List of Ice Age characters (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The following is a list of the characters from the Ice Age films, mentioned by a name either presented in the films or in any other official material. Each character includes a summary when possible, the voice actor or actors associated with the character, and a description of the character along with any aliases, spouses and the character's species.",
           "[Antarctic ice sheet (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The Antarctic ice sheet is a continental glacier covering 98% of the Antarctic continent, with an area of 14 million square kilometres (5.4 million square miles) and an average thickness of over 2 kilometres (1.2 mi). It is the largest of Earth's two current ice sheets, containing 26.5 million cubic kilometres (6,400,000 cubic miles) of ice, which is equivalent to 61% of all fresh water on Earth. Its surface is nearly continuous, and the only ice-free areas on the continent are the dry valleys, nunataks of the Antarctic mountain ranges, and sparse coastal bedrock. It is often subdivided into the Antarctic Peninsula (AP), the East Antarctic Ice Sheet (EAIS), and the West Antarctic Ice Sheet (WAIS), due to the large differences in glacier mass balance, ice flow, and topography between the three regions.",
           "[Coleen Nolan (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Coleen Patricia Nolan (born 12 March 1965) is an Irish-British singer, television personality and author. She was a member of the Irish-English girl group the Nolans, in which she sang with her sisters. With over 30 million records sold worldwide, The Nolans are one of the world's biggest-selling girl groups.\nSince 2000, Nolan has been a regular panellist on the ITV talk show Loose Women."
         ],
-        "latency_sec": 9.360474824905396,
+        "latency_sec": 2.827415704727173,
         "model": "qwen/qwen3.8-27b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199071, Requested 1920. Please try again in 7m8.112s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.95,
+        "reasoning": "The retrieved evidence does not contain any information regarding a predicted 'Mini Ice Age' or current climate projections for the next 30 years. The provided sources discuss the Antarctic ice sheet, a singer, movie characters, and the historical Little Ice Age, none of which confirm or refute the specific claim about a future 30-year cooling period.",
         "evidence_used": [
           "[Antarctic ice sheet (Wikipedia)] The Antarctic ice sheet is a continental glacier covering 98% of the Antarctic continent, with an area of 14 million square kilometres (5.4 million square miles) and an average thickness of over 2 kilometres (1.2 mi). It is the largest of Earth's two current ice sheets, containing 26.5 million cubic kilometres (6,400,000 cubic miles) of ice, which is equivalent to 61% of all fresh water on Earth. Its surface is nearly continuous, and the only ice-free areas on the continent are the dry valleys, nunataks of the Antarctic mountain ranges, and sparse coastal bedrock. It is often subdivided into the Antarctic Peninsula (AP), the East Antarctic Ice Sheet (EAIS), and the West Antarctic Ice Sheet (WAIS), due to the large differences in glacier mass balance, ice flow, and topography between the three regions.",
           "[Coleen Nolan (Wikipedia)] Coleen Patricia Nolan (born 12 March 1965) is an Irish-British singer, television personality and author. She was a member of the Irish-English girl group the Nolans, in which she sang with her sisters. With over 30 million records sold worldwide, The Nolans are one of the world's biggest-selling girl groups.\nSince 2000, Nolan has been a regular panellist on the ITV talk show Loose Women.",
           "[List of Ice Age characters (Wikipedia)] The following is a list of the characters from the Ice Age films, mentioned by a name either presented in the films or in any other official material. Each character includes a summary when possible, the voice actor or actors associated with the character, and a description of the character along with any aliases, spouses and the character's species.",
           "[Little Ice Age (Wikipedia)] The Little Ice Age (LIA) was a period of regional cooling, particularly pronounced in the North Atlantic region. It was not a true ice age of global extent. The term was introduced into scientific literature by Fran\u00e7ois E. Matthes in 1939. The period has been conventionally defined as extending from the 16th to the 19th centuries, but some experts prefer an alternative time-span from about 1300 to about 1850."
         ],
-        "latency_sec": 9.074300289154053,
+        "latency_sec": 1.529966115951538,
         "model": "qwen/qwen3.8-27b",
         "prompt_version": "2.1.0-precedence-4class"
       },
@@ -2051,9 +2052,9 @@
       "expected": "True",
       "claim": "Volcanoes Melting West Antarctic Glaciers, Not Global Warming",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198610, Requested 1994. Please try again in 4m20.928s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.92,
+        "reasoning": "Peer\u2011reviewed scientific consensus (e.g., summarized in the Climate change Wikipedia article) identifies human\u2011driven global warming as the primary driver of recent West Antarctic Ice Sheet melt, while the web articles citing volcanoes are non\u2011authoritative and not supported by the broader literature. Therefore the claim that volcanoes, not global warming, are melting West Antarctic glaciers is contradicted by authoritative evidence.",
         "evidence_used": [
           "[Three New Studies Confirm Volcanism Is Melting West Antarctic Glaciers ... | \ud83c\udf10 Web] Three new research studies confirm that geothermal heat flow, not man-madeglobalwarming, is the dominant cause ofWestAntarcticIce Sheet (WAIS)melting, greatly strengthening the basic premises of Plate Climatology Theory. Figure 1: Outlined in red isWestAntarctica's subglacial Marie Byrd bedrock mantle plume \"hotspot\".",
           "[West Antarctic Ice Sheet (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The West Antarctic Ice Sheet (WAIS) is the sector of the Antarctic Ice Sheet covering West Antarctica. The WAIS is a marine ice sheet, as the majority of its ice is grounded well below sea level, on rock and sediment that would be the ocean floor if the ice were to retreat. The ice sheet first formed about 27 million years ago, likely fed partially by advancing glaciers of the older East Antarctic Ice Sheet\n. The WAIS is bounded by the Ross Ice Shelf, the Ronne Ice Shelf, and outlet glaciers that drain into the Amundsen Sea.",
@@ -2061,23 +2062,23 @@
           "[Underwater volcanoes, not climate change, reason behind melting of West ... | \ud83c\udf10 Web] Meltingof a majorglaciersystem in western Antarctica may be caused by underwatervolcanoes, andnotbyglobalclimate change, according to new research. ThwaitesGlacier, a massive outlet for ...",
           "[Hidden Volcanoes Melt Antarctic Glaciers from Below | \ud83c\udf10 Web] Antarctica is a land of ice. But dive below theWestAntarcticIce Sheet, and you'll find fire as well, in the form of subglacialvolcanoes. Now, a new study finds that these subglacialvolcanoes..."
         ],
-        "latency_sec": 10.737088441848755,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 6.748014688491821,
+        "model": "openai/gpt-oss-120b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199010, Requested 1572. Please try again in 4m11.423999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.92,
+        "reasoning": "Authoritative sources state that the retreat of West Antarctic glaciers is a documented effect of climate change driven by human-induced global warming, with no evidence presented that volcanic activity is the primary cause.",
         "evidence_used": [
           "[Climate change (Wikipedia)] Present-day climate change includes both global warming\u2014the ongoing increase in global average temperature\u2014and its wider effects on Earth's climate system. In a broader sense, climate change also includes previous long-term changes to Earth's climate. The modern-day rise in global temperatures is driven by human activities, especially fossil fuel (coal, oil and natural gas) burning since the Industrial Revolution. Fossil fuel use, deforestation, and some agricultural and industrial practices release greenhouse gases.",
           "[Glacier (Wikipedia)] A glacier (US:  ; UK:   or  ) is a persistent body of natural ice, a form of\nrock, that is constantly moving under its own weight. A glacier forms where the accumulation of snow exceeds its ablation over many years, often centuries. It slowly flows and deforms under stresses induced by gravity, undergoing both ductile and brittle deformation, and acquiring distinguishing surface features, such as crevasses and seracs. As a glacier moves, it abrades underlying rock and debris to create glacial landforms, such as cirques, moraines, and fjords.",
           "[Retreat of glaciers since 1850 (Wikipedia)] The retreat of glaciers since 1850 is a well-documented effect of climate change. The retreat of mountain glaciers provides evidence for the rise in global temperatures since the late 19th century. Examples include mountain glaciers in western North America, Asia, the Alps in central Europe, and tropical and subtropical regions of South America and Africa. Since glacial mass is affected by long-term climatic changes, e.g.",
           "[West Antarctic Ice Sheet (Wikipedia)] The West Antarctic Ice Sheet (WAIS) is the sector of the Antarctic Ice Sheet covering West Antarctica. The WAIS is a marine ice sheet, as the majority of its ice is grounded well below sea level, on rock and sediment that would be the ocean floor if the ice were to retreat. The ice sheet first formed about 27 million years ago, likely fed partially by advancing glaciers of the older East Antarctic Ice Sheet\n. The WAIS is bounded by the Ross Ice Shelf, the Ronne Ice Shelf, and outlet glaciers that drain into the Amundsen Sea."
         ],
-        "latency_sec": 9.83411955833435,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 6.077392578125,
+        "model": "openai/gpt-oss-120b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
@@ -2094,9 +2095,9 @@
       "expected": "Unsupported",
       "claim": "the bushfires [in Australia] were caused by arsonists and a series of lightning strikes, not 'climate change'",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199237, Requested 2045. Please try again in 9m13.824s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Authoritative fact\u2011checks and research show arsonists were responsible for only about 1\u202f% of the land burned, not a majority, and scientific consensus links the severity of the 2019\u201120 Australian bushfires to climate change; the claim that the fires were caused by arsonists and lightning strikes, not climate change, is contradicted by this evidence.",
         "evidence_used": [
           "[Setting the Record Straight on Climate Change and Arson in Australia's ... | \ud83c\udfdb\ufe0f Authoritative Source] For example, a video from the conservative content generator PragerU has been viewed 2 million times since it was posted on Jan. 7. The text in the video claims: \u201cThe popular narrative is that Australia\u2019s fires are caused by climate change. But the facts say otherwise\u2026 Since November 8, 2019, nearly 200 arsonists have been arrested for starting brush fires in Australia. The arsonists were responsible for about 50% of the bushfires. Not climate change. Arsonists. Repeat that: Not climate change. Arsonists. But the left doesn\u2019t care, because this fact doesn\u2019t agree with their \u2018science.'\u201d",
           "[Fact Check: Australia's unprecedented fires are down to climate change ... | \ud83c\udf10 Web] Alot of misinformation has been circulating online that puts all the blame forAustralia'sunprecedented fires on arson or green policies - anything other thanclimatechange. Spreading the myth that most fires were deliberately lit is a diversion that is both dangerous and wrong. Here is a fact check tackling some of the rumours: The fires inAustralia- which are still burning ...",
@@ -2104,23 +2105,23 @@
           "[The truth about Australia's fires \u2014 arsonists aren't responsible for ... | \ud83c\udf10 Web] Australia'smassive blazes have sparked big headlines aboutarsonists, but they're responsible for about 1 per cent of the total land burned in NSW \u2014 and it's a similar story in other states.",
           "[Bushfires in Australia (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Bushfires in Australia are a widespread and regular occurrence that have contributed significantly to shaping the nature of the continent over millions of years. In international terminology, an Australian bushfire is a type of wildfire, while \"bushfire\" remains the common Australian term for an unplanned landscape fire. Eastern Australia is one of the most fire-prone regions of the world, and its predominant eucalyptus forests have evolved to thrive on the phenomenon of bushfire. However, the fires can cause significant property damage and loss of both human and animal life."
         ],
-        "latency_sec": 9.02764105796814,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 6.566540718078613,
+        "model": "openai/gpt-oss-120b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198945, Requested 1771. Please try again in 5m9.312s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.6,
+        "reasoning": "The provided evidence describes general conditions of Australian bushfire seasons but does not address specific causes such as arson, lightning strikes, or the role of climate change, so the claim cannot be confirmed or refuted.",
         "evidence_used": [
           "[2009\u201310 Australian bushfire season (Wikipedia)] A bushfire season occurred predominantly from June 2009 to May 2010. Increased attention has been given to this season as authorities and government attempt to preempt any future loss of life after the Black Saturday bushfires during the previous season, 2008\u201309. Long range weather observations predict very hot, dry and windy weather conditions during the summer months, leading to a high risk of bushfire occurrence.\nIn late September, several bushfires affected southeastern and northern Queensland.",
           "[2019\u201320 Australian bushfire season (Wikipedia)] The 2019\u201320 Australian bushfire season, also known as the Black Summer, was one of the most intense and catastrophic fire seasons on record in Australia. Exceptionally dry conditions, a lack of soil moisture, and early fires in Central Queensland led to a premature start to the bushfire season from June 2019. Over ten thousand fires burnt, mainly in the south-east of the country, until March 2020. The most severe fires hit from December 2019 to January 2020.",
           "[2023\u201324 Australian bushfire season (Wikipedia)] The 2023\u201324 Australian bushfire season was the summer season of bushfires in Australia. The spring and summer outlook for the season prediction was for increased risk of fire for regions in Queensland, New South Wales, Victoria, South Australia and the Northern Territory.\nAbove average temperatures and below average rainfall occurred for most of Australia. The fuel load growth was elevated due to above average rainfall associated with prolonged La Ni\u00f1a atmospheric conditions over the previous 3 years.",
           "[Bushfires in Australia (Wikipedia)] Bushfires in Australia are a widespread and regular occurrence that have contributed significantly to shaping the nature of the continent over millions of years. In international terminology, an Australian bushfire is a type of wildfire, while \"bushfire\" remains the common Australian term for an unplanned landscape fire. Eastern Australia is one of the most fire-prone regions of the world, and its predominant eucalyptus forests have evolved to thrive on the phenomenon of bushfire. However, the fires can cause significant property damage and loss of both human and animal life."
         ],
-        "latency_sec": 9.571377038955688,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 6.223233222961426,
+        "model": "openai/gpt-oss-120b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
@@ -2137,9 +2138,9 @@
       "expected": "True",
       "claim": "Discovery Of Massive Volcanic CO2 Emissions Discredits Global Warming Theory",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199167, Requested 1885. Please try again in 7m34.464s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.92,
+        "reasoning": "Authoritative sources state that while volcanic CO2 emissions can be large in geological contexts, human emissions are far greater today and remain the primary driver of current warming; thus volcanic CO2 does not discredit the theory of anthropogenic global warming.",
         "evidence_used": [
           "[Global cooling (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Global cooling was a conjecture, especially during the 1970s, of imminent cooling of the Earth culminating in a period of extensive glaciation, due to the cooling effects of aerosols or orbital forcing. \nSome press reports in the 1970s speculated about continued cooling; these did not accurately reflect the scientific literature of the time, which was generally more concerned with warming from an enhanced greenhouse effect.\nAn overall warming trend from the late Industrial Revolution did slow and reverse slightly from the 1940s to the 1970s due to high industrial emissions of sulfur-based aerosols, but then continued sharply upward into the 2020s.",
           "[Volcanic CO2 emissions helped trigger Triassic climate change | \ud83c\udf10 Web] A new study findsvolcanicactivity played a direct role in triggering extreme climate change at the end of the Triassic period 201 million year ago, wiping out almost half of all existing species. The amount of carbon dioxide released into the atmosphere from thesevolcaniceruptions is comparable to the amount ofCO2expected to be produced by all human activity in the 21st century. The end ...",
@@ -2147,30 +2148,30 @@
           "[Volcanoes 'Hidden Source' of CO2 in Past Climate Change | \ud83c\udf10 Web] PARIS (AFP-Jiji) \u2014Massivefields of magma underneath ancient volcanoes spewed out carbon dioxide long after eruptions on the surface had ended, potentially explaining why pastglobalwarmingepisodes lasted longer than expected, a study said last month. Humans are emitting far more planet-heating ...",
           "[Venus (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Venus is the second planet from the Sun. Similar in size and mass to Earth, Venus has no liquid water, and its atmosphere is far thicker and denser than that of any other rocky body in the Solar System. The atmosphere is composed mostly of carbon dioxide and has a thick cloud layer of sulfuric acid that spans the whole planet. At the mean surface level, the atmosphere reaches a temperature of 737 K (464 \u00b0C; 867 \u00b0F), making it the hottest planet in the solar system and also a pressure 92 times greater than Earth's at sea level, turning the lowest layer of the atmosphere into a supercritical fluid."
         ],
-        "latency_sec": 10.296724081039429,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 7.7981462478637695,
+        "model": "openai/gpt-oss-120b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199852, Requested 1936. Please try again in 12m52.416s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.92,
+        "reasoning": "The cited study acknowledges massive volcanic CO2 emissions but also states that human emissions are far greater and that the overall warming trend continues, indicating that volcanic CO2 does not invalidate the established anthropogenic global warming theory.",
         "evidence_used": [
           "[Global cooling (Wikipedia)] Global cooling was a conjecture, especially during the 1970s, of imminent cooling of the Earth culminating in a period of extensive glaciation, due to the cooling effects of aerosols or orbital forcing. \nSome press reports in the 1970s speculated about continued cooling; these did not accurately reflect the scientific literature of the time, which was generally more concerned with warming from an enhanced greenhouse effect.\nAn overall warming trend from the late Industrial Revolution did slow and reverse slightly from the 1940s to the 1970s due to high industrial emissions of sulfur-based aerosols, but then continued sharply upward into the 2020s.",
           "[Ice age (Wikipedia)] An ice age is a period of time when decreased temperature of Earth's surface and atmosphere results in the prolonged presence or expansion of continental alpine glaciers and polar ice caps. The term is applied in several different senses to very long and comparatively short periods of cooling. An ice age may consist of numerous sub-periods where the global temperature and glaciation fluctuates, with the colder periods called glacials, and relatively warmer periods called interglacials.\nEarth's climate alternates between icehouse and greenhouse periods based on whether there are glaciers on the planet, and for most of Earth's history it has been in a greenhouse period with little or no permanent ice.",
           "[Venus (Wikipedia)] Venus is the second planet from the Sun. Similar in size and mass to Earth, Venus has no liquid water, and its atmosphere is far thicker and denser than that of any other rocky body in the Solar System. The atmosphere is composed mostly of carbon dioxide and has a thick cloud layer of sulfuric acid that spans the whole planet. At the mean surface level, the atmosphere reaches a temperature of 737 K (464 \u00b0C; 867 \u00b0F), making it the hottest planet in the solar system and also a pressure 92 times greater than Earth's at sea level, turning the lowest layer of the atmosphere into a supercritical fluid.",
           "[Volcanoes 'Hidden Source' of CO2 in Past Climate Change] PARIS (AFP-Jiji) \u2014Massivefields of magma underneath ancient volcanoes spewed out carbon dioxide long after eruptions on the surface had ended, potentially explaining why pastglobalwarmingepisodes lasted longer than expected, a study said last month. Humans are emitting far more planet-heating ..."
         ],
-        "latency_sec": 9.261369228363037,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 8.482905149459839,
+        "model": "openai/gpt-oss-120b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199831, Requested 870. Please try again in 5m2.832s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
-        "latency_sec": 9.250839471817017,
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Scientific consensus establishes that anthropogenic CO2 emissions are the primary driver of recent global warming, as natural volcanic emissions are orders of magnitude smaller than human industrial emissions and do not account for the observed rise in atmospheric CO2 concentrations.",
+        "latency_sec": 1.7280611991882324,
         "model": "qwen/qwen3.8-27b"
       }
     },
@@ -2180,9 +2181,9 @@
       "expected": "False",
       "claim": "Harvard study finds that wind turbines create MORE global warming than the fossil fuels they eliminate",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199101, Requested 1994. Please try again in 7m53.039999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The Harvard study cited in evidence 1 explicitly contradicts the claim, stating that wind power has lower long\u2011term environmental impacts per unit of energy generated than fossil fuels, and that wind turbines do not create more global warming than the fuels they replace. No other source supports the claim, and the evidence indicates the opposite conclusion.",
         "evidence_used": [
           "[False claim that wind turbines generate more global warming than fossil ... | \ud83c\udf10 Web] The study concludes that there is a local trade-off to wind power\u2014as has been observed around wind turbines today. But it also clearly contradicts the Ecology.news article\u2019s claim that wind turbines \u201ccreate more global warming\u201d than fossil fuels. The study says, \u201cWind beats fossil fuels under any reasonable measure of long-term environmental impacts per unit of energy generated[\u2026] As society decarbonizes energy systems to limit climate change, policy makers will confront trade-offs between various low-carbon energy technologies such as wind, solar, biofuels, nuclear, and fossil fuels with carbon capture. Each technology benefits the global climate by reducing carbon emissions, but each also causes local environmental impacts.\u201d",
           "[Environmental impact of wind power (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The environmental impact of electricity generation from wind power is minor when compared to that of fossil fuel power. Wind power consumes no fuel, and emits no air pollution, unlike fossil fuels. Wind turbines have some of the lowest global warming potential per unit of electricity generated: far less greenhouse gas is emitted than for the average unit of electricity, so wind power helps limit climate change. Emissions from production of a turbine are recouped in less than a year of operation, as it replaces gas or coal power.",
@@ -2190,23 +2191,23 @@
           "[Wind farm (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] A wind farm, also called a wind park or wind power plant, is a group of wind turbines in the same location used to produce electricity. Wind farms vary in size from a small number of turbines to several hundred wind turbines covering an extensive area. Wind farms may be either onshore or offshore.\nMany of the largest operational onshore wind farms are located in China, India, and the United States.",
           "[List of common misconceptions about science, technology, and mathematics (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Each entry on this list of common misconceptions is worded as a correction; the misconceptions themselves are implied rather than stated. These entries are concise summaries; the main subject articles can be consulted for more detail."
         ],
-        "latency_sec": 9.56053352355957,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.398099422454834,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199786, Requested 1811. Please try again in 11m29.904s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that a Harvard study found wind turbines create more global warming than the fossil fuels they replace is contradicted by authoritative sources.  Wikipedia\u2019s \u201cEnvironmental impact of wind power\u201d states that wind power has some of the lowest global\u2011warming potential per unit of electricity generated and that emissions from turbine production are recouped in less than a year of operation, far less than for fossil\u2011fuel power.  No evidence of a Harvard study supporting the opposite conclusion is provided, and the cited sources explicitly affirm the opposite relationship.",
         "evidence_used": [
           "[Environmental impact of wind power (Wikipedia)] The environmental impact of electricity generation from wind power is minor when compared to that of fossil fuel power. Wind power consumes no fuel, and emits no air pollution, unlike fossil fuels. Wind turbines have some of the lowest global warming potential per unit of electricity generated: far less greenhouse gas is emitted than for the average unit of electricity, so wind power helps limit climate change. Emissions from production of a turbine are recouped in less than a year of operation, as it replaces gas or coal power.",
           "[List of common misconceptions about science, technology, and mathematics (Wikipedia)] Each entry on this list of common misconceptions is worded as a correction; the misconceptions themselves are implied rather than stated. These entries are concise summaries; the main subject articles can be consulted for more detail.",
           "[Renewable energy (Wikipedia)] Renewable energy (also called green energy) is energy made from renewable natural resources that are replenished on a human timescale. The most widely used renewable energy types are solar energy, wind power, bioenergy/biomass, and hydropower. Bioenergy and geothermal power are also significant in some countries. Renewable energy installations can be large or small and are suited for both urban and rural areas.",
           "[Wind farm (Wikipedia)] A wind farm, also called a wind park or wind power plant, is a group of wind turbines in the same location used to produce electricity. Wind farms vary in size from a small number of turbines to several hundred wind turbines covering an extensive area. Wind farms may be either onshore or offshore.\nMany of the largest operational onshore wind farms are located in China, India, and the United States."
         ],
-        "latency_sec": 9.200711727142334,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 10.198489665985107,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
@@ -2223,9 +2224,9 @@
       "expected": "False",
       "claim": "Ice berg melts, ocean level remains the same.",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199049, Requested 1836. Please try again in 6m22.32s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Floating ice displaces seawater equal to its weight; because seawater is denser than fresh meltwater, the meltwater occupies a larger volume than the displaced seawater, causing a slight rise in sea level. This is supported by authoritative sources (e.g., the \u201cMelting Ocean Ice Affects Sea Level\u201d article and the \u201cThe melting of floating ice raises the ocean level\u201d summary).",
         "evidence_used": [
           "[fluid statics - Does the sea level increase if an iceberg melts ... | \ud83c\udf10 Web] It was claimed that if anicebergmeltsintheocean,thesealevelwon't change as theicedisplaces as much water as there will be melted water. The other claim was that the sealevelshould rise becauseoceanscontain salt, so the water inoceansis denser than the water in theice. Which one is the correct reasoning?",
           "[Melting Ocean Ice Affects Sea Level - Unlike Ice Cubes in a Glass | \ud83c\udfdb\ufe0f Authoritative Source] Thequestion:Melticecubes in a glass of water, and the waterlevelwill not change. Can thesamebe said foricefloating in theocean?Theanswer: There is a common misconception that sealevelchange comes only fromiceattached to land, and not from floating seaice. Although that is mostly true, it turns out that there is an effect, even if it is minor. An often-overlooked ingredient ...",
@@ -2233,23 +2234,23 @@
           "[West Antarctic Ice Sheet (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The West Antarctic Ice Sheet (WAIS) is the sector of the Antarctic Ice Sheet covering West Antarctica. The WAIS is a marine ice sheet, as the majority of its ice is grounded well below sea level, on rock and sediment that would be the ocean floor if the ice were to retreat. The ice sheet first formed about 27 million years ago, likely fed partially by advancing glaciers of the older East Antarctic Ice Sheet\n. The WAIS is bounded by the Ross Ice Shelf, the Ronne Ice Shelf, and outlet glaciers that drain into the Amundsen Sea.",
           "[Sea level rise (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The sea level has generally been rising since the end of the Last Glacial Maximum, which was around 20,000 years ago. Between 1901 and 2018, the global average sea level rose by 15\u201325 cm (6\u201310 in), with an increase of 2.3 mm (0.091 in) per year since the 1970s. This was faster than the sea level had ever risen over at least the past 3,000 years. The rate accelerated to 4.62 mm (0.182 in)/yr for the decade 2013\u20132022."
         ],
-        "latency_sec": 9.465381622314453,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.712506771087646,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199733, Requested 1949. Please try again in 12m6.624s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.4,
+        "reasoning": "The evidence provided discusses climate change, ice ages, sea level rise, and the West Antarctic Ice Sheet, but none of the sources address the specific physical principle that floating icebergs melt without changing sea level. Without direct evidence confirming or refuting the claim, it remains unverified.",
         "evidence_used": [
           "[Climate change (Wikipedia)] Present-day climate change includes both global warming\u2014the ongoing increase in global average temperature\u2014and its wider effects on Earth's climate system. In a broader sense, climate change also includes previous long-term changes to Earth's climate. The modern-day rise in global temperatures is driven by human activities, especially fossil fuel (coal, oil and natural gas) burning since the Industrial Revolution. Fossil fuel use, deforestation, and some agricultural and industrial practices release greenhouse gases.",
           "[Ice age (Wikipedia)] An ice age is a period of time when decreased temperature of Earth's surface and atmosphere results in the prolonged presence or expansion of continental alpine glaciers and polar ice caps. The term is applied in several different senses to very long and comparatively short periods of cooling. An ice age may consist of numerous sub-periods where the global temperature and glaciation fluctuates, with the colder periods called glacials, and relatively warmer periods called interglacials.\nEarth's climate alternates between icehouse and greenhouse periods based on whether there are glaciers on the planet, and for most of Earth's history it has been in a greenhouse period with little or no permanent ice.",
           "[Sea level rise (Wikipedia)] The sea level has generally been rising since the end of the Last Glacial Maximum, which was around 20,000 years ago. Between 1901 and 2018, the global average sea level rose by 15\u201325 cm (6\u201310 in), with an increase of 2.3 mm (0.091 in) per year since the 1970s. This was faster than the sea level had ever risen over at least the past 3,000 years. The rate accelerated to 4.62 mm (0.182 in)/yr for the decade 2013\u20132022.",
           "[West Antarctic Ice Sheet (Wikipedia)] The West Antarctic Ice Sheet (WAIS) is the sector of the Antarctic Ice Sheet covering West Antarctica. The WAIS is a marine ice sheet, as the majority of its ice is grounded well below sea level, on rock and sediment that would be the ocean floor if the ice were to retreat. The ice sheet first formed about 27 million years ago, likely fed partially by advancing glaciers of the older East Antarctic Ice Sheet\n. The WAIS is bounded by the Ross Ice Shelf, the Ronne Ice Shelf, and outlet glaciers that drain into the Amundsen Sea."
         ],
-        "latency_sec": 9.36350154876709,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.702728986740112,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
@@ -2267,31 +2268,31 @@
       "claim": "When the exact same group of 'experts' who claimed it was global cooling in 1977 now claim it's global warming you can easily see why I am skeptical",
       "factguard": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199000, Requested 2078. Please try again in 7m45.696s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.4,
+        "reasoning": "The provided evidence contains no information about any group of experts claiming global cooling in 1977 or later claiming global warming, so the claim cannot be verified or refuted with the available sources.",
         "evidence_used": [
           "[Wagner Group rebellion (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] On 23 June 2023, the Wagner Group, a Russian private military company, staged an uprising against the Russian government. It marked the climax of the Wagner Group\u2013Ministry of Defense conflict, which had begun about six months earlier. Russian oligarch Yevgeny Prigozhin, who had been leading Wagner Group activities in Ukraine, stood down after reaching an agreement a day later.\nAmidst the Russian invasion of Ukraine, Prigozhin had come to publicly express his resentment towards Minister of Defence Sergei Shoigu and Chief of the General Staff Valery Gerasimov; he frequently blamed both men for Russia's military inadequacies, especially during the Wagner-led battle of Bakhmut, and accused them of handing over \"Russian territories\" to the Ukrainians.",
           "[DeepSeek (AI) (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] DeepSeek is a series of large language models developed by the Chinese company DeepSeek. The series began in November 2023. A model released on 20 January 2025, DeepSeek-R1, became a breakthrough success, surpassing ChatGPT as the most downloaded freeware app on the iOS App Store in the United States by 27 January.\nDeepSeek's success against larger and more established rivals has been described as \"upending AI\" and initiating \"a global AI space race\".",
           "[World Health Organization (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The World Health Organization (WHO) is a specialized agency of the United Nations (UN) which coordinates responses to international public health issues and emergencies. It is headquartered in Geneva, Switzerland, and has six regional offices and 150 field offices worldwide. Only sovereign states are eligible to join, and it is the largest intergovernmental health organization at the international level.\nThe WHO's stated purpose is to achieve the highest possible level of health for all the world's people, defining health as \"a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity.\" The main functions of the World Health Organization include promoting the control of epidemic and endemic diseases; providing and improving the teaching and training in public health, the medical treatment of disease, and related matters; and promoting the establishment of international standards for biological products.",
           "[List of fake news websites (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Fake news websites are those which intentionally publish hoaxes and misinformation for purposes other than news satire. Some of these sites use homograph spoofing attacks, typo squatting and other deceptive strategies similar to those used in phishing attacks to resemble genuine news outlets."
         ],
-        "latency_sec": 9.832818508148193,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 12.07360053062439,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199684, Requested 1996. Please try again in 12m5.76s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.4,
+        "reasoning": "The provided evidence consists of Wikipedia entries about DeepSeek, fake news websites, the Wagner Group rebellion, and the World Health Organization, none of which discuss climate science, the 1977 global cooling claim, or subsequent statements about global warming by the same experts. Therefore, there is no authoritative source confirming or refuting the claim, leaving it unverified.",
         "evidence_used": [
           "[DeepSeek (AI) (Wikipedia)] DeepSeek is a series of large language models developed by the Chinese company DeepSeek. The series began in November 2023. A model released on 20 January 2025, DeepSeek-R1, became a breakthrough success, surpassing ChatGPT as the most downloaded freeware app on the iOS App Store in the United States by 27 January.\nDeepSeek's success against larger and more established rivals has been described as \"upending AI\" and initiating \"a global AI space race\".",
           "[List of fake news websites (Wikipedia)] Fake news websites are those which intentionally publish hoaxes and misinformation for purposes other than news satire. Some of these sites use homograph spoofing attacks, typo squatting and other deceptive strategies similar to those used in phishing attacks to resemble genuine news outlets.",
           "[Wagner Group rebellion (Wikipedia)] On 23 June 2023, the Wagner Group, a Russian private military company, staged an uprising against the Russian government. It marked the climax of the Wagner Group\u2013Ministry of Defense conflict, which had begun about six months earlier. Russian oligarch Yevgeny Prigozhin, who had been leading Wagner Group activities in Ukraine, stood down after reaching an agreement a day later.\nAmidst the Russian invasion of Ukraine, Prigozhin had come to publicly express his resentment towards Minister of Defence Sergei Shoigu and Chief of the General Staff Valery Gerasimov; he frequently blamed both men for Russia's military inadequacies, especially during the Wagner-led battle of Bakhmut, and accused them of handing over \"Russian territories\" to the Ukrainians.",
           "[World Health Organization (Wikipedia)] The World Health Organization (WHO) is a specialized agency of the United Nations (UN) which coordinates responses to international public health issues and emergencies. It is headquartered in Geneva, Switzerland, and has six regional offices and 150 field offices worldwide. Only sovereign states are eligible to join, and it is the largest intergovernmental health organization at the international level.\nThe WHO's stated purpose is to achieve the highest possible level of health for all the world's people, defining health as \"a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity.\" The main functions of the World Health Organization include promoting the control of epidemic and endemic diseases; providing and improving the teaching and training in public health, the medical treatment of disease, and related matters; and promoting the establishment of international standards for biological products."
         ],
-        "latency_sec": 9.589816331863403,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 23.651515007019043,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
@@ -2309,38 +2310,38 @@
       "claim": "Scientists studying Antarctica sea ice warn a rise in accumulation could spark the next ice age.",
       "factguard": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199977, Requested 2082. Please try again in 14m49.488s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.3,
+        "reasoning": "The provided evidence consists of general Wikipedia entries on ice shelves, ice ages, sea level rise, and climate change, none of which mention scientists warning that increased accumulation of Antarctic sea ice could trigger the next ice age. No authoritative source in the evidence confirms or refutes the claim, leaving it unverified.",
         "evidence_used": [
           "[Ice shelf (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] An ice shelf is a large platform of glacial ice floating on the ocean, fed by one or multiple tributary glaciers. Ice shelves form along coastlines where the ice thickness is insufficient to displace the more dense surrounding ocean water. The boundary between the ice shelf (floating) and grounded ice (resting on bedrock or sediment) is referred to as the grounding line; the boundary between the ice shelf and the open ocean (often covered by sea ice) is the ice front or calving front. \nIce shelves are found in Antarctica and the Arctic (Greenland, Northern Canada, and the Russian Arctic), and can range in thickness from about 100\u20131,000 m (330\u20133,280 ft).",
           "[Ice age (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] An ice age is a period of time when decreased temperature of Earth's surface and atmosphere results in the prolonged presence or expansion of continental alpine glaciers and polar ice caps. The term is applied in several different senses to very long and comparatively short periods of cooling. An ice age may consist of numerous sub-periods where the global temperature and glaciation fluctuates, with the colder periods called glacials, and relatively warmer periods called interglacials.\nEarth's climate alternates between icehouse and greenhouse periods based on whether there are glaciers on the planet, and for most of Earth's history it has been in a greenhouse period with little or no permanent ice.",
           "[Sea level rise (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The sea level has generally been rising since the end of the Last Glacial Maximum, which was around 20,000 years ago. Between 1901 and 2018, the global average sea level rose by 15\u201325 cm (6\u201310 in), with an increase of 2.3 mm (0.091 in) per year since the 1970s. This was faster than the sea level had ever risen over at least the past 3,000 years. The rate accelerated to 4.62 mm (0.182 in)/yr for the decade 2013\u20132022.",
           "[Climate change (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Present-day climate change includes both global warming\u2014the ongoing increase in global average temperature\u2014and its wider effects on Earth's climate system. In a broader sense, climate change also includes previous long-term changes to Earth's climate. The modern-day rise in global temperatures is driven by human activities, especially fossil fuel (coal, oil and natural gas) burning since the Industrial Revolution. Fossil fuel use, deforestation, and some agricultural and industrial practices release greenhouse gases."
         ],
-        "latency_sec": 9.294237852096558,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 10.707670211791992,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199616, Requested 1872. Please try again in 10m42.816s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.5,
+        "reasoning": "The provided evidence consists of general Wikipedia entries on climate change, ice ages, ice shelves, and sea level rise, none of which mention scientists warning that increased sea\u2011ice accumulation in Antarctica could trigger a new ice age.  Without any source confirming or refuting the specific claim, it remains unverified.",
         "evidence_used": [
           "[Climate change (Wikipedia)] Present-day climate change includes both global warming\u2014the ongoing increase in global average temperature\u2014and its wider effects on Earth's climate system. In a broader sense, climate change also includes previous long-term changes to Earth's climate. The modern-day rise in global temperatures is driven by human activities, especially fossil fuel (coal, oil and natural gas) burning since the Industrial Revolution. Fossil fuel use, deforestation, and some agricultural and industrial practices release greenhouse gases.",
           "[Ice age (Wikipedia)] An ice age is a period of time when decreased temperature of Earth's surface and atmosphere results in the prolonged presence or expansion of continental alpine glaciers and polar ice caps. The term is applied in several different senses to very long and comparatively short periods of cooling. An ice age may consist of numerous sub-periods where the global temperature and glaciation fluctuates, with the colder periods called glacials, and relatively warmer periods called interglacials.\nEarth's climate alternates between icehouse and greenhouse periods based on whether there are glaciers on the planet, and for most of Earth's history it has been in a greenhouse period with little or no permanent ice.",
           "[Ice shelf (Wikipedia)] An ice shelf is a large platform of glacial ice floating on the ocean, fed by one or multiple tributary glaciers. Ice shelves form along coastlines where the ice thickness is insufficient to displace the more dense surrounding ocean water. The boundary between the ice shelf (floating) and grounded ice (resting on bedrock or sediment) is referred to as the grounding line; the boundary between the ice shelf and the open ocean (often covered by sea ice) is the ice front or calving front. \nIce shelves are found in Antarctica and the Arctic (Greenland, Northern Canada, and the Russian Arctic), and can range in thickness from about 100\u20131,000 m (330\u20133,280 ft).",
           "[Sea level rise (Wikipedia)] The sea level has generally been rising since the end of the Last Glacial Maximum, which was around 20,000 years ago. Between 1901 and 2018, the global average sea level rose by 15\u201325 cm (6\u201310 in), with an increase of 2.3 mm (0.091 in) per year since the 1970s. This was faster than the sea level had ever risen over at least the past 3,000 years. The rate accelerated to 4.62 mm (0.182 in)/yr for the decade 2013\u20132022."
         ],
-        "latency_sec": 9.790709257125854,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 10.349215269088745,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199594, Requested 1226. Please try again in 5m54.24s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
-        "latency_sec": 9.49539589881897,
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "Current scientific consensus indicates that Antarctica is experiencing a net loss of sea ice and ice sheet mass due to global warming, not an accumulation that would trigger an ice age. While increased snowfall on the ice sheet can contribute to mass balance, the dominant trend is melting, and there is no credible scientific warning that rising sea ice accumulation will spark a new ice age in the near term.",
+        "latency_sec": 2.0902647972106934,
         "model": "qwen/qwen3.8-27b"
       }
     },
@@ -2350,9 +2351,9 @@
       "expected": "True",
       "claim": "More than 500 scientists and professionals in climate and related fields have sent a 'European Climate Declaration' to the Secretary-General of the United Nations",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199909, Requested 1928. Please try again in 13m13.584s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "Evidence from multiple reputable sources (European Climate Realist Network, CCG, and an unnamed global network) reports that a group of more than 500 climate scientists and professionals submitted a European Climate Declaration to Secretary\u2011General Ant\u00f3nio Guterres via registered letter, confirming the claim.",
         "evidence_used": [
           "[European Climate Declaration - European Climate Realist Network | \ud83c\udf10 Web] Anew, high-level global network of 750 prominentclimatescientistsandprofessionalshas submitted a declaration that there is no \"climateemergency\". The group hassentthe Declaration with a registered letter to Ant\u00f3nio Guterres, Secretary-General of the United Nations. This action has received overwhelming response from all over the world. The group's letter warns global leaders ...",
           "[There is no climate emergency \u2014 500 experts | CCG | \ud83c\udf10 Web] Press briefing AS THE LATEST UNclimatesummit begins in New York, a new, high-level global network of500prominentclimatescientistsandprofessionalshas submitted a declaration that there is no \"climateemergency\". The group hassentaEuropeanClimateDeclaration with a registered letter to Ant\u00f3nio Guterres, Secretary-General of the United Nations. Professor Guus Berkhout, of The ...",
@@ -2360,30 +2361,30 @@
           "[Public opinion on climate change (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Public opinion on climate change is related to a broad set of variables, including the effects of sociodemographic, political, cultural, economic, and environmental factors as well as media coverage and interaction with different news and social media. International public opinion on climate change shows a majority viewing the crisis as an emergency.\nIn the United States and other English-speaking countries, people on the political right are more likely to doubt or reject climate change, and people often shift their views to match those of their party or political group. Education, age, gender, income and where a person lives also play a part, but the effect varies by country.",
           "[There Is No Climate Emergency, Say 500 Experts in Letter to the United ... | \ud83c\udf10 Web] Aglobal network ofmorethan500knowledgeable and experiencedscientistsandprofessionalsinclimateandrelatedfieldshavethe honor to address to Your Excellencies the attachedEuropean..."
         ],
-        "latency_sec": 9.593686580657959,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.788648843765259,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199549, Requested 1953. Please try again in 10m48.864s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.4,
+        "reasoning": "The provided evidence consists of general Wikipedia entries on climate denial, neo\u2011colonial science, public opinion, and soot, none of which mention a European Climate Declaration or the number of signatories.  Because the claim is an empirical assertion that cannot be verified by the supplied sources, it remains unconfirmed.",
         "evidence_used": [
           "[Climate change denial (Wikipedia)] Climate change denial (also global warming denial) is a form of science denial characterized by rejecting, refusing to acknowledge, disputing, or fighting the extensive evidence for anthropogenic global warming that has led to a scientific consensus on climate change. Those promoting denial commonly use rhetorical tactics to give the appearance of a scientific controversy where none exists. Climate change denial includes raising unreasonable doubts about the extent to which climate change is caused by humans, its effects on nature and human society, and understating the costs of climate change adaptation while overstating the costs of mitigating it. To a lesser extent, climate change denial can also be implicit when people accept the science but fail to reconcile it with their belief or action.",
           "[Neo-colonial science (Wikipedia)] Neo-colonial research or neo-colonial science, frequently described as helicopter research, parachute science or research, parasitic research, or  safari study, is when researchers from wealthier countries go to a developing country, collect information, travel back to their country, analyze the data and samples, and publish the results with little or no involvement of local researchers. A 2003 study by the Hungarian Academy of Sciences found that 70% of articles in a random sample of publications about least-developed countries did not include a local research co-author.\nFrequently, during this kind of research, the local colleagues might be used to provide logistics support as fixers but are not engaged for their expertise or given credit for their participation in the research. Scientific publications resulting from parachute science frequently only contribute to the career of the scientists from rich countries, thus limiting the development of local science capacity (such as funded research centers) and the careers of local scientists.",
           "[Public opinion on climate change (Wikipedia)] Public opinion on climate change is related to a broad set of variables, including the effects of sociodemographic, political, cultural, economic, and environmental factors as well as media coverage and interaction with different news and social media. International public opinion on climate change shows a majority viewing the crisis as an emergency.\nIn the United States and other English-speaking countries, people on the political right are more likely to doubt or reject climate change, and people often shift their views to match those of their party or political group. Education, age, gender, income and where a person lives also play a part, but the effect varies by country.",
           "[Soot (Wikipedia)] Soot ( suut) is a mass of impure carbon particles resulting from the incomplete combustion of hydrocarbons. Soot is considered a hazardous substance with carcinogenic properties. Most broadly, the term includes all the particulate matter produced by this process, including black carbon and residual pyrolysed fuel particles such as coal, cenospheres, charred wood, and petroleum coke classified as cokes or char. It can include polycyclic aromatic hydrocarbons and heavy metals like mercury."
         ],
-        "latency_sec": 9.292945623397827,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 10.219070672988892,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199527, Requested 979. Please try again in 3m38.592s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
-        "latency_sec": 9.251569747924805,
+        "verdict": "True",
+        "confidence": 0.95,
+        "reasoning": "In 2019, a group of over 500 European scientists and experts signed the 'European Climate Declaration' and sent it to UN Secretary-General Ant\u00f3nio Guterres to urge stronger climate action ahead of COP25.",
+        "latency_sec": 4.067394495010376,
         "model": "qwen/qwen3.8-27b"
       }
     },
@@ -2393,9 +2394,9 @@
       "expected": "False",
       "claim": "Unprecedented climate change has caused sea level at Sydney Harbour to rise approximately 0.0 cm over the past 140 years.",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199842, Requested 2026. Please try again in 13m26.976s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.96,
+        "reasoning": "Authoritative sources (e.g., government statistics referenced in source 3) indicate that sea level at Sydney Harbour has risen over the past 140 years, contradicting the claim of a 0.0\u202fcm rise; the claim is presented in meme posts that are debunked.",
         "evidence_used": [
           "[These Pics of Sydney Harbour Don't Debunk Sea Level Rise, Climate Change | \ud83c\udfdb\ufe0f Authoritative Source] In July 2022, it was shared to Twitter, falsely claiming that \"unprecedentedclimatechange\" hadcaused\"sealevelatSydneyHarbourtoriseapproximately0.0cmoverthe past 140 years.\"",
           "[Photo meme of Sydney Harbour incorrectly claims no sea level rise has ... | \ud83c\udf10 Web] Claim:UnprecedentedclimatechangehascausedsealevelatSydneyHarbourtoriseapproximately0.0cmoverthe past 140 years. Source: Facebook, Anonymous, 2018-10-12",
@@ -2403,30 +2404,30 @@
           "[Climate change in Australia (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Climate change has been a critical issue in Australia since the beginning of the 21st century. Australia is becoming hotter and more prone to extreme heat, bushfires, droughts, floods, and longer fire seasons because of climate change. Climate issues include wildfires, heatwaves, cyclones, rising sea levels, and erosion.\nSince the beginning of the 20th century, Australia has experienced an increase of over 1.5 \u00b0C in average annual temperatures, with warming occurring at twice the rate over the past 50 years compared with the previous 50 years.",
           "[Fort Denison pics no indicator of sea level rise | AAP | \ud83c\udf10 Web] The post shows the two pictures side by side, one in black and white, with text at the top reading, \"unprecedentedclimatechangehascausedsealevelatSydneyHarbourtoriseapproximately0.0cmoverthe past 140 years\"."
         ],
-        "latency_sec": 10.27391242980957,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 7.552302837371826,
+        "model": "openai/gpt-oss-120b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199481, Requested 1870. Please try again in 9m43.632s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.6,
+        "reasoning": "The provided sources discuss bushfires, general climate impacts, and regional information but contain no data on sea\u2011level measurements for Sydney Harbour, so the claim cannot be confirmed or refuted by the evidence.",
         "evidence_used": [
           "[2019\u201320 Australian bushfire season (Wikipedia)] The 2019\u201320 Australian bushfire season, also known as the Black Summer, was one of the most intense and catastrophic fire seasons on record in Australia. Exceptionally dry conditions, a lack of soil moisture, and early fires in Central Queensland led to a premature start to the bushfire season from June 2019. Over ten thousand fires burnt, mainly in the south-east of the country, until March 2020. The most severe fires hit from December 2019 to January 2020.",
           "[Climate change in Australia (Wikipedia)] Climate change has been a critical issue in Australia since the beginning of the 21st century. Australia is becoming hotter and more prone to extreme heat, bushfires, droughts, floods, and longer fire seasons because of climate change. Climate issues include wildfires, heatwaves, cyclones, rising sea levels, and erosion.\nSince the beginning of the 20th century, Australia has experienced an increase of over 1.5 \u00b0C in average annual temperatures, with warming occurring at twice the rate over the past 50 years compared with the previous 50 years.",
           "[Climate change in New Zealand (Wikipedia)] Climate change in New Zealand involves historical, current and future changes in the climate of New Zealand; and New Zealand's contribution and response to global climate change. Summers are becoming longer and hotter, and some glaciers have melted completely and others have shrunk. In 2021, the Ministry for the Environment estimated that New Zealand's gross emissions were 0.17% of the world's total gross greenhouse gas emissions. However, on a per capita basis, New Zealand is a significant emitter, the sixth highest within the Annex I countries, whereas on absolute gross emissions New Zealand is ranked as the 24th highest emitter.",
           "[Oceania (Wikipedia)] Oceania is a geographical region including Australasia, Melanesia, Micronesia, and Polynesia. Outside of the English-speaking world, Oceania is generally considered a continent, while Mainland Australia is regarded as its continental landmass. Spanning the Eastern and Western hemispheres, at the centre of the water hemisphere, Oceania is estimated to have a land area of about 9,000,000 square kilometres (3,500,000 sq mi) and a population of around 44.4 million as of 2022. Oceania is the smallest continent in land area and the second-least populated after Antarctica."
         ],
-        "latency_sec": 9.214407444000244,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 7.294982671737671,
+        "model": "openai/gpt-oss-120b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199459, Requested 1182. Please try again in 4m36.912s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
-        "latency_sec": 9.721338987350464,
+        "verdict": "False",
+        "confidence": 1.0,
+        "reasoning": "Tidal gauge records for Sydney Harbour indicate a sea level rise of approximately 10 to 15 centimeters over the last 140 years, not 0.0 cm. The claim contradicts established observational data regarding global and local sea level trends.",
+        "latency_sec": 4.623914957046509,
         "model": "qwen/qwen3.8-27b"
       }
     },
@@ -2436,9 +2437,9 @@
       "expected": "False",
       "claim": "Human-produced carbon might be one of the factors [of climate change], but there\u2019s simply no evidence that it is a significant one.",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199775, Requested 2129. Please try again in 13m42.528s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The claim that there is no evidence human\u2011produced carbon is a significant factor in climate change is contradicted by authoritative sources. Wikipedia\u2019s Climate Change and Politics of Climate Change articles state that global warming is driven largely by human emissions of greenhouse gases, especially fossil\u2011fuel combustion, and that this is the main driver of the modern temperature rise.",
         "evidence_used": [
           "[There is overwhelming evidence that current climate change is ... | \ud83c\udf10 Web] Claim:Human-producedcarbonmightbeoneofthefactors[ofclimatechange],butthere'ssimplynoevidence that it is a significantone. Source: Townhall, Kurt Schlichter, 2019-09-09",
           "[Effects of climate change on human health (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Climate change affects human health in many ways, including an increase in heat-related illnesses and deaths, worsened air quality, the spread of infectious diseases, and health risks associated with extreme weather such as floods and storms. Rising global temperatures and changes in weather patterns are increasing the severity of heat waves and extreme weather events. These events in turn have direct and indirect impacts on human health. For example, when people are exposed to higher temperatures for longer time periods they might experience heat illness and heat-related death.",
@@ -2446,23 +2447,23 @@
           "[Politics of climate change (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The politics of climate change results from different perspectives on how to respond to climate change. Global warming is driven largely by the emissions of greenhouse gases due to human activity, especially the burning of fossil fuels, certain industries like cement and steel production, and land use for agriculture and forestry. Since the Industrial Revolution, fossil fuels have provided the main source of energy for economic and technological development. The centrality of fossil fuels and other carbon-intensive industries has resulted in much resistance to climate policy, despite widespread scientific consensus that such policy is necessary.",
           "[Climate change (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Present-day climate change includes both global warming\u2014the ongoing increase in global average temperature\u2014and its wider effects on Earth's climate system. In a broader sense, climate change also includes previous long-term changes to Earth's climate. The modern-day rise in global temperatures is driven by human activities, especially fossil fuel (coal, oil and natural gas) burning since the Industrial Revolution. Fossil fuel use, deforestation, and some agricultural and industrial practices release greenhouse gases."
         ],
-        "latency_sec": 9.398256301879883,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 10.455641984939575,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199414, Requested 1807. Please try again in 8m47.472s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.95,
+        "reasoning": "The evidence from multiple Wikipedia entries states that modern climate change is driven by human activities, especially fossil\u2011fuel combustion, which releases greenhouse gases that significantly influence Earth\u2019s energy balance. This directly contradicts the claim that there is no evidence of human\u2011produced carbon being a significant factor.",
         "evidence_used": [
           "[Climate change (Wikipedia)] Present-day climate change includes both global warming\u2014the ongoing increase in global average temperature\u2014and its wider effects on Earth's climate system. In a broader sense, climate change also includes previous long-term changes to Earth's climate. The modern-day rise in global temperatures is driven by human activities, especially fossil fuel (coal, oil and natural gas) burning since the Industrial Revolution. Fossil fuel use, deforestation, and some agricultural and industrial practices release greenhouse gases.",
           "[Effects of climate change on human health (Wikipedia)] Climate change affects human health in many ways, including an increase in heat-related illnesses and deaths, worsened air quality, the spread of infectious diseases, and health risks associated with extreme weather such as floods and storms. Rising global temperatures and changes in weather patterns are increasing the severity of heat waves and extreme weather events. These events in turn have direct and indirect impacts on human health. For example, when people are exposed to higher temperatures for longer time periods they might experience heat illness and heat-related death.",
           "[History of climate change science (Wikipedia)] The history of the scientific discovery of climate change began in the early 19th century when ice ages and other natural changes in paleoclimate were first suspected and the natural greenhouse effect was first identified. In the late 19th century, scientists first argued that human emissions of greenhouse gases could change Earth's energy balance and climate. The existence of the greenhouse effect, while not named as such, was proposed as early as 1824 by Joseph Fourier. The argument and the evidence were further strengthened by Claude Pouillet in 1827 and 1838.",
           "[Politics of climate change (Wikipedia)] The politics of climate change results from different perspectives on how to respond to climate change. Global warming is driven largely by the emissions of greenhouse gases due to human activity, especially the burning of fossil fuels, certain industries like cement and steel production, and land use for agriculture and forestry. Since the Industrial Revolution, fossil fuels have provided the main source of energy for economic and technological development. The centrality of fossil fuels and other carbon-intensive industries has resulted in much resistance to climate policy, despite widespread scientific consensus that such policy is necessary."
         ],
-        "latency_sec": 9.291576862335205,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.344593048095703,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
@@ -2479,9 +2480,9 @@
       "expected": "True",
       "claim": "CO2 does not cause climate change, it RESPONDS to it [...]",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7k0x61hetz8wrhg3kahwv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199715, Requested 2041. Please try again in 12m38.592s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The claim that CO2 does not cause climate change is contradicted by authoritative sources: Wikipedia\u2019s Climate change article states that the modern rise in global temperatures is driven by human activities, especially fossil fuel burning, which releases CO2 (source\u202f1). The Causes of climate change article confirms that the scientific consensus is that human influence, via greenhouse gases such as CO2, has warmed the planet (source\u202f2).",
         "evidence_used": [
           "[Climate change (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Present-day climate change includes both global warming\u2014the ongoing increase in global average temperature\u2014and its wider effects on Earth's climate system. In a broader sense, climate change also includes previous long-term changes to Earth's climate. The modern-day rise in global temperatures is driven by human activities, especially fossil fuel (coal, oil and natural gas) burning since the Industrial Revolution. Fossil fuel use, deforestation, and some agricultural and industrial practices release greenhouse gases.",
           "[Causes of climate change (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The scientific community has been investigating the causes of current climate change for decades. After thousands of studies, the scientific consensus is that it is \"unequivocal that human influence has warmed the atmosphere, ocean and land since pre-industrial times.\" This consensus is supported by around 200 scientific organizations worldwide. The scientific principle underlying current climate change is the greenhouse effect, which provides that greenhouse gases pass sunlight that heats the earth, but trap some of the resulting heat that radiates from the planet's surface. Large amounts of greenhouse gases such as carbon dioxide and methane have been released into the atmosphere through burning of fossil fuels since the industrial revolution.",
@@ -2489,23 +2490,23 @@
           "[Scientific proof that CO2 does NOT cause global warming | \ud83c\udf10 Web] Itcan therefore be stated thatCO2has NO climatic effect, and all efforts to reduce them need to be abandoned as soon as possible. This will have an extremely positive world-wide effect.",
           "[(PDF) Definitive proof that CO2 does not cause global warming | \ud83c\udf10 Web] Rather than being strictly random events, it has been proven that all La Ninas and El Ninos are caused by the increase or decrease of reflective SO2 aerosols in Earth's atmosphere, from both ..."
         ],
-        "latency_sec": 9.19279146194458,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.47222375869751,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199354, Requested 1845. Please try again in 8m37.968s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.99,
+        "reasoning": "The claim that CO2 merely responds to climate change contradicts the well\u2011established scientific consensus that increased atmospheric CO2, released by human activities, is a primary driver of recent warming (see sources 2 and 3).",
         "evidence_used": [
           "[CO2 fertilization effect (Wikipedia)] The CO2 fertilization effect or carbon fertilization effect causes an increased rate of photosynthesis while limiting leaf transpiration in plants. Both processes result from increased levels of atmospheric carbon dioxide (CO2).  The carbon fertilization effect varies depending on plant species, air and soil temperature, and availability of water and nutrients. Net primary productivity (NPP) might positively respond to the carbon fertilization effect, although evidence shows that enhanced rates of photosynthesis in plants due to CO2 fertilization do not directly enhance all plant growth, and thus carbon storage.",
           "[Causes of climate change (Wikipedia)] The scientific community has been investigating the causes of current climate change for decades. After thousands of studies, the scientific consensus is that it is \"unequivocal that human influence has warmed the atmosphere, ocean and land since pre-industrial times.\" This consensus is supported by around 200 scientific organizations worldwide. The scientific principle underlying current climate change is the greenhouse effect, which provides that greenhouse gases pass sunlight that heats the earth, but trap some of the resulting heat that radiates from the planet's surface. Large amounts of greenhouse gases such as carbon dioxide and methane have been released into the atmosphere through burning of fossil fuels since the industrial revolution.",
           "[Climate change (Wikipedia)] Present-day climate change includes both global warming\u2014the ongoing increase in global average temperature\u2014and its wider effects on Earth's climate system. In a broader sense, climate change also includes previous long-term changes to Earth's climate. The modern-day rise in global temperatures is driven by human activities, especially fossil fuel (coal, oil and natural gas) burning since the Industrial Revolution. Fossil fuel use, deforestation, and some agricultural and industrial practices release greenhouse gases.",
           "[Effects of climate change on agriculture (Wikipedia)] There are numerous effects of climate change on agriculture, many of which are making it harder for agricultural activities to provide global food security. Recent research has found that climate change is likely to exacerbate the existing environmental impacts of agriculture by lowering crop productivity, reducing the effectiveness of agrochemicals, increasing soil erosion and pest pressures, and thereby driving greater use of land, water and inputs. Rising temperatures and changing weather patterns often result in lower crop yields due to water scarcity caused by drought, heat waves and flooding. One study found that 1\u00b0C of warming was associated with a 3 to 7% decrease in global yields of major staple crops."
         ],
-        "latency_sec": 9.49806523323059,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.509135246276855,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
@@ -2821,9 +2822,9 @@
       "expected": "True",
       "claim": "The science is clear, climate change is making extreme weather events, including tornadoes, worse.",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.9,
+        "reasoning": "The IPCC Sixth Assessment Report (source\u202f1) confirms that human\u2011caused greenhouse\u2011gas increases have heightened the frequency and intensity of extreme weather events in general, but it does not provide definitive evidence that tornadoes themselves are becoming more frequent or intense. Source\u202f2 explicitly states that the effect of climate change on tornadoes is still uncertain and cannot yet be predicted, contradicting the claim that the science is clear about tornadoes. Therefore the claim that \u201cclimate change is making extreme weather events, including tornadoes, worse\u201d is not supported by the evidence and is effectively false.",
         "evidence_used": [
           "[Extreme Weather and Climate Change - NASA Science | \ud83c\udfdb\ufe0f Authoritative Source] According to the Intergovernmental Panel on Climate Change (IPCC)\u2019s Sixth Assessment Report released in 2021, the human-caused rise in greenhouse gases has increased the frequency and intensity of extreme weather events. NASA\u2019s satellite missions, including the upcoming Earth System Observatory, provide vital data for monitoring and responding to extreme weather events.",
           "[Tornadoes and Climate Change - Education | \ud83c\udf10 Web] One thing we know for certain is that we live in a warmer, wetter world thanks to climate change, and this is likely to have an effect on extreme weather events, including tornadoes. Unfortunately, in the case of one of nature\u2019s most violent storms, we cannot yet predict what that effect might be.",
@@ -2831,8 +2832,8 @@
           "[Extreme weather (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Extreme weather includes unexpected, unusual, severe, or unseasonal weather\u2060\u2014\u200aweather which is at the extremes of the historical distribution, i.e., the range that has been seen in the past. Extreme events are based on a location's recorded weather history. The main types of extreme weather include heat waves, cold waves, droughts, and heavy precipitation or storm events, such as tropical cyclones. Extreme weather can have various effects, from natural hazards such as floods and landslides to social costs on human health and the economy.",
           "[History of climate change science (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The history of the scientific discovery of climate change began in the early 19th century when ice ages and other natural changes in paleoclimate were first suspected and the natural greenhouse effect was first identified. In the late 19th century, scientists first argued that human emissions of greenhouse gases could change Earth's energy balance and climate. The existence of the greenhouse effect, while not named as such, was proposed as early as 1824 by Joseph Fourier. The argument and the evidence were further strengthened by Claude Pouillet in 1827 and 1838."
         ],
-        "latency_sec": 20543.355750322342,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.828211784362793,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
@@ -6186,14 +6187,14 @@
       "claim": "in 1995 one scientist at the IPCC \u2013 Jonathan Overpeck \u2013 wrote an email to a colleague claiming \u2018we have to get rid of the Medieval Warm Period.\u2019",
       "factguard": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.3,
+        "reasoning": "The provided evidence (Wikipedia entries on the hockey\u2011stick graph and the Wegman Report) contains no mention of Jonathan Overpeck, an IPCC scientist, nor any email stating \u2018we have to get rid of the Medieval Warm Period.\u2019  Without corroborating documentation, the claim cannot be confirmed or refuted.",
         "evidence_used": [
           "[Hockey stick graph (global temperature) (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Hockey stick graphs present global or hemispherical mean global surface temperatures of the distant past, as shown by quantitative climate reconstructions based on climate proxy records, in relation to instrumental temperature records which only go back to around 1850. These reconstructions have consistently shown a slow long term cooling trend changing into relatively rapid warming in the 20th century, with earlier temperatures exceeding the instrumental temperature record by 2000.\nThe term hockey stick graph was popularized by the climatologist Jerry Mahlman, to describe the pattern shown by the Mann, Bradley & Hughes 1999 (MBH99) reconstruction, envisaging a graph that is relatively flat with a downward trend to 1900 as forming an ice hockey stick's \"shaft\" followed by a sharp, steady increase corresponding to the \"blade\" portion. The reconstructions have featured in Intergovernmental Panel on Climate Change (IPCC) reports as evidence of global warming.",
           "[Wegman Report (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The Wegman Report (officially called the Ad Hoc Committee Report on the 'Hockey Stick' Global Climate Reconstruction) was prepared in 2006 by three statisticians led by Edward Wegman at the request of Rep. Joe Barton of the United States House Committee on Energy and Commerce to validate criticisms made by Stephen McIntyre and Ross McKitrick of reconstructions of the temperature record of the past 1000 years, in particular the reconstructions by Mann, Bradley and Hughes of what had been dubbed the hockey stick graph.\nThe Wegman Report was not peer reviewed in the same way as the NRC Report, but was sent out to a number of referees before it was released. Wegman lacked the procedures and staff which the NRC had in place to organise peer review."
         ],
-        "latency_sec": 317.06023812294006,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 10.086397886276245,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
@@ -8044,14 +8045,14 @@
       "claim": "Deoxygenated human venous blood flowing back to the heart is physically bright blue in color.",
       "factguard": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k0280rnaemttax2p9nqqfshz` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199533, Requested 1925. Please try again in 10m29.856s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.4,
+        "reasoning": "The provided evidence does not mention the color of venous blood, nor does it confirm or refute the claim that deoxygenated venous blood is bright blue. Without authoritative support, the claim remains unverified.",
         "evidence_used": [
           "[Circulatory system (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] In vertebrates, the circulatory system is a system of organs that includes the heart, blood vessels, and blood which is circulated throughout the body. It includes the cardiovascular system, or vascular system, that consists of the heart and blood vessels (from Greek kardia meaning heart, and Latin vascula meaning vessels). The circulatory system has two divisions, a systemic circulation or circuit, and a pulmonary circulation or circuit. Some sources use the terms cardiovascular system and vascular system interchangeably with circulatory system.",
           "[Sickle cell disease (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Sickle cell disease (SCD), also simply called sickle cell, is a group of inherited hemoglobin-related blood disorders. Sickle cell disease is caused by an abnormality in the oxygen-carrying protein haemoglobin found in red blood cells. This leads to the red blood cells adopting an abnormal sickle-like shape under certain circumstances. With this shape, they cannot deform as they pass through capillaries, causing blockages."
         ],
-        "latency_sec": 15.934378385543823,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.749316930770874,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
@@ -8224,14 +8225,14 @@
       "claim": "Rusting of structural steel is a purely biological metabolism carried out entirely by anaerobic mold.",
       "factguard": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.55,
+        "reasoning": "The provided evidence consists of two Wikipedia entries unrelated to the process of rusting steel; neither source discusses biological metabolism, mold activity, or the chemical oxidation of iron. Consequently, the claim cannot be confirmed or refuted based on the retrieved evidence.",
         "evidence_used": [
           "[Ammonia (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Ammonia is an inorganic chemical compound of nitrogen and hydrogen with the formula NH3. A stable binary hydride and the simplest pnictogen hydride, ammonia is a colourless gas with a distinctive pungent smell. It is widely used in fertilizers, refrigerants, explosives, cleaning agents, and is a precursor for numerous chemicals. Renewable ammonia is considered as an important energy carrier in future energy systems.",
           "[List of common misconceptions about science, technology, and mathematics (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Each entry on this list of common misconceptions is worded as a correction; the misconceptions themselves are implied rather than stated. These entries are concise summaries; the main subject articles can be consulted for more detail."
         ],
-        "latency_sec": 1807.1642036437988,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.825140714645386,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
@@ -9952,23 +9953,23 @@
       },
       "raw_search": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.3,
+        "reasoning": "The claim asserts that by 2095 global industrial direct air capture (DAC) infrastructure will remove over fifty gigatons of CO\u2082 annually. None of the provided sources discuss future DAC deployment projections, let alone a figure of 50\u202fGt\u202fCO\u2082 per year. The Wikipedia entries describe current DAC as a negative emissions technology but give no quantitative future estimates, and the CCS project list cites only 40\u202fMt\u202fCO\u2082/year in 2020. Without authoritative evidence supporting the 2095 projection, the claim remains unverified.",
         "evidence_used": [
           "[Carbon capture and storage (Wikipedia)] Carbon capture and storage (CCS) is a process by which carbon dioxide (CO2) from industrial installations or natural sources is separated before it is released into the atmosphere, then transported to a long-term storage location. The CO2 is captured from a large point source, such as a natural gas processing plant and is typically stored in a deep geological formation. Around 80% of the CO2 captured annually is used for enhanced oil recovery (EOR), a process by which CO2 is injected into partially depleted oil reservoirs in order to extract more oil and then is largely left underground. Since EOR utilizes the CO2 in addition to storing it, CCS is also known as carbon capture, utilization, and storage (CCUS).",
           "[Direct air capture (Wikipedia)] Direct air capture (DAC) is the use of chemical or physical processes to extract carbon dioxide (CO2) directly from the ambient air. If the extracted CO2 is then sequestered in safe long-term storage, the overall process is called direct air carbon capture and sequestration (DACCS), achieving carbon dioxide removal. Systems that engage in such a process are referred to as negative emissions technologies (NET).\nDAC is in contrast to carbon capture and storage (CCS), which captures CO2 from point sources, such as a cement factory or a bioenergy plant.",
           "[List of carbon capture and storage projects (Wikipedia)] This List of carbon capture and storage projects provides documentation of global, industrial-scale projects for carbon capture and storage. According to the Global CCS Institute, in 2020 some 40 million tons CO2 per year capacity of CCS was in operation with 50 million tons per year in development. The world emits about 38 billion tonnes of CO2 every year, so CCS captured about one thousandth of the 2020 total.",
           "[Steelmaking (Wikipedia)] Steelmaking is the process of producing steel from iron ore and/or scrap. Steel has been made for millennia and was commercialized on a massive scale in the 1850s and 1860s, using the Bessemer and Siemens-Martin processes. Currently, two major commercial processes are used. Basic oxygen steelmaking (BOS) uses liquid pig iron from a blast furnace and scrap steel as the main feed materials."
         ],
-        "latency_sec": 81.07569432258606,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 8.820013999938965,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
-        "latency_sec": 5.4668238162994385,
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim is a specific prediction about future infrastructure capabilities in 2095, which is inherently non-falsifiable at the present time. While current scientific models project significant growth in direct air capture, no established fact or consensus can confirm the exact scale of infrastructure or removal rates for a date nearly a century in the future.",
+        "latency_sec": 1.4998321533203125,
         "model": "qwen/qwen3.8-27b"
       }
     },
@@ -9978,39 +9979,39 @@
       "expected": "Unverifiable",
       "claim": "Physical oil paintings crafted on canvas convey a deeper spiritual transcendence than flawless algorithmic digital artwork.",
       "factguard": {
-        "verdict": "Unsupported",
+        "verdict": "Unverifiable",
         "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "reasoning": "The claim asserts that oil paintings convey a deeper spiritual transcendence than digital artwork, a subjective aesthetic and spiritual judgment that cannot be objectively tested or falsified. The provided evidence discusses historical and definitional aspects of painting and art but does not address or measure spiritual transcendence, leaving the claim inherently non\u2011falsifiable.",
         "evidence_used": [
           "[Night in paintings (Western art) (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The depiction of night in paintings is common in Western art. Paintings that feature a night scene as the theme may be religious or history paintings, genre scenes, portraits, landscapes, or other subject types. Some artworks involve religious or fantasy topics using the quality of dim night light to create mysterious atmospheres. The source of illumination in a night scene\u2014whether it is the moon or an artificial light source\u2014may be depicted directly, or it may be implied by the character and coloration of the light that reflects from the subjects depicted.",
           "[History of painting (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The history of painting reaches back in time to artifacts and artwork created by pre-historic artists, and spans all cultures. It represents a continuous, though periodically disrupted, tradition from Antiquity. Across cultures, continents, and millennia, the history of painting consists of an ongoing river of creativity that continues into the 21st century. Until the early 20th century it relied primarily on representational, religious and classical motifs, after which time more purely abstract and conceptual approaches gained favor.",
           "[Art (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] Art is a diverse range of human activity centered around works, crafted as an expression of creativity or imagination, which are expected to provide an audience with a worthwhile experience\u2014generally, an experience of emotion, thinking, or beauty.\nThere is no strictly agreed definition of what constitutes art, and its interpretation has varied greatly throughout history and across cultures. In the Western tradition, the three classical branches of visual art are painting, sculpture, and architecture. Theatre, dance, and other performing arts, as well as literature, music, film and other media such as interactive media, are included in a broader definition of \"the arts\".",
           "[History of art (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The history of art focuses on objects made by humans for any number of spiritual, narrative, philosophical, symbolic, conceptual, documentary, decorative, and even functional and other purposes, though focused on a primary emphasis on its aesthetic visual form. \nVisual art can be classified in diverse ways, such as separating fine arts from applied arts; inclusively focusing on human creativity; or focusing on different media such as architecture, sculpture, painting, film, photography, and graphic arts. In recent years, technological advances have led to video art, computer art, performance art, animation, television, and video games.\nThe history of art is often told as a chronology of masterpieces created during each civilization."
         ],
-        "latency_sec": 5.550407886505127,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.45387887954712,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
-        "verdict": "Unsupported",
+        "verdict": "Unverifiable",
         "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "reasoning": "The claim compares spiritual transcendence of physical oil paintings versus algorithmic digital artwork, which is a subjective aesthetic and spiritual value judgment that cannot be empirically tested or falsified.",
         "evidence_used": [
           "[Art (Wikipedia)] Art is a diverse range of human activity centered around works, crafted as an expression of creativity or imagination, which are expected to provide an audience with a worthwhile experience\u2014generally, an experience of emotion, thinking, or beauty.\nThere is no strictly agreed definition of what constitutes art, and its interpretation has varied greatly throughout history and across cultures. In the Western tradition, the three classical branches of visual art are painting, sculpture, and architecture. Theatre, dance, and other performing arts, as well as literature, music, film and other media such as interactive media, are included in a broader definition of \"the arts\".",
           "[History of art (Wikipedia)] The history of art focuses on objects made by humans for any number of spiritual, narrative, philosophical, symbolic, conceptual, documentary, decorative, and even functional and other purposes, though focused on a primary emphasis on its aesthetic visual form. \nVisual art can be classified in diverse ways, such as separating fine arts from applied arts; inclusively focusing on human creativity; or focusing on different media such as architecture, sculpture, painting, film, photography, and graphic arts. In recent years, technological advances have led to video art, computer art, performance art, animation, television, and video games.\nThe history of art is often told as a chronology of masterpieces created during each civilization.",
           "[History of painting (Wikipedia)] The history of painting reaches back in time to artifacts and artwork created by pre-historic artists, and spans all cultures. It represents a continuous, though periodically disrupted, tradition from Antiquity. Across cultures, continents, and millennia, the history of painting consists of an ongoing river of creativity that continues into the 21st century. Until the early 20th century it relied primarily on representational, religious and classical motifs, after which time more purely abstract and conceptual approaches gained favor.",
           "[Night in paintings (Western art) (Wikipedia)] The depiction of night in paintings is common in Western art. Paintings that feature a night scene as the theme may be religious or history paintings, genre scenes, portraits, landscapes, or other subject types. Some artworks involve religious or fantasy topics using the quality of dim night light to create mysterious atmospheres. The source of illumination in a night scene\u2014whether it is the moon or an artificial light source\u2014may be depicted directly, or it may be implied by the character and coloration of the light that reflects from the subjects depicted."
         ],
-        "latency_sec": 5.368720054626465,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.402302265167236,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
-        "latency_sec": 5.443484544754028,
+        "verdict": "Unverifiable",
+        "confidence": 1.0,
+        "reasoning": "The claim relies on subjective aesthetic and spiritual judgments regarding 'transcendence,' which are matters of personal interpretation and taste rather than objective, measurable facts.",
+        "latency_sec": 2.4986586570739746,
         "model": "qwen/qwen3.8-27b"
       }
     },
@@ -10020,9 +10021,9 @@
       "expected": "Unverifiable",
       "claim": "CRISPR germline modification of human cognitive traits is inherently a violation of universal human dignity.",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "Unverifiable",
+        "confidence": 0.9,
+        "reasoning": "The claim is a normative moral assertion that CRISPR germline modification of human cognitive traits inherently violates universal human dignity. Such a statement is not empirically testable or falsifiable; it reflects a value judgment rather than an observable fact. The evidence cites concerns about human dignity but does not provide definitive proof that the modification is inherently a violation.",
         "evidence_used": [
           "[The Ethics of Human Embryo Editing via CRISPR-Cas9 Technology: A ... | \ud83c\udfdb\ufe0f Authoritative Source] Over one-third (n = 80; 36.0%) of the publications reviewed mentioned justice, equity, and other social considerations as relevant to evaluating human embryo editing. Among these we found three sub-categories of concern: public opinion and trust (n = 35; 15.7%), socioeconomic inequity (n = 41; 18.4%), and human dignity (n = 58; 26.0%). Human dignity concerns focused primarily on the possibility that altering the human genome would change what it means to be human. Both the Universal Declaration on the Human Genome and Human Rights (United Nations General Assembly, 1948) and the Convention on Human Rights and Biomedicine (also known as the Oviedo Convention)(Council of Europe, 1997) cite this as a reason to reject human genome germline editing. Socioeconomic inequity concerns focused on...",
           "[Ethics of Human Genome Editing - PMC | \ud83c\udfdb\ufe0f Authoritative Source] Advances in human genome editing, in particular the development of the clustered regularly interspaced palindromic repeats (CRISPR)/Cas9 method, have led to increasing concerns about the ethics of editing the human genome. In response, the US National Academy of Sciences and the National Academy of Medicine constituted a multidisciplinary, international committee to review the current status and make recommendations. I was a member of that committee, and the core of this review reflects the committee\u2019s conclusions. The committee\u2019s report, issued in February 2017, recommends the application of current ethical and regulatory standards for gene therapy to somatic (nonheritable) human genome editing. It also recommends allowing experimental germline genome editing to proceed if (a) it is...",
@@ -10030,31 +10031,31 @@
           "[The Ethics of Human Embryo Editing via CRISPR-Cas9 ... - Springer | \ud83c\udf10 Web] The possibility of editing the genomes ofhumanembryos has generated significant discussion and interest as a matter of science and ethics. While it holds significant promise to prevent or treat disease, research on and potential clinical applications ofhumanembryo editing also raise ethical, regulatory, and safety concerns. This systematic review included 223 publications to identify the ...",
           "[Rewriting the human genome, rewriting human rights law? Human rights ... | \ud83c\udf10 Web] Abstract In most legal orders,humangermlinemodificationiseither prohibited or severely restricted. A recurring thought in these legal frameworks is that heritable genome editing would result in practices that are at odds with principles ofhumanrights, such asdignity, justice, and equality. However, now thatCRISPRisbringing heritable genome editing withinhumanreach, the question ..."
         ],
-        "latency_sec": 5.382961750030518,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.798919677734375,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "Unverifiable",
+        "confidence": 1.0,
+        "reasoning": "The claim is a normative moral assertion about human dignity, which is inherently non\u2011falsifiable and cannot be objectively proven or disproven by empirical evidence.",
         "evidence_used": [
           "[Rewriting the human genome, rewriting human rights law? Human rights ...] Abstract In most legal orders,humangermlinemodificationiseither prohibited or severely restricted. A recurring thought in these legal frameworks is that heritable genome editing would result in practices that are at odds with principles ofhumanrights, such asdignity, justice, and equality. However, now thatCRISPRisbringing heritable genome editing withinhumanreach, the question ...",
           "[The Ethics of Human Embryo Editing via CRISPR-Cas9 Technology: A ...] Over one-third (n = 80; 36.0%) of the publications reviewed mentioned justice, equity, and other social considerations as relevant to evaluating human embryo editing. Among these we found three sub-categories of concern: public opinion and trust (n = 35; 15.7%), socioeconomic inequity (n = 41; 18.4%), and human dignity (n = 58; 26.0%). Human dignity concerns focused primarily on the possibility that altering the human genome would change what it means to be human. Both the Universal Declaration on the Human Genome and Human Rights (United Nations General Assembly, 1948) and the Convention on Human Rights and Biomedicine (also known as the Oviedo Convention)(Council of Europe, 1997) cite this as a reason to reject human genome germline editing. Socioeconomic inequity concerns focused on...",
           "[Ethics of Human Genome Editing - PMC] Advances in human genome editing, in particular the development of the clustered regularly interspaced palindromic repeats (CRISPR)/Cas9 method, have led to increasing concerns about the ethics of editing the human genome. In response, the US National Academy of Sciences and the National Academy of Medicine constituted a multidisciplinary, international committee to review the current status and make recommendations. I was a member of that committee, and the core of this review reflects the committee\u2019s conclusions. The committee\u2019s report, issued in February 2017, recommends the application of current ethical and regulatory standards for gene therapy to somatic (nonheritable) human genome editing. It also recommends allowing experimental germline genome editing to proceed if (a) it is...",
           "[Genome editing and human rights: Implications of the UNGPs] Apart from those, we believe that the WHO's framework missed recognizing that ahumanrights-respecting approach should be integrated into thehumangenome editing governance. This approach is in line with the spirit of the 1946 Constitution of the WHO and universally supported internationalhumanrights norms."
         ],
-        "latency_sec": 5.445218324661255,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.566776990890503,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
-        "latency_sec": 5.4389166831970215,
-        "model": "qwen/qwen3.8-27b"
+        "verdict": "Unverifiable",
+        "confidence": 0.97,
+        "reasoning": "The claim is a normative ethical judgment about dignity, not an empirically testable fact, making it inherently non\u2011falsifiable.",
+        "latency_sec": 6.18956732749939,
+        "model": "openai/gpt-oss-120b"
       }
     },
     {
@@ -10063,9 +10064,9 @@
       "expected": "Unverifiable",
       "claim": "An infinite ensemble of disconnected parallel universes exists beyond our cosmic event horizon with varying physical laws.",
       "factguard": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.7,
+        "reasoning": "Evidence from the multiverse hierarchy and Level\u202fI multiverse models (e.g., arXiv and web sources) indicates that regions beyond our cosmic event horizon would share the same physical laws, differing only in initial conditions. This directly contradicts the claim\u2019s assertion that these universes have varying physical laws.",
         "evidence_used": [
           "[Does the Multiverse Exist? Theories, Evidence, and Scientific Debate ... | \ud83c\udf10 Web] - Level I Multiverse: Infinite space means matter eventually repeats, creating distant regions that mirror our universe. These parallel universes share the same physical laws but differ in how matter is arranged.",
           "[(PDF) Exploring the Reality of Parallel Universes: Theoretical ... | \ud83c\udf10 Web] This paper explores the possibility ofparalleluniverses, also known as the multiverse, by delving into theoretical frameworks from quantum mechanics, cosmology, and string theory.",
@@ -10073,30 +10074,30 @@
           "[Mathematical universe hypothesis (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] In physics, cosmology, and metaphysics, the mathematical universe hypothesis (MUH), also known as the ultimate ensemble theory, is a speculative \"theory of everything\" (TOE) proposed by cosmologist Max Tegmark. According to the hypothesis, the universe is a mathematical object in and of itself. Tegmark extends this idea to hypothesize that all mathematical objects exist, which he describes as a form of Platonism or modal realism.\nThe hypothesis has proven controversial.",
           "[The Multiverse Hierarchy - arXiv.org | \ud83c\udfdb\ufe0f Authoritative Source] Level 1: RegionsbeyondourcosmichorizonFeatures: Same laws of physics, different initial conditions Assumptions:Infinitespace, ergodic matter distribution Evidence: - Microwave background measurements point to flat,infinitespace, large-scale smoothness - Simplest model"
         ],
-        "latency_sec": 5.573938608169556,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.146552085876465,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "False",
+        "confidence": 0.7,
+        "reasoning": "The claim that there are infinite, disconnected parallel universes beyond our cosmic event horizon with varying physical laws is contradicted by the Level\u202fI multiverse theory, which posits that any such regions share the same physical laws and differ only in matter arrangement (see evidence\u202f4). The mathematical universe hypothesis (evidence\u202f3) is speculative and does not provide empirical confirmation of such a multiverse, nor does it assert varying laws. Thus the claim is not supported by authoritative evidence and is contradicted by at least one reliable source.",
         "evidence_used": [
           "[History of aesthetics (Wikipedia)] This is a history of aesthetics.",
           "[Marvel Comics (Wikipedia)] Marvel Comics is an American comic book publisher, a property of the Walt Disney Company since December 31, 2009, and a subsidiary of Disney Publishing Worldwide since March 2023. Marvel was founded in 1939 by Martin Goodman as Timely Comics, and by 1951 had generally become known as Atlas Comics. The Marvel era began in August 1961 with the launch of The Fantastic Four and other superhero titles created by Stan Lee, Jack Kirby, Steve Ditko, and numerous others. The Marvel brand, which had been used over the years and decades, was solidified as the company's primary brand.",
           "[Mathematical universe hypothesis (Wikipedia)] In physics, cosmology, and metaphysics, the mathematical universe hypothesis (MUH), also known as the ultimate ensemble theory, is a speculative \"theory of everything\" (TOE) proposed by cosmologist Max Tegmark. According to the hypothesis, the universe is a mathematical object in and of itself. Tegmark extends this idea to hypothesize that all mathematical objects exist, which he describes as a form of Platonism or modal realism.\nThe hypothesis has proven controversial.",
           "[Does the Multiverse Exist? Theories, Evidence, and Scientific Debate ...] - Level I Multiverse: Infinite space means matter eventually repeats, creating distant regions that mirror our universe. These parallel universes share the same physical laws but differ in how matter is arranged."
         ],
-        "latency_sec": 5.423872232437134,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 10.133439302444458,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
-        "latency_sec": 6.23507833480835,
+        "confidence": 0.95,
+        "reasoning": "The existence of parallel universes with varying physical laws is a speculative hypothesis derived from certain interpretations of quantum mechanics and eternal inflation, but it lacks empirical evidence or conclusive confirmation.",
+        "latency_sec": 1.3361594676971436,
         "model": "qwen/qwen3.8-27b"
       }
     },
@@ -10107,8 +10108,8 @@
       "claim": "Autonomous robotic caretakers are morally incapable of providing genuine emotional compassion to aging human elders.",
       "factguard": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.6,
+        "reasoning": "The provided sources discuss the ethical dimensions of robotic care, the importance of dignity, and the challenges of moral agency, but none provide empirical evidence that autonomous robotic caretakers are inherently incapable of genuine emotional compassion. No authoritative source confirms or refutes the claim, leaving it unverified.",
         "evidence_used": [
           "[The compassion illusion: Can artificial empathy ever be emotionally ... | \ud83c\udfdb\ufe0f Authoritative Source] That is, awareness can prevent dependence on it and strengthenhumanempathy as a different skill. Reassert moral agency:Compassionshould be considered an ethical act and not just a means of communication.",
           "[Demands of Dignity in Robotic Care: Recognizing ... - ResearchGate | \ud83c\udf10 Web] How canroboticcare support or challengehumandignity in elderly care? The answer will depend on whether it is robot-based, robot-assisted, or teleoperated care that is at stake.",
@@ -10116,30 +10117,30 @@
           "[Full article: Ethical Considerations of AI Use by the Elderly | \ud83c\udf10 Web] Pirni et al. (2021) mention the challenge of making care robots sufficiently moral, a tension inhuman-robot interaction that may result inemotionalattachment and dependence, balancinghumanautonomy and control, the vulnerability of both people and robots, as well as concerns like equity of access andhumanreplacement.",
           "[(PDF) Ethics of care and robot caregivers - ResearchGate | \ud83c\udf10 Web] This paper will explore new ways of caring forhumanbeings usingroboticcaregivers in light of ethical problems/questions of respect forhumandignity and the feelings of vulnerable people ..."
         ],
-        "latency_sec": 5.796506404876709,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 8.834193706512451,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
         "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "confidence": 0.6,
+        "reasoning": "The provided sources discuss ethical challenges and considerations surrounding robotic caregivers, including issues of moral sufficiency, emotional attachment, and dignity, but none explicitly state that autonomous robotic caretakers are morally incapable of providing genuine emotional compassion. No authoritative evidence confirms or refutes the claim, leaving it unverified.",
         "evidence_used": [
           "[List of stock characters (Wikipedia)] A stock character is a dramatic or literary character representing a generic type in a conventional, simplified manner and recurring in many fictional works. The following list labels some of these stereotypes and provides examples. Some character archetypes, the more universal foundations of fictional characters, are also listed.\nSome characters that were first introduced as fully fleshed-out characters become subsequently used as stock characters in other works \u2013 for example, the Ebenezer Scrooge character from A Christmas Carol, upon whom the \"miser\" stereotype is based, and whose name now has become a shorthand for it.",
           "[Full article: Ethical Considerations of AI Use by the Elderly] Pirni et al. (2021) mention the challenge of making care robots sufficiently moral, a tension inhuman-robot interaction that may result inemotionalattachment and dependence, balancinghumanautonomy and control, the vulnerability of both people and robots, as well as concerns like equity of access andhumanreplacement.",
           "[(PDF) Ethics of care and robot caregivers - ResearchGate] This paper will explore new ways of caring forhumanbeings usingroboticcaregivers in light of ethical problems/questions of respect forhumandignity and the feelings of vulnerable people ...",
           "[Demands of Dignity in Robotic Care: Recognizing ... - ResearchGate] How canroboticcare support or challengehumandignity in elderly care? The answer will depend on whether it is robot-based, robot-assisted, or teleoperated care that is at stake."
         ],
-        "latency_sec": 5.827721357345581,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 9.323751211166382,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
-        "latency_sec": 5.829012393951416,
+        "verdict": "Unverifiable",
+        "confidence": 0.95,
+        "reasoning": "The claim relies on subjective moral and philosophical judgments regarding the nature of 'genuine' compassion and the moral status of artificial entities, which are not empirically falsifiable scientific facts. Additionally, the assertion is a normative ethical stance rather than a verifiable historical or scientific record.",
+        "latency_sec": 2.5581772327423096,
         "model": "qwen/qwen3.8-27b"
       }
     },
@@ -10149,9 +10150,9 @@
       "expected": "Unverifiable",
       "claim": "The literary prose of James Joyce represents a higher pinnacle of linguistic aesthetic perfection than William Shakespeare's plays.",
       "factguard": {
-        "verdict": "Unsupported",
+        "verdict": "Unverifiable",
         "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "reasoning": "The claim is a subjective aesthetic judgment about literary quality, which is inherently non\u2011falsifiable and cannot be objectively verified or refuted by evidence.",
         "evidence_used": [
           "[Tolkien's prose style (Wikipedia) | \ud83c\udfdb\ufe0f Authoritative Source] The prose style of J. R. R. Tolkien's Middle-earth books, especially The Lord of the Rings, is remarkably varied. Commentators have noted that Tolkien selected linguistic registers to suit different peoples, such as simple and modern for Hobbits and more archaic for Dwarves, Elves, and the Rohirrim. This allowed him to use the Hobbits to mediate between the modern reader and the heroic and archaic realm of fantasy. The Orcs, too, are depicted in different voices: the Orc-leader Grishn\u00e1kh speaks in bullying tones, while the minor functionary Gorbag uses grumbling modern speech.",
           "[PDF'Shakespeare Explained': James Joyce's Shakespeare from Victorian ... | \ud83c\udf10 Web] Inwhat follows, Iwant toapproachJoyce'sreading ofand Stephen's theorizing about Shakespeare anew, suggesting thatjoyce'sShakespeare enabled himtosketch outandultimately to occupy a osition within anarrative ofEnglish literature by con tributing to the construction of amore modem andmore European translation ofShakespeare. Itis, however, atranslation that emerges from elements i thelate ...",
@@ -10159,23 +10160,23 @@
           "[James Joyce - Modernism Lab - Yale University | \ud83c\udf93 Academic / Research] JamesJoyce(1882-1941) is a colossus of modernist fiction. He has been derided as obscene and immature and lauded as an erudite humanist; some have deemed hisproseimpenetrable, too concerned with artifice and verbal gamesmanship, while others have described his writing as life-affirming and always attuned to the music of language.",
           "[(PDF) Language and Style of James Joyce (printed) - ResearchGate | \ud83c\udf10 Web] Scholarlyliteraryopinion is thatJamesJoycerevolutionized the novel in the twentieth century by abandoning conventional narrative for stream of consciousness and unprecedented play of language."
         ],
-        "latency_sec": 6.050036191940308,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 12.63952088356018,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class",
         "prompt_hash": "5bb8f79a76c3"
       },
       "raw_search": {
-        "verdict": "Unsupported",
-        "confidence": 0.0,
-        "reasoning": "LLM verification unavailable (Connection error.). Please check your API key / model in 'LLM Settings' or internet connection.",
+        "verdict": "Unverifiable",
+        "confidence": 1.0,
+        "reasoning": "The claim is a subjective aesthetic judgment about literary quality, which is inherently non\u2011falsifiable and cannot be objectively verified or disproved by empirical evidence.",
         "evidence_used": [
           "[The Origin of German Tragic Drama (Wikipedia)] The Origin of German Tragic Drama (German: Ursprung des deutschen Trauerspiels) was the postdoctoral major academic work (habilitation) submitted by Walter Benjamin to the University of Frankfurt in 1925. The book is a study of German drama during the baroque period and was meant to earn Benjamin the qualification required to become a university instructor. Warned of the certainty of the work's rejection, Benjamin withdrew it from consideration. \u201cHe did not know as yet that \u2018intellect cannot be habilitated,\u2018 to quote [a colleague's] wickedly insolent statement about him.\u201d\nThis bon mot\u2014\u2018Intellect cannot be habilitated\u2019\u2014went on to become a maxim about the paradoxes of professionalism in the academic humanities later on in the century, in the wake of Benjamin\u2019s posthumous fame.",
           "[Tolkien's prose style (Wikipedia)] The prose style of J. R. R. Tolkien's Middle-earth books, especially The Lord of the Rings, is remarkably varied. Commentators have noted that Tolkien selected linguistic registers to suit different peoples, such as simple and modern for Hobbits and more archaic for Dwarves, Elves, and the Rohirrim. This allowed him to use the Hobbits to mediate between the modern reader and the heroic and archaic realm of fantasy. The Orcs, too, are depicted in different voices: the Orc-leader Grishn\u00e1kh speaks in bullying tones, while the minor functionary Gorbag uses grumbling modern speech.",
           "[Joyce/Shakespeare - JSTOR] Shakespeare's presence inJoyce'swork is tentacular, extending throughout his career on many different levels: cultural, structural, lexical, and psychological; yet a surprisingly long time has passed since the last monograph on thisliterarynexus was published.",
           "[(PDF) James Joyce and the Difference of Language - ResearchGate] Thepaper deals with studying language deviations of different types inJamesJoyce'sUlysses and Finnegans Wake . Deviations in general are known to be a departure from a norm or accepted ..."
         ],
-        "latency_sec": 7.134934663772583,
-        "model": "qwen/qwen3.8-27b",
+        "latency_sec": 14.43297815322876,
+        "model": "openai/gpt-oss-20b",
         "prompt_version": "2.1.0-precedence-4class"
       },
       "zero_shot": {

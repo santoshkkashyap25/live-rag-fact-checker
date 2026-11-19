@@ -113,13 +113,13 @@ To scale statistical power beyond pilot sample sizes:
 
 | System Configuration | 4-Class Accuracy | 95% Wilson CI | FEVER 3-Class Accuracy | Coverage (Decisive) | Selective Precision |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **FactGuard AI (Full Pipeline)** | **60.7% (182/300)** | [55.0%, 66.0%] | **67.3%** | **35.3%** (106/300) | **68.9%** |
-| Raw Web Search + LLM Baseline | 56.3% (169/300) | [50.7%, 61.8%] | 64.7% | 27.7% (83/300) | 73.5% |
-| Fair Ungrounded Zero-Shot LLM | 72.0% (216/300) | [66.7%, 76.8%] | 76.0% | 58.7% (176/300) | 66.5% |
+| **FactGuard AI (Full Pipeline)** | **63.7% (191/300)** | [58.1%, 68.9%] | **69.0%** | **39.7%** (119/300) | **67.2%** |
+| Raw Web Search + LLM Baseline | 58.3% (175/300) | [52.7%, 63.8%] | 65.3% | 30.0% (90/300) | 71.1% |
+| Fair Ungrounded Zero-Shot LLM | 74.3% (223/300) | [69.1%, 78.9%] | 77.0% | 60.0% (180/300) | 66.7% |
 
-- **Net +13 Claims Lead over Raw Search**: FactGuard won **30 discordant claims vs. 17** for Raw Search (152 both correct, McNemar $\chi^2 = 3.064$, $p = 0.0789$).
-- **Decisive Coverage Lead**: FactGuard achieves **35.3% coverage vs. 27.7%** for Raw Search (+23 more claims decisively resolved) through Trafilatura deep article extraction and domain-weighted BM25 reranking.
-- **Hallucination Resistance on Hypotheses (`Unsupported`)**: On 75 unconfirmed hypotheses, FactGuard achieved **70.7% recall** (53/75) by properly abstaining, with only 1 false positive on `True` (1.3%). In contrast, ungrounded Zero-Shot hallucinated false confidence on **50.7%** of unconfirmed hypotheses (10 as True, 28 as False).
+- **Statistically Significant Advantage over Raw Search**: FactGuard won **34 discordant claims vs. 18** for Raw Search (157 both correct, McNemar $\chi^2 = 4.327$, exact binomial **$p = 0.0365$**).
+- **Decisive Coverage Lead**: FactGuard achieves **39.7% coverage vs. 30.0%** for Raw Search (+29 more claims decisively resolved, +32.3% relative increase) through Trafilatura deep article extraction and domain-weighted BM25 reranking.
+- **Hallucination Resistance on Hypotheses (`Unsupported`)**: On 75 unconfirmed hypotheses, FactGuard achieved **69.3% recall** (52/75) by properly abstaining, with only 1 false positive on `True` (1.3%). In contrast, ungrounded Zero-Shot hallucinated false confidence on **50.7%** of unconfirmed hypotheses (10 as True, 28 as False).
 
 *Full telemetry, 4x4 confusion matrices, and per-claim audit records are documented in [`tests/data/heldout_suite/report_heldout_300.md`](tests/data/heldout_suite/report_heldout_300.md).*
 
